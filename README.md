@@ -1,4 +1,4 @@
-<p align="center">
+no<p align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=transparent&height=40"/>
 
@@ -35,7 +35,6 @@
 </div>
 
 ---
-
 ## 🧠 About Me
 
 <p align="center">
@@ -66,6 +65,8 @@ class Joel:
         ]
 
         self.current_status = "Building projects, experimenting, learning fast"
+
+#
 
 - 🔭 Architecting **KIO** — modular local AI assistant  
 - 💊 Built **MediMind prototype** — AI health assistant using Gemini API  
