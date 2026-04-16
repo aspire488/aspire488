@@ -1,53 +1,37 @@
 <p align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1b27,100:70a5fd&height=220&section=header&text=Joel%20|%20aspire488&fontSize=42&fontColor=ffffff&fontAlignY=38&desc=CS%20Student%20•%20Builder%20•%20AI%20Tinkerer&descAlignY=56&descSize=16"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1b27,100:70a5fd&height=220&section=header&text=Joel%20|%20aspire488&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=CS%20Student%20•%20Builder%20•%20AI%20Tinkerer&descAlignY=56&descSize=16"/>
 </p>
 
 <p align="center">
-
-![Profile Views](https://komarev.com/ghpvc/?username=aspire488&color=70a5fd&style=flat-square)
-![Followers](https://img.shields.io/github/followers/aspire488?style=flat-square&color=70a5fd)
-![Stars](https://img.shields.io/github/stars/aspire488?style=flat-square&color=70a5fd)
-
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&pause=1000&color=70A5FD&center=true&vCenter=true&width=620&lines=AI+%2B+Full-Stack+%2B+Systems+Design;Building+tools+that+actually+work.;Exploring+automation+and+AI+systems."/>
 </p>
 
 <p align="center">
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=1000&color=70A5FD&center=true&vCenter=true&width=600&lines=Building+tools+that+actually+work.;AI+%2B+Full-Stack+%2B+Systems+Design.;Experimenting+with+automation+and+AI+systems."/>
-
+<img src="https://komarev.com/ghpvc/?username=aspire488&color=70a5fd&style=flat-square&label=Profile+Views"/>
+<img src="https://img.shields.io/github/followers/aspire488?style=flat-square&color=70a5fd&label=Followers"/>
+<img src="https://img.shields.io/github/stars/aspire488?style=flat-square&color=70a5fd&label=Stars"/>
 </p>
 
 ---
 
 # 🧠 About Me
 
-```python
-class Joel:
-    def __init__(self):
-        self.name = "Joel Jigo"
-        self.role = "Computer Science Engineering Student"
-        self.university = "SCMS School of Engineering and Technology"
-        self.location = "Ernakulam, Kerala, India"
+🎓 **B.Tech Computer Science Engineering Student**  
+🏫 **SCMS School of Engineering and Technology**  
+📍 **Ernakulam, Kerala, India**
 
-        self.current_projects = [
-            "CodeFlow",
-            "MediMind",
-            "KIO"
-        ]
+I build experimental developer tools, AI systems, and interactive platforms to learn by shipping real prototypes.
 
-        self.interests = [
-            "AI Systems",
-            "Developer Tools",
-            "Automation",
-            "Systems Design"
-        ]
+### 🚀 Current Focus
+- ⚡ **CodeFlow** — interactive programming learning platform  
+- 💊 **MediMind** — AI-powered health assistant prototype  
+- 🤖 **KIO** — modular local AI assistant  
 
-        self.current_status = "Building projects, experimenting, learning fast"
-```
-
-- ⚡ Architecting **KIO** — modular local AI assistant  
-- 💊 Built **MediMind** — AI health assistant prototype  
-- 🧠 Created **CodeFlow** — interactive programming learning platform  
-- 🌱 Exploring **AI agents, automation workflows, and developer tools**
+### 🧩 Interests
+![AI](https://img.shields.io/badge/AI%20Systems-0d1117?style=for-the-badge)
+![DevTools](https://img.shields.io/badge/Developer%20Tools-0d1117?style=for-the-badge)
+![Automation](https://img.shields.io/badge/Automation-0d1117?style=for-the-badge)
+![Systems](https://img.shields.io/badge/Systems%20Design-0d1117?style=for-the-badge)
 
 ---
 
@@ -56,13 +40,13 @@ class Joel:
 <p align="center">
 
 ### Languages  
-![Languages](https://skillicons.dev/icons?i=js,py,c,html,css&theme=dark)
+<img src="https://skillicons.dev/icons?i=js,py,c,html,css&theme=dark"/>
 
 ### Frameworks  
-![Frameworks](https://skillicons.dev/icons?i=react,nodejs,vite,tailwind,electron&theme=dark)
+<img src="https://skillicons.dev/icons?i=react,nodejs,vite,tailwind,electron&theme=dark"/>
 
 ### Tools  
-![Tools](https://skillicons.dev/icons?i=git,github,vscode,vercel,linux&theme=dark)
+<img src="https://skillicons.dev/icons?i=git,github,vscode,vercel,linux&theme=dark"/>
 
 </p>
 
@@ -73,15 +57,15 @@ class Joel:
 <p align="center">
 
 <a href="https://github.com/aspire488/codeflow">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=aspire488&repo=codeflow&theme=tokyonight&hide_border=true&bg_color=0d1117" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=aspire488&repo=codeflow&theme=tokyonight&hide_border=true&bg_color=0d1117"/>
 </a>
 
 <a href="https://github.com/aspire488/medimind">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=aspire488&repo=medimind&theme=tokyonight&hide_border=true&bg_color=0d1117" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=aspire488&repo=medimind&theme=tokyonight&hide_border=true&bg_color=0d1117"/>
 </a>
 
 <a href="https://github.com/aspire488/Kio">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=aspire488&repo=Kio&theme=tokyonight&hide_border=true&bg_color=0d1117" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=aspire488&repo=Kio&theme=tokyonight&hide_border=true&bg_color=0d1117"/>
 </a>
 
 </p>
@@ -101,11 +85,8 @@ class Joel:
 # 📊 GitHub Stats
 
 <p align="center">
-
 <img src="https://github-readme-stats.vercel.app/api?username=aspire488&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117" height="170"/>
-
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=aspire488&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117" height="170"/>
-
 </p>
 
 ---
@@ -113,9 +94,15 @@ class Joel:
 # 🔥 Commit Streak
 
 <p align="center">
-
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=aspire488&theme=tokyonight&hide_border=true&background=0d1117"/>
+</p>
 
+---
+
+# 🐍 Contribution Snake
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/aspire488/aspire488/output/github-contribution-grid-snake.svg"/>
 </p>
 
 ---
@@ -123,40 +110,9 @@ class Joel:
 # 📈 Contribution Activity
 
 <p align="center">
-
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=aspire488&theme=tokyo-night&bg_color=0d1117&hide_border=true)
-
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=aspire488&theme=tokyo-night&bg_color=0d1117&hide_border=true"/>
 </p>
 
 ---
 
 # 🎯 Current Goals
-
-```
-[~] Build KIO Phase 1 — event bus + command router
-[ ] Explore AI agent workflows
-[ ] Contribute to open source
-[ ] Land a developer internship before S4
-```
-
----
-
-# 📬 Contact
-
-<p align="center">
-
-![GitHub](https://img.shields.io/badge/GitHub-aspire488-181717?style=for-the-badge&logo=github&logoColor=white)
-
-</p>
-
----
-
-<p align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:70a5fd,100:0d1117&height=120&section=footer"/>
-
-</p>
-
-<p align="center">
-Building in public • Learning through projects
-</p>
