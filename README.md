@@ -36,17 +36,36 @@
 
 ---
 
-# 🧠 About Me
+## 🧠 About Me
+
+<p align="center">
+
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&pause=1000&color=70A5FD&center=true&vCenter=true&width=520&lines=Computer+Science+Engineering+Student;Building+AI+Tools+and+Developer+Projects;Exploring+Automation+and+Systems+Design"/>
+
+</p>
 
 ```python
-joel = {
-    "university" : "SCMS School of Engineering and Technology, Kochi",
-    "degree"     : "B.Tech Computer Science & Engineering — S2",
-    "building"   : ["CodeFlow", "MediMind", "KIO"],
-    "interests"  : ["AI Systems", "Developer Tools", "Automation", "Systems Design"],
-    "currently"  : "Building projects, experimenting with AI tools, learning fast."
-}
-```
+class Joel:
+    def __init__(self):
+        self.name = "Joel Jigo"
+        self.role = "Computer Science Engineering Student"
+        self.university = "SCMS School of Engineering and Technology"
+        self.location = "Ernakulam, Kerala, India"
+
+        self.current_projects = [
+            "CodeFlow",
+            "MediMind",
+            "KIO"
+        ]
+
+        self.interests = [
+            "AI Systems",
+            "Developer Tools",
+            "Automation",
+            "Systems Design"
+        ]
+
+        self.current_status = "Building projects, experimenting, learning fast"
 
 - 🔭 Architecting **KIO** — modular local AI assistant  
 - 💊 Built **MediMind prototype** — AI health assistant using Gemini API  
