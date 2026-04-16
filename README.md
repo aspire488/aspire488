@@ -1,4 +1,24 @@
-<div align="center">
+<p align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=transparent&height=40"/>
+
+</p>
+
+<p align="center">
+
+![Profile Views](https://komarev.com/ghpvc/?username=aspire488&color=70a5fd&style=flat-square&label=Profile+Views)
+&nbsp;&nbsp;
+![Followers](https://img.shields.io/github/followers/aspire488?style=flat-square&color=70a5fd&labelColor=0d1117)
+&nbsp;&nbsp;
+![Stars](https://img.shields.io/github/stars/aspire488?style=flat-square&color=70a5fd&labelColor=0d1117)
+
+</p>
+
+<p align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:1a1b27,100:0d1117&height=2"/>
+
+</p><div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1b27,100:70a5fd&height=200&section=header&text=Joel%20%7C%20aspire488&fontSize=42&fontColor=ffffff&fontAlignY=38&desc=CS%20Student%20•%20Builder%20•%20AI%20Tinkerer&descAlignY=56&descSize=16" width="100%"/>
 
