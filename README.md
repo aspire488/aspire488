@@ -115,4 +115,49 @@ I build experimental developer tools, AI systems, and interactive platforms to l
 
 ---
 
+---
+
 # 🎯 Current Goals
+
+<p align="center">
+
+| Goal | Progress |
+|-----|----------|
+| 🤖 Build **KIO Phase 1** — event bus + command router | ███████░░░ |
+| ⚡ Improve **CodeFlow** learning platform | ██████░░░░ |
+| 💊 Expand **MediMind** AI health assistant | █████░░░░░ |
+| 🧠 Explore **AI agents & automation systems** | █████░░░░░ |
+| 🌍 Contribute to **open source developer tools** | ████░░░░░░ |
+| 🎓 Secure a **developer internship before S4** | ███░░░░░░░ |
+
+</p>
+
+---
+
+# 🐍 Contribution Snake
+
+<p align="center">
+
+<img src="https://raw.githubusercontent.com/aspire488/aspire488/output/github-contribution-grid-snake.svg"/>
+
+</p>
+
+---
+
+<p align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:70a5fd,100:0d1117&height=120&section=footer"/>
+
+</p>
+
+<p align="center">
+
+⭐ If you like my projects, consider giving them a star.
+
+</p>
+
+<p align="center">
+
+Building in public • Learning through real projects
+
+</p>
