@@ -17,13 +17,14 @@
 I build systems, not just demos — focusing on execution, automation, and real-world behavior.
 🧠 Actively learning and iterating — building in public as a first-year engineering student.
 
-🚀 Current Focus
+### 🚀 Current Focus
 
-- ⚡ CodeFlow — interactive programming learning platform
-- 💊 MediMind — AI-powered health assistant prototype
-- 🤖 KIO — modular local automation system (CLI → real execution)
+- 🤖 **KIO** — modular local automation system (actively building)
 
----
+### 🧪 Prototype Projects
+
+- ⚡ **CodeFlow** — interactive programming learning platform  
+- 💊 **MediMind** — AI-powered health assistant prototype
 
 ⚡ What I’m Actually Doing
 
