@@ -25,7 +25,7 @@ Actively learning and iterating — building in public as an engineering student
 ### 🧪 Prototype Projects
 
 - ⚡ **CodeFlow** — interactive programming learning platform  
-- 💊 **MediMind** — AI-powered health assistant prototype
+- 💊 **MediMind** — AI-powered health assistant 
 
 ⚡ What I’m Actually Doing
 
