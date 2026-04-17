@@ -15,6 +15,7 @@
 📍 Ernakulam, Kerala, India
 
 I build systems, not just demos — focusing on execution, automation, and real-world behavior.
+🧠 Actively learning and iterating — building in public as a first-year engineering student.
 
 🚀 Current Focus
 
