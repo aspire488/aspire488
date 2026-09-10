@@ -100,7 +100,7 @@ AI-assisted medication-reminder and health-workflow prototype exploring role-spe
 
 ## 🔀 Open-Source Engineering Activity
 
-**7 merged pull requests across the engineering repositories**, covering packaging, CI hardening, public-development hardening, reproducible benchmarking, engineering documentation, and safety/testing contracts.
+**9 merged pull requests across the engineering repositories**, covering packaging, CI hardening, public-development hardening, reproducible benchmarking, engineering documentation, safety/testing contracts, and portfolio documentation.
 
 ### Recent merged work
 
@@ -109,14 +109,17 @@ AI-assisted medication-reminder and health-workflow prototype exploring role-spe
 - ✅ [UEA #9 — Reproducible deterministic benchmark harness](https://github.com/aspire488/Universal-Engineering-Augmentation/pull/9)
 - ✅ [CodeFlow #17 — Public development hardening](https://github.com/aspire488/codeflow/pull/17)
 - ✅ [CodeFlow #19 — Engineering architecture/testing model](https://github.com/aspire488/codeflow/pull/19)
+- ✅ [CodeFlow #23 — Engineering portfolio README](https://github.com/aspire488/codeflow/pull/23)
 - ✅ [MediMind #1 — Public development hardening](https://github.com/aspire488/medimind/pull/1)
 - ✅ [MediMind #3 — Safety and testing contract](https://github.com/aspire488/medimind/pull/3)
+- ✅ [MediMind #10 — Engineering portfolio README](https://github.com/aspire488/medimind/pull/10)
 
 ### Active engineering backlog
 
 - 🔧 [UEA #1 — First-class Claude Code adapter](https://github.com/aspire488/Universal-Engineering-Augmentation/issues/1)
 - 🔧 [UEA #2 — First-class Codex adapter](https://github.com/aspire488/Universal-Engineering-Augmentation/issues/2)
 - 🔧 [UEA #3 — Reproducible public benchmark suite](https://github.com/aspire488/Universal-Engineering-Augmentation/issues/3)
+- 🔧 [UEA #13 — Automated tagged releases](https://github.com/aspire488/Universal-Engineering-Augmentation/issues/13)
 - 🔧 [CodeFlow #18 — AST-backed execution model](https://github.com/aspire488/codeflow/issues/18)
 - 🔧 [MediMind #2 — Browser-level regression coverage](https://github.com/aspire488/medimind/issues/2)
 
