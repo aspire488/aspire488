@@ -24,59 +24,67 @@ I'm especially interested in the boundary between **AI reasoning and determinist
 
 ---
 
-## 🚀 What I'm Building
+## 🚀 Featured Engineering Work
 
-### 🧠 AURA — WIP / Long-Term Systems Project
+### 🛠️ Universal Engineering Augmentation — Public Alpha
 
-**Autonomous Unified Reasoning Architecture** — an event-driven cognitive runtime designed as infrastructure for persistent agents.
+**Tool-agnostic engineering infrastructure for coding agents.** Deterministic code intelligence, verification, property/mutation testing, formal reasoning, isolated candidates, provenance and specialist routing.
 
-Memory • identity • world model • reasoning • planning • reflection • learning • continuity • proactivity • stewardship
+`Python` `Tree-sitter` `Z3` `Hypothesis` `SQLite` `DuckDB` `MCP`
 
-🔗 **[aspire488/AURA](https://github.com/aspire488/AURA)**
+<a href="https://github.com/aspire488/Universal-Engineering-Augmentation"><img src="https://img.shields.io/github/stars/aspire488/Universal-Engineering-Augmentation?style=for-the-badge&label=Stars" alt="Universal Engineering Augmentation stars"/></a>
+<a href="https://github.com/aspire488/Universal-Engineering-Augmentation/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/Universal-Engineering-Augmentation/ci.yml?branch=main&style=for-the-badge&label=CI" alt="UEA CI"/></a>
+<a href="https://github.com/aspire488/Universal-Engineering-Augmentation"><img src="https://img.shields.io/github/license/aspire488/Universal-Engineering-Augmentation?style=for-the-badge" alt="UEA license"/></a>
+
+### 🧠 AURA — WIP
+
+**Autonomous Unified Reasoning Architecture** — an event-driven cognitive runtime exploring memory, identity, world modelling, reasoning, planning, reflection, learning and continuity for persistent agents.
+
+`Python` `Cognitive Architecture` `Event-Driven Systems` `Agents`
+
+<a href="https://github.com/aspire488/AURA"><img src="https://img.shields.io/github/stars/aspire488/AURA?style=for-the-badge&label=Stars" alt="AURA stars"/></a>
 
 ### 🤖 KIO — WIP / Active Build
 
-A personal local AI system focused on **real automation, system execution, continuity, and agentic behavior**.
+A personal local AI system focused on **automation, system execution, continuity, and agentic behavior**. KIO is also the private proving ground for the engineering-augmentation stack.
 
-🔗 **[aspire488/Kio](https://github.com/aspire488/Kio)**
+`Python` `Local AI` `Automation` `Agent Systems`
 
-### 🛠️ Universal Engineering Augmentation — Public / v0.1.0
-
-A **tool-agnostic engineering augmentation layer for coding agents**. Deterministic code intelligence, verification, testing, formal reasoning, candidate isolation, provenance, and specialist routing — designed to work alongside OpenCode, Claude Code, Codex, and other agents.
-
-**Status:** 🟢 Public Alpha • MIT • CI • Tests • Package Install
-
-🔗 **[aspire488/Universal-Engineering-Augmentation](https://github.com/aspire488/Universal-Engineering-Augmentation)**
+<a href="https://github.com/aspire488/Kio"><img src="https://img.shields.io/github/stars/aspire488/Kio?style=for-the-badge&label=Stars" alt="KIO stars"/></a>
 
 ---
 
-## 🧪 Prototype Projects
+## 🧪 Product Prototypes
 
 ### ⚡ CodeFlow — Prototype
-Interactive programming-learning platform with code visualization, quizzes, and an AI chatbot.
 
-**Stack:** JavaScript • Vite • PWA
+Interactive programming-learning platform with code visualization, execution-oriented teaching, quizzes and experimental AI assistance.
 
-🔗 [Repository](https://github.com/aspire488/codeflow) • [Live Demo](https://codeflow-app-sigma.vercel.app)
+`JavaScript` `Vite` `PWA`
+
+<a href="https://github.com/aspire488/codeflow"><img src="https://img.shields.io/github/stars/aspire488/codeflow?style=for-the-badge&label=Stars" alt="CodeFlow stars"/></a>
+<a href="https://codeflow-app-sigma.vercel.app"><img src="https://img.shields.io/badge/Live%20Demo-Open-success?style=for-the-badge" alt="CodeFlow live demo"/></a>
 
 ### 💊 MediMind — Prototype
-AI-powered health-assistant prototype exploring smart tracking, assistance, and caregiver-oriented workflows.
 
-**Stack:** JavaScript • Gemini API
+AI-assisted medication-reminder and health-workflow prototype exploring role-specific UX, deterministic reminders and bounded AI assistance.
 
-🔗 [Repository](https://github.com/aspire488/medimind) • [Live Demo](https://medimind-seven.vercel.app)
+`React` `Vite` `Gemini` `Accessibility`
+
+<a href="https://github.com/aspire488/medimind"><img src="https://img.shields.io/github/stars/aspire488/medimind?style=for-the-badge&label=Stars" alt="MediMind stars"/></a>
+<a href="https://medimind-seven.vercel.app"><img src="https://img.shields.io/badge/Live%20Demo-Open-success?style=for-the-badge" alt="MediMind live demo"/></a>
 
 ---
 
 ## 🧭 Project Portfolio
 
-| Project | Stage | Focus |
+| Project | Stage | Engineering focus |
 |---|---|---|
-| 🧠 **AURA** | 🟡 WIP | Cognitive architecture / persistent agents |
+| 🛠️ **Universal Engineering Augmentation** | 🟢 Public Alpha | Agent-neutral engineering infrastructure |
+| 🧠 **AURA** | 🟡 WIP | Cognitive runtime / persistent agents |
 | 🤖 **KIO** | 🟡 WIP | Local AI / automation / system execution |
-| 🛠️ **Universal Engineering Augmentation** | 🟢 Public Alpha | Coding-agent engineering infrastructure |
-| ⚡ **CodeFlow** | 🔵 Prototype | Programming education / interactive tooling |
-| 💊 **MediMind** | 🔵 Prototype | AI-assisted health workflows |
+| ⚡ **CodeFlow** | 🔵 Prototype | Execution visualization / learning systems |
+| 💊 **MediMind** | 🔵 Prototype | AI boundaries / health workflow UX |
 
 ---
 
@@ -158,7 +166,7 @@ I'm exploring systems where:
 </picture>
 </p>
 
-> **Profile infrastructure:** these cards are generated by GitHub Actions and committed into this profile repository, so the README does not depend on fragile public stats endpoints or third-party image requests at page-view time.
+> **Profile infrastructure:** these cards are generated by GitHub Actions and committed into this profile repository, so the README does not depend on fragile public stats endpoints at page-view time.
 
 ---
 
@@ -166,11 +174,9 @@ I'm exploring systems where:
 
 I'm building toward a serious open-source engineering portfolio rather than chasing artificial activity.
 
-**Current direction:**
-
 `Build` → `Measure` → `Verify` → `Document` → `Open Source` → `Iterate`
 
-The goal is to turn projects like AURA, KIO, and Universal Engineering Augmentation into increasingly robust systems while learning through real implementation and public iteration.
+The goal is to turn AURA, KIO and Universal Engineering Augmentation into increasingly robust systems while learning through real implementation and public iteration.
 
 ---
 
