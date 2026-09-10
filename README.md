@@ -1,4 +1,11 @@
-# Joel Jigo
+<p align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1b27,100:70a5fd&height=220&section=header&text=Joel%20%7C%20aspire488&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=CS%20Student%20%E2%80%A2%20Builder%20%E2%80%A2%20Systems%20Focus&descAlignY=56&descSize=16" width="100%"/>
+</p>
+<p align="center">
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&pause=900&color=70A5FD&center=true&vCenter=true&width=800&lines=Building+systems+that+actually+do+things.;From+ideas+to+execution.;Automation+%2B+AI+%2B+real+tools.;Learning+by+shipping.;Engineering+systems%2C+not+just+demos."/>
+</p>
+
+# 👋 Joel — systems-focused CSE student
 
 **CSE student · systems-focused builder · software engineering / AI infrastructure**
 
@@ -55,13 +62,12 @@ A medication-reminder and health-workflow prototype exploring role-based UX, acc
 
 ## Open-source activity
 
-**9 merged engineering PRs** across the three public engineering repositories, covering packaging, CI hardening, benchmarks, testing contracts, architecture documentation, safety boundaries, and release infrastructure.
+**13 merged engineering PRs** across the three public engineering repositories, covering packaging, CI hardening, benchmarks, testing contracts, architecture documentation, safety boundaries, and release infrastructure.
 
 ### Active pull requests
 
-- [UEA #14 — Tagged release automation](https://github.com/aspire488/Universal-Engineering-Augmentation/pull/14)
-- [MediMind #11 — Browser regression coverage](https://github.com/aspire488/medimind/pull/11)
-- [CodeFlow #25 — Tagged release workflow](https://github.com/aspire488/codeflow/pull/25)
+- [UEA #15 — Agent adapter and CLI integration](https://github.com/aspire488/Universal-Engineering-Augmentation/pull/15)
+- [Profile #3 — Portfolio activity refresh](https://github.com/aspire488/aspire488/pull/3)
 
 These are real engineering changes under review — not placeholder PRs created to inflate activity.
 
@@ -116,6 +122,15 @@ The cards below are generated from GitHub data by GitHub Actions and stored loca
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/languages.dark.svg" />
   <img alt="Language composition" src="./assets/profile/languages.light.svg" width="100%" />
 </picture>
+
+---
+
+<p align="center">
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&pause=900&color=70A5FD&center=true&vCenter=true&width=800&lines=Not+just+building+ideas...;Building+systems+that+execute.;Turning+code+into+real+world+actions.;Learning+by+shipping.;Building+in+public."/>
+</p>
+<p align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:70a5fd,100:0d1117&height=140&section=footer" width="100%"/>
+</p>
 
 ---
 
