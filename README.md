@@ -13,30 +13,32 @@
 
 ---
 
-## 👋 About Me
+# 👋 Joel — systems-focused CSE student
 
-🎓 **B.Tech Computer Science Engineering Student**  
-🏫 SCMS School of Engineering and Technology  
-📍 Ernakulam, Kerala, India
+I build **AI systems, developer tools, automation, and experimental software systems** with an emphasis on execution, architecture, verification, and measurable behavior.
 
-I build systems with a focus on **execution, automation, architecture, verification, and real-world behavior**.
+My main engineering question is simple:
 
-My main engineering interest is the boundary between **AI reasoning and deterministic software**: use models for ambiguity and strategy, and reliable software for work that can be verified mechanically.
+> **What should an AI reason about, and what should reliable software do deterministically?**
+
+I am learning by shipping public prototypes, hardening them with tests and CI, and documenting the trade-offs.
 
 ---
 
-## 🚀 Featured Engineering Work
+## 🏗️ Engineering Portfolio
 
 ### 🛠️ Universal Engineering Augmentation — Public Alpha
 
-**Agent-neutral engineering infrastructure for coding agents.** Provides deterministic code intelligence, verification, property/mutation testing, formal reasoning, isolated candidate execution, provenance, specialist routing, and reusable capabilities across agent ecosystems.
+Agent-neutral engineering infrastructure for coding agents. It combines deterministic code intelligence, verification, property/mutation testing, formal reasoning, isolated candidate execution, provenance, specialist routing, and reusable capabilities.
+
+**Engineering evidence:** Python package + CI, 51 automated tests, 16 verification checks, deterministic Tree-sitter/Z3/Hypothesis capabilities, reproducible benchmark harness, MCP/tool integration.
 
 `Python` `Tree-sitter` `Z3` `Hypothesis` `SQLite` `DuckDB` `MCP`
 
-<a href="https://github.com/aspire488/Universal-Engineering-Augmentation"><img src="https://img.shields.io/github/stars/aspire488/Universal-Engineering-Augmentation?style=for-the-badge&label=Stars" alt="UEA stars"/></a>
-<a href="https://github.com/aspire488/Universal-Engineering-Augmentation/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/Universal-Engineering-Augmentation/ci.yml?branch=main&style=for-the-badge&label=CI" alt="UEA CI"/></a>
-<a href="https://github.com/aspire488/Universal-Engineering-Augmentation/pulls?q=is%3Apr+is%3Amerged"><img src="https://img.shields.io/github/issues-pr-closed/aspire488/Universal-Engineering-Augmentation?style=for-the-badge&label=Merged%20PRs" alt="UEA merged pull requests"/></a>
-<a href="https://github.com/aspire488/Universal-Engineering-Augmentation/issues"><img src="https://img.shields.io/github/issues/aspire488/Universal-Engineering-Augmentation?style=for-the-badge&label=Issues" alt="UEA issues"/></a>
+<a href="https://github.com/aspire488/Universal-Engineering-Augmentation"><img src="https://img.shields.io/badge/Repository-Open-70a5fd?style=for-the-badge"/></a>
+<a href="https://github.com/aspire488/Universal-Engineering-Augmentation/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/Universal-Engineering-Augmentation/ci.yml?branch=main&style=for-the-badge&label=CI"/></a>
+<a href="https://github.com/aspire488/Universal-Engineering-Augmentation/pulls?q=is%3Apr+is%3Amerged"><img src="https://img.shields.io/github/issues-pr-closed/aspire488/Universal-Engineering-Augmentation?style=for-the-badge&label=Merged%20PRs"/></a>
+<a href="https://github.com/aspire488/Universal-Engineering-Augmentation/issues"><img src="https://img.shields.io/github/issues/aspire488/Universal-Engineering-Augmentation?style=for-the-badge&label=Open%20Issues"/></a>
 
 ### 🧠 AURA — WIP
 
@@ -44,17 +46,15 @@ My main engineering interest is the boundary between **AI reasoning and determin
 
 `Python` `Cognitive Architecture` `Event-Driven Systems` `Agents`
 
-<a href="https://github.com/aspire488/AURA"><img src="https://img.shields.io/github/stars/aspire488/AURA?style=for-the-badge&label=Stars" alt="AURA stars"/></a>
-<a href="https://github.com/aspire488/AURA"><img src="https://img.shields.io/badge/Explore-Repository-70a5fd?style=for-the-badge" alt="Explore AURA"/></a>
+<a href="https://github.com/aspire488/AURA"><img src="https://img.shields.io/badge/Repository-Explore-70a5fd?style=for-the-badge"/></a>
 
 ### 🤖 KIO — WIP / Active Build
 
-A personal local AI system focused on **automation, system execution, continuity, and agentic behavior**. KIO is also a proving ground for engineering-system ideas.
+A personal local AI system focused on automation, system execution, continuity, and agentic behavior. KIO is also a proving ground for engineering-system ideas.
 
 `Python` `Local AI` `Automation` `Agent Systems`
 
-<a href="https://github.com/aspire488/Kio"><img src="https://img.shields.io/github/stars/aspire488/Kio?style=for-the-badge&label=Stars" alt="KIO stars"/></a>
-<a href="https://github.com/aspire488/Kio"><img src="https://img.shields.io/badge/Explore-Repository-70a5fd?style=for-the-badge" alt="Explore KIO"/></a>
+<a href="https://github.com/aspire488/Kio"><img src="https://img.shields.io/badge/Repository-Explore-70a5fd?style=for-the-badge"/></a>
 
 ---
 
@@ -62,89 +62,78 @@ A personal local AI system focused on **automation, system execution, continuity
 
 ### ⚡ CodeFlow — Prototype
 
-Interactive programming-learning platform with code visualization, execution-oriented teaching, quizzes, logic games, and experimental AI assistance.
+Interactive programming-learning platform focused on visible execution, code visualization, quizzes, logic games, and experimental AI assistance.
 
-`JavaScript` `Vite` `PWA`
+**Live:** <a href="https://codeflow-app-sigma.vercel.app">codeflow-app-sigma.vercel.app</a>
 
-<a href="https://codeflow-app-sigma.vercel.app"><img src="https://img.shields.io/badge/▶%20LIVE%20DEMO-Open-success?style=for-the-badge" alt="CodeFlow live demo"/></a>
-<a href="https://github.com/aspire488/codeflow"><img src="https://img.shields.io/github/stars/aspire488/codeflow?style=for-the-badge&label=Stars" alt="CodeFlow stars"/></a>
-<a href="https://github.com/aspire488/codeflow/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/codeflow/ci.yml?branch=main&style=for-the-badge&label=CI" alt="CodeFlow CI"/></a>
+`JavaScript` `Vite` `PWA` `Execution Visualization`
+
+<a href="https://codeflow-app-sigma.vercel.app"><img src="https://img.shields.io/badge/▶%20LIVE%20DEMO-Open-success?style=for-the-badge"/></a>
+<a href="https://github.com/aspire488/codeflow"><img src="https://img.shields.io/badge/Source-GitHub-70a5fd?style=for-the-badge"/></a>
+<a href="https://github.com/aspire488/codeflow/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/codeflow/ci.yml?branch=main&style=for-the-badge&label=CI"/></a>
 
 ### 💊 MediMind — Prototype
 
 AI-assisted medication-reminder and health-workflow prototype exploring role-specific UX, deterministic reminders, accessibility, and bounded AI assistance.
 
-`React` `Vite` `Gemini` `Accessibility`
+**Live:** <a href="https://medimind-seven.vercel.app">medimind-seven.vercel.app</a>
 
-<a href="https://medimind-seven.vercel.app"><img src="https://img.shields.io/badge/▶%20LIVE%20DEMO-Open-success?style=for-the-badge" alt="MediMind live demo"/></a>
-<a href="https://github.com/aspire488/medimind"><img src="https://img.shields.io/github/stars/aspire488/medimind?style=for-the-badge&label=Stars" alt="MediMind stars"/></a>
-<a href="https://github.com/aspire488/medimind/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/medimind/ci.yml?branch=main&style=for-the-badge&label=CI" alt="MediMind CI"/></a>
+`React` `Vite` `Gemini` `Accessibility` `Safety Boundaries`
+
+<a href="https://medimind-seven.vercel.app"><img src="https://img.shields.io/badge/▶%20LIVE%20DEMO-Open-success?style=for-the-badge"/></a>
+<a href="https://github.com/aspire488/medimind"><img src="https://img.shields.io/badge/Source-GitHub-70a5fd?style=for-the-badge"/></a>
+<a href="https://github.com/aspire488/medimind/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/medimind/ci.yml?branch=main&style=for-the-badge&label=CI"/></a>
 
 ---
 
-## 🔗 Project Hub
+## 🔗 Project Map
 
-| Project | Stage | What to inspect |
+| Project | Stage | Engineering signal |
 |---|---|---|
-| 🛠️ [Universal Engineering Augmentation](https://github.com/aspire488/Universal-Engineering-Augmentation) | 🟢 Public Alpha | Deterministic engineering + verification |
-| 🧠 [AURA](https://github.com/aspire488/AURA) | 🟡 WIP | Cognitive runtime architecture |
-| 🤖 [KIO](https://github.com/aspire488/Kio) | 🟡 WIP | Local AI + system execution |
-| ⚡ [CodeFlow](https://github.com/aspire488/codeflow) | 🔵 Prototype | Execution visualization + learning |
-| 💊 [MediMind](https://github.com/aspire488/medimind) | 🔵 Prototype | AI boundaries + health workflow UX |
-
-**Live demos:** [CodeFlow](https://codeflow-app-sigma.vercel.app) · [MediMind](https://medimind-seven.vercel.app)
+| [Universal Engineering Augmentation](https://github.com/aspire488/Universal-Engineering-Augmentation) | 🟢 Public Alpha | Deterministic engineering + verification |
+| [AURA](https://github.com/aspire488/AURA) | 🟡 WIP | Cognitive runtime architecture |
+| [KIO](https://github.com/aspire488/Kio) | 🟡 WIP | Local AI + system execution |
+| [CodeFlow](https://github.com/aspire488/codeflow) | 🔵 Prototype | Execution visualization + learning |
+| [MediMind](https://github.com/aspire488/medimind) | 🔵 Prototype | AI boundaries + workflow UX |
 
 ---
 
 ## 🔀 Open-Source Engineering Activity
 
-I am building these projects through real issues, pull requests, CI gates, tests, and documented iteration — not artificial activity.
+**7 merged pull requests across the portfolio**, covering packaging, CI hardening, public-development hardening, reproducible benchmarking, engineering documentation, and safety/testing contracts.
 
-### Recent engineering work
+### Recent merged work
 
-- ✅ [UEA #5 — Canonical Python packaging](https://github.com/aspire488/Universal-Engineering-Augmentation/pull/5) — merged
-- ✅ [UEA #7 — Validate canonical package installation in CI](https://github.com/aspire488/Universal-Engineering-Augmentation/pull/7) — merged
-- ✅ [CodeFlow #17 — Public development hardening](https://github.com/aspire488/codeflow/pull/17) — merged
-- 🔧 [UEA #8 — Reproducible benchmark harness](https://github.com/aspire488/Universal-Engineering-Augmentation/issues/8) — active roadmap
-- 🔧 [CodeFlow #18 — AST-backed execution model](https://github.com/aspire488/codeflow/issues/18) — active roadmap
-- 🔧 [MediMind #2 — Browser-level regression coverage](https://github.com/aspire488/medimind/issues/2) — active roadmap
+- ✅ [UEA #5 — Canonical Python packaging](https://github.com/aspire488/Universal-Engineering-Augmentation/pull/5)
+- ✅ [UEA #7 — Canonical package installation in CI](https://github.com/aspire488/Universal-Engineering-Augmentation/pull/7)
+- ✅ [UEA #9 — Reproducible deterministic benchmark harness](https://github.com/aspire488/Universal-Engineering-Augmentation/pull/9)
+- ✅ [CodeFlow #17 — Public development hardening](https://github.com/aspire488/codeflow/pull/17)
+- ✅ [CodeFlow #19 — Engineering architecture/testing model](https://github.com/aspire488/codeflow/pull/19)
+- ✅ [MediMind #1 — Public development hardening](https://github.com/aspire488/medimind/pull/1)
+- ✅ [MediMind #3 — Safety and testing contract](https://github.com/aspire488/medimind/pull/3)
 
-### Engineering signals
+### Active engineering backlog
 
-<p align="center">
-<a href="https://github.com/aspire488/Universal-Engineering-Augmentation/pulls?q=is%3Apr+is%3Amerged"><img src="https://img.shields.io/github/issues-pr-closed/aspire488/Universal-Engineering-Augmentation?style=for-the-badge&label=UEA%20Merged%20PRs" alt="UEA merged PRs"/></a>
-<a href="https://github.com/aspire488/codeflow/pulls?q=is%3Apr+is%3Amerged"><img src="https://img.shields.io/github/issues-pr-closed/aspire488/codeflow?style=for-the-badge&label=CodeFlow%20Merged%20PRs" alt="CodeFlow merged PRs"/></a>
-<a href="https://github.com/aspire488/Universal-Engineering-Augmentation/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/Universal-Engineering-Augmentation/ci.yml?branch=main&style=for-the-badge&label=Engineering%20CI" alt="Engineering CI"/></a>
-</p>
+- 🔧 [UEA #8 — Reproducible benchmark harness](https://github.com/aspire488/Universal-Engineering-Augmentation/issues/8) — completed via PR #9
+- 🔧 [CodeFlow #18 — AST-backed execution model](https://github.com/aspire488/codeflow/issues/18)
+- 🔧 [MediMind #2 — Browser-level regression coverage](https://github.com/aspire488/medimind/issues/2)
 
-> GitHub achievements are earned by genuine activity. I am optimizing for meaningful engineering work, not manufactured commits, stars, issues, or PRs.
-
----
-
-## ⚡ Engineering Philosophy
-
-> **Don't use an LLM for work that software can do deterministically.**
-
-- 🧠 LLMs handle strategy, ambiguity, and novel reasoning
-- ⚙️ Deterministic tools handle repeatable engineering work
-- 🔬 Verification catches what generation misses
-- 🧩 Modular architecture keeps systems replaceable
-- 📈 Measurement comes before optimization
-- 🚀 Real execution matters more than polished demos
+> GitHub achievements are earned through genuine activity. The goal here is strong engineering work, not manufactured commits, stars, issues, or PRs.
 
 ---
 
-## 🧩 Interests
+## 🧠 Engineering Philosophy
 
-<p align="center">
-<img src="https://img.shields.io/badge/AI%20Systems-0d1117?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Developer%20Tools-0d1117?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Automation-0d1117?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Systems%20Design-0d1117?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Agent%20Architecture-0d1117?style=for-the-badge"/>
-</p>
+- **LLMs for ambiguity and strategy; software for deterministic work.**
+- **Verification is part of generation**, not an afterthought.
+- **Measure before claiming optimization.**
+- **Prefer replaceable components and explicit boundaries.**
+- **Ship prototypes, then harden the useful parts.**
+- **Real execution matters more than polished screenshots.**
 
-## 🛠 Tech Stack
+---
+
+## 🛠️ Stack
 
 <p align="center">
 <strong>Languages</strong><br/>
@@ -189,20 +178,20 @@ I am building these projects through real issues, pull requests, CI gates, tests
 </picture>
 </p>
 
-> Profile cards are generated by GitHub Actions and committed into this repository, avoiding fragile public statistics endpoints at page-view time.
+> Activity cards are generated by GitHub Actions and committed locally to this profile repository, avoiding fragile third-party statistics endpoints.
 
 ---
 
-## 🎯 Current Engineering Goals
+## 🎯 Current Direction
 
-| Goal | Direction |
+| Track | Next milestone |
 |---|---|
-| 🤖 KIO | Real automation + reliable execution |
-| 🧠 AURA | Persistent cognitive runtime |
-| 🛠️ UEA | Mature, reusable open-source engineering infrastructure |
-| ⚡ CodeFlow | AST-backed execution + browser regression coverage |
-| 💊 MediMind | Safer prototype architecture + accessibility/regression testing |
-| 🌍 Open Source | Real users, contributors, issues, PRs, and releases |
+| 🤖 KIO | Reliable real-world automation + execution |
+| 🧠 AURA | Persistent cognitive runtime layers |
+| 🛠️ UEA | Mature reusable engineering infrastructure |
+| ⚡ CodeFlow | AST-backed execution + browser regression |
+| 💊 MediMind | Regression testing + safer prototype boundaries |
+| 🌍 Open Source | Contributors, releases, issues, reviews, and real users |
 
 ---
 
