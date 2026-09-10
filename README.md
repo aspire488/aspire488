@@ -18,13 +18,14 @@ A tool-agnostic engineering layer that gives coding agents deterministic capabil
 **Engineering evidence**
 - Python package with canonical installation
 - CI across Python 3.10–3.12
-- 51 automated tests + 16 verification checks
+- 52+ automated tests + 16 verification checks
 - Tree-sitter structural analysis, Z3 verification, Hypothesis property testing
 - candidate isolation, provenance, specialist routing, event logging
 - reproducible deterministic benchmark harness
 - Dependabot + tagged release automation
+- Claude Code, Codex, and generic CLI integration surfaces
 
-**Current:** Claude Code / Codex adapters and broader language support are the next major milestones.
+**Current:** broader language support and external open-source contribution are the next major milestones.
 
 ### ⚡ [CodeFlow](https://github.com/aspire488/codeflow)
 **Prototype · JavaScript / Vite · execution-based learning**
@@ -48,22 +49,24 @@ A medication-reminder and health-workflow prototype exploring role-based UX, acc
 - synthetic-data boundary
 - explicit non-clinical safety contract
 - production-build CI
-- browser regression suite in active review
+- Playwright browser regression smoke coverage
 - live deployment: https://medimind-seven.vercel.app
 
 ---
 
 ## Open-source activity
 
-**9 merged engineering PRs** across the three public engineering repositories, covering packaging, CI hardening, benchmarks, testing contracts, architecture documentation, safety boundaries, and release infrastructure.
+**13 merged engineering PRs** across the three public engineering repositories, covering packaging, CI hardening, benchmarks, testing contracts, browser regression, architecture documentation, safety boundaries, adapter integration, and release infrastructure.
 
-### Active pull requests
+### Current engineering work
 
-- [UEA #14 — Tagged release automation](https://github.com/aspire488/Universal-Engineering-Augmentation/pull/14)
-- [MediMind #11 — Browser regression coverage](https://github.com/aspire488/medimind/pull/11)
-- [CodeFlow #25 — Tagged release workflow](https://github.com/aspire488/codeflow/pull/25)
+- [UEA #15 — Agent adapter + CLI integration](https://github.com/aspire488/Universal-Engineering-Augmentation/pull/15)
 
-These are real engineering changes under review — not placeholder PRs created to inflate activity.
+These are real engineering changes — not placeholder activity created to inflate a profile.
+
+### What comes next
+
+The next portfolio milestone is **external open-source collaboration**: meaningful contributions to projects I do not own, followed by reviews/issues and longer-term maintainer relationships.
 
 ---
 
@@ -90,10 +93,10 @@ These are real engineering changes under review — not placeholder PRs created 
 
 ## Current roadmap
 
-1. Ship the first-class Claude Code and Codex adapters for UEA.
+1. Complete the UEA adapter/CLI release path.
 2. Finish the AST-backed execution model in CodeFlow.
 3. Expand browser regression coverage in MediMind.
-4. Build real external open-source contribution history beyond my own repositories.
+4. Build genuine external open-source contribution history.
 5. Turn the strongest systems into documented, versioned releases with reproducible benchmarks.
 
 ---
