@@ -100,7 +100,7 @@ AI-assisted medication-reminder and health-workflow prototype exploring role-spe
 
 ## 🔀 Open-Source Engineering Activity
 
-**9 merged pull requests across the engineering repositories**, covering packaging, CI hardening, public-development hardening, reproducible benchmarking, engineering documentation, safety/testing contracts, and portfolio documentation.
+**13 merged pull requests across the engineering repositories**, covering packaging, CI hardening, public-development hardening, reproducible benchmarking, engineering documentation, safety/testing contracts, and portfolio documentation.
 
 ### Recent merged work
 
@@ -114,14 +114,9 @@ AI-assisted medication-reminder and health-workflow prototype exploring role-spe
 - ✅ [MediMind #3 — Safety and testing contract](https://github.com/aspire488/medimind/pull/3)
 - ✅ [MediMind #10 — Engineering portfolio README](https://github.com/aspire488/medimind/pull/10)
 
-### Active engineering backlog
+### 🌍 External open-source contribution
 
-- 🔧 [UEA #1 — First-class Claude Code adapter](https://github.com/aspire488/Universal-Engineering-Augmentation/issues/1)
-- 🔧 [UEA #2 — First-class Codex adapter](https://github.com/aspire488/Universal-Engineering-Augmentation/issues/2)
-- 🔧 [UEA #3 — Reproducible public benchmark suite](https://github.com/aspire488/Universal-Engineering-Augmentation/issues/3)
-- 🔧 [UEA #13 — Automated tagged releases](https://github.com/aspire488/Universal-Engineering-Augmentation/issues/13)
-- 🔧 [CodeFlow #18 — AST-backed execution model](https://github.com/aspire488/codeflow/issues/18)
-- 🔧 [MediMind #2 — Browser-level regression coverage](https://github.com/aspire488/medimind/issues/2)
+- 🔄 [N3MO #39 — Ruby/Kotlin language-routing and parser regression coverage](https://github.com/RajX-dev/N3MO/pull/39) — **open upstream PR**
 
 > GitHub achievements are earned through genuine activity. The goal here is strong engineering work, not manufactured commits, stars, issues, or PRs.
 
