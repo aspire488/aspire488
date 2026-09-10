@@ -100,7 +100,7 @@ AI-assisted medication-reminder and health-workflow prototype exploring role-spe
 
 ## 🔀 Open-Source Engineering Activity
 
-**7 merged pull requests across the portfolio**, covering packaging, CI hardening, public-development hardening, reproducible benchmarking, engineering documentation, and safety/testing contracts.
+**7 merged pull requests across the engineering repositories**, covering packaging, CI hardening, public-development hardening, reproducible benchmarking, engineering documentation, and safety/testing contracts.
 
 ### Recent merged work
 
@@ -114,7 +114,9 @@ AI-assisted medication-reminder and health-workflow prototype exploring role-spe
 
 ### Active engineering backlog
 
-- 🔧 [UEA #8 — Reproducible benchmark harness](https://github.com/aspire488/Universal-Engineering-Augmentation/issues/8) — completed via PR #9
+- 🔧 [UEA #1 — First-class Claude Code adapter](https://github.com/aspire488/Universal-Engineering-Augmentation/issues/1)
+- 🔧 [UEA #2 — First-class Codex adapter](https://github.com/aspire488/Universal-Engineering-Augmentation/issues/2)
+- 🔧 [UEA #3 — Reproducible public benchmark suite](https://github.com/aspire488/Universal-Engineering-Augmentation/issues/3)
 - 🔧 [CodeFlow #18 — AST-backed execution model](https://github.com/aspire488/codeflow/issues/18)
 - 🔧 [MediMind #2 — Browser-level regression coverage](https://github.com/aspire488/medimind/issues/2)
 
