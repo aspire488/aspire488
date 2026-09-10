@@ -1,115 +1,182 @@
-<div align="center">
-
-# Joel Jigo · `aspire488`
-
-**Computer Science Engineering Student · Builder · Systems & Automation**
-
-[![Profile Views](https://komarev.com/ghpvc/?username=aspire488&style=flat-square&color=70a5fd)](https://github.com/aspire488)
-[![Followers](https://img.shields.io/github/followers/aspire488?style=flat-square)](https://github.com/aspire488?tab=followers)
-[![Stars](https://img.shields.io/github/stars/aspire488?style=flat-square)](https://github.com/aspire488?tab=repositories)
-
-</div>
+<p align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1b27,100:70a5fd&height=220&section=header&text=Joel%20%7C%20aspire488&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=CS%20Student%20%E2%80%A2%20Builder%20%E2%80%A2%20Systems%20Focus&descAlignY=56&descSize=16" width="100%"/>
+</p>
+<p align="center">
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&pause=900&color=70A5FD&center=true&vCenter=true&width=800&lines=Building+systems+that+actually+do+things.;From+ideas+to+execution.;Automation+%2B+AI+%2B+real+tools.;Learning+by+shipping.;Engineering+systems%2C+not+just+demos."/>
+</p>
+<p align="center">
+<img src="https://komarev.com/ghpvc/?username=aspire488&color=70a5fd&style=flat-square&label=Profile+Views"/>
+<img src="https://img.shields.io/github/followers/aspire488?style=flat-square&color=70a5fd&label=Followers"/>
+<img src="https://img.shields.io/github/stars/aspire488?style=flat-square&color=70a5fd&label=Stars"/>
+<img src="https://img.shields.io/github/repos/aspire488?style=flat-square&color=70a5fd&label=Public+Repos"/>
+</p>
 
 ---
 
 ## 👋 About Me
 
-I'm a B.Tech Computer Science Engineering student based in **Kerala, India**, interested in building software that goes beyond demos and actually **executes, automates, verifies, and learns from real workflows**.
+🎓 **B.Tech Computer Science Engineering Student**  
+🏫 SCMS School of Engineering and Technology  
+📍 Ernakulam, Kerala, India
 
-My focus is on systems engineering, developer tooling, automation, AI-assisted software engineering, and local-first architectures.
+I build systems, not just demos — with a focus on **execution, automation, architecture, and real-world behavior**.
 
-### 🚀 What I'm building
-
-- **[Universal Engineering Augmentation](https://github.com/aspire488/Universal-Engineering-Augmentation)** — a tool-agnostic engineering augmentation layer for coding agents. It provides deterministic code intelligence, verification, testing, formal constraints, candidate isolation, specialist routing, provenance, and analytics.
-- **KIO** — a modular local automation / AI system focused on real system execution.
-- **CodeFlow** — an interactive programming-learning platform.
-- **MediMind** — an AI-assisted health application prototype.
+I'm especially interested in the boundary between **AI reasoning and deterministic software systems**: letting models handle ambiguity and strategy while reliable software handles the work that does not need an LLM.
 
 ---
 
-## 🧠 Engineering Focus
+## 🚀 What I'm Building
+
+### 🧠 AURA — WIP / Long-Term Systems Project
+
+**Autonomous Unified Reasoning Architecture** — an event-driven cognitive runtime designed as infrastructure for persistent agents.
+
+Memory • identity • world model • reasoning • planning • reflection • learning • continuity • proactivity • stewardship
+
+🔗 **[aspire488/AURA](https://github.com/aspire488/AURA)**
+
+### 🤖 KIO — WIP / Active Build
+
+A personal local AI system focused on **real automation, system execution, continuity, and agentic behavior**.
+
+🔗 **[aspire488/Kio](https://github.com/aspire488/Kio)**
+
+### 🛠️ Universal Engineering Augmentation — Public / v0.1.0
+
+A **tool-agnostic engineering augmentation layer for coding agents**. Deterministic code intelligence, verification, testing, formal reasoning, candidate isolation, provenance, and specialist routing — designed to work alongside OpenCode, Claude Code, Codex, and other agents.
+
+**Status:** 🟢 Public Alpha • MIT • CI • Tests • Package Install
+
+🔗 **[aspire488/Universal-Engineering-Augmentation](https://github.com/aspire488/Universal-Engineering-Augmentation)**
+
+---
+
+## 🧪 Prototype Projects
+
+### ⚡ CodeFlow — Prototype
+Interactive programming-learning platform with code visualization, quizzes, and an AI chatbot.
+
+**Stack:** JavaScript • Vite • PWA
+
+🔗 [Repository](https://github.com/aspire488/codeflow) • [Live Demo](https://codeflow-app-sigma.vercel.app)
+
+### 💊 MediMind — Prototype
+AI-powered health-assistant prototype exploring smart tracking, assistance, and caregiver-oriented workflows.
+
+**Stack:** JavaScript • Gemini API
+
+🔗 [Repository](https://github.com/aspire488/medimind) • [Live Demo](https://medimind-seven.vercel.app)
+
+---
+
+## 🧭 Project Portfolio
+
+| Project | Stage | Focus |
+|---|---|---|
+| 🧠 **AURA** | 🟡 WIP | Cognitive architecture / persistent agents |
+| 🤖 **KIO** | 🟡 WIP | Local AI / automation / system execution |
+| 🛠️ **Universal Engineering Augmentation** | 🟢 Public Alpha | Coding-agent engineering infrastructure |
+| ⚡ **CodeFlow** | 🔵 Prototype | Programming education / interactive tooling |
+| 💊 **MediMind** | 🔵 Prototype | AI-assisted health workflows |
+
+---
+
+## ⚡ Engineering Philosophy
+
+> **Don't use an LLM for work that software can do deterministically.**
+
+I'm exploring systems where:
+
+- 🧠 LLMs handle strategy, ambiguity, and novel reasoning
+- ⚙️ Deterministic tools handle repeatable engineering work
+- 🔬 Verification catches what generation misses
+- 🧩 Modular architecture keeps systems replaceable
+- 📈 Measurement comes before optimization
+- 🚀 Real execution matters more than polished demos
+
+---
+
+## 🧩 Interests
 
 <p align="center">
-
-![AI Systems](https://img.shields.io/badge/AI%20Systems-111827?style=for-the-badge)
-![Developer Tools](https://img.shields.io/badge/Developer%20Tools-111827?style=for-the-badge)
-![Automation](https://img.shields.io/badge/Automation-111827?style=for-the-badge)
-![Systems Design](https://img.shields.io/badge/Systems%20Design-111827?style=for-the-badge)
-![Software Verification](https://img.shields.io/badge/Software%20Verification-111827?style=for-the-badge)
-
+<img src="https://img.shields.io/badge/AI%20Systems-0d1117?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Developer%20Tools-0d1117?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Automation-0d1117?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Systems%20Design-0d1117?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Agent%20Architecture-0d1117?style=for-the-badge"/>
 </p>
-
-I especially like the boundary between **LLM reasoning and deterministic engineering systems**: let models handle novel reasoning while tools handle work that can be computed, checked, reproduced, or verified.
 
 ---
 
 ## 🛠 Tech Stack
 
 <p align="center">
-
-<img src="https://skillicons.dev/icons?i=python,js,c,html,css,react,nodejs,vite,tailwind,electron,git,github,linux&theme=dark"/>
-
+<strong>Languages</strong><br/>
+<img src="https://skillicons.dev/icons?i=python,js,c,html,css&theme=dark"/>
+<br/><br/>
+<strong>Frameworks & Platforms</strong><br/>
+<img src="https://skillicons.dev/icons?i=react,nodejs,vite,tailwind,electron,fastapi&theme=dark"/>
+<br/><br/>
+<strong>Tools & Infrastructure</strong><br/>
+<img src="https://skillicons.dev/icons?i=git,github,vscode,vercel,linux,docker,postgres,redis&theme=dark"/>
 </p>
-
-**Currently exploring:** developer infrastructure, coding-agent architectures, MCP, static analysis, formal methods, property/mutation testing, event-driven systems, and local AI.
-
----
-
-## ⭐ Featured Project
-
-### Universal Engineering Augmentation
-
-[![CI](https://github.com/aspire488/Universal-Engineering-Augmentation/actions/workflows/ci.yml/badge.svg)](https://github.com/aspire488/Universal-Engineering-Augmentation/actions/workflows/ci.yml)
-[![Version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/aspire488/Universal-Engineering-Augmentation)
-[![License](https://img.shields.io/github/license/aspire488/Universal-Engineering-Augmentation)](https://github.com/aspire488/Universal-Engineering-Augmentation/blob/main/LICENSE)
-
-A reusable engineering layer designed to work **across coding agents**, rather than becoming another agent-specific framework.
-
-**Highlights:**
-- 🌳 Structural code intelligence
-- 🔍 Dependency and impact analysis
-- ✅ Tiered deterministic verification
-- 🧪 Property and mutation testing
-- 🧮 SAT/SMT formal constraints
-- 🌿 Git worktree candidate isolation
-- 🧭 Deterministic-first specialist routing
-- 🔗 Evidence provenance
-- 📊 SQLite + DuckDB engineering analytics
-- 🔌 Agent-neutral adapter architecture
-
-**Repository:** https://github.com/aspire488/Universal-Engineering-Augmentation
 
 ---
 
 ## 📊 GitHub Activity
 
-<div align="center">
+<p align="center">
+<img src="https://github-readme-stats.vercel.app/api?username=aspire488&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&count_private=true" height="180"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=aspire488&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&langs_count=8" height="180"/>
+</p>
 
-<img src="https://github-readme-stats.vercel.app/api?username=aspire488&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117" height="170"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=aspire488&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117" height="170"/>
+### 🔥 Contribution Streak
 
-</div>
+<p align="center">
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=aspire488&theme=tokyonight&hide_border=true&background=0d1117" width="75%"/>
+</p>
 
-<div align="center">
+### 📈 Contribution Graph
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=aspire488&theme=tokyonight&hide_border=true&background=0d1117"/>
-
-</div>
-
----
-
-## 🎯 Current Direction
-
-```text
-Build → Measure → Verify → Improve → Open Source
-```
-
-The goal isn't to build flashy demos. It's to turn ideas into **reliable systems**, measure what actually works, and publish useful engineering infrastructure.
+<p align="center">
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=aspire488&theme=tokyo-night&bg_color=0d1117&hide_border=true&area=true&custom_title=aspire488%20Contribution%20Graph" width="95%"/>
+</p>
 
 ---
 
-<div align="center">
+## 🏆 Open Source Journey
 
-**Building in public · Shipping real systems · Learning by building**
+I'm building toward a serious open-source engineering portfolio rather than chasing artificial activity.
 
-</div>
+**Current direction:**
+
+`Build` → `Measure` → `Verify` → `Document` → `Open Source` → `Iterate`
+
+The goal is to turn projects like AURA, KIO, and Universal Engineering Augmentation into increasingly robust systems while learning through real implementation and public iteration.
+
+---
+
+## 🎯 Current Goals
+
+| Goal | Progress |
+|---|---|
+| 🤖 KIO → Real Automation | ███████░░░ |
+| 🧠 AURA → Persistent Cognitive Runtime | ███████░░░ |
+| 🛠️ Engineering Augmentation → Mature OSS | ███████░░░ |
+| 🧩 System Design Mastery | ██████░░░░ |
+| 🌍 Open Source Contributions | █████░░░░░ |
+
+---
+
+<p align="center">
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&pause=900&color=70A5FD&center=true&vCenter=true&width=800&lines=Not+just+building+ideas...;Building+systems+that+execute.;Turning+code+into+real+world+actions.;Learning+by+shipping.;Building+in+public."/>
+</p>
+<p align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:70a5fd,100:0d1117&height=140&section=footer" width="100%"/>
+</p>
+<p align="center">
+⭐ If you like something I'm building, consider giving the repository a star.
+</p>
+<p align="center">
+<strong>Building in public • Shipping real systems • Learning by doing</strong>
+</p>
