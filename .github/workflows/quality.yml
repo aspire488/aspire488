@@ -1,0 +1,39 @@
+name: Portfolio Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  markdown:
+    name: Markdown lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Lint Markdown
+        uses: DavidAnson/markdownlint-cli2-action@v20
+        with:
+          globs: |
+            README.md
+            docs/**/*.md
+
+  links:
+    name: Link check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          args: --root-dir . README.md
+          fail: true
