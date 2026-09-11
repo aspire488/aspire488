@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Render profile cards
-        uses: seijikohara/profile-cards-action@v0.0.4
+        uses: seijikohara/profile-cards-action@v1.2.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           username: aspire488
