@@ -114,6 +114,9 @@ I use open source as an external engineering track: working across unfamiliar co
 
 ### Selected contributions
 
+- 🔄 [OpenHands #17579 — Condenser settings validation](https://github.com/OpenHands/OpenHands/pull/17579) — **open upstream PR**
+  - Prevents negative Condenser Max Number of Events values with shared UI/save-time constraints and regression coverage; preserves `0` as valid.
+
 - 🔄 [AgentBench #8 — Global command palette](https://github.com/PicadoLabs/agent-bench/pull/8) — **open upstream PR**
   - Global Ctrl/Cmd+K command navigation, fuzzy search, keyboard interaction, accessibility semantics, and architecture documentation.
 
