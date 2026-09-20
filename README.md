@@ -126,6 +126,9 @@ AI-assisted medication-reminder and health-workflow prototype exploring role-spe
 
 ### 🌍 External open-source contributions
 
+- 🔄 [AgentBench #8 — Global command palette](https://github.com/PicadoLabs/agent-bench/pull/8) — **open upstream PR**
+  - Adds global Ctrl/Cmd+K navigation, fuzzy command search, keyboard selection, accessible dialog/listbox semantics, header search entry point, and architecture documentation.
+
 - 🔄 [GoalAI #1 — Prediction Intelligence Lab with reproducible Monte Carlo analysis](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1) — **open upstream PR**
   - Adds seeded Monte Carlo simulation, scoreline distributions, expected-goal analysis, entropy/variance metrics, model invariants, deterministic self-tests, CI validation, and engineering documentation.
 - 🔄 [N3MO #39 — Ruby/Kotlin language-routing and parser regression coverage](https://github.com/RajX-dev/N3MO/pull/39) — **open upstream PR**
