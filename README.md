@@ -108,34 +108,27 @@ AI-assisted medication-reminder and health-workflow prototype exploring role-spe
 
 ---
 
-## 🔀 Open-Source Engineering Activity
+## 🔀 Open-Source Engineering
 
-**13 merged pull requests across the engineering repositories**, covering packaging, CI hardening, public-development hardening, reproducible benchmarking, engineering documentation, safety/testing contracts, and portfolio documentation.
+I use open source as an external engineering track: working across unfamiliar codebases, contributing real changes, and learning how software is built and maintained outside my own projects.
 
-### Recent merged work
-
-- ✅ [UEA #5 — Canonical Python packaging](https://github.com/aspire488/Universal-Engineering-Augmentation/pull/5)
-- ✅ [UEA #7 — Canonical package installation in CI](https://github.com/aspire488/Universal-Engineering-Augmentation/pull/7)
-- ✅ [UEA #9 — Reproducible deterministic benchmark harness](https://github.com/aspire488/Universal-Engineering-Augmentation/pull/9)
-- ✅ [CodeFlow #17 — Public development hardening](https://github.com/aspire488/codeflow/pull/17)
-- ✅ [CodeFlow #19 — Engineering architecture/testing model](https://github.com/aspire488/codeflow/pull/19)
-- ✅ [CodeFlow #23 — Engineering portfolio README](https://github.com/aspire488/codeflow/pull/23)
-- ✅ [MediMind #1 — Public development hardening](https://github.com/aspire488/medimind/pull/1)
-- ✅ [MediMind #3 — Safety and testing contract](https://github.com/aspire488/medimind/pull/3)
-- ✅ [MediMind #10 — Engineering portfolio README](https://github.com/aspire488/medimind/pull/10)
-
-### 🌍 External open-source contributions
+### Selected contributions
 
 - 🔄 [AgentBench #8 — Global command palette](https://github.com/PicadoLabs/agent-bench/pull/8) — **open upstream PR**
-  - Adds global Ctrl/Cmd+K navigation, fuzzy command search, keyboard selection, accessible dialog/listbox semantics, header search entry point, and architecture documentation.
+  - Global Ctrl/Cmd+K command navigation, fuzzy search, keyboard interaction, accessibility semantics, and architecture documentation.
 
-- 🔄 [GoalAI #1 — Prediction Intelligence Lab with reproducible Monte Carlo analysis](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1) — **open upstream PR**
-  - Adds seeded Monte Carlo simulation, scoreline distributions, expected-goal analysis, entropy/variance metrics, model invariants, deterministic self-tests, CI validation, and engineering documentation.
-- 🔄 [N3MO #39 — Ruby/Kotlin language-routing and parser regression coverage](https://github.com/RajX-dev/N3MO/pull/39) — **open upstream PR**
+- 🔄 [GoalAI #1 — Prediction Intelligence Lab](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1) — **open upstream PR**
+  - Reproducible Monte Carlo analysis, confidence intervals, sensitivity analysis, stability metrics, tests, and documentation.
+
+- 🔄 [N3MO #39 — Language routing and parser regression coverage](https://github.com/RajX-dev/N3MO/pull/39) — **open upstream PR**
+
 - 🔄 [Clicky #72 — Contributor quickstart revamp](https://github.com/daniel5151/clicky/pull/72) — **open upstream PR**
-  - Revamps the Rust/iPod emulator quickstart with HLE/LLE workflows, safe disk-image setup, firmware smoke tests, ROM-dump guidance, troubleshooting, platform notes, and a contributor path into the development guide.
+  - Rust/iPod emulator contributor workflow covering HLE/LLE boot paths, safe disk-image setup, firmware smoke tests, ROM-dump guidance, troubleshooting, and development handoff.
 
-> GitHub achievements are earned through genuine activity. The goal here is strong engineering work, not manufactured commits, stars, issues, or PRs.
+> **Selected, not exhaustive.** As the contribution history grows, this section stays focused on the work that best represents the range and depth of engineering.
+
+**Full activity:** [GitHub contribution history](https://github.com/aspire488)
+
 
 ---
 
