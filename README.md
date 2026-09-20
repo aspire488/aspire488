@@ -124,8 +124,10 @@ AI-assisted medication-reminder and health-workflow prototype exploring role-spe
 - ✅ [MediMind #3 — Safety and testing contract](https://github.com/aspire488/medimind/pull/3)
 - ✅ [MediMind #10 — Engineering portfolio README](https://github.com/aspire488/medimind/pull/10)
 
-### 🌍 External open-source contribution
+### 🌍 External open-source contributions
 
+- 🔄 [GoalAI #1 — Prediction Intelligence Lab with reproducible Monte Carlo analysis](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1) — **open upstream PR**
+  - Adds seeded Monte Carlo simulation, scoreline distributions, expected-goal analysis, entropy/variance metrics, model invariants, deterministic self-tests, CI validation, and engineering documentation.
 - 🔄 [N3MO #39 — Ruby/Kotlin language-routing and parser regression coverage](https://github.com/RajX-dev/N3MO/pull/39) — **open upstream PR**
 
 > GitHub achievements are earned through genuine activity. The goal here is strong engineering work, not manufactured commits, stars, issues, or PRs.
