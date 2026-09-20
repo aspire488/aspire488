@@ -132,6 +132,8 @@ AI-assisted medication-reminder and health-workflow prototype exploring role-spe
 - 🔄 [GoalAI #1 — Prediction Intelligence Lab with reproducible Monte Carlo analysis](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1) — **open upstream PR**
   - Adds seeded Monte Carlo simulation, scoreline distributions, expected-goal analysis, entropy/variance metrics, model invariants, deterministic self-tests, CI validation, and engineering documentation.
 - 🔄 [N3MO #39 — Ruby/Kotlin language-routing and parser regression coverage](https://github.com/RajX-dev/N3MO/pull/39) — **open upstream PR**
+- 🔄 [Clicky #72 — Contributor quickstart revamp](https://github.com/daniel5151/clicky/pull/72) — **open upstream PR**
+  - Revamps the Rust/iPod emulator quickstart with HLE/LLE workflows, safe disk-image setup, firmware smoke tests, ROM-dump guidance, troubleshooting, platform notes, and a contributor path into the development guide.
 
 > GitHub achievements are earned through genuine activity. The goal here is strong engineering work, not manufactured commits, stars, issues, or PRs.
 
