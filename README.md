@@ -37,7 +37,7 @@ Agent-neutral engineering infrastructure for coding agents. It combines determin
 
 <a href="https://github.com/aspire488/Universal-Engineering-Augmentation"><img src="https://img.shields.io/badge/Repository-Open-70a5fd?style=for-the-badge"/></a>
 <a href="https://github.com/aspire488/Universal-Engineering-Augmentation/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/Universal-Engineering-Augmentation/ci.yml?branch=main&style=for-the-badge&label=CI"/></a>
-<a href="https://github.com/aspire488/Universal-Engineering-Augmentation/pulls?q=is%3Apr+is%3Amerged"><img src="https://img.shields.io/github/issues-pr-closed/aspire488/Universal-Engineering-Augmentation?style=for-the-badge&label=Merged%20PRs"/></a>
+<a href="https://img.shields.io/github/issues-pr-closed/aspire488/Universal-Engineering-Augmentation?style=for-the-badge&label=Merged%20PRs"><img src="https://img.shields.io/github/issues-pr-closed/aspire488/Universal-Engineering-Augmentation?style=for-the-badge&label=Merged%20PRs"/></a>
 <a href="https://github.com/aspire488/Universal-Engineering-Augmentation/issues"><img src="https://img.shields.io/github/issues/aspire488/Universal-Engineering-Augmentation?style=for-the-badge&label=Open%20Issues"/></a>
 
 ### 🧠 AURA — WIP
@@ -48,13 +48,23 @@ Agent-neutral engineering infrastructure for coding agents. It combines determin
 
 <a href="https://github.com/aspire488/AURA"><img src="https://img.shields.io/badge/Repository-Explore-70a5fd?style=for-the-badge"/></a>
 
-### 🤖 KIO — WIP / Active Build
+### 🤖 KIO — Active Restoration / Integration
 
-A personal local AI system focused on automation, system execution, continuity, and agentic behavior. KIO is also a proving ground for engineering-system ideas.
+**Kernel for Intelligent Orchestration** — the execution and orchestration layer of my broader KIO/AURA system.
 
-`Python` `Local AI` `Automation` `Agent Systems`
+KIO turns user intent into real actions through a canonical execution path:
+
+**Observe → Reason → Plan → Execute → Verify → Adapt**
+
+The current repository contains the restored runtime, capability/provider system, browser execution infrastructure, communication interfaces, MCP integration, artifact generation, verification tooling, recovery infrastructure, and **63 validated automation templates**.
+
+The design principle is simple: **LLMs handle ambiguity and strategy; deterministic software handles execution, safety, and verification.**
+
+`Python` `Local AI` `Automation` `Browser Automation` `MCP` `Provider Systems` `Verification`
 
 <a href="https://github.com/aspire488/Kio"><img src="https://img.shields.io/badge/Repository-Explore-70a5fd?style=for-the-badge"/></a>
+<a href="https://github.com/aspire488/Kio"><img src="https://img.shields.io/badge/63-Validated%20Automations-2ea44f?style=for-the-badge"/></a>
+<a href="https://github.com/aspire488/Kio"><img src="https://img.shields.io/badge/Architecture-Modular-blue?style=for-the-badge"/></a>
 
 ---
 
@@ -92,7 +102,7 @@ AI-assisted medication-reminder and health-workflow prototype exploring role-spe
 |---|---|---|
 | [Universal Engineering Augmentation](https://github.com/aspire488/Universal-Engineering-Augmentation) | 🟢 Public Alpha | Deterministic engineering + verification |
 | [AURA](https://github.com/aspire488/AURA) | 🟡 WIP | Cognitive runtime architecture |
-| [KIO](https://github.com/aspire488/Kio) | 🟡 WIP | Local AI + system execution |
+| [KIO](https://github.com/aspire488/Kio) | 🟠 Active Integration | Execution kernel + verified automation |
 | [CodeFlow](https://github.com/aspire488/codeflow) | 🔵 Prototype | Execution visualization + learning |
 | [MediMind](https://github.com/aspire488/medimind) | 🔵 Prototype | AI boundaries + workflow UX |
 
@@ -153,28 +163,28 @@ AI-assisted medication-reminder and health-workflow prototype exploring role-spe
 <p align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/overview.dark.svg" />
-  <img alt="GitHub overview" src="./assets/profile/overview.light.svg" width="100%" />
+  <img alt="GitHub overview" src="./assets/profile/overview.light.svg" width="100%"/>
 </picture>
 </p>
 
 <p align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/contributions.dark.svg" />
-  <img alt="Contribution history" src="./assets/profile/contributions.light.svg" width="100%" />
+  <img alt="Contribution history" src="./assets/profile/contributions.light.svg" width="100%"/>
 </picture>
 </p>
 
 <p align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/lifetime.dark.svg" />
-  <img alt="Lifetime contribution history" src="./assets/profile/lifetime.light.svg" width="100%" />
+  <img alt="Lifetime contribution history" src="./assets/profile/lifetime.light.svg" width="100%"/>
 </picture>
 </p>
 
 <p align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/languages.dark.svg" />
-  <img alt="Language composition" src="./assets/profile/languages.light.svg" width="100%" />
+  <img alt="Language composition" src="./assets/profile/languages.light.svg" width="100%"/>
 </picture>
 </p>
 
@@ -186,7 +196,7 @@ AI-assisted medication-reminder and health-workflow prototype exploring role-spe
 
 | Track | Next milestone |
 |---|---|
-| 🤖 KIO | Reliable real-world automation + execution |
+| 🤖 KIO | Verified real-world execution + broader provider/browser coverage |
 | 🧠 AURA | Persistent cognitive runtime layers |
 | 🛠️ UEA | Mature reusable engineering infrastructure |
 | ⚡ CodeFlow | AST-backed execution + browser regression |
