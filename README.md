@@ -61,7 +61,7 @@ The system is deliberately **read-only against GitHub**: collection and analysis
 <a href="https://github.com/aspire488/gh-ops"><img src="https://img.shields.io/badge/Repository-Open-70a5fd?style=for-the-badge"/></a>
 <a href="https://github.com/aspire488/gh-ops/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/gh-ops/daily.yml?branch=master&style=for-the-badge&label=Actions"/></a>
 
-**Current:** Phases 1–8 implemented; GitHub Actions and Telegram operations are live. Phase 9 is planned for persistent cross-run OSS opportunity state and its live notification path, but is not started yet.
+**Current:** Phases 1–8 are implemented, with GitHub Actions and Telegram operations live. The next work is persistent cross-run OSS opportunity state and its notification path.
 
 ### 🛠️ [Universal Engineering Augmentation](https://github.com/aspire488/Universal-Engineering-Augmentation) — Public Alpha
 
@@ -168,6 +168,12 @@ I distinguish **merged work from open proposals** so the repository status is ex
 #### 🔄 Open upstream PRs
 
 **Current batch**
+
+- [Hiero Bot #100 — Coalesce concurrent config cache misses](https://github.com/AnthropicBots/hiero-bot-py/pull/100)  
+  Adds per-repository in-flight request coalescing so concurrent webhook bursts issue one GitHub contents request, with regression coverage.
+
+- [Thrylos #4 — Enforce Tier-A determinism in CI](https://github.com/thrylos-labs/thrylos/issues/4)  
+  Adds an auditable CI source check preventing floating-point types from entering Tier-A consensus-critical Rust crates.
 
 - [Coder #29668 — Deduplicate `Unknown` AI Gateway clients](https://github.com/coder/coder/pull/29668)  
   Groups nullable and literal `Unknown` client values by their displayed identity and adds regression coverage.
