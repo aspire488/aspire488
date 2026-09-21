@@ -17,6 +17,9 @@
 
 # 👋 Joel — systems-focused CSE student
 
+> **GitHub Developer Program Member** — building and experimenting with software that integrates with the GitHub ecosystem. GitHub automatically displays the official Developer Program Member badge on eligible profiles. [Program details](https://docs.github.com/en/integrations/concepts/github-developer-program)
+
+
 I build **AI systems, developer tools, automation, and experimental software systems** with an emphasis on execution, architecture, verification, and measurable behavior.
 
 > **What should an AI reason about, and what should reliable software do deterministically?**
@@ -26,6 +29,26 @@ I learn by shipping, breaking things, measuring them, and then hardening the par
 ---
 
 ## 🏗️ Engineering Portfolio
+
+### Architecture at a glance
+
+```mermaid
+flowchart LR
+    A[Intent / Problem] --> B[AI Reasoning]
+    B --> C[Deterministic Systems]
+    C --> D[Execution]
+    D --> E[Verification]
+    E --> F[Evidence / State]
+    F --> B
+    UEA[UEA\nEngineering Augmentation] --> C
+    KIO[KIO\nExecution Kernel] --> D
+    AURA[AURA\nMemory & Cognition] --> B
+    KIO <--> AURA
+    UEA --> KIO
+```
+
+This is the design boundary running through the portfolio: **reasoning handles ambiguity; deterministic infrastructure owns execution, state, safety, and verification.**
+
 
 ### 🛠️ [Universal Engineering Augmentation](https://github.com/aspire488/Universal-Engineering-Augmentation) — Public Alpha
 
