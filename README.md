@@ -20,15 +20,17 @@ I build **AI systems, developer tools, automation, and experimental software sys
 
 ## 🏗️ Engineering Portfolio
 
-### 🛠️ Universal Engineering Augmentation — Public Alpha
+### 🛠️ [Universal Engineering Augmentation](https://github.com/aspire488/Universal-Engineering-Augmentation) — Public Alpha
 Agent-neutral engineering infrastructure for coding agents: deterministic code intelligence, dependency/impact analysis, verification, property/mutation testing, formal reasoning, candidate isolation, routing, provenance, event logging, analytics, and reusable engineering capabilities.
 
 Current work also includes Claude Code, Codex, and generic CLI integration kept outside the core package boundary.
 
 ### 🧠 AURA — WIP
+
+[Architecture repository](https://github.com/aspire488/AURA)
 **Autonomous Unified Reasoning Architecture** — a memory and cognitive backend exploring persistent context, identity, world modelling, reasoning, reflection, learning, continuity, and long-lived agent state.
 
-### 🤖 KIO — Active Integration
+### 🤖 [KIO](https://github.com/aspire488/Kio) — Active Integration
 **Kernel for Intelligent Orchestration** — the execution kernel of the broader KIO/AURA architecture.
 
 KIO turns intent into real actions through **Observe → Reason → Plan → Execute → Verify → Adapt**. It owns capability resolution, provider dispatch, security gates, browser/MCP execution, artifacts, runtime state, recovery, and verification of real side effects.
@@ -41,17 +43,27 @@ The repository currently contains **63 validated automation templates** integrat
 
 These projects are no longer active product-development tracks. They were hardened into inspectable, reproducible portfolio artifacts.
 
-### ⚡ CodeFlow
+### ⚡ [CodeFlow](https://github.com/aspire488/codeflow) · [Live prototype](https://codeflow-app-sigma.vercel.app)
 Execution-first programming-learning prototype focused on visible execution state, code visualization, exercises, and bounded AI assistance.
 
 **Final hardening:** Node 22, Vite 8, production-build CI, tagged release validation, Dependabot, CodeQL, deployment security headers, explicit prototype boundary, MIT license.
 
-### 💊 MediMind Care
+### 💊 [MediMind Care](https://github.com/aspire488/medimind) · [Live demo](https://medimind-seven.vercel.app/)
 AI-assisted medication-reminder and health-workflow prototype exploring role-specific UX, deterministic reminders, accessibility, synthetic data, and bounded AI assistance.
 
 **Final hardening:** Node 22, Playwright browser smoke coverage in CI, Chromium validation, CodeQL, Dependabot, deployment security headers, environment/credential hygiene, explicit medical safety boundary, MIT license.
 
 The application intentionally remains on its React 18/Vite 6 prototype stack rather than taking an unvalidated framework migration.
+
+## 🔗 Projects & Live Links
+
+| Project | Repository | Live / Docs |
+|---|---|---|
+| KIO | [GitHub](https://github.com/aspire488/Kio) | [README](https://github.com/aspire488/Kio#readme) |
+| AURA | [GitHub](https://github.com/aspire488/AURA) | Architecture in repository |
+| UEA | [GitHub](https://github.com/aspire488/Universal-Engineering-Augmentation) | [README](https://github.com/aspire488/Universal-Engineering-Augmentation#readme) |
+| CodeFlow | [GitHub](https://github.com/aspire488/codeflow) | [Live](https://codeflow-app-sigma.vercel.app) |
+| MediMind Care | [GitHub](https://github.com/aspire488/medimind) | [Live](https://medimind-seven.vercel.app/) |
 
 ## 🔀 Open-Source Engineering
 
@@ -90,7 +102,7 @@ I use open source as an external engineering track: working across unfamiliar co
 | 💊 MediMind | Frozen, hardened prototype |
 | 🌍 Open Source | Cross-project contributions and upstream engineering |
 
-**Open-source contribution history:** https://github.com/pulls?q=is%3Apr%20author%3Aaspire488
+**Open-source contribution history:** [GitHub Pull Requests](https://github.com/pulls?q=is%3Apr%20author%3Aaspire488)
 
 ---
 
