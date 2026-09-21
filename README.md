@@ -61,7 +61,7 @@ The system is deliberately **read-only against GitHub**: collection and analysis
 <a href="https://github.com/aspire488/gh-ops"><img src="https://img.shields.io/badge/Repository-Open-70a5fd?style=for-the-badge"/></a>
 <a href="https://github.com/aspire488/gh-ops/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/gh-ops/daily.yml?branch=master&style=for-the-badge&label=Actions"/></a>
 
-**Current:** Phase 1–8 implemented; GitHub Actions and Telegram operations are live. The current operational hardening pass is finishing persistent cross-run OSS opportunity state and its live notification path.
+**Current:** Phases 1–8 implemented; GitHub Actions and Telegram operations are live. Phase 9 is planned for persistent cross-run OSS opportunity state and its live notification path, but is not started yet.
 
 ### 🛠️ [Universal Engineering Augmentation](https://github.com/aspire488/Universal-Engineering-Augmentation) — Public Alpha
 
@@ -166,6 +166,22 @@ I use open source as an external engineering track: working across unfamiliar co
 I distinguish **merged work from open proposals** so the repository status is explicit.
 
 #### 🔄 Open upstream PRs
+
+**Current batch**
+
+- [Coder #29668 — Deduplicate `Unknown` AI Gateway clients](https://github.com/coder/coder/pull/29668)  
+  Groups nullable and literal `Unknown` client values by their displayed identity and adds regression coverage.
+
+- [quiche #2756 — Unify PTO-based timer duration](https://github.com/cloudflare/quiche/pull/2756)  
+  Centralizes the 3×PTO duration used by timeout paths to keep timer calculations consistent.
+
+- [MVT #939 — Preserve equals signs in STIX indicator values](https://github.com/mvt-project/mvt/pull/939)  
+  Fixes STIX parsing for values containing `=` and adds regression coverage for URL query parameters.
+
+- [ai-memory #828 — Expand agent-memory comparison coverage](https://github.com/akitaonrails/ai-memory/pull/828)  
+  Expands the comparison matrix with Engram, Caura, TencentDB Agent Memory, memU, and EverOS.
+
+**Earlier upstream work**
 
 - [AI Platform AWS #4 — direct Anthropic provider routing](https://github.com/tysoncung/ai-platform-aws/pull/4)  
   Direct Anthropic Claude matches resolve before generic Bedrock routing independent of provider registration order, with regression coverage.
@@ -342,8 +358,8 @@ I also contribute through **GitHub Discussions** — answering concrete engineer
 | Track | State / next milestone |
 |---|---|
 | ⚙️ gh-ops | Phase 8 operational hardening + OSS persistence | 
-| 🤖 KIO | Active integration + execution hardening |
-| 🧠 AURA | WIP cognitive/memory architecture |
+| 🤖 KIO | Paused after Gate 5 completion |
+| 🧠 AURA | Paused; core cognition architecture checkpoint complete |
 | 🛠️ UEA | Public alpha + reusable engineering infrastructure |
 | ⚡ CodeFlow | Frozen, hardened prototype |
 | 💊 MediMind | Frozen, hardened prototype |
