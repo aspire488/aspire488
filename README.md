@@ -76,7 +76,7 @@ The core stays agent-neutral while integrations can sit beside **OpenCode, Claud
 <a href="https://github.com/aspire488/Universal-Engineering-Augmentation/releases"><img src="https://img.shields.io/github/v/release/aspire488/Universal-Engineering-Augmentation?style=for-the-badge&label=Release"/></a>
 <a href="https://github.com/aspire488/Universal-Engineering-Augmentation/issues"><img src="https://img.shields.io/github/issues/aspire488/Universal-Engineering-Augmentation?style=for-the-badge&label=Issues"/></a>
 
-### 🧠 [AURA](https://github.com/aspire488/AURA) — WIP
+### 🧠 [AURA](https://github.com/aspire488/AURA) — Paused
 
 **Autonomous Unified Reasoning Architecture** — a FastAPI-based memory and cognition backend implementing persistent memory storage/retrieval, cognitive artifacts, and reflection-oriented processing for long-lived agent state.
 
@@ -84,7 +84,7 @@ The core stays agent-neutral while integrations can sit beside **OpenCode, Claud
 
 <a href="https://github.com/aspire488/AURA"><img src="https://img.shields.io/badge/Repository-Explore-70a5fd?style=for-the-badge"/></a>
 
-### 🤖 [KIO](https://github.com/aspire488/Kio) — Active Integration
+### 🤖 [KIO](https://github.com/aspire488/Kio) — Paused after Gate 5
 
 **Kernel for Intelligent Orchestration** — a modular execution kernel that resolves capabilities, plans actions, applies security gates, dispatches providers, executes tools, and verifies resulting state.
 
@@ -149,8 +149,8 @@ The application intentionally remains on its React 18/Vite 6 prototype stack rat
 | Project | Stage | Repository | Live / Docs |
 |---|---|---|---|
 | ⚙️ gh-ops | Operational / Phase 8 | [GitHub](https://github.com/aspire488/gh-ops) | [README](https://github.com/aspire488/gh-ops#readme) |
-| 🤖 KIO | Active Integration | [GitHub](https://github.com/aspire488/Kio) | [README](https://github.com/aspire488/Kio#readme) |
-| 🧠 AURA | WIP | [GitHub](https://github.com/aspire488/AURA) | [Architecture](https://github.com/aspire488/AURA#readme) |
+| 🤖 KIO | Paused after Gate 5 | [GitHub](https://github.com/aspire488/Kio) | [README](https://github.com/aspire488/Kio#readme) |
+| 🧠 AURA | Paused | [GitHub](https://github.com/aspire488/AURA) | [Architecture](https://github.com/aspire488/AURA#readme) |
 | 🛠️ UEA | Public Alpha | [GitHub](https://github.com/aspire488/Universal-Engineering-Augmentation) | [README](https://github.com/aspire488/Universal-Engineering-Augmentation#readme) |
 | ⚡ CodeFlow | Frozen Prototype | [GitHub](https://github.com/aspire488/codeflow) | [Live](https://codeflow-app-sigma.vercel.app) |
 | 💊 MediMind | Frozen Prototype | [GitHub](https://github.com/aspire488/medimind) | [Live](https://medimind-seven.vercel.app/) |
@@ -369,7 +369,7 @@ I also contribute through **GitHub Discussions** — answering concrete engineer
 
 | Track | State / next milestone |
 |---|---|
-| ⚙️ gh-ops | Phase 8 operational hardening + OSS persistence | 
+| ⚙️ gh-ops | Phase 8 operational hardening + OSS persistence |
 | 🤖 KIO | Paused after Gate 5 completion |
 | 🧠 AURA | Paused; core cognition architecture checkpoint complete |
 | 🛠️ UEA | Public alpha + reusable engineering infrastructure |
