@@ -50,6 +50,19 @@ flowchart LR
 This is the design boundary running through the portfolio: **reasoning handles ambiguity; deterministic infrastructure owns execution, state, safety, and verification.**
 
 
+### ⚙️ [gh-ops](https://github.com/aspire488/gh-ops) — Operational Intelligence Platform
+
+A reusable, deterministic GitHub operations layer running on GitHub Actions. gh-ops combines repository, CI, release, and security monitoring with OSS opportunity intelligence, developer activity reporting, persistent state, scheduled workflows, and outbound Telegram notifications.
+
+The system is deliberately **read-only against GitHub**: collection and analysis are automated, while execution boundaries, state, and verification remain deterministic.
+
+`Python` `GitHub Actions` `GitHub API` `Telegram` `State & Events` `OSS Intelligence`
+
+<a href="https://github.com/aspire488/gh-ops"><img src="https://img.shields.io/badge/Repository-Open-70a5fd?style=for-the-badge"/></a>
+<a href="https://github.com/aspire488/gh-ops/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/gh-ops/daily.yml?branch=master&style=for-the-badge&label=Actions"/></a>
+
+**Current:** Phase 1–8 implemented; GitHub Actions and Telegram operations are live. The current operational hardening pass is finishing persistent cross-run OSS opportunity state and its live notification path.
+
 ### 🛠️ [Universal Engineering Augmentation](https://github.com/aspire488/Universal-Engineering-Augmentation) — Public Alpha
 
 Agent-neutral engineering infrastructure for coding agents. UEA moves repeatable engineering work from probabilistic reasoning into deterministic code intelligence, dependency/impact analysis, verification, property/mutation testing, formal reasoning, candidate isolation, routing, provenance, event logging, analytics, and reusable capabilities.
@@ -135,6 +148,7 @@ The application intentionally remains on its React 18/Vite 6 prototype stack rat
 
 | Project | Stage | Repository | Live / Docs |
 |---|---|---|---|
+| ⚙️ gh-ops | Operational / Phase 8 | [GitHub](https://github.com/aspire488/gh-ops) | [README](https://github.com/aspire488/gh-ops#readme) |
 | 🤖 KIO | Active Integration | [GitHub](https://github.com/aspire488/Kio) | [README](https://github.com/aspire488/Kio#readme) |
 | 🧠 AURA | WIP | [GitHub](https://github.com/aspire488/AURA) | [Architecture](https://github.com/aspire488/AURA#readme) |
 | 🛠️ UEA | Public Alpha | [GitHub](https://github.com/aspire488/Universal-Engineering-Augmentation) | [README](https://github.com/aspire488/Universal-Engineering-Augmentation#readme) |
@@ -327,6 +341,7 @@ I also contribute through **GitHub Discussions** — answering concrete engineer
 
 | Track | State / next milestone |
 |---|---|
+| ⚙️ gh-ops | Phase 8 operational hardening + OSS persistence | 
 | 🤖 KIO | Active integration + execution hardening |
 | 🧠 AURA | WIP cognitive/memory architecture |
 | 🛠️ UEA | Public alpha + reusable engineering infrastructure |
