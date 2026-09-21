@@ -184,6 +184,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [RisingWave #27181 — Inspect correlated refs in LogicalValues](https://github.com/risingwavelabs/risingwave/pull/27181)  
   Fixes optimizer correlation detection for `LogicalValues` rows and adds regression coverage for correlated input references.
 
+- [OpenTelemetry Erlang #822 — Isolate Req spans across retries and redirects](https://github.com/open-telemetry/opentelemetry-erlang-contrib/pull/822)  
+  Fixes Req client-span state leaking into parent traces across retries/redirects and adds regression coverage for retry isolation.
+
 **Earlier upstream work**
 
 - [AI Platform AWS #4 — direct Anthropic provider routing](https://github.com/tysoncung/ai-platform-aws/pull/4)  
