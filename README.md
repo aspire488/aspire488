@@ -133,8 +133,7 @@ I use open source as an external engineering track: working across unfamiliar co
 
 > **Selected, not exhaustive.** As the contribution history grows, this section stays focused on the work that best represents the range and depth of engineering.
 
-**Full activity:** [GitHub contribution history](https://github.com/aspire488)
-
+**Open-source contribution history:** [View my PRs across GitHub](https://github.com/pulls?q=is%3Apr%20author%3Aaspire488)
 
 ---
 
