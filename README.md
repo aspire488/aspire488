@@ -181,6 +181,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [ai-memory #828 — Expand agent-memory comparison coverage](https://github.com/akitaonrails/ai-memory/pull/828)  
   Expands the comparison matrix with Engram, Caura, TencentDB Agent Memory, memU, and EverOS.
 
+- [RisingWave #27181 — Inspect correlated refs in LogicalValues](https://github.com/risingwavelabs/risingwave/pull/27181)  
+  Fixes optimizer correlation detection for `LogicalValues` rows and adds regression coverage for correlated input references.
+
 **Earlier upstream work**
 
 - [AI Platform AWS #4 — direct Anthropic provider routing](https://github.com/tysoncung/ai-platform-aws/pull/4)  
