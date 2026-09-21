@@ -42,15 +42,15 @@ The core stays agent-neutral while integrations can sit beside **OpenCode, Claud
 
 ### 🧠 [AURA](https://github.com/aspire488/AURA) — WIP
 
-**Autonomous Unified Reasoning Architecture** — a memory and cognitive backend exploring persistent context, identity, world modelling, reasoning, reflection, learning, continuity, and long-lived agent state.
+**Autonomous Unified Reasoning Architecture** — a FastAPI-based memory and cognition backend implementing persistent memory storage/retrieval, cognitive artifacts, and reflection-oriented processing for long-lived agent state.
 
-`Python` `Cognitive Architecture` `Event-Driven Systems` `Agents`
+`Python` `FastAPI` `Memory` `Cognitive Artifacts` `Agents`
 
 <a href="https://github.com/aspire488/AURA"><img src="https://img.shields.io/badge/Repository-Explore-70a5fd?style=for-the-badge"/></a>
 
 ### 🤖 [KIO](https://github.com/aspire488/Kio) — Active Integration
 
-**Kernel for Intelligent Orchestration** — the execution kernel of the broader KIO/AURA architecture.
+**Kernel for Intelligent Orchestration** — a modular execution kernel that resolves capabilities, plans actions, applies security gates, dispatches providers, executes tools, and verifies resulting state.
 
 KIO turns intent into real actions through:
 
@@ -124,29 +124,44 @@ The application intentionally remains on its React 18/Vite 6 prototype stack rat
 
 I use open source as an external engineering track: working across unfamiliar codebases, contributing real changes, and learning how software is built and maintained outside my own projects.
 
-### Selected contributions
+### Upstream work
 
-- 🔄 [AI Platform AWS #4 — direct Anthropic provider routing](https://github.com/tysoncung/ai-platform-aws/pull/4) — **open upstream PR**  
-  Direct Anthropic Claude matches now resolve before generic Bedrock routing independent of provider registration order, with regression coverage.
+I distinguish **merged work from open proposals** so the repository status is explicit.
 
-- 🔄 [OpenHands #17579 — Condenser settings validation](https://github.com/OpenHands/OpenHands/pull/17579) — **open upstream PR**  
+#### 🔄 Open upstream PRs
+
+- [AI Platform AWS #4 — direct Anthropic provider routing](https://github.com/tysoncung/ai-platform-aws/pull/4)  
+  Direct Anthropic Claude matches resolve before generic Bedrock routing independent of provider registration order, with regression coverage.
+
+- [OpenHands #17579 — Condenser settings validation](https://github.com/OpenHands/OpenHands/pull/17579)  
   Adds validation and regression coverage for invalid negative values while preserving zero as valid.
 
-- 🔄 [Linguist #7712 — `.example` suffix detection](https://github.com/github-linguist/linguist/issues/7712) — **upstream contribution**  
-  Improves language detection for example/config filename variants with regression coverage.
-
-- 🔄 [AgentBench #8 — Global command palette](https://github.com/PicadoLabs/agent-bench/pull/8) — **open upstream PR**  
+- [AgentBench #8 — Global command palette](https://github.com/PicadoLabs/agent-bench/pull/8)  
   Global command navigation, fuzzy search, keyboard interaction, accessibility semantics, and architecture documentation.
 
-- 🔄 [GoalAI #1 — Prediction Intelligence Lab](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1) — **open upstream PR**  
+- [GoalAI #1 — Prediction Intelligence Lab](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1)  
   Reproducible Monte Carlo analysis, sensitivity analysis, stability metrics, tests, and documentation.
 
-- 🔄 [N3MO #39 — Language routing and parser regression coverage](https://github.com/RajX-dev/N3MO/pull/39) — **open upstream PR**
+- [N3MO #39 — Language routing and parser regression coverage](https://github.com/RajX-dev/N3MO/pull/39)
 
-- 🔄 [Clicky #72 — Contributor quickstart revamp](https://github.com/daniel5151/clicky/pull/72) — **open upstream PR**  
+- [Clicky #72 — Contributor quickstart revamp](https://github.com/daniel5151/clicky/pull/72)  
   Emulator contributor workflow covering boot paths, safe disk-image setup, firmware smoke tests, troubleshooting, and development handoff.
 
-> **Selected, not exhaustive.** This section favors substantive engineering work over activity-count inflation.
+#### 💬 Community technical discussions
+
+- [Lexical #8771 — Named Slots for paginated editors](https://github.com/facebook/lexical/discussions/8771)  
+  Discussed separating page-region modeling from pagination/flow logic.
+
+- [MCP Registry #921 — Using the published Docker image](https://github.com/modelcontextprotocol/registry/discussions/921)  
+  Explained the GHCR image workflow and PostgreSQL-backed deployment model.
+
+- [VS Code Discussions #3109 — Diagnosing Electron main-process hangs](https://github.com/microsoft/vscode-discussions/discussions/3109)  
+  Proposed an incident-diagnostics workflow around watchdogs, event-loop health, Node diagnostic reports, process dumps, profiling, and IPC telemetry.
+
+
+> **Selected, not exhaustive.** This section intentionally distinguishes **proposed upstream work** from **accepted/merged work**. Discussion participation is listed separately from code contributions.
+
+ This section favors substantive engineering work over activity-count inflation.
 
 **Open-source contribution history:** [View my PRs across GitHub](https://github.com/pulls?q=is%3Apr%20author%3Aaspire488)
 
@@ -172,15 +187,11 @@ I also contribute through **GitHub Discussions** — answering concrete engineer
 
 ---
 
-## 🧠 Engineering Philosophy
+## 🧠 Engineering Principles
 
-- **LLMs for ambiguity and strategy; software for deterministic work.**
-- **Verification is part of generation**, not an afterthought.
-- **Measure before claiming optimization.**
-- **Prefer replaceable components and explicit boundaries.**
-- **Ship prototypes, then harden the useful parts.**
-- **Real execution matters more than polished screenshots.**
-- **Public engineering claims should be backed by inspectable evidence.**
+- **Deterministic software owns execution; AI handles ambiguity.**
+- **Verification is part of implementation, not a final step.**
+- **Measure behavior before claiming improvement.**
 
 ---
 
