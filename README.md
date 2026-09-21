@@ -4,7 +4,7 @@
 
 I build software systems around a simple principle: **use deterministic software for work that can be verified, and AI where reasoning or ambiguity actually matters.**
 
-My public work spans developer infrastructure, execution-based education, and safety-conscious AI-assisted applications.
+My public work spans developer infrastructure, execution-based education, AI-assisted applications, and open-source engineering.
 
 ---
 
@@ -25,7 +25,7 @@ A tool-agnostic engineering layer that gives coding agents deterministic capabil
 - Dependabot + tagged release automation
 - Claude Code, Codex, and generic CLI integration surfaces
 
-**Current:** broader language support and external open-source contribution are the next major milestones.
+**Current:** broader language support, release hardening, and external open-source collaboration.
 
 ### ⚡ [CodeFlow](https://github.com/aspire488/codeflow)
 **Prototype · JavaScript / Vite · execution-based learning**
@@ -54,19 +54,35 @@ A medication-reminder and health-workflow prototype exploring role-based UX, acc
 
 ---
 
-## Open-source activity
+## Open-source engineering
 
-**13 merged engineering PRs** across the three public engineering repositories, covering packaging, CI hardening, benchmarks, testing contracts, browser regression, architecture documentation, safety boundaries, adapter integration, and release infrastructure.
+I use open source as an external engineering track: working in unfamiliar codebases, following repository-specific contribution rules, making focused changes, and learning through real maintainer review.
 
-### Current engineering work
+### Current upstream work
 
-- [UEA #15 — Agent adapter + CLI integration](https://github.com/aspire488/Universal-Engineering-Augmentation/pull/15)
+- [AI Platform AWS #4 — Provider routing specificity](https://github.com/tysoncung/ai-platform-aws/pull/4) — **open upstream PR**
+  - Fixes provider-resolution precedence so explicit direct Anthropic routing is not shadowed by generic Bedrock Claude matching, with regression coverage.
 
-These are real engineering changes — not placeholder activity created to inflate a profile.
+- [OpenHands #17579 — Condenser settings validation](https://github.com/OpenHands/OpenHands/pull/17579) — **open upstream PR**
+  - Prevents negative Condenser Max Number of Events values with UI/save-time validation and regression coverage.
 
-### What comes next
+- [AgentBench #8 — Global command palette](https://github.com/PicadoLabs/agent-bench/pull/8) — **open upstream PR**
+  - Adds global command navigation, fuzzy search, keyboard interaction, accessibility semantics, and architecture documentation.
 
-The next portfolio milestone is **external open-source collaboration**: meaningful contributions to projects I do not own, followed by reviews/issues and longer-term maintainer relationships.
+- [GoalAI #1 — Prediction Intelligence Lab](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1) — **open upstream PR**
+  - Adds reproducible Monte Carlo analysis, model validation, deterministic checks, CI, and documentation.
+
+- [N3MO #39 — Language routing and parser regression coverage](https://github.com/RajX-dev/N3MO/pull/39) — **open upstream PR**
+
+- [Clicky #72 — Contributor quickstart revamp](https://github.com/daniel5151/clicky/pull/72) — **open upstream PR**
+  - Reworks the contributor workflow with setup, boot/debug paths, safe disk-image guidance, troubleshooting, and development handoff.
+
+- [Linguist #7712 — .example suffix detection](https://github.com/github-linguist/linguist/issues/7712) — **upstream contribution**
+  - Improves language detection for example/configuration template filenames such as README.md.example and .env.example.
+
+> **Selected, not exhaustive.** The goal is to show representative engineering work rather than inflate activity with low-signal changes.
+
+**[View all my GitHub pull requests](https://github.com/pulls?q=is%3Apr%20author%3Aaspire488)**
 
 ---
 
@@ -79,6 +95,7 @@ The next portfolio milestone is **external open-source collaboration**: meaningf
 | Software engineering | testing, CI/CD, release discipline, observability |
 | Education | executable models and visible program behavior |
 | Product engineering | prototypes → measurable → hardened systems |
+| Open source | focused contributions, maintainer feedback, long-term collaboration |
 
 ### Principles
 
@@ -96,7 +113,7 @@ The next portfolio milestone is **external open-source collaboration**: meaningf
 1. Complete the UEA adapter/CLI release path.
 2. Finish the AST-backed execution model in CodeFlow.
 3. Expand browser regression coverage in MediMind.
-4. Build genuine external open-source contribution history.
+4. Continue meaningful external open-source contributions.
 5. Turn the strongest systems into documented, versioned releases with reproducible benchmarks.
 
 ---
@@ -119,6 +136,14 @@ The cards below are generated from GitHub data by GitHub Actions and stored loca
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/languages.dark.svg" />
   <img alt="Language composition" src="./assets/profile/languages.light.svg" width="100%" />
 </picture>
+
+---
+
+## Contributing
+
+This profile repository is primarily for portfolio content, generated activity artifacts, and supporting documentation.
+
+If you spot an inaccurate claim, broken link, stale metric, or documentation issue, please open an issue or pull request. See [CONTRIBUTING.md](CONTRIBUTING.md) for the contribution workflow.
 
 ---
 
