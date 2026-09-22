@@ -167,34 +167,43 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 #### 🔄 Open upstream PRs
 
-**Current batch**
-
-- [PyRIT #2743 — Add a Garak-inspired exploitation scenario](https://github.com/microsoft/PyRIT/pull/2743)  
-  Adds a PyRIT-native exploitation scenario with curated non-destructive payload datasets, payload-specific scoring, stable attack naming, bounded payload expansion, focused unit coverage, and scanner documentation. The implementation intentionally measures model output and does not execute generated Python/SQL against downstream systems.
-
-- [Hiero Bot #100 — Coalesce concurrent config cache misses](https://github.com/AnthropicBots/hiero-bot-py/pull/100)  
-  Adds per-repository in-flight request coalescing so concurrent webhook bursts issue one GitHub contents request, with regression coverage.
-
-- [Thrylos #4 — Enforce Tier-A determinism in CI](https://github.com/thrylos-labs/thrylos/issues/4)  
-  Adds an auditable CI source check preventing floating-point types from entering Tier-A consensus-critical Rust crates.
-
-- [Coder #29668 — Deduplicate `Unknown` AI Gateway clients](https://github.com/coder/coder/pull/29668)  
-  Groups nullable and literal `Unknown` client values by their displayed identity and adds regression coverage.
-
-- [quiche #2756 — Unify PTO-based timer duration](https://github.com/cloudflare/quiche/pull/2756)  
-  Centralizes the 3×PTO duration used by timeout paths to keep timer calculations consistent.
-
-- [MVT #939 — Preserve equals signs in STIX indicator values](https://github.com/mvt-project/mvt/pull/939)  
-  Fixes STIX parsing for values containing `=` and adds regression coverage for URL query parameters.
-
-- [ai-memory #828 — Expand agent-memory comparison coverage](https://github.com/akitaonrails/ai-memory/pull/828)  
-  Expands the comparison matrix with Engram, Caura, TencentDB Agent Memory, memU, and EverOS.
-
-- [RisingWave #27181 — Inspect correlated refs in LogicalValues](https://github.com/risingwavelabs/risingwave/pull/27181)  
-  Fixes optimizer correlation detection for `LogicalValues` rows and adds regression coverage for correlated input references.
+**Current batch — verified open**
 
 - [OpenTelemetry Erlang #822 — Isolate Req spans across retries and redirects](https://github.com/open-telemetry/opentelemetry-erlang-contrib/pull/822)  
-  Fixes Req client-span state leaking into parent traces across retries/redirects and adds regression coverage for retry isolation.
+  Fixes Req client-span state leaking across retries/redirects and adds regression coverage for retry isolation.
+
+- [RisingWave #27181 — Inspect correlated refs in LogicalValues](https://github.com/risingwavelabs/risingwave/pull/27181)  
+  Fixes optimizer correlation detection for `LogicalValues` rows and adds regression coverage.
+
+- [ai-memory #828 — Expand agent-memory comparison coverage](https://github.com/akitaonrails/ai-memory/pull/828)  
+  Expands the agent-memory comparison matrix with additional systems.
+
+- [MVT #939 — Preserve equals signs in STIX indicator values](https://github.com/mvt-project/mvt/pull/939)  
+  Fixes STIX parsing for indicator values containing `=` and adds regression coverage.
+
+- [quiche #2756 — Unify PTO-based timer duration](https://github.com/cloudflare/quiche/pull/2756)  
+  Centralizes the 3×PTO timer calculation while preserving existing timer behavior.
+
+- [Coder #29668 — Deduplicate `Unknown` AI Gateway clients](https://github.com/coder/coder/pull/29668)  
+  Groups nullable and literal `Unknown` client values by displayed identity and adds regression coverage.
+
+- [AI Platform AWS #4 — Direct Anthropic provider routing](https://github.com/tysoncung/ai-platform-aws/pull/4)  
+  Fixes provider-resolution precedence when direct Anthropic and generic Bedrock Claude routing both apply.
+
+- [Linguist #1 — Trim `.example` suffix before language detection](https://github.com/aspire488/linguist/pull/1)  
+  Adds terminal `.example` handling so common example/config filenames can use their underlying language detection.
+
+- [OpenHands #17579 — Validate condenser max size](https://github.com/OpenHands/OpenHands/pull/17579)  
+  Adds validation and regression coverage for negative condenser max-size values while preserving zero as valid.
+
+- [AgentBench #8 — Add global command palette](https://github.com/PicadoLabs/agent-bench/pull/8)  
+  Adds global command navigation, fuzzy search, keyboard interaction, accessibility semantics, and architecture documentation.
+
+- [GoalAI #1 — Prediction Intelligence Lab](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1)  
+  Adds reproducible seeded Monte Carlo analysis, sensitivity/stability metrics, tests, and documentation.
+
+- [N3MO #39 — Language routing and parser regression coverage](https://github.com/RajX-dev/N3MO/pull/39)  
+  Adds regression coverage for Ruby/Kotlin parser loading, extension routing, and symbol extraction.
 
 **Earlier upstream work**
 
