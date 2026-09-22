@@ -64,7 +64,7 @@ The system is deliberately **read-only against GitHub**: collection and analysis
 <a href="https://github.com/aspire488/gh-ops"><img src="https://img.shields.io/badge/Repository-Open-70a5fd?style=for-the-badge"/></a>
 <a href="https://github.com/aspire488/gh-ops/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/gh-ops/daily.yml?branch=master&style=for-the-badge&label=Actions"/></a>
 
-**Current:** Phases 1–8 are implemented, with GitHub Actions and Telegram operations live. The next work is persistent cross-run OSS opportunity state and its notification path.
+**Current:** Phases 1–8 are implemented, with scheduled GitHub Actions, dedicated CI validation, and Telegram operations live. CI now validates Ruff, mypy, and the full pytest suite on pushes and pull requests, while the operational workflows continue to handle monitoring, intelligence, state, and notifications. The next work is persistent cross-run OSS opportunity state and its notification path.
 
 ### 🛠️ [Universal Engineering Augmentation](https://github.com/aspire488/Universal-Engineering-Augmentation) — Public Alpha
 
