@@ -227,6 +227,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [MVT Discussions — STIX indicator parsing](https://github.com/mvt-project/mvt/discussions)  
   Discussed whether MVT should keep lightweight STIX parsing or introduce a small explicit parsing/validation boundary for malformed and edge-case indicator values.
 
+- [OpenAI Codex #46658 — Beyond Auto mode: adaptive allocation](https://github.com/openai/codex/discussions/46658)  
+  Discussed evidence-driven allocation of models, reasoning effort, tools, and subagents, including reassessment triggers, effective inherited configuration, rerouting observability, verification boundaries, and attributable compute cost.
+
 
 > **Selected, not exhaustive.** This section intentionally distinguishes **proposed upstream work** from **accepted/merged work**. Discussion participation is listed separately from code contributions.
 
