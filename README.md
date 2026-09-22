@@ -25,6 +25,11 @@ I build **AI systems, developer tools, automation, and experimental software sys
 
 I learn by shipping, breaking things, measuring them, and then hardening the parts that are worth keeping.
 
+
+<p align="center">
+  <a href="https://joel-jigo-portfolio--joeljigo3.replit.app"><img src="https://img.shields.io/badge/%E2%86%92%20Portfolio-Visit%20Joel's%20Portfolio-70a5fd?style=for-the-badge"/></a>
+</p>
+
 ---
 
 ## 🏗️ Engineering Portfolio
