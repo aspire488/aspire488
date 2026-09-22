@@ -220,6 +220,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [PyRIT #2762 — Dataset summary API](https://github.com/microsoft/PyRIT/pull/2762)  
   Adds a memory-backed dataset summary path with logical-example, seed-piece, objective, modality, and harm-category metadata, plus focused unit coverage.
 
+- [KiroCrew #11052 — Restore PDF search behind bounded extraction](https://github.com/kirodotdev/KiroCrew/compare/main...aspire488:fix/bounded-pdf-extraction)  
+  Restores PDF content search while routing pdfplumber through a disposable, resource-limited extractor shared with knowledge ingestion. Adds bounded extraction, failure/truncation handling, and focused regression coverage.
+
 #- [GitHub Profile Analyzer — Impact score evidence weighting](https://github.com/0xarchit/github-profile-analyzer/compare/main...aspire488:fix/impact-score-evidence)  
   Refines the deterministic Impact score so adoption signals (stars/forks) are balanced with independent project evidence such as releases, release downloads, homepage, README/license/CI/tests coverage. Added deterministic regression coverage for strong project evidence with zero stars/forks. The change is open for upstream review.
 
