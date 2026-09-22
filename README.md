@@ -209,7 +209,10 @@ I distinguish **merged work from open proposals** so the repository status is ex
 ##### 🧪 In progress
 
 - [Cognee #4957 — Detect active agent connections](https://github.com/aspire488/cognee/tree/fix/4957-active-agent-status)  
-  Implements active-connection detection in the dashboard/integrations hook with focused regression coverage. The fix is currently on the fork branch; no upstream PR is listed yet.
+  Implements active-connection detection in the dashboard/integrations hook with focused regression coverage. The fix remains on the fork branch pending upstream PR creation.
+
+- [Cognee telemetry follow-up — validation branch](https://github.com/aspire488/cognee/tree/fix/telemetry-error-type)  
+  Explored a narrow pipeline error-type telemetry fix, then verified it overlaps with existing upstream telemetry work (#5159). It is therefore **not listed as an upstream contribution**.
 
 ##### Earlier upstream work
 
