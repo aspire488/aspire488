@@ -19,7 +19,6 @@
 
 > **GitHub Developer Program Member** — building and experimenting with software that integrates with the GitHub ecosystem. GitHub automatically displays the official Developer Program Member badge on eligible profiles. [Program details](https://docs.github.com/en/integrations/concepts/github-developer-program)
 
-
 I build **AI systems, developer tools, automation, and experimental software systems** with an emphasis on execution, architecture, verification, and measurable behavior.
 
 > **What should an AI reason about, and what should reliable software do deterministically?**
@@ -48,7 +47,6 @@ flowchart LR
 ```
 
 This is the design boundary running through the portfolio: **reasoning handles ambiguity; deterministic infrastructure owns execution, state, safety, and verification.**
-
 
 ### ⚙️ [gh-ops](https://github.com/aspire488/gh-ops) — Operational Intelligence Platform
 
@@ -90,7 +88,7 @@ The core stays agent-neutral while integrations can sit beside **OpenCode, Claud
 
 KIO turns intent into real actions through:
 
-**Observe → Reason → Plan → Execute → Verify → Adapt**
+> **Observe → Reason → Plan → Execute → Verify → Adapt**
 
 It owns capability resolution, provider dispatch, security gates, browser/MCP execution, artifacts, runtime state, recovery, and verification of real side effects.
 
@@ -167,7 +165,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 #### 🔄 Open upstream PRs
 
-**Current batch — verified open**
+##### Current batch — verified open
 
 - [OpenTelemetry Erlang #822 — Isolate Req spans across retries and redirects](https://github.com/open-telemetry/opentelemetry-erlang-contrib/pull/822)  
   Fixes Req client-span state leaking across retries/redirects and adds regression coverage for retry isolation.
@@ -208,7 +206,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [PyRIT #2762 — Dataset summary API](https://github.com/microsoft/PyRIT/pull/2762)  
   Adds a memory-backed dataset summary path with logical-example, seed-piece, objective, modality, and harm-category metadata, plus focused unit coverage.
 
-**Earlier upstream work**
+##### Earlier upstream work
 
 - [Clicky #72 — Contributor quickstart revamp](https://github.com/daniel5151/clicky/pull/72)  
   Emulator contributor workflow covering boot paths, safe disk-image setup, firmware smoke tests, troubleshooting, and development handoff.
@@ -229,7 +227,6 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 - [OpenAI Codex #46658 — Beyond Auto mode: adaptive allocation](https://github.com/openai/codex/discussions/46658)  
   Discussed evidence-driven allocation of models, reasoning effort, tools, and subagents, including reassessment triggers, effective inherited configuration, rerouting observability, verification boundaries, and attributable compute cost.
-
 
 > **Selected, not exhaustive.** This section intentionally distinguishes **proposed upstream work** from **accepted/merged work**. Discussion participation is listed separately from code contributions.
 
@@ -258,7 +255,6 @@ I also contribute through **GitHub Discussions** — answering concrete engineer
   Discussed the parsing boundary around STIX indicators, including values containing `=`, malformed patterns, validation, and preserving existing detection semantics.
 
 > Discussion answers are kept focused on reproducible engineering practices, implementation details, and primary documentation rather than activity for its own sake.
-
 
 ---
 
