@@ -205,21 +205,10 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [N3MO #39 — Language routing and parser regression coverage](https://github.com/RajX-dev/N3MO/pull/39)  
   Adds regression coverage for Ruby/Kotlin parser loading, extension routing, and symbol extraction.
 
+- [PyRIT #2762 — Dataset summary API](https://github.com/microsoft/PyRIT/pull/2762)  
+  Adds a memory-backed dataset summary path with logical-example, seed-piece, objective, modality, and harm-category metadata, plus focused unit coverage.
+
 **Earlier upstream work**
-
-- [AI Platform AWS #4 — direct Anthropic provider routing](https://github.com/tysoncung/ai-platform-aws/pull/4)  
-  Direct Anthropic Claude matches resolve before generic Bedrock routing independent of provider registration order, with regression coverage.
-
-- [OpenHands #17579 — Condenser settings validation](https://github.com/OpenHands/OpenHands/pull/17579)  
-  Adds validation and regression coverage for invalid negative values while preserving zero as valid.
-
-- [AgentBench #8 — Global command palette](https://github.com/PicadoLabs/agent-bench/pull/8)  
-  Global command navigation, fuzzy search, keyboard interaction, accessibility semantics, and architecture documentation.
-
-- [GoalAI #1 — Prediction Intelligence Lab](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1)  
-  Reproducible Monte Carlo analysis, sensitivity analysis, stability metrics, tests, and documentation.
-
-- [N3MO #39 — Language routing and parser regression coverage](https://github.com/RajX-dev/N3MO/pull/39)
 
 - [Clicky #72 — Contributor quickstart revamp](https://github.com/daniel5151/clicky/pull/72)  
   Emulator contributor workflow covering boot paths, safe disk-image setup, firmware smoke tests, troubleshooting, and development handoff.
