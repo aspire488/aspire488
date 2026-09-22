@@ -220,7 +220,10 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [PyRIT #2762 — Dataset summary API](https://github.com/microsoft/PyRIT/pull/2762)  
   Adds a memory-backed dataset summary path with logical-example, seed-piece, objective, modality, and harm-category metadata, plus focused unit coverage.
 
-##### 🧪 In progress
+#- [GitHub Profile Analyzer — Impact score evidence weighting](https://github.com/0xarchit/github-profile-analyzer/compare/main...aspire488:fix/impact-score-evidence)  
+  Refines the deterministic Impact score so adoption signals (stars/forks) are balanced with independent project evidence such as releases, release downloads, homepage, README/license/CI/tests coverage. Added deterministic regression coverage for strong project evidence with zero stars/forks. The change is open for upstream review.
+
+#### 🧪 In progress
 
 - [uutils/coreutils #14812 — Preserve canonical quoting style in `ls --dired` metadata](https://github.com/uutils/coreutils/pull/14812)  
   Preserves the canonical quoting-style name used by `ls --dired` and adds regression coverage for named styles and short aliases.
