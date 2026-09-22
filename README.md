@@ -167,6 +167,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 ##### Current batch — verified open
 
+- [IntelliJ PowerShell #506 — Resolve `pwsh.exe` Windows reparse points](https://github.com/intellij-powershell/intellij-powershell/pull/506)  
+  Resolves the configured PowerShell executable through `toRealPath()` before launch and adds regression coverage for WindowsApps `pwsh.exe` reparse-point handling.
+
 - [OpenTelemetry Erlang #822 — Isolate Req spans across retries and redirects](https://github.com/open-telemetry/opentelemetry-erlang-contrib/pull/822)  
   Fixes Req client-span state leaking across retries/redirects and adds regression coverage for retry isolation.
 
