@@ -185,6 +185,12 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [quiche #2756 — Unify PTO-based timer duration](https://github.com/cloudflare/quiche/pull/2756)  
   Centralizes the 3×PTO timer calculation while preserving existing timer behavior.
 
+- [quiche #2758 — Verify peers when using a custom CA](https://github.com/cloudflare/quiche/pull/2758)  
+  Keeps TLS peer verification enabled when `--trust-origin-ca-pem` supplies a custom CA, while preserving the explicit `--no-verify` opt-out.
+
+- [quiche #2759 — Ignore ACKs for non-in-flight packets](https://github.com/cloudflare/quiche/pull/2759)  
+  Preserves in-flight state through legacy congestion-control ACK metadata and prevents Reno from growing its congestion window for non-in-flight packets.
+
 - [Coder #29668 — Deduplicate `Unknown` AI Gateway clients](https://github.com/coder/coder/pull/29668)  
   Groups nullable and literal `Unknown` client values by displayed identity and adds regression coverage.
 
