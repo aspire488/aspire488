@@ -169,6 +169,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 **Current batch**
 
+- [PyRIT #2743 — Add a Garak-inspired exploitation scenario](https://github.com/microsoft/PyRIT/pull/2743)  
+  Adds a PyRIT-native exploitation scenario with curated non-destructive payload datasets, payload-specific scoring, stable attack naming, bounded payload expansion, focused unit coverage, and scanner documentation. The implementation intentionally measures model output and does not execute generated Python/SQL against downstream systems.
+
 - [Hiero Bot #100 — Coalesce concurrent config cache misses](https://github.com/AnthropicBots/hiero-bot-py/pull/100)  
   Adds per-repository in-flight request coalescing so concurrent webhook bursts issue one GitHub contents request, with regression coverage.
 
