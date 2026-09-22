@@ -208,6 +208,10 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 ##### 🧪 In progress
 
+- [uutils/coreutils #14812 — Preserve canonical quoting style in `ls --dired` metadata](https://github.com/uutils/coreutils/pull/14812)  
+  Preserves the canonical quoting-style name used by `ls --dired` and adds regression coverage for named styles and short aliases.
+
+
 - [Cognee #4957 — Detect active agent connections](https://github.com/aspire488/cognee/tree/fix/4957-active-agent-status)  
   Implements active-connection detection in the dashboard/integrations hook with focused regression coverage. The fix remains on the fork branch pending upstream PR creation.
 
