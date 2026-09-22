@@ -206,6 +206,11 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [PyRIT #2762 — Dataset summary API](https://github.com/microsoft/PyRIT/pull/2762)  
   Adds a memory-backed dataset summary path with logical-example, seed-piece, objective, modality, and harm-category metadata, plus focused unit coverage.
 
+##### 🧪 In progress
+
+- [Cognee #4957 — Detect active agent connections](https://github.com/aspire488/cognee/tree/fix/4957-active-agent-status)  
+  Implements active-connection detection in the dashboard/integrations hook with focused regression coverage. The fix is currently on the fork branch; no upstream PR is listed yet.
+
 ##### Earlier upstream work
 
 - [Clicky #72 — Contributor quickstart revamp](https://github.com/daniel5151/clicky/pull/72)  
