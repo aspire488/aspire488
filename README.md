@@ -232,7 +232,18 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [Cognee telemetry follow-up — validation branch](https://github.com/aspire488/cognee/tree/fix/telemetry-error-type)  
   Explored a narrow pipeline error-type telemetry fix, then verified it overlaps with existing upstream telemetry work (#5159). It is therefore **not listed as an upstream contribution**.
 
-##### Earlier upstream work
+##### Recent OSS validation — September 2026
+
+The latest local validation pass covered four repositories with focused fixes/regression coverage and remote PR updates:
+
+- [uutils/coreutils #14812](https://github.com/uutils/coreutils/pull/14812) — validated the `ls --dired` quoting-style changes; local formatting, check, clippy, and diff validation passed. One upstream test remains for maintainer/CI follow-up.
+- [PyRIT #2762](https://github.com/microsoft/PyRIT/pull/2762) — addressed dataset-summary review feedback with collation-safe grouping, unnamed dataset handling, distinct selection keys, fixture ordering, and a loaded-only memory view; full unit suite passed locally.
+- [N3MO #39](https://github.com/RajX-dev/N3MO/pull/39) — fixed Kotlin call-target extraction exposed by the real AST regression test; targeted Ruby/Kotlin tests passed.
+- [OpenHands #17579](https://github.com/OpenHands/OpenHands/pull/17579) — aligned condenser max-size metadata with the agent-server minimum, updated persistence mocks/tests, and passed focused tests, ESLint, TypeScript, and Prettier validation.
+
+> Local validation is reported separately from upstream CI; platform-specific or maintainer-side checks remain the responsibility of the upstream project.
+
+#### Earlier upstream work
 
 - [Clicky #72 — Contributor quickstart revamp](https://github.com/daniel5151/clicky/pull/72)  
   Emulator contributor workflow covering boot paths, safe disk-image setup, firmware smoke tests, troubleshooting, and development handoff.
