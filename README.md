@@ -375,42 +375,48 @@ I also contribute through **GitHub Discussions** — answering concrete engineer
 <p align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/overview.dark.svg" />
-  <img alt="GitHub overview" src="./assets/profile/overview.light.svg" width="100%"/>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/overview.light.svg" />
+  <img alt="GitHub overview" src="./assets/profile/overview.dark.svg" width="100%"/>
 </picture>
 </p>
 
 <p align="center">
 <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/contributions.dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="./assets/profile/contributions.light.svg" />
-  <img alt="Contribution history" src="./assets/profile/contributions.light.svg" width="100%"/>
+  <img alt="Contribution history" src="./assets/profile/contributions.dark.svg" width="100%"/>
 </picture>
 </p>
 
 <p align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/lifetime.dark.svg" />
-  <img alt="Lifetime contribution history" src="./assets/profile/lifetime.light.svg" width="100%"/>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/lifetime.light.svg" />
+  <img alt="Lifetime contribution history" src="./assets/profile/lifetime.dark.svg" width="100%"/>
 </picture>
 </p>
 
 <p align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/languages.dark.svg" />
-  <img alt="Language composition" src="./assets/profile/languages.light.svg" width="100%"/>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/languages.light.svg" />
+  <img alt="Language composition" src="./assets/profile/languages.dark.svg" width="100%"/>
 </picture>
 </p>
 
 <p align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/rhythm.dark.svg" />
-  <img alt="Contribution rhythm" src="./assets/profile/rhythm.light.svg" width="100%"/>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/rhythm.light.svg" />
+  <img alt="Contribution rhythm" src="./assets/profile/rhythm.dark.svg" width="100%"/>
 </picture>
 </p>
 
 <p align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/composition.dark.svg" />
-  <img alt="Contribution composition" src="./assets/profile/composition.light.svg" width="100%"/>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/composition.light.svg" />
+  <img alt="Contribution composition" src="./assets/profile/composition.dark.svg" width="100%"/>
 </picture>
 </p>
 
