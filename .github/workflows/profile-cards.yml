@@ -22,10 +22,15 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           username: aspire488
-          cards: overview,contributions,composition,rhythm,languages
+          cards: contributions,composition,rhythm,languages
           output-dir: assets/profile
           themes: light,dark
           commit: false
+
+      - name: Render live profile overview
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/render_profile_overview.py
 
       - name: Render contribution history
         env:
