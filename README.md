@@ -178,7 +178,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 #### 🔄 Open upstream PRs — September 2026
 
-**24 open PRs currently tracked**, spanning AI infrastructure, developer tooling, databases/query optimizers, observability, security tooling, and systems software. This list is intentionally curated around substantive engineering work rather than contribution-count inflation.
+**25 open PRs currently tracked**, spanning AI infrastructure, developer tooling, databases/query optimizers, observability, security tooling, and systems software. This list is intentionally curated around substantive engineering work rather than contribution-count inflation.
 
 - [KiroCrew #12861 — Restore PDF search behind bounded extraction](https://github.com/kirodotdev/KiroCrew/pull/12861) — bounded PDF extraction with isolated child processing, Windows-safe execution, truncation handling, and regression coverage.
 - [PyRIT #2762 — Add dataset summary API](https://github.com/microsoft/PyRIT/pull/2762) — memory-backed dataset summaries covering grouped examples, seed pieces, objectives, modalities, and harm metadata.
@@ -198,7 +198,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [AgentBench #8 — Add global command palette](https://github.com/PicadoLabs/agent-bench/pull/8) — adds global command navigation, fuzzy search, keyboard interaction, and accessibility semantics.
 - [GoalAI #1 — Prediction Intelligence Lab](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1) — reproducible seeded Monte Carlo analysis, sensitivity/stability metrics, tests, and documentation.
 - [aios #2458 — Record streaming length as truncated output](https://github.com/eumemic/aios/pull/2458) — preserves provider timeout/truncation telemetry at the loop layer.
-- [aios #2459 — Preserve timeout bound in child outcome](https://github.com/eumemic/aios/pull/2459) — retains whether child execution hit the deadline or spend ceiling.
+- [aios #2459 — Preserve timeout bound in child outcome](https://github.com/eumemic/aios/pull/2459) — retains whether child execution hit the deadline or spend ceiling and now exposes that bound through the caller-visible `AgentError` contract with regression coverage.
 - [Cognee #2 — Telemetry error-type fix](https://github.com/aspire488/cognee/pull/2) — fork-side validation branch for telemetry error classification; not an upstream contribution.
 - [Cognee #1 — Active agent status](https://github.com/aspire488/cognee/pull/1) — fork-side active-agent status work; maintained separately from upstream contributions.
 - [UEA #15 — Publish agent adapter and CLI integration](https://github.com/aspire488/Universal-Engineering-Augmentation/pull/15) — documents the agent adapter and CLI integration path.
@@ -217,7 +217,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 ##### Recent OSS validation — September 2026
 
-The aios contribution sequence now includes two merged upstream fixes (#2457 and #2460), with #2460 following the earlier streaming/truncation work as a separate provider-parameter correctness fix. #2460 was merged upstream after a maintainer-led wire-level review and CI validation; the remaining aios follow-ups (#2458 and #2459) stay open and separately scoped.
+The aios contribution sequence now includes two merged upstream fixes (#2457 and #2460), with #2460 following the earlier streaming/truncation work as a separate provider-parameter correctness fix. #2460 was merged upstream after a maintainer-led wire-level review and CI validation; the remaining aios follow-ups (#2458 and #2459) stay open and separately scoped. For #2459, the latest follow-up also makes the timeout bound caller-visible (`deadline` vs `spend`) and adds regression coverage for precedence and legacy timeout behavior.
 
 The latest local validation pass covered three repositories with focused fixes/regression coverage and remote PR updates. Separately, `gh-ops` CI was investigated from the failing workflow logs and the packaging failure was isolated and fixed in [`gh-ops #2`](https://github.com/aspire488/gh-ops/pull/2):
 
