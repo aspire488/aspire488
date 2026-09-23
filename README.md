@@ -472,8 +472,8 @@ I also contribute through **GitHub Discussions** — answering concrete engineer
 | Track | State / next milestone |
 |---|---|
 | ⚙️ gh-ops | Phase 8 operational hardening + OSS persistence |
-| 🤖 KIO | **Paused after Gate 5 completion** — latest repository activity is maintenance/security cleanup, not resumed feature development |
-| 🧠 AURA | **Paused** — core cognition architecture checkpoint complete; no active feature development |
+| 🤖 KIO | **Gate 5 complete · maintenance** — latest activity is security/documentation cleanup and hardening |
+| 🧠 AURA | **Architecture checkpoint** — core cognition architecture is complete; no active feature-development line |
 | 🛠️ UEA | Public alpha + reusable engineering infrastructure |
 | ⚡ CodeFlow | Frozen, hardened prototype |
 | 💊 MediMind | Frozen, hardened prototype |
