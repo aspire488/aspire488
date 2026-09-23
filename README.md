@@ -201,6 +201,10 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 > **Next AI-security target:** RAMPART is tracked here as a target project, not as a claimed contribution or merged PR.
 
 `Python` `Pytest` `AI Security` `Red Teaming` `Agentic AI`
+### 🌀 TopoCore — Spatial Execution Contribution
+
+- **[TopoCore — cycle detection for spatial execution](https://github.com/KARAN-D05/TopoCore/pull/1)** — added deterministic cycle detection to the experimental 2D spatial execution visualizer by tracking `(X, Y, Direction)` states, stopping repeated execution loops, and resetting execution-trace state on reset/clear. This explores an unconventional execution model where program flow is defined by movement through symbolic space.
+
 ### 🆕 Three AI-security OSS contributions — September 23, 2026
 
 - **Microsoft PyRIT #2762** — dataset summary API with memory-backed aggregation and maintainer-reviewed edge-case fixes.
@@ -225,6 +229,8 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 - [Microsoft PyRIT #2762 — Add dataset summary API](https://github.com/microsoft/PyRIT/pull/2762) — adds memory-backed dataset summaries and has been refined through maintainer review covering aggregation, SQLite collation, unnamed dataset identity, and whitespace edge cases.
 
 #### 🔄 Open upstream PRs — September 2026
+
+- [TopoCore — Spatial execution cycle detection](https://github.com/KARAN-D05/TopoCore/pull/1) — adds deterministic repeated-state detection to the 2D spatial execution simulator.
 
 **25 open upstream/fork PRs currently tracked**, spanning AI infrastructure, developer tooling, databases/query optimizers, observability, security tooling, and systems software. This list is intentionally curated around substantive engineering work rather than contribution-count inflation.
 
