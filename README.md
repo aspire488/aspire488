@@ -173,71 +173,37 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [aios #2457 — Preserve `length` finish reason across streaming trailers](https://github.com/eumemic/aios/pull/2457)  
   Merged upstream fix preserving provider-reported `finish_reason="length"` when trailing streaming chunks clobber the assembled finish reason, with regression coverage and `content_filter` precedence handling.
 
-#### 🔄 Open upstream PRs
+#### 🔄 Open upstream PRs — September 2026
 
-##### Current batch — verified open
-- [aios #2458 — Record streaming length as truncated output](https://github.com/eumemic/aios/pull/2458)  
-  Records the now-truthful provider-reported `finish_reason="length"` as `output_truncated=true` telemetry at the loop layer, with streaming E2E regression coverage.
+**25 open PRs currently tracked**, spanning AI infrastructure, developer tooling, databases/query optimizers, observability, security tooling, and systems software. This list is intentionally curated around substantive engineering work rather than contribution-count inflation.
 
-- [aios #2459 — Preserve timeout bound in child outcome](https://github.com/eumemic/aios/pull/2459)  
-  Preserves whether a workflow child timed out on the deadline or spend ceiling while retaining the existing timeout outcome kind, with regression coverage for both paths.
+- [KiroCrew #12861 — Restore PDF search behind bounded extraction](https://github.com/kirodotdev/KiroCrew/pull/12861) — bounded PDF extraction with isolated child processing, Windows-safe execution, truncation handling, and regression coverage.
+- [PyRIT #2762 — Add dataset summary API](https://github.com/microsoft/PyRIT/pull/2762) — memory-backed dataset summaries covering grouped examples, seed pieces, objectives, modalities, and harm metadata.
+- [LlamaIndex #23201 — Preserve retrieved scores during prev/next expansion](https://github.com/run-llama/llama_index/pull/23201) — preserves original retrieval scores through overlapping previous/next-node expansion.
+- [GitHub Profile Analyzer #30 — Evidence-weighted impact scoring](https://github.com/0xarchit/github-profile-analyzer/pull/30) — balances adoption signals with independent repository evidence and regression coverage.
+- [OpenHands #17579 — Align condenser max-size validation](https://github.com/OpenHands/OpenHands/pull/17579) — aligns the UI metadata and persistence mocks with the agent-server `condenser.max_size` contract and minimum of 20.
+- [N3MO #39 — Ruby/Kotlin language routing coverage](https://github.com/RajX-dev/N3MO/pull/39) — regression coverage for parser loading, extension routing, and symbol extraction.
+- [IntelliJ PowerShell #506 — Resolve pwsh reparse points](https://github.com/intellij-powershell/intellij-powershell/pull/506) — handles WindowsApps PowerShell executable reparse points.
+- [quiche #2756 — Unify PTO timer duration](https://github.com/cloudflare/quiche/pull/2756) — centralizes PTO-based timer duration.
+- [quiche #2758 — Verify peers with custom CA](https://github.com/cloudflare/quiche/pull/2758) — keeps peer verification enabled when a custom CA is supplied.
+- [quiche #2759 — Ignore ACKs for non-in-flight packets](https://github.com/cloudflare/quiche/pull/2759) — prevents Reno congestion-window growth from ACKs for non-in-flight packets.
+- [OpenTelemetry Erlang #822 — Isolate Req spans across retries](https://github.com/open-telemetry/opentelemetry-erlang-contrib/pull/822) — isolates client span state across retries and redirects.
+- [RisingWave #27181 — Inspect correlated refs in LogicalValues](https://github.com/risingwavelabs/risingwave/pull/27181) — detects correlated references inside `LogicalValues` rows to protect decorrelation.
+- [MVT #939 — Preserve equals signs in STIX indicators](https://github.com/mvt-project/mvt/pull/939) — fixes parsing of indicator values containing `=`.
+- [Coder #29668 — Deduplicate Unknown AI Gateway clients](https://github.com/coder/coder/pull/29668) — normalizes nullable/literal Unknown client identities.
+- [AI Platform AWS #4 — Fix provider routing specificity](https://github.com/tysoncung/ai-platform-aws/pull/4) — fixes routing precedence between direct Anthropic and generic Bedrock Claude paths.
+- [AgentBench #8 — Add global command palette](https://github.com/PicadoLabs/agent-bench/pull/8) — adds global command navigation, fuzzy search, keyboard interaction, and accessibility semantics.
+- [GoalAI #1 — Prediction Intelligence Lab](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1) — reproducible seeded Monte Carlo analysis, sensitivity/stability metrics, tests, and documentation.
+- [aios #2458 — Record streaming length as truncated output](https://github.com/eumemic/aios/pull/2458) — preserves provider timeout/truncation telemetry at the loop layer.
+- [aios #2459 — Preserve timeout bound in child outcome](https://github.com/eumemic/aios/pull/2459) — retains whether child execution hit the deadline or spend ceiling.
+- [aios #2460 — Preserve LiteLLM parameter translation](https://github.com/eumemic/aios/pull/2460) — keeps provider-specific parameter translation intact while retaining explicit allow-lists.
+- [Cognee #2 — Telemetry error-type fix](https://github.com/aspire488/cognee/pull/2) — fork-side validation branch for telemetry error classification; not an upstream contribution.
+- [Cognee #1 — Active agent status](https://github.com/aspire488/cognee/pull/1) — fork-side active-agent status work; maintained separately from upstream contributions.
+- [UEA #15 — Publish agent adapter and CLI integration](https://github.com/aspire488/Universal-Engineering-Augmentation/pull/15) — documents the agent adapter and CLI integration path.
+- [Profile README #3 — Refresh engineering activity](https://github.com/aspire488/aspire488/pull/3) — profile-repository documentation work; current README updates are also applied directly to main.
+- [linguist #1 — Trim .example suffix before detection](https://github.com/aspire488/linguist/pull/1) — fork-side language-detection fix under review.
 
-- [aios #2460 — Preserve LiteLLM parameter translation](https://github.com/eumemic/aios/pull/2460)  
-  Prevents the harness from forcing provider-supported parameters such as Anthropic `reasoning_effort` through raw passthrough, while retaining explicit operator allow-lists and unknown-parameter handling.
-
-- [LlamaIndex #23201 — Preserve retrieved scores during prev/next expansion](https://github.com/run-llama/llama_index/pull/23201)  
-  Preserves scores from originally retrieved nodes when overlapping `PrevNextNodePostprocessor` expansion encounters the same node, with regression coverage for overlapping expansion, both directions, and zero-score results.
-
-- [IntelliJ PowerShell #506 — Resolve `pwsh.exe` Windows reparse points](https://github.com/intellij-powershell/intellij-powershell/pull/506)  
-  Resolves the configured PowerShell executable through `toRealPath()` before launch and adds regression coverage for WindowsApps `pwsh.exe` reparse-point handling.
-
-- [OpenTelemetry Erlang #822 — Isolate Req spans across retries and redirects](https://github.com/open-telemetry/opentelemetry-erlang-contrib/pull/822)  
-  Fixes Req client-span state leaking across retries/redirects and adds regression coverage for retry isolation.
-
-- [RisingWave #27181 — Inspect correlated refs in LogicalValues](https://github.com/risingwavelabs/risingwave/pull/27181)  
-  Fixes optimizer correlation detection for `LogicalValues` rows and adds regression coverage.
-
-- [MVT #939 — Preserve equals signs in STIX indicator values](https://github.com/mvt-project/mvt/pull/939)  
-  Fixes STIX parsing for indicator values containing `=` and adds regression coverage.
-
-- [quiche #2756 — Unify PTO-based timer duration](https://github.com/cloudflare/quiche/pull/2756)  
-  Centralizes the 3×PTO timer calculation while preserving existing timer behavior.
-
-- [quiche #2758 — Verify peers when using a custom CA](https://github.com/cloudflare/quiche/pull/2758)  
-  Keeps TLS peer verification enabled when `--trust-origin-ca-pem` supplies a custom CA, while preserving the explicit `--no-verify` opt-out.
-
-- [quiche #2759 — Ignore ACKs for non-in-flight packets](https://github.com/cloudflare/quiche/pull/2759)  
-  Preserves in-flight state through legacy congestion-control ACK metadata and prevents Reno from growing its congestion window for non-in-flight packets.
-
-- [Coder #29668 — Deduplicate `Unknown` AI Gateway clients](https://github.com/coder/coder/pull/29668)  
-  Groups nullable and literal `Unknown` client values by displayed identity and adds regression coverage.
-
-- [AI Platform AWS #4 — Direct Anthropic provider routing](https://github.com/tysoncung/ai-platform-aws/pull/4)  
-  Fixes provider-resolution precedence when direct Anthropic and generic Bedrock Claude routing both apply.
-
-- [OpenHands #17579 — Validate condenser max size](https://github.com/OpenHands/OpenHands/pull/17579)  
-  Adds validation and regression coverage for negative condenser max-size values while preserving zero as valid.
-
-- [AgentBench #8 — Add global command palette](https://github.com/PicadoLabs/agent-bench/pull/8)  
-  Adds global command navigation, fuzzy search, keyboard interaction, accessibility semantics, and architecture documentation.
-
-- [GoalAI #1 — Prediction Intelligence Lab](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1)  
-  Adds reproducible seeded Monte Carlo analysis, sensitivity/stability metrics, tests, and documentation.
-
-- [N3MO #39 — Language routing and parser regression coverage](https://github.com/RajX-dev/N3MO/pull/39)  
-  Adds regression coverage for Ruby/Kotlin parser loading, extension routing, and symbol extraction.
-
-- [PyRIT #2762 — Dataset summary API](https://github.com/microsoft/PyRIT/pull/2762)  
-  Adds a memory-backed dataset summary path with logical-example, seed-piece, objective, modality, and harm-category metadata, plus focused unit coverage.
-
-- [KiroCrew #12861 — Restore PDF search behind bounded extraction](https://github.com/kirodotdev/KiroCrew/pull/12861)  
-  Restores PDF content search while routing pdfplumber through a disposable, resource-limited extractor shared with knowledge ingestion. Adds bounded extraction, failure/truncation handling, and focused regression coverage.
-
-- [GitHub Profile Analyzer #30 — Evidence-weighted impact scoring](https://github.com/0xarchit/github-profile-analyzer/pull/30)  
-  Refines deterministic impact scoring around independent project evidence such as releases, downloads, homepage, README/license/CI/tests coverage, with regression coverage for strong project evidence.
-
-#- [GitHub Profile Analyzer — Impact score evidence weighting](https://github.com/0xarchit/github-profile-analyzer/compare/main...aspire488:fix/impact-score-evidence)  
-  Refines the deterministic Impact score so adoption signals (stars/forks) are balanced with independent project evidence such as releases, release downloads, homepage, README/license/CI/tests coverage. Added deterministic regression coverage for strong project evidence with zero stars/forks. The change is open for upstream review.
+> **Status note:** Open means the PR is currently open on GitHub; it does not imply maintainer acceptance or CI success. Fork-side PRs are explicitly identified so they are not confused with upstream contributions.
 
 #### 🧪 In progress
 
@@ -253,9 +219,9 @@ The aios contribution sequence now includes one merged upstream fix (#2457) foll
 
 The latest local validation pass covered three repositories with focused fixes/regression coverage and remote PR updates:
 
-- [PyRIT #2762](https://github.com/microsoft/PyRIT/pull/2762) — addressed dataset-summary review feedback with collation-safe grouping, unnamed dataset handling, distinct selection keys, fixture ordering, and a loaded-only memory view; full unit suite passed locally.
+- [PyRIT #2762](https://github.com/microsoft/PyRIT/pull/2762) — addressed dataset-summary review feedback around metadata aggregation and row multiplication; current branch keeps aggregation and metadata collection in a single database-side query.
 - [N3MO #39](https://github.com/RajX-dev/N3MO/pull/39) — fixed Kotlin call-target extraction exposed by the real AST regression test; targeted Ruby/Kotlin tests passed.
-- [OpenHands #17579](https://github.com/OpenHands/OpenHands/pull/17579) — aligned condenser max-size metadata with the agent-server minimum, updated persistence mocks/tests, and passed focused tests, ESLint, TypeScript, and Prettier validation.
+- [OpenHands #17579](https://github.com/OpenHands/OpenHands/pull/17579) — aligned condenser max-size metadata with the agent-server minimum, updated persistence mocks/tests, and recorded focused local validation.
 
 > Local validation is reported separately from upstream CI; platform-specific or maintainer-side checks remain the responsibility of the upstream project.
 
