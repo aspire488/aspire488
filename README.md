@@ -168,14 +168,25 @@ I use open source as an external engineering track: working across unfamiliar co
 
 I distinguish **merged work from open proposals** so the repository status is explicit.
 
+#### ✅ Merged upstream work
+
+- [aios #2457 — Preserve `length` finish reason across streaming trailers](https://github.com/eumemic/aios/pull/2457)  
+  Merged upstream fix preserving provider-reported `finish_reason="length"` when trailing streaming chunks clobber the assembled finish reason, with regression coverage and `content_filter` precedence handling.
+
 #### 🔄 Open upstream PRs
 
 ##### Current batch — verified open
+- [aios #2458 — Record streaming length as truncated output](https://github.com/eumemic/aios/pull/2458)  
+  Records the now-truthful provider-reported `finish_reason="length"` as `output_truncated=true` telemetry at the loop layer, with streaming E2E regression coverage.
+
+- [aios #2459 — Preserve timeout bound in child outcome](https://github.com/eumemic/aios/pull/2459)  
+  Preserves whether a workflow child timed out on the deadline or spend ceiling while retaining the existing timeout outcome kind, with regression coverage for both paths.
+
+- [aios #2460 — Preserve LiteLLM parameter translation](https://github.com/eumemic/aios/pull/2460)  
+  Prevents the harness from forcing provider-supported parameters such as Anthropic `reasoning_effort` through raw passthrough, while retaining explicit operator allow-lists and unknown-parameter handling.
+
 - [LlamaIndex #23201 — Preserve retrieved scores during prev/next expansion](https://github.com/run-llama/llama_index/pull/23201)  
   Preserves scores from originally retrieved nodes when overlapping `PrevNextNodePostprocessor` expansion encounters the same node, with regression coverage for overlapping expansion, both directions, and zero-score results.
-
-- [aios #2457 — Preserve `length` finish reason across streaming trailers](https://github.com/eumemic/aios/pull/2457)  
-  Preserves provider-reported `finish_reason="length"` when trailing usage/stop chunks clobber the assembled finish reason, with focused regression coverage and `content_filter` precedence handling.
 
 - [IntelliJ PowerShell #506 — Resolve `pwsh.exe` Windows reparse points](https://github.com/intellij-powershell/intellij-powershell/pull/506)  
   Resolves the configured PowerShell executable through `toRealPath()` before launch and adds regression coverage for WindowsApps `pwsh.exe` reparse-point handling.
@@ -225,8 +236,11 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [PyRIT #2762 — Dataset summary API](https://github.com/microsoft/PyRIT/pull/2762)  
   Adds a memory-backed dataset summary path with logical-example, seed-piece, objective, modality, and harm-category metadata, plus focused unit coverage.
 
-- [KiroCrew #11052 — Restore PDF search behind bounded extraction](https://github.com/kirodotdev/KiroCrew/compare/main...aspire488:fix/bounded-pdf-extraction)  
+- [KiroCrew #12861 — Restore PDF search behind bounded extraction](https://github.com/kirodotdev/KiroCrew/pull/12861)  
   Restores PDF content search while routing pdfplumber through a disposable, resource-limited extractor shared with knowledge ingestion. Adds bounded extraction, failure/truncation handling, and focused regression coverage.
+
+- [GitHub Profile Analyzer #30 — Evidence-weighted impact scoring](https://github.com/0xarchit/github-profile-analyzer/pull/30)  
+  Refines deterministic impact scoring around independent project evidence such as releases, downloads, homepage, README/license/CI/tests coverage, with regression coverage for strong project evidence.
 
 #- [GitHub Profile Analyzer — Impact score evidence weighting](https://github.com/0xarchit/github-profile-analyzer/compare/main...aspire488:fix/impact-score-evidence)  
   Refines the deterministic Impact score so adoption signals (stars/forks) are balanced with independent project evidence such as releases, release downloads, homepage, README/license/CI/tests coverage. Added deterministic regression coverage for strong project evidence with zero stars/forks. The change is open for upstream review.
@@ -243,6 +257,8 @@ I distinguish **merged work from open proposals** so the repository status is ex
   Explored a narrow pipeline error-type telemetry fix, then verified it overlaps with existing upstream telemetry work (#5159). It is therefore **not listed as an upstream contribution**.
 
 ##### Recent OSS validation — September 2026
+
+The aios contribution sequence now includes one merged upstream fix (#2457) followed by three scoped follow-ups (#2458, #2459, #2460), each separated by issue scope and regression coverage.
 
 The latest local validation pass covered four repositories with focused fixes/regression coverage and remote PR updates:
 
