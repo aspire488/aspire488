@@ -107,7 +107,8 @@ def render(calendar: dict, theme: dict, theme_name: str, end_date: dt.date) -> s
                 "date": date.isoformat(), "contributionCount": 0, "contributionLevel": "NONE"
             })
             row.append(LEVELS[item["contributionLevel"]])
-            if date <= end_date:\n                all_days.append(item)
+            if date <= end_date:
+                all_days.append(item)
         cells.append(row)
 
     labels = []
