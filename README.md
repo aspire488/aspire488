@@ -394,6 +394,14 @@ I also contribute through **GitHub Discussions** — answering concrete engineer
 
 <p align="center">
 <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/overview.dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/overview.light.svg" />
+  <img alt="Live GitHub overview" src="./assets/profile/overview.dark.svg" width="100%"/>
+</picture>
+</p>
+
+<p align="center">
+<picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/contributions.dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="./assets/profile/contributions.light.svg" />
   <img alt="GitHub contribution history" src="./assets/profile/contributions.dark.svg" width="100%"/>
