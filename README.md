@@ -25,6 +25,8 @@ I build **AI systems, developer tools, automation, and experimental software sys
 
 I learn by shipping, breaking things, measuring them, and then hardening the parts that are worth keeping.
 
+> **2026 contribution milestone:** 500+ GitHub contributions, alongside ongoing upstream and fork-side engineering work.
+
 
 <p align="center">
   <a href="https://joel-jigo-portfolio--joeljigo3.replit.app"><img src="https://img.shields.io/badge/%E2%86%92%20Portfolio-Visit%20Joel's%20Portfolio-70a5fd?style=for-the-badge"/></a>
@@ -64,7 +66,7 @@ The system is deliberately **read-only against GitHub**: collection and analysis
 <a href="https://github.com/aspire488/gh-ops"><img src="https://img.shields.io/badge/Repository-Open-70a5fd?style=for-the-badge"/></a>
 <a href="https://github.com/aspire488/gh-ops/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/gh-ops/daily.yml?branch=master&style=for-the-badge&label=Actions"/></a>
 
-**Current:** Phases 1–8 are implemented, with scheduled GitHub Actions, dedicated CI validation, and Telegram operations live. CI validates Ruff, mypy, and the full pytest suite on pushes and pull requests. The latest CI hardening fixed an editable-install failure caused by an unsupported setuptools backend in [`gh-ops #2`](https://github.com/aspire488/gh-ops/pull/2). The next work is persistent cross-run OSS opportunity state and its notification path.
+**Current:** Phases 1–8 are implemented, with scheduled GitHub Actions, dedicated CI validation, and Telegram operations live. CI validates Ruff, mypy, and the full pytest suite on pushes and pull requests. The latest CI hardening fixed an editable-install failure caused by an unsupported setuptools backend in [`gh-ops #2`](https://github.com/aspire488/gh-ops/pull/2). The current development line adds **cross-run OSS opportunity deduplication and run summaries**, with the latest local validation at **1,084 passed, 1 skipped**. The system now tracks opportunity identity across runs and produces deterministic run-level summaries for the notification/reporting path.
 
 ### 🛠️ [Universal Engineering Augmentation](https://github.com/aspire488/Universal-Engineering-Augmentation) — Public Alpha
 
@@ -178,15 +180,17 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 ### 🔥 Latest engineering work — September 23, 2026
 
-- **aios #2459** — timeout-bound propagation is complete on the updated branch: deadline vs. spend is preserved through the child outcome and exposed through the caller-visible `AgentError` contract, with regression coverage.
-- **aios #2458** — streaming `finish_reason="length"` is carried into truncation telemetry, including loop-level SSE subscriber coverage.
+- **PyRIT #2782** — fixed scenario run summaries so `techniques_used` uses the persisted canonical `technique_name` instead of a potentially goal/objective-bearing `display_group`, with regression coverage.
+- **PyRIT #2762** — continued maintainer-driven dataset-summary refinement: fixed unnamed dataset identity to a typed SQL `NULL`, preserved dataset collation semantics, and added service coverage for whitespace-only unnamed populations. Further maintainer-requested review work remains tracked on the PR.
 - **gh-ops #2** — fixed the GitHub Actions editable-install failure by moving to the supported `setuptools.build_meta` backend.
-- **OpenAI Codex #46658** — contributed to an architecture discussion on adaptive allocation, independent verification, reassessment, and feedback loops around agents.
-- **PyRIT #2762** — continued maintainer-driven dataset-summary refinement around database grouping and metadata projection.
+- **gh-ops** — completed the cross-run OSS opportunity deduplication and run-summary batch; latest local validation is **1,084 passed, 1 skipped**.
+- **aios #2459** — preserved the timeout bound (`deadline` vs `spend`) in child outcomes and the caller-visible `AgentError` contract, with regression coverage.
+- **aios #2458** — carried streaming `finish_reason="length"` into truncation telemetry, including loop-level SSE subscriber coverage.
+- **OpenAI Codex #46658** — contributed to an architecture discussion around adaptive allocation, independent verification, reassessment, and feedback loops around agents.
 
 #### 🔄 Open upstream PRs — September 2026
 
-**25 open PRs currently tracked**, spanning AI infrastructure, developer tooling, databases/query optimizers, observability, security tooling, and systems software. This list is intentionally curated around substantive engineering work rather than contribution-count inflation.
+**25 open upstream/fork PRs currently tracked**, spanning AI infrastructure, developer tooling, databases/query optimizers, observability, security tooling, and systems software. This list is intentionally curated around substantive engineering work rather than contribution-count inflation.
 
 - [KiroCrew #12861 — Restore PDF search behind bounded extraction](https://github.com/kirodotdev/KiroCrew/pull/12861) — bounded PDF extraction with isolated child processing, Windows-safe execution, truncation handling, and regression coverage.
 - [PyRIT #2762 — Add dataset summary API](https://github.com/microsoft/PyRIT/pull/2762) — memory-backed dataset summaries covering grouped examples, seed pieces, objectives, modalities, and harm metadata.
@@ -214,6 +218,13 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [linguist #1 — Trim .example suffix before detection](https://github.com/aspire488/linguist/pull/1) — fork-side language-detection fix under review.
 
 > **Status note:** Open means the PR is currently open on GitHub; it does not imply maintainer acceptance or CI success. Fork-side PRs are explicitly identified so they are not confused with upstream contributions.
+
+#### 🆕 PyRIT follow-up — September 23, 2026
+
+- [PyRIT #2782 — Canonical technique names in scenario run summaries](https://github.com/aspire488/PyRIT/pull/1) — fork-side fix for scenario run summaries that incorrectly exposed `display_group` as `techniques_used`. The patch uses persisted `technique_name` when available and adds a regression where the display group and canonical technique intentionally differ.
+- [PyRIT #2762 — Dataset summary API](https://github.com/microsoft/PyRIT/pull/2762) — upstream contribution under maintainer review, with follow-up fixes for unnamed dataset identity and SQLite collation/whitespace edge cases.
+
+> **PyRIT note:** #2782 is explicitly shown as fork-side work until an upstream pull request exists; it is not counted as merged or upstream contribution.
 
 #### 🧪 In progress
 
