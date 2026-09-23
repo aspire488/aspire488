@@ -193,6 +193,14 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 ---
 
+### 🆕 Three AI-security OSS contributions — September 23, 2026
+
+- **Microsoft PyRIT #2762** — dataset summary API with memory-backed aggregation and maintainer-reviewed edge-case fixes.
+- **NVIDIA garak #1** — fixes `IterativeProbe` when `soft_probe_prompt_cap=None`, preserving uncapped behavior and adding regression coverage.
+- **UK AI Security Institute Inspect AI #1** — fixes Google inline-image conversion for raw binary `Blob.data` by base64-encoding bytes before building the data URI.
+
+> These are open pull requests, not merged contributions. Each patch includes focused regression coverage and is submitted against the project's `main` branch.
+
 ### 🔥 Latest engineering work — September 23, 2026
 
 - **PyRIT #2782** — fixed scenario run summaries so `techniques_used` uses the persisted canonical `technique_name` instead of a potentially goal/objective-bearing `display_group`, with regression coverage.
@@ -203,6 +211,10 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 - **aios #2458** — carried streaming `finish_reason="length"` into truncation telemetry, including loop-level SSE subscriber coverage.
 - **GitHub Profile Analyzer #30** — refined evidence-weighted impact scoring and fixed the factor tooltip so long evidence breakdowns stay within the viewport.
 - **OpenAI Codex #46658** — contributed to an architecture discussion around adaptive allocation, independent verification, reassessment, and feedback loops around agents.
+
+- [NVIDIA garak #1 — Handle unset soft prompt cap in IterativeProbe](https://github.com/aspire488/garak/pull/1) — fixes the uncapped `soft_probe_prompt_cap=None` path so iterative probes retain an infinite termination bound, with regression coverage for `follow_prompt_cap=True`.
+- [UK AI Security Institute Inspect AI #1 — Base64 encode Google inline image bytes](https://github.com/aspire488/inspect_ai/pull/1) — fixes Google GenAI `Blob.data` conversion by base64-encoding raw inline image bytes before constructing the data URI, with binary-image regression coverage.
+- [Microsoft PyRIT #2762 — Add dataset summary API](https://github.com/microsoft/PyRIT/pull/2762) — adds memory-backed dataset summaries and has been refined through maintainer review covering aggregation, SQLite collation, unnamed dataset identity, and whitespace edge cases.
 
 #### 🔄 Open upstream PRs — September 2026
 
