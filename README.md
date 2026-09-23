@@ -258,7 +258,7 @@ The latest local validation pass covered three repositories with focused fixes/r
   Discussed whether MVT should keep lightweight STIX parsing or introduce a small explicit parsing/validation boundary for malformed and edge-case indicator values.
 
 - [OpenAI Codex #46658 — Beyond Auto mode: adaptive allocation](https://github.com/openai/codex/discussions/46658)  
-  Discussed evidence-driven allocation of models, reasoning effort, tools, and subagents, including reassessment triggers, effective inherited configuration, rerouting observability, verification boundaries, and attributable compute cost.
+  Discussed evidence-driven allocation of models, reasoning effort, tools, and subagents, including reassessment triggers, effective inherited configuration, rerouting observability, hard verification boundaries, and feedback loops driven by independently checked task-state changes.
 
 > **Selected, not exhaustive.** This section intentionally distinguishes **proposed upstream work** from **accepted/merged work**. Discussion participation is listed separately from code contributions.
 
@@ -367,9 +367,9 @@ I also contribute through **GitHub Discussions** — answering concrete engineer
 
 <p align="center">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/lifetime.dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/lifetime.light.svg" />
-  <img alt="Full-width contribution history" src="./assets/profile/lifetime.dark.svg" width="100%"/>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/activity.dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/activity.light.svg" />
+  <img alt="2026 engineering activity" src="./assets/profile/activity.dark.svg" width="100%"/>
 </picture>
 </p>
 
