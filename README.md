@@ -217,7 +217,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 ##### Recent OSS validation — September 2026
 
-The aios contribution sequence now includes two merged upstream fixes (#2457 and #2460), with #2460 following the earlier streaming/truncation work as a separate provider-parameter correctness fix. The remaining aios follow-ups (#2458 and #2459) stay open and separately scoped.
+The aios contribution sequence now includes two merged upstream fixes (#2457 and #2460), with #2460 following the earlier streaming/truncation work as a separate provider-parameter correctness fix. #2460 was merged upstream after a maintainer-led wire-level review and CI validation; the remaining aios follow-ups (#2458 and #2459) stay open and separately scoped.
 
 The latest local validation pass covered three repositories with focused fixes/regression coverage and remote PR updates. Separately, `gh-ops` CI was investigated from the failing workflow logs and the packaging failure was isolated and fixed in [`gh-ops #2`](https://github.com/aspire488/gh-ops/pull/2):
 
