@@ -201,6 +201,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 - **gh-ops** — completed the cross-run OSS opportunity deduplication and run-summary batch; latest local validation is **1,084 passed, 1 skipped**.
 - **aios #2459** — preserved the timeout bound (`deadline` vs `spend`) in child outcomes and the caller-visible `AgentError` contract, with regression coverage.
 - **aios #2458** — carried streaming `finish_reason="length"` into truncation telemetry, including loop-level SSE subscriber coverage.
+- **GitHub Profile Analyzer #30** — refined evidence-weighted impact scoring and fixed the factor tooltip so long evidence breakdowns stay within the viewport.
 - **OpenAI Codex #46658** — contributed to an architecture discussion around adaptive allocation, independent verification, reassessment, and feedback loops around agents.
 
 #### 🔄 Open upstream PRs — September 2026
@@ -393,9 +394,9 @@ I also contribute through **GitHub Discussions** — answering concrete engineer
 
 <p align="center">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/overview.dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/overview.light.svg" />
-  <img alt="GitHub overview" src="./assets/profile/overview.dark.svg" width="100%"/>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/contributions.dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/contributions.light.svg" />
+  <img alt="GitHub contribution history" src="./assets/profile/contributions.dark.svg" width="100%"/>
 </picture>
 </p>
 
