@@ -22,7 +22,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           username: aspire488
-          cards: overview,lifetime,contributions,composition,rhythm,languages
+          cards: overview,contributions,composition,rhythm,languages
           output-dir: assets/profile
           themes: light,dark
           commit: true
