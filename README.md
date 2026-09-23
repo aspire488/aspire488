@@ -191,7 +191,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 ### 🔥 Current PyRIT work
 
-- **[#2762 — Dataset Summary API](https://github.com/microsoft/PyRIT/pull/2762)** — upstream contribution under maintainer review. Added memory-backed dataset summaries and iterated through maintainer feedback covering aggregation, SQLite collation behavior, unnamed dataset identity, whitespace edge cases, selection-key isolation, and loaded-only behavior. Latest maintainer verification on commit `bcc38ad4` marked these concerns addressed.
+- **[#2762 — Dataset Summary API](https://github.com/microsoft/PyRIT/pull/2762)** — upstream contribution now **maintainer-verified on the substantive review concerns**. Added memory-backed dataset summaries and iterated through feedback covering aggregation, SQLite collation behavior, unnamed/whitespace dataset identity, selection-key isolation, metadata query size, and `loaded_only` behavior. Roman Lutz verified these concerns against real stored seeds on `bcc38ad4`; the branch then received a follow-up test-cleanup commit. The PR remains open pending final upstream disposition.
 - **[#2782 — Canonical technique names in scenario run summaries](https://github.com/aspire488/PyRIT/tree/fix/promptinject-technique-summary)** — follow-up fix prepared on my fork. Corrects `techniques_used` to use the persisted canonical `technique_name` rather than a potentially goal/objective-bearing `display_group`, with regression coverage. The fork PR is open while an upstream submission path is being finalized.
 
 > **Why it matters:** this work involves navigating a large unfamiliar codebase, understanding existing data models and service boundaries, responding to maintainer review, and adding targeted regression coverage rather than making isolated demo changes.
@@ -223,7 +223,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 ### 🔥 Latest engineering work — September 23, 2026
 
 - **PyRIT #2782** — fixed scenario run summaries so `techniques_used` uses the persisted canonical `technique_name` instead of a potentially goal/objective-bearing `display_group`, with regression coverage. The fix is currently tracked as an open fork PR.
-- **PyRIT #2762** — continued maintainer-driven dataset-summary refinement: fixed unnamed dataset identity to a typed SQL `NULL`, preserved dataset collation semantics, isolated named `__unnamed__` from the unnamed population, and added service coverage for whitespace-only unnamed populations. Maintainer verification on `bcc38ad4` confirmed the remaining edge-case concerns are addressed.
+- **PyRIT #2762** — maintainer-driven dataset-summary refinement reached substantive verification: unnamed/whitespace identity, SQLite collation semantics, named `__unnamed__` isolation, logical-example counting, metadata query size, and `loaded_only` behavior were verified by Roman Lutz against real stored data on `bcc38ad4`. A follow-up test-cleanup commit was then pushed to the branch; the PR remains open.
 - **gh-ops #2** — fixed the GitHub Actions editable-install failure by moving to the supported `setuptools.build_meta` backend.
 - **gh-ops** — completed the cross-run OSS opportunity deduplication and run-summary batch; latest local validation is **1,084 passed, 1 skipped**.
 - **aios #2459** — preserved the timeout bound (`deadline` vs `spend`) in child outcomes and the caller-visible `AgentError` contract, with regression coverage.
@@ -233,7 +233,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 - [NVIDIA garak #1 — Handle unset soft prompt cap in IterativeProbe](https://github.com/aspire488/garak/pull/1) — fixes the uncapped `soft_probe_prompt_cap=None` path so iterative probes retain an infinite termination bound, with regression coverage for `follow_prompt_cap=True`.
 - [UK AI Security Institute Inspect AI #1 — Base64 encode Google inline image bytes](https://github.com/aspire488/inspect_ai/pull/1) — fixes Google GenAI `Blob.data` conversion by base64-encoding raw inline image bytes before constructing the data URI, with binary-image regression coverage.
-- [Microsoft PyRIT #2762 — Add dataset summary API](https://github.com/microsoft/PyRIT/pull/2762) — adds memory-backed dataset summaries and has been refined through maintainer review covering aggregation, SQLite collation, unnamed dataset identity, and whitespace edge cases.
+- [Microsoft PyRIT #2762 — Add dataset summary API](https://github.com/microsoft/PyRIT/pull/2762) — adds memory-backed dataset summaries; substantive maintainer review concerns have been verified, with the PR still open pending final disposition.
 
 #### 🔄 Open upstream PRs — September 2026
 
@@ -271,7 +271,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 #### 🆕 PyRIT follow-up — September 23, 2026
 
 - [PyRIT #2782 — Canonical technique names in scenario run summaries](https://github.com/aspire488/PyRIT/pull/1) — fork-side fix for scenario run summaries that incorrectly exposed `display_group` as `techniques_used`. The patch uses persisted `technique_name` when available and adds a regression where the display group and canonical technique intentionally differ.
-- [PyRIT #2762 — Dataset summary API](https://github.com/microsoft/PyRIT/pull/2762) — upstream contribution under maintainer review. Latest maintainer verification on `bcc38ad4` confirms the unnamed dataset identity, collation, selection-key, query-size, and `loaded_only` concerns are addressed.
+- [PyRIT #2762 — Dataset summary API](https://github.com/microsoft/PyRIT/pull/2762) — upstream contribution with substantive maintainer concerns verified on `bcc38ad4`; follow-up test cleanup has been pushed and the PR remains open.
 
 > **PyRIT note:** #2782 is explicitly shown as fork-side work until an upstream pull request exists; it is not counted as merged or upstream contribution.
 
