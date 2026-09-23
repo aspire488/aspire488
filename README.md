@@ -176,6 +176,14 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [aios #2460 — Preserve LiteLLM parameter translation](https://github.com/eumemic/aios/pull/2460)  
   Merged upstream fix that preserves LiteLLM provider-specific parameter translation while retaining explicit `allowed_openai_params` overrides, with regression coverage for mapped, unmapped, and explicitly forced parameters.
 
+### 🔥 Latest engineering work — September 23, 2026
+
+- **aios #2459** — timeout-bound propagation is complete on the updated branch: deadline vs. spend is preserved through the child outcome and exposed through the caller-visible `AgentError` contract, with regression coverage.
+- **aios #2458** — streaming `finish_reason="length"` is carried into truncation telemetry, including loop-level SSE subscriber coverage.
+- **gh-ops #2** — fixed the GitHub Actions editable-install failure by moving to the supported `setuptools.build_meta` backend.
+- **OpenAI Codex #46658** — contributed to an architecture discussion on adaptive allocation, independent verification, reassessment, and feedback loops around agents.
+- **PyRIT #2762** — continued maintainer-driven dataset-summary refinement around database grouping and metadata projection.
+
 #### 🔄 Open upstream PRs — September 2026
 
 **25 open PRs currently tracked**, spanning AI infrastructure, developer tooling, databases/query optimizers, observability, security tooling, and systems software. This list is intentionally curated around substantive engineering work rather than contribution-count inflation.
