@@ -174,6 +174,8 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [LlamaIndex #23201 — Preserve retrieved scores during prev/next expansion](https://github.com/run-llama/llama_index/pull/23201)  
   Preserves scores from originally retrieved nodes when overlapping `PrevNextNodePostprocessor` expansion encounters the same node, with regression coverage for overlapping expansion, both directions, and zero-score results.
 
+- [aios #2457 — Preserve `length` finish reason across streaming trailers](https://github.com/eumemic/aios/pull/2457)  
+  Preserves provider-reported `finish_reason="length"` when trailing usage/stop chunks clobber the assembled finish reason, with focused regression coverage and `content_filter` precedence handling.
 
 - [IntelliJ PowerShell #506 — Resolve `pwsh.exe` Windows reparse points](https://github.com/intellij-powershell/intellij-powershell/pull/506)  
   Resolves the configured PowerShell executable through `toRealPath()` before launch and adds regression coverage for WindowsApps `pwsh.exe` reparse-point handling.
@@ -233,7 +235,6 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 - [uutils/coreutils #14812 — Preserve canonical quoting style in `ls --dired` metadata](https://github.com/uutils/coreutils/pull/14812)  
   Preserves the canonical quoting-style name used by `ls --dired` and adds regression coverage for named styles and short aliases.
-
 
 - [Cognee #4957 — Detect active agent connections](https://github.com/aspire488/cognee/tree/fix/4957-active-agent-status)  
   Implements active-connection detection in the dashboard/integrations hook with focused regression coverage. The fix remains on the fork branch pending upstream PR creation.
@@ -380,7 +381,7 @@ I also contribute through **GitHub Discussions** — answering concrete engineer
 
 <p align="center">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/contributions.dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/contributions.light.svg" />
   <img alt="Contribution history" src="./assets/profile/contributions.light.svg" width="100%"/>
 </picture>
 </p>
