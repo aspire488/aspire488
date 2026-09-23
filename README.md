@@ -235,6 +235,11 @@ The latest local validation pass covered three repositories with focused fixes/r
 - [Agent Substrate #1104 — dual-stack egress regression review](https://github.com/agent-substrate/substrate/pull/1104)  
   Reviewed the in-cluster egress test against [#1089](https://github.com/agent-substrate/substrate/issues/1089), identifying that the dual-stack case currently verifies only eventual HTTP success and does not directly prove the broken-IPv6 → IPv4 fallback behavior. Suggested making the regression test exercise the actual no-route/fallback condition rather than merely adding family coverage.
 
+#### 🔎 Upstream architecture discussions
+
+- [Agent Sandbox #1615 — Routing requests across multiple claimed Sandboxes](https://github.com/kubernetes-sigs/agent-sandbox/issues/1615)  
+  Discussed the boundary between higher-level orchestration and the sandbox router for multi-Sandbox request distribution, including instance selection, readiness/capacity signals, retry/failover semantics, and a clean orchestrator → router → Sandbox responsibility split.
+
 #### 💬 Community technical discussions
 
 - [Lexical #8771 — Named Slots for paginated editors](https://github.com/facebook/lexical/discussions/8771)  
