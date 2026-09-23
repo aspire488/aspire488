@@ -184,8 +184,8 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 ### 🔥 Current PyRIT work
 
-- **[#2762 — Dataset Summary API](https://github.com/microsoft/PyRIT/pull/2762)** — upstream contribution under maintainer review. Added memory-backed dataset summaries and iterated through maintainer feedback covering aggregation, SQLite collation behavior, unnamed dataset identity, and whitespace edge cases.
-- **[#2782 — Canonical technique names in scenario run summaries](https://github.com/aspire488/PyRIT/tree/fix/promptinject-technique-summary)** — follow-up fix prepared on my fork. Corrects `techniques_used` to use the persisted canonical `technique_name` rather than a potentially goal/objective-bearing `display_group`, with regression coverage.
+- **[#2762 — Dataset Summary API](https://github.com/microsoft/PyRIT/pull/2762)** — upstream contribution under maintainer review. Added memory-backed dataset summaries and iterated through maintainer feedback covering aggregation, SQLite collation behavior, unnamed dataset identity, whitespace edge cases, selection-key isolation, and loaded-only behavior. Latest maintainer verification on commit `bcc38ad4` marked these concerns addressed.
+- **[#2782 — Canonical technique names in scenario run summaries](https://github.com/aspire488/PyRIT/tree/fix/promptinject-technique-summary)** — follow-up fix prepared on my fork. Corrects `techniques_used` to use the persisted canonical `technique_name` rather than a potentially goal/objective-bearing `display_group`, with regression coverage. The fork PR is open while an upstream submission path is being finalized.
 
 > **Why it matters:** this work involves navigating a large unfamiliar codebase, understanding existing data models and service boundaries, responding to maintainer review, and adding targeted regression coverage rather than making isolated demo changes.
 
@@ -211,8 +211,8 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 ### 🔥 Latest engineering work — September 23, 2026
 
-- **PyRIT #2782** — fixed scenario run summaries so `techniques_used` uses the persisted canonical `technique_name` instead of a potentially goal/objective-bearing `display_group`, with regression coverage.
-- **PyRIT #2762** — continued maintainer-driven dataset-summary refinement: fixed unnamed dataset identity to a typed SQL `NULL`, preserved dataset collation semantics, and added service coverage for whitespace-only unnamed populations. Further maintainer-requested review work remains tracked on the PR.
+- **PyRIT #2782** — fixed scenario run summaries so `techniques_used` uses the persisted canonical `technique_name` instead of a potentially goal/objective-bearing `display_group`, with regression coverage. The fix is currently tracked as an open fork PR.
+- **PyRIT #2762** — continued maintainer-driven dataset-summary refinement: fixed unnamed dataset identity to a typed SQL `NULL`, preserved dataset collation semantics, isolated named `__unnamed__` from the unnamed population, and added service coverage for whitespace-only unnamed populations. Maintainer verification on `bcc38ad4` confirmed the remaining edge-case concerns are addressed.
 - **gh-ops #2** — fixed the GitHub Actions editable-install failure by moving to the supported `setuptools.build_meta` backend.
 - **gh-ops** — completed the cross-run OSS opportunity deduplication and run-summary batch; latest local validation is **1,084 passed, 1 skipped**.
 - **aios #2459** — preserved the timeout bound (`deadline` vs `spend`) in child outcomes and the caller-visible `AgentError` contract, with regression coverage.
@@ -258,7 +258,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 #### 🆕 PyRIT follow-up — September 23, 2026
 
 - [PyRIT #2782 — Canonical technique names in scenario run summaries](https://github.com/aspire488/PyRIT/pull/1) — fork-side fix for scenario run summaries that incorrectly exposed `display_group` as `techniques_used`. The patch uses persisted `technique_name` when available and adds a regression where the display group and canonical technique intentionally differ.
-- [PyRIT #2762 — Dataset summary API](https://github.com/microsoft/PyRIT/pull/2762) — upstream contribution under maintainer review, with follow-up fixes for unnamed dataset identity and SQLite collation/whitespace edge cases.
+- [PyRIT #2762 — Dataset summary API](https://github.com/microsoft/PyRIT/pull/2762) — upstream contribution under maintainer review. Latest maintainer verification on `bcc38ad4` confirms the unnamed dataset identity, collation, selection-key, query-size, and `loaded_only` concerns are addressed.
 
 > **PyRIT note:** #2782 is explicitly shown as fork-side work until an upstream pull request exists; it is not counted as merged or upstream contribution.
 
