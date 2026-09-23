@@ -230,6 +230,11 @@ The latest local validation pass covered three repositories with focused fixes/r
 - [Clicky #72 — Contributor quickstart revamp](https://github.com/daniel5151/clicky/pull/72)  
   Emulator contributor workflow covering boot paths, safe disk-image setup, firmware smoke tests, troubleshooting, and development handoff.
 
+#### 🔎 Upstream code review
+
+- [Agent Substrate #1104 — dual-stack egress regression review](https://github.com/agent-substrate/substrate/pull/1104)  
+  Reviewed the in-cluster egress test against [#1089](https://github.com/agent-substrate/substrate/issues/1089), identifying that the dual-stack case currently verifies only eventual HTTP success and does not directly prove the broken-IPv6 → IPv4 fallback behavior. Suggested making the regression test exercise the actual no-route/fallback condition rather than merely adding family coverage.
+
 #### 💬 Community technical discussions
 
 - [Lexical #8771 — Named Slots for paginated editors](https://github.com/facebook/lexical/discussions/8771)  
