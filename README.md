@@ -173,9 +173,12 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [aios #2457 — Preserve `length` finish reason across streaming trailers](https://github.com/eumemic/aios/pull/2457)  
   Merged upstream fix preserving provider-reported `finish_reason="length"` when trailing streaming chunks clobber the assembled finish reason, with regression coverage and `content_filter` precedence handling.
 
+- [aios #2460 — Preserve LiteLLM parameter translation](https://github.com/eumemic/aios/pull/2460)  
+  Merged upstream fix that preserves LiteLLM provider-specific parameter translation while retaining explicit `allowed_openai_params` overrides, with regression coverage for mapped, unmapped, and explicitly forced parameters.
+
 #### 🔄 Open upstream PRs — September 2026
 
-**25 open PRs currently tracked**, spanning AI infrastructure, developer tooling, databases/query optimizers, observability, security tooling, and systems software. This list is intentionally curated around substantive engineering work rather than contribution-count inflation.
+**24 open PRs currently tracked**, spanning AI infrastructure, developer tooling, databases/query optimizers, observability, security tooling, and systems software. This list is intentionally curated around substantive engineering work rather than contribution-count inflation.
 
 - [KiroCrew #12861 — Restore PDF search behind bounded extraction](https://github.com/kirodotdev/KiroCrew/pull/12861) — bounded PDF extraction with isolated child processing, Windows-safe execution, truncation handling, and regression coverage.
 - [PyRIT #2762 — Add dataset summary API](https://github.com/microsoft/PyRIT/pull/2762) — memory-backed dataset summaries covering grouped examples, seed pieces, objectives, modalities, and harm metadata.
@@ -196,7 +199,6 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [GoalAI #1 — Prediction Intelligence Lab](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1) — reproducible seeded Monte Carlo analysis, sensitivity/stability metrics, tests, and documentation.
 - [aios #2458 — Record streaming length as truncated output](https://github.com/eumemic/aios/pull/2458) — preserves provider timeout/truncation telemetry at the loop layer.
 - [aios #2459 — Preserve timeout bound in child outcome](https://github.com/eumemic/aios/pull/2459) — retains whether child execution hit the deadline or spend ceiling.
-- [aios #2460 — Preserve LiteLLM parameter translation](https://github.com/eumemic/aios/pull/2460) — keeps provider-specific parameter translation intact while retaining explicit allow-lists.
 - [Cognee #2 — Telemetry error-type fix](https://github.com/aspire488/cognee/pull/2) — fork-side validation branch for telemetry error classification; not an upstream contribution.
 - [Cognee #1 — Active agent status](https://github.com/aspire488/cognee/pull/1) — fork-side active-agent status work; maintained separately from upstream contributions.
 - [UEA #15 — Publish agent adapter and CLI integration](https://github.com/aspire488/Universal-Engineering-Augmentation/pull/15) — documents the agent adapter and CLI integration path.
@@ -215,7 +217,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 ##### Recent OSS validation — September 2026
 
-The aios contribution sequence now includes one merged upstream fix (#2457) followed by three scoped follow-ups (#2458, #2459, #2460), each separated by issue scope and regression coverage.
+The aios contribution sequence now includes two merged upstream fixes (#2457 and #2460), with #2460 following the earlier streaming/truncation work as a separate provider-parameter correctness fix. The remaining aios follow-ups (#2458 and #2459) stay open and separately scoped.
 
 The latest local validation pass covered three repositories with focused fixes/regression coverage and remote PR updates. Separately, `gh-ops` CI was investigated from the failing workflow logs and the packaging failure was isolated and fixed in [`gh-ops #2`](https://github.com/aspire488/gh-ops/pull/2):
 
