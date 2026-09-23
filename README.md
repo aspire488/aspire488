@@ -197,9 +197,6 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [RisingWave #27181 — Inspect correlated refs in LogicalValues](https://github.com/risingwavelabs/risingwave/pull/27181)  
   Fixes optimizer correlation detection for `LogicalValues` rows and adds regression coverage.
 
-- [ai-memory #828 — Expand agent-memory comparison coverage](https://github.com/akitaonrails/ai-memory/pull/828)  
-  Expands the agent-memory comparison matrix with additional systems.
-
 - [MVT #939 — Preserve equals signs in STIX indicator values](https://github.com/mvt-project/mvt/pull/939)  
   Fixes STIX parsing for indicator values containing `=` and adds regression coverage.
 
@@ -217,9 +214,6 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 - [AI Platform AWS #4 — Direct Anthropic provider routing](https://github.com/tysoncung/ai-platform-aws/pull/4)  
   Fixes provider-resolution precedence when direct Anthropic and generic Bedrock Claude routing both apply.
-
-- [Linguist #1 — Trim `.example` suffix before language detection](https://github.com/aspire488/linguist/pull/1)  
-  Adds terminal `.example` handling so common example/config filenames can use their underlying language detection.
 
 - [OpenHands #17579 — Validate condenser max size](https://github.com/OpenHands/OpenHands/pull/17579)  
   Adds validation and regression coverage for negative condenser max-size values while preserving zero as valid.
