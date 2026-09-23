@@ -64,7 +64,7 @@ The system is deliberately **read-only against GitHub**: collection and analysis
 <a href="https://github.com/aspire488/gh-ops"><img src="https://img.shields.io/badge/Repository-Open-70a5fd?style=for-the-badge"/></a>
 <a href="https://github.com/aspire488/gh-ops/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/gh-ops/daily.yml?branch=master&style=for-the-badge&label=Actions"/></a>
 
-**Current:** Phases 1–8 are implemented, with scheduled GitHub Actions, dedicated CI validation, and Telegram operations live. CI now validates Ruff, mypy, and the full pytest suite on pushes and pull requests, while the operational workflows continue to handle monitoring, intelligence, state, and notifications. The next work is persistent cross-run OSS opportunity state and its notification path.
+**Current:** Phases 1–8 are implemented, with scheduled GitHub Actions, dedicated CI validation, and Telegram operations live. CI validates Ruff, mypy, and the full pytest suite on pushes and pull requests. The latest CI hardening fixed an editable-install failure caused by an unsupported setuptools backend in [`gh-ops #2`](https://github.com/aspire488/gh-ops/pull/2). The next work is persistent cross-run OSS opportunity state and its notification path.
 
 ### 🛠️ [Universal Engineering Augmentation](https://github.com/aspire488/Universal-Engineering-Augmentation) — Public Alpha
 
@@ -217,8 +217,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 The aios contribution sequence now includes one merged upstream fix (#2457) followed by three scoped follow-ups (#2458, #2459, #2460), each separated by issue scope and regression coverage.
 
-The latest local validation pass covered three repositories with focused fixes/regression coverage and remote PR updates:
+The latest local validation pass covered three repositories with focused fixes/regression coverage and remote PR updates. Separately, `gh-ops` CI was investigated from the failing workflow logs and the packaging failure was isolated and fixed in [`gh-ops #2`](https://github.com/aspire488/gh-ops/pull/2):
 
+- [gh-ops #2](https://github.com/aspire488/gh-ops/pull/2) — fixes the CI editable-install failure by switching from the unsupported `setuptools.backends._legacy:_Backend` to `setuptools.build_meta`.
 - [PyRIT #2762](https://github.com/microsoft/PyRIT/pull/2762) — addressed dataset-summary review feedback around metadata aggregation and row multiplication; current branch keeps aggregation and metadata collection in a single database-side query.
 - [N3MO #39](https://github.com/RajX-dev/N3MO/pull/39) — fixed Kotlin call-target extraction exposed by the real AST regression test; targeted Ruby/Kotlin tests passed.
 - [OpenHands #17579](https://github.com/OpenHands/OpenHands/pull/17579) — aligned condenser max-size metadata with the agent-server minimum, updated persistence mocks/tests, and recorded focused local validation.
