@@ -241,9 +241,6 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 #### 🧪 In progress
 
-- [uutils/coreutils #14812 — Preserve canonical quoting style in `ls --dired` metadata](https://github.com/uutils/coreutils/pull/14812)  
-  Preserves the canonical quoting-style name used by `ls --dired` and adds regression coverage for named styles and short aliases.
-
 - [Cognee #4957 — Detect active agent connections](https://github.com/aspire488/cognee/tree/fix/4957-active-agent-status)  
   Implements active-connection detection in the dashboard/integrations hook with focused regression coverage. The fix remains on the fork branch pending upstream PR creation.
 
@@ -254,9 +251,8 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 The aios contribution sequence now includes one merged upstream fix (#2457) followed by three scoped follow-ups (#2458, #2459, #2460), each separated by issue scope and regression coverage.
 
-The latest local validation pass covered four repositories with focused fixes/regression coverage and remote PR updates:
+The latest local validation pass covered three repositories with focused fixes/regression coverage and remote PR updates:
 
-- [uutils/coreutils #14812](https://github.com/uutils/coreutils/pull/14812) — validated the `ls --dired` quoting-style changes; local formatting, check, clippy, and diff validation passed. One upstream test remains for maintainer/CI follow-up.
 - [PyRIT #2762](https://github.com/microsoft/PyRIT/pull/2762) — addressed dataset-summary review feedback with collation-safe grouping, unnamed dataset handling, distinct selection keys, fixture ordering, and a loaded-only memory view; full unit suite passed locally.
 - [N3MO #39](https://github.com/RajX-dev/N3MO/pull/39) — fixed Kotlin call-target extraction exposed by the real AST regression test; targeted Ruby/Kotlin tests passed.
 - [OpenHands #17579](https://github.com/OpenHands/OpenHands/pull/17579) — aligned condenser max-size metadata with the agent-server minimum, updated persistence mocks/tests, and passed focused tests, ESLint, TypeScript, and Prettier validation.
