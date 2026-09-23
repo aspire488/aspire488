@@ -25,5 +25,17 @@ jobs:
           cards: overview,contributions,composition,rhythm,languages
           output-dir: assets/profile
           themes: light,dark
-          commit: true
-          commit-message: "chore(profile): refresh generated cards [skip ci]"
+          commit: false
+
+      - name: Render contribution history
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/render_profile_activity.py
+
+      - name: Commit refreshed cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/profile
+          git diff --cached --quiet || git commit -m "chore(profile): refresh generated cards [skip ci]"
+          git push
