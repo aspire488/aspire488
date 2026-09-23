@@ -178,6 +178,21 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [aios #2460 — Preserve LiteLLM parameter translation](https://github.com/eumemic/aios/pull/2460)  
   Merged upstream fix that preserves LiteLLM provider-specific parameter translation while retaining explicit `allowed_openai_params` overrides, with regression coverage for mapped, unmapped, and explicitly forced parameters.
 
+## 🛡️ PyRIT — AI Red-Teaming Contributions
+
+I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/PyRIT)**, an open-source framework for AI red teaming. My current work includes both maintainer-reviewed upstream changes and a follow-up fix prepared on my fork.
+
+### 🔥 Current PyRIT work
+
+- **[#2762 — Dataset Summary API](https://github.com/microsoft/PyRIT/pull/2762)** — upstream contribution under maintainer review. Added memory-backed dataset summaries and iterated through maintainer feedback covering aggregation, SQLite collation behavior, unnamed dataset identity, and whitespace edge cases.
+- **[#2782 — Canonical technique names in scenario run summaries](https://github.com/aspire488/PyRIT/tree/fix/promptinject-technique-summary)** — follow-up fix prepared on my fork. Corrects `techniques_used` to use the persisted canonical `technique_name` rather than a potentially goal/objective-bearing `display_group`, with regression coverage.
+
+> **Why it matters:** this work involves navigating a large unfamiliar codebase, understanding existing data models and service boundaries, responding to maintainer review, and adding targeted regression coverage rather than making isolated demo changes.
+
+**Status is intentionally explicit:** #2762 is an upstream PR under review; #2782 is currently fork-side work until an upstream PR exists.
+
+---
+
 ### 🔥 Latest engineering work — September 23, 2026
 
 - **PyRIT #2782** — fixed scenario run summaries so `techniques_used` uses the persisted canonical `technique_name` instead of a potentially goal/objective-bearing `display_group`, with regression coverage.
