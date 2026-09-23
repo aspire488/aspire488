@@ -162,6 +162,10 @@ The application intentionally remains on its React 18/Vite 6 prototype stack rat
 
 ---
 
+## 🗺️ OSS Atlas
+
+> The complete open-source engineering archive now lives in **[OSS Atlas](https://github.com/aspire488/oss-atlas)** — contribution records, upstream work, research, case studies, experiments, learnings, and the spatial/3D engineering track.
+
 ## 🔀 Open-Source Engineering
 
 I use open source as an external engineering track: working across unfamiliar codebases, contributing real changes, and learning how software is built and maintained outside my own projects.
