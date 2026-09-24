@@ -179,6 +179,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
   **Merged upstream on September 24, 2026** after maintainer review and multiple refinement rounds. Added memory-backed dataset summaries with aggregation, selection-key isolation, unnamed/whitespace dataset handling, metadata query controls, `loaded_only` behavior, and regression coverage. Final merge commit: `47c6151a`.
 
 
+- [NousResearch Hermes Agent #121771 — Desktop gateway stale-ref recovery](https://github.com/NousResearch/hermes-agent/pull/121771)  
+  **Open upstream**. Adds a fallback to the active gateway registry when the desktop request hook's gateway ref is stale, preserving existing recovery/routing behavior and adding a focused regression test for the dropped-WebSocket path.
+
 - [aios #2458 — Record streaming `length` as truncated output](https://github.com/eumemic/aios/pull/2458)  
   **Merged upstream on September 24, 2026** after the maintainer resolved the pinned Ruff formatting blocker. The final implementation records provider `finish_reason="length"` as `output_truncated=true` at the loop layer and includes streaming regression coverage. Merge commit: `fe051b2c`. 
 
