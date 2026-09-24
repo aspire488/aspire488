@@ -221,6 +221,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 > These are open pull requests, not merged contributions. Each patch includes focused regression coverage and is submitted against the project's `main` branch.
 
 ### 🔥 Latest engineering work — September 24, 2026
+- **SiYuan #19815** — prepared `aspire488/siyuan#1` for expired Streamable HTTP MCP sessions: `mcp.ErrSessionMissing` now gets synchronous session recovery with exactly one safe replay, while ambiguous transport failures remain non-retriable; added regression coverage for both paths.
 
 - **RisingWave #27181** — extended the correlated-reference regression through the real `LogicalApply → ApplyEliminateRule → to_batch()` boundary, including a multi-row `LogicalValues` case with the correlated reference in a non-first row.
 - **KiroCrew #12861** — hardened bounded PDF extraction across Windows process limits and Python import isolation, while adding child-extractor protocol coverage.
