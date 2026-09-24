@@ -194,7 +194,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 ### 🔥 Current PyRIT work
 
-- **[#2762 — Dataset Summary API](https://github.com/microsoft/PyRIT/pull/2762)** — upstream contribution now **maintainer-verified on the substantive review concerns**. Added memory-backed dataset summaries and iterated through feedback covering aggregation, SQLite collation behavior, unnamed/whitespace dataset identity, selection-key isolation, metadata query size, and `loaded_only` behavior. Roman Lutz verified these concerns against real stored seeds on `bcc38ad4`; the branch then received a follow-up test-cleanup commit. The PR remains open pending final upstream disposition.
+- **[#2762 — Dataset Summary API](https://github.com/microsoft/PyRIT/pull/2762)** — **merged upstream on September 24, 2026** after maintainer review. Added memory-backed dataset summaries and iterated through feedback covering aggregation, SQLite collation behavior, unnamed/whitespace dataset identity, selection-key isolation, metadata query size, and `loaded_only` behavior. Roman Lutz verified the substantive concerns against real stored seeds, and the final test-cleanup commit was merged with the implementation. Merge commit: `47c6151a`.
 - **[#2782 — Canonical technique names in scenario run summaries](https://github.com/aspire488/PyRIT/tree/fix/promptinject-technique-summary)** — follow-up fix prepared on my fork. Corrects `techniques_used` to use the persisted canonical `technique_name` rather than a potentially goal/objective-bearing `display_group`, with regression coverage. The fork PR is open while an upstream submission path is being finalized.
 
 > **Why it matters:** this work involves navigating a large unfamiliar codebase, understanding existing data models and service boundaries, responding to maintainer review, and adding targeted regression coverage rather than making isolated demo changes.
@@ -230,11 +230,11 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 - **KiroCrew #12861** — hardened bounded PDF extraction across Windows process limits and Python import isolation, while adding child-extractor protocol coverage.
 - **aios #2458** — cleaned the remaining CI newline failures after the streaming truncation/finish-reason work.
 - **aios #2459** — **merged upstream**. Preserves the timeout bound (`deadline` vs `spend`) in child outcomes while keeping `kind="timeout"` compatible, with regression coverage for both paths.
-- **Microsoft PyRIT #2762** — **maintainer-approved** by Roman Lutz after multiple review rounds and follow-up commits. Added the memory-backed dataset summary API, typed selection keys, loaded/provider availability, logical-example/objective counts, aggregated metadata, unnamed-dataset handling, and regression coverage. The PR remains open pending upstream merge.
+- **Microsoft PyRIT #2762** — **merged upstream** after multiple review rounds and follow-up commits. Added the memory-backed dataset summary API, typed selection keys, loaded/provider availability, logical-example/objective counts, aggregated metadata, unnamed-dataset handling, and regression coverage.
 - **OpenHands #17579** — condenser metadata/key/minimum fixes remain on the PR while upstream review infrastructure completes its checks.
 - **OpenTelemetry Erlang #822** — maintainer-requested rebase remains the next upstream action; no merge-style workaround was introduced.
 
-> **September 24 OSS pass:** current work is concentrated on reviewer-requested engineering fixes and regression coverage rather than opening additional low-value PRs.
+> **September 24 OSS pass:** current work is concentrated on reviewer-requested engineering fixes, regression coverage, and closing the review loops already in flight.
 
 ### 🔥 Latest engineering work — September 23, 2026
 
