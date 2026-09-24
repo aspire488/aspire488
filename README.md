@@ -233,7 +233,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 - **RisingWave #27181** — extended the correlated-reference regression through the real `LogicalApply → ApplyEliminateRule → to_batch()` boundary, including a multi-row `LogicalValues` case with the correlated reference in a non-first row; fixed the review-found test compile issue by cloning the optimizer context before the first `LogicalValues::new`.
 - **KiroCrew #12861** — hardened bounded PDF extraction across Windows process limits and Python import isolation, while adding child-extractor protocol coverage.
-- **aios #2458** — fixed the final pinned Ruff 0.15.10 formatting blocker in the streaming-truncation regression test; current head `e7133059` is pushed and awaiting CI/maintainer review.
+- **aios #2458** — fixed the final pinned Ruff 0.15.10 formatting blocker in the streaming-truncation regression test; current head `3215a565` is pushed. The maintainer’s latest independent re-review is GREEN/CLEAN, with the PR awaiting CI/maintainer completion.
 - **aios #2459** — **merged upstream**. Preserves the timeout bound (`deadline` vs `spend`) in child outcomes while keeping `kind="timeout"` compatible, with regression coverage for both paths.
 - **Microsoft PyRIT #2762** — **merged upstream** after multiple review rounds and follow-up commits. Added the memory-backed dataset summary API, typed selection keys, loaded/provider availability, logical-example/objective counts, aggregated metadata, unnamed-dataset handling, and regression coverage.
 - **OpenHands #17579** — condenser metadata/key/minimum fixes remain on the PR while upstream review infrastructure completes its checks.
