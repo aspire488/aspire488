@@ -215,13 +215,13 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 - **[TopoCore — cycle detection for spatial execution](https://github.com/KARAN-D05/TopoCore/pull/1)** — added deterministic cycle detection to the experimental 2D spatial execution visualizer by tracking `(X, Y, Direction)` states, stopping repeated execution loops, and resetting execution-trace state on reset/clear. This explores an unconventional execution model where program flow is defined by movement through symbolic space.
 
-### 🆕 Three AI-security OSS contributions — September 23, 2026
+### 🆕 AI-security OSS contributions — September 23–24, 2026
 
-- **Microsoft PyRIT #2762** — dataset summary API with memory-backed aggregation and maintainer-reviewed edge-case fixes.
-- **NVIDIA garak #1** — fixes `IterativeProbe` when `soft_probe_prompt_cap=None`, preserving uncapped behavior and adding regression coverage.
-- **UK AI Security Institute Inspect AI #1** — fixes Google inline-image conversion for raw binary `Blob.data` by base64-encoding bytes before building the data URI.
+- **Microsoft PyRIT #2762** — **merged upstream** after maintainer review; dataset summary API with memory-backed aggregation and regression coverage.
+- **NVIDIA garak #1** — fork-side fix for `IterativeProbe` when `soft_probe_prompt_cap=None`, preserving uncapped behavior and adding regression coverage.
+- **UK AI Security Institute Inspect AI #1** — fork-side fix for Google inline-image conversion for raw binary `Blob.data` by base64-encoding bytes before building the data URI.
 
-> These are open pull requests, not merged contributions. Each patch includes focused regression coverage and is submitted against the project's `main` branch.
+> Status is tracked explicitly: merged upstream work is separated from open fork-side proposals.
 
 ### 🔥 Latest engineering work — September 24, 2026
 - **SiYuan #19815** — prepared `aspire488/siyuan#1` for expired Streamable HTTP MCP sessions: `mcp.ErrSessionMissing` now gets synchronous session recovery with exactly one safe replay, while ambiguous transport failures remain non-retriable; added regression coverage for both paths.
@@ -255,10 +255,9 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 - [TopoCore — Spatial execution cycle detection](https://github.com/KARAN-D05/TopoCore/pull/1) — adds deterministic repeated-state detection to the 2D spatial execution simulator.
 
-**25 open upstream/fork PRs currently tracked**, spanning AI infrastructure, developer tooling, databases/query optimizers, observability, security tooling, and systems software. This list is intentionally curated around substantive engineering work rather than contribution-count inflation.
+**24 open upstream/fork PRs currently tracked**, spanning AI infrastructure, developer tooling, databases/query optimizers, observability, security tooling, and systems software. This list is intentionally curated around substantive engineering work rather than contribution-count inflation.
 
 - [KiroCrew #12861 — Restore PDF search behind bounded extraction](https://github.com/kirodotdev/KiroCrew/pull/12861) — bounded PDF extraction with isolated child processing, Windows-safe execution, truncation handling, and regression coverage.
-- [PyRIT #2762 — Add dataset summary API](https://github.com/microsoft/PyRIT/pull/2762) — memory-backed dataset summaries covering grouped examples, seed pieces, objectives, modalities, and harm metadata.
 - [LlamaIndex #23201 — Preserve retrieved scores during prev/next expansion](https://github.com/run-llama/llama_index/pull/23201) — preserves original retrieval scores through overlapping previous/next-node expansion.
 - [GitHub Profile Analyzer #30 — Evidence-weighted impact scoring](https://github.com/0xarchit/github-profile-analyzer/pull/30) — balances adoption signals with independent repository evidence and regression coverage.
 - [OpenHands #17579 — Align condenser max-size validation](https://github.com/OpenHands/OpenHands/pull/17579) — aligns the UI metadata and persistence mocks with the agent-server `condenser.max_size` contract and minimum of 20.
@@ -287,7 +286,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 #### 🆕 PyRIT follow-up — September 23, 2026
 
 - [PyRIT #2782 — Canonical technique names in scenario run summaries](https://github.com/aspire488/PyRIT/pull/1) — fork-side fix for scenario run summaries that incorrectly exposed `display_group` as `techniques_used`. The patch uses persisted `technique_name` when available and adds a regression where the display group and canonical technique intentionally differ.
-- [PyRIT #2762 — Dataset summary API](https://github.com/microsoft/PyRIT/pull/2762) — upstream contribution with substantive maintainer concerns verified on `bcc38ad4`; follow-up test cleanup has been pushed and the PR remains open.
+- [PyRIT #2762 — Dataset summary API](https://github.com/microsoft/PyRIT/pull/2762) — **merged upstream** after substantive maintainer verification and final test cleanup.
 
 > **PyRIT note:** #2782 is explicitly shown as fork-side work until an upstream pull request exists; it is not counted as merged or upstream contribution.
 
@@ -301,12 +300,12 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 ##### Recent OSS validation — September 2026
 
-The aios contribution sequence now includes two merged upstream fixes (#2457 and #2460), with #2460 following the earlier streaming/truncation work as a separate provider-parameter correctness fix. #2460 was merged upstream after a maintainer-led wire-level review and CI validation; the remaining aios follow-ups (#2458 and #2459) stay open and separately scoped. For #2459, the latest follow-up also makes the timeout bound caller-visible (`deadline` vs `spend`) and adds regression coverage for precedence and legacy timeout behavior.
+The aios contribution sequence now includes three merged upstream fixes (#2457, #2459, and #2460), with #2460 following the earlier streaming/truncation work as a separate provider-parameter correctness fix. #2459 preserves caller-visible timeout-bound provenance (`deadline` vs `spend`) while retaining legacy timeout compatibility. #2458 remains open and separately scoped.
 
 The latest local validation pass covered three repositories with focused fixes/regression coverage and remote PR updates. Separately, `gh-ops` CI was investigated from the failing workflow logs and the packaging failure was isolated and fixed in [`gh-ops #2`](https://github.com/aspire488/gh-ops/pull/2):
 
 - [gh-ops #2](https://github.com/aspire488/gh-ops/pull/2) — fixes the CI editable-install failure by switching from the unsupported `setuptools.backends._legacy:_Backend` to `setuptools.build_meta`.
-- [PyRIT #2762](https://github.com/microsoft/PyRIT/pull/2762) — addressed dataset-summary review feedback around metadata aggregation and row multiplication; current branch keeps aggregation and metadata collection in a single database-side query.
+- [PyRIT #2762](https://github.com/microsoft/PyRIT/pull/2762) — merged upstream after maintainer review of dataset-summary aggregation, metadata handling, selection-key isolation, unnamed-dataset behavior, and `loaded_only` semantics.
 - [N3MO #39](https://github.com/RajX-dev/N3MO/pull/39) — fixed Kotlin call-target extraction exposed by the real AST regression test; targeted Ruby/Kotlin tests passed.
 - [OpenHands #17579](https://github.com/OpenHands/OpenHands/pull/17579) — aligned condenser max-size metadata with the agent-server minimum, updated persistence mocks/tests, and recorded focused local validation.
 
