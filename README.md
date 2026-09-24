@@ -179,6 +179,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
   **Merged upstream on September 24, 2026** after maintainer review and multiple refinement rounds. Added memory-backed dataset summaries with aggregation, selection-key isolation, unnamed/whitespace dataset handling, metadata query controls, `loaded_only` behavior, and regression coverage. Final merge commit: `47c6151a`.
 
 
+- [aios #2458 — Record streaming `length` as truncated output](https://github.com/eumemic/aios/pull/2458)  
+  **Merged upstream on September 24, 2026** after the maintainer resolved the pinned Ruff formatting blocker. The final implementation records provider `finish_reason="length"` as `output_truncated=true` at the loop layer and includes streaming regression coverage. Merge commit: `fe051b2c`. 
+
 - [aios #2457 — Preserve `length` finish reason across streaming trailers](https://github.com/eumemic/aios/pull/2457)  
   Merged upstream fix preserving provider-reported `finish_reason="length"` when trailing streaming chunks clobber the assembled finish reason, with regression coverage and `content_filter` precedence handling.
 
@@ -231,7 +234,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 - **Microsoft PyRIT #2762** — **merged upstream** after multiple maintainer review rounds. The dataset summary API is now part of upstream PyRIT; final merge commit: `47c6151a`.
 - **Microsoft PyRIT #2823** — **open upstream**. Preserves non-empty HarmBench `ContextString` values while retaining context metadata, with focused regression coverage.
-- **aios #2458** — **open upstream**. The maintainer restored the reviewed tree as `58739aef` after a CI-format mismatch; no further code churn is planned while CI/maintainer completion is pending.
+- **aios #2458** — **merged upstream on September 24, 2026**. The streaming truncation telemetry fix landed in master after the pinned Ruff formatting issue was resolved. Merge commit: `fe051b2c`.
 - **RisingWave #27181** — **open upstream**. Correlated-reference coverage now crosses the real `LogicalApply → ApplyEliminateRule → to_batch()` path, including a multi-row `LogicalValues` case; the review-found test compile issue was fixed with `ctx.clone()`.
 - **KiroCrew #12861** — **open upstream**. PDF extraction was hardened around Windows process limits and Python import isolation, with child-extractor protocol coverage.
 - **TopoCore #1** — **open upstream**. Added deterministic repeated-state cycle detection to the spatial execution simulator.
