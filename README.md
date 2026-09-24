@@ -231,15 +231,15 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 - **SiYuan #19815** — prepared `aspire488/siyuan#1` for expired Streamable HTTP MCP sessions: `mcp.ErrSessionMissing` now gets synchronous session recovery with exactly one safe replay, while ambiguous transport failures remain non-retriable; added regression coverage for both paths.
 
-- **RisingWave #27181** — extended the correlated-reference regression through the real `LogicalApply → ApplyEliminateRule → to_batch()` boundary, including a multi-row `LogicalValues` case with the correlated reference in a non-first row.
+- **RisingWave #27181** — extended the correlated-reference regression through the real `LogicalApply → ApplyEliminateRule → to_batch()` boundary, including a multi-row `LogicalValues` case with the correlated reference in a non-first row; fixed the review-found test compile issue by cloning the optimizer context before the first `LogicalValues::new`.
 - **KiroCrew #12861** — hardened bounded PDF extraction across Windows process limits and Python import isolation, while adding child-extractor protocol coverage.
-- **aios #2458** — cleaned the remaining CI newline failures after the streaming truncation/finish-reason work.
+- **aios #2458** — fixed the final pinned Ruff 0.15.10 formatting blocker in the streaming-truncation regression test; current head `e7133059` is pushed and awaiting CI/maintainer review.
 - **aios #2459** — **merged upstream**. Preserves the timeout bound (`deadline` vs `spend`) in child outcomes while keeping `kind="timeout"` compatible, with regression coverage for both paths.
 - **Microsoft PyRIT #2762** — **merged upstream** after multiple review rounds and follow-up commits. Added the memory-backed dataset summary API, typed selection keys, loaded/provider availability, logical-example/objective counts, aggregated metadata, unnamed-dataset handling, and regression coverage.
 - **OpenHands #17579** — condenser metadata/key/minimum fixes remain on the PR while upstream review infrastructure completes its checks.
 - **OpenTelemetry Erlang #822** — maintainer-requested rebase remains the next upstream action; no merge-style workaround was introduced.
 
-> **September 24 OSS pass:** current work is concentrated on reviewer-requested engineering fixes, regression coverage, and closing the review loops already in flight.
+> **September 24 OSS pass:** current work is concentrated on reviewer-requested fixes, regression coverage, and closing existing review loops. Two concrete review blockers were addressed today: aios #2458 formatting and RisingWave #27181 test-context ownership.
 
 ### 🔥 Latest engineering work — September 23, 2026
 
