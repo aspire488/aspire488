@@ -193,16 +193,17 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 ## 🛡️ PyRIT — AI Red-Teaming Contributions
 
-I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/PyRIT)**, an open-source framework for AI red teaming. My recent upstream work includes a merged dataset-summary contribution, alongside a follow-up fix prepared on my fork.
+I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/PyRIT)**, an open-source framework for AI red teaming. My recent upstream work includes a merged dataset-summary contribution and an open upstream HarmBench context-preservation fix (#2823).
 
 ### 🔥 Current PyRIT work
 
 - **[#2762 — Dataset Summary API](https://github.com/microsoft/PyRIT/pull/2762)** — **merged upstream on September 24, 2026** after maintainer review. Added memory-backed dataset summaries and iterated through feedback covering aggregation, SQLite collation behavior, unnamed/whitespace dataset identity, selection-key isolation, metadata query size, and `loaded_only` behavior. Roman Lutz verified the substantive concerns against real stored seeds, and the final test-cleanup commit was merged with the implementation. Merge commit: `47c6151a`.
+- **[#2823 — Preserve HarmBench contextual behavior prompts](https://github.com/microsoft/PyRIT/pull/2823)** — **open upstream**. Fixes the HarmBench loader dropping non-empty `ContextString` values by combining context and behavior using the dataset convention, while retaining context in metadata and adding regression coverage.
 - **[#2782 — Canonical technique names in scenario run summaries](https://github.com/aspire488/PyRIT/tree/fix/promptinject-technique-summary)** — follow-up fix prepared on my fork. Corrects `techniques_used` to use the persisted canonical `technique_name` rather than a potentially goal/objective-bearing `display_group`, with regression coverage. The fork PR is open while an upstream submission path is being finalized.
 
 > **Why it matters:** this work involves navigating a large unfamiliar codebase, understanding existing data models and service boundaries, responding to maintainer review, and adding targeted regression coverage rather than making isolated demo changes.
 
-**Status is intentionally explicit:** #2762 is merged upstream; #2782 is currently fork-side work until an upstream PR exists.
+**Status is intentionally explicit:** #2762 is merged upstream; #2823 is open upstream for maintainer review; #2782 remains fork-side work until an upstream PR exists.
 
 ---
 
@@ -233,7 +234,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 - **RisingWave #27181** — extended the correlated-reference regression through the real `LogicalApply → ApplyEliminateRule → to_batch()` boundary, including a multi-row `LogicalValues` case with the correlated reference in a non-first row; fixed the review-found test compile issue by cloning the optimizer context before the first `LogicalValues::new`.
 - **KiroCrew #12861** — hardened bounded PDF extraction across Windows process limits and Python import isolation, while adding child-extractor protocol coverage.
-- **aios #2458** — fixed the final pinned Ruff 0.15.10 formatting blocker in the streaming-truncation regression test; current head `3215a565` is pushed. The maintainer’s latest independent re-review is GREEN/CLEAN, with the PR awaiting CI/maintainer completion.
+- **aios #2458** — maintainer restored the independently reviewed tree as `58739aef` after a CI-format mismatch; the reviewed code is unchanged and the PR remains open pending CI/maintainer completion.
 - **aios #2459** — **merged upstream**. Preserves the timeout bound (`deadline` vs `spend`) in child outcomes while keeping `kind="timeout"` compatible, with regression coverage for both paths.
 - **Microsoft PyRIT #2762** — **merged upstream** after multiple review rounds and follow-up commits. Added the memory-backed dataset summary API, typed selection keys, loaded/provider availability, logical-example/objective counts, aggregated metadata, unnamed-dataset handling, and regression coverage.
 - **OpenHands #17579** — condenser metadata/key/minimum fixes remain on the PR while upstream review infrastructure completes its checks.
@@ -258,9 +259,11 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 #### 🔄 Open upstream PRs — September 2026
 
+- [Microsoft PyRIT #2823 — Preserve HarmBench contextual behavior prompts](https://github.com/microsoft/PyRIT/pull/2823) — open upstream fix preserving non-empty HarmBench `ContextString` in the constructed objective value, with focused regression coverage.
+
 - [TopoCore — Spatial execution cycle detection](https://github.com/KARAN-D05/TopoCore/pull/1) — adds deterministic repeated-state detection to the 2D spatial execution simulator.
 
-**24 open upstream/fork PRs currently tracked**, spanning AI infrastructure, developer tooling, databases/query optimizers, observability, security tooling, and systems software. This list is intentionally curated around substantive engineering work rather than contribution-count inflation.
+**25 open upstream/fork PRs currently tracked**, spanning AI infrastructure, developer tooling, databases/query optimizers, observability, security tooling, and systems software. This list is intentionally curated around substantive engineering work rather than contribution-count inflation.
 
 - [KiroCrew #12861 — Restore PDF search behind bounded extraction](https://github.com/kirodotdev/KiroCrew/pull/12861) — bounded PDF extraction with isolated child processing, Windows-safe execution, truncation handling, and regression coverage.
 - [LlamaIndex #23201 — Preserve retrieved scores during prev/next expansion](https://github.com/run-llama/llama_index/pull/23201) — preserves original retrieval scores through overlapping previous/next-node expansion.
