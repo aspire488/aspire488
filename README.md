@@ -182,6 +182,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [aios #2460 — Preserve LiteLLM parameter translation](https://github.com/eumemic/aios/pull/2460)  
   Merged upstream fix that preserves LiteLLM provider-specific parameter translation while retaining explicit `allowed_openai_params` overrides, with regression coverage for mapped, unmapped, and explicitly forced parameters.
 
+- [aios #2459 — Preserve timeout bound in child outcome](https://github.com/eumemic/aios/pull/2459)  
+  **Merged upstream** after maintainer review. Preserves whether workflow-child timeout resolution came from the `deadline` or `spend` bound while keeping `kind="timeout"` unchanged for compatibility, with regression coverage for both trigger paths.
+
 - [GitHub Profile Analyzer #30 — Evidence-weighted impact scoring](https://github.com/0xarchit/github-profile-analyzer/pull/30)  
   **Merged upstream** after maintainer approval. Refined impact scoring with repository-quality evidence and improved viewport-aware factor tooltips, with regression coverage.
 
@@ -226,7 +229,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 - **RisingWave #27181** — extended the correlated-reference regression through the real `LogicalApply → ApplyEliminateRule → to_batch()` boundary, including a multi-row `LogicalValues` case with the correlated reference in a non-first row.
 - **KiroCrew #12861** — hardened bounded PDF extraction across Windows process limits and Python import isolation, while adding child-extractor protocol coverage.
 - **aios #2458** — cleaned the remaining CI newline failures after the streaming truncation/finish-reason work.
-- **aios #2459** — applied the remaining Ruff formatting fix to the workflow timeout-bound implementation.
+- **aios #2459** — **merged upstream**. Preserves the timeout bound (`deadline` vs `spend`) in child outcomes while keeping `kind="timeout"` compatible, with regression coverage for both paths.
 - **OpenHands #17579** — condenser metadata/key/minimum fixes remain on the PR while upstream review infrastructure completes its checks.
 - **OpenTelemetry Erlang #822** — maintainer-requested rebase remains the next upstream action; no merge-style workaround was introduced.
 
@@ -238,7 +241,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 - **PyRIT #2762** — maintainer-driven dataset-summary refinement reached substantive verification: unnamed/whitespace identity, SQLite collation semantics, named `__unnamed__` isolation, logical-example counting, metadata query size, and `loaded_only` behavior were verified by Roman Lutz against real stored data on `bcc38ad4`. A follow-up test-cleanup commit was then pushed to the branch; the PR remains open.
 - **gh-ops #2** — fixed the GitHub Actions editable-install failure by moving to the supported `setuptools.build_meta` backend.
 - **gh-ops** — completed the cross-run OSS opportunity deduplication and run-summary batch; latest local validation is **1,084 passed, 1 skipped**.
-- **aios #2459** — preserved the timeout bound (`deadline` vs `spend`) in child outcomes and the caller-visible `AgentError` contract, with regression coverage.
+- **aios #2459** — **merged upstream**; preserved the timeout bound (`deadline` vs `spend`) in child outcomes and the caller-visible `AgentError` contract, with regression coverage.
 - **aios #2458** — carried streaming `finish_reason="length"` into truncation telemetry, including loop-level SSE subscriber coverage.
 - **GitHub Profile Analyzer #30** — refined evidence-weighted impact scoring, added repository-quality evidence handling, and fixed the factor tooltip so long evidence breakdowns stay within the viewport. The PR was approved by the maintainer and merged upstream.
 - **OpenAI Codex #46658** — contributed to an architecture discussion around adaptive allocation, independent verification, reassessment, and feedback loops around agents.
