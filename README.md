@@ -220,6 +220,17 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 > These are open pull requests, not merged contributions. Each patch includes focused regression coverage and is submitted against the project's `main` branch.
 
+### 🔥 Latest engineering work — September 24, 2026
+
+- **RisingWave #27181** — extended the correlated-reference regression through the real `LogicalApply → ApplyEliminateRule → to_batch()` boundary, including a multi-row `LogicalValues` case with the correlated reference in a non-first row.
+- **KiroCrew #12861** — hardened bounded PDF extraction across Windows process limits and Python import isolation, while adding child-extractor protocol coverage.
+- **aios #2458** — cleaned the remaining CI newline failures after the streaming truncation/finish-reason work.
+- **aios #2459** — applied the remaining Ruff formatting fix to the workflow timeout-bound implementation.
+- **OpenHands #17579** — condenser metadata/key/minimum fixes remain on the PR while upstream review infrastructure completes its checks.
+- **OpenTelemetry Erlang #822** — maintainer-requested rebase remains the next upstream action; no merge-style workaround was introduced.
+
+> **September 24 OSS pass:** current work is concentrated on reviewer-requested engineering fixes and regression coverage rather than opening additional low-value PRs.
+
 ### 🔥 Latest engineering work — September 23, 2026
 
 - **PyRIT #2782** — fixed scenario run summaries so `techniques_used` uses the persisted canonical `technique_name` instead of a potentially goal/objective-bearing `display_group`, with regression coverage. The fix is currently tracked as an open fork PR.
