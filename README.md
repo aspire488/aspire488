@@ -27,6 +27,15 @@ I learn by shipping, breaking things, measuring them, and then hardening the par
 
 > **2026 contribution milestone:** 500+ GitHub contributions, alongside ongoing upstream and fork-side engineering work.
 
+### 🏆 Standout Upstream Milestone — Microsoft PyRIT
+
+> **#2762 — Dataset Summary API — MERGED UPSTREAM · September 24, 2026**
+>
+> A substantive contribution to **[Microsoft PyRIT](https://github.com/microsoft/PyRIT)**, the open-source AI red-teaming framework. The PR went through multiple maintainer review rounds covering aggregation semantics, dataset identity, SQLite behavior, selection-key isolation, metadata query sizing, and `loaded_only` behavior before landing upstream.
+>
+> **Merge commit:** `47c6151a` · **Status:** ✅ Merged upstream
+
+
 
 <p align="center">
   <a href="https://joel-jigo-portfolio--joeljigo3.replit.app"><img src="https://img.shields.io/badge/%E2%86%92%20Portfolio-Visit%20Joel's%20Portfolio-70a5fd?style=for-the-badge"/></a>
@@ -203,7 +212,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 ### 🔥 Current PyRIT work
 
-- **[#2762 — Dataset Summary API](https://github.com/microsoft/PyRIT/pull/2762)** — **merged upstream on September 24, 2026** after maintainer review. Added memory-backed dataset summaries and iterated through feedback covering aggregation, SQLite collation behavior, unnamed/whitespace dataset identity, selection-key isolation, metadata query size, and `loaded_only` behavior. Roman Lutz verified the substantive concerns against real stored seeds, and the final test-cleanup commit was merged with the implementation. Merge commit: `47c6151a`.
+- **[#2762 — Dataset Summary API](https://github.com/microsoft/PyRIT/pull/2762)** — **🏆 MERGED UPSTREAM · September 24, 2026** after maintainer review. Added memory-backed dataset summaries and iterated through feedback covering aggregation, SQLite collation behavior, unnamed/whitespace dataset identity, selection-key isolation, metadata query size, and `loaded_only` behavior. Roman Lutz verified the substantive concerns against real stored seeds, and the final test-cleanup commit was merged with the implementation. Merge commit: `47c6151a`.
 - **[#2823 — Preserve HarmBench contextual behavior prompts](https://github.com/microsoft/PyRIT/pull/2823)** — **open upstream**. Fixes the HarmBench loader dropping non-empty `ContextString` values by combining context and behavior using the dataset convention, while retaining context in metadata and adding regression coverage.
 - **[#2782 — Canonical technique names in scenario run summaries](https://github.com/aspire488/PyRIT/tree/fix/promptinject-technique-summary)** — follow-up fix prepared on my fork. Corrects `techniques_used` to use the persisted canonical `technique_name` rather than a potentially goal/objective-bearing `display_group`, with regression coverage. The fork PR is open while an upstream submission path is being finalized.
 
