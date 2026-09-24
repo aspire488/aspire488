@@ -227,6 +227,8 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 > Status is tracked explicitly: merged upstream work is separated from open fork-side proposals.
 
 ### 🔥 Latest engineering work — September 24, 2026
+- **TypeSafe SDK JS #8** — prepared a fork-side fix for Node timer overflow: rejects timeout values above `2_147_483_647` ms at validation time, covers both client-level and per-call timeouts, and adds boundary regression tests. The TypeSafe repository currently restricts external PR creation, so this remains **fork-side work, not an upstream PR**.
+
 - **SiYuan #19815** — prepared `aspire488/siyuan#1` for expired Streamable HTTP MCP sessions: `mcp.ErrSessionMissing` now gets synchronous session recovery with exactly one safe replay, while ambiguous transport failures remain non-retriable; added regression coverage for both paths.
 
 - **RisingWave #27181** — extended the correlated-reference regression through the real `LogicalApply → ApplyEliminateRule → to_batch()` boundary, including a multi-row `LogicalValues` case with the correlated reference in a non-first row.
