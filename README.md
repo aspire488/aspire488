@@ -230,6 +230,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 - **KiroCrew #12861** — hardened bounded PDF extraction across Windows process limits and Python import isolation, while adding child-extractor protocol coverage.
 - **aios #2458** — cleaned the remaining CI newline failures after the streaming truncation/finish-reason work.
 - **aios #2459** — **merged upstream**. Preserves the timeout bound (`deadline` vs `spend`) in child outcomes while keeping `kind="timeout"` compatible, with regression coverage for both paths.
+- **Microsoft PyRIT #2762** — **maintainer-approved** by Roman Lutz after multiple review rounds and follow-up commits. Added the memory-backed dataset summary API, typed selection keys, loaded/provider availability, logical-example/objective counts, aggregated metadata, unnamed-dataset handling, and regression coverage. The PR remains open pending upstream merge.
 - **OpenHands #17579** — condenser metadata/key/minimum fixes remain on the PR while upstream review infrastructure completes its checks.
 - **OpenTelemetry Erlang #822** — maintainer-requested rebase remains the next upstream action; no merge-style workaround was introduced.
 
