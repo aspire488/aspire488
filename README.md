@@ -175,6 +175,9 @@ I use open source as an external engineering track: working across unfamiliar co
 I distinguish **merged work from open proposals** so the repository status is explicit.
 
 #### ✅ Merged upstream work
+- [PyRIT #2762 — Dataset Summary API](https://github.com/microsoft/PyRIT/pull/2762)  
+  **Merged upstream on September 24, 2026** after maintainer review and multiple refinement rounds. Added memory-backed dataset summaries with aggregation, selection-key isolation, unnamed/whitespace dataset handling, metadata query controls, `loaded_only` behavior, and regression coverage. Final merge commit: `47c6151a`.
+
 
 - [aios #2457 — Preserve `length` finish reason across streaming trailers](https://github.com/eumemic/aios/pull/2457)  
   Merged upstream fix preserving provider-reported `finish_reason="length"` when trailing streaming chunks clobber the assembled finish reason, with regression coverage and `content_filter` precedence handling.
@@ -190,7 +193,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 ## 🛡️ PyRIT — AI Red-Teaming Contributions
 
-I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/PyRIT)**, an open-source framework for AI red teaming. My current work includes both maintainer-reviewed upstream changes and a follow-up fix prepared on my fork.
+I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/PyRIT)**, an open-source framework for AI red teaming. My recent upstream work includes a merged dataset-summary contribution, alongside a follow-up fix prepared on my fork.
 
 ### 🔥 Current PyRIT work
 
@@ -199,7 +202,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 > **Why it matters:** this work involves navigating a large unfamiliar codebase, understanding existing data models and service boundaries, responding to maintainer review, and adding targeted regression coverage rather than making isolated demo changes.
 
-**Status is intentionally explicit:** #2762 is an upstream PR under review; #2782 is currently fork-side work until an upstream PR exists.
+**Status is intentionally explicit:** #2762 is merged upstream; #2782 is currently fork-side work until an upstream PR exists.
 
 ---
 
@@ -239,7 +242,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 ### 🔥 Latest engineering work — September 23, 2026
 
 - **PyRIT #2782** — fixed scenario run summaries so `techniques_used` uses the persisted canonical `technique_name` instead of a potentially goal/objective-bearing `display_group`, with regression coverage. The fix is currently tracked as an open fork PR.
-- **PyRIT #2762** — maintainer-driven dataset-summary refinement reached substantive verification: unnamed/whitespace identity, SQLite collation semantics, named `__unnamed__` isolation, logical-example counting, metadata query size, and `loaded_only` behavior were verified by Roman Lutz against real stored data on `bcc38ad4`. A follow-up test-cleanup commit was then pushed to the branch; the PR remains open.
+- **PyRIT #2762** — maintainer-driven dataset-summary refinement reached substantive verification: unnamed/whitespace identity, SQLite collation semantics, named `__unnamed__` isolation, logical-example counting, metadata query size, and `loaded_only` behavior were verified by Roman Lutz against real stored data on `bcc38ad4`. A follow-up test-cleanup commit was then pushed to the branch; the historical review entry is now closed by the upstream merge.
 - **gh-ops #2** — fixed the GitHub Actions editable-install failure by moving to the supported `setuptools.build_meta` backend.
 - **gh-ops** — completed the cross-run OSS opportunity deduplication and run-summary batch; latest local validation is **1,084 passed, 1 skipped**.
 - **aios #2459** — **merged upstream**; preserved the timeout bound (`deadline` vs `spend`) in child outcomes and the caller-visible `AgentError` contract, with regression coverage.
