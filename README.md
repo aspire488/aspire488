@@ -29,7 +29,7 @@ I learn by shipping, breaking things, measuring them, and then hardening the par
 
 ### 🏆 Standout Upstream Milestone — Microsoft PyRIT
 
-> **Two merged upstream contributions to Microsoft PyRIT**
+> **Three merged upstream contributions to Microsoft PyRIT**
 >
 > **#2762 — Dataset Summary API — MERGED UPSTREAM · September 24, 2026**
 >
@@ -37,13 +37,14 @@ I learn by shipping, breaking things, measuring them, and then hardening the par
 >
 > **Merge commit:** `47c6151a`
 >
+> >
 > **#2823 — HarmBench context preservation — MERGED UPSTREAM · September 25, 2026**
 >
 > Preserves non-empty HarmBench `ContextString` in behavior prompts, retains context metadata, and adds regression coverage.
 >
 > **Merge commit:** `940a8efabb404d80f6a716c5e641d81809d8972a`
 >
-> **Track record:** two separate upstream PRs merged into Microsoft's open-source AI red-teaming framework, demonstrating repeated contribution acceptance across feature work and regression-focused fixes.
+> **Track record:** three separate upstream PRs merged into Microsoft's open-source AI red-teaming framework, spanning feature work, backend behavior, and regression-focused fixes.
 
 
 
