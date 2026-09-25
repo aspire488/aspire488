@@ -35,6 +35,8 @@ I learn by shipping, breaking things, measuring them, and then hardening the par
 >
 > **Merge commit:** `47c6151a` · **Status:** ✅ Merged upstream
 
+> **Latest upstream merge:** [PyRIT #2823 — HarmBench context preservation](https://github.com/microsoft/PyRIT/pull/2823) — **MERGED UPSTREAM · September 25, 2026** · merge commit `940a8efabb404d80f6a716c5e641d81809d8972a`. Preserves non-empty HarmBench `ContextString` in behavior prompts, retains context metadata, and adds regression coverage.
+
 
 
 <p align="center">
@@ -203,6 +205,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [GitHub Profile Analyzer #30 — Evidence-weighted impact scoring](https://github.com/0xarchit/github-profile-analyzer/pull/30)  
   **Merged upstream** after maintainer approval. Refined impact scoring with repository-quality evidence and improved viewport-aware factor tooltips, with regression coverage.
 
+- [PyRIT #2823 — Preserve HarmBench contextual behavior prompts](https://github.com/microsoft/PyRIT/pull/2823)  
+  **Merged upstream on September 25, 2026.** Preserves non-empty HarmBench ContextString in behavior prompts, retains context metadata, and adds regression coverage. Merge commit: `940a8efabb404d80f6a716c5e641d81809d8972a`.
+
 ### 🟡 Open upstream work
 
 - [NousResearch Hermes Agent #121771 — Desktop gateway stale-ref recovery](https://github.com/NousResearch/hermes-agent/pull/121771)  
@@ -212,7 +217,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 | Repository | PR | Status | Engineering focus |
 |---|---|---|---|
-| Microsoft PyRIT | [#2823](https://github.com/microsoft/PyRIT/pull/2823) | 🟡 Open | Preserve HarmBench ContextString in behavior prompts; regression coverage; maintainer-approved, CI workflow approval pending |
+| Microsoft PyRIT | [#2823](https://github.com/microsoft/PyRIT/pull/2823) | ✅ Merged | HarmBench ContextString preservation with regression coverage; merged upstream September 25, 2026 |
 | NousResearch Hermes Agent | [#121771](https://github.com/NousResearch/hermes-agent/pull/121771) | 🟡 Open | Recover from stale desktop gateway refs and closed sockets; focused reconnect regression coverage |
 | RisingWave | [#27181](https://github.com/risingwavelabs/risingwave/pull/27181) | 🟡 Open | Correlated refs inside LogicalValues; real LogicalApply → ApplyEliminateRule → to_batch() regression |
 | SiYuan | [#1](https://github.com/aspire488/siyuan/pull/1) | 🟡 Open | Recover expired MCP sessions with exactly one safe replay |
@@ -230,12 +235,12 @@ I distinguish **merged work from open proposals** so the repository status is ex
 **Review posture:** no fabricated activity. PRs without actionable maintainer feedback remain waiting; concrete reviewer findings are patched when verified.
 ## 🛡️ PyRIT — AI Red-Teaming Contributions
 
-I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/PyRIT)**, an open-source framework for AI red teaming. My recent upstream work includes a merged dataset-summary contribution and an open upstream HarmBench context-preservation fix (#2823).
+I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/PyRIT)**, an open-source framework for AI red teaming. My recent upstream work includes two merged PyRIT upstream contributions: the dataset-summary API (#2762) and HarmBench context preservation (#2823).
 
 ### 🔥 Current PyRIT work
 
 - **[#2762 — Dataset Summary API](https://github.com/microsoft/PyRIT/pull/2762)** — **🏆 MERGED UPSTREAM · September 24, 2026** after maintainer review. Added memory-backed dataset summaries and iterated through feedback covering aggregation, SQLite collation behavior, unnamed/whitespace dataset identity, selection-key isolation, metadata query size, and `loaded_only` behavior. Roman Lutz verified the substantive concerns against real stored seeds, and the final test-cleanup commit was merged with the implementation. Merge commit: `47c6151a`.
-- **[#2823 — Preserve HarmBench contextual behavior prompts](https://github.com/microsoft/PyRIT/pull/2823)** — **open upstream**. Fixes the HarmBench loader dropping non-empty `ContextString` values by combining context and behavior using the dataset convention, while retaining context in metadata and adding regression coverage.
+- **[#2823 — Preserve HarmBench contextual behavior prompts](https://github.com/microsoft/PyRIT/pull/2823)** — **🏆 MERGED UPSTREAM · September 25, 2026**. Fixes the HarmBench loader dropping non-empty `ContextString` values by combining context and behavior using the dataset convention, while retaining context in metadata and adding regression coverage. Merge commit: `940a8efabb404d80f6a716c5e641d81809d8972a`.
 - **[#2782 — Canonical technique names in scenario run summaries](https://github.com/aspire488/PyRIT/tree/fix/promptinject-technique-summary)** — follow-up fix prepared on my fork. Corrects `techniques_used` to use the persisted canonical `technique_name` rather than a potentially goal/objective-bearing `display_group`, with regression coverage. The fork PR is open while an upstream submission path is being finalized.
 
 > **Why it matters:** this work involves navigating a large unfamiliar codebase, understanding existing data models and service boundaries, responding to maintainer review, and adding targeted regression coverage rather than making isolated demo changes.
