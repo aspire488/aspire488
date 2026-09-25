@@ -218,6 +218,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 ### 🟡 Open upstream work
 
+- [AgentField #1073 — Go harness factory tests](https://github.com/Agent-Field/agentfield/pull/1073)  
+  **Open upstream · September 25, 2026.** Adds focused `factory_test.go` coverage for explicit Claude Code and OpenCode provider construction, extending the existing default/environment/unknown-provider coverage from issue #404.
+
 - [NousResearch Hermes Agent #121771 — Desktop gateway stale-ref recovery](https://github.com/NousResearch/hermes-agent/pull/121771)  
   **Open upstream.** Adds active-gateway fallback plus stale-open/closed-socket recovery and focused reconnect regression coverage. The PR remains under maintainer review.
 
@@ -239,6 +242,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
 | AI Platform AWS | [#4](https://github.com/tysoncung/ai-platform-aws/pull/4) | 🟡 Open | Provider-routing specificity for Anthropic vs Bedrock Claude |
 | Agent-Bench | [#8](https://github.com/PicadoLabs/agent-bench/pull/8) | 🟡 Open | Global command palette with keyboard/accessibility support |
 | GoalAI Score Predictor | [#1](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1) | 🟡 Open | Reproducible Monte Carlo prediction-analysis lab; deployment awaiting Vercel authorization |
+| AgentField | [#1073](https://github.com/Agent-Field/agentfield/pull/1073) | 🟡 Open | Go SDK harness factory regression coverage; closes the `factory_test.go` slice of #404 |
 
 **Review posture:** no fabricated activity. PRs without actionable maintainer feedback remain waiting; concrete reviewer findings are patched when verified.
 ## 🛡️ PyRIT — AI Red-Teaming Contributions
