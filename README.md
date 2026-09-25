@@ -27,6 +27,15 @@ I learn by shipping, breaking things, measuring them, and then hardening the par
 
 > **2026 contribution milestone:** 500+ GitHub contributions, alongside ongoing upstream and fork-side engineering work.
 
+
+### 🛡️ Microsoft RAMPART — PyRIT ecosystem contribution
+
+> **#2 — Generic PyRIT Converter Bridge — OPEN · September 25, 2026**
+>
+> Implements the documented PyRIT `PromptConverter` → RAMPART `PayloadConverter` bridge, scoped to text-to-text conversion with payload identity/metadata preservation and focused regression coverage.
+
+**PR:** https://github.com/aspire488/RAMPART/pull/2
+
 ### 🏆 Standout Upstream Milestone — Microsoft PyRIT
 
 > **Two merged upstream contributions to Microsoft PyRIT**
@@ -171,7 +180,7 @@ The application intentionally remains on its React 18/Vite 6 prototype stack rat
 | Project | Stage | Repository | Live / Docs |
 |---|---|---|---|
 | ⚙️ gh-ops | Operational / Final hardening | [GitHub](https://github.com/aspire488/gh-ops) | [README](https://github.com/aspire488/gh-ops#readme) |
-| 🤖 KIO | Gate 5 complete · Maintenance | [GitHub](https://github.com/aspire488/Kio) | [README](https://github.com/aspire488/Kio#readme) |
+| 🤖 KIO | Active restoration / integration | [GitHub](https://github.com/aspire488/Kio) | [README](https://github.com/aspire488/Kio#readme) |
 | 🧠 AURA | Architecture checkpoint | [GitHub](https://github.com/aspire488/AURA) | [Architecture](https://github.com/aspire488/AURA#readme) |
 | 🛠️ UEA | Public Alpha | [GitHub](https://github.com/aspire488/Universal-Engineering-Augmentation) | [README](https://github.com/aspire488/Universal-Engineering-Augmentation#readme) |
 | ⚡ CodeFlow | Frozen Prototype | [GitHub](https://github.com/aspire488/codeflow) | [Live](https://codeflow-app-sigma.vercel.app) |
@@ -231,6 +240,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
 |---|---|---|---|
 | Microsoft PyRIT | [#2762](https://github.com/microsoft/PyRIT/pull/2762) | ✅ Merged | Dataset Summary API; merged upstream September 24, 2026 |
 | Microsoft PyRIT | [#2823](https://github.com/microsoft/PyRIT/pull/2823) | ✅ Merged | HarmBench ContextString preservation with regression coverage; merged upstream September 25, 2026 |
+| Microsoft RAMPART | [#2](https://github.com/aspire488/RAMPART/pull/2) | 🟡 Open | Generic PyRIT PromptConverter → RAMPART PayloadConverter bridge; text-to-text scope with regression coverage |
 | NousResearch Hermes Agent | [#121771](https://github.com/NousResearch/hermes-agent/pull/121771) | 🟡 Open | Recover from stale desktop gateway refs and closed sockets; focused reconnect regression coverage |
 | RisingWave | [#27181](https://github.com/risingwavelabs/risingwave/pull/27181) | 🟡 Open | Correlated refs inside LogicalValues; real LogicalApply → ApplyEliminateRule → to_batch() regression |
 | SiYuan | [#1](https://github.com/aspire488/siyuan/pull/1) | 🟡 Open | Recover expired MCP sessions with exactly one safe replay |
