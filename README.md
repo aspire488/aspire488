@@ -29,13 +29,21 @@ I learn by shipping, breaking things, measuring them, and then hardening the par
 
 ### 🏆 Standout Upstream Milestone — Microsoft PyRIT
 
+> **Two merged upstream contributions to Microsoft PyRIT**
+>
 > **#2762 — Dataset Summary API — MERGED UPSTREAM · September 24, 2026**
 >
-> A substantive contribution to **[Microsoft PyRIT](https://github.com/microsoft/PyRIT)**, the open-source AI red-teaming framework. The PR went through multiple maintainer review rounds covering aggregation semantics, dataset identity, SQLite behavior, selection-key isolation, metadata query sizing, and `loaded_only` behavior before landing upstream.
+> Added memory-backed dataset summaries and survived multiple maintainer review rounds covering aggregation semantics, dataset identity, SQLite behavior, selection-key isolation, metadata query sizing, and `loaded_only` behavior before landing upstream.
 >
-> **Merge commit:** `47c6151a` · **Status:** ✅ Merged upstream
-
-> **Latest upstream merge:** [PyRIT #2823 — HarmBench context preservation](https://github.com/microsoft/PyRIT/pull/2823) — **MERGED UPSTREAM · September 25, 2026** · merge commit `940a8efabb404d80f6a716c5e641d81809d8972a`. Preserves non-empty HarmBench `ContextString` in behavior prompts, retains context metadata, and adds regression coverage.
+> **Merge commit:** `47c6151a`
+>
+> **#2823 — HarmBench context preservation — MERGED UPSTREAM · September 25, 2026**
+>
+> Preserves non-empty HarmBench `ContextString` in behavior prompts, retains context metadata, and adds regression coverage.
+>
+> **Merge commit:** `940a8efabb404d80f6a716c5e641d81809d8972a`
+>
+> **Track record:** two separate upstream PRs merged into Microsoft's open-source AI red-teaming framework, demonstrating repeated contribution acceptance across feature work and regression-focused fixes.
 
 
 
