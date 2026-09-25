@@ -206,6 +206,26 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [GitHub Profile Analyzer #30 — Evidence-weighted impact scoring](https://github.com/0xarchit/github-profile-analyzer/pull/30)  
   **Merged upstream** after maintainer approval. Refined impact scoring with repository-quality evidence and improved viewport-aware factor tooltips, with regression coverage.
 
+## 📡 Current OSS PR Queue — September 25, 2026
+
+| Repository | PR | Status | Engineering focus |
+|---|---|---|---|
+| Microsoft PyRIT | [#2823](https://github.com/microsoft/PyRIT/pull/2823) | 🟡 Open | Preserve HarmBench ContextString in behavior prompts; regression coverage; maintainer-approved, CI workflow approval pending |
+| NousResearch Hermes Agent | [#121771](https://github.com/NousResearch/hermes-agent/pull/121771) | 🟡 Open | Recover from stale desktop gateway refs and closed sockets; focused reconnect regression coverage |
+| RisingWave | [#27181](https://github.com/risingwavelabs/risingwave/pull/27181) | 🟡 Open | Correlated refs inside LogicalValues; real LogicalApply → ApplyEliminateRule → to_batch() regression |
+| SiYuan | [#1](https://github.com/aspire488/siyuan/pull/1) | 🟡 Open | Recover expired MCP sessions with exactly one safe replay |
+| TopoCore | [#1](https://github.com/KARAN-D05/TopoCore/pull/1) | 🟡 Open | Deterministic spatial execution cycle detection |
+| Inspect AI | [#1](https://github.com/aspire488/inspect_ai/pull/1) | 🟡 Open | Base64-safe Google inline-image bytes |
+| MVT | [#939](https://github.com/mvt-project/mvt/pull/939) | 🟡 Open | STIX indicator parsing with = inside URL query values |
+| Cloudflare quiche | [#2759](https://github.com/cloudflare/quiche/pull/2759) | 🟡 Open | Ignore ACKs for non-in-flight packets in Reno |
+| Cloudflare quiche | [#2758](https://github.com/cloudflare/quiche/pull/2758) | 🟡 Open | Verify peers when using a custom CA |
+| Cloudflare quiche | [#2756](https://github.com/cloudflare/quiche/pull/2756) | 🟡 Draft | Unify PTO-based timer duration |
+| GitHub Linguist | [#1](https://github.com/aspire488/linguist/pull/1) | 🟡 Open | Trim .example suffix before language detection |
+| AI Platform AWS | [#4](https://github.com/tysoncung/ai-platform-aws/pull/4) | 🟡 Open | Provider-routing specificity for Anthropic vs Bedrock Claude |
+| Agent-Bench | [#8](https://github.com/PicadoLabs/agent-bench/pull/8) | 🟡 Open | Global command palette with keyboard/accessibility support |
+| GoalAI Score Predictor | [#1](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1) | 🟡 Open | Reproducible Monte Carlo prediction-analysis lab; deployment awaiting Vercel authorization |
+
+**Review posture:** no fabricated activity. PRs without actionable maintainer feedback remain waiting; concrete reviewer findings are patched when verified.
 ## 🛡️ PyRIT — AI Red-Teaming Contributions
 
 I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/PyRIT)**, an open-source framework for AI red teaming. My recent upstream work includes a merged dataset-summary contribution and an open upstream HarmBench context-preservation fix (#2823).
@@ -242,7 +262,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 > Status is tracked explicitly: merged upstream work is separated from open fork-side proposals.
 
-### 🔥 Latest engineering work — September 24, 2026
+### 🔥 Latest engineering work — September 25, 2026
 
 - **Microsoft PyRIT #2762** — **merged upstream** after multiple maintainer review rounds. The dataset summary API is now part of upstream PyRIT; final merge commit: `47c6151a`.
 - **Microsoft PyRIT #2823** — **open upstream**. Preserves non-empty HarmBench `ContextString` values while retaining context metadata, with focused regression coverage.
