@@ -228,6 +228,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 | Repository | PR | Status | Engineering focus |
 |---|---|---|---|
+| Microsoft PyRIT | [#2762](https://github.com/microsoft/PyRIT/pull/2762) | ✅ Merged | Dataset Summary API; merged upstream September 24, 2026 |
 | Microsoft PyRIT | [#2823](https://github.com/microsoft/PyRIT/pull/2823) | ✅ Merged | HarmBench ContextString preservation with regression coverage; merged upstream September 25, 2026 |
 | NousResearch Hermes Agent | [#121771](https://github.com/NousResearch/hermes-agent/pull/121771) | 🟡 Open | Recover from stale desktop gateway refs and closed sockets; focused reconnect regression coverage |
 | RisingWave | [#27181](https://github.com/risingwavelabs/risingwave/pull/27181) | 🟡 Open | Correlated refs inside LogicalValues; real LogicalApply → ApplyEliminateRule → to_batch() regression |
@@ -243,6 +244,13 @@ I distinguish **merged work from open proposals** so the repository status is ex
 | Agent-Bench | [#8](https://github.com/PicadoLabs/agent-bench/pull/8) | 🟡 Open | Global command palette with keyboard/accessibility support |
 | GoalAI Score Predictor | [#1](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1) | 🟡 Open | Reproducible Monte Carlo prediction-analysis lab; deployment awaiting Vercel authorization |
 | AgentField | [#1073](https://github.com/Agent-Field/agentfield/pull/1073) | 🟡 Open | Go SDK harness factory regression coverage; closes the `factory_test.go` slice of #404 |
+| OpenHands | [#17579](https://github.com/OpenHands/OpenHands/pull/17579) | 🟡 Open | Align condenser max-size metadata with agent-server minimum |
+| LlamaIndex | [#23201](https://github.com/run-llama/llama_index/pull/23201) | 🟡 Open | Preserve retrieved scores during previous/next expansion |
+| IntelliJ PowerShell | [#506](https://github.com/intellij-powershell/intellij-powershell/pull/506) | 🟡 Open | Resolve pwsh.exe WindowsApps reparse points |
+| OpenTelemetry Erlang | [#822](https://github.com/open-telemetry/opentelemetry-erlang-contrib/pull/822) | 🟡 Open | Isolate spans across retries and redirects |
+| Coder | [#29668](https://github.com/coder/coder/pull/29668) | 🟡 Draft | Deduplicate unknown AI Gateway clients |
+| N3MO | [#39](https://github.com/RajX-dev/N3MO/pull/39) | 🟡 Open | Ruby/Kotlin language routing regression coverage |
+| garak | [#1](https://github.com/aspire488/garak/pull/1) | 🟡 Open | Unset soft prompt cap handling |
 
 **Review posture:** no fabricated activity. PRs without actionable maintainer feedback remain waiting; concrete reviewer findings are patched when verified.
 ## 🛡️ PyRIT — AI Red-Teaming Contributions
@@ -284,10 +292,10 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 ### 🔥 Latest engineering work — September 25, 2026
 
 - **Microsoft PyRIT #2762** — **merged upstream** after multiple maintainer review rounds. The dataset summary API is now part of upstream PyRIT; final merge commit: `47c6151a`.
-- **Microsoft PyRIT #2823** — **open upstream**. Preserves non-empty HarmBench `ContextString` values while retaining context metadata, with focused regression coverage.
+- **Microsoft PyRIT #2823** — **merged upstream on September 25, 2026**. Preserves non-empty HarmBench `ContextString` values while retaining context metadata, with focused regression coverage. Merge commit: `940a8efabb404d80f6a716c5e641d81809d8972a`.
 - **aios #2458** — **merged upstream on September 24, 2026**. The streaming truncation telemetry fix landed in master after the pinned Ruff formatting issue was resolved. Merge commit: `fe051b2c`.
 - **RisingWave #27181** — **open upstream**. Correlated-reference coverage now crosses the real `LogicalApply → ApplyEliminateRule → to_batch()` path, including a multi-row `LogicalValues` case; the review-found test compile issue was fixed with `ctx.clone()`.
-- **KiroCrew #12861** — **open upstream**. PDF extraction was hardened around Windows process limits and Python import isolation, with child-extractor protocol coverage.
+- **KiroCrew #12861** — **closed without merge on September 25, 2026**; superseded by upstream #12925, which already contained the fix.
 - **TopoCore #1** — **open upstream**. Added deterministic repeated-state cycle detection to the spatial execution simulator.
 - **LlamaIndex #23201** — **open upstream**. Preserves retrieved scores during previous/next expansion.
 - **OpenHands #17579** — **open upstream**. Aligns condenser max-size metadata with the agent-server minimum.
