@@ -234,6 +234,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [collective/icalendar #1835 — Fix/start end duration mismatch](https://github.com/collective/icalendar/pull/1835)  
   **Open upstream · September 25, 2026.** Resolves inconsistent `DTEND` + `DURATION` handling by preferring explicit `DURATION`, with focused regression coverage.
 
+- [NVIDIA garak #2234 — Fix/paraphrase transformers compatibility](https://github.com/NVIDIA/garak/pull/2234)  
+  **Open upstream · September 25, 2026.** Removes the deprecated `transformers-community/group-beam-search` custom-generation path and `trust_remote_code` requirement from the `Fast` paraphrase buff, while retaining native group-beam-search parameters and adding regression coverage for the compatibility fix.
+
 ## 📡 Current OSS PR Queue — September 25, 2026
 
 | Repository | PR | Status | Engineering focus |
