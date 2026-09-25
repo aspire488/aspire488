@@ -294,6 +294,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 - **Microsoft PyRIT #2762** — **merged upstream** after multiple maintainer review rounds. The dataset summary API is now part of upstream PyRIT; final merge commit: `47c6151a`.
 - **Microsoft PyRIT #2823** — **merged upstream on September 25, 2026**. Preserves non-empty HarmBench `ContextString` values while retaining context metadata, with focused regression coverage. Merge commit: `940a8efabb404d80f6a716c5e641d81809d8972a`.
+- **Microsoft PyRIT #3** — **open fork PR targeting upstream #2835**; ObjectiveScorerEvaluator now scores only the assistant response from multi-turn labeled conversations while retaining all turns in scorer memory, with regression coverage.
 - **aios #2458** — **merged upstream on September 24, 2026**. The streaming truncation telemetry fix landed in master after the pinned Ruff formatting issue was resolved. Merge commit: `fe051b2c`.
 - **RisingWave #27181** — **open upstream**. Correlated-reference coverage now crosses the real `LogicalApply → ApplyEliminateRule → to_batch()` path, including a multi-row `LogicalValues` case; the review-found test compile issue was fixed with `ctx.clone()`.
 - **KiroCrew #12861** — **closed without merge on September 25, 2026**; superseded by upstream #12925, which already contained the fix.
