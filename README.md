@@ -222,6 +222,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [NousResearch Hermes Agent #121771 — Desktop gateway stale-ref recovery](https://github.com/NousResearch/hermes-agent/pull/121771)  
   **Open upstream.** Adds active-gateway fallback plus stale-open/closed-socket recovery and focused reconnect regression coverage. The PR remains under maintainer review.
 
+- [collective/icalendar #1835 — Fix/start end duration mismatch](https://github.com/collective/icalendar/pull/1835)  
+  **Open upstream · September 25, 2026.** Resolves inconsistent `DTEND` + `DURATION` handling by preferring explicit `DURATION`, with focused regression coverage.
+
 ## 📡 Current OSS PR Queue — September 25, 2026
 
 | Repository | PR | Status | Engineering focus |
