@@ -25,7 +25,7 @@ I build **AI systems, developer tools, automation, and experimental software sys
 
 I learn by shipping, breaking things, measuring them, and then hardening the parts that are worth keeping.
 
-> **Current contribution baseline:** **9 merged PRs**. This profile counts the merged engineering PRs tracked in the portfolio; open and fork-side proposals are kept separate.
+> **Current contribution baseline:** **10 merged PRs**. This profile counts the merged engineering PRs tracked in the portfolio; open and fork-side proposals are kept separate.
 
 
 ### 🛡️ Microsoft RAMPART — PyRIT ecosystem contribution
@@ -232,6 +232,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [Agent-Bench #8 — Global command palette](https://github.com/PicadoLabs/agent-bench/pull/8)  
   **Merged upstream on September 26, 2026.** Adds a global command palette with keyboard and accessibility support. Merge commit: `2d95c522d95705d332f2e6ddc5929c281e2886b3`.
 
+- [AgentField #1073 — Go harness factory tests](https://github.com/Agent-Field/agentfield/pull/1073)  
+  **Merged upstream on September 26, 2026.** Adds focused `factory_test.go` coverage for explicit Claude Code and OpenCode provider construction, with the table driving concrete type assertions. Maintainer review approved the change and confirmed focused factory tests plus `go vet` pass locally.
+
 ### 🟢 Newly opened upstream work — September 26, 2026
 
 - [LlamaIndex #23260 — Preserve retrieved scores during Prev/Next expansion](https://github.com/run-llama/llama_index/pull/23260)  
@@ -241,9 +244,6 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 - [GitFut #125 — Derive active years from contribution history](https://github.com/Younesfdj/gitfut/pull/125)  
   **Open upstream on September 26, 2026.** Fixes undercounting of active years by deriving the signal from GitHub's annual contribution windows rather than owned-repository timestamps, with focused regression coverage for organization-only and missing-window cases.
-
-- [AgentField #1073 — Go harness factory tests](https://github.com/Agent-Field/agentfield/pull/1073)  
-  **Approved · September 26, 2026 · awaiting merge.** Adds focused `factory_test.go` coverage for explicit Claude Code and OpenCode provider construction, extending the existing default/environment/unknown-provider coverage from issue #404. Maintainer review confirms the table now drives the concrete type assertion; focused factory tests and `go vet` pass locally.
 
 - [NousResearch Hermes Agent #121771 — Desktop gateway stale-ref recovery](https://github.com/NousResearch/hermes-agent/pull/121771)  
   **Open upstream.** Adds active-gateway fallback plus stale-open/closed-socket recovery and focused reconnect regression coverage. The PR remains under maintainer review.
@@ -256,10 +256,10 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 ## 📡 Current OSS PR Queue — September 26, 2026
 
+| AgentField | [#1073](https://github.com/Agent-Field/agentfield/pull/1073) | ✅ Merged | Go harness factory tests; merged upstream September 26, 2026 |
 | Repository | PR | Status | Engineering focus |
 |---|---|---|---|
 | LlamaIndex | [#23260](https://github.com/run-llama/llama_index/pull/23260) | 🟡 Open | Preserve retrieved scores during Prev/Next expansion |
-| Pydantic AI | [#8823](https://github.com/pydantic/pydantic-ai/pull/8823) | 🟡 Open | Avoid redundant RunContext copy when validation context is unset |
 | Microsoft PyRIT | [#2762](https://github.com/microsoft/PyRIT/pull/2762) | ✅ Merged | Dataset Summary API; merged upstream September 24, 2026 |
 | Microsoft PyRIT | [#2823](https://github.com/microsoft/PyRIT/pull/2823) | ✅ Merged | HarmBench ContextString preservation with regression coverage; merged upstream September 25, 2026 |
 | Microsoft RAMPART | [#2](https://github.com/aspire488/RAMPART/pull/2) | 🟡 Open | Generic PyRIT PromptConverter → RAMPART PayloadConverter bridge; text-to-text scope with regression coverage |
