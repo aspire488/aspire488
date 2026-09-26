@@ -25,7 +25,7 @@ I build **AI systems, developer tools, automation, and experimental software sys
 
 I learn by shipping, breaking things, measuring them, and then hardening the parts that are worth keeping.
 
-> **Current contribution baseline:** **10 merged PRs**. This profile counts the merged engineering PRs tracked in the portfolio; open and fork-side proposals are kept separate.
+> **Current contribution baseline:** **9 merged PRs**. This profile counts the merged engineering PRs tracked in the portfolio; open and fork-side proposals are kept separate.
 
 
 ### 🛡️ Microsoft RAMPART — PyRIT ecosystem contribution
@@ -261,7 +261,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
 |---|---|---|---|
 | LlamaIndex | [#23260](https://github.com/run-llama/llama_index/pull/23260) | 🟡 Open | Preserve retrieved scores during Prev/Next expansion |
 | Microsoft PyRIT | [#2762](https://github.com/microsoft/PyRIT/pull/2762) | ✅ Merged | Dataset Summary API; merged upstream September 24, 2026 |
-| Microsoft PyRIT | [#2823](https://github.com/microsoft/PyRIT/pull/2823) | ✅ Merged | HarmBench ContextString preservation with regression coverage; merged upstream September 25, 2026 |
+| Microsoft PyRIT | [#2823](https://github.com/microsoft/PyRIT/pull/2823) | ✅ Merged | HarmBench ContextString preservation with regression coverage; merged upstream September 25, 2026 |\n| Microsoft PyRIT | [#2882](https://github.com/microsoft/PyRIT/pull/2882) | 🟢 Open | Reject empty/whitespace-only ExactTextMatching targets; regression coverage |
 | Microsoft RAMPART | [#2](https://github.com/aspire488/RAMPART/pull/2) | 🟡 Open | Generic PyRIT PromptConverter → RAMPART PayloadConverter bridge; text-to-text scope with regression coverage |
 | GitFut | [#125](https://github.com/Younesfdj/gitfut/pull/125) | 🟡 Open | Derive active years from annual contribution history; regression coverage for organization-only and missing-window cases |
 | NousResearch Hermes Agent | [#121771](https://github.com/NousResearch/hermes-agent/pull/121771) | 🟡 Open | Recover from stale desktop gateway refs and closed sockets; focused reconnect regression coverage |
@@ -288,14 +288,14 @@ I distinguish **merged work from open proposals** so the repository status is ex
 **Review posture:** no fabricated activity. PRs without actionable maintainer feedback remain waiting; concrete reviewer findings are patched when verified.
 ## 🛡️ PyRIT — AI Red-Teaming Contributions
 
-I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/PyRIT)**, an open-source framework for AI red teaming. My recent upstream work includes two merged PyRIT upstream contributions: the dataset-summary API (#2762) and HarmBench context preservation (#2823).
+I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/PyRIT)**, an open-source framework for AI red teaming. My recent upstream work includes two merged PyRIT upstream contributions: the dataset-summary API (#2762) and HarmBench context preservation (#2823), plus the new open ExactTextMatching fix (#2882).
 
 ### 🔥 Current PyRIT work
 
 - **[#2762 — Dataset Summary API](https://github.com/microsoft/PyRIT/pull/2762)** — **🏆 MERGED UPSTREAM · September 24, 2026** after maintainer review. Added memory-backed dataset summaries and iterated through feedback covering aggregation, SQLite collation behavior, unnamed/whitespace dataset identity, selection-key isolation, metadata query size, and `loaded_only` behavior. Roman Lutz verified the substantive concerns against real stored seeds, and the final test-cleanup commit was merged with the implementation. Merge commit: `47c6151a`.
 - **[#2823 — Preserve HarmBench contextual behavior prompts](https://github.com/microsoft/PyRIT/pull/2823)** — **🏆 MERGED UPSTREAM · September 25, 2026**. Fixes the HarmBench loader dropping non-empty `ContextString` values by combining context and behavior using the dataset convention, while retaining context in metadata and adding regression coverage. Merge commit: `940a8efabb404d80f6a716c5e641d81809d8972a`.
-- **[#3 — Objective scorer assistant-message handling](https://github.com/aspire488/PyRIT/pull/3)** — **🟡 OPEN FOR UPSTREAM REVIEW**; targets PyRIT #2835 with a focused evaluator fix and regression coverage.
-- **[#2782 — Canonical technique names in scenario run summaries](https://github.com/aspire488/PyRIT/tree/fix/promptinject-technique-summary)** — follow-up fix prepared on my fork. Corrects `techniques_used` to use the persisted canonical `technique_name` rather than a potentially goal/objective-bearing `display_group`, with regression coverage. The fork PR is open while an upstream submission path is being finalized.
+- **[#2882 — Reject empty targets in ExactTextMatching](https://github.com/microsoft/PyRIT/pull/2882)** — **🟢 OPEN UPSTREAM · September 26, 2026**; rejects empty and whitespace-only exact-match targets after normalization, preventing false-positive matches, with focused regression coverage.\n- **[#3 — Objective scorer assistant-message handling](https://github.com/aspire488/PyRIT/pull/3)** — **🟡 OPEN FOR UPSTREAM REVIEW**; targets PyRIT #2835 with a focused evaluator fix and regression coverage.
+- **[#2882 — Reject empty targets in ExactTextMatching](https://github.com/microsoft/PyRIT/pull/2882)** — **🟢 OPEN UPSTREAM · September 26, 2026**; rejects empty and whitespace-only targets after normalization, with focused regression coverage.\n- **[#2782 — Canonical technique names in scenario run summaries](https://github.com/aspire488/PyRIT/tree/fix/promptinject-technique-summary)** — follow-up fix prepared on my fork. Corrects `techniques_used` to use the persisted canonical `technique_name` rather than a potentially goal/objective-bearing `display_group`, with regression coverage. The fork PR is open while an upstream submission path is being finalized.
 
 > **Why it matters:** this work involves navigating a large unfamiliar codebase, understanding existing data models and service boundaries, responding to maintainer review, and adding targeted regression coverage rather than making isolated demo changes.
 
@@ -326,7 +326,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 ### 🔥 Latest engineering work — September 25, 2026
 
 - **Microsoft PyRIT #2762** — **merged upstream** after multiple maintainer review rounds. The dataset summary API is now part of upstream PyRIT; final merge commit: `47c6151a`.
-- **Microsoft PyRIT #2823** — **merged upstream on September 25, 2026**. Preserves non-empty HarmBench `ContextString` values while retaining context metadata, with focused regression coverage. Merge commit: `940a8efabb404d80f6a716c5e641d81809d8972a`.
+- **Microsoft PyRIT #2823** — **merged upstream on September 25, 2026**. Preserves non-empty HarmBench `ContextString` values while retaining context metadata, with focused regression coverage. Merge commit: `940a8efabb404d80f6a716c5e641d81809d8972a`.\n- **Microsoft PyRIT #2882** — **open upstream on September 26, 2026**. Rejects empty and whitespace-only `ExactTextMatching` targets after normalization, preventing false-positive matches, with focused regression coverage.
 - **Microsoft PyRIT #3** — **open fork PR targeting upstream #2835**; ObjectiveScorerEvaluator now scores only the assistant response from multi-turn labeled conversations while retaining all turns in scorer memory, with regression coverage.
 - **aios #2458** — **merged upstream on September 24, 2026**. The streaming truncation telemetry fix landed in master after the pinned Ruff formatting issue was resolved. Merge commit: `fe051b2c`.
 - **RisingWave #27181** — **open upstream**. Correlated-reference coverage now crosses the real `LogicalApply → ApplyEliminateRule → to_batch()` path, including a multi-row `LogicalValues` case; the review-found test compile issue was fixed with `ctx.clone()`.
