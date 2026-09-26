@@ -98,13 +98,13 @@ The system is deliberately **read-only against GitHub**: collection and analysis
 <a href="https://github.com/aspire488/gh-ops"><img src="https://img.shields.io/badge/Repository-Open-70a5fd?style=for-the-badge"/></a>
 <a href="https://github.com/aspire488/gh-ops/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/gh-ops/daily.yml?branch=master&style=for-the-badge&label=Actions"/></a>
 
-**Current:** Phases 1–8 and the post-Phase-8 hardening line are implemented. The current system combines repository/CI/release monitoring, OSS intelligence, security intelligence, developer activity, persistent event/repository lifecycles, unified reporting, and scheduled Telegram operations. The latest baseline is **1,260 tests passing**, including **35 Telegram transport-boundary contract tests**. Telegram behavior is verified for severity, priority, topic routing, no-op silence, at-least-once delivery, recovery, and MarkdownV2 payload safety.
+**Current:** Phases 1–8 and the post-Phase-8 hardening line are implemented. The current system combines repository/CI/release monitoring, OSS intelligence, security intelligence, developer activity, persistent event/repository lifecycles, unified reporting, deterministic intelligence, OSS Radar, and scheduled Telegram operations. The final frozen baseline is **1,495 tests passing**. It adds bounded evidence, temporal intelligence, deterministic correlation and attention allocation, grounded optional interpretation, and Telegram contract hardening. GH-OPS is now frozen for maintenance.
 
 ### 🛠️ [Universal Engineering Augmentation](https://github.com/aspire488/Universal-Engineering-Augmentation) — Public Alpha
 
 Agent-neutral engineering infrastructure for coding agents. UEA moves repeatable engineering work from probabilistic reasoning into deterministic code intelligence, dependency/impact analysis, verification, property/mutation testing, formal reasoning, candidate isolation, routing, provenance, event logging, analytics, and reusable capabilities.
 
-The core stays agent-neutral while integrations can sit beside **OpenCode, Claude Code, Codex, or other coding agents**.
+The core stays agent-neutral while integrations can sit beside **OpenCode, Claude Code, Codex, or other coding agents**. The current main baseline includes deterministic-first routing with an optional local Laya System-1 fallback for UNKNOWN classifications: validated labels feed the existing capability/verification stack, while missing Laya or model failures fail soft. The final integration batch is **62/62 tests passing** with verification and compile checks clean.
 
 `Python` `Tree-sitter` `Z3` `Hypothesis` `SQLite` `DuckDB` `MCP`
 
@@ -489,10 +489,10 @@ I also contribute through **GitHub Discussions** — answering concrete engineer
 
 | Track | State / next milestone |
 |---|---|
-| ⚙️ gh-ops | **Final hardening complete** — 1,260 tests passing; operational baseline
+| ⚙️ gh-ops | **FROZEN** — 1,495 tests passing; intelligence + OSS Radar + Telegram hardened
 | 🤖 KIO | **Active restoration / integration** — convergence/audit work remains; recent activity is security/documentation hardening |
 | 🧠 AURA | **Architecture checkpoint** — core cognition architecture is complete; no active feature-development line |
-| 🛠️ UEA | Public alpha + reusable engineering infrastructure |
+| 🛠️ UEA | **Public alpha** — deterministic-first routing + optional Laya System-1 fallback; 62/62 final integration tests |
 | ⚡ CodeFlow | Frozen, hardened prototype |
 | 💊 MediMind | Frozen, hardened prototype |
 | 🌍 Open Source | Cross-project contributions + upstream engineering |
