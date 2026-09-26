@@ -232,18 +232,15 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [Agent-Bench #8 — Global command palette](https://github.com/PicadoLabs/agent-bench/pull/8)  
   **Merged upstream on September 26, 2026.** Adds a global command palette with keyboard and accessibility support. Merge commit: `2d95c522d95705d332f2e6ddc5929c281e2886b3`.
 
-- [GitFut #125 — Derive active years from contribution history](https://github.com/Younesfdj/gitfut/pull/125)  
-  **Open upstream on September 26, 2026.** Fixes undercounting of active years by deriving the signal from GitHub's annual contribution windows rather than owned-repository timestamps, with focused regression coverage for organization-only and missing-window cases.
-
 ### 🟢 Newly opened upstream work — September 26, 2026
 
 - [LlamaIndex #23260 — Preserve retrieved scores during Prev/Next expansion](https://github.com/run-llama/llama_index/pull/23260)  
   **Open upstream.** Prevents overlapping Prev/Next node expansion from replacing an originally retrieved NodeWithScore with an unscored copy. Adds regression coverage for both retrieval orders and valid 0.0 scores.
 
-- [Pydantic AI #8823 — Avoid redundant RunContext copy when validation context is unset](https://github.com/pydantic/pydantic-ai/pull/8823)  
-  **Open upstream.** Returns the freshly constructed RunContext directly when validation_context=None, avoiding an unnecessary dataclass copy while preserving static falsy and callable validation contexts.
-
 ### 🟡 Open upstream work
+
+- [GitFut #125 — Derive active years from contribution history](https://github.com/Younesfdj/gitfut/pull/125)  
+  **Open upstream on September 26, 2026.** Fixes undercounting of active years by deriving the signal from GitHub's annual contribution windows rather than owned-repository timestamps, with focused regression coverage for organization-only and missing-window cases.
 
 - [AgentField #1073 — Go harness factory tests](https://github.com/Agent-Field/agentfield/pull/1073)  
   **Open upstream · September 25, 2026.** Adds focused `factory_test.go` coverage for explicit Claude Code and OpenCode provider construction, extending the existing default/environment/unknown-provider coverage from issue #404.
