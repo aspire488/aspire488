@@ -261,7 +261,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
 | Cloudflare quiche | [#2756](https://github.com/cloudflare/quiche/pull/2756) | 🟡 Draft | Unify PTO-based timer duration |
 | GitHub Linguist | [#1](https://github.com/aspire488/linguist/pull/1) | 🟡 Open | Trim .example suffix before language detection |
 | AI Platform AWS | [#4](https://github.com/tysoncung/ai-platform-aws/pull/4) | 🟡 Open | Provider-routing specificity for Anthropic vs Bedrock Claude |
-| Agent-Bench | [#8](https://github.com/PicadoLabs/agent-bench/pull/8) | 🟡 Open | Global command palette with keyboard/accessibility support |
+| Agent-Bench | [#8](https://github.com/PicadoLabs/agent-bench/pull/8) | ✅ Merged | Global command palette with keyboard/accessibility support; merged September 26, 2026 |
 | GoalAI Score Predictor | [#1](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1) | 🟡 Open | Reproducible Monte Carlo prediction-analysis lab; deployment awaiting Vercel authorization |
 | AgentField | [#1073](https://github.com/Agent-Field/agentfield/pull/1073) | 🟡 Open | Go SDK harness factory regression coverage; closes the `factory_test.go` slice of #404 |
 | OpenHands | [#17579](https://github.com/OpenHands/OpenHands/pull/17579) | 🟡 Open | Align condenser max-size metadata with agent-server minimum |
