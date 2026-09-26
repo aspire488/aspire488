@@ -229,6 +229,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [PyRIT #2823 — Preserve HarmBench contextual behavior prompts](https://github.com/microsoft/PyRIT/pull/2823)  
   **Merged upstream on September 25, 2026.** Preserves non-empty HarmBench ContextString in behavior prompts, retains context metadata, and adds regression coverage. Merge commit: `940a8efabb404d80f6a716c5e641d81809d8972a`.
 
+- [GitFut #125 — Derive active years from contribution history](https://github.com/Younesfdj/gitfut/pull/125)  
+  **Open upstream on September 26, 2026.** Fixes undercounting of active years by deriving the signal from GitHub's annual contribution windows rather than owned-repository timestamps, with focused regression coverage for organization-only and missing-window cases.
+
 ### 🟡 Open upstream work
 
 - [AgentField #1073 — Go harness factory tests](https://github.com/Agent-Field/agentfield/pull/1073)  
@@ -243,13 +246,14 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [NVIDIA garak #2234 — Fix/paraphrase transformers compatibility](https://github.com/NVIDIA/garak/pull/2234)  
   **Open upstream · September 25, 2026.** Removes the deprecated `transformers-community/group-beam-search` custom-generation path and `trust_remote_code` requirement from the `Fast` paraphrase buff, while retaining native group-beam-search parameters and adding regression coverage for the compatibility fix.
 
-## 📡 Current OSS PR Queue — September 25, 2026
+## 📡 Current OSS PR Queue — September 26, 2026
 
 | Repository | PR | Status | Engineering focus |
 |---|---|---|---|
 | Microsoft PyRIT | [#2762](https://github.com/microsoft/PyRIT/pull/2762) | ✅ Merged | Dataset Summary API; merged upstream September 24, 2026 |
 | Microsoft PyRIT | [#2823](https://github.com/microsoft/PyRIT/pull/2823) | ✅ Merged | HarmBench ContextString preservation with regression coverage; merged upstream September 25, 2026 |
 | Microsoft RAMPART | [#2](https://github.com/aspire488/RAMPART/pull/2) | 🟡 Open | Generic PyRIT PromptConverter → RAMPART PayloadConverter bridge; text-to-text scope with regression coverage |
+| GitFut | [#125](https://github.com/Younesfdj/gitfut/pull/125) | 🟡 Open | Derive active years from annual contribution history; regression coverage for organization-only and missing-window cases |
 | NousResearch Hermes Agent | [#121771](https://github.com/NousResearch/hermes-agent/pull/121771) | 🟡 Open | Recover from stale desktop gateway refs and closed sockets; focused reconnect regression coverage |
 | RisingWave | [#27181](https://github.com/risingwavelabs/risingwave/pull/27181) | 🟡 Open | Correlated refs inside LogicalValues; real LogicalApply → ApplyEliminateRule → to_batch() regression |
 | SiYuan | [#1](https://github.com/aspire488/siyuan/pull/1) | 🟡 Open | Recover expired MCP sessions with exactly one safe replay |
