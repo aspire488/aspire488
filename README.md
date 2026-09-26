@@ -25,7 +25,7 @@ I build **AI systems, developer tools, automation, and experimental software sys
 
 I learn by shipping, breaking things, measuring them, and then hardening the parts that are worth keeping.
 
-> **2026 contribution milestone:** 500+ GitHub contributions, alongside ongoing upstream and fork-side engineering work.
+> **Current contribution baseline:** **9 merged PRs**. This profile counts the merged engineering PRs tracked in the portfolio; open and fork-side proposals are kept separate.
 
 
 ### 🛡️ Microsoft RAMPART — PyRIT ecosystem contribution
@@ -98,7 +98,7 @@ The system is deliberately **read-only against GitHub**: collection and analysis
 <a href="https://github.com/aspire488/gh-ops"><img src="https://img.shields.io/badge/Repository-Open-70a5fd?style=for-the-badge"/></a>
 <a href="https://github.com/aspire488/gh-ops/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/gh-ops/daily.yml?branch=master&style=for-the-badge&label=Actions"/></a>
 
-**Current:** **Complete / FROZEN 🔒.** All planned GH-OPS implementation phases and the post-Phase-8 hardening/intelligence line are complete. The final system combines repository/CI/release monitoring, OSS intelligence, security intelligence, developer activity, persistent event/repository lifecycles, unified reporting, deterministic intelligence, OSS Radar, optional grounded interpretation, and scheduled Telegram operations. Final frozen baseline: **1,495 tests passing**. No further feature phase is pending; GH-OPS is in maintenance mode.
+**Current:** **Complete / FROZEN 🔒.** All planned GH-OPS implementation phases and the post-Phase-8 hardening/intelligence line are complete. The final system combines repository/CI/release monitoring, OSS intelligence, security intelligence, developer activity, persistent event/repository lifecycles, unified reporting, deterministic intelligence, OSS Radar, optional grounded interpretation, and scheduled Telegram operations. Final frozen baseline: **1,495 tests passing**. No numbered phase is pending; Phase 8 is a historical milestone, not the current state. GH-OPS is in maintenance mode.
 
 ### 🛠️ [Universal Engineering Augmentation](https://github.com/aspire488/Universal-Engineering-Augmentation) — Public Alpha
 
