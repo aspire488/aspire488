@@ -233,7 +233,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
   **Merged upstream on September 26, 2026.** Adds a global command palette with keyboard and accessibility support. Merge commit: `2d95c522d95705d332f2e6ddc5929c281e2886b3`.
 
 - [AgentField #1073 — Go harness factory tests](https://github.com/Agent-Field/agentfield/pull/1073)  
-  **Merged upstream on September 26, 2026.** Adds focused `factory_test.go` coverage for explicit Claude Code and OpenCode provider construction, with the table driving concrete type assertions. Maintainer review approved the change and confirmed focused factory tests plus `go vet` pass locally.
+  **Merged upstream on September 26, 2026.** Adds focused `factory_test.go` coverage for explicit Claude Code and OpenCode provider construction, with the table driving concrete type assertions. Maintainer review approved the change and confirmed focused factory tests plus `go vet` pass locally. Merge commit: `13b44603e2fb09a5d1817e8d2d0f64f3a40041fa`.
 
 ### 🟢 Newly opened upstream work — September 26, 2026
 
@@ -277,7 +277,6 @@ I distinguish **merged work from open proposals** so the repository status is ex
 | AI Platform AWS | [#4](https://github.com/tysoncung/ai-platform-aws/pull/4) | 🟡 Open | Provider-routing specificity for Anthropic vs Bedrock Claude |
 | Agent-Bench | [#8](https://github.com/PicadoLabs/agent-bench/pull/8) | ✅ Merged | Global command palette with keyboard/accessibility support; merged September 26, 2026 |
 | GoalAI Score Predictor | [#1](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1) | 🟡 Open | Reproducible Monte Carlo prediction-analysis lab; deployment awaiting Vercel authorization |
-| AgentField | [#1073](https://github.com/Agent-Field/agentfield/pull/1073) | 🟡 Open | Go SDK harness factory regression coverage; closes the `factory_test.go` slice of #404 |
 | OpenHands | [#17579](https://github.com/OpenHands/OpenHands/pull/17579) | 🟡 Open | Align condenser max-size metadata with agent-server minimum |
 | LlamaIndex | [#23201](https://github.com/run-llama/llama_index/pull/23201) | 🟡 Open | Preserve retrieved scores during previous/next expansion |
 | IntelliJ PowerShell | [#506](https://github.com/intellij-powershell/intellij-powershell/pull/506) | 🟡 Open | Resolve pwsh.exe WindowsApps reparse points |
