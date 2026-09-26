@@ -36,6 +36,12 @@ I learn by shipping, breaking things, measuring them, and then hardening the par
 
 **PR:** https://github.com/aspire488/RAMPART/pull/2
 
+> **PyRIT #2839 — TemplateSegmentConverter short-prompt fix — PREPARED · September 26, 2026**
+>
+> Fixed the split-boundary calculation so prompts with fewer words than template parameters no longer trigger an invalid `random.sample` request, with focused regression coverage. The fix is on the `aspire488/PyRIT` fork branch `fix/template-segment-short-prompts`; upstream PR creation was blocked by the current GitHub integration permission boundary, so this is recorded as prepared fork-side work rather than an upstream PR.
+
+**Fix branch:** https://github.com/aspire488/PyRIT/tree/fix/template-segment-short-prompts
+
 ### 🏆 Standout Upstream Milestone — Microsoft PyRIT
 
 > **Two merged upstream contributions to Microsoft PyRIT**
