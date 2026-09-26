@@ -229,6 +229,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [PyRIT #2823 — Preserve HarmBench contextual behavior prompts](https://github.com/microsoft/PyRIT/pull/2823)  
   **Merged upstream on September 25, 2026.** Preserves non-empty HarmBench ContextString in behavior prompts, retains context metadata, and adds regression coverage. Merge commit: `940a8efabb404d80f6a716c5e641d81809d8972a`.
 
+- [Agent-Bench #8 — Global command palette](https://github.com/PicadoLabs/agent-bench/pull/8)  
+  **Merged upstream on September 26, 2026.** Adds a global command palette with keyboard and accessibility support. Merge commit: `2d95c522d95705d332f2e6ddc5929c281e2886b3`.
+
 - [GitFut #125 — Derive active years from contribution history](https://github.com/Younesfdj/gitfut/pull/125)  
   **Open upstream on September 26, 2026.** Fixes undercounting of active years by deriving the signal from GitHub's annual contribution windows rather than owned-repository timestamps, with focused regression coverage for organization-only and missing-window cases.
 
