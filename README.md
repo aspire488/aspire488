@@ -235,6 +235,14 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [GitFut #125 — Derive active years from contribution history](https://github.com/Younesfdj/gitfut/pull/125)  
   **Open upstream on September 26, 2026.** Fixes undercounting of active years by deriving the signal from GitHub's annual contribution windows rather than owned-repository timestamps, with focused regression coverage for organization-only and missing-window cases.
 
+### 🟢 Newly opened upstream work — September 26, 2026
+
+- [LlamaIndex #23260 — Preserve retrieved scores during Prev/Next expansion](https://github.com/run-llama/llama_index/pull/23260)  
+  **Open upstream.** Prevents overlapping Prev/Next node expansion from replacing an originally retrieved NodeWithScore with an unscored copy. Adds regression coverage for both retrieval orders and valid 0.0 scores.
+
+- [Pydantic AI #8823 — Avoid redundant RunContext copy when validation context is unset](https://github.com/pydantic/pydantic-ai/pull/8823)  
+  **Open upstream.** Returns the freshly constructed RunContext directly when validation_context=None, avoiding an unnecessary dataclass copy while preserving static falsy and callable validation contexts.
+
 ### 🟡 Open upstream work
 
 - [AgentField #1073 — Go harness factory tests](https://github.com/Agent-Field/agentfield/pull/1073)  
@@ -253,6 +261,8 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 | Repository | PR | Status | Engineering focus |
 |---|---|---|---|
+| LlamaIndex | [#23260](https://github.com/run-llama/llama_index/pull/23260) | 🟡 Open | Preserve retrieved scores during Prev/Next expansion |
+| Pydantic AI | [#8823](https://github.com/pydantic/pydantic-ai/pull/8823) | 🟡 Open | Avoid redundant RunContext copy when validation context is unset |
 | Microsoft PyRIT | [#2762](https://github.com/microsoft/PyRIT/pull/2762) | ✅ Merged | Dataset Summary API; merged upstream September 24, 2026 |
 | Microsoft PyRIT | [#2823](https://github.com/microsoft/PyRIT/pull/2823) | ✅ Merged | HarmBench ContextString preservation with regression coverage; merged upstream September 25, 2026 |
 | Microsoft RAMPART | [#2](https://github.com/aspire488/RAMPART/pull/2) | 🟡 Open | Generic PyRIT PromptConverter → RAMPART PayloadConverter bridge; text-to-text scope with regression coverage |
