@@ -256,7 +256,6 @@ I distinguish **merged work from open proposals** so the repository status is ex
 
 ## 📡 Current OSS PR Queue — September 26, 2026
 
-| AgentField | [#1073](https://github.com/Agent-Field/agentfield/pull/1073) | ✅ Merged | Go harness factory tests; merged upstream September 26, 2026 |
 | Repository | PR | Status | Engineering focus |
 |---|---|---|---|
 | LlamaIndex | [#23260](https://github.com/run-llama/llama_index/pull/23260) | 🟡 Open | Preserve retrieved scores during Prev/Next expansion |
@@ -299,7 +298,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 > **Why it matters:** this work involves navigating a large unfamiliar codebase, understanding existing data models and service boundaries, responding to maintainer review, and adding targeted regression coverage rather than making isolated demo changes.
 
-**Status is intentionally explicit:** #2762 is merged upstream; #2823 is open upstream for maintainer review; #2782 remains fork-side work until an upstream PR exists.
+**Status is intentionally explicit:** #2762 and #2823 are merged upstream; #2882 is open upstream; #3 and #2782 remain fork-side work until an upstream acceptance exists.
 
 ---
 
