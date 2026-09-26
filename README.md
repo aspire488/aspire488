@@ -243,7 +243,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
   **Open upstream on September 26, 2026.** Fixes undercounting of active years by deriving the signal from GitHub's annual contribution windows rather than owned-repository timestamps, with focused regression coverage for organization-only and missing-window cases.
 
 - [AgentField #1073 — Go harness factory tests](https://github.com/Agent-Field/agentfield/pull/1073)  
-  **Open upstream · September 25, 2026.** Adds focused `factory_test.go` coverage for explicit Claude Code and OpenCode provider construction, extending the existing default/environment/unknown-provider coverage from issue #404.
+  **Approved · September 26, 2026 · awaiting merge.** Adds focused `factory_test.go` coverage for explicit Claude Code and OpenCode provider construction, extending the existing default/environment/unknown-provider coverage from issue #404. Maintainer review confirms the table now drives the concrete type assertion; focused factory tests and `go vet` pass locally.
 
 - [NousResearch Hermes Agent #121771 — Desktop gateway stale-ref recovery](https://github.com/NousResearch/hermes-agent/pull/121771)  
   **Open upstream.** Adds active-gateway fallback plus stale-open/closed-socket recovery and focused reconnect regression coverage. The PR remains under maintainer review.
