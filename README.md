@@ -235,7 +235,12 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [AgentField #1073 — Go harness factory tests](https://github.com/Agent-Field/agentfield/pull/1073)  
   **Merged upstream on September 26, 2026.** Adds focused `factory_test.go` coverage for explicit Claude Code and OpenCode provider construction, with the table driving concrete type assertions. Maintainer review approved the change and confirmed focused factory tests plus `go vet` pass locally. Merge commit: `13b44603e2fb09a5d1817e8d2d0f64f3a40041fa`.
 
-### 🟢 Newly opened upstream work — September 26, 2026
+### 🟢 Newly opened upstream work — September 27, 2026
+
+- [Microsoft PyRIT #2885 — Preserve text after Prompt Shield document tags](https://github.com/microsoft/PyRIT/pull/2885)  
+  **Open upstream.** Fixes `PromptShieldTarget._input_parser` dropping text between and after `</document>` tags, with focused regression coverage for multiple documents and trailing prompt text.
+
+### 🟢 Previous newly opened upstream work — September 26, 2026
 
 - [LlamaIndex #23260 — Preserve retrieved scores during Prev/Next expansion](https://github.com/run-llama/llama_index/pull/23260)  
   **Open upstream.** Prevents overlapping Prev/Next node expansion from replacing an originally retrieved NodeWithScore with an unscored copy. Adds regression coverage for both retrieval orders and valid 0.0 scores.
@@ -254,13 +259,14 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [NVIDIA garak #2234 — Fix/paraphrase transformers compatibility](https://github.com/NVIDIA/garak/pull/2234)  
   **Open upstream · September 25, 2026.** Removes the deprecated `transformers-community/group-beam-search` custom-generation path and `trust_remote_code` requirement from the `Fast` paraphrase buff, while retaining native group-beam-search parameters and adding regression coverage for the compatibility fix.
 
-## 📡 Current OSS PR Queue — September 26, 2026
+## 📡 Current OSS PR Queue — September 27, 2026
 
 | Repository | PR | Status | Engineering focus |
 |---|---|---|---|
 | LlamaIndex | [#23260](https://github.com/run-llama/llama_index/pull/23260) | 🟡 Open | Preserve retrieved scores during Prev/Next expansion |
 | Microsoft PyRIT | [#2762](https://github.com/microsoft/PyRIT/pull/2762) | ✅ Merged | Dataset Summary API; merged upstream September 24, 2026 |
 | Microsoft PyRIT | [#2823](https://github.com/microsoft/PyRIT/pull/2823) | ✅ Merged | HarmBench ContextString preservation with regression coverage; merged upstream September 25, 2026 |\n| Microsoft PyRIT | [#2882](https://github.com/microsoft/PyRIT/pull/2882) | 🟢 Open | Reject empty/whitespace-only ExactTextMatching targets; regression coverage |
+| Microsoft PyRIT | [#2885](https://github.com/microsoft/PyRIT/pull/2885) | 🟢 Open | Preserve Prompt Shield text between/after document tags; parser regression coverage |
 | Microsoft RAMPART | [#2](https://github.com/aspire488/RAMPART/pull/2) | 🟡 Open | Generic PyRIT PromptConverter → RAMPART PayloadConverter bridge; text-to-text scope with regression coverage |
 | GitFut | [#125](https://github.com/Younesfdj/gitfut/pull/125) | 🟡 Open | Derive active years from annual contribution history; regression coverage for organization-only and missing-window cases |
 | NousResearch Hermes Agent | [#121771](https://github.com/NousResearch/hermes-agent/pull/121771) | 🟡 Open | Recover from stale desktop gateway refs and closed sockets; focused reconnect regression coverage |
