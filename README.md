@@ -253,6 +253,12 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [NousResearch Hermes Agent #121771 — Desktop gateway stale-ref recovery](https://github.com/NousResearch/hermes-agent/pull/121771)  
   **Open upstream.** Adds active-gateway fallback plus stale-open/closed-socket recovery and focused reconnect regression coverage. The PR remains under maintainer review.
 
+- [NousResearch Hermes Agent #123846 — Accept Fire tuple args and numeric run names](https://github.com/NousResearch/hermes-agent/pull/123846)  
+  **Open upstream · September 26, 2026.** Accepts string/list/tuple provider arguments, normalizes CSV values, and coerces numeric `run_name` values to strings, with focused regression coverage.
+
+- [NousResearch Hermes Agent #123850 — Keep Tool Search bridge trajectories](https://github.com/NousResearch/hermes-agent/pull/123850)  
+  **Open upstream · September 26, 2026.** Includes synthesized Tool Search bridge tools in batch trajectory validation so `tool_search`, `tool_describe`, and `tool_call` trajectories are not incorrectly rejected, with regression coverage.
+
 - [collective/icalendar #1835 — Fix/start end duration mismatch](https://github.com/collective/icalendar/pull/1835)  
   **Open upstream · September 25, 2026.** Resolves inconsistent `DTEND` + `DURATION` handling by preferring explicit `DURATION`, with focused regression coverage.
 
@@ -270,6 +276,8 @@ I distinguish **merged work from open proposals** so the repository status is ex
 | Microsoft RAMPART | [#2](https://github.com/aspire488/RAMPART/pull/2) | 🟡 Open | Generic PyRIT PromptConverter → RAMPART PayloadConverter bridge; text-to-text scope with regression coverage |
 | GitFut | [#125](https://github.com/Younesfdj/gitfut/pull/125) | 🟡 Open | Derive active years from annual contribution history; regression coverage for organization-only and missing-window cases |
 | NousResearch Hermes Agent | [#121771](https://github.com/NousResearch/hermes-agent/pull/121771) | 🟡 Open | Recover from stale desktop gateway refs and closed sockets; focused reconnect regression coverage |
+| NousResearch Hermes Agent | [#123846](https://github.com/NousResearch/hermes-agent/pull/123846) | 🟡 Open | Accept Fire tuple args and numeric run names; normalize provider CSV values |
+| NousResearch Hermes Agent | [#123850](https://github.com/NousResearch/hermes-agent/pull/123850) | 🟡 Open | Keep Tool Search bridge trajectories during batch validation |
 | RisingWave | [#27181](https://github.com/risingwavelabs/risingwave/pull/27181) | 🟡 Open | Correlated refs inside LogicalValues; real LogicalApply → ApplyEliminateRule → to_batch() regression |
 | SiYuan | [#1](https://github.com/aspire488/siyuan/pull/1) | 🟡 Open | Recover expired MCP sessions with exactly one safe replay |
 | TopoCore | [#1](https://github.com/KARAN-D05/TopoCore/pull/1) | 🟡 Open | Deterministic spatial execution cycle detection |
