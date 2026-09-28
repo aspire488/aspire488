@@ -354,7 +354,6 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 - **TopoCore #1** — **open upstream**. Added deterministic repeated-state cycle detection to the spatial execution simulator.
 - **LlamaIndex #23201** — **open upstream**. Preserves retrieved scores during previous/next expansion.
 - **OpenHands #17579** — **open upstream**. Aligns condenser max-size metadata with the agent-server minimum.
-- **OpenTelemetry Erlang #822** — **open upstream**. Isolates spans across retries and redirects.
 - **Coder #29668** — **open upstream**. Deduplicates unknown AI Gateway clients.
 - **Cloudflare quiche #2758 / #2759** — **open upstream** fixes covering custom-CA peer verification and Reno ACK accounting.
 - **IntelliJ PowerShell #506** — **open upstream** fix for resolving `pwsh.exe` through WindowsApps reparse points.
