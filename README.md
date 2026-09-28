@@ -256,8 +256,8 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [GitFut #125 — Derive active years from contribution history](https://github.com/Younesfdj/gitfut/pull/125)  
   **Open upstream on September 26, 2026.** Fixes undercounting of active years by deriving the signal from GitHub's annual contribution windows rather than owned-repository timestamps, with focused regression coverage for organization-only and missing-window cases.
 
-- [NousResearch Hermes Agent #121771 — Desktop gateway stale-ref recovery](https://github.com/NousResearch/hermes-agent/pull/121771)  
-  **Open upstream.** Adds active-gateway fallback plus stale-open/closed-socket recovery and focused reconnect regression coverage. The PR remains under maintainer review.
+- [NousResearch Hermes Agent #126144 — Desktop/session routing](https://github.com/NousResearch/hermes-agent/pull/126144)  
+  **Open upstream on September 28, 2026.** The broader session-routing PR incorporates and credits the stale gateway-ref recovery from #121771 alongside fixes for session-owner routing, profile switching, secondary-window connection routing, and live gateway recovery. The standalone #121771 was closed as superseded.
 
 - [NousResearch Hermes Agent #123846 — Accept Fire tuple args and numeric run names](https://github.com/NousResearch/hermes-agent/pull/123846)  
   **Open upstream · September 26, 2026.** Accepts string/list/tuple provider arguments, normalizes CSV values, and coerces numeric `run_name` values to strings, with focused regression coverage.
