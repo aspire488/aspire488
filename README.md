@@ -241,12 +241,12 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [AgentField #1073 — Go harness factory tests](https://github.com/Agent-Field/agentfield/pull/1073)  
   **Merged upstream on September 26, 2026.** Adds focused `factory_test.go` coverage for explicit Claude Code and OpenCode provider construction, with the table driving concrete type assertions. Maintainer review approved the change and confirmed focused factory tests plus `go vet` pass locally. Merge commit: `13b44603e2fb09a5d1817e8d2d0f64f3a40041fa`.
 
-### 🟢 Newly opened upstream work — September 27, 2026
+### ⛔ Recently resolved upstream work — September 28, 2026
 
 - [Microsoft PyRIT #2885 — Preserve text after Prompt Shield document tags](https://github.com/microsoft/PyRIT/pull/2885)  
-  **Open upstream.** Fixes `PromptShieldTarget._input_parser` dropping text between and after `</document>` tags, with focused regression coverage for multiple documents and trailing prompt text.
+  **Closed as duplicate on September 28, 2026.** The maintainer directed the fix/review to earlier #2838, which addresses the same Prompt Shield parsing issue.
 
-### 🟢 Previous newly opened upstream work — September 26, 2026
+### 🟢 Recent upstream work — September 26, 2026
 
 - [LlamaIndex #23260 — Preserve retrieved scores during Prev/Next expansion](https://github.com/run-llama/llama_index/pull/23260)  
   **Open upstream.** Prevents overlapping Prev/Next node expansion from replacing an originally retrieved NodeWithScore with an unscored copy. Adds regression coverage for both retrieval orders and valid 0.0 scores.
@@ -307,7 +307,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
 **Review posture:** no fabricated activity. PRs without actionable maintainer feedback remain waiting; concrete reviewer findings are patched when verified.
 ## 🛡️ PyRIT — AI Red-Teaming Contributions
 
-I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/PyRIT)**, an open-source framework for AI red teaming. My recent upstream work includes two merged PyRIT upstream contributions: the dataset-summary API (#2762) and HarmBench context preservation (#2823), plus the new open ExactTextMatching fix (#2882).
+I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/PyRIT)**, an open-source framework for AI red teaming. My recent upstream work includes two merged PyRIT upstream contributions: the dataset-summary API (#2762) and HarmBench context preservation (#2823), plus the merged ExactTextMatching fix (#2882).
 
 ### 🔥 Current PyRIT work
 
@@ -315,11 +315,11 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 - **[#2823 — Preserve HarmBench contextual behavior prompts](https://github.com/microsoft/PyRIT/pull/2823)** — **🏆 MERGED UPSTREAM · September 25, 2026**. Fixes the HarmBench loader dropping non-empty `ContextString` values by combining context and behavior using the dataset convention, while retaining context in metadata and adding regression coverage. Merge commit: `940a8efabb404d80f6a716c5e641d81809d8972a`.
 - **[#2882 — Reject empty targets in ExactTextMatching](https://github.com/microsoft/PyRIT/pull/2882)** — **🏆 MERGED UPSTREAM · September 28, 2026**; rejects empty and whitespace-only exact-match targets, with `DecodingScorer` regression coverage and explicit `ignore_whitespace=False` coverage. Merge commit: `dff83aaab767f9b2b0aee68a20ab277de7e9d289`.
 - **[#2885 — Fix PromptShield parser](https://github.com/microsoft/PyRIT/pull/2885)** — **⛔ CLOSED AS DUPLICATE · September 28, 2026**; maintainer directed the fix/review to the earlier #2838, which addresses the same Prompt Shield parsing bug.\n- **[#3 — Objective scorer assistant-message handling](https://github.com/aspire488/PyRIT/pull/3)** — **🟡 OPEN FOR UPSTREAM REVIEW**; targets PyRIT #2835 with a focused evaluator fix and regression coverage.
-- **[#2882 — Reject empty targets in ExactTextMatching](https://github.com/microsoft/PyRIT/pull/2882)** — **🟢 OPEN UPSTREAM · September 26, 2026**; rejects empty and whitespace-only targets after normalization, with focused regression coverage.\n- **[#2782 — Canonical technique names in scenario run summaries](https://github.com/aspire488/PyRIT/tree/fix/promptinject-technique-summary)** — follow-up fix prepared on my fork. Corrects `techniques_used` to use the persisted canonical `technique_name` rather than a potentially goal/objective-bearing `display_group`, with regression coverage. The fork PR is open while an upstream submission path is being finalized.
+- **[#2882 — Reject empty targets in ExactTextMatching](https://github.com/microsoft/PyRIT/pull/2882)** — **🏆 MERGED UPSTREAM · September 28, 2026**; rejects empty and whitespace-only targets after normalization, with `DecodingScorer` regression coverage and explicit `ignore_whitespace=False` coverage. Merge commit: `dff83aaab767f9b2b0aee68a20ab277de7e9d289`.\n- **[#2782 — Canonical technique names in scenario run summaries](https://github.com/aspire488/PyRIT/tree/fix/promptinject-technique-summary)** — follow-up fix prepared on my fork. Corrects `techniques_used` to use the persisted canonical `technique_name` rather than a potentially goal/objective-bearing `display_group`, with regression coverage. The fork PR is open while an upstream submission path is being finalized.
 
 > **Why it matters:** this work involves navigating a large unfamiliar codebase, understanding existing data models and service boundaries, responding to maintainer review, and adding targeted regression coverage rather than making isolated demo changes.
 
-**Status is intentionally explicit:** #2762 and #2823 are merged upstream; #2882 is open upstream; #3 and #2782 remain fork-side work until an upstream acceptance exists.
+**Status is intentionally explicit:** #2762, #2823, and #2882 are merged upstream; #2885 is closed as a duplicate; #3 and #2782 remain fork-side work until upstream acceptance exists.
 
 ---
 
@@ -343,7 +343,7 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 > Status is tracked explicitly: merged upstream work is separated from open fork-side proposals.
 
-### 🔥 Latest engineering work — September 25, 2026
+### 🔥 Latest engineering work — September 28, 2026
 
 - **Microsoft PyRIT #2762** — **merged upstream** after multiple maintainer review rounds. The dataset summary API is now part of upstream PyRIT; final merge commit: `47c6151a`.
 - **Microsoft PyRIT #2823** — **merged upstream on September 25, 2026**. Preserves non-empty HarmBench `ContextString` values while retaining context metadata, with focused regression coverage. Merge commit: `940a8efabb404d80f6a716c5e641d81809d8972a`.\n- **Microsoft PyRIT #2882** — **open upstream on September 26, 2026**. Rejects empty and whitespace-only `ExactTextMatching` targets after normalization, preventing false-positive matches, with focused regression coverage.
