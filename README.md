@@ -25,7 +25,7 @@ I build **AI systems, developer tools, automation, and experimental software sys
 
 I learn by shipping, breaking things, measuring them, and then hardening the parts that are worth keeping.
 
-> **Current contribution baseline:** **10 merged PRs**. This profile counts the merged engineering PRs tracked in the portfolio; open and fork-side proposals are kept separate.
+> **Current contribution baseline:** **11 merged PRs**. This profile counts the merged engineering PRs tracked in the portfolio; open and fork-side proposals are kept separate.
 
 
 ### 🛡️ Microsoft RAMPART — PyRIT ecosystem contribution
@@ -241,6 +241,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [AgentField #1073 — Go harness factory tests](https://github.com/Agent-Field/agentfield/pull/1073)  
   **Merged upstream on September 26, 2026.** Adds focused `factory_test.go` coverage for explicit Claude Code and OpenCode provider construction, with the table driving concrete type assertions. Maintainer review approved the change and confirmed focused factory tests plus `go vet` pass locally. Merge commit: `13b44603e2fb09a5d1817e8d2d0f64f3a40041fa`.
 
+- [NousResearch Hermes Agent #126144 — Desktop/session routing](https://github.com/NousResearch/hermes-agent/pull/126144)  
+  **Merged upstream on September 28, 2026.** Broader desktop/session routing fix covering session-owner connection pinning, profile-switch PTY cleanup, secondary-window routing, and stale gateway recovery. The merged PR explicitly incorporates and credits the stale gateway-ref recovery from #121771.
+
 ### ⛔ Recently resolved upstream work — September 28, 2026
 
 - [Microsoft PyRIT #2885 — Preserve text after Prompt Shield document tags](https://github.com/microsoft/PyRIT/pull/2885)  
@@ -257,7 +260,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
   **Open upstream on September 26, 2026.** Fixes undercounting of active years by deriving the signal from GitHub's annual contribution windows rather than owned-repository timestamps, with focused regression coverage for organization-only and missing-window cases.
 
 - [NousResearch Hermes Agent #126144 — Desktop/session routing](https://github.com/NousResearch/hermes-agent/pull/126144)  
-  **Open upstream on September 28, 2026.** The broader session-routing PR incorporates and credits the stale gateway-ref recovery from #121771 alongside fixes for session-owner routing, profile switching, secondary-window connection routing, and live gateway recovery. The standalone #121771 was closed as superseded.
+  **Merged upstream on September 28, 2026.** Broader session-routing PR incorporating and crediting the stale gateway-ref recovery from #121771 alongside fixes for session-owner routing, profile switching, secondary-window connection routing, and live gateway recovery.
 
 - [NousResearch Hermes Agent #123846 — Accept Fire tuple args and numeric run names](https://github.com/NousResearch/hermes-agent/pull/123846)  
   **Open upstream · September 26, 2026.** Accepts string/list/tuple provider arguments, normalizes CSV values, and coerces numeric `run_name` values to strings, with focused regression coverage.
@@ -281,9 +284,9 @@ I distinguish **merged work from open proposals** so the repository status is ex
 | Microsoft PyRIT | [#2885](https://github.com/microsoft/PyRIT/pull/2885) | ⛔ Closed / duplicate | Prompt Shield parser fix superseded by earlier #2838 |
 | Microsoft RAMPART | [#2](https://github.com/aspire488/RAMPART/pull/2) | 🟡 Open | Generic PyRIT PromptConverter → RAMPART PayloadConverter bridge; text-to-text scope with regression coverage |
 | GitFut | [#125](https://github.com/Younesfdj/gitfut/pull/125) | 🟡 Open | Derive active years from annual contribution history; regression coverage for organization-only and missing-window cases |
-| NousResearch Hermes Agent | [#121771](https://github.com/NousResearch/hermes-agent/pull/121771) | 🟡 Open | Recover from stale desktop gateway refs and closed sockets; focused reconnect regression coverage |
 | NousResearch Hermes Agent | [#123846](https://github.com/NousResearch/hermes-agent/pull/123846) | 🟡 Open | Accept Fire tuple args and numeric run names; normalize provider CSV values |
 | NousResearch Hermes Agent | [#123850](https://github.com/NousResearch/hermes-agent/pull/123850) | 🟡 Open | Keep Tool Search bridge trajectories during batch validation |
+| NousResearch Hermes Agent | [#126144](https://github.com/NousResearch/hermes-agent/pull/126144) | ✅ Merged | Desktop/session routing; incorporates and credits #121771 stale gateway-ref recovery |
 | RisingWave | [#27181](https://github.com/risingwavelabs/risingwave/pull/27181) | 🟡 Open | Correlated refs inside LogicalValues; real LogicalApply → ApplyEliminateRule → to_batch() regression |
 | SiYuan | [#1](https://github.com/aspire488/siyuan/pull/1) | 🟡 Open | Recover expired MCP sessions with exactly one safe replay |
 | TopoCore | [#1](https://github.com/KARAN-D05/TopoCore/pull/1) | 🟡 Open | Deterministic spatial execution cycle detection |
