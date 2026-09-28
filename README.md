@@ -25,7 +25,7 @@ I build **AI systems, developer tools, automation, and experimental software sys
 
 I learn by shipping, breaking things, measuring them, and then hardening the parts that are worth keeping.
 
-> **Current contribution baseline:** **9 merged PRs**. This profile counts the merged engineering PRs tracked in the portfolio; open and fork-side proposals are kept separate.
+> **Current contribution baseline:** **10 merged PRs**. This profile counts the merged engineering PRs tracked in the portfolio; open and fork-side proposals are kept separate.
 
 
 ### 🛡️ Microsoft RAMPART — PyRIT ecosystem contribution
@@ -44,7 +44,7 @@ I learn by shipping, breaking things, measuring them, and then hardening the par
 
 ### 🏆 Standout Upstream Milestone — Microsoft PyRIT
 
-> **Two merged upstream contributions to Microsoft PyRIT**
+> **Three merged upstream contributions to Microsoft PyRIT**
 >
 > **#2762 — Dataset Summary API — MERGED UPSTREAM · September 24, 2026**
 >
@@ -58,7 +58,13 @@ I learn by shipping, breaking things, measuring them, and then hardening the par
 >
 > **Merge commit:** `940a8efabb404d80f6a716c5e641d81809d8972a`
 >
-> **Track record:** two separate upstream PRs merged into Microsoft's open-source AI red-teaming framework, spanning feature work and regression-focused fixes.
+> **#2882 — ExactTextMatching empty-target fix — MERGED UPSTREAM · September 28, 2026**
+>
+> Rejects empty and whitespace-only exact-match targets and adds regression coverage through `DecodingScorer` plus explicit `ignore_whitespace=False` coverage.
+>
+> **Merge commit:** `dff83aaab767f9b2b0aee68a20ab277de7e9d289`
+>
+> **Track record:** three separate upstream PRs merged into Microsoft's open-source AI red-teaming framework, spanning feature work and regression-focused fixes.
 
 <p align="center">
   <a href="https://joel-jigo-portfolio--joeljigo3.replit.app"><img src="https://img.shields.io/badge/%E2%86%92%20Portfolio-Visit%20Joel's%20Portfolio-70a5fd?style=for-the-badge"/></a>
@@ -265,14 +271,14 @@ I distinguish **merged work from open proposals** so the repository status is ex
 - [NVIDIA garak #2234 — Fix/paraphrase transformers compatibility](https://github.com/NVIDIA/garak/pull/2234)  
   **Open upstream · September 25, 2026.** Removes the deprecated `transformers-community/group-beam-search` custom-generation path and `trust_remote_code` requirement from the `Fast` paraphrase buff, while retaining native group-beam-search parameters and adding regression coverage for the compatibility fix.
 
-## 📡 Current OSS PR Queue — September 27, 2026
+## 📡 Current OSS PR Queue — September 28, 2026
 
 | Repository | PR | Status | Engineering focus |
 |---|---|---|---|
 | LlamaIndex | [#23260](https://github.com/run-llama/llama_index/pull/23260) | 🟡 Open | Preserve retrieved scores during Prev/Next expansion |
 | Microsoft PyRIT | [#2762](https://github.com/microsoft/PyRIT/pull/2762) | ✅ Merged | Dataset Summary API; merged upstream September 24, 2026 |
-| Microsoft PyRIT | [#2823](https://github.com/microsoft/PyRIT/pull/2823) | ✅ Merged | HarmBench ContextString preservation with regression coverage; merged upstream September 25, 2026 |\n| Microsoft PyRIT | [#2882](https://github.com/microsoft/PyRIT/pull/2882) | 🟢 Open | Reject empty/whitespace-only ExactTextMatching targets; regression coverage |
-| Microsoft PyRIT | [#2885](https://github.com/microsoft/PyRIT/pull/2885) | 🟢 Open | Preserve Prompt Shield text between/after document tags; parser regression coverage |
+| Microsoft PyRIT | [#2823](https://github.com/microsoft/PyRIT/pull/2823) | ✅ Merged | HarmBench ContextString preservation with regression coverage; merged upstream September 25, 2026 |\n| Microsoft PyRIT | [#2882](https://github.com/microsoft/PyRIT/pull/2882) | ✅ Merged | ExactTextMatching empty/whitespace-only target fix; merged upstream September 28, 2026 |
+| Microsoft PyRIT | [#2885](https://github.com/microsoft/PyRIT/pull/2885) | ⛔ Closed / duplicate | Prompt Shield parser fix superseded by earlier #2838 |
 | Microsoft RAMPART | [#2](https://github.com/aspire488/RAMPART/pull/2) | 🟡 Open | Generic PyRIT PromptConverter → RAMPART PayloadConverter bridge; text-to-text scope with regression coverage |
 | GitFut | [#125](https://github.com/Younesfdj/gitfut/pull/125) | 🟡 Open | Derive active years from annual contribution history; regression coverage for organization-only and missing-window cases |
 | NousResearch Hermes Agent | [#121771](https://github.com/NousResearch/hermes-agent/pull/121771) | 🟡 Open | Recover from stale desktop gateway refs and closed sockets; focused reconnect regression coverage |
@@ -307,8 +313,8 @@ I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/
 
 - **[#2762 — Dataset Summary API](https://github.com/microsoft/PyRIT/pull/2762)** — **🏆 MERGED UPSTREAM · September 24, 2026** after maintainer review. Added memory-backed dataset summaries and iterated through feedback covering aggregation, SQLite collation behavior, unnamed/whitespace dataset identity, selection-key isolation, metadata query size, and `loaded_only` behavior. Roman Lutz verified the substantive concerns against real stored seeds, and the final test-cleanup commit was merged with the implementation. Merge commit: `47c6151a`.
 - **[#2823 — Preserve HarmBench contextual behavior prompts](https://github.com/microsoft/PyRIT/pull/2823)** — **🏆 MERGED UPSTREAM · September 25, 2026**. Fixes the HarmBench loader dropping non-empty `ContextString` values by combining context and behavior using the dataset convention, while retaining context in metadata and adding regression coverage. Merge commit: `940a8efabb404d80f6a716c5e641d81809d8972a`.
-- **[#2882 — Reject empty targets in ExactTextMatching](https://github.com/microsoft/PyRIT/pull/2882)** — **🟢 OPEN UPSTREAM · September 26, 2026**; rejects empty and whitespace-only exact-match targets after normalization, preventing false-positive matches, with focused regression coverage.
-- **[#2885 — Fix PromptShield parser](https://github.com/microsoft/PyRIT/pull/2885)** — **🟢 OPEN UPSTREAM · September 27, 2026**; fixes `PromptShieldTarget._input_parser` so text between documents and trailing text after the final `</document>` tag are preserved, with focused multi-document regression coverage.\n- **[#3 — Objective scorer assistant-message handling](https://github.com/aspire488/PyRIT/pull/3)** — **🟡 OPEN FOR UPSTREAM REVIEW**; targets PyRIT #2835 with a focused evaluator fix and regression coverage.
+- **[#2882 — Reject empty targets in ExactTextMatching](https://github.com/microsoft/PyRIT/pull/2882)** — **🏆 MERGED UPSTREAM · September 28, 2026**; rejects empty and whitespace-only exact-match targets, with `DecodingScorer` regression coverage and explicit `ignore_whitespace=False` coverage. Merge commit: `dff83aaab767f9b2b0aee68a20ab277de7e9d289`.
+- **[#2885 — Fix PromptShield parser](https://github.com/microsoft/PyRIT/pull/2885)** — **⛔ CLOSED AS DUPLICATE · September 28, 2026**; maintainer directed the fix/review to the earlier #2838, which addresses the same Prompt Shield parsing bug.\n- **[#3 — Objective scorer assistant-message handling](https://github.com/aspire488/PyRIT/pull/3)** — **🟡 OPEN FOR UPSTREAM REVIEW**; targets PyRIT #2835 with a focused evaluator fix and regression coverage.
 - **[#2882 — Reject empty targets in ExactTextMatching](https://github.com/microsoft/PyRIT/pull/2882)** — **🟢 OPEN UPSTREAM · September 26, 2026**; rejects empty and whitespace-only targets after normalization, with focused regression coverage.\n- **[#2782 — Canonical technique names in scenario run summaries](https://github.com/aspire488/PyRIT/tree/fix/promptinject-technique-summary)** — follow-up fix prepared on my fork. Corrects `techniques_used` to use the persisted canonical `technique_name` rather than a potentially goal/objective-bearing `display_group`, with regression coverage. The fork PR is open while an upstream submission path is being finalized.
 
 > **Why it matters:** this work involves navigating a large unfamiliar codebase, understanding existing data models and service boundaries, responding to maintainer review, and adding targeted regression coverage rather than making isolated demo changes.
