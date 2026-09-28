@@ -257,7 +257,7 @@ I distinguish **merged work from open proposals** so the repository status is ex
   **Open upstream · September 26, 2026.** Accepts string/list/tuple provider arguments, normalizes CSV values, and coerces numeric `run_name` values to strings, with focused regression coverage.
 
 - [NousResearch Hermes Agent #123850 — Keep Tool Search bridge trajectories](https://github.com/NousResearch/hermes-agent/pull/123850)  
-  **Open upstream · September 26, 2026.** Includes synthesized Tool Search bridge tools in batch trajectory validation so `tool_search`, `tool_describe`, and `tool_call` trajectories are not incorrectly rejected, with regression coverage.
+  **Open upstream · September 26, 2026.** Includes synthesized Tool Search bridge tools in batch trajectory validation so `tool_search`, `tool_describe`, and `tool_call` trajectories are not incorrectly rejected. The regression coverage now exercises the real `_combine_batch_files()` filtering path and verifies a `tool_call` bridge trajectory is retained rather than counted as invalid.
 
 - [collective/icalendar #1835 — Fix/start end duration mismatch](https://github.com/collective/icalendar/pull/1835)  
   **Open upstream · September 25, 2026.** Resolves inconsistent `DTEND` + `DURATION` handling by preferring explicit `DURATION`, with focused regression coverage.
