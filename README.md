@@ -220,7 +220,7 @@ The application intentionally remains on its React 18/Vite 6 prototype stack rat
 | 🤖 KIO | Active restoration / integration | [GitHub](https://github.com/aspire488/Kio) | [README](https://github.com/aspire488/Kio#readme) |
 | 🧠 AURA | Architecture checkpoint | [GitHub](https://github.com/aspire488/AURA) | [Architecture](https://github.com/aspire488/AURA#readme) |
 | 🛠️ UEA | Public Alpha | [GitHub](https://github.com/aspire488/Universal-Engineering-Augmentation) | [README](https://github.com/aspire488/Universal-Engineering-Augmentation#readme) |
-| 🤖 Pipo | Implemented / hardware validation pending | [GitHub](https://github.com/aspire488/Pipo) | [README](https://github.com/aspire488/Pipo#readme) |
+| 🤖 Pipo | **Implemented + device-validated** | [GitHub](https://github.com/aspire488/Pipo) | [README](https://github.com/aspire488/Pipo#readme) · [Device report](https://github.com/aspire488/Pipo/blob/main/DEVICE_TEST_REPORT.md) |
 | ⚡ CodeFlow | Frozen Prototype | [GitHub](https://github.com/aspire488/codeflow) | [Live](https://codeflow-app-sigma.vercel.app) |
 | 💊 MediMind | Frozen Prototype | [GitHub](https://github.com/aspire488/medimind) | [Live](https://medimind-seven.vercel.app/) |
 
@@ -544,7 +544,7 @@ I also contribute through **GitHub Discussions** — answering concrete engineer
 | 🤖 KIO | **Active restoration / integration** — convergence/audit work remains; recent activity is security/documentation hardening |
 | 🧠 AURA | **Architecture checkpoint** — core cognition architecture is complete; no active feature-development line |
 | 🛠️ UEA | **Public alpha** — deterministic-first routing + optional Laya System-1 fallback; 62/62 final integration tests |
-| 🤖 Pipo | **Implemented** — 2.5D Android character simulation; 40 JVM tests; hardware validation pending |
+| 🤖 Pipo | **Implemented + device-validated** — procedural 2.5D Android character; 68/68 JVM tests, 6/6 on-device rendering tests, Galaxy S23 / Android 15 |
 | ⚡ CodeFlow | Frozen, hardened prototype |
 | 💊 MediMind | Frozen, hardened prototype |
 | 🌍 Open Source | Cross-project contributions + upstream engineering |
