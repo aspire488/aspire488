@@ -149,18 +149,28 @@ The repository currently contains **63 validated automation templates** integrat
 
 ### 🤖 [Pipo](https://github.com/aspire488/Pipo) — Character-First Android Simulation
 
-A local-first Android character who **lives inside your phone** rather than acting like an assistant. Pipo has a persistent body, personality, moods, memories, habits, unfinished projects, games, mischief, and autonomous behavior that evolves from state instead of a scripted loop.
+<p align="center">
+  <a href="https://github.com/aspire488/Pipo"><img src="https://raw.githubusercontent.com/aspire488/Pipo/main/assets/pipo-hero.svg" alt="Pipo — a little robot living inside your phone" width="820"/></a>
+</p>
 
-The visual system is deliberately honest: **2.5D procedural rendering on Jetpack Compose Canvas**, with projected body parts, depth sorting, dynamic lighting, parallax, camera movement, spring-driven animation, speech-synced facial motion, and environmental reactions — no OpenGL, no 3D engine, no sprite sheets, and no bitmap assets.
+A local-first Android character who **lives inside the phone** rather than acting like an assistant. Pipo has a persistent body, personality, moods, memories, habits, unfinished projects, games, mischief, voice, and autonomous behavior that evolves from state instead of a scripted loop.
 
-Pipo's architecture separates the character engine from optional AI: deterministic Kotlin owns personality, mood, memory, autonomy, projects, notifications, and phone actions; optional Claude rephrasing only changes wording. State stays local, with no account, backend, telemetry, ads, or tracking.
+The renderer is deliberately **procedural 2.5D**: body parts have depth, are projected through rotation and depth-sorted, while room lighting, shadows, reflections, perspective, parallax and camera movement create the physical feel. There is **no OpenGL, no 3D engine, no external model, no sprite sheet and no bitmap asset pipeline**.
 
-**Stack:** Kotlin · Jetpack Compose · Canvas Rendering · 2.5D · Android · WorkManager · Local-first · Character Simulation
+The animation rig includes spring-driven turning and antenna motion, squash/stretch landings, 21 facial expressions, gaze/attention, mood-specific body language, speech-driven mouth motion, environmental reactions, and front → three-quarter → profile → back turns.
+
+Pipo's deterministic Kotlin engine owns personality, mood, memory, autonomy, projects, notification policy and phone actions. Gemini/Groq are only a wording layer for conversation; core state decisions remain local.
+
+**Final validation:** **68/68 JVM tests pass · 6/6 on-device rendering tests pass · Galaxy S23 / Android 15 verified · 21 device bugs found and fixed · release build verified · ~60 FPS with 0.2% slow frames in the measured scenario.**
+
+The final public repository is also security-audited: no credentials, APKs or intro videos are tracked or present in Git history. The private friend APK intentionally remains outside GitHub.
+
+**Stack:** Kotlin · Jetpack Compose · Canvas Rendering · Procedural 2.5D · Android · WorkManager · Local-first · Character Simulation
 
 <a href="https://github.com/aspire488/Pipo"><img src="https://img.shields.io/badge/Repository-Open-70a5fd?style=for-the-badge"/></a>
-<a href="https://github.com/aspire488/Pipo#readme"><img src="https://img.shields.io/badge/Architecture-Read-70a5fd?style=for-the-badge"/></a>
+<a href="https://github.com/aspire488/Pipo#readme"><img src="https://img.shields.io/badge/README-Deep%20Dive-8b5cf6?style=for-the-badge"/></a>
+<a href="https://github.com/aspire488/Pipo/blob/main/DEVICE_TEST_REPORT.md"><img src="https://img.shields.io/badge/Device%20Report-Verified-2ea44f?style=for-the-badge"/></a>
 
-**Current:** **Implemented + JVM-tested; hardware validation pending.** The repository reports **40 JVM unit tests passing** and successful Gradle test + assembleDebug builds. The current README explicitly records that no Android device or emulator has yet been used for physical validation, so rendering quality, performance, sensors, TTS, notifications, and cross-app integrations remain hardware verification targets.
 
 ---
 
