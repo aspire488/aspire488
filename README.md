@@ -147,6 +147,21 @@ The repository currently contains **63 validated automation templates** integrat
 
 > **Architecture principle:** AI handles ambiguity and strategy; deterministic software owns execution, safety, state, and verification.
 
+### 🤖 [Pipo](https://github.com/aspire488/Pipo) — Character-First Android Simulation
+
+A local-first Android character who **lives inside your phone** rather than acting like an assistant. Pipo has a persistent body, personality, moods, memories, habits, unfinished projects, games, mischief, and autonomous behavior that evolves from state instead of a scripted loop.
+
+The visual system is deliberately honest: **2.5D procedural rendering on Jetpack Compose Canvas**, with projected body parts, depth sorting, dynamic lighting, parallax, camera movement, spring-driven animation, speech-synced facial motion, and environmental reactions — no OpenGL, no 3D engine, no sprite sheets, and no bitmap assets.
+
+Pipo's architecture separates the character engine from optional AI: deterministic Kotlin owns personality, mood, memory, autonomy, projects, notifications, and phone actions; optional Claude rephrasing only changes wording. State stays local, with no account, backend, telemetry, ads, or tracking.
+
+**Stack:** Kotlin · Jetpack Compose · Canvas Rendering · 2.5D · Android · WorkManager · Local-first · Character Simulation
+
+<a href="https://github.com/aspire488/Pipo"><img src="https://img.shields.io/badge/Repository-Open-70a5fd?style=for-the-badge"/></a>
+<a href="https://github.com/aspire488/Pipo#readme"><img src="https://img.shields.io/badge/Architecture-Read-70a5fd?style=for-the-badge"/></a>
+
+**Current:** **Implemented + JVM-tested; hardware validation pending.** The repository reports **40 JVM unit tests passing** and successful Gradle test + assembleDebug builds. The current README explicitly records that no Android device or emulator has yet been used for physical validation, so rendering quality, performance, sensors, TTS, notifications, and cross-app integrations remain hardware verification targets.
+
 ---
 
 ## 🧪 Frozen Product Prototypes
@@ -195,6 +210,7 @@ The application intentionally remains on its React 18/Vite 6 prototype stack rat
 | 🤖 KIO | Active restoration / integration | [GitHub](https://github.com/aspire488/Kio) | [README](https://github.com/aspire488/Kio#readme) |
 | 🧠 AURA | Architecture checkpoint | [GitHub](https://github.com/aspire488/AURA) | [Architecture](https://github.com/aspire488/AURA#readme) |
 | 🛠️ UEA | Public Alpha | [GitHub](https://github.com/aspire488/Universal-Engineering-Augmentation) | [README](https://github.com/aspire488/Universal-Engineering-Augmentation#readme) |
+| 🤖 Pipo | Implemented / hardware validation pending | [GitHub](https://github.com/aspire488/Pipo) | [README](https://github.com/aspire488/Pipo#readme) |
 | ⚡ CodeFlow | Frozen Prototype | [GitHub](https://github.com/aspire488/codeflow) | [Live](https://codeflow-app-sigma.vercel.app) |
 | 💊 MediMind | Frozen Prototype | [GitHub](https://github.com/aspire488/medimind) | [Live](https://medimind-seven.vercel.app/) |
 
@@ -518,6 +534,7 @@ I also contribute through **GitHub Discussions** — answering concrete engineer
 | 🤖 KIO | **Active restoration / integration** — convergence/audit work remains; recent activity is security/documentation hardening |
 | 🧠 AURA | **Architecture checkpoint** — core cognition architecture is complete; no active feature-development line |
 | 🛠️ UEA | **Public alpha** — deterministic-first routing + optional Laya System-1 fallback; 62/62 final integration tests |
+| 🤖 Pipo | **Implemented** — 2.5D Android character simulation; 40 JVM tests; hardware validation pending |
 | ⚡ CodeFlow | Frozen, hardened prototype |
 | 💊 MediMind | Frozen, hardened prototype |
 | 🌍 Open Source | Cross-project contributions + upstream engineering |
