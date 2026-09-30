@@ -93,6 +93,23 @@ flowchart LR
 
 This is the design boundary running through the portfolio: **reasoning handles ambiguity; deterministic infrastructure owns execution, state, safety, and verification.**
 
+## ⭐ Featured Works
+
+A compact set of the projects I keep most visible on GitHub. Star counts below are live GitHub badges rather than manually maintained numbers.
+
+| Project | What it is | GitHub |
+|---|---|---|
+| 🤖 **Pipo** | Character-first Android companion with a procedural 2.5D world, autonomy, memory, voice, games, and phone interaction. | [Repository](https://github.com/aspire488/Pipo) · <img src="https://img.shields.io/github/stars/aspire488/Pipo?style=flat-square&label=stars" alt="Pipo stars"/> |
+| ⚙️ **KIO** | Deterministic execution kernel for capability resolution, planning, security gates, tool execution, and verification. | [Repository](https://github.com/aspire488/Kio) · <img src="https://img.shields.io/github/stars/aspire488/Kio?style=flat-square&label=stars" alt="KIO stars"/> |
+| 🛠️ **UEA** | Agent-neutral engineering augmentation infrastructure for deterministic code intelligence and verification. | [Repository](https://github.com/aspire488/Universal-Engineering-Augmentation) · <img src="https://img.shields.io/github/stars/aspire488/Universal-Engineering-Augmentation?style=flat-square&label=stars" alt="UEA stars"/> |
+| 🧠 **AURA** | Memory and cognition backend for persistent agent state and cognitive processing. | [Repository](https://github.com/aspire488/AURA) · <img src="https://img.shields.io/github/stars/aspire488/AURA?style=flat-square&label=stars" alt="AURA stars"/> |
+| ⚙️ **gh-ops** | Deterministic GitHub operations, monitoring, OSS intelligence, security intelligence, and Telegram reporting. | [Repository](https://github.com/aspire488/gh-ops) · <img src="https://img.shields.io/github/stars/aspire488/gh-ops?style=flat-square&label=stars" alt="gh-ops stars"/> |
+| 🌍 **OSS Atlas** | Open-source contribution archive, research, experiments, and engineering notes. | [Repository](https://github.com/aspire488/oss-atlas) · <img src="https://img.shields.io/github/stars/aspire488/oss-atlas?style=flat-square&label=stars" alt="OSS Atlas stars"/> |
+
+> These are featured for visibility; the list is not a ranking.
+
+---
+
 ### ⚙️ [gh-ops](https://github.com/aspire488/gh-ops) — Operational Intelligence Platform
 
 A reusable, deterministic GitHub operations layer running on GitHub Actions. gh-ops combines repository, CI, release, and security monitoring with OSS opportunity intelligence, developer activity reporting, persistent state, scheduled workflows, and outbound Telegram notifications.
