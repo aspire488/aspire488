@@ -170,24 +170,41 @@ The repository currently contains **63 validated automation templates** integrat
   <a href="https://github.com/aspire488/Pipo"><img src="https://raw.githubusercontent.com/aspire488/Pipo/main/assets/pipo-hero.svg" alt="Pipo — a little robot living inside your phone" width="820"/></a>
 </p>
 
-A local-first Android character who **lives inside the phone** rather than acting like an assistant. Pipo has a persistent body, personality, moods, memories, habits, unfinished projects, games, mischief, voice, and autonomous behavior that evolves from state instead of a scripted loop.
+A **character-first Android simulation** where a little robot actually lives inside your phone. Pipo has persistent personality, moods, memories, habits, projects, relationships, games, mischief, voice, trips, and autonomous behavior. He isn't an assistant waiting for commands; he has a life of his own.
 
-The renderer is deliberately **procedural 2.5D**: body parts have depth, are projected through rotation and depth-sorted, while room lighting, shadows, reflections, perspective, parallax and camera movement create the physical feel. There is **no OpenGL, no 3D engine, no external model, no sprite sheet and no bitmap asset pipeline**.
+The renderer is deliberately **procedural 2.5D**: depth-sorted body parts, perspective, parallax, lighting, shadows, reflections, camera movement, spring-driven motion, squash/stretch, gaze, 21 facial expressions, mood-specific body language, speech-driven mouth motion, and full front → three-quarter → profile → back turns. There is **no OpenGL, no 3D engine, no sprite-sheet or bitmap asset pipeline**.
 
-The animation rig includes spring-driven turning and antenna motion, squash/stretch landings, 21 facial expressions, gaze/attention, mood-specific body language, speech-driven mouth motion, environmental reactions, and front → three-quarter → profile → back turns.
+The deterministic Kotlin engine owns Pipo's personality, mood, memory, autonomy, projects, relationships, world state, notification policy, and phone actions. Gemini/Groq are only a wording layer; core state decisions remain local.
 
-Pipo's deterministic Kotlin engine owns personality, mood, memory, autonomy, projects, notification policy and phone actions. Gemini/Groq are only a wording layer for conversation; core state decisions remain local.
+### 🌍 The living-world build
 
-**Final validation:** **68/68 JVM tests pass · 6/6 on-device rendering tests pass · Galaxy S23 / Android 15 verified · 21 device bugs found and fixed · release build verified · ~60 FPS with 0.2% slow frames in the measured scenario.**
+The latest validated build turns Pipo from a room simulation into a small persistent world:
 
-The final public repository is also security-audited: no credentials, APKs or intro videos are tracked or present in Git history. The private friend APK intentionally remains outside GitHub.
+- **13 mapped places** plus undiscovered locations, with trips driven by actual reasons, opening hours, weather, time, money, and unfinished projects.
+- **9 named neighbours** with persistent memories, distinct personalities, real conversations, and place-specific interactions.
+- **Nib** is a full secondary character: traits, moods, sounds, thought bubbles, friendship stages, tricks, jealousy, naps, games, gifts, and its own dialogue.
+- **Sports:** football, cricket, table tennis, and badminton; Pipo vs Nib games plus playable cricket and table tennis against Pipo.
+- **Cricket:** two innings with batting and bowling timing, real misses, wickets, and score progression.
+- **Inventor system:** builder levels, blueprints, workshop progression, Bolt the desk helper, scout drone, rocket boots, and evolving armor from Mk I → Mk III.
+- **Mirror-world:** a hallway mirror can retain an independent reflection; Nib notices it and reports it to Pipo.
+- **Movie nights:** TV, popcorn, Nib, different film genres, reactions, and post-film reviews.
+- **Phone integration:** YouTube playback/search, Google search, ChatGPT/Gemini handoffs, web-assisted “find out” behavior, voice conversation, alarms/notifications, and other bounded phone actions.
+- **Real weather:** city weather from Open-Meteo can affect the room, trips, behavior, and seasons.
+- **Festivals:** Christmas, Halloween, New Year, Diwali, Onam, Vishu, Pongal, Holi, and Eid alter the environment and character behavior.
+- **Grounded conversation:** answers about Pipo's life are grounded in his actual memories, journal, possessions, trips, and Nib rather than generated lore.
+- **Camera/vision:** “Pipo, look!” can open the phone camera and let him react to what he sees without identifying people.
+
+The phone validation round also caught and fixed real behavioral bugs: broken game scores, incorrect intent routing, shallow autonomy choices, charging loops, keyboard occlusion, stale object references, duplicate world objects, and time-based activity failures.
+
+**Latest validation:** **172 tests passing · Galaxy S23 / Android 15 verified · procedural 2.5D rendering validated · release build verified.**
+
+The public repository is security-audited: **no credentials, APKs, or intro videos are tracked or present in Git history**. The private friend APK remains outside GitHub.
 
 **Stack:** Kotlin · Jetpack Compose · Canvas Rendering · Procedural 2.5D · Android · WorkManager · Local-first · Character Simulation
 
 <a href="https://github.com/aspire488/Pipo"><img src="https://img.shields.io/badge/Repository-Open-70a5fd?style=for-the-badge"/></a>
 <a href="https://github.com/aspire488/Pipo#readme"><img src="https://img.shields.io/badge/README-Deep%20Dive-8b5cf6?style=for-the-badge"/></a>
 <a href="https://github.com/aspire488/Pipo/blob/main/DEVICE_TEST_REPORT.md"><img src="https://img.shields.io/badge/Device%20Report-Verified-2ea44f?style=for-the-badge"/></a>
-
 
 ---
 
@@ -237,7 +254,7 @@ The application intentionally remains on its React 18/Vite 6 prototype stack rat
 | 🤖 KIO | Active restoration / integration | [GitHub](https://github.com/aspire488/Kio) | [README](https://github.com/aspire488/Kio#readme) |
 | 🧠 AURA | Architecture checkpoint | [GitHub](https://github.com/aspire488/AURA) | [Architecture](https://github.com/aspire488/AURA#readme) |
 | 🛠️ UEA | Public Alpha | [GitHub](https://github.com/aspire488/Universal-Engineering-Augmentation) | [README](https://github.com/aspire488/Universal-Engineering-Augmentation#readme) |
-| 🤖 Pipo | **Implemented + device-validated** | [GitHub](https://github.com/aspire488/Pipo) | [README](https://github.com/aspire488/Pipo#readme) · [Device report](https://github.com/aspire488/Pipo/blob/main/DEVICE_TEST_REPORT.md) |
+| 🤖 Pipo | **Living-world build · device-validated** | [GitHub](https://github.com/aspire488/Pipo) | [README](https://github.com/aspire488/Pipo#readme) · [Device report](https://github.com/aspire488/Pipo/blob/main/DEVICE_TEST_REPORT.md) |
 | ⚡ CodeFlow | Frozen Prototype | [GitHub](https://github.com/aspire488/codeflow) | [Live](https://codeflow-app-sigma.vercel.app) |
 | 💊 MediMind | Frozen Prototype | [GitHub](https://github.com/aspire488/medimind) | [Live](https://medimind-seven.vercel.app/) |
 
@@ -549,7 +566,7 @@ I also contribute through **GitHub Discussions** — answering concrete engineer
 
 > Activity cards are generated by GitHub Actions and committed to this profile repository, avoiding fragile third-party statistics endpoints.
 
-> **Project status note — September 25, 2026:** KIO is not being represented as “Gate 5 complete.” The repository currently describes an active restoration/integration state, while its Constitution still calls for evidence-driven convergence/audit work before further implementation. Recent activity includes security redaction and documentation organization/hardening. AURA remains at its June 2026 architecture checkpoint with no active feature-development line.
+ > **Project status note — October 3, 2026:** KIO is not being represented as “Gate 5 complete.” The repository currently describes an active restoration/integration state, while its Constitution still calls for evidence-driven convergence/audit work before further implementation. Recent activity includes security redaction and documentation organization/hardening. AURA remains at its June 2026 architecture checkpoint with no active feature-development line.
 
 ---
 
@@ -561,7 +578,7 @@ I also contribute through **GitHub Discussions** — answering concrete engineer
 | 🤖 KIO | **Active restoration / integration** — convergence/audit work remains; recent activity is security/documentation hardening |
 | 🧠 AURA | **Architecture checkpoint** — core cognition architecture is complete; no active feature-development line |
 | 🛠️ UEA | **Public alpha** — deterministic-first routing + optional Laya System-1 fallback; 62/62 final integration tests |
-| 🤖 Pipo | **Implemented + device-validated** — procedural 2.5D Android character; 68/68 JVM tests, 6/6 on-device rendering tests, Galaxy S23 / Android 15 |
+| 🤖 Pipo | **Living-world build + device-validated** — 172 tests passing; procedural 2.5D Android character with trips, Nib, sports, mirror-world, inventions, phone actions, and grounded memory |
 | ⚡ CodeFlow | Frozen, hardened prototype |
 | 💊 MediMind | Frozen, hardened prototype |
 | 🌍 Open Source | Cross-project contributions + upstream engineering |
