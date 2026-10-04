@@ -54,6 +54,12 @@ I learn by shipping, breaking things, measuring them, and then hardening the par
 
 **Fix branch:** https://github.com/aspire488/PyRIT/tree/fix/template-segment-short-prompts
 
+
+### 🆕 Latest OSS work — October 4, 2026
+
+- **Microsoft PyRIT #2976** — **OPEN UPSTREAM** — preserves `WordLevelConverter` selection parameters in `StringJoinConverter` identifiers and adds focused regression coverage.
+- **NousResearch Hermes Agent #127233** — **OPEN UPSTREAM** — fixes MCP `get_prompt` rendering for structured content blocks.
+
 ### 🏆 Standout Upstream Milestone — Microsoft PyRIT
 
 > **Three merged upstream contributions to Microsoft PyRIT**
