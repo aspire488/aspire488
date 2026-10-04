@@ -34,7 +34,7 @@ I learn by shipping, breaking things, measuring them, and then hardening the par
 
 Pipo is not a chatbot or productivity assistant. He's a character who lives inside an Android phone and has a life of his own.
 
-**[📦 Download Pipo v1.0](https://github.com/aspire488/Pipo/releases/tag/v1.0)** · **[🤖 Pipo repository](https://github.com/aspire488/Pipo)** · **[🌐 Web demo](https://aspire488.github.io/Pipo/)**
+**[📦 Download Pipo v1.0](https://github.com/aspire488/Pipo/releases/tag/v1.0)** · **[🤖 Pipo repository](https://github.com/aspire488/Pipo)**
 
 Built with Kotlin, Jetpack Compose and a deterministic local-first simulation engine, with optional AI used for conversation rather than owning Pipo's state.
 
