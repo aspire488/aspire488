@@ -71,6 +71,27 @@ Built with Kotlin, Jetpack Compose and a deterministic local-first simulation en
 - **Microsoft PyRIT #2976** — **OPEN UPSTREAM** — preserves `WordLevelConverter` selection parameters in `StringJoinConverter` identifiers and adds focused regression coverage.
 - **NousResearch Hermes Agent #127233** — **OPEN UPSTREAM** — fixes MCP `get_prompt` rendering for structured content blocks.
 
+
+### 🚀 Inspect AI — Three new upstream fixes · October 4, 2026
+
+> **Inspect AI #5670 — Google API key / ADC precedence — OPEN UPSTREAM**
+>
+> Fixes #5358. An explicitly supplied API key now takes precedence over ambient `GOOGLE_USE_ADC`, while explicit `use_adc=true` remains authoritative. Adds regression coverage for both precedence cases.
+>
+> **PR:** https://github.com/UKGovernmentBEIS/inspect_ai/pull/5670
+
+> **Inspect AI #5671 — Structured tool validation errors — OPEN UPSTREAM**
+>
+> Fixes #5403. Converts Pydantic `ValidationError` raised during structured tool-parameter conversion into the normal retryable `ToolParsingError` path, with focused regression coverage.
+>
+> **PR:** https://github.com/UKGovernmentBEIS/inspect_ai/pull/5671
+
+> **Inspect AI #5672 — Cached input-token preservation — OPEN UPSTREAM**
+>
+> Fixes #5364. Preserves cached-read/write input-token information across OpenAI Responses and Gemini provider bridges through a provider-neutral usage helper, with round-trip regression coverage.
+>
+> **PR:** https://github.com/UKGovernmentBEIS/inspect_ai/pull/5672
+
 ### 🏆 Standout Upstream Milestone — Microsoft PyRIT
 
 > **Three merged upstream contributions to Microsoft PyRIT**
