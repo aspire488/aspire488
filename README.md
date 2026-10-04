@@ -47,11 +47,11 @@ Built with Kotlin, Jetpack Compose and a deterministic local-first simulation en
 >
 > **PR:** https://github.com/microsoft/PyRIT/pull/2976
 
-> **Hermes Agent #127233 — MCP prompt rendering fix — OPEN · October 4, 2026**
+> **Hermes Agent #127233 — MCP prompt rendering fix — MERGED UPSTREAM · October 1, 2026**
 >
 > Renders MCP `get_prompt` content blocks correctly instead of exposing the raw structured payload.
 >
-> **PR:** https://github.com/NousResearch/hermes-agent/pull/127233
+> **PR:** https://github.com/NousResearch/hermes-agent/pull/127233 · merge commit `a0707dd1`
 
 > **#2 — Generic PyRIT Converter Bridge — OPEN · September 25, 2026**
 >
@@ -91,6 +91,12 @@ Built with Kotlin, Jetpack Compose and a deterministic local-first simulation en
 > Fixes #5364. Preserves cached-read/write input-token information across OpenAI Responses and Gemini provider bridges through a provider-neutral usage helper, with round-trip regression coverage.
 >
 > **PR:** https://github.com/UKGovernmentBEIS/inspect_ai/pull/5672
+
+> **Inspect AI #5675 — Stream conversion preserves eval errors — OPEN UPSTREAM · October 4, 2026**
+>
+> Fixes #5639. Preserves the eval-level error when converting failed evaluation logs with stream=true, with regression coverage for both .eval and JSON output plus an Unreleased changelog entry.
+>
+> **PR:** https://github.com/UKGovernmentBEIS/inspect_ai/pull/5675
 
 ### 🏆 Standout Upstream Milestone — Microsoft PyRIT
 
