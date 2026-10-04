@@ -30,6 +30,18 @@ I learn by shipping, breaking things, measuring them, and then hardening the par
 
 ### 🛡️ Microsoft RAMPART — PyRIT ecosystem contribution
 
+> **PyRIT #2976 — StringJoinConverter identifier fix — OPEN · October 4, 2026**
+>
+> Preserves `WordLevelConverter` selection parameters in `StringJoinConverter` identifiers and adds regression coverage for distinct and equivalent word-selection configurations.
+>
+> **PR:** https://github.com/microsoft/PyRIT/pull/2976
+
+> **Hermes Agent #127233 — MCP prompt rendering fix — OPEN · October 4, 2026**
+>
+> Renders MCP `get_prompt` content blocks correctly instead of exposing the raw structured payload.
+>
+> **PR:** https://github.com/NousResearch/hermes-agent/pull/127233
+
 > **#2 — Generic PyRIT Converter Bridge — OPEN · September 25, 2026**
 >
 > Implements the documented PyRIT `PromptConverter` → RAMPART `PayloadConverter` bridge, scoped to text-to-text conversion with payload identity/metadata preservation and focused regression coverage.
@@ -196,7 +208,7 @@ The latest validated build turns Pipo from a room simulation into a small persis
 
 The phone validation round also caught and fixed real behavioral bugs: broken game scores, incorrect intent routing, shallow autonomy choices, charging loops, keyboard occlusion, stale object references, duplicate world objects, and time-based activity failures.
 
-**Latest validation:** **172 tests passing · Galaxy S23 / Android 15 verified · procedural 2.5D rendering validated · release build verified.**
+**Latest validation:** **175 tests passing · Galaxy S23 / Android 15 verified · procedural 2.5D rendering validated · release build verified.**
 
 The public repository is security-audited: **no credentials, APKs, or intro videos are tracked or present in Git history**. The private friend APK remains outside GitHub.
 
@@ -578,7 +590,7 @@ I also contribute through **GitHub Discussions** — answering concrete engineer
 | 🤖 KIO | **Active restoration / integration** — convergence/audit work remains; recent activity is security/documentation hardening |
 | 🧠 AURA | **Architecture checkpoint** — core cognition architecture is complete; no active feature-development line |
 | 🛠️ UEA | **Public alpha** — deterministic-first routing + optional Laya System-1 fallback; 62/62 final integration tests |
-| 🤖 Pipo | **Living-world build + device-validated** — 172 tests passing; procedural 2.5D Android character with trips, Nib, sports, mirror-world, inventions, phone actions, and grounded memory |
+| 🤖 Pipo | **Living-world build + device-validated** — 175 tests passing; procedural 2.5D Android character with trips, Nib, sports, mirror-world, inventions, phone actions, and grounded memory |
 | ⚡ CodeFlow | Frozen, hardened prototype |
 | 💊 MediMind | Frozen, hardened prototype |
 | 🌍 Open Source | Cross-project contributions + upstream engineering |
