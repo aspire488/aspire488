@@ -28,6 +28,17 @@ I learn by shipping, breaking things, measuring them, and then hardening the par
 > **Current contribution baseline:** **11 merged PRs**. This profile counts the merged engineering PRs tracked in the portfolio; open and fork-side proposals are kept separate.
 
 
+## 🤖 Pipo — A Little Life Inside Your Phone
+
+> **Pipo v1.0 is live.** A small robot with his own moods, memories, routines, hobbies, world, and little robot companion Nib.
+
+Pipo is not a chatbot or productivity assistant. He's a character who lives inside an Android phone and has a life of his own.
+
+**[📦 Download Pipo v1.0](https://github.com/aspire488/Pipo/releases/tag/v1.0)** · **[🤖 Pipo repository](https://github.com/aspire488/Pipo)** · **[🌐 Web demo](https://aspire488.github.io/Pipo/)**
+
+Built with Kotlin, Jetpack Compose and a deterministic local-first simulation engine, with optional AI used for conversation rather than owning Pipo's state.
+
+
 ### 🛡️ Microsoft RAMPART — PyRIT ecosystem contribution
 
 > **PyRIT #2976 — StringJoinConverter identifier fix — OPEN · October 4, 2026**
