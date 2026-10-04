@@ -30,11 +30,11 @@ I learn by shipping, breaking things, measuring them, and then hardening the par
 
 ## 🤖 Pipo — A Little Life Inside Your Phone
 
-> **Pipo v1.0 is live.** A small robot with his own moods, memories, routines, hobbies, world, and little robot companion Nib.
+> **Pipo v1.0 is live** and **[his living 3D world is online](https://aspire488.github.io/Pipo/)** — a small robot with his own moods, memories, routines, hobbies, world, and little robot companion Nib.
 
 Pipo is not a chatbot or productivity assistant. He's a character who lives inside an Android phone and has a life of his own.
 
-**[📦 Download Pipo v1.0](https://github.com/aspire488/Pipo/releases/tag/v1.0)** · **[🤖 Pipo repository](https://github.com/aspire488/Pipo)**
+**[🌍 Enter Pipo's living 3D world](https://aspire488.github.io/Pipo/)** · **[📦 Download Pipo v1.0](https://github.com/aspire488/Pipo/releases/tag/v1.0)** · **[🤖 Pipo repository](https://github.com/aspire488/Pipo)**
 
 Built with Kotlin, Jetpack Compose and a deterministic local-first simulation engine, with optional AI used for conversation rather than owning Pipo's state.
 
@@ -258,6 +258,7 @@ The public repository is security-audited: **no credentials, APKs, or intro vide
 
 **Stack:** Kotlin · Jetpack Compose · Canvas Rendering · Procedural 2.5D · Android · WorkManager · Local-first · Character Simulation
 
+<a href="https://aspire488.github.io/Pipo/"><img src="https://img.shields.io/badge/Live-3D%20World-3ddc84?style=for-the-badge"/></a>
 <a href="https://github.com/aspire488/Pipo"><img src="https://img.shields.io/badge/Repository-Open-70a5fd?style=for-the-badge"/></a>
 <a href="https://github.com/aspire488/Pipo#readme"><img src="https://img.shields.io/badge/README-Deep%20Dive-8b5cf6?style=for-the-badge"/></a>
 <a href="https://github.com/aspire488/Pipo/blob/main/DEVICE_TEST_REPORT.md"><img src="https://img.shields.io/badge/Device%20Report-Verified-2ea44f?style=for-the-badge"/></a>
