@@ -25,7 +25,7 @@ I build **AI systems, developer tools, automation, and experimental software sys
 
 I learn by shipping, breaking things, measuring them, and then hardening the parts that are worth keeping.
 
-> **Current contribution baseline:** **11 merged PRs**. This profile counts the merged engineering PRs tracked in the portfolio; open and fork-side proposals are kept separate.
+> **Current contribution baseline:** **12 merged PRs**. This profile counts the merged engineering PRs tracked in the portfolio; open and fork-side proposals are kept separate.
 
 
 ## 🤖 Pipo — A Little Life Inside Your Phone
@@ -74,25 +74,25 @@ Built with Kotlin, Jetpack Compose and a deterministic local-first simulation en
 
 ### 🚀 Inspect AI — Three new upstream fixes · October 4, 2026
 
-> **Inspect AI #5670 — Google API key / ADC precedence — OPEN UPSTREAM**
+> **Inspect AI #5670 — Google API key / ADC precedence — MERGED UPSTREAM · October 4, 2026**
 >
 > Fixes #5358. An explicitly supplied API key now takes precedence over ambient `GOOGLE_USE_ADC`, while explicit `use_adc=true` remains authoritative. Adds regression coverage for both precedence cases.
 >
 > **PR:** https://github.com/UKGovernmentBEIS/inspect_ai/pull/5670
 
-> **Inspect AI #5671 — Structured tool validation errors — OPEN UPSTREAM**
+> **Inspect AI #5671 — Structured tool validation errors — OPEN UPSTREAM · DRAFT**
 >
 > Fixes #5403. Converts Pydantic `ValidationError` raised during structured tool-parameter conversion into the normal retryable `ToolParsingError` path, with focused regression coverage.
 >
 > **PR:** https://github.com/UKGovernmentBEIS/inspect_ai/pull/5671
 
-> **Inspect AI #5672 — Cached input-token preservation — OPEN UPSTREAM**
+> **Inspect AI #5672 — Cached input-token preservation — OPEN UPSTREAM · DRAFT**
 >
-> Fixes #5364. Preserves cached-read/write input-token information across OpenAI Responses and Gemini provider bridges through a provider-neutral usage helper, with round-trip regression coverage.
+> Fixes #5364. Preserves confirmed cached-read input-token information across OpenAI Responses and Gemini provider bridges through a provider-neutral usage helper, with round-trip regression coverage.
 >
 > **PR:** https://github.com/UKGovernmentBEIS/inspect_ai/pull/5672
 
-> **Inspect AI #5675 — Stream conversion preserves eval errors — OPEN UPSTREAM · October 4, 2026**
+> **Inspect AI #5675 — Stream conversion preserves eval errors — OPEN UPSTREAM · DRAFT · October 4, 2026**
 >
 > Fixes #5639. Preserves the eval-level error when converting failed evaluation logs with stream=true, with regression coverage for both .eval and JSON output plus an Unreleased changelog entry.
 >
