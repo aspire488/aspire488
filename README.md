@@ -25,7 +25,7 @@ I build **AI systems, developer tools, automation, and experimental software sys
 
 I learn by shipping, breaking things, measuring them, and then hardening the parts that are worth keeping.
 
-> **Current contribution baseline:** **12 merged PRs**. This profile counts the merged engineering PRs tracked in the portfolio; open and fork-side proposals are kept separate.
+> **Current contribution baseline:** **13 merged PRs**. This profile counts the merged engineering PRs tracked in the portfolio; open and fork-side proposals are kept separate.
 
 
 ## 🤖 Pipo — A Little Life Inside Your Phone
@@ -41,7 +41,7 @@ Built with Kotlin, Jetpack Compose and a deterministic local-first simulation en
 
 ### 🛡️ Microsoft RAMPART — PyRIT ecosystem contribution
 
-> **PyRIT #2976 — StringJoinConverter identifier fix — OPEN · October 4, 2026**
+> **PyRIT #2976 — StringJoinConverter identifier fix — MERGED UPSTREAM · October 6, 2026**
 >
 > Preserves `WordLevelConverter` selection parameters in `StringJoinConverter` identifiers and adds regression coverage for distinct and equivalent word-selection configurations.
 >
@@ -66,10 +66,10 @@ Built with Kotlin, Jetpack Compose and a deterministic local-first simulation en
 **Fix branch:** https://github.com/aspire488/PyRIT/tree/fix/template-segment-short-prompts
 
 
-### 🆕 Latest OSS work — October 4, 2026
+### 🆕 Latest OSS work — October 6, 2026
 
-- **Microsoft PyRIT #2976** — **OPEN UPSTREAM** — preserves `WordLevelConverter` selection parameters in `StringJoinConverter` identifiers and adds focused regression coverage.
-- **NousResearch Hermes Agent #127233** — **OPEN UPSTREAM** — fixes MCP `get_prompt` rendering for structured content blocks.
+- **Microsoft PyRIT #2976** — **MERGED UPSTREAM · October 6, 2026** — preserves `WordLevelConverter` selection parameters in `StringJoinConverter` identifiers and adds focused regression coverage.
+- **NousResearch Hermes Agent #127233** — **MERGED UPSTREAM · October 1, 2026** — fixes MCP `get_prompt` rendering for structured content blocks.
 
 
 ### 🚀 Inspect AI — Three new upstream fixes · October 4, 2026
@@ -100,7 +100,13 @@ Built with Kotlin, Jetpack Compose and a deterministic local-first simulation en
 
 ### 🏆 Standout Upstream Milestone — Microsoft PyRIT
 
-> **Three merged upstream contributions to Microsoft PyRIT**
+> **Four merged upstream contributions to Microsoft PyRIT**
+>
+> **#2976 — StringJoinConverter identifier fix — MERGED UPSTREAM · October 6, 2026**
+>
+> Preserves `WordLevelConverter` word-selection parameters in `StringJoinConverter` identifiers, keeping default identifier compatibility while distinguishing non-default selection configurations, with focused regression coverage.
+>
+> **PR:** https://github.com/microsoft/PyRIT/pull/2976
 >
 > **#2762 — Dataset Summary API — MERGED UPSTREAM · September 24, 2026**
 >
@@ -120,7 +126,7 @@ Built with Kotlin, Jetpack Compose and a deterministic local-first simulation en
 >
 > **Merge commit:** `dff83aaab767f9b2b0aee68a20ab277de7e9d289`
 >
-> **Track record:** three separate upstream PRs merged into Microsoft's open-source AI red-teaming framework, spanning feature work and regression-focused fixes.
+> **Track record:** four separate upstream PRs merged into Microsoft's open-source AI red-teaming framework, spanning feature work and regression-focused fixes.
 
 <p align="center">
   <a href="https://joel-jigo-portfolio--joeljigo3.replit.app"><img src="https://img.shields.io/badge/%E2%86%92%20Portfolio-Visit%20Joel's%20Portfolio-70a5fd?style=for-the-badge"/></a>
