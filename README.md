@@ -173,15 +173,21 @@ A compact set of the projects I keep most visible on GitHub. Star counts below a
 
 ### 🚌 [Campus Bus](https://github.com/aspire488/campus-bus) — College Bus Reservation System
 
-A Java desktop application for managing campus transport and seat reservations. Students can search buses, select seats, book or cancel trips, and view a printable bus pass; transport administrators can manage buses, routes, timetables, students, and reservations.
+A Java desktop application for managing campus transport and seat reservations. Students can search buses, choose a stop and seat, book or cancel trips, and view a printable bus pass. Transport administrators can manage buses, routes, timetables, students, reservations, and administrators.
+
+<p align="center">
+  <a href="https://github.com/aspire488/campus-bus/blob/main/docs/screenshots/08-admin-buses.png"><img src="https://raw.githubusercontent.com/aspire488/campus-bus/main/docs/screenshots/08-admin-buses.png" alt="Campus Bus admin bus management" width="48%"/></a>
+  <a href="https://github.com/aspire488/campus-bus/blob/main/docs/screenshots/05-campus-pass.png"><img src="https://raw.githubusercontent.com/aspire488/campus-bus/main/docs/screenshots/05-campus-pass.png" alt="Campus Bus confirmed reservation pass" width="48%"/></a>
+</p>
+
+<p align="center"><a href="https://github.com/aspire488/campus-bus#screenshots">More screenshots: student home, seat map, routes, schedules, students, reservations and admin pages →</a></p>
 
 - **Stack:** Java, Swing, JavaFX WebView, HTML/CSS/JavaScript, JDBC, and MySQL.
-- **Engineering focus:** role-aware student/admin workflows, prepared-statement database access, reservation constraints, schedule import, and a separate test database.
-- **Windows:** a packaged release with setup and launch scripts is available from the [releases page](https://github.com/aspire488/campus-bus/releases).
-- **Verification note:** the repository documents 124 tests; database tests require a configured MySQL test database. I have not independently rerun the suite in this environment.
+- **Core engineering:** student/admin workflows, prepared-statement database access, booking constraints, schedule import, and an isolated database test setup.
+- **Verification reported:** **124/124 tests passed, zero skipped**, including database-backed tests against MySQL. The GUI walkthrough also covered student booking/cancellation, profile editing, registration, all seven admin pages, and demo setup idempotency.
+- **Release status:** the Windows package/setup scripts still require a verification run on Windows; printing and GUI schedule import were not covered by the reported walkthrough.
 
-[Explore the source and screenshots →](https://github.com/aspire488/campus-bus#readme)
-
+**[Repository](https://github.com/aspire488/campus-bus)** · **[Windows releases](https://github.com/aspire488/campus-bus/releases)** · **[Test and release documentation](https://github.com/aspire488/campus-bus/blob/main/docs/final-release-audit.md)**
 ---
 
 ### ⚙️ [gh-ops](https://github.com/aspire488/gh-ops) — Operational Intelligence Platform
