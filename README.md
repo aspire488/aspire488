@@ -167,8 +167,20 @@ A compact set of the projects I keep most visible on GitHub. Star counts below a
 | 🧠 **AURA** | Memory and cognition backend for persistent agent state and cognitive processing. | [Repository](https://github.com/aspire488/AURA) · <img src="https://img.shields.io/github/stars/aspire488/AURA?style=flat-square&label=stars" alt="AURA stars"/> |
 | ⚙️ **gh-ops** | Deterministic GitHub operations, monitoring, OSS intelligence, security intelligence, and Telegram reporting. | [Repository](https://github.com/aspire488/gh-ops) · <img src="https://img.shields.io/github/stars/aspire488/gh-ops?style=flat-square&label=stars" alt="gh-ops stars"/> |
 | 🌍 **OSS Atlas** | Open-source contribution archive, research, experiments, and engineering notes. | [Repository](https://github.com/aspire488/oss-atlas) · <img src="https://img.shields.io/github/stars/aspire488/oss-atlas?style=flat-square&label=stars" alt="OSS Atlas stars"/> |
+| 🚌 **Campus Bus** | Java desktop bus-reservation system for educational institutions, with student bookings, seat maps, schedules, admin tools, and a Windows release. | [Repository](https://github.com/aspire488/campus-bus) · [Windows release](https://github.com/aspire488/campus-bus/releases) · <img src="https://img.shields.io/github/stars/aspire488/campus-bus?style=flat-square&label=stars" alt="Campus Bus stars"/> |
 
 > These are featured for visibility; the list is not a ranking.
+
+### 🚌 [Campus Bus](https://github.com/aspire488/campus-bus) — College Bus Reservation System
+
+A Java desktop application for managing campus transport and seat reservations. Students can search buses, select seats, book or cancel trips, and view a printable bus pass; transport administrators can manage buses, routes, timetables, students, and reservations.
+
+- **Stack:** Java, Swing, JavaFX WebView, HTML/CSS/JavaScript, JDBC, and MySQL.
+- **Engineering focus:** role-aware student/admin workflows, prepared-statement database access, reservation constraints, schedule import, and a separate test database.
+- **Windows:** a packaged release with setup and launch scripts is available from the [releases page](https://github.com/aspire488/campus-bus/releases).
+- **Verification note:** the repository documents 124 tests; database tests require a configured MySQL test database. I have not independently rerun the suite in this environment.
+
+[Explore the source and screenshots →](https://github.com/aspire488/campus-bus#readme)
 
 ---
 
