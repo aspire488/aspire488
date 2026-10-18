@@ -14,6 +14,59 @@
 
 Computer Science Engineering student building applications, developer tooling, automation, and AI infrastructure. I care about clear boundaries, useful software, regression coverage, and shipping work that survives beyond the demo.
 
+---
+
+## GitHub activity / the numbers
+
+The numbers are generated from GitHub data and refreshed hourly by this repository's existing workflow — no hard-coded contribution totals.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/overview.dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/profile/overview.light.svg">
+    <img src="./assets/profile/overview.dark.svg" width="100%" alt="GitHub overview with contribution totals, stars, followers, merged pull requests, issues, repositories and recent contributions.">
+  </picture>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/contributions.dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/profile/contributions.light.svg">
+    <img src="./assets/profile/contributions.dark.svg" width="100%" alt="Contribution history over the past 12 months, including daily activity and current and longest streaks.">
+  </picture>
+</p>
+
+<details>
+<summary><strong>More GitHub analytics</strong> — languages, contribution types and activity rhythm</summary>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/languages.dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/profile/languages.light.svg">
+    <img src="./assets/profile/languages.dark.svg" width="100%" alt="Breakdown of programming languages across public source repositories.">
+  </picture>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/composition.dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/profile/composition.light.svg">
+    <img src="./assets/profile/composition.dark.svg" width="100%" alt="Contribution composition by commits, pull requests, issues, reviews and private contributions.">
+  </picture>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/rhythm.dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/profile/rhythm.light.svg">
+    <img src="./assets/profile/rhythm.dark.svg" width="100%" alt="Contribution activity by weekday and month, comparing all-time and trailing-year activity.">
+  </picture>
+</p>
+
+</details>
+
+---
+
 ## The interactive edition
 
 <a href="https://aspire488.github.io/aspire488/"><img src="./site/public/og.png" width="100%" alt="Preview of the interactive portfolio, showing its editorial layout, live GitHub data, and project screenshots."/></a>
@@ -112,6 +165,12 @@ Selected changes across developer tooling, AI evaluation, and engineering infras
 
 ## Engineering toolkit
 
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=python,java,c,js,kotlin,react,fastapi,nodejs,docker,postgres,redis,linux,git,github&perline=7" alt="Technology icons for Python, Java, C, JavaScript, Kotlin, React, FastAPI, Node.js, Docker, PostgreSQL, Redis, Linux, Git and GitHub.">
+  </a>
+</p>
+
 <table>
 <tr>
 <td width="33%" valign="top">
@@ -142,9 +201,7 @@ Git · Linux · GitHub Actions · Docker · PostgreSQL · Redis
 
 <div align="center">
 
-<img src="./assets/profile/activity.dark.svg" width="100%" alt="Green GitHub contribution calendar on a dark background."/>
-
-<a href="https://github.com/aspire488">PROFILE</a>
+<a href="https://github.com/aspire488">GITHUB PROFILE</a>
 &nbsp; / &nbsp;
 <a href="https://github.com/aspire488/aspire488/tree/main/site">SITE SOURCE</a>
 &nbsp; / &nbsp;
