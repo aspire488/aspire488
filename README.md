@@ -113,9 +113,7 @@ Technologies vary by project and include Python, Java, Kotlin, C, JavaScript, HT
   </picture>
 </p>
 
-<p align="center">
-  <img src="https://ghchart.rshah.org/2ea043/aspire488" alt="GitHub contribution calendar with small green squares for daily contributions" width="100%"/>
-</p>
+
 
 <p align="center">
   <a href="https://github.com/aspire488?tab=overview"><img src="https://github-readme-activity-graph.vercel.app/graph?username=aspire488&bg_color=0d1117&color=70a5fd&line=2ea043&point=70a5fd&area=true&hide_border=true" width="100%" alt="GitHub contribution activity graph with green activity bars"/></a>
