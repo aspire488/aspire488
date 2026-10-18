@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="theme-color" content="#e8e4da" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#101114" media="(prefers-color-scheme: dark)" />
+    <title>Joel Jigo — software engineering, developer tooling, open-source systems</title>
+    <meta
+      name="description"
+      content="The interactive edition of Joel Jigo's work: desktop and Android applications, developer tools, automation and infrastructure, with live GitHub data."
+    />
+    <meta property="og:title" content="Joel Jigo — developer edition" />
+    <meta
+      property="og:description"
+      content="Project explorer, live repository data and upstream open-source work by aspire488."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="preconnect" href="https://api.github.com" crossorigin />
+    <style>
+      /* Paint the correct paper/ink before the stylesheet loads to avoid a flash. */
+      :root { color-scheme: light; background: #e8e4da; }
+      @media (prefers-color-scheme: dark) { :root { color-scheme: dark; background: #101114; } }
+      html[data-theme='light'] { color-scheme: light; background: #e8e4da; }
+      html[data-theme='dark'] { color-scheme: dark; background: #101114; }
+      body { margin: 0; }
+    </style>
+    <script>
+      // Restore the stored theme before first paint (no flash for dark-mode readers).
+      try {
+        var stored = localStorage.getItem('edition-theme')
+        if (stored === 'light' || stored === 'dark') {
+          document.documentElement.dataset.theme = stored
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.dataset.theme = 'dark'
+        }
+      } catch (error) {
+        /* storage blocked — the media query above still picks a paper */
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="font: 16px/1.5 system-ui; padding: 2rem; max-width: 40rem">
+        This edition needs JavaScript for the project explorer. The same work is listed in the
+        <a href="https://github.com/aspire488/aspire488#selected-work">profile README</a>.
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

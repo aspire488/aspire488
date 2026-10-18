@@ -1,0 +1,93 @@
+/* ============================================================
+   Design tokens — "edition" art direction
+   Two states of one publication: PAPER (print) and INK (night).
+   Structure is cobalt, live/signal moments are red-orange.
+   ============================================================ */
+
+:root {
+  /* --- type ------------------------------------------------- */
+  --font-sans: 'Archivo Variable', 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+
+  /* major-third scale, rem-based so user font-size still wins */
+  --text-xs: 0.75rem;
+  --text-s: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-m: 1.25rem;
+  --text-l: 1.5625rem;
+  --text-xl: clamp(1.75rem, 2.4vw, 2.375rem);
+  --text-2xl: clamp(2.25rem, 4.6vw, 3.75rem);
+  --display: clamp(3.25rem, 13vw, 11rem);
+
+  --measure: 64ch;
+
+  /* --- space ------------------------------------------------ */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4rem;
+  --s-9: 6rem;
+  --s-10: 8rem;
+
+  /* --- motion ----------------------------------------------- */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-1: 140ms;
+  --dur-2: 260ms;
+  --dur-3: 560ms;
+
+  /* --- structure -------------------------------------------- */
+  --rail-w: 15.5rem;
+  --gutter: clamp(1.25rem, 4.5vw, 4.5rem);
+  --max-w: 82rem;
+  --rule-w: 1px;
+}
+
+/* ------------------------------ PAPER (default) ------------------------------ */
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+  --paper: #e8e4da;
+  --surface: #f1eee7;
+  --surface-2: #ddd8cc;
+  --ink: #16171a;
+  --ink-2: #5b5c60;
+  --ink-3: #616266;
+  --cobalt: #1b3fd8;
+  --cobalt-wash: rgba(27, 63, 216, 0.1);
+  --signal: #d6350a;
+  /* darker red for signal *text* — the vivid value stays for fills/rules */
+  --signal-text: #a82a04;
+  --signal-wash: rgba(214, 53, 10, 0.12);
+  --focus: #1b3fd8;
+  --plate-shadow: 0 18px 40px -28px rgba(22, 23, 26, 0.55);
+}
+
+/* --------------------------------- INK -------------------------------------- */
+[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #101114;
+  --surface: #191a1f;
+  --surface-2: #24262c;
+  --ink: #e9e5dc;
+  --ink-2: #a5a29a;
+  --ink-3: #85827b;
+  --cobalt: #8fa3ff;
+  --cobalt-wash: rgba(143, 163, 255, 0.14);
+  --signal: #ff6a38;
+  --signal-text: #ff6a38;
+  --signal-wash: rgba(255, 106, 56, 0.14);
+  --focus: #8fa3ff;
+  --plate-shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.8);
+}
+
+/* semantic aliases used across components */
+:root {
+  --rule: color-mix(in srgb, var(--ink) 17%, transparent);
+  --rule-strong: color-mix(in srgb, var(--ink) 34%, transparent);
+  --hover: color-mix(in srgb, var(--ink) 6%, transparent);
+}

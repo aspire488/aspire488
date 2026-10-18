@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.vite/
+
+# Snapshot temp file — the finished snapshot.json is committed once as a
+# bootstrap fallback; CI regenerates it for each deploy and does not commit.
+public/data/snapshot.json.tmp
+
+# Editor / OS
+.DS_Store
+*.local
+*.log

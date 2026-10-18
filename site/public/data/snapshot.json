@@ -1,0 +1,1199 @@
+{
+  "generatedAt": "2026-10-18T14:16:08.491Z",
+  "profile": {
+    "login": "aspire488",
+    "id": 214079854,
+    "node_id": "U_kgDODMKZbg",
+    "avatar_url": "https://avatars.githubusercontent.com/u/214079854?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/aspire488",
+    "html_url": "https://github.com/aspire488",
+    "followers_url": "https://api.github.com/users/aspire488/followers",
+    "following_url": "https://api.github.com/users/aspire488/following{/other_user}",
+    "gists_url": "https://api.github.com/users/aspire488/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/aspire488/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/aspire488/subscriptions",
+    "organizations_url": "https://api.github.com/users/aspire488/orgs",
+    "repos_url": "https://api.github.com/users/aspire488/repos",
+    "events_url": "https://api.github.com/users/aspire488/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/aspire488/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false,
+    "name": "Joel ",
+    "company": null,
+    "blog": "",
+    "location": null,
+    "email": "joeljigo3@gmail.com",
+    "hireable": null,
+    "bio": "CSE Student building AI systems, developer tools & automation — learning by shipping.",
+    "twitter_username": null,
+    "public_repos": 54,
+    "public_gists": 0,
+    "followers": 8,
+    "following": 5,
+    "created_at": "2025-05-30T06:22:25Z",
+    "updated_at": "2026-10-18T12:41:50Z"
+  },
+  "repos": [
+    {
+      "id": 1212127681,
+      "name": "aspire488",
+      "full_name": "aspire488/aspire488",
+      "description": "My GitHub profile README",
+      "language": "Python",
+      "stargazers_count": 2,
+      "forks_count": 0,
+      "pushed_at": "2026-10-18T14:00:08Z",
+      "created_at": "2026-04-16T04:54:46Z",
+      "homepage": null,
+      "html_url": "https://github.com/aspire488/aspire488",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "topics": [],
+      "license": null
+    },
+    {
+      "id": 1414204379,
+      "name": "campus-bus",
+      "full_name": "aspire488/campus-bus",
+      "description": "CAMPUS BUS: Java Swing + JavaFX + MySQL bus seat reservation system for educational institutions",
+      "language": "Java",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-10-18T12:19:22Z",
+      "created_at": "2026-10-11T10:17:02Z",
+      "homepage": null,
+      "html_url": "https://github.com/aspire488/campus-bus",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "topics": [],
+      "license": null
+    },
+    {
+      "id": 1106992965,
+      "name": "Kio",
+      "full_name": "aspire488/Kio",
+      "description": null,
+      "language": "Python",
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "pushed_at": "2026-10-18T10:13:41Z",
+      "created_at": "2025-11-30T11:27:37Z",
+      "homepage": null,
+      "html_url": "https://github.com/aspire488/Kio",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "topics": [],
+      "license": null
+    },
+    {
+      "id": 1383888802,
+      "name": "oss-atlas",
+      "full_name": "aspire488/oss-atlas",
+      "description": "Open-source contributions, research, experiments, and engineering notes",
+      "language": "Python",
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "pushed_at": "2026-10-18T09:08:46Z",
+      "created_at": "2026-09-23T17:09:01Z",
+      "homepage": null,
+      "html_url": "https://github.com/aspire488/oss-atlas",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "topics": [],
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      }
+    },
+    {
+      "id": 1394281718,
+      "name": "Pipo",
+      "full_name": "aspire488/Pipo",
+      "description": "Pipo - Android robot companion app",
+      "language": "Kotlin",
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "pushed_at": "2026-10-04T11:07:57Z",
+      "created_at": "2026-09-29T04:23:17Z",
+      "homepage": null,
+      "html_url": "https://github.com/aspire488/Pipo",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "topics": [],
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      }
+    },
+    {
+      "id": 1364452685,
+      "name": "Universal-Engineering-Augmentation",
+      "full_name": "aspire488/Universal-Engineering-Augmentation",
+      "description": "Universal, agent-neutral software engineering augmentation infrastructure for coding agents, providing deterministic code intelligence, verification, specialized analysis, memory, orchestration, and reusable engineering capabilities.",
+      "language": "Python",
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "pushed_at": "2026-10-15T16:05:42Z",
+      "created_at": "2026-09-10T15:30:18Z",
+      "homepage": null,
+      "html_url": "https://github.com/aspire488/Universal-Engineering-Augmentation",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "topics": [],
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      }
+    },
+    {
+      "id": 1379706090,
+      "name": "gh-ops",
+      "full_name": "aspire488/gh-ops",
+      "description": null,
+      "language": "Python",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-09-28T13:15:07Z",
+      "created_at": "2026-09-21T12:35:37Z",
+      "homepage": null,
+      "html_url": "https://github.com/aspire488/gh-ops",
+      "archived": false,
+      "fork": false,
+      "default_branch": "master",
+      "topics": [],
+      "license": null
+    },
+    {
+      "id": 1185425810,
+      "name": "medimind",
+      "full_name": "aspire488/medimind",
+      "description": "MediMind – AI-powered medicine reminder and health assistant with smart tracking and caregiver support.",
+      "language": "JavaScript",
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "pushed_at": "2026-10-15T16:05:44Z",
+      "created_at": "2026-03-18T15:13:30Z",
+      "homepage": null,
+      "html_url": "https://github.com/aspire488/medimind",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "topics": [],
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      }
+    },
+    {
+      "id": 1211525116,
+      "name": "codeflow",
+      "full_name": "aspire488/codeflow",
+      "description": "Interactive programming learning platform with code visualization, quizzes, output prediction, logic games, and an AI chatbot. Built with vanilla JavaScript for learning C, HTML, CSS, and JavaScript concepts through step-by-step execution.",
+      "language": "JavaScript",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-10-08T23:36:05Z",
+      "created_at": "2026-04-15T13:32:02Z",
+      "homepage": "https://codeflow-app-sigma.vercel.app",
+      "html_url": "https://github.com/aspire488/codeflow",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "topics": [],
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      }
+    },
+    {
+      "id": 1283043586,
+      "name": "AURA",
+      "full_name": "aspire488/AURA",
+      "description": "AURA is a production-oriented cognitive runtime integrating memory, reasoning, planning, agents, event-driven orchestration, and automation for KIO.",
+      "language": "Python",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-06-28T18:20:45Z",
+      "created_at": "2026-06-28T13:37:25Z",
+      "homepage": null,
+      "html_url": "https://github.com/aspire488/AURA",
+      "archived": false,
+      "fork": false,
+      "default_branch": "integration-validation",
+      "topics": [],
+      "license": null
+    }
+  ],
+  "languages": {
+    "aspire488/campus-bus": {
+      "Java": 376051,
+      "JavaScript": 41212,
+      "PowerShell": 21692,
+      "CSS": 18909,
+      "Batchfile": 1247,
+      "Shell": 820,
+      "HTML": 495
+    },
+    "aspire488/Pipo": {
+      "Kotlin": 1516916,
+      "JavaScript": 144838,
+      "HTML": 9385,
+      "CSS": 6696
+    },
+    "aspire488/Universal-Engineering-Augmentation": {
+      "Python": 192811
+    },
+    "aspire488/Kio": {
+      "Python": 4352423,
+      "JavaScript": 38686,
+      "PowerShell": 26085,
+      "Batchfile": 572,
+      "Shell": 342
+    },
+    "aspire488/gh-ops": {
+      "Python": 1023276
+    },
+    "aspire488/AURA": {
+      "Python": 557798,
+      "TypeScript": 29433,
+      "JavaScript": 3402,
+      "HTML": 932,
+      "CSS": 226,
+      "Dockerfile": 213,
+      "Shell": 64
+    },
+    "aspire488/oss-atlas": {
+      "Python": 14062
+    },
+    "aspire488/codeflow": {
+      "JavaScript": 413165,
+      "HTML": 33066,
+      "Python": 10182,
+      "CSS": 7549
+    },
+    "aspire488/medimind": {
+      "JavaScript": 274102,
+      "CSS": 7302,
+      "HTML": 671
+    }
+  },
+  "events": [
+    {
+      "id": "24428527394",
+      "type": "PushEvent",
+      "created_at": "2026-10-18T12:57:16Z",
+      "repo": {
+        "name": "aspire488/aspire488"
+      },
+      "payload": {
+        "ref": "refs/heads/main"
+      }
+    },
+    {
+      "id": "24427347967",
+      "type": "PushEvent",
+      "created_at": "2026-10-18T12:41:14Z",
+      "repo": {
+        "name": "aspire488/aspire488"
+      },
+      "payload": {
+        "ref": "refs/heads/main"
+      }
+    },
+    {
+      "id": "24425755930",
+      "type": "PushEvent",
+      "created_at": "2026-10-18T12:19:23Z",
+      "repo": {
+        "name": "aspire488/campus-bus"
+      },
+      "payload": {
+        "ref": "refs/heads/main"
+      }
+    },
+    {
+      "id": "17528122989",
+      "type": "ReleaseEvent",
+      "created_at": "2026-10-18T11:29:11Z",
+      "repo": {
+        "name": "aspire488/campus-bus"
+      },
+      "payload": {
+        "action": "published",
+        "release": {
+          "tag_name": "v1.1",
+          "name": "CAMPUS BUS 1.1 for Windows",
+          "html_url": "https://github.com/aspire488/campus-bus/releases/tag/v1.1"
+        }
+      }
+    },
+    {
+      "id": "17515617370",
+      "type": "PullRequestEvent",
+      "created_at": "2026-10-18T05:24:40Z",
+      "repo": {
+        "name": "microsoft/PyRIT"
+      },
+      "payload": {
+        "action": "opened",
+        "number": 3309,
+        "pull_request": {
+          "number": 3309
+        }
+      }
+    },
+    {
+      "id": "17515535616",
+      "type": "IssueCommentEvent",
+      "created_at": "2026-10-18T05:21:57Z",
+      "repo": {
+        "name": "microsoft/PyRIT"
+      },
+      "payload": {
+        "action": "created",
+        "issue": {
+          "number": 1912,
+          "title": "BUG role play attack should respond with attack prompt only"
+        }
+      }
+    },
+    {
+      "id": "17196457058",
+      "type": "IssueCommentEvent",
+      "created_at": "2026-10-14T11:36:19Z",
+      "repo": {
+        "name": "aspire488/Universal-Engineering-Augmentation"
+      },
+      "payload": {
+        "action": "created",
+        "issue": {
+          "number": 22,
+          "title": "feat: add Go and Rust structural analysis"
+        }
+      }
+    },
+    {
+      "id": "17193128667",
+      "type": "IssueCommentEvent",
+      "created_at": "2026-10-14T11:36:21Z",
+      "repo": {
+        "name": "aspire488/PyRIT"
+      },
+      "payload": {
+        "action": "created",
+        "issue": {
+          "number": 3,
+          "title": "fix: score only assistant messages in objective evaluator"
+        }
+      }
+    },
+    {
+      "id": "23879558013",
+      "type": "PushEvent",
+      "created_at": "2026-10-12T08:15:53Z",
+      "repo": {
+        "name": "aspire488/PyRIT"
+      },
+      "payload": {
+        "ref": "refs/heads/fix/objective-evaluator-assistant-messages"
+      }
+    },
+    {
+      "id": "23879311408",
+      "type": "PushEvent",
+      "created_at": "2026-10-12T08:13:39Z",
+      "repo": {
+        "name": "aspire488/inspect_ai"
+      },
+      "payload": {
+        "ref": "refs/heads/fix/bridge-cached-input-usage"
+      }
+    },
+    {
+      "id": "23814539272",
+      "type": "PushEvent",
+      "created_at": "2026-10-12T08:14:43Z",
+      "repo": {
+        "name": "aspire488/Universal-Engineering-Augmentation"
+      },
+      "payload": {
+        "ref": "refs/heads/feat/tree-sitter-go-rust"
+      }
+    },
+    {
+      "id": "23813284873",
+      "type": "PushEvent",
+      "created_at": "2026-10-11T06:18:32Z",
+      "repo": {
+        "name": "aspire488/PyRIT"
+      },
+      "payload": {
+        "ref": "refs/heads/fix/1912-role-play-preamble"
+      }
+    },
+    {
+      "id": "23813278284",
+      "type": "PushEvent",
+      "created_at": "2026-10-11T06:18:24Z",
+      "repo": {
+        "name": "aspire488/PyRIT"
+      },
+      "payload": {
+        "ref": "refs/heads/fix/1912-role-play-preamble"
+      }
+    },
+    {
+      "id": "23810201755",
+      "type": "PushEvent",
+      "created_at": "2026-10-11T06:18:34Z",
+      "repo": {
+        "name": "aspire488/PyRIT"
+      },
+      "payload": {
+        "ref": "refs/heads/fix/1912-role-play-preamble"
+      }
+    },
+    {
+      "id": "23756404854",
+      "type": "PushEvent",
+      "created_at": "2026-10-12T08:15:09Z",
+      "repo": {
+        "name": "aspire488/inspect_ai"
+      },
+      "payload": {
+        "ref": "refs/heads/fix/bridge-cached-input-usage"
+      }
+    },
+    {
+      "id": "23756375688",
+      "type": "PushEvent",
+      "created_at": "2026-10-12T08:14:09Z",
+      "repo": {
+        "name": "aspire488/inspect_ai"
+      },
+      "payload": {
+        "ref": "refs/heads/fix/bridge-cached-input-usage"
+      }
+    },
+    {
+      "id": "23756327564",
+      "type": "PushEvent",
+      "created_at": "2026-10-12T08:13:33Z",
+      "repo": {
+        "name": "aspire488/inspect_ai"
+      },
+      "payload": {
+        "ref": "refs/heads/fix/bridge-cached-input-usage"
+      }
+    },
+    {
+      "id": "23756276213",
+      "type": "PushEvent",
+      "created_at": "2026-10-12T08:12:43Z",
+      "repo": {
+        "name": "aspire488/Universal-Engineering-Augmentation"
+      },
+      "payload": {
+        "ref": "refs/heads/feat/tree-sitter-go-rust"
+      }
+    },
+    {
+      "id": "23756239832",
+      "type": "PushEvent",
+      "created_at": "2026-10-12T08:12:25Z",
+      "repo": {
+        "name": "aspire488/PyRIT"
+      },
+      "payload": {
+        "ref": "refs/heads/fix/objective-evaluator-assistant-messages"
+      }
+    },
+    {
+      "id": "23737429991",
+      "type": "PushEvent",
+      "created_at": "2026-10-11T17:23:06Z",
+      "repo": {
+        "name": "aspire488/aspire488"
+      },
+      "payload": {
+        "ref": "refs/heads/main"
+      }
+    },
+    {
+      "id": "23729564119",
+      "type": "PushEvent",
+      "created_at": "2026-10-10T05:55:54Z",
+      "repo": {
+        "name": "aspire488/Universal-Engineering-Augmentation"
+      },
+      "payload": {
+        "ref": "refs/heads/feat/tree-sitter-go-rust"
+      }
+    },
+    {
+      "id": "23729496160",
+      "type": "PushEvent",
+      "created_at": "2026-10-10T05:54:06Z",
+      "repo": {
+        "name": "aspire488/Universal-Engineering-Augmentation"
+      },
+      "payload": {
+        "ref": "refs/heads/feat/tree-sitter-go-rust"
+      }
+    },
+    {
+      "id": "23728334391",
+      "type": "PushEvent",
+      "created_at": "2026-10-11T15:36:02Z",
+      "repo": {
+        "name": "aspire488/campus-bus"
+      },
+      "payload": {
+        "ref": "refs/heads/main"
+      }
+    },
+    {
+      "id": "23725763310",
+      "type": "PushEvent",
+      "created_at": "2026-10-11T14:43:41Z",
+      "repo": {
+        "name": "aspire488/campus-bus"
+      },
+      "payload": {
+        "ref": "refs/heads/main"
+      }
+    },
+    {
+      "id": "23712232161",
+      "type": "PushEvent",
+      "created_at": "2026-10-11T11:27:16Z",
+      "repo": {
+        "name": "aspire488/campus-bus"
+      },
+      "payload": {
+        "ref": "refs/heads/main"
+      }
+    },
+    {
+      "id": "23704099974",
+      "type": "PushEvent",
+      "created_at": "2026-10-10T05:54:23Z",
+      "repo": {
+        "name": "aspire488/Universal-Engineering-Augmentation"
+      },
+      "payload": {
+        "ref": "refs/heads/feat/tree-sitter-go-rust"
+      }
+    },
+    {
+      "id": "23700562751",
+      "type": "PushEvent",
+      "created_at": "2026-10-11T16:46:26Z",
+      "repo": {
+        "name": "aspire488/aspire488"
+      },
+      "payload": {
+        "ref": "refs/heads/main"
+      }
+    },
+    {
+      "id": "16947958256",
+      "type": "ReleaseEvent",
+      "created_at": "2026-10-11T14:47:42Z",
+      "repo": {
+        "name": "aspire488/campus-bus"
+      },
+      "payload": {
+        "action": "published",
+        "release": {
+          "tag_name": "v1.0",
+          "name": "CAMPUS BUS 1.0 for Windows",
+          "html_url": "https://github.com/aspire488/campus-bus/releases/tag/v1.0"
+        }
+      }
+    },
+    {
+      "id": "23693012235",
+      "type": "PushEvent",
+      "created_at": "2026-10-11T14:45:51Z",
+      "repo": {
+        "name": "aspire488/campus-bus"
+      },
+      "payload": {
+        "ref": "refs/heads/main"
+      }
+    },
+    {
+      "id": "23692698277",
+      "type": "PushEvent",
+      "created_at": "2026-10-11T14:40:42Z",
+      "repo": {
+        "name": "aspire488/campus-bus"
+      },
+      "payload": {
+        "ref": "refs/heads/main"
+      }
+    }
+  ],
+  "prs": [
+    {
+      "repo": "microsoft/PyRIT",
+      "number": 3309,
+      "title": "Fix/1912 role play preamble",
+      "state": "open",
+      "url": "https://github.com/microsoft/PyRIT/pull/3309",
+      "date": null
+    },
+    {
+      "repo": "OpenHands/OpenHands",
+      "number": 17579,
+      "title": "fix(settings): align condenser max size with agent-server minimum",
+      "state": "open",
+      "url": "https://github.com/OpenHands/OpenHands/pull/17579",
+      "date": null
+    },
+    {
+      "repo": "aspire488/PyRIT",
+      "number": 3,
+      "title": "fix: score only assistant messages in objective evaluator",
+      "state": "open",
+      "url": "https://github.com/aspire488/PyRIT/pull/3",
+      "date": null
+    },
+    {
+      "repo": "aspire488/Universal-Engineering-Augmentation",
+      "number": 22,
+      "title": "feat: add Go and Rust structural analysis",
+      "state": "open",
+      "url": "https://github.com/aspire488/Universal-Engineering-Augmentation/pull/22",
+      "date": null
+    },
+    {
+      "repo": "UKGovernmentBEIS/inspect_ai",
+      "number": 5672,
+      "title": "fix(usage): preserve cached input tokens across provider bridges",
+      "state": "open",
+      "url": "https://github.com/UKGovernmentBEIS/inspect_ai/pull/5672",
+      "date": null
+    },
+    {
+      "repo": "UKGovernmentBEIS/inspect_ai",
+      "number": 5675,
+      "title": "fix: preserve the error when converting a log with --stream",
+      "state": "open",
+      "url": "https://github.com/UKGovernmentBEIS/inspect_ai/pull/5675",
+      "date": null
+    },
+    {
+      "repo": "UKGovernmentBEIS/inspect_ai",
+      "number": 5671,
+      "title": "fix(tools): convert structured validation failures to parsing errors",
+      "state": "open",
+      "url": "https://github.com/UKGovernmentBEIS/inspect_ai/pull/5671",
+      "date": null
+    },
+    {
+      "repo": "NousResearch/hermes-agent",
+      "number": 134658,
+      "title": "fix(web): use type-only imports for session source types",
+      "state": "open",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/134658",
+      "date": null
+    },
+    {
+      "repo": "collective/icalendar",
+      "number": 1835,
+      "title": "Fix/start end duration mismatch",
+      "state": "open",
+      "url": "https://github.com/collective/icalendar/pull/1835",
+      "date": null
+    },
+    {
+      "repo": "cloudflare/quiche",
+      "number": 2756,
+      "title": "refactor: unify PTO-based timer duration",
+      "state": "open",
+      "url": "https://github.com/cloudflare/quiche/pull/2756",
+      "date": null
+    },
+    {
+      "repo": "cloudflare/quiche",
+      "number": 2758,
+      "title": "fix(client): verify peers when using a custom CA",
+      "state": "open",
+      "url": "https://github.com/cloudflare/quiche/pull/2758",
+      "date": null
+    },
+    {
+      "repo": "cloudflare/quiche",
+      "number": 2759,
+      "title": "fix(reno): ignore ACKs for non-in-flight packets",
+      "state": "open",
+      "url": "https://github.com/cloudflare/quiche/pull/2759",
+      "date": null
+    },
+    {
+      "repo": "NousResearch/hermes-agent",
+      "number": 123850,
+      "title": "fix(batch): keep tool-search bridge trajectories",
+      "state": "open",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/123850",
+      "date": null
+    },
+    {
+      "repo": "mvt-project/mvt",
+      "number": 939,
+      "title": "Fix/stix indicator equals",
+      "state": "open",
+      "url": "https://github.com/mvt-project/mvt/pull/939",
+      "date": null
+    },
+    {
+      "repo": "NousResearch/hermes-agent",
+      "number": 123846,
+      "title": "fix(batch): accept Fire tuple args and numeric run names",
+      "state": "open",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/123846",
+      "date": null
+    },
+    {
+      "repo": "Younesfdj/gitfut",
+      "number": 125,
+      "title": "Fix/active years from contributions",
+      "state": "open",
+      "url": "https://github.com/Younesfdj/gitfut/pull/125",
+      "date": null
+    },
+    {
+      "repo": "NVIDIA/garak",
+      "number": 2234,
+      "title": "Fix/paraphrase transformers compat",
+      "state": "open",
+      "url": "https://github.com/NVIDIA/garak/pull/2234",
+      "date": null
+    },
+    {
+      "repo": "aspire488/RAMPART",
+      "number": 2,
+      "title": "feat: add generic PyRIT converter bridge",
+      "state": "open",
+      "url": "https://github.com/aspire488/RAMPART/pull/2",
+      "date": null
+    },
+    {
+      "repo": "risingwavelabs/risingwave",
+      "number": 27181,
+      "title": "fix(optimizer): inspect correlated refs in LogicalValues",
+      "state": "open",
+      "url": "https://github.com/risingwavelabs/risingwave/pull/27181",
+      "date": null
+    },
+    {
+      "repo": "aspire488/siyuan",
+      "number": 1,
+      "title": "fix(mcp): recover from expired MCP sessions without unsafe replay",
+      "state": "open",
+      "url": "https://github.com/aspire488/siyuan/pull/1",
+      "date": null
+    },
+    {
+      "repo": "KARAN-D05/TopoCore",
+      "number": 1,
+      "title": "feat(simulator): detect repeated spatial execution states",
+      "state": "open",
+      "url": "https://github.com/KARAN-D05/TopoCore/pull/1",
+      "date": null
+    },
+    {
+      "repo": "aspire488/inspect_ai",
+      "number": 1,
+      "title": "fix: base64 encode Google inline image bytes",
+      "state": "open",
+      "url": "https://github.com/aspire488/inspect_ai/pull/1",
+      "date": null
+    },
+    {
+      "repo": "aspire488/garak",
+      "number": 1,
+      "title": "fix: handle unset soft prompt cap in IterativeProbe",
+      "state": "open",
+      "url": "https://github.com/aspire488/garak/pull/1",
+      "date": null
+    },
+    {
+      "repo": "aspire488/RAMPART",
+      "number": 1,
+      "title": "[FEAT]: Add adaptive multi-turn XPIA execution",
+      "state": "open",
+      "url": "https://github.com/aspire488/RAMPART/pull/1",
+      "date": null
+    },
+    {
+      "repo": "aspire488/PyRIT",
+      "number": 1,
+      "title": "FIX use canonical technique names in scenario run summaries",
+      "state": "open",
+      "url": "https://github.com/aspire488/PyRIT/pull/1",
+      "date": null
+    },
+    {
+      "repo": "aspire488/gh-ops",
+      "number": 2,
+      "title": "fix(ci): use supported setuptools build backend",
+      "state": "open",
+      "url": "https://github.com/aspire488/gh-ops/pull/2",
+      "date": null
+    },
+    {
+      "repo": "coder/coder",
+      "number": 29668,
+      "title": "fix: deduplicate Unknown AI Gateway clients",
+      "state": "open",
+      "url": "https://github.com/coder/coder/pull/29668",
+      "date": null
+    },
+    {
+      "repo": "RajX-dev/N3MO",
+      "number": 39,
+      "title": "test: cover Ruby and Kotlin language routing",
+      "state": "open",
+      "url": "https://github.com/RajX-dev/N3MO/pull/39",
+      "date": null
+    },
+    {
+      "repo": "intellij-powershell/intellij-powershell",
+      "number": 506,
+      "title": "Fix/431 resolve pwsh reparse point",
+      "state": "open",
+      "url": "https://github.com/intellij-powershell/intellij-powershell/pull/506",
+      "date": null
+    },
+    {
+      "repo": "aspire488/cognee",
+      "number": 2,
+      "title": "Fix/telemetry error type",
+      "state": "open",
+      "url": "https://github.com/aspire488/cognee/pull/2",
+      "date": null
+    },
+    {
+      "repo": "aspire488/cognee",
+      "number": 1,
+      "title": "Fix/4957 active agent status",
+      "state": "open",
+      "url": "https://github.com/aspire488/cognee/pull/1",
+      "date": null
+    },
+    {
+      "repo": "aspire488/Universal-Engineering-Augmentation",
+      "number": 15,
+      "title": "docs: publish agent adapter and CLI integration",
+      "state": "open",
+      "url": "https://github.com/aspire488/Universal-Engineering-Augmentation/pull/15",
+      "date": null
+    },
+    {
+      "repo": "aspire488/aspire488",
+      "number": 3,
+      "title": "docs: refresh portfolio with current engineering activity",
+      "state": "open",
+      "url": "https://github.com/aspire488/aspire488/pull/3",
+      "date": null
+    },
+    {
+      "repo": "tysoncung/ai-platform-aws",
+      "number": 4,
+      "title": "Fix/provider routing specificity",
+      "state": "open",
+      "url": "https://github.com/tysoncung/ai-platform-aws/pull/4",
+      "date": null
+    },
+    {
+      "repo": "aspire488/linguist",
+      "number": 1,
+      "title": "Trim .example suffix before language detection",
+      "state": "open",
+      "url": "https://github.com/aspire488/linguist/pull/1",
+      "date": null
+    },
+    {
+      "repo": "adityamallia7/GoalAI-Score-predictor-26",
+      "number": 1,
+      "title": "feat: add Prediction Intelligence Lab with reproducible Monte Carlo analysis",
+      "state": "open",
+      "url": "https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1",
+      "date": null
+    },
+    {
+      "repo": "microsoft/PyRIT",
+      "number": 2976,
+      "title": "FIX Preserve word-selection parameters in StringJoinConverter identifiers",
+      "state": "merged",
+      "url": "https://github.com/microsoft/PyRIT/pull/2976",
+      "date": "2026-10-06T00:54:56Z"
+    },
+    {
+      "repo": "UKGovernmentBEIS/inspect_ai",
+      "number": 5670,
+      "title": "fix(google): prefer explicit API keys over ambient ADC",
+      "state": "merged",
+      "url": "https://github.com/UKGovernmentBEIS/inspect_ai/pull/5670",
+      "date": "2026-10-04T22:13:12Z"
+    },
+    {
+      "repo": "aspire488/Pipo",
+      "number": 1,
+      "title": "feat: add Pipo web version",
+      "state": "merged",
+      "url": "https://github.com/aspire488/Pipo/pull/1",
+      "date": "2026-10-02T15:22:57Z"
+    },
+    {
+      "repo": "microsoft/PyRIT",
+      "number": 2882,
+      "title": "Fix: exact text matching empty target",
+      "state": "merged",
+      "url": "https://github.com/microsoft/PyRIT/pull/2882",
+      "date": "2026-09-28T04:48:34Z"
+    },
+    {
+      "repo": "Agent-Field/agentfield",
+      "number": 1073,
+      "title": "test(go): cover explicit harness provider factory paths",
+      "state": "merged",
+      "url": "https://github.com/Agent-Field/agentfield/pull/1073",
+      "date": "2026-09-26T13:21:59Z"
+    },
+    {
+      "repo": "PicadoLabs/agent-bench",
+      "number": 8,
+      "title": "feat(ui): add global command palette",
+      "state": "merged",
+      "url": "https://github.com/PicadoLabs/agent-bench/pull/8",
+      "date": "2026-09-26T03:04:47Z"
+    },
+    {
+      "repo": "microsoft/PyRIT",
+      "number": 2823,
+      "title": "FIX Use harmbench context string where available",
+      "state": "merged",
+      "url": "https://github.com/microsoft/PyRIT/pull/2823",
+      "date": "2026-09-25T05:45:12Z"
+    },
+    {
+      "repo": "eumemic/aios",
+      "number": 2458,
+      "title": "fix(harness): record streaming length as truncated output",
+      "state": "merged",
+      "url": "https://github.com/eumemic/aios/pull/2458",
+      "date": "2026-09-24T14:16:39Z"
+    },
+    {
+      "repo": "microsoft/PyRIT",
+      "number": 2762,
+      "title": "FEAT Add dataset summary API",
+      "state": "merged",
+      "url": "https://github.com/microsoft/PyRIT/pull/2762",
+      "date": "2026-09-24T04:01:21Z"
+    },
+    {
+      "repo": "eumemic/aios",
+      "number": 2459,
+      "title": "fix(workflow): preserve timeout bound in child outcome",
+      "state": "merged",
+      "url": "https://github.com/eumemic/aios/pull/2459",
+      "date": "2026-09-24T02:09:39Z"
+    },
+    {
+      "repo": "0xarchit/github-profile-analyzer",
+      "number": 30,
+      "title": "Fix/impact score evidence",
+      "state": "merged",
+      "url": "https://github.com/0xarchit/github-profile-analyzer/pull/30",
+      "date": "2026-09-23T15:31:36Z"
+    },
+    {
+      "repo": "eumemic/aios",
+      "number": 2457,
+      "title": "fix: preserve length finish reason across streaming trailers",
+      "state": "merged",
+      "url": "https://github.com/eumemic/aios/pull/2457",
+      "date": "2026-09-23T05:34:46Z"
+    },
+    {
+      "repo": "eumemic/aios",
+      "number": 2460,
+      "title": "fix(completion): preserve LiteLLM parameter translation",
+      "state": "merged",
+      "url": "https://github.com/eumemic/aios/pull/2460",
+      "date": "2026-09-23T09:00:50Z"
+    },
+    {
+      "repo": "aspire488/gh-ops",
+      "number": 1,
+      "title": "ci: add GitHub Actions validation workflow",
+      "state": "merged",
+      "url": "https://github.com/aspire488/gh-ops/pull/1",
+      "date": "2026-09-22T17:40:08Z"
+    },
+    {
+      "repo": "aspire488/aspire488",
+      "number": 8,
+      "title": "docs: add technology and tooling badges",
+      "state": "merged",
+      "url": "https://github.com/aspire488/aspire488/pull/8",
+      "date": "2026-09-21T08:26:19Z"
+    },
+    {
+      "repo": "aspire488/aspire488",
+      "number": 4,
+      "title": "chore: upgrade GitHub profile engineering workflow",
+      "state": "merged",
+      "url": "https://github.com/aspire488/aspire488/pull/4",
+      "date": "2026-09-11T15:59:25Z"
+    },
+    {
+      "repo": "aspire488/aspire488",
+      "number": 2,
+      "title": "docs: make profile an engineering portfolio",
+      "state": "merged",
+      "url": "https://github.com/aspire488/aspire488/pull/2",
+      "date": "2026-09-10T17:04:37Z"
+    },
+    {
+      "repo": "aspire488/codeflow",
+      "number": 25,
+      "title": "ci: add repeatable tagged release workflow",
+      "state": "merged",
+      "url": "https://github.com/aspire488/codeflow/pull/25",
+      "date": "2026-09-10T17:04:32Z"
+    },
+    {
+      "repo": "aspire488/medimind",
+      "number": 11,
+      "title": "test: add browser regression coverage for demo roles",
+      "state": "merged",
+      "url": "https://github.com/aspire488/medimind/pull/11",
+      "date": "2026-09-10T17:04:25Z"
+    },
+    {
+      "repo": "aspire488/Universal-Engineering-Augmentation",
+      "number": 14,
+      "title": "ci: automate tagged releases and validate changelog",
+      "state": "merged",
+      "url": "https://github.com/aspire488/Universal-Engineering-Augmentation/pull/14",
+      "date": "2026-09-10T17:04:19Z"
+    },
+    {
+      "repo": "aspire488/medimind",
+      "number": 10,
+      "title": "docs: strengthen MediMind engineering portfolio README",
+      "state": "merged",
+      "url": "https://github.com/aspire488/medimind/pull/10",
+      "date": "2026-09-10T16:47:26Z"
+    },
+    {
+      "repo": "aspire488/codeflow",
+      "number": 23,
+      "title": "docs: strengthen CodeFlow engineering portfolio README",
+      "state": "merged",
+      "url": "https://github.com/aspire488/codeflow/pull/23",
+      "date": "2026-09-10T16:46:54Z"
+    },
+    {
+      "repo": "aspire488/aspire488",
+      "number": 1,
+      "title": "feat: turn profile into engineering portfolio",
+      "state": "merged",
+      "url": "https://github.com/aspire488/aspire488/pull/1",
+      "date": "2026-09-10T16:42:15Z"
+    },
+    {
+      "repo": "aspire488/medimind",
+      "number": 3,
+      "title": "docs: define safety and testing contract",
+      "state": "merged",
+      "url": "https://github.com/aspire488/medimind/pull/3",
+      "date": "2026-09-10T16:41:26Z"
+    },
+    {
+      "repo": "aspire488/codeflow",
+      "number": 19,
+      "title": "docs: define CodeFlow engineering model",
+      "state": "merged",
+      "url": "https://github.com/aspire488/codeflow/pull/19",
+      "date": "2026-09-10T16:41:01Z"
+    },
+    {
+      "repo": "aspire488/Universal-Engineering-Augmentation",
+      "number": 9,
+      "title": "feat: add reproducible deterministic benchmark harness",
+      "state": "merged",
+      "url": "https://github.com/aspire488/Universal-Engineering-Augmentation/pull/9",
+      "date": "2026-09-10T16:40:00Z"
+    },
+    {
+      "repo": "aspire488/codeflow",
+      "number": 17,
+      "title": "chore: harden prototype for public development",
+      "state": "merged",
+      "url": "https://github.com/aspire488/codeflow/pull/17",
+      "date": "2026-09-10T16:29:29Z"
+    },
+    {
+      "repo": "aspire488/medimind",
+      "number": 1,
+      "title": "chore: harden prototype for public development",
+      "state": "merged",
+      "url": "https://github.com/aspire488/medimind/pull/1",
+      "date": "2026-09-10T16:29:10Z"
+    },
+    {
+      "repo": "aspire488/Universal-Engineering-Augmentation",
+      "number": 7,
+      "title": "ci: validate canonical package installation",
+      "state": "merged",
+      "url": "https://github.com/aspire488/Universal-Engineering-Augmentation/pull/7",
+      "date": "2026-09-10T16:07:15Z"
+    },
+    {
+      "repo": "aspire488/Universal-Engineering-Augmentation",
+      "number": 5,
+      "title": "chore: add canonical Python packaging",
+      "state": "merged",
+      "url": "https://github.com/aspire488/Universal-Engineering-Augmentation/pull/5",
+      "date": "2026-09-10T16:06:34Z"
+    },
+    {
+      "repo": "aspire488/AURA",
+      "number": 1,
+      "title": " README.md",
+      "state": "merged",
+      "url": "https://github.com/aspire488/AURA/pull/1",
+      "date": "2026-06-28T18:19:43Z"
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+/* ============================================================
+   Hero — poster type, live status, one bleeding plate band
+   ============================================================ */
+
+.hero {
+  position: relative;
+  padding: clamp(3rem, 9vh, 6.5rem) var(--gutter) var(--s-8);
+}
+
+.hero__type {
+  max-width: var(--max-w);
+}
+
+.hero__title {
+  margin: 0;
+}
+
+.hero__title .line-mask + .line-mask {
+  margin-left: clamp(0rem, 6vw, 5.5rem);
+}
+
+/* the signal rule draws itself across under the name */
+.hero__rule {
+  display: block;
+  height: 4px;
+  max-width: 44rem;
+  margin-top: var(--s-5);
+  background: var(--signal);
+  transform-origin: left center;
+}
+
+.js-ready .hero__rule[data-reveal] {
+  opacity: 1;
+  transform: scaleX(0);
+}
+
+.js-ready .hero__rule[data-reveal].is-revealed {
+  opacity: 1;
+  transform: scaleX(1);
+  transition: transform 1100ms var(--ease) 150ms;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--s-6) var(--s-7);
+  align-items: start;
+  max-width: var(--max-w);
+  margin-top: var(--s-6);
+}
+
+.hero__intro-note {
+  margin-top: var(--s-4);
+  font-size: var(--text-s);
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: var(--s-5);
+  padding-bottom: 0.3rem;
+  font-size: var(--text-s);
+  font-weight: 700;
+  color: var(--ink);
+  border-bottom: 2px solid var(--ink);
+  transition:
+    color var(--dur-1) var(--ease),
+    border-color var(--dur-1) var(--ease);
+}
+
+.hero__cta svg {
+  font-size: 1.05em;
+  transition: transform var(--dur-2) var(--ease);
+}
+
+.hero__cta:hover {
+  color: var(--cobalt);
+  border-bottom-color: var(--cobalt);
+}
+
+.hero__cta:hover svg {
+  transform: translateY(3px);
+}
+
+/* --- live status panel ------------------------------------------- */
+
+.hero__live {
+  padding: var(--s-5);
+  background: var(--surface);
+  border: var(--rule-w) solid var(--rule);
+  border-top: 2px solid var(--ink);
+  box-shadow: var(--plate-shadow);
+}
+
+.hero__source {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: var(--text-xs);
+  color: var(--ink-2);
+}
+
+.hero__dot {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--ink-3);
+}
+
+.hero__dot.is-live {
+  background: var(--cobalt);
+  box-shadow: 0 0 0 3px var(--cobalt-wash);
+  animation: pulse 2.4s var(--ease-io) infinite;
+}
+
+.hero__dot.is-snapshot {
+  background: var(--signal);
+  box-shadow: 0 0 0 3px var(--signal-wash);
+}
+
+.hero__stats {
+  display: grid;
+  /* shrinkable: tracks prefer one line but can shrink to the longest word
+     instead of overflowing a narrow panel. */
+  grid-template-columns: repeat(3, minmax(min-content, max-content));
+  justify-content: start;
+  gap: var(--s-4);
+  margin-top: var(--s-5);
+}
+
+.hero__figure {
+  margin-top: 0.35rem;
+  font-size: var(--text-xl);
+  font-weight: 800;
+  font-stretch: 110%;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.hero__figure--sm {
+  font-size: var(--text-base);
+  text-transform: none;
+}
+
+.hero__notice {
+  margin-top: var(--s-4);
+  padding-top: var(--s-3);
+  font-size: var(--text-xs);
+  color: var(--ink-3);
+  border-top: var(--rule-w) solid var(--rule);
+}
+
+/* --- bleeding band ------------------------------------------------- */
+
+.hero__band {
+  margin-top: var(--s-7);
+  margin-right: calc(var(--gutter) * -1);
+  padding-top: var(--s-4);
+  border-top: var(--rule-w) solid var(--rule);
+}
+
+.hero__band img {
+  width: 100%;
+  height: clamp(9rem, 24vh, 15rem);
+  object-fit: cover;
+  object-position: 50% 58%;
+  background: var(--surface-2);
+}
+
+.hero__band figcaption {
+  margin-top: var(--s-3);
+  padding-right: var(--gutter);
+  font-size: var(--text-xs);
+  color: var(--ink-3);
+}
+
+@media (max-width: 900px) {
+  .hero__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* the three figures fall back to two columns rather than clipping */
+  .hero__stats {
+    grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+    gap: var(--s-4) var(--s-3);
+  }
+
+  .hero__title .line-mask + .line-mask {
+    margin-left: 0;
+  }
+
+  .hero__band {
+    margin-right: calc(var(--gutter) * -1);
+    margin-left: calc(var(--gutter) * -1);
+  }
+
+  .hero__band figcaption {
+    padding-right: var(--gutter);
+    padding-left: var(--gutter);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__dot.is-live {
+    animation: none;
+  }
+}

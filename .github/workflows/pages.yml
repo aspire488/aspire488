@@ -1,0 +1,83 @@
+# Deploys the interactive edition in site/ to GitHub Pages.
+# Kept separate from profile-cards.yml and quality.yml: this workflow only
+# builds the site, runs its checks, and publishes the Pages artifact.
+name: Deploy site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+# Least privilege for the build; the deploy job elevates for Pages + OIDC.
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install dependencies
+        working-directory: site
+        run: npm ci
+
+      # Build-time snapshot (profile, repositories, languages, events, PR
+      # states) with GITHUB_TOKEN so the deployed site has an offline-safe
+      # fallback. Failures degrade to live reads; they never fabricate data.
+      - name: Capture GitHub data snapshot
+        working-directory: site
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/snapshot.mjs
+
+      - name: Type-check
+        working-directory: site
+        run: npm run typecheck
+
+      - name: Test
+        working-directory: site
+        run: npm test
+
+      - name: Build
+        working-directory: site
+        run: npm run build
+        env:
+          BASE_PATH: /aspire488/
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: site/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

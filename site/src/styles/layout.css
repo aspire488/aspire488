@@ -1,0 +1,540 @@
+/* ============================================================
+   Shell — fixed identity rail, section frame, colophon
+   ============================================================ */
+
+#page {
+  min-height: 100vh;
+}
+
+.content {
+  margin-left: var(--rail-w);
+}
+
+/* ------------------------------ the rail ------------------------------ */
+
+.rail {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 60;
+  width: var(--rail-w);
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border-right: var(--rule-w) solid var(--rule);
+}
+
+.rail__bar {
+  padding: var(--s-5) var(--s-5) var(--s-4);
+  border-bottom: var(--rule-w) solid var(--rule);
+}
+
+.rail__wordmark {
+  display: grid;
+  gap: 0.15rem;
+  text-decoration: none;
+}
+
+.rail__name {
+  font-weight: 800;
+  font-stretch: 114%;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.rail__handle {
+  color: var(--ink-3);
+  font-size: var(--text-xs);
+}
+
+.rail__nav {
+  flex: 1;
+  padding-top: var(--s-5);
+  overflow-y: auto;
+}
+
+.rail__nav ul {
+  display: grid;
+}
+
+.rail__nav a {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: 0.5rem var(--s-5);
+  font-size: var(--text-s);
+  font-weight: 600;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition:
+    color var(--dur-1) var(--ease),
+    background-color var(--dur-1) var(--ease);
+}
+
+.rail__nav a:hover {
+  color: var(--ink);
+  background: var(--hover);
+}
+
+.rail__nav a[aria-current='true'] {
+  color: var(--ink);
+  border-left-color: var(--cobalt);
+}
+
+.rail__marker {
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border: 1px solid var(--rule-strong);
+  background: transparent;
+  transition:
+    background-color var(--dur-1) var(--ease),
+    border-color var(--dur-1) var(--ease);
+}
+
+.rail__nav a[aria-current='true'] .rail__marker {
+  background: var(--cobalt);
+  border-color: var(--cobalt);
+}
+
+.rail__nav-foot {
+  margin-top: var(--s-6);
+  padding: 0 var(--s-5) var(--s-5);
+}
+
+.rail__gh {
+  color: var(--ink-3);
+  font-size: var(--text-xs);
+  text-decoration: none;
+}
+
+.rail__gh:hover {
+  color: var(--cobalt);
+  text-decoration: underline;
+}
+
+.rail__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-4) var(--s-4);
+  border-top: var(--rule-w) solid var(--rule);
+}
+
+.rail__icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  flex: none;
+  font-size: 1.1rem;
+  color: var(--ink);
+  border: var(--rule-w) solid var(--rule-strong);
+  border-radius: 2px;
+  transition:
+    background-color var(--dur-1) var(--ease),
+    color var(--dur-1) var(--ease),
+    border-color var(--dur-1) var(--ease);
+}
+
+.rail__icon-btn:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.rail__palette {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex: 1;
+  min-width: 0;
+  padding: 0.5rem 0.6rem;
+  font-size: var(--text-s);
+  font-weight: 600;
+  color: var(--ink-2);
+  border: var(--rule-w) solid var(--rule-strong);
+  border-radius: 2px;
+  transition:
+    color var(--dur-1) var(--ease),
+    border-color var(--dur-1) var(--ease),
+    background-color var(--dur-1) var(--ease);
+}
+
+.rail__palette:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+  background: var(--hover);
+}
+
+.rail__palette kbd {
+  margin-left: auto;
+  padding: 0.05rem 0.3rem;
+  font-size: 11px;
+  color: var(--ink-3);
+  border: var(--rule-w) solid var(--rule);
+  border-radius: 2px;
+}
+
+.rail__menu-btn {
+  display: none;
+}
+
+/* page-progress spine on the rail's edge */
+.rail__progress {
+  position: absolute;
+  top: 0;
+  right: -1px;
+  bottom: 0;
+  width: 1px;
+  background: var(--rule);
+  pointer-events: none;
+}
+
+.rail__progress-fill {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: calc(var(--progress, 0) * 100%);
+  background: var(--cobalt);
+}
+
+.rail__progress-fill::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cobalt);
+  transform: translateX(-50%);
+}
+
+/* ------------------------------ sections ------------------------------ */
+
+.work,
+.sources,
+.upstream {
+  max-width: calc(var(--max-w) + var(--gutter) * 2);
+  padding: var(--s-9) var(--gutter) var(--s-8);
+  border-top: var(--rule-w) solid var(--rule);
+}
+
+.section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--s-4) var(--s-6);
+  align-items: end;
+  padding-bottom: var(--s-5);
+  border-bottom: var(--rule-w) solid var(--rule);
+  margin-bottom: var(--s-6);
+}
+
+.section-head .prose {
+  font-size: var(--text-s);
+}
+
+/* ------------------------------ colophon ------------------------------ */
+
+.colophon {
+  margin-top: var(--s-8);
+  padding: var(--s-8) var(--gutter) var(--s-7);
+  background: var(--surface);
+  border-top: 2px solid var(--ink);
+}
+
+.colophon__top {
+  display: grid;
+  gap: var(--s-4);
+  max-width: 48rem;
+  margin-bottom: var(--s-7);
+}
+
+.colophon__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s-6) var(--s-7);
+}
+
+.colophon__label {
+  font-size: var(--text-xs);
+  color: var(--ink-3);
+  margin-bottom: var(--s-4);
+  padding-bottom: var(--s-2);
+  border-bottom: var(--rule-w) solid var(--rule);
+}
+
+.colophon__links li {
+  padding: 0.35rem 0;
+}
+
+.colophon__links a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-weight: 600;
+  font-size: var(--text-s);
+  color: var(--cobalt);
+  text-decoration: none;
+}
+
+.colophon__links a:hover {
+  text-decoration: underline;
+}
+
+.keys div {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: var(--s-3);
+  align-items: center;
+  padding: 0.4rem 0;
+  font-size: var(--text-s);
+}
+
+.keys dd {
+  color: var(--ink-2);
+}
+
+kbd {
+  display: inline-block;
+  padding: 0.15rem 0.4rem;
+  font-size: 11px;
+  color: var(--ink-2);
+  background: var(--paper);
+  border: var(--rule-w) solid var(--rule-strong);
+  border-radius: 2px;
+}
+
+.colophon__theme {
+  margin-top: var(--s-4);
+}
+
+.colophon__note {
+  font-size: var(--text-s);
+  margin-bottom: var(--s-4);
+}
+
+.colophon__signoff {
+  color: var(--ink-3);
+}
+
+/* ------------------------------ shared bits ------------------------------ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.95rem;
+  font-size: var(--text-s);
+  font-weight: 700;
+  color: var(--paper);
+  background: var(--ink);
+  border: var(--rule-w) solid var(--ink);
+  border-radius: 2px;
+  transition:
+    background-color var(--dur-1) var(--ease),
+    border-color var(--dur-1) var(--ease),
+    color var(--dur-1) var(--ease);
+}
+
+.btn:hover {
+  background: var(--cobalt);
+  border-color: var(--cobalt);
+}
+
+.btn--ghost {
+  color: var(--ink);
+  background: transparent;
+  border-color: var(--rule-strong);
+}
+
+.btn--ghost:hover {
+  color: var(--ink);
+  background: var(--hover);
+  border-color: var(--ink);
+}
+
+.btn[disabled] {
+  opacity: 0.55;
+  cursor: progress;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem 0.75rem;
+  font-size: var(--text-xs);
+  color: var(--ink-2);
+  background: var(--surface);
+  border: var(--rule-w) solid var(--rule-strong);
+  border-radius: 2px;
+}
+
+.badge__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ink-3);
+}
+
+.badge--is-live .badge__dot {
+  background: var(--cobalt);
+  box-shadow: 0 0 0 3px var(--cobalt-wash);
+}
+
+.badge--is-snapshot .badge__dot {
+  background: var(--signal);
+  box-shadow: 0 0 0 3px var(--signal-wash);
+}
+
+.notice {
+  padding: var(--s-3) var(--s-4);
+  margin-bottom: var(--s-5);
+  font-size: var(--text-s);
+  color: var(--ink);
+  background: var(--signal-wash);
+  border-left: 3px solid var(--signal);
+}
+
+.ext {
+  font-size: 0.7em;
+  color: var(--ink-3);
+  align-self: center;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  padding: 0.05em 0.3em;
+  background: var(--surface-2);
+  border-radius: 2px;
+}
+
+/* ------------------------------ responsive ------------------------------ */
+
+@media (max-width: 1099px) {
+  :root {
+    --rail-w: 0px;
+  }
+
+  html {
+    scroll-padding-top: 4.75rem;
+  }
+
+  .content {
+    margin-left: 0;
+    padding-top: 3.5rem;
+  }
+
+  .rail {
+    inset: 0 0 auto 0;
+    width: auto;
+    height: 3.5rem;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--s-3);
+    padding: 0 var(--s-4);
+    border-right: 0;
+    border-bottom: var(--rule-w) solid var(--rule);
+  }
+
+  .rail__bar {
+    flex: 1;
+    min-width: 0;
+    padding: 0;
+    border-bottom: 0;
+  }
+
+  .rail__name {
+    font-size: 1rem;
+  }
+
+  .rail__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    padding-top: var(--s-3);
+    background: var(--paper);
+    border-bottom: var(--rule-w) solid var(--rule);
+    box-shadow: var(--plate-shadow);
+  }
+
+  .rail__nav[data-open] {
+    display: block;
+  }
+
+  .rail__nav a {
+    padding: 0.7rem var(--s-5);
+    font-size: var(--text-base);
+  }
+
+  .rail__nav-foot {
+    margin-top: var(--s-3);
+    padding-bottom: var(--s-4);
+  }
+
+  .rail__controls {
+    border-top: 0;
+    padding: 0;
+  }
+
+  .rail__palette-label,
+  .rail__palette kbd {
+    display: none;
+  }
+
+  .rail__palette {
+    flex: none;
+    padding: 0.5rem 0.55rem;
+  }
+
+  .rail__menu-btn {
+    display: inline-grid;
+  }
+
+  .rail__progress {
+    top: auto;
+    right: 0;
+    left: 0;
+    bottom: -2px;
+    width: auto;
+    height: 2px;
+  }
+
+  .rail__progress-fill {
+    width: calc(var(--progress, 0) * 100%);
+    height: 100%;
+  }
+
+  .rail__progress-fill::after {
+    bottom: auto;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 899px) {
+  .section-head {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .colophon__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--s-7);
+  }
+
+  .work,
+  .sources,
+  .upstream {
+    padding-top: var(--s-8);
+    padding-bottom: var(--s-7);
+  }
+}
