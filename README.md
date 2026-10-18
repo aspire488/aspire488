@@ -35,7 +35,7 @@ A selection of shipped projects and ongoing engineering work. This is a curated 
 
 | Project | Overview | Status / links |
 |---|---|---|
-| 🚌 **[Campus Bus](https://github.com/aspire488/campus-bus)** | Java desktop bus-reservation system with seat selection, student bookings, cancellations, admin tools, PDF passes, and email confirmations. | **v1.1 released for Windows x64** · [Download](https://github.com/aspire488/campus-bus/releases/tag/v1.1) · [Release audit](https://github.com/aspire488/campus-bus/blob/main/docs/final-release-audit.md) |
+| 🚌 **[Campus Bus](https://github.com/aspire488/campus-bus)** | Java desktop reservation system with seat selection, student bookings, admin tools, PDF passes, and email confirmations. | **v1.1 · Windows x64** · [Release](https://github.com/aspire488/campus-bus/releases/tag/v1.1) · [Architecture](https://github.com/aspire488/campus-bus#9-architecture) · [Release audit](https://github.com/aspire488/campus-bus/blob/main/docs/final-release-audit.md) · **166/166 tests passed** |
 | 🤖 **[Pipo](https://github.com/aspire488/Pipo)** | Android character with a procedural 2.5D world, routines, memory, activities, and a companion named Nib. | [Living world](https://aspire488.github.io/Pipo/) · [Latest release](https://github.com/aspire488/Pipo/releases/tag/v1.0) |
 | ⚙️ **[KIO](https://github.com/aspire488/Kio)** | Modular orchestration runtime focused on capability routing, controlled execution, security gates, and verification. | Active restoration and integration |
 | 🛠️ **[UEA](https://github.com/aspire488/Universal-Engineering-Augmentation)** | Agent-neutral engineering tools for code intelligence, analysis, verification, and deterministic workflows. | Public alpha · [CI](https://github.com/aspire488/Universal-Engineering-Augmentation/actions) |
@@ -43,17 +43,6 @@ A selection of shipped projects and ongoing engineering work. This is a curated 
 | ⚙️ **[gh-ops](https://github.com/aspire488/gh-ops)** | GitHub operations, CI/release monitoring, OSS intelligence, security signals, and Telegram reporting. | Frozen baseline · **1,495 tests passing** |
 | 🌍 **[OSS Atlas](https://github.com/aspire488/oss-atlas)** | Archive and workspace for open-source contribution research and engineering notes. | Ongoing |
 | ⚡ **[CodeFlow](https://github.com/aspire488/codeflow)** · 💊 **[MediMind](https://github.com/aspire488/medimind)** | Earlier prototypes in developer workflow and medication reminders. | Frozen prototypes |
-
-### 🚌 Campus Bus — release details
-
-**Campus Bus v1.1** is a packaged Windows x64 application. The stack includes Java, Swing, JavaFX WebView, HTML/CSS/JavaScript, JDBC, and MySQL.
-
-- **Automated tests:** 166/166 passed, zero skipped in the reported final run.
-- **Release integrity:** the ZIP downloaded from GitHub was checked against the locally built artifact's SHA-256.
-- **Core workflows:** student reservations and cancellations, seat selection, admin management, and PDF passes.
-- **Known limits:** Windows 10, a clean second PC, Windows file-picker schedule import, and every SmartScreen/antivirus configuration have not all been verified. Earlier GUI check counts were not rerun against the v1.1 ZIP.
-
-Links: [Repository](https://github.com/aspire488/campus-bus) · [v1.1 release](https://github.com/aspire488/campus-bus/releases/tag/v1.1) · [All releases](https://github.com/aspire488/campus-bus/releases)
 
 ---
 
@@ -77,19 +66,6 @@ I work on upstream fixes and features as well as carefully scoped fork-side prop
 - More activity: [my pull requests](https://github.com/pulls?q=is%3Apr+author%3Aaspire488) · [my repositories](https://github.com/aspire488?tab=repositories)
 
 ---
-
-## 🧭 Current Project Direction
-
-| Project | Current state |
-|---|---|
-| 🚌 Campus Bus | **Released** — v1.1 for Windows x64; project work paused until documentation |
-| 🤖 Pipo | **Released / evolving** — Android build and living-world experience |
-| ⚙️ gh-ops | **Frozen** — 1,495 tests passing; maintenance mode |
-| 🛠️ UEA | **Public alpha** — deterministic-first routing; 62/62 final integration tests |
-| 🤖 KIO | **Restoration / integration** — convergence and audit work remain |
-| 🧠 AURA | **Architecture checkpoint** — no active feature-development line |
-| ⚡ CodeFlow · 💊 MediMind | **Frozen prototypes** |
-| 🌐 Open source | Ongoing cross-project engineering and upstream review |
 
 ---
 
