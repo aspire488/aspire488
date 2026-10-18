@@ -32,7 +32,7 @@ I'm a Computer Science Engineering student who builds across desktop and Android
 
 A Java desktop reservation system for student seat bookings and admin fleet management, packaged for Windows with a private MySQL setup.
 
-**Java · Swing · JDBC · MySQL**
+<sub>JAVA · SWING · JDBC · MYSQL</sub>
 
 [Windows v1.1 release ↗](https://github.com/aspire488/campus-bus/releases/tag/v1.1) · [Source ↗](https://github.com/aspire488/campus-bus)
 
@@ -45,7 +45,7 @@ A Java desktop reservation system for student seat bookings and admin fleet mana
 
 An Android character experience with a procedural 2.5D world, routines, memory, activities, and a companion named Nib.
 
-**Android · Kotlin · Procedural world**
+<sub>ANDROID · KOTLIN · PROCEDURAL WORLD</sub>
 
 [Explore the live world ↗](https://aspire488.github.io/Pipo/) · [Release ↗](https://github.com/aspire488/Pipo/releases/tag/v1.0)
 
@@ -60,7 +60,7 @@ An Android character experience with a procedural 2.5D world, routines, memory, 
 
 A controlled orchestration runtime paired with a persistent memory and retrieval backend. Built around typed tools, explicit boundaries, and verification.
 
-**Python · FastAPI · ChromaDB · Systems design**
+<sub>PYTHON · FASTAPI · CHROMADB · SYSTEMS DESIGN</sub>
 
 [KIO source ↗](https://github.com/aspire488/Kio) · [AURA source ↗](https://github.com/aspire488/AURA)
 
@@ -73,7 +73,7 @@ A controlled orchestration runtime paired with a persistent memory and retrieval
 
 Engineering tools and GitHub automation for code intelligence, CI and release monitoring, open-source discovery, and reporting.
 
-**Python · GitHub Actions · Automation**
+<sub>PYTHON · GITHUB ACTIONS · AUTOMATION</sub>
 
 [UEA + CI ↗](https://github.com/aspire488/Universal-Engineering-Augmentation) · [gh-ops ↗](https://github.com/aspire488/gh-ops)
 
@@ -123,23 +123,17 @@ I contribute focused fixes and features upstream, ideally with regression tests 
 <tr>
 <td width="33%" valign="top">
 
-**Languages**
-
-Python · Java · C · JavaScript · Kotlin
+<strong>LANGUAGES</strong><br/><br/>Python · Java · C · JavaScript · Kotlin
 
 </td>
 <td width="33%" valign="top">
 
-**Apps & APIs**
-
-Android · Swing · HTML/CSS · React · FastAPI · Node.js
+<strong>APPS &amp; APIS</strong><br/><br/>Android · Swing · HTML/CSS · React · FastAPI · Node.js
 
 </td>
 <td width="33%" valign="top">
 
-**Infrastructure**
-
-Git · Linux · GitHub Actions · Docker · PostgreSQL · Redis
+<strong>INFRASTRUCTURE</strong><br/><br/>Git · Linux · GitHub Actions · Docker · PostgreSQL · Redis
 
 </td>
 </tr>
@@ -151,23 +145,17 @@ Git · Linux · GitHub Actions · Docker · PostgreSQL · Redis
 <tr>
 <td width="33%" valign="top">
 
-**01 / Make boundaries clear**
-
-Typed interfaces, controlled execution, and small components beat hidden magic.
+<strong>01 / MAKE BOUNDARIES CLEAR</strong><br/><br/>Typed interfaces, controlled execution, and small components beat hidden magic.
 
 </td>
 <td width="33%" valign="top">
 
-**02 / Prove the claim**
-
-Regression tests and repeatable checks matter more than a confident status message.
+<strong>02 / PROVE THE CLAIM</strong><br/><br/>Regression tests and repeatable checks matter more than a confident status message.
 
 </td>
 <td width="33%" valign="top">
 
-**03 / Ship and iterate**
-
-Release useful work, learn from review, and follow through on the rough edges.
+<strong>03 / SHIP AND ITERATE</strong><br/><br/>Release useful work, learn from review, and follow through on the rough edges.
 
 </td>
 </tr>
