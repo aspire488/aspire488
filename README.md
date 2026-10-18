@@ -113,6 +113,10 @@ Technologies vary by project and include Python, Java, Kotlin, C, JavaScript, HT
   </picture>
 </p>
 
+<p align="center">
+  <img src="https://ssr-contributions-svg.vercel.app/_/aspire488?chart=calendar&format=svg&theme=dark&colors=161b22,0e4429,006d32,26a641,39d353" alt="GitHub contribution calendar with dark empty squares and green contribution squares" width="100%"/>
+</p>
+
 ---
 
 ## 🧠 How I Build
