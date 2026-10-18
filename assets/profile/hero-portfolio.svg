@@ -12,7 +12,7 @@
   <rect x="28" y="25" width="1144" height="260" fill="none" stroke="#6e7681" stroke-opacity=".38"/>
   <path d="M28 61H1172" stroke="#6e7681" stroke-opacity=".42"/>
   <rect x="28" y="25" width="5" height="36" fill="url(#fade)"/>
-  <text x="49" y="48" fill="#b9c0c9" font-family="monospace" font-size="11" letter-spacing="2.2">ASP IRE488 / PROFILE</text>
+  <text x="49" y="48" fill="#b9c0c9" font-family="monospace" font-size="11" letter-spacing="2.2">ASPIRE488 / PROFILE</text>
   <text x="1148" y="48" text-anchor="end" fill="#8b949e" font-family="monospace" font-size="10" letter-spacing="1.4">COMPUTER SCIENCE · OPEN SOURCE</text>
   <text x="53" y="153" fill="#f0f3f6" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="76" letter-spacing="-3.5">JOEL JIGO</text>
   <rect x="56" y="174" width="74" height="4" fill="url(#fade)"/>
