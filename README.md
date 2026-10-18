@@ -8,7 +8,7 @@
   <a href="https://github.com/aspire488"><img src="https://img.shields.io/badge/GitHub-aspire488-181717?style=flat-square&logo=github" alt="GitHub profile"/></a>
   <a href="https://github.com/aspire488?tab=repositories"><img src="https://img.shields.io/badge/Explore-Projects-70a5fd?style=flat-square" alt="Explore projects"/></a>
   <a href="https://github.com/aspire488?tab=stars"><img src="https://img.shields.io/badge/Explore-Starred%20Repos-f1c40f?style=flat-square&logo=github" alt="Starred repositories"/></a>
-  <img src="https://komarev.com/ghpvc/?username=aspire488&style=flat-square&label=Profile+Views" alt="Profile views"/>
+  <a href="https://github.com/aspire488"><img src="https://img.shields.io/badge/Profile%20Views-GitHub-70a5fd?style=flat-square&logo=github" alt="GitHub profile"/></a>
 </p>
 
 ## Hey, I'm Joel 👋
@@ -114,7 +114,7 @@ Technologies vary by project and include Python, Java, Kotlin, C, JavaScript, HT
 </p>
 
 <p align="center">
-  <img src="https://ssr-contributions-svg.vercel.app/_/aspire488?chart=calendar&format=svg&dark=true&colors=161b22,0e4429,006d32,26a641,39d353" alt="GitHub contribution calendar with dark empty squares and green contribution squares" width="100%"/>
+  <img src="https://ghchart.rshah.org/2ea043/aspire488" alt="GitHub contribution calendar" width="100%"/>
 </p>
 
 ---
