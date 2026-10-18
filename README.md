@@ -16,37 +16,48 @@
 
 <a href="https://aspire488.github.io/aspire488/"><img src="./assets/profile/hero-portfolio.svg" width="100%" alt="Joel Jigo — software engineering, developer tooling and open-source systems."/></a>
 
+<div align="center">
+
 <table>
 <tr>
-<td width="60%" valign="top">
+<td align="center">
 
-<sub><code>// whoami</code></sub>
+<sub>✳ &nbsp; <code>WHOAMI</code> &nbsp; ✳</sub>
 
-<strong>Joel Jigo</strong> — Computer Science Engineering student building applications, developer tooling, automation, and AI infrastructure. I care about clear boundaries, useful software, regression coverage, and shipping work that survives beyond the demo.
+<h2>Curious by default.<br>Builder by choice.</h2>
 
-<sub>
-<a href="https://aspire488.github.io/aspire488/"><strong>LIVE EDITION ↗</strong></a> &nbsp;/&nbsp;
-<a href="#02--selected-work">WORK</a> &nbsp;/&nbsp;
-<a href="#03--upstream">UPSTREAM</a> &nbsp;/&nbsp;
-<a href="https://github.com/aspire488?tab=repositories">REPOSITORIES</a>
-</sub>
+Computer Science Engineering student building **useful software, developer tools, automation, and AI infrastructure**.
 
-</td>
-<td width="40%" valign="top">
-
-<sub><code>// focus.now</code></sub>
-
-```text
-orchestration  → KIO
-memory / rag   → AURA
-dev tooling    → UEA · gh-ops
-oss discovery  → OSS Atlas
-upstream       → PyRIT · Inspect AI
-```
+<sub>Less demo theatre. More clear boundaries, regression coverage, and things that actually ship.</sub>
 
 </td>
 </tr>
 </table>
+
+<table>
+<tr>
+<td>
+
+<sub>⚡ &nbsp; <code>FOCUS.NOW</code></sub>
+
+| CURRENT THREAD | PROJECT |
+|:--|:--|
+| **Orchestration** | [KIO](https://github.com/aspire488/Kio) |
+| **Memory + retrieval** | [AURA](https://github.com/aspire488/AURA) |
+| **Developer tooling** | [UEA](https://github.com/aspire488/Universal-Engineering-Augmentation) · [gh-ops](https://github.com/aspire488/gh-ops) |
+| **Open-source discovery** | [OSS Atlas](https://github.com/aspire488/oss-atlas) |
+| **Upstream engineering** | [PyRIT](https://github.com/microsoft/PyRIT) · [Inspect AI](https://github.com/UKGovernmentBEIS/inspect_ai) |
+
+</td>
+</tr>
+</table>
+
+<a href="https://aspire488.github.io/aspire488/"><strong>↗ OPEN THE LIVE EDITION</strong></a>
+&nbsp; · &nbsp;
+<a href="#02--selected-work"><strong>EXPLORE THE WORK ↓</strong></a>
+
+</div>
+
 ## 01 — GitHub activity / live signal
 
 <p align="center">
