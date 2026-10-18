@@ -114,7 +114,7 @@ Technologies vary by project and include Python, Java, Kotlin, C, JavaScript, HT
 </p>
 
 <p align="center">
-  <a href="https://github.com/aspire488"><img src="https://ghchart.rshah.org/161b22/aspire488" alt="GitHub contribution calendar" width="100%"/></a>
+  <img src="https://ssr-contributions-svg.vercel.app/_/aspire488?chart=calendar&format=svg&dark=true&colors=161b22,0e4429,006d32,26a641,39d353" alt="GitHub contribution calendar with dark empty squares and green contribution squares" width="100%"/>
 </p>
 
 ---
