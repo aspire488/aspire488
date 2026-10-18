@@ -167,13 +167,13 @@ A compact set of the projects I keep most visible on GitHub. Star counts below a
 | 🧠 **AURA** | Memory and cognition backend for persistent agent state and cognitive processing. | [Repository](https://github.com/aspire488/AURA) · <img src="https://img.shields.io/github/stars/aspire488/AURA?style=flat-square&label=stars" alt="AURA stars"/> |
 | ⚙️ **gh-ops** | Deterministic GitHub operations, monitoring, OSS intelligence, security intelligence, and Telegram reporting. | [Repository](https://github.com/aspire488/gh-ops) · <img src="https://img.shields.io/github/stars/aspire488/gh-ops?style=flat-square&label=stars" alt="gh-ops stars"/> |
 | 🌍 **OSS Atlas** | Open-source contribution archive, research, experiments, and engineering notes. | [Repository](https://github.com/aspire488/oss-atlas) · <img src="https://img.shields.io/github/stars/aspire488/oss-atlas?style=flat-square&label=stars" alt="OSS Atlas stars"/> |
-| 🚌 **Campus Bus** | Java desktop bus-reservation system for educational institutions, with student bookings, seat maps, schedules, admin tools, and a Windows release. | [Repository](https://github.com/aspire488/campus-bus) · [Windows release](https://github.com/aspire488/campus-bus/releases) · <img src="https://img.shields.io/github/stars/aspire488/campus-bus?style=flat-square&label=stars" alt="Campus Bus stars"/> |
+| 🚌 **Campus Bus** | Released Windows desktop bus-reservation system with student bookings, seat maps, schedules, admin console, PDF passes, and email confirmations. | [Repository](https://github.com/aspire488/campus-bus) · [v1.1 Windows release](https://github.com/aspire488/campus-bus/releases/tag/v1.1) · <img src="https://img.shields.io/github/stars/aspire488/campus-bus?style=flat-square&label=stars" alt="Campus Bus stars"/> |
 
 > These are featured for visibility; the list is not a ranking.
 
 ### 🚌 [Campus Bus](https://github.com/aspire488/campus-bus) — College Bus Reservation System
 
-A Java desktop application for managing campus transport and seat reservations. Students can search buses, choose a stop and seat, book or cancel trips, and view a printable bus pass. Transport administrators can manage buses, routes, timetables, students, reservations, and administrators.
+**Campus Bus v1.1 is released for Windows x64.** A Java desktop application for campus transport and seat reservations: students can search trips, choose stops and seats, book or cancel journeys, and access a printable PDF pass. Administrators can manage buses, routes, schedules, students, reservations, and admin accounts.
 
 <p align="center">
   <a href="https://github.com/aspire488/campus-bus/blob/main/docs/screenshots/08-admin-buses.png"><img src="https://raw.githubusercontent.com/aspire488/campus-bus/main/docs/screenshots/08-admin-buses.png" alt="Campus Bus admin bus management" width="48%"/></a>
@@ -183,11 +183,13 @@ A Java desktop application for managing campus transport and seat reservations. 
 <p align="center"><a href="https://github.com/aspire488/campus-bus#screenshots">More screenshots: student home, seat map, routes, schedules, students, reservations and admin pages →</a></p>
 
 - **Stack:** Java, Swing, JavaFX WebView, HTML/CSS/JavaScript, JDBC, and MySQL.
-- **Core engineering:** student/admin workflows, prepared-statement database access, booking constraints, schedule import, and an isolated database test setup.
-- **Verification reported:** **124/124 tests passed, zero skipped**, including database-backed tests against MySQL. The GUI walkthrough also covered student booking/cancellation, profile editing, registration, all seven admin pages, and demo setup idempotency.
-- **Release status:** the Windows package/setup scripts still require a verification run on Windows; printing and GUI schedule import were not covered by the reported walkthrough.
+- **Core engineering:** student/admin workflows, database-backed reservations, route and timetable management, PDF bus passes, email confirmation, isolated database testing, and Windows setup with a bundled Java runtime.
+- **Automated verification:** **166/166 tests passed**, with zero failures and zero skipped in the reported final run.
+- **GUI verification:** **42/42 student GUI checks** and **47/47 admin-console checks** passed in earlier real-GUI runs. The rebuilt v1.1 package was separately smoke-tested for setup/recovery, demo-admin sign-in, live overview, Toast replacement behavior, and clean shutdown.
+- **Release integrity:** the ZIP downloaded from GitHub was re-hashed and matched the locally built artifact's SHA-256.
+- **Known limits:** schedule import via the Windows file picker, Windows 10, a clean second PC, and other SmartScreen/antivirus configurations have not been tested. The earlier GUI check counts were not rerun against the v1.1 ZIP.
 
-**[Repository](https://github.com/aspire488/campus-bus)** · **[Windows releases](https://github.com/aspire488/campus-bus/releases)** · **[Test and release documentation](https://github.com/aspire488/campus-bus/blob/main/docs/final-release-audit.md)**
+**[Repository](https://github.com/aspire488/campus-bus)** · **[Download Campus Bus v1.1](https://github.com/aspire488/campus-bus/releases/tag/v1.1)** · **[All Windows releases](https://github.com/aspire488/campus-bus/releases)** · **[Test and release documentation](https://github.com/aspire488/campus-bus/blob/main/docs/final-release-audit.md)**
 ---
 
 ### ⚙️ [gh-ops](https://github.com/aspire488/gh-ops) — Operational Intelligence Platform
