@@ -8,11 +8,17 @@
 &nbsp; / &nbsp;
 <a href="https://github.com/pulls?q=is%3Apr+author%3Aaspire488">PULL REQUESTS</a>
 &nbsp; / &nbsp;
-<a href="https://joel-jigo-portfolio--joeljigo3.replit.app">PORTFOLIO</a>
+<a href="https://aspire488.github.io/aspire488/">PORTFOLIO</a>
 
 </div>
 
 Computer Science Engineering student building desktop and Android applications, developer tools, automation, and AI infrastructure. I contribute upstream fixes with regression coverage, and prefer explicit boundaries, reproducible checks, and evidence over claims.
+
+## The site
+
+<a href="https://aspire488.github.io/aspire488/"><img src="./site/public/og.png" width="100%" alt="The interactive edition: oversized JOEL JIGO poster type, a live GitHub figure panel, and a band of project screenshots."/></a>
+
+[**aspire488.github.io/aspire488**](https://aspire488.github.io/aspire488/) is the interactive edition of this profile: a filterable explorer over every project with real screenshots and repository evidence, live figures read from the GitHub API with an Actions-generated snapshot as fallback, a verified upstream pull-request ledger, a paper/ink theme switch, and a command palette on `⌘K` (or `/`). Built with Vite, React and TypeScript, tested in CI, and deployed by a dedicated GitHub Pages workflow.
 
 ---
 
@@ -89,7 +95,7 @@ Engineering tools and GitHub automation for code analysis, tiered verification, 
 Selected upstream contributions, with an emphasis on correctness and regression coverage.
 
 | Project | Contribution |
-|---|---|
+| --- | --- |
 | [Microsoft PyRIT #2976](https://github.com/microsoft/PyRIT/pull/2976) | Preserved word-selection parameters in converter identifiers. |
 | [Microsoft PyRIT #2882](https://github.com/microsoft/PyRIT/pull/2882) | Added validation for empty targets in exact-text matching. |
 | [Microsoft PyRIT #2823](https://github.com/microsoft/PyRIT/pull/2823) | Preserved HarmBench context in prompts and metadata. |
@@ -156,6 +162,6 @@ Git · Linux · GitHub Actions · Docker · PostgreSQL · Redis
 &nbsp; · &nbsp;
 <a href="https://github.com/pulls?q=is%3Apr+author%3Aaspire488">Pull requests</a>
 &nbsp; · &nbsp;
-<a href="https://joel-jigo-portfolio--joeljigo3.replit.app">Portfolio</a>
+<a href="https://aspire488.github.io/aspire488/">Portfolio</a>
 
 </div>
