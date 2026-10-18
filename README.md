@@ -9,6 +9,12 @@
 [![Open Source](https://img.shields.io/badge/Open%20Source-Contributions-238636?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](https://github.com/pulls?q=is%3Apr+author%3Aaspire488)
 [![Portfolio](https://img.shields.io/badge/Portfolio-Visit-70a5fd?style=for-the-badge&logo=googlechrome&logoColor=white)](https://joel-jigo-portfolio--joeljigo3.replit.app)
 
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=18&duration=2600&pause=800&color=39D353&center=true&vCenter=true&width=720&lines=Building+software%2C+not+just+demos.;Open-source+contributor.;Engineering+with+tests+and+clear+boundaries.;Always+building+the+next+thing." alt="Animated typing intro"/>
+
+### Jump into the profile
+
+[🚀 Projects](#-featured-work) · [🌐 Open source](#-open-source-contributions) · [🧩 Tech stack](#-tech-stack) · [📈 Activity](#-github-activity) · [📬 Connect](#connect)
+
 </div>
 
 ## `whoami`
@@ -88,11 +94,59 @@ GitHub operations, CI/release monitoring, OSS intelligence, security signals, an
 </table>
 
 <details>
-<summary><strong>More projects — OSS Atlas, CodeFlow, MediMind</strong></summary>
+<summary><strong>Explore each project — architecture, focus, and links</strong></summary>
 
-- 🌍 [**OSS Atlas**](https://github.com/aspire488/oss-atlas) — open-source contribution research and engineering notes.
-- ⚡ [**CodeFlow**](https://github.com/aspire488/codeflow) — developer workflow prototype.
-- 💊 [**MediMind**](https://github.com/aspire488/medimind) — medication reminder prototype.
+<details>
+<summary>🚌 <strong>Campus Bus</strong></summary>
+
+A Java desktop reservation system built around student booking and admin workflows.
+
+- [Source code](https://github.com/aspire488/campus-bus)
+- [Windows v1.1 release](https://github.com/aspire488/campus-bus/releases/tag/v1.1)
+- [Architecture notes](https://github.com/aspire488/campus-bus#9-architecture)
+- [Release audit](https://github.com/aspire488/campus-bus/blob/main/docs/final-release-audit.md)
+
+</details>
+
+<details>
+<summary>🤖 <strong>Pipo</strong></summary>
+
+An Android character experience with a procedural 2.5D world, routines, memory, and companion Nib.
+
+- [Repository](https://github.com/aspire488/Pipo)
+- [Live world](https://aspire488.github.io/Pipo/)
+- [Releases](https://github.com/aspire488/Pipo/releases)
+
+</details>
+
+<details>
+<summary>⚙️ <strong>KIO + AURA</strong></summary>
+
+KIO focuses on controlled orchestration and verification; AURA provides persistent memory and retrieval.
+
+- [KIO repository](https://github.com/aspire488/Kio)
+- [AURA repository](https://github.com/aspire488/AURA)
+
+</details>
+
+<details>
+<summary>🧰 <strong>UEA + gh-ops</strong></summary>
+
+Engineering tools, GitHub automation, CI/release monitoring, and open-source intelligence.
+
+- [UEA repository and CI](https://github.com/aspire488/Universal-Engineering-Augmentation)
+- [gh-ops repository](https://github.com/aspire488/gh-ops)
+
+</details>
+
+<details>
+<summary>🌍 <strong>OSS Atlas, CodeFlow, MediMind</strong></summary>
+
+- [OSS Atlas](https://github.com/aspire488/oss-atlas) — contribution research and engineering notes.
+- [CodeFlow](https://github.com/aspire488/codeflow) — developer workflow prototype.
+- [MediMind](https://github.com/aspire488/medimind) — medication reminder prototype.
+
+</details>
 
 </details>
 
@@ -135,12 +189,24 @@ I work on upstream fixes and features as well as carefully scoped proposals. Mer
 </div>
 
 <details>
-<summary><strong>How I approach engineering</strong></summary>
+<summary><strong>Open my engineering principles</strong></summary>
 
-- **Deterministic software owns execution; AI handles ambiguity.**
-- **Verification belongs in implementation, not just at the end.**
-- **Claims should be backed by tests or observable evidence.**
-- **Ship useful work, learn from review, and improve the system.**
+| Principle | What it means in practice |
+|---|---|
+| Deterministic core | Software owns execution; AI handles ambiguity. |
+| Verify continuously | Tests and checks belong throughout implementation, not only at the end. |
+| Honest evidence | Claims are backed by tests, release notes, or observable results. |
+| Ship and iterate | Release useful work, learn from review, improve the system. |
+
+</details>
+
+<details>
+<summary><strong>Tools I reach for</strong></summary>
+
+- **Languages:** Python, Java, C, JavaScript, Kotlin
+- **Web / backend:** HTML, CSS, React, Node.js, FastAPI
+- **Infrastructure:** GitHub Actions, Linux, Docker, PostgreSQL, Redis
+- **Focus areas:** desktop/mobile apps, automation, orchestration, developer tooling
 
 </details>
 
@@ -166,9 +232,15 @@ I work on upstream fixes and features as well as carefully scoped proposals. Mer
 
 <div align="center">
 
-**Building in public · Shipping software · Learning by doing**
+## Connect
 
-[![View repositories](https://img.shields.io/badge/See-What%20I'm%20Building-2ea043?style=for-the-badge&logo=github)](https://github.com/aspire488?tab=repositories)
+Want to explore the code, review a contribution, or see what I'm building next?
+
+[![GitHub](https://img.shields.io/badge/GitHub-Follow%20the%20work-161b22?style=for-the-badge&logo=github)](https://github.com/aspire488)
+[![Pull requests](https://img.shields.io/badge/Review-My%20PRs-238636?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Aaspire488)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Open-70a5fd?style=for-the-badge&logo=googlechrome)](https://joel-jigo-portfolio--joeljigo3.replit.app)
+
+**Building in public · Shipping software · Learning by doing**
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2ea043,100:0d1117&height=100&section=footer" width="100%" alt=""/>
 
