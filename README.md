@@ -1,4 +1,18 @@
-<!-- Profile README for aspire488 · cards in assets/profile/ are refreshed hourly by .github/workflows/profile-cards.yml -->
+<!-- Profile README for aspire488 · generated GitHub cards refresh hourly -->
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,45:161b22,100:238636&height=190&section=header&text=Joel%20Jigo%20%2F%20aspire488&fontSize=38&fontColor=f0f6fc&fontAlignY=38&desc=CS%20Student%20%E2%80%A2%20Systems%20Builder%20%E2%80%A2%20Open%20Source&descAlignY=59&descSize=15" width="100%" alt="Joel Jigo — systems builder and open-source developer." />
+</p>
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=17&pause=1100&color=39D353&center=true&vCenter=true&width=850&lines=Building+systems%2C+not+just+demos.;Automation+%2B+AI+infrastructure+%2B+developer+tools.;Learning+by+shipping.+Improving+by+verifying." alt="Animated tagline: building systems, automation, AI infrastructure, and developer tools." />
+</p>
+
+<p align="center">
+  <a href="https://github.com/aspire488?tab=repositories"><img src="https://img.shields.io/badge/Repositories-Explore-238636?style=for-the-badge&logo=github&logoColor=white" alt="Explore repositories" /></a>
+  <a href="https://github.com/aspire488?tab=pulls"><img src="https://img.shields.io/badge/Open%20Source-Contributions-2ea043?style=for-the-badge&logo=github" alt="Browse open-source contributions" /></a>
+  <a href="https://github.com/aspire488/aspire488/actions/workflows/profile-cards.yml"><img src="https://github.com/aspire488/aspire488/actions/workflows/profile-cards.yml/badge.svg" alt="Profile cards GitHub Actions workflow status" /></a>
+</p>
 
 <a href="https://aspire488.github.io/aspire488/"><img src="./assets/profile/hero-portfolio.svg" width="100%" alt="Joel Jigo — software engineering, developer tooling and open-source systems."/></a>
 
@@ -33,39 +47,37 @@ upstream       → PyRIT · Inspect AI
 </td>
 </tr>
 </table>
+## 01 — GitHub activity / live signal
 
-## 01 — Signal
+<p align="center">
+  <a href="https://github.com/aspire488/aspire488/actions/workflows/profile-cards.yml"><img src="https://img.shields.io/badge/GITHUB%20ACTIONS-hourly%20profile%20refresh-238636?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions refresh the profile cards hourly." /></a>
+</p>
 
-<sub>These cards are generated from GitHub data and refreshed hourly by this repository's workflow.</sub>
+<sub>These cards are generated from GitHub data by this repository's GitHub Actions workflow. The green contribution grid is rendered from real daily contribution data and stops at the current date.</sub>
 
-<table>
-<tr>
-<td width="50%" valign="top">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/overview.dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/overview.light.svg">
-  <img src="./assets/profile/overview.dark.svg" width="100%" alt="GitHub overview with contribution totals, stars, followers, merged pull requests, issues, repositories and recent contributions.">
-</picture>
-</td>
-<td width="50%" valign="top">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/contributions.dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/contributions.light.svg">
-  <img src="./assets/profile/contributions.dark.svg" width="100%" alt="Contribution summary for the past 12 months, including current and longest streaks.">
-</picture>
-</td>
-</tr>
-<tr>
-<td colspan="2">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/activity.dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/activity.light.svg">
-  <img src="./assets/profile/activity.dark.svg" width="100%" alt="Rolling contribution calendar showing daily GitHub activity over the past year.">
-</picture>
-</td>
-</tr>
-</table>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/overview.dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/profile/overview.light.svg">
+    <img src="./assets/profile/overview.dark.svg" width="100%" alt="Live-generated GitHub overview with contribution totals, stars, followers, pull requests, issues, and repositories.">
+  </picture>
+</p>
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/contributions.dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/profile/contributions.light.svg">
+    <img src="./assets/profile/contributions.dark.svg" width="100%" alt="Live-generated GitHub contribution activity and streak statistics.">
+  </picture>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/activity.dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/profile/activity.light.svg">
+    <img src="./assets/profile/activity.dark.svg" width="100%" alt="Green contribution-history grid showing daily activity over the rolling past year.">
+  </picture>
+</p>
 <details>
 <summary><strong>Open the deeper analytics</strong> — languages · contribution mix · weekly rhythm</summary>
 <br>
