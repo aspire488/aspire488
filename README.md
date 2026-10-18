@@ -1,679 +1,138 @@
+<!-- Profile README for aspire488 -->
+
 <p align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1b27,100:70a5fd&height=220&section=header&text=Joel%20%7C%20aspire488&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=CS%20Student%20%E2%80%A2%20Builder%20%E2%80%A2%20Systems%20Focus&descAlignY=56&descSize=16" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1b27,100:70a5fd&height=200&section=header&text=Joel%20Jigo&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=CSE%20Student%20%7C%20Software%20Builder%20%7C%20Open%20Source&descAlignY=58&descSize=15" width="100%" alt="Joel Jigo — software builder and open-source contributor"/>
 </p>
 
 <p align="center">
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&pause=900&color=70A5FD&center=true&vCenter=true&width=800&lines=Building+systems+that+actually+do+things.;From+ideas+to+execution.;Automation+%2B+AI+%2B+real+tools.;Learning+by+shipping.;Engineering+systems%2C+not+just+demos."/>
+  <a href="https://github.com/aspire488"><img src="https://img.shields.io/badge/GitHub-aspire488-181717?style=flat-square&logo=github" alt="GitHub profile"/></a>
+  <a href="https://github.com/aspire488?tab=repositories"><img src="https://img.shields.io/badge/Explore-Projects-70a5fd?style=flat-square" alt="Explore projects"/></a>
+  <a href="https://github.com/aspire488?tab=stars"><img src="https://img.shields.io/badge/Explore-Starred%20Repos-f1c40f?style=flat-square&logo=github" alt="Starred repositories"/></a>
+  <img src="https://komarev.com/ghpvc/?username=aspire488&style=flat-square&label=Profile+Views" alt="Profile views"/>
 </p>
 
-<p align="center">
-<img src="https://komarev.com/ghpvc/?username=aspire488&style=flat-square&label=Profile+Views"/>
-<img src="https://img.shields.io/github/followers/aspire488?style=flat-square&label=Followers"/>
-<img src="https://img.shields.io/github/stars/aspire488?style=flat-square&label=Stars"/>
-<img src="https://img.shields.io/github/commit-activity/y/aspire488/Universal-Engineering-Augmentation?style=flat-square&label=UEA%20Activity"/>
-</p>
+## Hey, I'm Joel 👋
 
----
+I'm a Computer Science Engineering student who builds software, explores systems design, and contributes to open source. My work ranges from desktop applications and Android projects to developer tooling, automation, and AI infrastructure.
 
-# 👋 Joel — systems-focused CSE student
+I care about making software **useful, testable, and dependable**—not just getting a demo to run.
 
-> **GitHub Developer Program Member** — building and experimenting with software that integrates with the GitHub ecosystem. GitHub automatically displays the official Developer Program Member badge on eligible profiles. [Program details](https://docs.github.com/en/integrations/concepts/github-developer-program)
-
-I build **AI systems, developer tools, automation, and experimental software systems** with an emphasis on execution, architecture, verification, and measurable behavior.
-
-> **What should an AI reason about, and what should reliable software do deterministically?**
-
-I learn by shipping, breaking things, measuring them, and then hardening the parts that are worth keeping.
-
-> **Current contribution baseline:** **13 merged PRs**. This profile counts the merged engineering PRs tracked in the portfolio; open and fork-side proposals are kept separate.
-
-
-## 🤖 Pipo — A Little Life Inside Your Phone
-
-> **Pipo v1.0 is live** and **[his living 3D world is online](https://aspire488.github.io/Pipo/)** — a small robot with his own moods, memories, routines, hobbies, world, and little robot companion Nib.
-
-Pipo is not a chatbot or productivity assistant. He's a character who lives inside an Android phone and has a life of his own.
-
-**[🌍 Enter Pipo's living 3D world](https://aspire488.github.io/Pipo/)** · **[📦 Download Pipo v1.0](https://github.com/aspire488/Pipo/releases/tag/v1.0)** · **[🤖 Pipo repository](https://github.com/aspire488/Pipo)**
-
-Built with Kotlin, Jetpack Compose and a deterministic local-first simulation engine, with optional AI used for conversation rather than owning Pipo's state.
-
-
-### 🛡️ Microsoft RAMPART — PyRIT ecosystem contribution
-
-> **PyRIT #2976 — StringJoinConverter identifier fix — MERGED UPSTREAM · October 6, 2026**
->
-> Preserves `WordLevelConverter` selection parameters in `StringJoinConverter` identifiers and adds regression coverage for distinct and equivalent word-selection configurations.
->
-> **PR:** https://github.com/microsoft/PyRIT/pull/2976
-
-> **Hermes Agent #127233 — MCP prompt rendering fix — MERGED UPSTREAM · October 1, 2026**
->
-> Renders MCP `get_prompt` content blocks correctly instead of exposing the raw structured payload.
->
-> **PR:** https://github.com/NousResearch/hermes-agent/pull/127233 · merge commit `a0707dd1`
-
-> **#2 — Generic PyRIT Converter Bridge — OPEN · September 25, 2026**
->
-> Implements the documented PyRIT `PromptConverter` → RAMPART `PayloadConverter` bridge, scoped to text-to-text conversion with payload identity/metadata preservation and focused regression coverage.
-
-**PR:** https://github.com/aspire488/RAMPART/pull/2
-
-> **PyRIT #2839 — TemplateSegmentConverter short-prompt fix — PREPARED · September 26, 2026**
->
-> Fixed the split-boundary calculation so prompts with fewer words than template parameters no longer trigger an invalid `random.sample` request, with focused regression coverage. The fix is on the `aspire488/PyRIT` fork branch `fix/template-segment-short-prompts`; upstream PR creation was blocked by the current GitHub integration permission boundary, so this is recorded as prepared fork-side work rather than an upstream PR.
-
-**Fix branch:** https://github.com/aspire488/PyRIT/tree/fix/template-segment-short-prompts
-
-
-### 🆕 Latest OSS work — October 6, 2026
-
-- **Microsoft PyRIT #2976** — **MERGED UPSTREAM · October 6, 2026** — preserves `WordLevelConverter` selection parameters in `StringJoinConverter` identifiers and adds focused regression coverage.
-- **NousResearch Hermes Agent #127233** — **MERGED UPSTREAM · October 1, 2026** — fixes MCP `get_prompt` rendering for structured content blocks.
-
-
-### 🚀 Inspect AI — Three new upstream fixes · October 4, 2026
-
-> **Inspect AI #5670 — Google API key / ADC precedence — MERGED UPSTREAM · October 4, 2026**
->
-> Fixes #5358. An explicitly supplied API key now takes precedence over ambient `GOOGLE_USE_ADC`, while explicit `use_adc=true` remains authoritative. Adds regression coverage for both precedence cases.
->
-> **PR:** https://github.com/UKGovernmentBEIS/inspect_ai/pull/5670
-
-> **Inspect AI #5671 — Structured tool validation errors — OPEN UPSTREAM · DRAFT**
->
-> Fixes #5403. Converts Pydantic `ValidationError` raised during structured tool-parameter conversion into the normal retryable `ToolParsingError` path, with focused regression coverage.
->
-> **PR:** https://github.com/UKGovernmentBEIS/inspect_ai/pull/5671
-
-> **Inspect AI #5672 — Cached input-token preservation — OPEN UPSTREAM · DRAFT**
->
-> Fixes #5364. Preserves confirmed cached-read input-token information across OpenAI Responses and Gemini provider bridges through a provider-neutral usage helper, with round-trip regression coverage.
->
-> **PR:** https://github.com/UKGovernmentBEIS/inspect_ai/pull/5672
-
-> **Inspect AI #5675 — Stream conversion preserves eval errors — OPEN UPSTREAM · DRAFT · October 4, 2026**
->
-> Fixes #5639. Preserves the eval-level error when converting failed evaluation logs with stream=true, with regression coverage for both .eval and JSON output plus an Unreleased changelog entry.
->
-> **PR:** https://github.com/UKGovernmentBEIS/inspect_ai/pull/5675
-
-### 🏆 Standout Upstream Milestone — Microsoft PyRIT
-
-> **Four merged upstream contributions to Microsoft PyRIT**
->
-> **#2976 — StringJoinConverter identifier fix — MERGED UPSTREAM · October 6, 2026**
->
-> Preserves `WordLevelConverter` word-selection parameters in `StringJoinConverter` identifiers, keeping default identifier compatibility while distinguishing non-default selection configurations, with focused regression coverage.
->
-> **PR:** https://github.com/microsoft/PyRIT/pull/2976
->
-> **#2762 — Dataset Summary API — MERGED UPSTREAM · September 24, 2026**
->
-> Added memory-backed dataset summaries and survived multiple maintainer review rounds covering aggregation semantics, dataset identity, SQLite behavior, selection-key isolation, metadata query sizing, and `loaded_only` behavior before landing upstream.
->
-> **Merge commit:** `47c6151a`
->
-> **#2823 — HarmBench context preservation — MERGED UPSTREAM · September 25, 2026**
->
-> Preserves non-empty HarmBench `ContextString` in behavior prompts, retains context metadata, and adds regression coverage.
->
-> **Merge commit:** `940a8efabb404d80f6a716c5e641d81809d8972a`
->
-> **#2882 — ExactTextMatching empty-target fix — MERGED UPSTREAM · September 28, 2026**
->
-> Rejects empty and whitespace-only exact-match targets and adds regression coverage through `DecodingScorer` plus explicit `ignore_whitespace=False` coverage.
->
-> **Merge commit:** `dff83aaab767f9b2b0aee68a20ab277de7e9d289`
->
-> **Track record:** four separate upstream PRs merged into Microsoft's open-source AI red-teaming framework, spanning feature work and regression-focused fixes.
+- 🧩 Building across application development, automation, and systems engineering
+- 🌐 Contributing fixes and features to projects maintained by other teams
+- 🧪 Prefer explicit tests, reproducible results, and honest project status
+- 🚀 I ship projects, learn from feedback, and keep building
 
 <p align="center">
-  <a href="https://joel-jigo-portfolio--joeljigo3.replit.app"><img src="https://img.shields.io/badge/%E2%86%92%20Portfolio-Visit%20Joel's%20Portfolio-70a5fd?style=for-the-badge"/></a>
+  <a href="https://joel-jigo-portfolio--joeljigo3.replit.app"><img src="https://img.shields.io/badge/Portfolio-Visit-70a5fd?style=for-the-badge" alt="Visit portfolio"/></a>
+  <a href="https://github.com/aspire488?tab=repositories"><img src="https://img.shields.io/badge/GitHub-Browse%20repositories-24292f?style=for-the-badge&logo=github" alt="Browse repositories"/></a>
 </p>
 
 ---
 
-## 🏗️ Engineering Portfolio
+## 🚀 Featured Projects
 
-### Architecture at a glance
+A selection of shipped projects and ongoing engineering work. This is a curated list, not a ranking.
 
-```mermaid
-flowchart LR
-    A[Intent / Problem] --> B[AI Reasoning]
-    B --> C[Deterministic Systems]
-    C --> D[Execution]
-    D --> E[Verification]
-    E --> F[Evidence / State]
-    F --> B
-    UEA[UEA\nEngineering Augmentation] --> C
-    KIO[KIO\nExecution Kernel] --> D
-    AURA[AURA\nMemory & Cognition] --> B
-    KIO <--> AURA
-    UEA --> KIO
-```
-
-This is the design boundary running through the portfolio: **reasoning handles ambiguity; deterministic infrastructure owns execution, state, safety, and verification.**
-
-## ⭐ Featured Works
-
-A compact set of the projects I keep most visible on GitHub. Star counts below are live GitHub badges rather than manually maintained numbers.
-
-| Project | What it is | GitHub |
+| Project | Overview | Status / links |
 |---|---|---|
-| 🤖 **Pipo** | Character-first Android companion with a procedural 2.5D world, autonomy, memory, voice, games, and phone interaction. | [Repository](https://github.com/aspire488/Pipo) · <img src="https://img.shields.io/github/stars/aspire488/Pipo?style=flat-square&label=stars" alt="Pipo stars"/> |
-| ⚙️ **KIO** | Deterministic execution kernel for capability resolution, planning, security gates, tool execution, and verification. | [Repository](https://github.com/aspire488/Kio) · <img src="https://img.shields.io/github/stars/aspire488/Kio?style=flat-square&label=stars" alt="KIO stars"/> |
-| 🛠️ **UEA** | Agent-neutral engineering augmentation infrastructure for deterministic code intelligence and verification. | [Repository](https://github.com/aspire488/Universal-Engineering-Augmentation) · <img src="https://img.shields.io/github/stars/aspire488/Universal-Engineering-Augmentation?style=flat-square&label=stars" alt="UEA stars"/> |
-| 🧠 **AURA** | Memory and cognition backend for persistent agent state and cognitive processing. | [Repository](https://github.com/aspire488/AURA) · <img src="https://img.shields.io/github/stars/aspire488/AURA?style=flat-square&label=stars" alt="AURA stars"/> |
-| ⚙️ **gh-ops** | Deterministic GitHub operations, monitoring, OSS intelligence, security intelligence, and Telegram reporting. | [Repository](https://github.com/aspire488/gh-ops) · <img src="https://img.shields.io/github/stars/aspire488/gh-ops?style=flat-square&label=stars" alt="gh-ops stars"/> |
-| 🌍 **OSS Atlas** | Open-source contribution archive, research, experiments, and engineering notes. | [Repository](https://github.com/aspire488/oss-atlas) · <img src="https://img.shields.io/github/stars/aspire488/oss-atlas?style=flat-square&label=stars" alt="OSS Atlas stars"/> |
-| 🚌 **Campus Bus** | Released Windows desktop bus-reservation system with student bookings, seat maps, schedules, admin console, PDF passes, and email confirmations. | [Repository](https://github.com/aspire488/campus-bus) · [v1.1 Windows release](https://github.com/aspire488/campus-bus/releases/tag/v1.1) · <img src="https://img.shields.io/github/stars/aspire488/campus-bus?style=flat-square&label=stars" alt="Campus Bus stars"/> |
+| 🚌 **[Campus Bus](https://github.com/aspire488/campus-bus)** | Java desktop bus-reservation system with seat selection, student bookings, cancellations, admin tools, PDF passes, and email confirmations. | **v1.1 released for Windows x64** · [Download](https://github.com/aspire488/campus-bus/releases/tag/v1.1) · [Release audit](https://github.com/aspire488/campus-bus/blob/main/docs/final-release-audit.md) |
+| 🤖 **[Pipo](https://github.com/aspire488/Pipo)** | Android character with a procedural 2.5D world, routines, memory, activities, and a companion named Nib. | [Living world](https://aspire488.github.io/Pipo/) · [Latest release](https://github.com/aspire488/Pipo/releases/tag/v1.0) |
+| ⚙️ **[KIO](https://github.com/aspire488/Kio)** | Modular orchestration runtime focused on capability routing, controlled execution, security gates, and verification. | Active restoration and integration |
+| 🛠️ **[UEA](https://github.com/aspire488/Universal-Engineering-Augmentation)** | Agent-neutral engineering tools for code intelligence, analysis, verification, and deterministic workflows. | Public alpha · [CI](https://github.com/aspire488/Universal-Engineering-Augmentation/actions) |
+| 🧠 **[AURA](https://github.com/aspire488/AURA)** | Memory and cognition backend for persistent agent state and retrieval. | Architecture checkpoint |
+| ⚙️ **[gh-ops](https://github.com/aspire488/gh-ops)** | GitHub operations, CI/release monitoring, OSS intelligence, security signals, and Telegram reporting. | Frozen baseline · **1,495 tests passing** |
+| 🌍 **[OSS Atlas](https://github.com/aspire488/oss-atlas)** | Archive and workspace for open-source contribution research and engineering notes. | Ongoing |
+| ⚡ **[CodeFlow](https://github.com/aspire488/codeflow)** · 💊 **[MediMind](https://github.com/aspire488/medimind)** | Earlier prototypes in developer workflow and medication reminders. | Frozen prototypes |
 
-> These are featured for visibility; the list is not a ranking.
+### 🚌 Campus Bus — release details
 
-### 🚌 [Campus Bus](https://github.com/aspire488/campus-bus) — College Bus Reservation System
+**Campus Bus v1.1** is a packaged Windows x64 application. The stack includes Java, Swing, JavaFX WebView, HTML/CSS/JavaScript, JDBC, and MySQL.
 
-**Campus Bus v1.1 is released for Windows x64.** A Java desktop application for campus transport and seat reservations: students can search trips, choose stops and seats, book or cancel journeys, and access a printable PDF pass. Administrators can manage buses, routes, schedules, students, reservations, and admin accounts.
+- **Automated tests:** 166/166 passed, zero skipped in the reported final run.
+- **Release integrity:** the ZIP downloaded from GitHub was checked against the locally built artifact's SHA-256.
+- **Core workflows:** student reservations and cancellations, seat selection, admin management, and PDF passes.
+- **Known limits:** Windows 10, a clean second PC, Windows file-picker schedule import, and every SmartScreen/antivirus configuration have not all been verified. Earlier GUI check counts were not rerun against the v1.1 ZIP.
+
+Links: [Repository](https://github.com/aspire488/campus-bus) · [v1.1 release](https://github.com/aspire488/campus-bus/releases/tag/v1.1) · [All releases](https://github.com/aspire488/campus-bus/releases)
+
+---
+
+## 🌐 Open-Source Contributions
+
+I work on upstream fixes and features as well as carefully scoped fork-side proposals. **Merged, open, and fork-only work are kept separate.**
+
+### Merged upstream
+
+- **[Microsoft PyRIT #2976](https://github.com/microsoft/PyRIT/pull/2976)** — preserved word-selection parameters in StringJoinConverter identifiers, with regression tests.
+- **[Microsoft PyRIT #2882](https://github.com/microsoft/PyRIT/pull/2882)** — rejected empty targets in ExactTextMatching, with regression coverage.
+- **[Microsoft PyRIT #2823](https://github.com/microsoft/PyRIT/pull/2823)** — preserved HarmBench context in behavior prompts and metadata.
+- **[Microsoft PyRIT #2762](https://github.com/microsoft/PyRIT/pull/2762)** — added memory-backed dataset summaries.
+- **[Hermes Agent #127233](https://github.com/NousResearch/hermes-agent/pull/127233)** — corrected rendering of structured MCP get_prompt content.
+- **[Inspect AI #5670](https://github.com/UKGovernmentBEIS/inspect_ai/pull/5670)** — fixed Google API key versus ADC precedence.
+
+### Other work
+
+- **[RAMPART contribution](https://github.com/aspire488/RAMPART/pull/2)** — generic PyRIT converter bridge proposal; open for review.
+- **[Inspect AI #5671](https://github.com/UKGovernmentBEIS/inspect_ai/pull/5671)** and **[#5672](https://github.com/UKGovernmentBEIS/inspect_ai/pull/5672)** — draft proposals for structured tool validation and cached input-token preservation.
+- More activity: [my pull requests](https://github.com/pulls?q=is%3Apr+author%3Aaspire488) · [my repositories](https://github.com/aspire488?tab=repositories)
+
+---
+
+## 🧭 Current Project Direction
+
+| Project | Current state |
+|---|---|
+| 🚌 Campus Bus | **Released** — v1.1 for Windows x64; project work paused until documentation |
+| 🤖 Pipo | **Released / evolving** — Android build and living-world experience |
+| ⚙️ gh-ops | **Frozen** — 1,495 tests passing; maintenance mode |
+| 🛠️ UEA | **Public alpha** — deterministic-first routing; 62/62 final integration tests |
+| 🤖 KIO | **Restoration / integration** — convergence and audit work remain |
+| 🧠 AURA | **Architecture checkpoint** — no active feature-development line |
+| ⚡ CodeFlow · 💊 MediMind | **Frozen prototypes** |
+| 🌐 Open source | Ongoing cross-project engineering and upstream review |
+
+---
+
+## 🧰 Technologies
 
 <p align="center">
-  <a href="https://github.com/aspire488/campus-bus/blob/main/docs/screenshots/08-admin-buses.png"><img src="https://raw.githubusercontent.com/aspire488/campus-bus/main/docs/screenshots/08-admin-buses.png" alt="Campus Bus admin bus management" width="48%"/></a>
-  <a href="https://github.com/aspire488/campus-bus/blob/main/docs/screenshots/05-campus-pass.png"><img src="https://raw.githubusercontent.com/aspire488/campus-bus/main/docs/screenshots/05-campus-pass.png" alt="Campus Bus confirmed reservation pass" width="48%"/></a>
+  <img src="https://skillicons.dev/icons?i=python,java,c,js,html,css,kotlin,react,nodejs,fastapi,git,github,linux,docker,postgres,redis&theme=dark" alt="Technologies used across projects"/>
 </p>
 
-<p align="center"><a href="https://github.com/aspire488/campus-bus#screenshots">More screenshots: student home, seat map, routes, schedules, students, reservations and admin pages →</a></p>
-
-- **Stack:** Java, Swing, JavaFX WebView, HTML/CSS/JavaScript, JDBC, and MySQL.
-- **Core engineering:** student/admin workflows, database-backed reservations, route and timetable management, PDF bus passes, email confirmation, isolated database testing, and Windows setup with a bundled Java runtime.
-- **Automated verification:** **166/166 tests passed**, with zero failures and zero skipped in the reported final run.
-- **GUI verification:** **42/42 student GUI checks** and **47/47 admin-console checks** passed in earlier real-GUI runs. The rebuilt v1.1 package was separately smoke-tested for setup/recovery, demo-admin sign-in, live overview, Toast replacement behavior, and clean shutdown.
-- **Release integrity:** the ZIP downloaded from GitHub was re-hashed and matched the locally built artifact's SHA-256.
-- **Known limits:** schedule import via the Windows file picker, Windows 10, a clean second PC, and other SmartScreen/antivirus configurations have not been tested. The earlier GUI check counts were not rerun against the v1.1 ZIP.
-
-**[Repository](https://github.com/aspire488/campus-bus)** · **[Download Campus Bus v1.1](https://github.com/aspire488/campus-bus/releases/tag/v1.1)** · **[All Windows releases](https://github.com/aspire488/campus-bus/releases)** · **[Test and release documentation](https://github.com/aspire488/campus-bus/blob/main/docs/final-release-audit.md)**
----
-
-### ⚙️ [gh-ops](https://github.com/aspire488/gh-ops) — Operational Intelligence Platform
-
-A reusable, deterministic GitHub operations layer running on GitHub Actions. gh-ops combines repository, CI, release, and security monitoring with OSS opportunity intelligence, developer activity reporting, persistent state, scheduled workflows, and outbound Telegram notifications.
-
-The system is deliberately **read-only against GitHub**: collection and analysis are automated, while execution boundaries, state, and verification remain deterministic.
-
-`Python` `GitHub Actions` `GitHub API` `Telegram` `State & Events` `OSS Intelligence`
-
-<a href="https://github.com/aspire488/gh-ops"><img src="https://img.shields.io/badge/Repository-Open-70a5fd?style=for-the-badge"/></a>
-<a href="https://github.com/aspire488/gh-ops/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/gh-ops/daily.yml?branch=master&style=for-the-badge&label=Actions"/></a>
-
-**Current:** **Complete / FROZEN 🔒.** All planned GH-OPS implementation phases and the post-Phase-8 hardening/intelligence line are complete. The final system combines repository/CI/release monitoring, OSS intelligence, security intelligence, developer activity, persistent event/repository lifecycles, unified reporting, deterministic intelligence, OSS Radar, optional grounded interpretation, and scheduled Telegram operations. Final frozen baseline: **1,495 tests passing**. No numbered phase is pending; Phase 8 is a historical milestone, not the current state. GH-OPS is in maintenance mode.
-
-### 🛠️ [Universal Engineering Augmentation](https://github.com/aspire488/Universal-Engineering-Augmentation) — Public Alpha
-
-Agent-neutral engineering infrastructure for coding agents. UEA moves repeatable engineering work from probabilistic reasoning into deterministic code intelligence, dependency/impact analysis, verification, property/mutation testing, formal reasoning, candidate isolation, routing, provenance, event logging, analytics, and reusable capabilities.
-
-The core stays agent-neutral while integrations can sit beside **OpenCode, Claude Code, Codex, or other coding agents**. The current main baseline includes deterministic-first routing with an optional local Laya System-1 fallback for UNKNOWN classifications: validated labels feed the existing capability/verification stack, while missing Laya or model failures fail soft. The final integration batch is **62/62 tests passing** with verification and compile checks clean.
-
-`Python` `Tree-sitter` `Z3` `Hypothesis` `SQLite` `DuckDB` `MCP`
-
-<a href="https://github.com/aspire488/Universal-Engineering-Augmentation"><img src="https://img.shields.io/badge/Repository-Open-70a5fd?style=for-the-badge"/></a>
-<a href="https://github.com/aspire488/Universal-Engineering-Augmentation/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/Universal-Engineering-Augmentation/ci.yml?branch=main&style=for-the-badge&label=CI"/></a>
-<a href="https://github.com/aspire488/Universal-Engineering-Augmentation/releases"><img src="https://img.shields.io/github/v/release/aspire488/Universal-Engineering-Augmentation?style=for-the-badge&label=Release"/></a>
-<a href="https://github.com/aspire488/Universal-Engineering-Augmentation/issues"><img src="https://img.shields.io/github/issues/aspire488/Universal-Engineering-Augmentation?style=for-the-badge&label=Issues"/></a>
-
-### 🧠 [AURA](https://github.com/aspire488/AURA) — Architecture checkpoint
-
-**Autonomous Unified Reasoning Architecture** — a FastAPI-based memory and cognition backend implementing persistent memory storage/retrieval, cognitive artifacts, and reflection-oriented processing for long-lived agent state.
-
-`Python` `FastAPI` `Memory` `Cognitive Artifacts` `Agents`
-
-<a href="https://github.com/aspire488/AURA"><img src="https://img.shields.io/badge/Repository-Explore-70a5fd?style=for-the-badge"/></a>
-
-### 🤖 [KIO](https://github.com/aspire488/Kio) — Active restoration / integration
-
-**Kernel for Intelligent Orchestration** — a modular execution kernel that resolves capabilities, plans actions, applies security gates, dispatches providers, executes tools, and verifies resulting state.
-
-KIO turns intent into real actions through:
-
-> **Observe → Reason → Plan → Execute → Verify → Adapt**
-
-It owns capability resolution, provider dispatch, security gates, browser/MCP execution, artifacts, runtime state, recovery, and verification of real side effects.
-
-The repository currently contains **63 validated automation templates** integrated through the canonical KIO execution path.
-
-`Python` `Automation` `Browser Automation` `MCP` `Provider Systems` `Verification`
-
-<a href="https://github.com/aspire488/Kio"><img src="https://img.shields.io/badge/Repository-Explore-70a5fd?style=for-the-badge"/></a>
-<a href="https://github.com/aspire488/Kio"><img src="https://img.shields.io/badge/63-Validated%20Automations-2ea44f?style=for-the-badge"/></a>
-<a href="https://github.com/aspire488/Kio#readme"><img src="https://img.shields.io/badge/Architecture-Read-70a5fd?style=for-the-badge"/></a>
-
-> **Architecture principle:** AI handles ambiguity and strategy; deterministic software owns execution, safety, state, and verification.
-
-### 🤖 [Pipo](https://github.com/aspire488/Pipo) — Character-First Android Simulation
-
-<p align="center">
-  <a href="https://github.com/aspire488/Pipo"><img src="https://raw.githubusercontent.com/aspire488/Pipo/main/assets/pipo-hero.svg" alt="Pipo — a little robot living inside your phone" width="820"/></a>
-</p>
-
-A **character-first Android simulation** where a little robot actually lives inside your phone. Pipo has persistent personality, moods, memories, habits, projects, relationships, games, mischief, voice, trips, and autonomous behavior. He isn't an assistant waiting for commands; he has a life of his own.
-
-The renderer is deliberately **procedural 2.5D**: depth-sorted body parts, perspective, parallax, lighting, shadows, reflections, camera movement, spring-driven motion, squash/stretch, gaze, 21 facial expressions, mood-specific body language, speech-driven mouth motion, and full front → three-quarter → profile → back turns. There is **no OpenGL, no 3D engine, no sprite-sheet or bitmap asset pipeline**.
-
-The deterministic Kotlin engine owns Pipo's personality, mood, memory, autonomy, projects, relationships, world state, notification policy, and phone actions. Gemini/Groq are only a wording layer; core state decisions remain local.
-
-### 🌍 The living-world build
-
-The latest validated build turns Pipo from a room simulation into a small persistent world:
-
-- **13 mapped places** plus undiscovered locations, with trips driven by actual reasons, opening hours, weather, time, money, and unfinished projects.
-- **9 named neighbours** with persistent memories, distinct personalities, real conversations, and place-specific interactions.
-- **Nib** is a full secondary character: traits, moods, sounds, thought bubbles, friendship stages, tricks, jealousy, naps, games, gifts, and its own dialogue.
-- **Sports:** football, cricket, table tennis, and badminton; Pipo vs Nib games plus playable cricket and table tennis against Pipo.
-- **Cricket:** two innings with batting and bowling timing, real misses, wickets, and score progression.
-- **Inventor system:** builder levels, blueprints, workshop progression, Bolt the desk helper, scout drone, rocket boots, and evolving armor from Mk I → Mk III.
-- **Mirror-world:** a hallway mirror can retain an independent reflection; Nib notices it and reports it to Pipo.
-- **Movie nights:** TV, popcorn, Nib, different film genres, reactions, and post-film reviews.
-- **Phone integration:** YouTube playback/search, Google search, ChatGPT/Gemini handoffs, web-assisted “find out” behavior, voice conversation, alarms/notifications, and other bounded phone actions.
-- **Real weather:** city weather from Open-Meteo can affect the room, trips, behavior, and seasons.
-- **Festivals:** Christmas, Halloween, New Year, Diwali, Onam, Vishu, Pongal, Holi, and Eid alter the environment and character behavior.
-- **Grounded conversation:** answers about Pipo's life are grounded in his actual memories, journal, possessions, trips, and Nib rather than generated lore.
-- **Camera/vision:** “Pipo, look!” can open the phone camera and let him react to what he sees without identifying people.
-
-The phone validation round also caught and fixed real behavioral bugs: broken game scores, incorrect intent routing, shallow autonomy choices, charging loops, keyboard occlusion, stale object references, duplicate world objects, and time-based activity failures.
-
-**Latest validation:** **175 tests passing · Galaxy S23 / Android 15 verified · procedural 2.5D rendering validated · release build verified.**
-
-The public repository is security-audited: **no credentials, APKs, or intro videos are tracked or present in Git history**. The private friend APK remains outside GitHub.
-
-**Stack:** Kotlin · Jetpack Compose · Canvas Rendering · Procedural 2.5D · Android · WorkManager · Local-first · Character Simulation
-
-<a href="https://aspire488.github.io/Pipo/"><img src="https://img.shields.io/badge/Live-3D%20World-3ddc84?style=for-the-badge"/></a>
-<a href="https://github.com/aspire488/Pipo"><img src="https://img.shields.io/badge/Repository-Open-70a5fd?style=for-the-badge"/></a>
-<a href="https://github.com/aspire488/Pipo#readme"><img src="https://img.shields.io/badge/README-Deep%20Dive-8b5cf6?style=for-the-badge"/></a>
-<a href="https://github.com/aspire488/Pipo/blob/main/DEVICE_TEST_REPORT.md"><img src="https://img.shields.io/badge/Device%20Report-Verified-2ea44f?style=for-the-badge"/></a>
-
----
-
-## 🧪 Frozen Product Prototypes
-
-These projects are no longer active product-development tracks. They have been hardened into inspectable, reproducible portfolio artifacts.
-
-### ⚡ [CodeFlow](https://github.com/aspire488/codeflow) — Frozen Prototype
-
-Execution-first programming-learning prototype focused on visible execution state, code visualization, exercises, and bounded AI assistance.
-
-**Live:** [codeflow-app-sigma.vercel.app](https://codeflow-app-sigma.vercel.app)
-
-`JavaScript` `Vite` `Execution Visualization` `PWA`
-
-<a href="https://codeflow-app-sigma.vercel.app"><img src="https://img.shields.io/badge/%E2%96%B6%20LIVE%20DEMO-Open-success?style=for-the-badge"/></a>
-<a href="https://github.com/aspire488/codeflow"><img src="https://img.shields.io/badge/Source-GitHub-70a5fd?style=for-the-badge"/></a>
-<a href="https://github.com/aspire488/codeflow/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/codeflow/ci.yml?branch=main&style=for-the-badge&label=CI"/></a>
-<a href="https://github.com/aspire488/codeflow/releases"><img src="https://img.shields.io/github/v/release/aspire488/codeflow?style=for-the-badge&label=Releases"/></a>
-
-**Final hardening:** Node 22, Vite 8, production-build CI, tagged release validation, Dependabot, CodeQL, deployment security headers, explicit prototype boundary, and MIT licensing.
-
-### 💊 [MediMind Care](https://github.com/aspire488/medimind) — Frozen Prototype
-
-AI-assisted medication-reminder and health-workflow prototype exploring role-specific UX, deterministic reminders, accessibility, synthetic data, and bounded AI assistance.
-
-**Live:** [medimind-seven.vercel.app](https://medimind-seven.vercel.app/)
-
-`React 18` `Vite 6` `Gemini` `Accessibility` `Safety Boundaries`
-
-<a href="https://medimind-seven.vercel.app/"><img src="https://img.shields.io/badge/%E2%96%B6%20LIVE%20DEMO-Open-success?style=for-the-badge"/></a>
-<a href="https://github.com/aspire488/medimind"><img src="https://img.shields.io/badge/Source-GitHub-70a5fd?style=for-the-badge"/></a>
-<a href="https://github.com/aspire488/medimind/actions"><img src="https://img.shields.io/github/actions/workflow/status/aspire488/medimind/ci.yml?branch=main&style=for-the-badge&label=CI"/></a>
-<a href="https://github.com/aspire488/medimind/releases"><img src="https://img.shields.io/github/v/release/aspire488/medimind?style=for-the-badge&label=Releases"/></a>
-
-**Final hardening:** Node 22 CI baseline, Playwright browser smoke coverage, Chromium validation, CodeQL, Dependabot, deployment security headers, environment/credential hygiene, explicit medical safety boundary, and MIT licensing.
-
-The application intentionally remains on its React 18/Vite 6 prototype stack rather than taking an unvalidated framework migration.
-
----
-
-## 🔗 Project Map
-
-| Project | Stage | Repository | Live / Docs |
-|---|---|---|---|
-| ⚙️ gh-ops | Operational / Final hardening | [GitHub](https://github.com/aspire488/gh-ops) | [README](https://github.com/aspire488/gh-ops#readme) |
-| 🤖 KIO | Active restoration / integration | [GitHub](https://github.com/aspire488/Kio) | [README](https://github.com/aspire488/Kio#readme) |
-| 🧠 AURA | Architecture checkpoint | [GitHub](https://github.com/aspire488/AURA) | [Architecture](https://github.com/aspire488/AURA#readme) |
-| 🛠️ UEA | Public Alpha | [GitHub](https://github.com/aspire488/Universal-Engineering-Augmentation) | [README](https://github.com/aspire488/Universal-Engineering-Augmentation#readme) |
-| 🤖 Pipo | **Living-world build · device-validated** | [GitHub](https://github.com/aspire488/Pipo) | [README](https://github.com/aspire488/Pipo#readme) · [Device report](https://github.com/aspire488/Pipo/blob/main/DEVICE_TEST_REPORT.md) |
-| ⚡ CodeFlow | Frozen Prototype | [GitHub](https://github.com/aspire488/codeflow) | [Live](https://codeflow-app-sigma.vercel.app) |
-| 💊 MediMind | Frozen Prototype | [GitHub](https://github.com/aspire488/medimind) | [Live](https://medimind-seven.vercel.app/) |
-
----
-
-## 🗺️ OSS Atlas
-
-> The complete open-source engineering archive now lives in **[OSS Atlas](https://github.com/aspire488/oss-atlas)** — contribution records, upstream work, research, case studies, experiments, learnings, and the spatial/3D engineering track.
-
-## 🔀 Open-Source Engineering
-
-I use open source as an external engineering track: working across unfamiliar codebases, contributing real changes, and learning how software is built and maintained outside my own projects.
-
-### Upstream work
-
-I distinguish **merged work from open proposals** so the repository status is explicit.
-
-#### ✅ Merged upstream work
-- [PyRIT #2762 — Dataset Summary API](https://github.com/microsoft/PyRIT/pull/2762)  
-  **Merged upstream on September 24, 2026** after maintainer review and multiple refinement rounds. Added memory-backed dataset summaries with aggregation, selection-key isolation, unnamed/whitespace dataset handling, metadata query controls, `loaded_only` behavior, and regression coverage. Final merge commit: `47c6151a`.
-
-
-- [aios #2458 — Record streaming `length` as truncated output](https://github.com/eumemic/aios/pull/2458)  
-  **Merged upstream on September 24, 2026** after the maintainer resolved the pinned Ruff formatting blocker. The final implementation records provider `finish_reason="length"` as `output_truncated=true` at the loop layer and includes streaming regression coverage. Merge commit: `fe051b2c`. 
-
-- [aios #2457 — Preserve `length` finish reason across streaming trailers](https://github.com/eumemic/aios/pull/2457)  
-  Merged upstream fix preserving provider-reported `finish_reason="length"` when trailing streaming chunks clobber the assembled finish reason, with regression coverage and `content_filter` precedence handling.
-
-- [aios #2460 — Preserve LiteLLM parameter translation](https://github.com/eumemic/aios/pull/2460)  
-  Merged upstream fix that preserves LiteLLM provider-specific parameter translation while retaining explicit `allowed_openai_params` overrides, with regression coverage for mapped, unmapped, and explicitly forced parameters.
-
-- [aios #2459 — Preserve timeout bound in child outcome](https://github.com/eumemic/aios/pull/2459)  
-  **Merged upstream** after maintainer review. Preserves whether workflow-child timeout resolution came from the `deadline` or `spend` bound while keeping `kind="timeout"` unchanged for compatibility, with regression coverage for both trigger paths.
-
-- [GitHub Profile Analyzer #30 — Evidence-weighted impact scoring](https://github.com/0xarchit/github-profile-analyzer/pull/30)  
-  **Merged upstream** after maintainer approval. Refined impact scoring with repository-quality evidence and improved viewport-aware factor tooltips, with regression coverage.
-
-- [PyRIT #2823 — Preserve HarmBench contextual behavior prompts](https://github.com/microsoft/PyRIT/pull/2823)  
-  **Merged upstream on September 25, 2026.** Preserves non-empty HarmBench ContextString in behavior prompts, retains context metadata, and adds regression coverage. Merge commit: `940a8efabb404d80f6a716c5e641d81809d8972a`.
-
-- [Agent-Bench #8 — Global command palette](https://github.com/PicadoLabs/agent-bench/pull/8)  
-  **Merged upstream on September 26, 2026.** Adds a global command palette with keyboard and accessibility support. Merge commit: `2d95c522d95705d332f2e6ddc5929c281e2886b3`.
-
-- [AgentField #1073 — Go harness factory tests](https://github.com/Agent-Field/agentfield/pull/1073)  
-  **Merged upstream on September 26, 2026.** Adds focused `factory_test.go` coverage for explicit Claude Code and OpenCode provider construction, with the table driving concrete type assertions. Maintainer review approved the change and confirmed focused factory tests plus `go vet` pass locally. Merge commit: `13b44603e2fb09a5d1817e8d2d0f64f3a40041fa`.
-
-- [NousResearch Hermes Agent #126144 — Desktop/session routing](https://github.com/NousResearch/hermes-agent/pull/126144)  
-  **Merged upstream on September 28, 2026.** Broader desktop/session routing fix covering session-owner connection pinning, profile-switch PTY cleanup, secondary-window routing, and stale gateway recovery. The merged PR explicitly incorporates and credits the stale gateway-ref recovery from #121771.
-
-### ⛔ Recently resolved upstream work — September 28, 2026
-
-- [Microsoft PyRIT #2885 — Preserve text after Prompt Shield document tags](https://github.com/microsoft/PyRIT/pull/2885)  
-  **Closed as duplicate on September 28, 2026.** The maintainer directed the fix/review to earlier #2838, which addresses the same Prompt Shield parsing issue.
-
-### 🟢 Recent upstream work — September 26, 2026
-
-- [LlamaIndex #23260 — Preserve retrieved scores during Prev/Next expansion](https://github.com/run-llama/llama_index/pull/23260)  
-  **Open upstream.** Prevents overlapping Prev/Next node expansion from replacing an originally retrieved NodeWithScore with an unscored copy. Adds regression coverage for both retrieval orders and valid 0.0 scores.
-
-### 🟡 Open upstream work
-
-- [GitFut #125 — Derive active years from contribution history](https://github.com/Younesfdj/gitfut/pull/125)  
-  **Open upstream on September 26, 2026.** Fixes undercounting of active years by deriving the signal from GitHub's annual contribution windows rather than owned-repository timestamps, with focused regression coverage for organization-only and missing-window cases.
-
-- [NousResearch Hermes Agent #123846 — Accept Fire tuple args and numeric run names](https://github.com/NousResearch/hermes-agent/pull/123846)  
-  **Open upstream · September 26, 2026.** Accepts string/list/tuple provider arguments, normalizes CSV values, and coerces numeric `run_name` values to strings, with focused regression coverage.
-
-- [NousResearch Hermes Agent #123850 — Keep Tool Search bridge trajectories](https://github.com/NousResearch/hermes-agent/pull/123850)  
-  **Open upstream · September 26, 2026.** Includes synthesized Tool Search bridge tools in batch trajectory validation so `tool_search`, `tool_describe`, and `tool_call` trajectories are not incorrectly rejected. The regression coverage now exercises the real `_combine_batch_files()` filtering path and verifies a `tool_call` bridge trajectory is retained rather than counted as invalid.
-
-- [collective/icalendar #1835 — Fix/start end duration mismatch](https://github.com/collective/icalendar/pull/1835)  
-  **Open upstream · September 25, 2026.** Resolves inconsistent `DTEND` + `DURATION` handling by preferring explicit `DURATION`, with focused regression coverage.
-
-- [NVIDIA garak #2234 — Fix/paraphrase transformers compatibility](https://github.com/NVIDIA/garak/pull/2234)  
-  **Open upstream · September 25, 2026.** Removes the deprecated `transformers-community/group-beam-search` custom-generation path and `trust_remote_code` requirement from the `Fast` paraphrase buff, while retaining native group-beam-search parameters and adding regression coverage for the compatibility fix.
-
-## 📡 Current OSS PR Queue — September 28, 2026
-
-| Repository | PR | Status | Engineering focus |
-|---|---|---|---|
-| LlamaIndex | [#23260](https://github.com/run-llama/llama_index/pull/23260) | 🟡 Open | Preserve retrieved scores during Prev/Next expansion |
-| Microsoft PyRIT | [#2762](https://github.com/microsoft/PyRIT/pull/2762) | ✅ Merged | Dataset Summary API; merged upstream September 24, 2026 |
-| Microsoft PyRIT | [#2823](https://github.com/microsoft/PyRIT/pull/2823) | ✅ Merged | HarmBench ContextString preservation with regression coverage; merged upstream September 25, 2026 |\n| Microsoft PyRIT | [#2882](https://github.com/microsoft/PyRIT/pull/2882) | ✅ Merged | ExactTextMatching empty/whitespace-only target fix; merged upstream September 28, 2026 |
-| Microsoft PyRIT | [#2885](https://github.com/microsoft/PyRIT/pull/2885) | ⛔ Closed / duplicate | Prompt Shield parser fix superseded by earlier #2838 |
-| Microsoft RAMPART | [#2](https://github.com/aspire488/RAMPART/pull/2) | 🟡 Open | Generic PyRIT PromptConverter → RAMPART PayloadConverter bridge; text-to-text scope with regression coverage |
-| GitFut | [#125](https://github.com/Younesfdj/gitfut/pull/125) | 🟡 Open | Derive active years from annual contribution history; regression coverage for organization-only and missing-window cases |
-| NousResearch Hermes Agent | [#123846](https://github.com/NousResearch/hermes-agent/pull/123846) | 🟡 Open | Accept Fire tuple args and numeric run names; normalize provider CSV values |
-| NousResearch Hermes Agent | [#123850](https://github.com/NousResearch/hermes-agent/pull/123850) | 🟡 Open | Keep Tool Search bridge trajectories during batch validation |
-| NousResearch Hermes Agent | [#126144](https://github.com/NousResearch/hermes-agent/pull/126144) | ✅ Merged | Desktop/session routing; incorporates and credits #121771 stale gateway-ref recovery |
-| RisingWave | [#27181](https://github.com/risingwavelabs/risingwave/pull/27181) | 🟡 Open | Correlated refs inside LogicalValues; real LogicalApply → ApplyEliminateRule → to_batch() regression |
-| SiYuan | [#1](https://github.com/aspire488/siyuan/pull/1) | 🟡 Open | Recover expired MCP sessions with exactly one safe replay |
-| TopoCore | [#1](https://github.com/KARAN-D05/TopoCore/pull/1) | 🟡 Open | Deterministic spatial execution cycle detection |
-| Inspect AI | [#1](https://github.com/aspire488/inspect_ai/pull/1) | 🟡 Open | Base64-safe Google inline-image bytes |
-| MVT | [#939](https://github.com/mvt-project/mvt/pull/939) | 🟡 Open | STIX indicator parsing with = inside URL query values |
-| Cloudflare quiche | [#2759](https://github.com/cloudflare/quiche/pull/2759) | 🟡 Open | Ignore ACKs for non-in-flight packets in Reno |
-| Cloudflare quiche | [#2758](https://github.com/cloudflare/quiche/pull/2758) | 🟡 Open | Verify peers when using a custom CA |
-| Cloudflare quiche | [#2756](https://github.com/cloudflare/quiche/pull/2756) | 🟡 Draft | Unify PTO-based timer duration |
-| GitHub Linguist | [#1](https://github.com/aspire488/linguist/pull/1) | 🟡 Open | Trim .example suffix before language detection |
-| AI Platform AWS | [#4](https://github.com/tysoncung/ai-platform-aws/pull/4) | 🟡 Open | Provider-routing specificity for Anthropic vs Bedrock Claude |
-| Agent-Bench | [#8](https://github.com/PicadoLabs/agent-bench/pull/8) | ✅ Merged | Global command palette with keyboard/accessibility support; merged September 26, 2026 |
-| GoalAI Score Predictor | [#1](https://github.com/adityamallia7/GoalAI-Score-predictor-26/pull/1) | 🟡 Open | Reproducible Monte Carlo prediction-analysis lab; deployment awaiting Vercel authorization |
-| OpenHands | [#17579](https://github.com/OpenHands/OpenHands/pull/17579) | 🟡 Open | Align condenser max-size metadata with agent-server minimum |
-| LlamaIndex | [#23201](https://github.com/run-llama/llama_index/pull/23201) | 🟡 Open | Preserve retrieved scores during previous/next expansion |
-| IntelliJ PowerShell | [#506](https://github.com/intellij-powershell/intellij-powershell/pull/506) | 🟡 Open | Resolve pwsh.exe WindowsApps reparse points |
-| OpenTelemetry Erlang | [#822](https://github.com/open-telemetry/opentelemetry-erlang-contrib/pull/822) | 🟡 Open | Isolate spans across retries and redirects |
-| Coder | [#29668](https://github.com/coder/coder/pull/29668) | 🟡 Draft | Deduplicate unknown AI Gateway clients |
-| N3MO | [#39](https://github.com/RajX-dev/N3MO/pull/39) | 🟡 Open | Ruby/Kotlin language routing regression coverage |
-| garak | [#1](https://github.com/aspire488/garak/pull/1) | 🟡 Open | Unset soft prompt cap handling |
-
-**Review posture:** no fabricated activity. PRs without actionable maintainer feedback remain waiting; concrete reviewer findings are patched when verified.
-## 🛡️ PyRIT — AI Red-Teaming Contributions
-
-I’m actively contributing to **[Microsoft PyRIT](https://github.com/microsoft/PyRIT)**, an open-source framework for AI red teaming. My recent upstream work includes two merged PyRIT upstream contributions: the dataset-summary API (#2762) and HarmBench context preservation (#2823), plus the merged ExactTextMatching fix (#2882).
-
-### 🔥 Current PyRIT work
-
-- **[#2762 — Dataset Summary API](https://github.com/microsoft/PyRIT/pull/2762)** — **🏆 MERGED UPSTREAM · September 24, 2026** after maintainer review. Added memory-backed dataset summaries and iterated through feedback covering aggregation, SQLite collation behavior, unnamed/whitespace dataset identity, selection-key isolation, metadata query size, and `loaded_only` behavior. Roman Lutz verified the substantive concerns against real stored seeds, and the final test-cleanup commit was merged with the implementation. Merge commit: `47c6151a`.
-- **[#2823 — Preserve HarmBench contextual behavior prompts](https://github.com/microsoft/PyRIT/pull/2823)** — **🏆 MERGED UPSTREAM · September 25, 2026**. Fixes the HarmBench loader dropping non-empty `ContextString` values by combining context and behavior using the dataset convention, while retaining context in metadata and adding regression coverage. Merge commit: `940a8efabb404d80f6a716c5e641d81809d8972a`.
-- **[#2882 — Reject empty targets in ExactTextMatching](https://github.com/microsoft/PyRIT/pull/2882)** — **🏆 MERGED UPSTREAM · September 28, 2026**; rejects empty and whitespace-only exact-match targets, with `DecodingScorer` regression coverage and explicit `ignore_whitespace=False` coverage. Merge commit: `dff83aaab767f9b2b0aee68a20ab277de7e9d289`.
-- **[#2885 — Fix PromptShield parser](https://github.com/microsoft/PyRIT/pull/2885)** — **⛔ CLOSED AS DUPLICATE · September 28, 2026**; maintainer directed the fix/review to the earlier #2838, which addresses the same Prompt Shield parsing bug.\n- **[#3 — Objective scorer assistant-message handling](https://github.com/aspire488/PyRIT/pull/3)** — **🟡 OPEN FOR UPSTREAM REVIEW**; targets PyRIT #2835 with a focused evaluator fix and regression coverage.
-- **[#2882 — Reject empty targets in ExactTextMatching](https://github.com/microsoft/PyRIT/pull/2882)** — **🏆 MERGED UPSTREAM · September 28, 2026**; rejects empty and whitespace-only targets after normalization, with `DecodingScorer` regression coverage and explicit `ignore_whitespace=False` coverage. Merge commit: `dff83aaab767f9b2b0aee68a20ab277de7e9d289`.\n- **[#2782 — Canonical technique names in scenario run summaries](https://github.com/aspire488/PyRIT/tree/fix/promptinject-technique-summary)** — follow-up fix prepared on my fork. Corrects `techniques_used` to use the persisted canonical `technique_name` rather than a potentially goal/objective-bearing `display_group`, with regression coverage. The fork PR is open while an upstream submission path is being finalized.
-
-> **Why it matters:** this work involves navigating a large unfamiliar codebase, understanding existing data models and service boundaries, responding to maintainer review, and adding targeted regression coverage rather than making isolated demo changes.
-
-**Status is intentionally explicit:** #2762, #2823, and #2882 are merged upstream; #2885 is closed as a duplicate; #3 and #2782 remain fork-side work until upstream acceptance exists.
-
----
-
-
-### 🧪 Microsoft RAMPART — Agentic AI Security Testing
-
-**[Microsoft RAMPART](https://github.com/microsoft/RAMPART)** is a pytest-native safety and security testing framework for agentic AI applications, built around repeatable adversarial testing and evaluation-driven assertions. It extends the same AI-security direction as the PyRIT work above into agent-focused regression testing and CI.
-
-> **Next AI-security target:** RAMPART is tracked here as a target project, not as a claimed contribution or merged PR.
-
-`Python` `Pytest` `AI Security` `Red Teaming` `Agentic AI`
-### 🌀 TopoCore — Spatial Execution Contribution
-
-- **[TopoCore — cycle detection for spatial execution](https://github.com/KARAN-D05/TopoCore/pull/1)** — added deterministic cycle detection to the experimental 2D spatial execution visualizer by tracking `(X, Y, Direction)` states, stopping repeated execution loops, and resetting execution-trace state on reset/clear. This explores an unconventional execution model where program flow is defined by movement through symbolic space.
-
-### 🆕 AI-security OSS contributions — September 23–24, 2026
-
-- **Microsoft PyRIT #2762** — **merged upstream** after maintainer review; dataset summary API with memory-backed aggregation and regression coverage.
-- **NVIDIA garak #1** — fork-side fix for `IterativeProbe` when `soft_probe_prompt_cap=None`, preserving uncapped behavior and adding regression coverage.
-- **UK AI Security Institute Inspect AI #1** — fork-side fix for Google inline-image conversion for raw binary `Blob.data` by base64-encoding bytes before building the data URI.
-
-> Status is tracked explicitly: merged upstream work is separated from open fork-side proposals.
-
-### 🔥 Latest engineering work — September 28, 2026
-
-- **Microsoft PyRIT #2762** — **merged upstream** after multiple maintainer review rounds. The dataset summary API is now part of upstream PyRIT; final merge commit: `47c6151a`.
-- **Microsoft PyRIT #2823** — **merged upstream on September 25, 2026**. Preserves non-empty HarmBench `ContextString` values while retaining context metadata, with focused regression coverage. Merge commit: `940a8efabb404d80f6a716c5e641d81809d8972a`.\n- **Microsoft PyRIT #2882** — **merged upstream on September 28, 2026**. Rejects empty and whitespace-only `ExactTextMatching` targets after normalization, with `DecodingScorer` and `ignore_whitespace=False` regression coverage. Merge commit: `dff83aaab767f9b2b0aee68a20ab277de7e9d289`.
-- **Microsoft PyRIT #3** — **open fork PR targeting upstream #2835**; ObjectiveScorerEvaluator now scores only the assistant response from multi-turn labeled conversations while retaining all turns in scorer memory, with regression coverage.
-- **aios #2458** — **merged upstream on September 24, 2026**. The streaming truncation telemetry fix landed in master after the pinned Ruff formatting issue was resolved. Merge commit: `fe051b2c`.
-- **RisingWave #27181** — **open upstream**. Correlated-reference coverage now crosses the real `LogicalApply → ApplyEliminateRule → to_batch()` path, including a multi-row `LogicalValues` case; the review-found test compile issue was fixed with `ctx.clone()`.
-- **KiroCrew #12861** — **closed without merge on September 25, 2026**; superseded by upstream #12925, which already contained the fix.
-- **TopoCore #1** — **open upstream**. Added deterministic repeated-state cycle detection to the spatial execution simulator.
-- **LlamaIndex #23201** — **open upstream**. Preserves retrieved scores during previous/next expansion.
-- **OpenHands #17579** — **open upstream**. Aligns condenser max-size metadata with the agent-server minimum.
-- **Coder #29668** — **open upstream**. Deduplicates unknown AI Gateway clients.
-- **Cloudflare quiche #2758 / #2759** — **open upstream** fixes covering custom-CA peer verification and Reno ACK accounting.
-- **IntelliJ PowerShell #506** — **open upstream** fix for resolving `pwsh.exe` through WindowsApps reparse points.
-- **N3MO #39** — **open upstream** regression coverage for Ruby and Kotlin language routing.
-
-> Status is deliberately separated into merged, open-upstream, and fork-side work. No open proposal is presented as accepted upstream.
-
----
-
-
----
-
-## 💬 Technical Discussions
-
-I also contribute through **GitHub Discussions** — answering concrete engineering questions in unfamiliar codebases and sharing implementation-level reasoning with maintainers and other developers.
-
-### Recent discussions
-
-- 🧩 [Lexical #8771 — Named Slots for paginated editors](https://github.com/facebook/lexical/discussions/8771)  
-  Discussed separating **page-region modeling** from **pagination/flow logic**, using Named Slots for independently editable header/footer regions while keeping content pagination as a higher-level layout concern.
-
-- 🐳 [MCP Registry #921 — Using the published Docker image](https://github.com/modelcontextprotocol/registry/discussions/921)  
-  Explained the GHCR image workflow, the distinction between the pre-built Registry image and the full local development environment, and the PostgreSQL dependency for persistent deployments.
-
-- ⚡ [VS Code Discussions #3109 — Diagnosing Electron main-process hangs](https://github.com/microsoft/vscode-discussions/discussions/3109)  
-  Proposed a practical incident-diagnostics workflow around external watchdogs, event-loop health, Node diagnostic reports, process dumps, CPU profiling, IPC telemetry, and separating JavaScript starvation from synchronous/native/OS blocking.
-
-- 🧩 [MVT Discussions — STIX indicator parsing](https://github.com/mvt-project/mvt/discussions)  
-  Discussed the parsing boundary around STIX indicators, including values containing `=`, malformed patterns, validation, and preserving existing detection semantics.
-
-> Discussion answers are kept focused on reproducible engineering practices, implementation details, and primary documentation rather than activity for its own sake.
-
----
-
-## 🧠 Engineering Principles
-
-- **Deterministic software owns execution; AI handles ambiguity.**
-- **Verification is part of implementation, not a final step.**
-- **Measure behavior before claiming improvement.**
-
----
-
-## 🛠️ Stack
-
-<p align="center">
-<strong>Languages</strong><br/>
-<img src="https://skillicons.dev/icons?i=python,js,c,html,css&theme=dark"/>
-<br/><br/>
-<strong>Frameworks & Platforms</strong><br/>
-<img src="https://skillicons.dev/icons?i=react,nodejs,vite,tailwind,electron,fastapi&theme=dark"/>
-<br/><br/>
-<strong>Tools & Infrastructure</strong><br/>
-<img src="https://skillicons.dev/icons?i=git,github,vscode,vercel,linux,docker,postgres,redis&theme=dark"/>
-</p>
-
----
-
-## 🏷️ Technologies & Tools
-
-<p align="center">
-<strong>Languages</strong><br/>
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
-<img src="https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black"/>
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
-</p>
-
-<p align="center">
-<strong>Systems & Frameworks</strong><br/>
-<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
-<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
-<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>
-<img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
-<img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
-</p>
-
-<p align="center">
-<strong>Engineering & Infrastructure</strong><br/>
-<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
-<img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"/>
-<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
-<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/>
-<img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white"/>
-</p>
-
-<p align="center">
-<strong>AI / Developer Workflow</strong><br/>
-<img src="https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=claude&logoColor=white"/>
-<img src="https://img.shields.io/badge/Google_Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white"/>
-<img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white"/>
-<img src="https://img.shields.io/badge/MCP-111827?style=for-the-badge"/>
-</p>
-
-> These badges describe the technologies currently represented in my public projects and engineering workflow — they are not certification badges.
+Technologies vary by project and include Python, Java, Kotlin, C, JavaScript, HTML/CSS, Android, Swing, FastAPI, GitHub Actions, MySQL, PostgreSQL, Redis, and MCP.
 
 ---
 
 ## 📊 GitHub Activity
 
 <p align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/overview.dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/overview.light.svg" />
-  <img alt="Live GitHub overview" src="./assets/profile/overview.dark.svg" width="100%"/>
-</picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/overview.dark.svg"/>
+    <source media="(prefers-color-scheme: light)" srcset="./assets/profile/overview.light.svg"/>
+    <img src="./assets/profile/overview.dark.svg" width="100%" alt="GitHub activity overview"/>
+  </picture>
 </p>
 
 <p align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/contributions.dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/contributions.light.svg" />
-  <img alt="GitHub contribution history" src="./assets/profile/contributions.dark.svg" width="100%"/>
-</picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/contributions.dark.svg"/>
+    <source media="(prefers-color-scheme: light)" srcset="./assets/profile/contributions.light.svg"/>
+    <img src="./assets/profile/contributions.dark.svg" width="100%" alt="GitHub contribution history"/>
+  </picture>
 </p>
 
-<p align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/activity.dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/activity.light.svg" />
-  <img alt="2026 engineering activity" src="./assets/profile/activity.dark.svg" width="100%"/>
-</picture>
-</p>
-
-
-<p align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/languages.dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/languages.light.svg" />
-  <img alt="Language composition" src="./assets/profile/languages.dark.svg" width="100%"/>
-</picture>
-</p>
-
-<p align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/rhythm.dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/rhythm.light.svg" />
-  <img alt="Contribution rhythm" src="./assets/profile/rhythm.dark.svg" width="100%"/>
-</picture>
-</p>
-
-<p align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/composition.dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/composition.light.svg" />
-  <img alt="Contribution composition" src="./assets/profile/composition.dark.svg" width="100%"/>
-</picture>
-</p>
-
-> Activity cards are generated by GitHub Actions and committed to this profile repository, avoiding fragile third-party statistics endpoints.
-
- > **Project status note — October 3, 2026:** KIO is not being represented as “Gate 5 complete.” The repository currently describes an active restoration/integration state, while its Constitution still calls for evidence-driven convergence/audit work before further implementation. Recent activity includes security redaction and documentation organization/hardening. AURA remains at its June 2026 architecture checkpoint with no active feature-development line.
+<sub>Activity cards are generated by GitHub Actions in this repository.</sub>
 
 ---
 
-## 🎯 Current Direction
+## 🧠 How I Build
 
-| Track | State / next milestone |
-|---|---|
-| ⚙️ gh-ops | **FROZEN** — 1,495 tests passing; intelligence + OSS Radar + Telegram hardened
-| 🤖 KIO | **Active restoration / integration** — convergence/audit work remains; recent activity is security/documentation hardening |
-| 🧠 AURA | **Architecture checkpoint** — core cognition architecture is complete; no active feature-development line |
-| 🛠️ UEA | **Public alpha** — deterministic-first routing + optional Laya System-1 fallback; 62/62 final integration tests |
-| 🤖 Pipo | **Living-world build + device-validated** — 175 tests passing; procedural 2.5D Android character with trips, Nib, sports, mirror-world, inventions, phone actions, and grounded memory |
-| ⚡ CodeFlow | Frozen, hardened prototype |
-| 💊 MediMind | Frozen, hardened prototype |
-| 🌍 Open Source | Cross-project contributions + upstream engineering |
-
----
+- **Deterministic software owns execution; AI handles ambiguity.**
+- **Verification belongs in implementation, not just at the end.**
+- **Claims should be backed by tests or observable evidence.**
+- **Ship useful work, learn from review, and improve the system.**
 
 <p align="center">
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&pause=900&color=70A5FD&center=true&vCenter=true&width=800&lines=Not+just+building+ideas...;Building+systems+that+execute.;Turning+code+into+real+world+actions.;Learning+by+shipping.;Building+in+public."/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:70a5fd,100:0d1117&height=110&section=footer" width="100%" alt=""/>
+  <strong>Building in public · Shipping software · Learning by doing</strong>
 </p>
-
-<p align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:70a5fd,100:0d1117&height=140&section=footer" width="100%"/>
-</p>
-
-<p align="center"><strong>Building in public • Shipping real systems • Learning by doing</strong></p>
