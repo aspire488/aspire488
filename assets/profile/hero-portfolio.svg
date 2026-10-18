@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" width="1200" height="430" role="img" aria-labelledby="t d">
+<title id="t">Joel Jigo — builder of software and systems</title><desc id="d">A bespoke midnight-purple portfolio illustration with orbital shapes, a glowing laptop, floating project windows, and the message Build things. Make them hold up.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#090d18"/><stop offset=".52" stop-color="#17152d"/><stop offset="1" stop-color="#0c1822"/></linearGradient>
+ <linearGradient id="orb" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a78bfa" stop-opacity=".92"/><stop offset=".55" stop-color="#7c5cff" stop-opacity=".27"/><stop offset="1" stop-color="#5ce2b0" stop-opacity=".1"/></linearGradient>
+ <linearGradient id="mint" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#baff80"/><stop offset="1" stop-color="#62edc4"/></linearGradient>
+ <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#172b38"/><stop offset="1" stop-color="#111726"/></linearGradient>
+ <radialGradient id="haze"><stop stop-color="#765aff" stop-opacity=".22"/><stop offset="1" stop-color="#765aff" stop-opacity="0"/></radialGradient>
+ <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#a8b8db" opacity=".22"/></pattern>
+ <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#000" flood-opacity=".36"/></filter>
+ <clipPath id="round"><rect width="1200" height="430" rx="20"/></clipPath>
+</defs>
+<g clip-path="url(#round)">
+<rect width="1200" height="430" rx="20" fill="url(#bg)"/><rect width="1200" height="430" fill="url(#dots)"/><ellipse cx="900" cy="220" rx="390" ry="290" fill="url(#haze)"/>
+<path d="M0 358 Q280 280 520 380 T1200 338 V430 H0Z" fill="#101a29" opacity=".72"/>
+<g fill="#d5e7ff">
+<circle cx="650" cy="91" r="1.8" opacity=".8"/><circle cx="793" cy="62" r="1.2" opacity=".7"/><circle cx="1093" cy="92" r="2" opacity=".6"/><circle cx="1140" cy="252" r="1.5" opacity=".6"/><circle cx="1000" cy="370" r="1.6" opacity=".7"/><circle cx="742" cy="350" r="1" opacity=".7"/><circle cx="1162" cy="129" r="1" opacity=".7"/>
+</g>
+<path d="M670 300C650 192 731 95 850 79s224 45 246 150-50 191-160 191-205-33-266-120Z" fill="none" stroke="#8b7bff" stroke-opacity=".22" stroke-width="1.5"/>
+<path d="M702 318C684 225 760 119 864 104s189 47 211 136-44 150-146 160-183-14-227-82Z" fill="none" stroke="#73e6be" stroke-opacity=".24" stroke-width="1.2" stroke-dasharray="4 7"><animateTransform attributeName="transform" type="rotate" from="0 880 228" to="360 880 228" dur="80s" repeatCount="indefinite"/></path>
+<rect x="32" y="27" width="1136" height="376" rx="15" fill="none" stroke="#b7c5ee" stroke-opacity=".18"/>
+<text x="59" y="61" font-family="monospace" font-size="12" letter-spacing="2.8" fill="#b5bcd7">ASP IRE488</text>
+<circle cx="158" cy="57" r="3" fill="#7cf0bd"/><text x="172" y="61" font-family="monospace" font-size="10" letter-spacing="1.5" fill="#74829e">PERSONAL BUILD LOG</text>
+<text x="1139" y="61" text-anchor="end" font-family="monospace" font-size="10" letter-spacing="1.4" fill="#a0b0c8">CSE STUDENT  /  SOFTWARE BUILDER</text>
+<rect x="59" y="111" width="220" height="29" rx="14.5" fill="#1c2b31" stroke="#5bddae" stroke-opacity=".6"/>
+<circle cx="75" cy="125.5" r="4" fill="#8bf6c5"><animate attributeName="opacity" values=".5;1;.5" dur="2.2s" repeatCount="indefinite"/></circle>
+<text x="89" y="130" font-family="monospace" font-size="10.5" letter-spacing="1.3" fill="#b6f8d7">BUILDING IN PUBLIC</text>
+<text x="56" y="202" font-family="Arial, Helvetica, sans-serif" font-size="57" font-weight="750" letter-spacing="-2.5" fill="#f2f1ff">Build things.</text>
+<text x="56" y="265" font-family="Arial, Helvetica, sans-serif" font-size="57" font-weight="750" letter-spacing="-2.5" fill="url(#mint)">Make them</text>
+<text x="56" y="328" font-family="Arial, Helvetica, sans-serif" font-size="57" font-weight="750" letter-spacing="-2.5" fill="url(#mint)">hold up.</text>
+<text x="60" y="363" font-family="monospace" font-size="12.5" fill="#a9b5cc">Apps · devtools · orchestration · open source</text>
+<path d="M60 383H352" stroke="url(#mint)" stroke-width="2"/><circle cx="360" cy="383" r="3" fill="#baff80"/>
+<!-- floating project panels -->
+<g transform="translate(770 91) rotate(-5)" filter="url(#shadow)">
+<rect width="256" height="76" rx="12" fill="#f1f1ff"/><rect width="256" height="76" rx="12" fill="none" stroke="#fff" stroke-opacity=".5"/>
+<rect x="15" y="15" width="39" height="39" rx="10" fill="#20233e"/><path d="M25 35l8-9 9 9-9 9Z" fill="#b6ff87"/><text x="68" y="31" font-family="monospace" font-size="9" letter-spacing="1.4" fill="#7c829a">ANDROID / WORLD</text><text x="68" y="49" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#20233e">Pipo</text><circle cx="227" cy="25" r="4" fill="#36b98b"/><text x="68" y="64" font-family="monospace" font-size="8.5" fill="#696e85">RELEASED · LIVE WORLD</text>
+</g>
+<g transform="translate(962 191) rotate(5)" filter="url(#shadow)">
+<rect width="170" height="65" rx="10" fill="#212039" stroke="#8274cd" stroke-opacity=".7"/><rect x="12" y="13" width="31" height="36" rx="5" fill="#9d8cfb"/><path d="M19 22h17M19 29h17M19 36h13" stroke="#272340" stroke-width="2"/><text x="53" y="28" font-family="monospace" font-size="9" letter-spacing="1" fill="#acafd0">DESKTOP APP</text><text x="53" y="45" font-family="Arial" font-size="14" font-weight="700" fill="#fff">Campus Bus</text><text x="53" y="57" font-family="monospace" font-size="7.5" fill="#9deec7">WINDOWS · v1.1</text>
+</g>
+<!-- laptop -->
+<g filter="url(#shadow)">
+<path d="M742 228Q742 218 753 218H966Q977 218 977 229V341H742Z" fill="#070c14" stroke="#8198bb" stroke-opacity=".65" stroke-width="2"/>
+<rect x="753" y="230" width="213" height="99" rx="4" fill="url(#screen)"/>
+<circle cx="859" cy="224" r="1.5" fill="#98abca"/>
+<g font-family="monospace" font-size="9">
+<text x="766" y="246" fill="#a99aff">const</text><text x="797" y="246" fill="#d0d9ef"> build =</text><text x="843" y="246" fill="#a4f6ce"> async () =&gt; {</text>
+<text x="766" y="262" fill="#8ea4c3">  plan();</text><text x="766" y="278" fill="#8ea4c3">  execute();</text><text x="766" y="294" fill="#8ea4c3">  verify();</text><text x="766" y="310" fill="#a4f6ce">  return "shipped";</text><text x="766" y="322" fill="#a99aff">};</text>
+</g>
+<path d="M725 342H994L1017 356Q1019 361 1008 361H712Q702 361 705 356Z" fill="#c1cce3"/><path d="M725 342H994L1000 348H719Z" fill="#e6ebfa"/><rect x="832" y="345" width="54" height="3" rx="1.5" fill="#9aa9c7"/>
+</g>
+<!-- tiny world/planet -->
+<g transform="translate(1062 310)">
+<circle r="31" fill="url(#orb)" stroke="#9ceec8" stroke-opacity=".6"/><ellipse rx="43" ry="13" fill="none" stroke="#a6b5ff" stroke-width="1.6" transform="rotate(-22)"/><path d="M-17 -2l10-9 11 4 8 12-9 9-14-3Z" fill="#6ad4b3" opacity=".8"/><circle cx="10" cy="-12" r="3" fill="#efeaff"/><circle cx="-10" cy="15" r="2" fill="#a5a0ff"/><circle cx="-32" cy="-24" r="3" fill="#baff80" filter="url(#glow)"><animateMotion path="M0 0 A38 38 0 1 1 0.1 0" dur="7s" repeatCount="indefinite"/></circle>
+</g>
+<text x="1135" y="384" text-anchor="end" font-family="monospace" font-size="9" letter-spacing="1.5" fill="#657792">IDEAS → SYSTEMS → RELEASES</text>
+</g></svg>
