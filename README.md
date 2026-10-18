@@ -2,220 +2,188 @@
 
 <div align="center">
 
-<img src="./assets/profile/engineering-console.svg" width="100%" alt="Joel Jigo — custom animated engineering console showing products, tools, automation, orchestration, open source, verification, and shipping"/>
+<img src="./assets/profile/hero-portfolio.svg" width="100%" alt="Joel Jigo — Build things. Make them hold up. Custom illustrated portfolio banner."/>
 
-[**Explore projects**](#-featured-work) &nbsp; ◈ &nbsp; [**Open-source work**](#-open-source-contributions) &nbsp; ◈ &nbsp; [**Engineering principles**](#-tech-stack) &nbsp; ◈ &nbsp; [**Contribution map**](#-github-activity) &nbsp; ◈ &nbsp; [**Connect**](#connect)
+<a href="https://github.com/aspire488?tab=repositories">PROJECTS</a>
+&nbsp; ◈ &nbsp;
+<a href="https://github.com/pulls?q=is%3Apr+author%3Aaspire488">OPEN SOURCE</a>
+&nbsp; ◈ &nbsp;
+<a href="https://joel-jigo-portfolio--joeljigo3.replit.app">PORTFOLIO</a>
+&nbsp; ◈ &nbsp;
+<a href="https://github.com/aspire488">GITHUB</a>
 
 </div>
 
-## `whoami`
+I'm a Computer Science Engineering student who builds across desktop and Android apps, developer tooling, automation, and AI infrastructure. I like taking ideas all the way to a working release—and fixing the details that make software dependable after the demo.
 
-I'm a Computer Science Engineering student who builds software across desktop apps, Android, developer tooling, automation, and AI infrastructure.
-
-I care about software that is **useful, testable, and dependable**. I like taking projects from an idea to a working release, and contributing fixes upstream when I find something worth improving.
-
-- 🔧 **Building:** applications, developer tools, and orchestration systems
-- 🌐 **Contributing:** upstream fixes, features, and regression tests
-- 🧪 **Engineering style:** reproducible tests, explicit boundaries, honest status
-- 🚀 **Mindset:** ship, learn from review, improve
+**My default loop:** understand the problem → design the boundary → build → test → ship → learn.
 
 ---
 
-## 🚀 Featured work
+## Selected work
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### 🚌 [Campus Bus](https://github.com/aspire488/campus-bus)
+<a href="https://github.com/aspire488/campus-bus"><img src="./assets/profile/project-campus-bus.svg" width="100%" alt="Illustrated Campus Bus project card"/></a>
 
-Java desktop bus reservation system with student bookings, seat selection, admin tools, PDF passes, and email confirmations.
+### [Campus Bus](https://github.com/aspire488/campus-bus)
 
-**[Windows v1.1 release](https://github.com/aspire488/campus-bus/releases/tag/v1.1)** · [Architecture](https://github.com/aspire488/campus-bus#9-architecture)
+A Java desktop reservation system for student seat bookings and admin fleet management, packaged for Windows with a private MySQL setup.
 
-<sub>Reported release test run: 166/166 passing.</sub>
+**Java · Swing · JDBC · MySQL**
 
-</td>
-<td width="50%" valign="top">
-
-### 🤖 [Pipo](https://github.com/aspire488/Pipo)
-
-An Android character with a procedural 2.5D world, routines, memory, activities, and a companion named Nib.
-
-[Explore the living world](https://aspire488.github.io/Pipo/) · [Latest release](https://github.com/aspire488/Pipo/releases/tag/v1.0)
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### ⚙️ [KIO](https://github.com/aspire488/Kio)
-
-A modular orchestration runtime focused on capability routing, controlled execution, security gates, and verification.
+[Windows v1.1 release ↗](https://github.com/aspire488/campus-bus/releases/tag/v1.1) · [Source ↗](https://github.com/aspire488/campus-bus)
 
 </td>
 <td width="50%" valign="top">
 
-### 🧰 [UEA](https://github.com/aspire488/Universal-Engineering-Augmentation)
+<a href="https://github.com/aspire488/Pipo"><img src="./assets/profile/project-pipo.svg" width="100%" alt="Illustrated Pipo character and living world project card"/></a>
 
-Agent-neutral engineering tools for code intelligence, analysis, verification, and deterministic workflows.
+### [Pipo](https://github.com/aspire488/Pipo)
 
-[Public alpha · CI](https://github.com/aspire488/Universal-Engineering-Augmentation/actions)
+An Android character experience with a procedural 2.5D world, routines, memory, activities, and a companion named Nib.
+
+**Android · Kotlin · Procedural world**
+
+[Explore the live world ↗](https://aspire488.github.io/Pipo/) · [Release ↗](https://github.com/aspire488/Pipo/releases/tag/v1.0)
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-### 🧠 [AURA](https://github.com/aspire488/AURA)
+<a href="https://github.com/aspire488/Kio"><img src="./assets/profile/project-systems.svg" width="100%" alt="Illustrated KIO and AURA orchestration and memory architecture card"/></a>
 
-A memory and cognition backend for persistent agent state and retrieval.
+### [KIO + AURA](https://github.com/aspire488/Kio)
+
+A controlled orchestration runtime paired with a persistent memory and retrieval backend. Built around typed tools, explicit boundaries, and verification.
+
+**Python · FastAPI · ChromaDB · Systems design**
+
+[KIO source ↗](https://github.com/aspire488/Kio) · [AURA source ↗](https://github.com/aspire488/AURA)
 
 </td>
 <td width="50%" valign="top">
 
-### 🛰️ [gh-ops](https://github.com/aspire488/gh-ops)
+<a href="https://github.com/aspire488/gh-ops"><img src="./assets/profile/project-engineering.svg" width="100%" alt="Illustrated UEA and gh-ops engineering automation card"/></a>
 
-GitHub operations, CI/release monitoring, OSS intelligence, security signals, and Telegram reporting.
+### [UEA + gh-ops](https://github.com/aspire488/Universal-Engineering-Augmentation)
 
-<sub>Frozen baseline · 1,495 tests passing in the recorded test run.</sub>
+Engineering tools and GitHub automation for code intelligence, CI and release monitoring, open-source discovery, and reporting.
+
+**Python · GitHub Actions · Automation**
+
+[UEA + CI ↗](https://github.com/aspire488/Universal-Engineering-Augmentation) · [gh-ops ↗](https://github.com/aspire488/gh-ops)
 
 </td>
 </tr>
 </table>
 
 <details>
-<summary><strong>Explore each project — architecture, focus, and links</strong></summary>
+<summary><strong>More projects and experiments</strong></summary>
 
-<details>
-<summary>🚌 <strong>Campus Bus</strong></summary>
-
-A Java desktop reservation system built around student booking and admin workflows.
-
-- [Source code](https://github.com/aspire488/campus-bus)
-- [Windows v1.1 release](https://github.com/aspire488/campus-bus/releases/tag/v1.1)
-- [Architecture notes](https://github.com/aspire488/campus-bus#9-architecture)
-- [Release audit](https://github.com/aspire488/campus-bus/blob/main/docs/final-release-audit.md)
-
-</details>
-
-<details>
-<summary>🤖 <strong>Pipo</strong></summary>
-
-An Android character experience with a procedural 2.5D world, routines, memory, and companion Nib.
-
-- [Repository](https://github.com/aspire488/Pipo)
-- [Live world](https://aspire488.github.io/Pipo/)
-- [Releases](https://github.com/aspire488/Pipo/releases)
-
-</details>
-
-<details>
-<summary>⚙️ <strong>KIO + AURA</strong></summary>
-
-KIO focuses on controlled orchestration and verification; AURA provides persistent memory and retrieval.
-
-- [KIO repository](https://github.com/aspire488/Kio)
-- [AURA repository](https://github.com/aspire488/AURA)
-
-</details>
-
-<details>
-<summary>🧰 <strong>UEA + gh-ops</strong></summary>
-
-Engineering tools, GitHub automation, CI/release monitoring, and open-source intelligence.
-
-- [UEA repository and CI](https://github.com/aspire488/Universal-Engineering-Augmentation)
-- [gh-ops repository](https://github.com/aspire488/gh-ops)
-
-</details>
-
-<details>
-<summary>🌍 <strong>OSS Atlas, CodeFlow, MediMind</strong></summary>
-
-- [OSS Atlas](https://github.com/aspire488/oss-atlas) — contribution research and engineering notes.
+- [OSS Atlas](https://github.com/aspire488/oss-atlas) — open-source contribution research and engineering notes.
 - [CodeFlow](https://github.com/aspire488/codeflow) — developer workflow prototype.
-- [MediMind](https://github.com/aspire488/medimind) — medication reminder prototype.
-
-</details>
+- [MediMind](https://github.com/aspire488/medimind) — medication reminder app prototype.
 
 </details>
 
 ---
 
-## 🌐 Open-source contributions
+## Open source
 
-I work on upstream fixes and features as well as carefully scoped proposals. Merged, open, and draft work are kept separate.
+I contribute focused fixes and features upstream, ideally with regression tests and a clear explanation of the behaviour being changed.
 
-<details open>
-<summary><strong>Selected merged upstream work</strong></summary>
-
-- [Microsoft PyRIT #2976](https://github.com/microsoft/PyRIT/pull/2976) — preserved word-selection parameters in StringJoinConverter identifiers, with regression tests.
-- [Microsoft PyRIT #2882](https://github.com/microsoft/PyRIT/pull/2882) — rejected empty targets in ExactTextMatching, with regression coverage.
-- [Microsoft PyRIT #2823](https://github.com/microsoft/PyRIT/pull/2823) — preserved HarmBench context in behavior prompts and metadata.
-- [Microsoft PyRIT #2762](https://github.com/microsoft/PyRIT/pull/2762) — added memory-backed dataset summaries.
-- [Hermes Agent #127233](https://github.com/NousResearch/hermes-agent/pull/127233) — corrected rendering of structured MCP get_prompt content.
-- [Inspect AI #5670](https://github.com/UKGovernmentBEIS/inspect_ai/pull/5670) — fixed Google API key versus ADC precedence.
-
-</details>
+| Project | Selected contribution |
+|---|---|
+| [Microsoft PyRIT #2976](https://github.com/microsoft/PyRIT/pull/2976) | Preserved word-selection parameters in converter identifiers, with regression tests. |
+| [Microsoft PyRIT #2882](https://github.com/microsoft/PyRIT/pull/2882) | Rejected empty targets in exact-text matching, with regression coverage. |
+| [Microsoft PyRIT #2823](https://github.com/microsoft/PyRIT/pull/2823) | Preserved HarmBench context across behavior prompts and metadata. |
+| [Inspect AI #5670](https://github.com/UKGovernmentBEIS/inspect_ai/pull/5670) | Fixed Google API key versus Application Default Credentials precedence. |
+| [Hermes Agent #127233](https://github.com/NousResearch/hermes-agent/pull/127233) | Corrected rendering of structured MCP `get_prompt` content. |
 
 <details>
-<summary><strong>Open and draft proposals</strong></summary>
+<summary><strong>More PRs and proposals</strong></summary>
 
-- [RAMPART #2](https://github.com/aspire488/RAMPART/pull/2) — generic PyRIT converter bridge proposal; open for review.
+- [PyRIT #2762](https://github.com/microsoft/PyRIT/pull/2762) — memory-backed dataset summaries.
+- [RAMPART #2](https://github.com/aspire488/RAMPART/pull/2) — generic PyRIT converter bridge proposal.
 - [Inspect AI #5671](https://github.com/UKGovernmentBEIS/inspect_ai/pull/5671) and [#5672](https://github.com/UKGovernmentBEIS/inspect_ai/pull/5672) — draft proposals for structured tool validation and cached input-token preservation.
 
-</details>
-
-**Explore more:** [OSS Atlas](https://github.com/aspire488/oss-atlas) · [All my pull requests](https://github.com/pulls?q=is%3Apr+author%3Aaspire488) · [All repositories](https://github.com/aspire488?tab=repositories)
-
----
-
-## 🧩 Tech stack
-
-<div align="center">
-
-<img src="https://skillicons.dev/icons?i=python,java,c,js,html,css,kotlin,react,nodejs,fastapi,git,github,linux,docker,postgres,redis&theme=dark" alt="Technologies used across projects"/>
-
-</div>
-
-<details>
-<summary><strong>Open my engineering principles</strong></summary>
-
-| Principle | What it means in practice |
-|---|---|
-| Deterministic core | Software owns execution; AI handles ambiguity. |
-| Verify continuously | Tests and checks belong throughout implementation, not only at the end. |
-| Honest evidence | Claims are backed by tests, release notes, or observable results. |
-| Ship and iterate | Release useful work, learn from review, improve the system. |
-
-</details>
-
-<details>
-<summary><strong>Tools I reach for</strong></summary>
-
-- **Languages:** Python, Java, C, JavaScript, Kotlin
-- **Web / backend:** HTML, CSS, React, Node.js, FastAPI
-- **Infrastructure:** GitHub Actions, Linux, Docker, PostgreSQL, Redis
-- **Focus areas:** desktop/mobile apps, automation, orchestration, developer tooling
+[All pull requests by aspire488 ↗](https://github.com/pulls?q=is%3Apr+author%3Aaspire488)
 
 </details>
 
 ---
 
-## 📈 GitHub activity
+## Tool belt
+
+<table>
+<tr>
+<td width="33%" valign="top">
+
+**Languages**
+
+Python · Java · C · JavaScript · Kotlin
+
+</td>
+<td width="33%" valign="top">
+
+**Apps & APIs**
+
+Android · Swing · HTML/CSS · React · FastAPI · Node.js
+
+</td>
+<td width="33%" valign="top">
+
+**Infrastructure**
+
+Git · Linux · GitHub Actions · Docker · PostgreSQL · Redis
+
+</td>
+</tr>
+</table>
+
+## How I work
+
+<table>
+<tr>
+<td width="33%" valign="top">
+
+**01 / Make boundaries clear**
+
+Typed interfaces, controlled execution, and small components beat hidden magic.
+
+</td>
+<td width="33%" valign="top">
+
+**02 / Prove the claim**
+
+Regression tests and repeatable checks matter more than a confident status message.
+
+</td>
+<td width="33%" valign="top">
+
+**03 / Ship and iterate**
+
+Release useful work, learn from review, and follow through on the rough edges.
+
+</td>
+</tr>
+</table>
+
+---
+
+## Contribution activity
 
 <div align="center">
 
-<img src="./assets/profile/contributions.dark.svg" width="100%" alt="Green GitHub contribution heatmap on a dark background"/>
+<img src="./assets/profile/contributions.dark.svg" width="100%" alt="GitHub contribution heatmap for aspire488 in a dark background with green activity squares"/>
 
-**A year of building, reviewing, fixing, and shipping.**
-
-[Open the live GitHub contribution graph ↗](https://github.com/aspire488)
+<sub>Rendered from an SVG maintained in this repository. No external stats-card dependency.</sub>
 
 </div>
-
-<sub>Contribution artwork is stored in this repository; the profile's visual identity does not depend on external stats-card services.</sub>
 
 ---
 
@@ -223,14 +191,16 @@ I work on upstream fixes and features as well as carefully scoped proposals. Mer
 
 ## Connect
 
-Want to explore the code, review a contribution, or see what I'm building next?
+<a href="https://github.com/aspire488">GitHub</a>
+&nbsp; · &nbsp;
+<a href="https://github.com/pulls?q=is%3Apr+author%3Aaspire488">My pull requests</a>
+&nbsp; · &nbsp;
+<a href="https://joel-jigo-portfolio--joeljigo3.replit.app">Portfolio</a>
+&nbsp; · &nbsp;
+<a href="https://aspire488.github.io/Pipo/">Pipo's living world</a>
 
-[![GitHub](https://img.shields.io/badge/GitHub-Follow%20the%20work-161b22?style=for-the-badge&logo=github)](https://github.com/aspire488)
-[![Pull requests](https://img.shields.io/badge/Review-My%20PRs-238636?style=for-the-badge&logo=github)](https://github.com/pulls?q=is%3Apr+author%3Aaspire488)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Open-70a5fd?style=for-the-badge&logo=googlechrome)](https://joel-jigo-portfolio--joeljigo3.replit.app)
+<br/>
 
-**Building in public · Shipping software · Learning by doing**
-
-
+<sub>Build thoughtfully. Verify relentlessly. Ship things that matter.</sub>
 
 </div>
