@@ -20,7 +20,7 @@
 <path d="M670 300C650 192 731 95 850 79s224 45 246 150-50 191-160 191-205-33-266-120Z" fill="none" stroke="#8b7bff" stroke-opacity=".22" stroke-width="1.5"/>
 <path d="M702 318C684 225 760 119 864 104s189 47 211 136-44 150-146 160-183-14-227-82Z" fill="none" stroke="#73e6be" stroke-opacity=".24" stroke-width="1.2" stroke-dasharray="4 7"><animateTransform attributeName="transform" type="rotate" from="0 880 228" to="360 880 228" dur="80s" repeatCount="indefinite"/></path>
 <rect x="32" y="27" width="1136" height="376" rx="15" fill="none" stroke="#b7c5ee" stroke-opacity=".18"/>
-<text x="59" y="61" font-family="monospace" font-size="12" letter-spacing="2.8" fill="#b5bcd7">ASP IRE488</text>
+<text x="59" y="61" font-family="monospace" font-size="12" letter-spacing="2.8" fill="#b5bcd7">ASPIRE488</text>
 <circle cx="158" cy="57" r="3" fill="#7cf0bd"/><text x="172" y="61" font-family="monospace" font-size="10" letter-spacing="1.5" fill="#74829e">PERSONAL BUILD LOG</text>
 <text x="1139" y="61" text-anchor="end" font-family="monospace" font-size="10" letter-spacing="1.4" fill="#a0b0c8">CSE STUDENT  /  SOFTWARE BUILDER</text>
 <rect x="59" y="111" width="220" height="29" rx="14.5" fill="#1c2b31" stroke="#5bddae" stroke-opacity=".6"/>
