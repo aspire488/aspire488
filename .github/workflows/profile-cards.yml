@@ -4,7 +4,9 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: "17 * * * *"
+    # GitHub delays and drops scheduled runs when it is busy; asking twice an hour keeps the cards
+    # and the tally close to hourly in practice.
+    - cron: "17,47 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -34,7 +36,7 @@ jobs:
           themes: light,dark
           commit: false
 
-      # The renderer below writes nothing on failure, so a failed step keeps its last committed SVGs
+      # The renderers below write nothing on failure, so a failed step keeps its last committed SVGs
       # and must not block committing the cards above. The final step turns the run red instead.
       - name: Render contribution history
         id: activity
@@ -42,6 +44,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/render_profile_activity.py
+
+      - name: Render notebook pages and live tally
+        id: notebook
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/render_profile_notebook.py
 
       - name: Commit refreshed cards
         run: |
@@ -53,7 +62,7 @@ jobs:
           git push || { git pull --rebase -X theirs origin main && git push; }
 
       - name: Report skipped refresh
-        if: steps.activity.outcome == 'failure'
+        if: steps.activity.outcome == 'failure' || steps.notebook.outcome == 'failure'
         run: |
-          echo "::error::The contribution-history renderer failed; its last committed SVGs were kept."
+          echo "::error::A renderer failed (activity: ${{ steps.activity.outcome }}, notebook: ${{ steps.notebook.outcome }}); its last committed SVGs were kept."
           exit 1

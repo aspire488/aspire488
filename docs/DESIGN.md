@@ -31,8 +31,8 @@ were built and critiqued:
 Trade-offs settled:
 
 - The tagline "Build things. Make them hold up." stays, but under the name, not as a poster headline.
-- Upstream counts are dated text, not a live image, so the numbers can't drift from the words around
-  them. The search link always shows the current state.
+- Upstream counts live in the tally page, recounted from the GitHub API every run, and the search link
+  always shows the current state.
 - MediMind and CodeFlow sit in a collapsed "earlier experiments" fold, on the owner's request.
 - The copy is written in Joel's voice, modelled on his own Pipo README. He should edit any line that
   doesn't sound like him.
@@ -51,7 +51,10 @@ Trade-offs settled:
 ## Files
 
 - `scripts/render_profile_notebook.py` writes the hero and the notebook pages
-  (`assets/profile/{hero,pipo,kio,uea,aura,ghops,tally}.{light,dark}.svg`). They are static, so run it
-  by hand after changing a fact; the tally page holds dated counts and needs updating when they change.
-- `.github/workflows/profile-cards.yml` redraws the live cards hourly (unchanged by this redesign apart
-  from removing the retired atlas step).
+  (`assets/profile/{hero,pipo,kio,uea,aura,ghops,tally}.{light,dark}.svg`). The project pages are
+  static; run it by hand after changing a fact. The tally page is live: with `GITHUB_TOKEN` set (as in
+  the workflow) it recounts upstream pull requests from the GitHub API every run.
+- The pages animate once on load (stamps, ticks, arrows, boxes; Pipo's loop keeps flowing). The
+  finished drawing is the resting state, and all motion stops under `prefers-reduced-motion`.
+- `.github/workflows/profile-cards.yml` redraws the live cards and the tally, scheduled twice an hour
+  because GitHub delays and drops scheduled runs.
