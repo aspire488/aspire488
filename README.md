@@ -1,105 +1,85 @@
-<!-- aspire488 · profile README. Design notes: docs/DESIGN.md. Live cards in assets/profile are redrawn by .github/workflows/profile-cards.yml -->
+<!-- aspire488 · profile README. Notebook pages: scripts/render_profile_notebook.py. Design notes: docs/DESIGN.md. Live cards are redrawn by .github/workflows/profile-cards.yml -->
 
 <h1>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/hero.dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="./assets/profile/hero.light.svg">
-    <img src="./assets/profile/hero.light.svg" width="720" alt="Joel Jigo. Build things. Make them hold up.">
+    <img src="./assets/profile/hero.light.svg" width="720" alt="Joel Jigo. Build things. Make them hold up. Stamped: still learning.">
   </picture>
 </h1>
 
-I'm Joel, a CSE student in Kochi. I build AI systems, developer tools, and one small robot who lives in a phone. Some of it ships, some of it gets frozen early. The note beside each thing says which.
+hey, I'm Joel 👋 I learn by building things, shipping them, and finding out why they break. Here's what's on my desk.
 
-Start with what shipped: [**Pipo**](#pipo) and [**Campus Bus**](#campus-bus). Or skip to [other people's code](#other-peoples-code).
+## Shipped
 
-## On the desk
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/pipo.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/pipo.light.svg">
+  <img src="./assets/profile/pipo.light.svg" width="720" alt="Pipo, shipped v1.0: you close the app, time passes, he builds, naps and heads out, you come back and he tells you what happened.">
+</picture>
 
-### Pipo
+**Pipo** `shipped · v1.0` · a little robot who lives in your phone · [get the APK](https://github.com/aspire488/Pipo/releases/tag/v1.0) · [source](https://github.com/aspire488/Pipo)
 
-`shipped · v1.0`
+<a href="https://github.com/aspire488/campus-bus"><img src="./assets/profile/work/campus-bus-seat-map.png" width="720" alt="Campus Bus, shipped v1.1: the seat map, a route from High Court to campus above a bus layout with seat 07 picked."></a>
 
-<a href="https://aspire488.github.io/Pipo/"><img src="./assets/profile/work/pipo-world.jpg" width="100%" alt="Pipo's room in the browser: a small round robot on a rug between his bed, desk and workbench, with Nib, his pet robot, beside him."></a>
+**Campus Bus** `shipped · v1.1` · bus seat booking for a college, Java + MySQL · 166 tests pass, tried on one PC so far · [Windows download](https://github.com/aspire488/campus-bus/releases/tag/v1.1) · [source](https://github.com/aspire488/campus-bus)
 
-A small robot with moods, habits and projects who lives in a room on your phone. Close the app, come back later, and his day has happened anyway; he'll tell you about it. No account, no analytics: it's a robot and a JSON file. His room also runs in the browser, built with Three.js.
+## In the workshop
 
-✓ v1.0 APK on Releases · 175 tests recorded, checked on a Galaxy S23 · not yet: a green APK build in CI (the last run failed)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/kio.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/kio.light.svg">
+  <img src="./assets/profile/kio.light.svg" width="720" alt="KIO, building: gates C-1 context, C-2 registry and C-3 planning ticked, C-4 response next, C-7 plug in AURA later. Phase 0 deleted 5,167 lines.">
+</picture>
 
-[Android APK v1.0](https://github.com/aspire488/Pipo/releases/tag/v1.0) · [Pipo's room in your browser](https://aspire488.github.io/Pipo/) · [Pipo source](https://github.com/aspire488/Pipo)
+**KIO** `building` · the kernel of my companion runtime, rebuilt one gate at a time · [source](https://github.com/aspire488/Kio)
 
-### Campus Bus
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/uea.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/uea.light.svg">
+  <img src="./assets/profile/uea.light.svg" width="720" alt="UEA, alpha: task, keyword classifier, specialist, verify; unknown tasks ask a small local model; verification tiers from minimal to full.">
+</picture>
 
-`shipped · v1.1 · tested on one PC`
+**UEA** `alpha` · real tools for coding agents, so the model stops guessing what a tool can prove · token savings: not measured yet · [source](https://github.com/aspire488/Universal-Engineering-Augmentation)
 
-<a href="https://github.com/aspire488/campus-bus"><img src="./assets/profile/work/campus-bus-seat-map.png" width="100%" alt="Campus Bus seat map: a route from High Court to the campus with every stop and time, above a bus layout where seat 07 is selected."></a>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/aura.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/aura.light.svg">
+  <img src="./assets/profile/aura.light.svg" width="720" alt="AURA, built but not verified: working, episodic and semantic memory plus beliefs, goals and reasoning traces behind FastAPI. Last touched June 2026; joins KIO at gate C-7.">
+</picture>
 
-Bus seat booking for a college transport office: pick your trip and stop, pick a seat, get a PDF pass. Java, Swing with a JavaFX WebView, and MySQL. The Windows zip carries its own Java runtime and sets up a private MySQL without admin rights.
+**AURA** `built, not verified` · memory for KIO, last touched in June 2026 · [source](https://github.com/aspire488/AURA)
 
-✓ 166 tests, 0 failures, on the v1.1 release build · sandboxed install on one PC · not yet: Windows 10, a second PC
+## Tools I made for myself
 
-[Windows download v1.1](https://github.com/aspire488/campus-bus/releases/tag/v1.1) · [Campus Bus source](https://github.com/aspire488/campus-bus)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/ghops.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/ghops.light.svg">
+  <img src="./assets/profile/ghops.light.svg" width="720" alt="gh-ops, frozen: six jobs through one dispatcher, a Telegram ping only when something happened; 1,495 tests, then frozen.">
+</picture>
 
-### KIO
-
-`building · gate C-4 next`
-
-The kernel of a personal companion runtime, rebuilt one gate at a time. Phase 0 was deleting 5,167 lines. Gates C-1 to C-3 are marked done; at last record about 245 tests pass and 6 fail. No README yet, the design notes live in the repo root.
-
-[KIO source](https://github.com/aspire488/Kio)
-
-### UEA
-
-`alpha · v0.1.0`
-
-Gives coding agents real tools for the checkable parts: tree-sitter parsing, blast-radius analysis, property and mutation tests, Z3. The model stops guessing at things a tool can prove. Does it save tokens? Not measured yet, so I don't claim it.
-
-✓ CI on Python 3.10 to 3.12 · not yet: a tagged release, any token measurements
-
-[UEA source](https://github.com/aspire488/Universal-Engineering-Augmentation)
-
-### AURA
-
-`built, not verified · last worked on in June 2026`
-
-Memory for KIO's runtime: episodic, semantic and working memory, beliefs, goals and reasoning traces, behind FastAPI. Plugging it into KIO is gate C-7.
-
-[AURA source](https://github.com/aspire488/AURA)
-
-### gh-ops
-
-`frozen`
-
-My GitHub ops crew on Actions: monitoring, security checks, weekly reports, open-source scouting, and a Telegram brief only when a run found something. Frozen at 1,495 recorded passing tests; maintenance only.
-
-[gh-ops source](https://github.com/aspire488/gh-ops)
+**gh-ops** `frozen` · my GitHub chores on autopilot · [source](https://github.com/aspire488/gh-ops) · and [**OSS Atlas**](https://github.com/aspire488/oss-atlas), my running log of open-source work
 
 <details>
-<summary>Earlier experiments: MediMind and CodeFlow, both frozen prototypes from spring 2026</summary>
+<summary>older experiments: MediMind and CodeFlow (frozen prototypes, spring 2026)</summary>
 <br>
 
-- **[MediMind](https://github.com/aspire488/medimind)** `frozen prototype` · medication reminders for made-up patients only, not a medical device. [MediMind demo](https://medimind-seven.vercel.app/)
-- **[CodeFlow](https://github.com/aspire488/codeflow)** `frozen prototype` · teaches C by stepping through simple programs; the real executor never got built. [CodeFlow demo](https://codeflow-app-sigma.vercel.app)
+- [MediMind](https://github.com/aspire488/medimind) · medication reminders for made-up patients, not a medical device · [demo](https://medimind-seven.vercel.app/)
+- [CodeFlow](https://github.com/aspire488/codeflow) · teaches C by stepping through simple programs · [demo](https://codeflow-app-sigma.vercel.app)
 
 </details>
 
 ## Other people's code
 
-`upstream`
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/tally.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/tally.light.svg">
+  <img src="./assets/profile/tally.light.svg" width="720" alt="Tally of pull requests to other people's repositories as of 19 October 2026: 12 merged, 17 open, 7 draft, 15 closed without merging, across 30 repos.">
+</picture>
 
-As of 19 October 2026, pull requests to 30 repositories that aren't mine: **12 merged · 17 open · 7 draft · 15 closed without merging.** Some of the merged ones:
-
-- [Microsoft PyRIT #2762](https://github.com/microsoft/PyRIT/pull/2762): an API that summarises datasets.
-- [Microsoft PyRIT #2882](https://github.com/microsoft/PyRIT/pull/2882) and [#2976](https://github.com/microsoft/PyRIT/pull/2976): exact-text matching on an empty target, and converter identifiers that keep their settings.
-- [Inspect AI #5670](https://github.com/UKGovernmentBEIS/inspect_ai/pull/5670): an explicit Google API key now wins over ambient credentials.
-- [aios #2457](https://github.com/eumemic/aios/pull/2457) and [#2458](https://github.com/eumemic/aios/pull/2458): replies cut off by length are recorded as truncated, not complete.
-- [agent-bench #8](https://github.com/PicadoLabs/agent-bench/pull/8): a command palette for the whole app.
-
-One more: my own Hermes Agent PR ([#121771](https://github.com/NousResearch/hermes-agent/pull/121771)) was closed, and a maintainer carried its fix and tests, with my commits and credit, into [#126144](https://github.com/NousResearch/hermes-agent/pull/126144), which merged.
-
-[Every pull request I've opened to other projects](https://github.com/search?q=is%3Apr+author%3Aaspire488+-user%3Aaspire488&type=pullrequests) · [OSS Atlas, my running log of that work](https://github.com/aspire488/oss-atlas)
+Merged into [PyRIT](https://github.com/microsoft/PyRIT/pull/2762), [Inspect AI](https://github.com/UKGovernmentBEIS/inspect_ai/pull/5670), [aios](https://github.com/eumemic/aios/pull/2457) and more. A maintainer also carried my [Hermes Agent fix](https://github.com/NousResearch/hermes-agent/pull/121771) into [#126144](https://github.com/NousResearch/hermes-agent/pull/126144), with credit. [See every PR, the closed ones too](https://github.com/search?q=is%3Apr+author%3Aaspire488+-user%3Aaspire488&type=pullrequests).
 
 ## The boring numbers
-
-Redrawn every hour by this repo's workflow. The pull request total on the overview card also counts PRs to my own repos.
 
 <p align="center">
   <a href="https://github.com/aspire488/aspire488/actions/workflows/profile-cards.yml"><img src="https://github.com/aspire488/aspire488/actions/workflows/profile-cards.yml/badge.svg" alt="Profile cards GitHub Actions workflow status"></a>
@@ -159,8 +139,6 @@ Redrawn every hour by this repo's workflow. The pull request total on the overvi
 </table>
 </details>
 
-## Still open
+---
 
-That's the desk as of October 2026. Still open on it: KIO hasn't cleared gate C-4, Campus Bus hasn't met a second PC, and seven of those upstream pull requests are drafts. More projects will turn up here as they get far enough to show.
-
-[All my repositories](https://github.com/aspire488?tab=repositories) · [Portfolio site](https://aspire488.github.io/aspire488/)
+more pages coming. something on this desk is probably half-built right now 🛠️ · [all my repos](https://github.com/aspire488?tab=repositories) · [portfolio](https://aspire488.github.io/aspire488/)

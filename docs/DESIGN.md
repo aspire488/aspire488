@@ -2,11 +2,15 @@
 
 ## Decision (October 2026): "Margin notes"
 
-The profile reads like a student's working notebook: a small hero on ruled paper with a margin line,
-then one first-person note per project. Each note opens with a plain status word (`shipped`, `alpha`,
-`building`, `built, not verified`, `frozen`, `frozen prototype`, `upstream`) and, where it matters, one
-line saying what was checked and what isn't yet. Personality comes from the writing and the two real
-screenshots, not from decoration.
+The profile reads like a student's working notebook, and the pictures do the talking. Each project is a
+page of ruled exercise-book paper with a red margin line: a sketch of how it works (KIO's gate
+checklist, UEA's routing flow, AURA's memory layers, gh-ops' job board, Pipo's loop) with a crooked
+rubber stamp for its status (`SHIPPED`, `BUILDING`, `ALPHA`, `BUILT · NOT VERIFIED`, `FROZEN`).
+Upstream work is a page of tally marks. Under each page sits one short, lively caption with links.
+
+Revised after the owner's feedback on the first "Margin notes" build ("too plain and short", "I'm a
+student, still learning", "the visuals should speak, not the text"): the text shrank to captions, the
+sketches were added, and the Pipo web-room screenshot was removed because it isn't the actual app.
 
 It replaces the "Field Atlas" (a generated route map of projects, retired on purpose: it needed a legend
 to read, its labels were too small on phones, and it was a dated monument rather than something that
@@ -32,19 +36,22 @@ Trade-offs settled:
 - MediMind and CodeFlow sit in a collapsed "earlier experiments" fold, on the owner's request.
 - The copy is written in Joel's voice, modelled on his own Pipo README. He should edit any line that
   doesn't sound like him.
+- Every fact on a page is repeated in its alt text and caption, so nothing lives only in a picture.
 
 ## Rules for future changes
 
-- Every fact lives in Markdown text. Images may only repeat it.
+- Every fact on a page is also in its alt text, and every status word is also in its caption.
 - Status is a word, never colour or a symbol alone. Statuses must match what each repository says.
 - Upstream: always show the whole mix (merged, open, draft, closed), dated. Never count a PR as merged
   unless GitHub says `merged: true`; Hermes Agent #127233 was closed as a duplicate, not merged.
 - Text inside images stays at 11px or more on a 358px phone column (font size × 358 ÷ viewBox width).
-- Adding a project: one `###` block under "On the desk" with a status word and a source link.
+- Adding a project: one drawing function in `scripts/render_profile_notebook.py`, one `<picture>` and a
+  one-line caption in the README.
 
 ## Files
 
-- `scripts/render_profile_hero.py` writes `assets/profile/hero.{light,dark}.svg`. It is static, so run
-  it by hand after changing the name or tagline.
+- `scripts/render_profile_notebook.py` writes the hero and the notebook pages
+  (`assets/profile/{hero,pipo,kio,uea,aura,ghops,tally}.{light,dark}.svg`). They are static, so run it
+  by hand after changing a fact; the tally page holds dated counts and needs updating when they change.
 - `.github/workflows/profile-cards.yml` redraws the live cards hourly (unchanged by this redesign apart
   from removing the retired atlas step).
