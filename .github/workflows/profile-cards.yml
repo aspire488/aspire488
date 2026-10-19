@@ -34,7 +34,7 @@ jobs:
           themes: light,dark
           commit: false
 
-      # The renderers below write nothing on failure, so a failed step keeps its last committed SVGs
+      # The renderer below writes nothing on failure, so a failed step keeps its last committed SVGs
       # and must not block committing the cards above. The final step turns the run red instead.
       - name: Render contribution history
         id: activity
@@ -42,13 +42,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/render_profile_activity.py
-
-      - name: Render field atlas plates
-        id: atlas
-        continue-on-error: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/render_profile_atlas.py
 
       - name: Commit refreshed cards
         run: |
@@ -60,7 +53,7 @@ jobs:
           git push || { git pull --rebase -X theirs origin main && git push; }
 
       - name: Report skipped refresh
-        if: steps.activity.outcome == 'failure' || steps.atlas.outcome == 'failure'
+        if: steps.activity.outcome == 'failure'
         run: |
-          echo "::error::A renderer failed (activity: ${{ steps.activity.outcome }}, atlas: ${{ steps.atlas.outcome }}); its last committed SVGs were kept."
+          echo "::error::The contribution-history renderer failed; its last committed SVGs were kept."
           exit 1
