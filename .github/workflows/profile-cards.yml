@@ -32,6 +32,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/render_profile_activity.py
 
+      # A failed atlas refresh keeps the last committed plates and must not block the cards above.
+      - name: Render field atlas plates
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/render_profile_atlas.py
+
       - name: Commit refreshed cards
         run: |
           git config user.name "github-actions[bot]"
