@@ -10,6 +10,10 @@
 
 hey, I'm Joel 👋 I learn by building things, shipping them, and finding out why they break. Here's what's on my desk.
 
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=15&duration=2800&pause=850&color=3FB950&center=true&vCenter=true&width=720&lines=Ship+small.+Learn+fast.;Make+the+system+prove+it.;Build+things.+Make+them+hold+up." alt="Animated tagline: ship small, learn fast; make the system prove it; build things that hold up."/>
+</p>
+
 ## Shipped
 
 <picture>
@@ -50,8 +54,11 @@ hey, I'm Joel 👋 I learn by building things, shipping them, and finding out wh
 
 **AURA** `built, not verified` · memory for KIO, last touched in June 2026 · [source](https://github.com/aspire488/AURA)
 
+<a href="https://github.com/aspire488/rag-platform">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:111820,55:26313b,100:c5f467&height=100&section=header&text=RAG%20Platform&fontSize=32&fontColor=edf3f5&fontAlignY=45&animation=fadeIn&desc=LOCAL-FIRST%20%C2%B7%20EVIDENCE-LED%20%C2%B7%20RESOURCE-AWARE&descSize=11&descAlignY=76" width="720" alt="Animated RAG Platform project banner: local-first, evidence-led, resource-aware."/>
+</a>
 
-**RAG Platform** `building · Phase 3 complete` · a resource-aware, local-first RAG engine with hybrid retrieval and controlled generation on the roadmap · local-first, egress off by default · [source](https://github.com/aspire488/rag-platform)
+**RAG Platform** `building · Phase 3 complete` · a resource-aware, local-first RAG foundation; hybrid retrieval and controlled generation are planned, not implemented yet · egress off by default · [source](https://github.com/aspire488/rag-platform)
 
 ## Tools I made for myself
 
