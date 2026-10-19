@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """Render the Field Atlas plates used by the profile README.
 
-atlas.*     hero map: projects as survey stations, live commit recency, upstream PR coastline
-upstream.*  ledger of external pull requests by state (merged / open / draft / closed)
-systems.*   static diagrams of KIO + AURA, UEA and gh-ops
+atlas.*     the traverse: one station per project in order of first commit, lane by kind, live state
+upstream.*  ledger of pull requests to other people's repositories, by state
+systems.*   KIO's convergence gates and its pairing with AURA (static)
+tooling.*   UEA's routing and verification tiers, gh-ops' job dispatcher (static)
 
-Live data comes from the GitHub GraphQL API. Nothing is written unless every query succeeds,
-so a failed refresh leaves the last good plates in place.
+Live data comes from the GitHub GraphQL API. Every plate is rendered in memory first and nothing is
+written unless every query succeeded, so a failed refresh leaves the last good plates in place.
 """
 from __future__ import annotations
 
 import datetime as dt
 import json
-import math
 import os
 import urllib.request
 from pathlib import Path
@@ -20,38 +20,56 @@ from xml.sax.saxutils import escape
 
 LOGIN = "aspire488"
 OUT = Path("assets/profile")
-ACTIVE_DAYS = 14
+ACTIVE_DAYS = 14  # ring: a human commit on the default branch this recently
+QUIET_DAYS = 60  # hollow station: no human commit on the default branch for this long
 
 SERIF = "Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Times New Roman', serif"
 MONO = "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace"
 
 # Primer-aligned so the plates sit beside the generated profile cards in either theme.
 DARK = {
-    "bg": "#0d1117", "fg": "#e6edf3", "muted": "#8b949e", "line": "#30363d", "faint": "#21262d",
-    "contour": "#2b3138", "accent": "#f0883e", "accent_soft": "#3d2817",
+    "bg": "#0d1117", "fg": "#e6edf3", "muted": "#8b949e", "line": "#30363d", "faint": "#161b22", "edge": "#484f58",
+    "accent": "#f0883e", "accent_soft": "#3d2817",
     "merged": "#a371f7", "open": "#3fb950", "draft": "#8b949e", "closed": "#f85149",
 }
 LIGHT = {
-    "bg": "#ffffff", "fg": "#1f2328", "muted": "#59636e", "line": "#d1d9e0", "faint": "#eff2f5",
-    "contour": "#dfe4ea", "accent": "#bc4c00", "accent_soft": "#fff1e5",
-    "merged": "#8250df", "open": "#1a7f37", "draft": "#818b98", "closed": "#cf222e",
+    "bg": "#ffffff", "fg": "#1f2328", "muted": "#59636e", "line": "#d1d9e0", "faint": "#f6f8fa", "edge": "#afb8c1",
+    "accent": "#bc4c00", "accent_soft": "#fff1e5",
+    "merged": "#8250df", "open": "#1a7f37", "draft": "#6e7781", "closed": "#cf222e",
 }
 
-# Curated: what each project is and how mature it is. Dates and release tags come from the API.
-# kind: shipped | building | alpha | frozen | paused
-STATIONS = [
-    # repo, label, kind, note, x, y, anchor
-    ("Kio", "KIO", "building", "gated runtime", 600, 262, "start"),
-    ("AURA", "AURA", "paused", "memory runtime", 516, 352, "start"),
-    ("Universal-Engineering-Augmentation", "UEA", "alpha", "public alpha", 742, 304, "start"),
-    ("gh-ops", "gh-ops", "frozen", "maintenance", 930, 360, "end"),
-    ("oss-atlas", "OSS Atlas", "building", "OSS ledger", 930, 214, "end"),
-    ("campus-bus", "Campus Bus", "shipped", "release", 520, 470, "start"),
-    ("Pipo", "Pipo", "shipped", "release", 690, 520, "start"),
-    ("medimind", "MediMind", "frozen", "prototype", 930, 452, "end"),
-    ("codeflow", "CodeFlow", "frozen", "prototype", 930, 528, "end"),
-]
+# Type scale in viewBox units. Plates are 640-760 units wide and shown at most at that width, so on a
+# 358px phone every tier below stays at or above ~8px and the names stay above 12px.
+SIZE = {"name": 27, "body": 19, "small": 17, "caption": 16, "atlas": 19}
 
+# Curated project metadata. `first` is each repository's first commit on its default branch (GitHub API,
+# fixed history); release and last-commit dates are fetched live.
+# maturity: released | alpha | building | frozen | ledger | upstream
+PROJECTS = [
+    {"repo": "medimind", "label": "MediMind", "lane": "applications", "first": "2026-03-18", "maturity": "frozen", "note": "frozen prototype"},
+    {"repo": "codeflow", "label": "CodeFlow", "lane": "applications", "first": "2026-04-15", "maturity": "frozen", "note": "frozen prototype"},
+    {"repo": "AURA", "label": "AURA", "lane": "systems", "first": "2026-06-21", "maturity": "building", "note": "memory layer"},
+    {"repo": "Kio", "label": "KIO", "lane": "systems", "first": "2026-07-15", "maturity": "building", "note": "gated kernel"},
+    {"repo": "Universal-Engineering-Augmentation", "label": "UEA", "lane": "tooling", "first": "2026-09-10", "maturity": "alpha", "note": "public alpha"},
+    {"repo": None, "label": "Upstream PRs", "lane": "upstream", "first": "2026-09-10", "maturity": "upstream", "note": ""},
+    {"repo": "gh-ops", "label": "gh-ops", "lane": "tooling", "first": "2026-09-21", "maturity": "frozen", "note": "frozen"},
+    {"repo": "oss-atlas", "label": "OSS Atlas", "lane": "tooling", "first": "2026-09-23", "maturity": "ledger", "note": "OSS notes"},
+    {"repo": "Pipo", "label": "Pipo", "lane": "applications", "first": "2026-09-29", "maturity": "released", "note": "released"},
+    {"repo": "campus-bus", "label": "Campus Bus", "lane": "applications", "first": "2026-10-11", "maturity": "released", "note": "released"},
+]
+LANE_X = {"applications": 150, "systems": 290, "tooling": 430, "upstream": 570}
+PAIRS = [("AURA", "Kio", "pairs with")]  # drawn only where both repositories describe the pairing
+
+STYLE = (
+    "<style>"
+    ".pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.4s ease-out 3}"
+    "@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.2);opacity:0}}"
+    "@media (prefers-reduced-motion:reduce){.pulse{animation:none;opacity:0}}"
+    "</style>"
+)
+
+
+# ---------------------------------------------------------------- data
 
 def graphql(query: str, variables: dict | None = None) -> dict:
     payload = json.dumps({"query": query, "variables": variables or {}}).encode()
@@ -73,25 +91,40 @@ def graphql(query: str, variables: dict | None = None) -> dict:
     return body["data"]
 
 
+def parse_time(value: str) -> dt.datetime:
+    return dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
+
+
+def is_bot(commit: dict) -> bool:
+    author = commit.get("author") or {}
+    login = (author.get("user") or {}).get("login") or author.get("name") or ""
+    return login.endswith("[bot]")
+
+
 def fetch_repos() -> dict:
-    fields = []
-    for i, (repo, *_rest) in enumerate(STATIONS):
-        fields.append(
-            f'r{i}: repository(owner:"{LOGIN}", name:"{repo}") {{'
-            " defaultBranchRef { target { ... on Commit { committedDate } } }"
-            " releases(first:1, orderBy:{field:CREATED_AT, direction:DESC}) { nodes { tagName } } }"
-        )
+    repos = [p["repo"] for p in PROJECTS if p["repo"]]
+    fields = [
+        f'r{i}: repository(owner:"{LOGIN}", name:"{repo}") {{'
+        " defaultBranchRef { target { ... on Commit { history(first:100) { nodes {"
+        " committedDate author { name user { login } } } } } } }"
+        " releases(first:1, orderBy:{field:CREATED_AT, direction:DESC}) { nodes { tagName publishedAt } } }"
+        for i, repo in enumerate(repos)
+    ]
     data = graphql("query {" + " ".join(fields) + "}")
-    repos = {}
-    for i, (repo, *_rest) in enumerate(STATIONS):
+    out = {}
+    for i, repo in enumerate(repos):
         node = data[f"r{i}"]
-        target = (node.get("defaultBranchRef") or {}).get("target") or {}
-        releases = node["releases"]["nodes"]
-        repos[repo] = {
-            "committed": dt.datetime.fromisoformat(target["committedDate"].replace("Z", "+00:00")),
-            "release": releases[0]["tagName"] if releases else None,
+        # Activity means people working, so automated commits (OSS Atlas' dashboard bot) don't count.
+        human = [c for c in node["defaultBranchRef"]["target"]["history"]["nodes"] if not is_bot(c)]
+        if not human:
+            raise RuntimeError(f"no human commit among the last 100 on {repo}")
+        release = (node["releases"]["nodes"] or [None])[0]
+        out[repo] = {
+            "last": parse_time(human[0]["committedDate"]),
+            "release": release["tagName"] if release else None,
+            "released": parse_time(release["publishedAt"]) if release and release.get("publishedAt") else None,
         }
-    return repos
+    return out
 
 
 def fetch_prs() -> list[dict]:
@@ -101,7 +134,7 @@ def fetch_prs() -> list[dict]:
         pageInfo { hasNextPage endCursor }
         nodes { ... on PullRequest {
           number title url state isDraft createdAt mergedAt
-          repository { nameWithOwner owner { login } }
+          repository { nameWithOwner name owner { login } }
         } }
       }
     }
@@ -113,8 +146,11 @@ def fetch_prs() -> list[dict]:
         if not page["pageInfo"]["hasNextPage"]:
             break
         after = page["pageInfo"]["endCursor"]
-    # Upstream only: PRs into my own repositories and forks are not contributions to other projects.
+    # Upstream only: a PR's repository is its base, so PRs from my forks into other projects count and
+    # PRs into my own repositories or forks do not.
     external = [p for p in prs if p["repository"]["owner"]["login"].lower() != LOGIN.lower()]
+    if not external:
+        raise RuntimeError("search returned no upstream pull requests; keeping the last plates")
     for p in external:
         if p["state"] == "MERGED":
             p["status"] = "merged"
@@ -122,92 +158,7 @@ def fetch_prs() -> list[dict]:
             p["status"] = "draft" if p["isDraft"] else "open"
         else:
             p["status"] = "closed"
-    return sorted(external, key=lambda p: p["createdAt"])
-
-
-def fmt_day(d: dt.datetime | dt.date) -> str:
-    return f"{d.strftime('%b')} {d.day}"
-
-
-def svg_open(w: int, h: int, t: dict, title: str, desc: str) -> list[str]:
-    return [
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-labelledby="t d">',
-        f'<title id="t">{escape(title)}</title><desc id="d">{escape(desc)}</desc>',
-        "<style>"
-        ".pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.8s ease-out infinite}"
-        "@keyframes pulse{0%{transform:scale(1);opacity:.75}100%{transform:scale(3.2);opacity:0}}"
-        ".flow{animation:flow 2.4s linear infinite}"
-        "@keyframes flow{to{stroke-dashoffset:-20}}"
-        ".rise{animation:rise .9s ease-out both}"
-        "@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}"
-        "@media (prefers-reduced-motion:reduce){.pulse,.flow,.rise{animation:none}}"
-        "</style>",
-        f'<rect width="{w}" height="{h}" fill="{t["bg"]}"/>',
-        f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="6" fill="none" stroke="{t["line"]}"/>',
-    ]
-
-
-def text(x, y, s, t, *, size=14, fill="fg", family=MONO, weight=None, anchor=None, spacing=None, italic=False, cls=None) -> str:
-    attrs = [f'x="{x}"', f'y="{y}"', f'fill="{t[fill]}"', f'font-family="{family}"', f'font-size="{size}"']
-    if weight:
-        attrs.append(f'font-weight="{weight}"')
-    if anchor:
-        attrs.append(f'text-anchor="{anchor}"')
-    if spacing:
-        attrs.append(f'letter-spacing="{spacing}"')
-    if italic:
-        attrs.append('font-style="italic"')
-    if cls:
-        attrs.append(f'class="{cls}"')
-    return f"<text {' '.join(attrs)}>{escape(s)}</text>"
-
-
-def plate_header(w: int, t: dict, left: str, right: str) -> list[str]:
-    return [
-        text(28, 30, left, t, size=12, fill="muted", spacing="2.4"),
-        text(w - 28, 30, right, t, size=12, fill="muted", spacing="1.6", anchor="end"),
-        f'<path d="M0 46H{w}" stroke="{t["line"]}"/>',
-    ]
-
-
-def contour_ring(cx: float, cy: float, r: float, seed: float, squash: float = 0.72) -> str:
-    pts = []
-    for i in range(48):
-        a = 2 * math.pi * i / 48
-        wobble = 1 + 0.13 * math.sin(3 * a + seed) + 0.07 * math.sin(5 * a + seed * 1.7) + 0.04 * math.cos(7 * a + seed * 0.3)
-        pts.append((cx + r * wobble * math.cos(a), cy + r * wobble * squash * math.sin(a)))
-    d = f"M{pts[0][0]:.1f} {pts[0][1]:.1f}"
-    for i in range(len(pts)):
-        p1, p2 = pts[(i + 1) % len(pts)], pts[(i + 2) % len(pts)]
-        mid = ((p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2)
-        d += f"Q{p1[0]:.1f} {p1[1]:.1f} {mid[0]:.1f} {mid[1]:.1f}"
-    return d + "Z"
-
-
-def station_glyph(x: int, y: int, kind: str, active: bool, t: dict) -> list[str]:
-    out = []
-    if active:
-        out.append(f'<circle class="pulse" cx="{x}" cy="{y}" r="7" fill="none" stroke="{t["accent"]}" stroke-width="1.5"/>')
-    if kind == "shipped":
-        out.append(f'<circle cx="{x}" cy="{y}" r="7.5" fill="{t["accent"]}"/>')
-        out.append(f'<circle cx="{x}" cy="{y}" r="11.5" fill="none" stroke="{t["accent"]}" stroke-width="1"/>')
-    elif kind in ("building", "alpha"):
-        out.append(f'<circle cx="{x}" cy="{y}" r="7.5" fill="{t["bg"]}" stroke="{t["accent"]}" stroke-width="2"/>')
-        out.append(f'<circle cx="{x}" cy="{y}" r="2.6" fill="{t["accent"]}"/>')
-    else:
-        out.append(f'<circle cx="{x}" cy="{y}" r="7.5" fill="{t["bg"]}" stroke="{t["muted"]}" stroke-width="1.6" stroke-dasharray="3 2.4"/>')
-    return out
-
-
-def pr_mark(x: float, y: float, status: str, t: dict, s: float = 9) -> str:
-    h = s / 2
-    if status == "merged":
-        return f'<rect x="{x - h:.1f}" y="{y - h:.1f}" width="{s}" height="{s}" rx="1.5" fill="{t["merged"]}"/>'
-    if status == "open":
-        return f'<rect x="{x - h + .75:.1f}" y="{y - h + .75:.1f}" width="{s - 1.5}" height="{s - 1.5}" rx="1.5" fill="none" stroke="{t["open"]}" stroke-width="1.5"/>'
-    if status == "draft":
-        return f'<rect x="{x - h + .75:.1f}" y="{y - h + .75:.1f}" width="{s - 1.5}" height="{s - 1.5}" rx="1.5" fill="none" stroke="{t["draft"]}" stroke-width="1.3" stroke-dasharray="2 1.6"/>'
-    return f'<path d="M{x - h + 1.5:.1f} {y - h + 1.5:.1f}L{x + h - 1.5:.1f} {y + h - 1.5:.1f}M{x + h - 1.5:.1f} {y - h + 1.5:.1f}L{x - h + 1.5:.1f} {y + h - 1.5:.1f}" stroke="{t["closed"]}" stroke-width="1.5" stroke-linecap="round" opacity=".8"/>'
+    return sorted(external, key=lambda p: (p["createdAt"], p["url"]))
 
 
 def counts(prs: list[dict]) -> dict:
@@ -217,249 +168,336 @@ def counts(prs: list[dict]) -> dict:
     return c
 
 
+def summary(c: dict) -> str:
+    return f"{c['merged']} merged · {c['open']} open · {c['draft']} draft · {c['closed']} closed"
+
+
+# ---------------------------------------------------------------- drawing helpers
+
+def fmt_day(d: dt.date | dt.datetime) -> str:
+    return f"{d.strftime('%b')} {d.day}"
+
+
+def svg_open(w: int, h: int, t: dict, title: str, desc: str) -> list[str]:
+    return [
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-labelledby="t d">',
+        f'<title id="t">{escape(title)}</title><desc id="d">{escape(desc)}</desc>',
+        STYLE,
+        f'<rect width="{w}" height="{h}" fill="{t["bg"]}"/>',
+        f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="6" fill="none" stroke="{t["line"]}"/>',
+    ]
+
+
+def text(x, y, s, t, *, size=SIZE["body"], fill="fg", family=MONO, weight=None, anchor=None, spacing=None, italic=False, halo=False) -> str:
+    attrs = [f'x="{x}"', f'y="{y}"', f'fill="{t[fill]}"', f'font-family="{family}"', f'font-size="{size}"']
+    if halo:
+        # Cartographic halo: the route passes under labels instead of through them.
+        attrs.append(f'stroke="{t["bg"]}" stroke-width="8" stroke-linejoin="round" paint-order="stroke"')
+    if weight:
+        attrs.append(f'font-weight="{weight}"')
+    if anchor:
+        attrs.append(f'text-anchor="{anchor}"')
+    if spacing:
+        attrs.append(f'letter-spacing="{spacing}"')
+    if italic:
+        attrs.append('font-style="italic"')
+    return f"<text {' '.join(attrs)}>{escape(s)}</text>"
+
+
+def header(w: int, t: dict, left: str, right: str = "") -> list[str]:
+    out = [text(24, 34, left, t, size=SIZE["caption"], fill="muted", spacing="2.4")]
+    if right:
+        out.append(text(w - 24, 34, right, t, size=SIZE["caption"], fill="muted", spacing="1", anchor="end"))
+    out.append(f'<path d="M0 52H{w}" stroke="{t["line"]}"/>')
+    return out
+
+
+def pr_mark(x: float, y: float, status: str, t: dict, s: float = 14) -> str:
+    h = s / 2
+    if status == "merged":
+        return f'<rect x="{x - h:.1f}" y="{y - h:.1f}" width="{s}" height="{s}" rx="2" fill="{t["merged"]}"/>'
+    if status in ("open", "draft"):
+        color = t[status]
+        box = f'<rect x="{x - h + 1:.1f}" y="{y - h + 1:.1f}" width="{s - 2}" height="{s - 2}" rx="2" fill="none" stroke="{color}" stroke-width="1.8"/>'
+        # Draft gets a centre dot so it stays distinct from open when the plate is scaled down.
+        return box + (f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{s / 7:.1f}" fill="{color}"/>' if status == "draft" else "")
+    k = h - 2
+    return f'<path d="M{x - k:.1f} {y - k:.1f}L{x + k:.1f} {y + k:.1f}M{x + k:.1f} {y - k:.1f}L{x - k:.1f} {y + k:.1f}" stroke="{t["closed"]}" stroke-width="2" stroke-linecap="round"/>'
+
+
+def station(x: float, y: float, maturity: str, t: dict, *, active: bool, quiet: bool) -> list[str]:
+    out = []
+    if active:
+        # The static ring carries the meaning; the pulse is an extra that stops after three beats.
+        out.append(f'<circle cx="{x}" cy="{y}" r="17" fill="none" stroke="{t["accent"]}" stroke-width="1.6"/>')
+        out.append(f'<circle class="pulse" cx="{x}" cy="{y}" r="17" fill="none" stroke="{t["accent"]}" stroke-width="1.6"/>')
+    if maturity == "upstream":
+        for dx, dy, status in ((-7, -7, "merged"), (7, -7, "open"), (-7, 7, "draft"), (7, 7, "closed")):
+            out.append(pr_mark(x + dx, y + dy, status, t, 11))
+    elif quiet:
+        out.append(f'<circle cx="{x}" cy="{y}" r="10" fill="{t["bg"]}" stroke="{t["muted"]}" stroke-width="1.6"/>')
+    elif maturity == "released":
+        out.append(f'<circle cx="{x}" cy="{y}" r="11" fill="{t["accent"]}"/>')
+    elif maturity == "frozen":
+        out.append(f'<circle cx="{x}" cy="{y}" r="10" fill="{t["bg"]}" stroke="{t["muted"]}" stroke-width="2" stroke-dasharray="4 3"/>')
+    else:  # alpha, building, ledger
+        out.append(f'<circle cx="{x}" cy="{y}" r="10" fill="{t["bg"]}" stroke="{t["accent"]}" stroke-width="2.4"/>')
+        out.append(f'<circle cx="{x}" cy="{y}" r="3.5" fill="{t["accent"]}"/>')
+    return out
+
+
+def chip(x, y, label, t, *, done=False, accent=False, dashed=False) -> tuple[list[str], int]:
+    size = SIZE["small"]
+    width = int(len(label) * size * 0.61 + (46 if done else 28))
+    stroke = t["accent"] if accent else (t["muted"] if dashed else t["edge"])
+    dash = ' stroke-dasharray="5 4"' if dashed else ""
+    fill = t["accent_soft"] if accent else t["bg"]
+    out = [f'<rect x="{x}" y="{y}" width="{width}" height="38" rx="5" fill="{fill}" stroke="{stroke}" stroke-width="{1.8 if accent else 1.2}"{dash}/>']
+    tx = x + 14
+    if done:
+        out.append(f'<path d="M{x + 13} {y + 19}l5 5 9-10" fill="none" stroke="{t["accent"]}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>')
+        tx = x + 34
+    out.append(text(tx, y + 25, label, t, size=size))
+    return out, width
+
+
+def steps(x: int, y: int, items: list, t: dict) -> tuple[list[str], list[tuple[int, int, int]], int]:
+    """Chips stacked top to bottom joined by down arrows. Returns parts, each chip's (x, y, width), bottom edge."""
+    out, boxes = [], []
+    for i, item in enumerate(items):
+        label, opts = item if isinstance(item, tuple) else (item, {})
+        parts, w = chip(x, y, label, t, **opts)
+        out += parts
+        boxes.append((x, y, w))
+        if i < len(items) - 1:
+            out.append(f'<path d="M{x + 20} {y + 42}V{y + 58}m-5 -6l5 6 5-6" fill="none" stroke="{t["muted"]}" stroke-width="1.5"/>')
+        y += 62
+    return out, boxes, y - 24
+
+
+def pills(x0: int, y: int, labels: list[str], t: dict, *, right: int, ramp: bool = False) -> tuple[list[str], int]:
+    out, x = [], x0
+    size = SIZE["small"]
+    for i, label in enumerate(labels):
+        w = int(len(label) * size * 0.61 + 26)
+        if x > x0 and x + w > right:
+            x, y = x0, y + 42
+        opacity = f' stroke-opacity="{0.4 + 0.15 * i:.2f}"' if ramp else ""
+        out.append(f'<rect x="{x}" y="{y}" width="{w}" height="32" rx="16" fill="none" stroke="{t["accent"] if ramp else t["edge"]}"{opacity} stroke-width="1.4"/>')
+        out.append(text(x + 13, y + 22, label, t, size=size))
+        x += w + 10
+    return out, y + 32
+
+
+def block_title(y: int, name: str, tag: str, t: dict) -> list[str]:
+    return [
+        text(24, y, name, t, size=32, family=SERIF, weight="700"),
+        text(24, y + 28, tag, t, size=SIZE["caption"], fill="accent", spacing="1.4"),
+    ]
+
+
+# ---------------------------------------------------------------- plates
+
+def project_state(p: dict, repos: dict, c: dict, now: dt.datetime) -> dict:
+    if p["maturity"] == "upstream":
+        return {"active": False, "quiet": False, "detail": summary(c)}
+    info = repos[p["repo"]]
+    age = (now - info["last"]).days
+    quiet = age >= QUIET_DAYS and p["maturity"] not in ("frozen", "released")
+    if p["maturity"] == "released" and info["release"] and info["released"]:
+        detail = f"{info['release']} · {fmt_day(info['released'])}"
+    elif p["maturity"] == "frozen":
+        detail = p["note"]
+    else:
+        detail = f"{p['note']} · {fmt_day(info['last'])}"
+    return {"active": age < ACTIVE_DAYS, "quiet": quiet, "detail": detail}
+
+
 def render_atlas(repos: dict, prs: list[dict], t: dict, today: dt.date) -> str:
-    w, h = 1000, 600
+    w, row_h, gap_h, top = 760, 56, 32, 116
     now = dt.datetime.combine(today, dt.time(23, 59), tzinfo=dt.timezone.utc)
     c = counts(prs)
-    latest_repo, latest = max(repos.items(), key=lambda kv: kv[1]["committed"])
-    latest_label = next(s[1] for s in STATIONS if s[0] == latest_repo)
+
+    # One row per station in order of first commit; a calendar month with no first commit gets a thin
+    # row, so the vertical axis is honest about time without pretending to be to scale.
+    rows, prev = [], None
+    for p in PROJECTS:
+        first = dt.date.fromisoformat(p["first"])
+        if prev:
+            months = (first.year - prev.year) * 12 + first.month - prev.month
+            for k in range(1, months):
+                m = prev.month + k
+                rows.append(("gap", dt.date(prev.year + (m - 1) // 12, (m - 1) % 12 + 1, 1)))
+        rows.append(("station", p))
+        prev = first
+    body_h = sum(row_h if kind == "station" else gap_h for kind, _ in rows)
+    unsurveyed_y = top + body_h + 18
+    h = unsurveyed_y + 96
+
+    states = {p["label"]: project_state(p, repos, c, now) for p in PROJECTS}
     out = svg_open(
-        w, h, t, "Field Atlas of aspire488",
-        f"A surveyed map of Joel Jigo's work. Applications, tooling and infrastructure projects are stations marked by maturity; "
-        f"stations with a commit in the last {ACTIVE_DAYS} days pulse. The upstream coast marks {c['merged']} merged, "
-        f"{c['open'] + c['draft']} open and {c['closed']} closed pull requests to other projects. Surveyed {today.isoformat()}.",
+        w, h, t, "Field Atlas: the route so far",
+        "Projects in order of first commit, March to October 2026. "
+        + "; ".join(f"{p['label']}, first {'pull request' if p['maturity'] == 'upstream' else 'commit'} {fmt_day(dt.date.fromisoformat(p['first']))}: {states[p['label']]['detail']}" for p in PROJECTS)
+        + f". The route continues into unsurveyed ground. Surveyed {today.isoformat()}.",
     )
-    out += plate_header(w, t, "ASPIRE488 — FIELD ATLAS", f"PLATE 0 · SURVEYED {today.isoformat()}")
+    out += header(w, t, "FIELD ATLAS · 2026", f"SURVEYED {today.isoformat()}")
+    for lane, x in LANE_X.items():
+        out.append(text(x, 90, lane, t, size=SIZE["atlas"], fill="muted", family=SERIF, italic=True, anchor="middle"))
+        out.append(f'<path d="M{x} 104V{unsurveyed_y - 8}" stroke="{t["line"]}" stroke-dasharray="1 6"/>')
 
-    # Map: clip so contours never leave their frame.
-    mx, my, mw, mh = 432, 64, 540, 512
-    out.append(f'<defs><clipPath id="map"><rect x="{mx}" y="{my}" width="{mw}" height="{mh}" rx="4"/></clipPath>'
-               f'<pattern id="sea" width="10" height="7" patternUnits="userSpaceOnUse"><path d="M0 3.5H6" stroke="{t["line"]}" stroke-width="1"/></pattern></defs>')
-    out.append(f'<rect x="{mx}" y="{my}" width="{mw}" height="{mh}" rx="4" fill="none" stroke="{t["line"]}"/>')
-    out.append('<g clip-path="url(#map)">')
-    shore = [(mx + mw * i / 24, 150 + 9 * math.sin(i * 0.9) + 5 * math.sin(i * 2.3)) for i in range(24, -1, -1)]
-    edge = "".join(f"{'M' if i == 0 else 'L'}{x:.1f} {y:.1f}" for i, (x, y) in enumerate(shore))
-    out.append(f'<path d="M{mx} {my}H{mx + mw}V{shore[0][1]:.1f}{edge.replace("M", "L", 1)}Z" fill="url(#sea)"/>')
-    out.append(f'<path d="{edge}" fill="none" stroke="{t["muted"]}" stroke-width="1" opacity=".55"/>')
-    for (cx, cy, rings, seed) in ((560, 310, 7, 0.4), (840, 300, 5, 2.1), (690, 505, 4, 4.2)):
-        for k in range(1, rings + 1):
-            out.append(f'<path d="{contour_ring(cx, cy, 16 * k + 6, seed + k * 0.35)}" fill="none" stroke="{t["contour"]}" stroke-width="1"/>')
-    out.append("</g>")
+    y, points, seen = top, [], set()
+    for kind, item in rows:
+        if kind == "gap":
+            out.append(f'<rect x="16" y="{y + 5}" width="{w - 32}" height="{gap_h - 10}" rx="3" fill="{t["faint"]}"/>')
+            out.append(text(28, y + gap_h / 2 + 6, item.strftime("%b").upper(), t, size=SIZE["atlas"], fill="muted"))
+            y += gap_h
+            continue
+        cy = y + row_h / 2
+        if item["first"][:7] not in seen:
+            seen.add(item["first"][:7])
+            out.append(text(28, cy + 7, dt.date.fromisoformat(item["first"]).strftime("%b").upper(), t, size=SIZE["atlas"], weight="700"))
+        points.append((item, LANE_X[item["lane"]], cy))
+        y += row_h
 
-    # Zone names, set like a cartographer's lettering.
-    for x, y, label in ((452, 200, "I N F R A S T R U C T U R E"), (742, 414, "T O O L I N G"), (452, 562, "A P P L I C A T I O N S")):
-        out.append(text(x, y, label, t, size=11, fill="muted", family=SERIF, italic=True))
+    # The traverse: one dotted route through the stations in order, then on into unsurveyed ground.
+    route = f"M{points[0][1]} {points[0][2]:.0f}"
+    for (_, x1, y1), (_, x2, y2) in zip(points, points[1:]):
+        route += f" V{y1 + row_h / 2:.0f} H{x2} V{y2:.0f}" if x1 != x2 else f" V{y2:.0f}"
+    route += f" V{unsurveyed_y + 20}"
+    out.append(f'<path d="{route}" fill="none" stroke="{t["accent"]}" stroke-width="2.2" stroke-dasharray="1 7" stroke-linecap="round" stroke-linejoin="round"/>')
+    where = {p["repo"]: (x, cy) for p, x, cy in points if p["repo"]}
+    for a, b, label in PAIRS:
+        (ax, ay), (bx, by) = where[a], where[b]
+        out.append(text(ax - 14, (ay + by) / 2 + 6, label, t, size=SIZE["caption"], fill="muted", family=SERIF, italic=True, anchor="end"))
 
-    # Upstream coast: one mark per external PR, oldest to newest.
-    out.append(text(452, 92, "UPSTREAM", t, size=13, family=SERIF, italic=True, spacing="3"))
-    out.append(text(452, 112, f"{c['merged']} merged · {c['open'] + c['draft']} open · {c['closed']} closed", t, size=11.5, fill="muted"))
-    n = len(prs)
-    if n:
-        span = mw - 48
-        for i, p in enumerate(prs):
-            x = mx + 24 + (span * i / max(n - 1, 1))
-            y = 132 + 4 * math.sin(i * 0.9)
-            out.append(pr_mark(x, y, p["status"], t, 8))
+    for p, x, cy in points:
+        state = states[p["label"]]
+        out += station(x, cy, p["maturity"], t, active=state["active"], quiet=state["quiet"])
+        left = x + 300 > w
+        lx, anchor = (x - 28, "end") if left else (x + 28, "start")
+        out.append(text(lx, cy + 1, p["label"], t, size=SIZE["name"], family=SERIF, weight="700", anchor=anchor, halo=True))
+        out.append(text(lx, cy + 22, state["detail"], t, size=SIZE["atlas"], fill="accent" if state["active"] else "muted", anchor=anchor, halo=True))
 
-    # Routes that exist in the code: KIO is built on AURA; OSS Atlas records the upstream work.
-    pos = {s[0]: (s[4], s[5]) for s in STATIONS}
-    ax, ay = pos["AURA"]
-    kx, ky = pos["Kio"]
-    out.append(f'<path class="flow" d="M{ax} {ay}Q{ax + 10} {ky + 10} {kx} {ky}" fill="none" stroke="{t["accent"]}" stroke-width="1.4" stroke-dasharray="4 6"/>')
-    out.append(text(ax + 20, (ay + ky) / 2 + 22, "built on", t, size=11, fill="muted", family=SERIF, italic=True))
-    ox, oy = pos["oss-atlas"]
-    out.append(f'<path class="flow" d="M{ox} {oy - 10}V150" fill="none" stroke="{t["merged"]}" stroke-width="1.4" stroke-dasharray="4 6"/>')
-    out.append(text(ox - 10, 182, "records", t, size=11, fill="muted", family=SERIF, italic=True, anchor="end"))
-
-    for repo, label, kind, note, x, y, anchor in STATIONS:
-        info = repos[repo]
-        active = (now - info["committed"]).days < ACTIVE_DAYS
-        out += station_glyph(x, y, kind, active, t)
-        detail = info["release"] if kind == "shipped" and info["release"] else note
-        when = fmt_day(info["committed"])
-        lx = x + 18 if anchor == "start" else x - 18
-        out.append(text(lx, y + 1, label, t, size=18, family=SERIF, weight="700", anchor=anchor))
-        out.append(text(lx, y + 19, f"{detail} · {when}", t, size=11.5, fill="accent" if active else "muted", anchor=anchor))
-
-    # Identity column.
-    g = ['<g class="rise">']
-    g.append(text(40, 106, "THE WORKING WORLD OF", t, size=12, fill="accent", spacing="2.6"))
-    g.append(text(38, 168, "Joel Jigo", t, size=60, family=SERIF, weight="700", spacing="-1"))
-    g.append(text(40, 200, "aspire488 · Kochi, India", t, size=13, fill="muted"))
-    lines = ["Computer science engineering", "student. I build applications,", "developer tooling and AI", "infrastructure, then fix what", "I find in other people's code."]
-    for i, line in enumerate(lines):
-        g.append(text(40, 252 + i * 30, line, t, size=21, family=SERIF))
-    g.append(f'<path d="M40 410H392" stroke="{t["line"]}"/>')
-    g.append(text(40, 436, "LEGEND", t, size=11, fill="muted", spacing="2.4"))
-    legend = [
-        ("shipped", "shipped release"),
-        ("building", "in development"),
-        ("frozen", "frozen or paused"),
-    ]
-    for i, (kind, label) in enumerate(legend):
-        y = 466 + i * 28
-        g += station_glyph(52, y - 4, kind, False, t)
-        g.append(text(74, y, label, t, size=13))
-    g.append(f'<circle cx="236" cy="462" r="7" fill="none" stroke="{t["accent"]}" stroke-width="1.5"/>')
-    g.append(text(252, 466, f"commit < {ACTIVE_DAYS}d", t, size=13))
-    for i, (status, label) in enumerate((("merged", "merged"), ("open", "open"), ("draft", "draft"), ("closed", "closed"))):
-        x = 236 + (i % 2) * 82
-        y = 490 + (i // 2) * 28
-        g.append(pr_mark(x, y - 4, status, t, 10))
-        g.append(text(x + 14, y, label, t, size=13))
-    g.append(text(40, 572, f"latest commit · {latest_label} · {latest['committed'].date().isoformat()}", t, size=11.5, fill="muted"))
-    g.append("</g>")
-    out += g
+    # Unsurveyed ground: where the route is heading, deliberately left blank.
+    out.append(f'<defs><pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V9" stroke="{t["line"]}" stroke-width="1.4"/></pattern></defs>')
+    out.append(f'<rect x="16" y="{unsurveyed_y}" width="{w - 32}" height="72" rx="4" fill="url(#hatch)"/>')
+    out.append(f'<rect x="{w / 2 - 110}" y="{unsurveyed_y + 18}" width="220" height="36" rx="4" fill="{t["bg"]}"/>')
+    out.append(text(w / 2, unsurveyed_y + 44, "unsurveyed", t, size=24, family=SERIF, italic=True, anchor="middle", fill="muted"))
     out.append("</svg>")
     return "".join(out)
 
 
 def render_upstream(prs: list[dict], t: dict, today: dt.date) -> str:
-    w = 1000
+    w, row, top = 640, 40, 214
     c = counts(prs)
     by_repo: dict[str, list[dict]] = {}
     for p in prs:
         by_repo.setdefault(p["repository"]["nameWithOwner"], []).append(p)
     ranked = sorted(by_repo.items(), key=lambda kv: (-sum(p["status"] == "merged" for p in kv[1]), -len(kv[1]), kv[0].lower()))
-    shown, rest = ranked[:12], ranked[12:]
-    row, top = 30, 196
-    h = top + row * len(shown) + (40 if rest else 0) + 66
+    shown, rest = ranked[:8], ranked[8:]
+    h = top + row * len(shown) + (54 if rest else 0) + 26
+
+    def tally(items: list[dict]) -> str:
+        return ", ".join(f"{n} {s}" for s in ("merged", "open", "draft", "closed") if (n := sum(p["status"] == s for p in items)))
+
     out = svg_open(
         w, h, t, "Upstream ledger",
-        f"Pull requests by aspire488 to projects owned by others, from the GitHub API on {today.isoformat()}: "
-        f"{c['merged']} merged, {c['open']} open, {c['draft']} draft, {c['closed']} closed without merge, across {len(by_repo)} repositories.",
+        f"Pull requests by {LOGIN} to repositories owned by others, from the GitHub API on {today.isoformat()}: "
+        f"{c['merged']} merged, {c['open']} open, {c['draft']} draft, {c['closed']} closed without merge, across {len(by_repo)} repositories. "
+        + "; ".join(f"{repo}: {tally(items)}" for repo, items in shown) + ".",
     )
-    out += plate_header(w, t, "PLATE IV — UPSTREAM LEDGER", f"GITHUB API · {today.isoformat()}")
-    stats = (("merged", "merged upstream"), ("open", "open, in review"), ("draft", "open as draft"), ("closed", "closed, not merged"))
-    for i, (status, label) in enumerate(stats):
-        x = 40 + i * 236
-        out.append(text(x, 108, str(c[status]), t, size=44, family=SERIF, weight="700", fill=status if status != "draft" else "fg"))
-        out.append(pr_mark(x + 5, 132, status, t, 10))
-        out.append(text(x + 18, 136, label, t, size=12.5, fill="muted"))
-    out.append(f'<path d="M40 162H{w - 40}" stroke="{t["line"]}"/>')
-    out.append(text(40, 186, "REPOSITORY", t, size=11, fill="muted", spacing="2"))
-    out.append(text(500, 186, "ONE MARK PER PULL REQUEST, OLDEST FIRST", t, size=11, fill="muted", spacing="2"))
+    out += header(w, t, "UPSTREAM LEDGER", f"GITHUB API · {today.isoformat()}")
+    for i, status in enumerate(("merged", "open", "draft", "closed")):
+        x = 24 + i * 152
+        out.append(text(x, 120, str(c[status]), t, size=50, family=SERIF, weight="700"))
+        out.append(pr_mark(x + 8, 148, status, t, 16))
+        out.append(text(x + 24, 154, status, t, size=SIZE["small"], fill="muted"))
+    out.append(f'<path d="M24 180H{w - 24}" stroke="{t["line"]}"/>')
+    out.append(text(24, 204, "one mark per pull request, oldest first", t, size=SIZE["caption"], fill="muted", family=SERIF, italic=True))
     for i, (repo, items) in enumerate(shown):
-        y = top + row * i + 22
+        y = top + row * i + 28
         if i % 2 == 0:
-            out.append(f'<rect x="28" y="{y - 20}" width="{w - 56}" height="{row}" rx="3" fill="{t["faint"]}"/>')
-        owner, name = repo.split("/", 1)
-        out.append(f'<text x="40" y="{y}" font-family="{MONO}" font-size="14"><tspan fill="{t["muted"]}">{escape(owner)}/</tspan><tspan fill="{t["fg"]}">{escape(name)}</tspan></text>')
+            out.append(f'<rect x="16" y="{y - 26}" width="{w - 32}" height="{row}" rx="4" fill="{t["faint"]}"/>')
+        out.append(text(28, y, repo.split("/", 1)[1], t, size=SIZE["body"]))
         for j, p in enumerate(items):
-            out.append(pr_mark(506 + j * 18, y - 5, p["status"], t, 12))
-    y = top + row * len(shown)
+            out.append(pr_mark(330 + j * 22, y - 6, p["status"], t, 16))
     if rest:
         extra = sum(len(v) for _, v in rest)
-        out.append(text(40, y + 30, f"+ {len(rest)} more repositories · {extra} pull requests", t, size=13, fill="muted"))
-        y += 40
-    out.append(text(40, y + 38, "Merged means merged by the upstream maintainers. PRs to my own repositories and forks are excluded.", t, size=12, fill="muted", family=SERIF, italic=True))
+        out.append(text(28, top + row * len(shown) + 36, f"+ {len(rest)} more repositories, {extra} pull requests", t, size=SIZE["small"], fill="muted"))
     out.append("</svg>")
     return "".join(out)
-
-
-def chip(x, y, label, t, *, done=False, current=False, w=None) -> tuple[list[str], int]:
-    width = w or int(len(label) * 8.6 + (40 if done else 26))
-    stroke = t["accent"] if current else t["line"]
-    out = [f'<rect x="{x}" y="{y}" width="{width}" height="34" rx="5" fill="{t["accent_soft"] if current else t["bg"]}" stroke="{stroke}" stroke-width="{1.6 if current else 1}"/>']
-    tx = x + 13
-    if done:
-        out.append(f'<path d="M{x + 12} {y + 17}l4 4 8-9" fill="none" stroke="{t["accent"]}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>')
-        tx = x + 30
-    if current:
-        out.append(f'<circle class="pulse" cx="{x + width - 12}" cy="{y + 17}" r="3" fill="{t["accent"]}"/>')
-        out.append(f'<circle cx="{x + width - 12}" cy="{y + 17}" r="3" fill="{t["accent"]}"/>')
-    out.append(text(tx, y + 22, label, t, size=14))
-    return out, width
-
-
-def arrow(x1, y, x2, t) -> str:
-    return f'<path d="M{x1 + 4} {y}H{x2 - 6}m-5 -4l5 4-5 4" fill="none" stroke="{t["muted"]}" stroke-width="1.3"/>'
-
-
-def chain(x, y, items, t, gap=26) -> tuple[list[str], int]:
-    out = []
-    for i, item in enumerate(items):
-        label, opts = item if isinstance(item, tuple) else (item, {})
-        parts, cw = chip(x, y, label, t, **opts)
-        out += parts
-        if i < len(items) - 1:
-            out.append(arrow(x + cw, y + 17, x + cw + gap, t))
-        x += cw + gap
-    return out, x
 
 
 def render_systems(t: dict) -> str:
-    w, h = 1000, 640
-    out = svg_open(
-        w, h, t, "Systems under construction",
-        "Three systems. KIO, an orchestration runtime advanced through audited gates and built on the AURA memory runtime, has finished convergence gates C-1 to C-3 and is on C-4. "
-        "UEA routes engineering work through a keyword classifier first, uses an optional local model only for unknown tasks, then verifies in tiers. "
-        "gh-ops runs six GitHub operations jobs through one dispatcher in CI and locally and sends a Telegram brief only when a run found something meaningful.",
+    w, right = 560, 536
+    body = block_title(98, "KIO", "GATED CONVERGENCE · C-4 NEXT", t)
+    gates = [("C-1 context", {"done": True}), ("C-2 registry", {"done": True}), ("C-3 planning", {"done": True}), ("C-4 response", {"accent": True})]
+    parts, boxes, y = steps(24, 140, gates, t)
+    body += parts
+    gx, gy, gw = boxes[-1]
+    body.append(text(gx + gw + 16, gy + 25, "next, as recorded in ANCHORED_SUMMARY.md", t, size=SIZE["caption"], fill="muted", family=SERIF, italic=True))
+    y += 36
+    body.append(f'<path d="M24 {y}H{w - 24}" stroke="{t["line"]}"/>')
+    body += block_title(y + 46, "AURA", "MEMORY AND REASONING LAYER", t)
+    parts, y = pills(24, y + 90, ["episodic memory", "semantic memory", "beliefs", "goals", "reasoning traces"], t, right=right)
+    body += parts
+    parts, w2 = chip(24, y + 24, "integration into KIO: gate C-7", t, dashed=True)
+    body += parts
+    h = y + 24 + 38 + 30
+    head = svg_open(
+        w, h, t, "KIO and AURA",
+        "KIO, the Kernel for Intelligent Orchestration, advances through recorded convergence gates: C-1 context, "
+        "C-2 registry and C-3 planning are marked done and C-4 response is next. AURA is the memory and reasoning "
+        "layer designed to pair with it (episodic and semantic memory, beliefs, goals, reasoning traces); "
+        "integrating it into KIO is gate C-7.",
     )
-    out += plate_header(w, t, "PLATE III — SYSTEMS UNDER CONSTRUCTION", "STATUS AS RECORDED IN EACH REPOSITORY")
-    rows = [(70, "KIO + AURA", "ACTIVE · GATED CONVERGENCE"), (262, "UEA", "PUBLIC ALPHA · v0.1.0"), (454, "gh-ops", "FROZEN · MAINTENANCE")]
-    for i, (y, name, tag) in enumerate(rows):
-        if i:
-            out.append(f'<path d="M28 {y - 18}H{w - 28}" stroke="{t["line"]}"/>')
-        out.append(text(40, y + 34, name, t, size=28, family=SERIF, weight="700"))
-        out.append(text(40, y + 58, tag, t, size=11.5, fill="accent", spacing="1.6"))
+    return "".join(head + header(w, t, "SYSTEMS") + body + ["</svg>"])
 
-    # KIO: the convergence gate map from ANCHORED_SUMMARY.md.
-    parts, _ = chain(300, 92, [("C-1 context", {"done": True}), ("C-2 registry", {"done": True}), ("C-3 planning", {"done": True}), ("C-4 response", {"current": True})], t, gap=22)
-    out += parts
-    out.append(text(300, 162, "Phase 0 deleted 5,167 lines before any new gate began.", t, size=13, fill="muted"))
-    out.append(text(300, 186, "Built on AURA: episodic, semantic and working memory, beliefs, goals, reasoning traces.", t, size=13, fill="muted"))
-    out.append(text(300, 210, "AURA itself is paused since June 2026.", t, size=13, fill="muted"))
-    out.append(text(40, 160, "An orchestration runtime,", t, size=15, family=SERIF))
-    out.append(text(40, 182, "advanced one audited gate", t, size=15, family=SERIF))
-    out.append(text(40, 204, "at a time.", t, size=15, family=SERIF))
 
-    # UEA: deterministic-first routing, then tiered verification.
-    parts, end = chain(300, 284, ["task", "keyword classifier", "specialist", ("verify", {"current": False})], t)
-    out += parts
-    out.append(f'<path d="M413 318V344H436" fill="none" stroke="{t["muted"]}" stroke-width="1.3" stroke-dasharray="3 3"/>')
-    out.append(text(442, 349, "UNKNOWN → optional local model (Laya), lazy-loaded, fail-soft", t, size=13, fill="muted"))
-    tiers = ["minimal", "standard", "strict", "security", "full"]
-    x = 300
-    for i, tier in enumerate(tiers):
-        tw = int(len(tier) * 8.4 + 22)
-        op = 0.35 + 0.13 * i
-        out.append(f'<rect x="{x}" y="378" width="{tw}" height="26" rx="13" fill="none" stroke="{t["accent"]}" stroke-opacity="{op:.2f}"/>')
-        out.append(text(x + 11, 396, tier, t, size=13))
-        x += tw + 8
-    out.append(text(x + 6, 396, "verification tiers", t, size=12, fill="muted", family=SERIF, italic=True))
-    out.append(text(40, 352, "Deterministic tools first;", t, size=15, family=SERIF))
-    out.append(text(40, 374, "a model only where the", t, size=15, family=SERIF))
-    out.append(text(40, 396, "rules run out.", t, size=15, family=SERIF))
-
-    # gh-ops: one dispatcher, same in CI and locally.
-    jobs = ["daily", "monitoring", "weekly-report", "oss-hunt", "security", "status"]
-    x, y = 300, 476
-    for job in jobs:
-        jw = int(len(job) * 8.4 + 22)
-        if x + jw > 960:
-            x, y = 300, y + 34
-        out.append(f'<rect x="{x}" y="{y}" width="{jw}" height="26" rx="13" fill="none" stroke="{t["line"]}"/>')
-        out.append(text(x + 11, y + 18, job, t, size=13))
-        x += jw + 8
-    parts, _ = chain(300, 552, ["src.jobs <job>", "Actions or local", "Telegram brief, if meaningful"], t)
-    out += parts
-    out.append(text(40, 544, "A personal GitHub", t, size=15, family=SERIF))
-    out.append(text(40, 566, "operations layer, running", t, size=15, family=SERIF))
-    out.append(text(40, 588, "on GitHub Actions.", t, size=15, family=SERIF))
-    out.append("</svg>")
-    return "".join(out)
+def render_tooling(t: dict) -> str:
+    w, right = 560, 536
+    body = block_title(98, "UEA", "PUBLIC ALPHA · v0.1.0", t)
+    parts, boxes, y = steps(24, 140, ["task", "keyword classifier", "specialist", "verify"], t)
+    body += parts
+    cx, cy, cw = boxes[1]
+    body.append(f'<path d="M{cx + cw + 6} {cy + 19}H{cx + cw + 40}" fill="none" stroke="{t["muted"]}" stroke-width="1.5" stroke-dasharray="3 3"/>')
+    body.append(text(cx + cw + 48, cy + 25, "UNKNOWN →", t, size=SIZE["small"], fill="muted"))
+    body.append(text(cx + cw + 48, cy + 47, "optional local model", t, size=SIZE["small"], fill="muted"))
+    body.append(text(24, y + 40, "verify runs one of five tiers:", t, size=SIZE["caption"], fill="muted", family=SERIF, italic=True))
+    parts, y = pills(24, y + 56, ["minimal", "standard", "strict", "security", "full"], t, right=right, ramp=True)
+    body += parts
+    y += 36
+    body.append(f'<path d="M24 {y}H{w - 24}" stroke="{t["line"]}"/>')
+    body += block_title(y + 46, "gh-ops", "FROZEN · MAINTENANCE", t)
+    parts, y = pills(24, y + 90, ["daily", "monitoring", "weekly-report", "oss-hunt", "security", "status"], t, right=right)
+    body += parts
+    parts, _, y = steps(24, y + 24, ["python -m src.jobs <job>", "same dispatcher in CI or locally", "Telegram brief, only if a run found something"], t)
+    body += parts
+    h = y + 30
+    head = svg_open(
+        w, h, t, "UEA and gh-ops",
+        "UEA routes engineering work through a keyword classifier to a specialist, sends unknown tasks to an optional "
+        "local model, and verifies in five tiers: minimal, standard, strict, security, full. gh-ops runs six jobs "
+        "(daily, monitoring, weekly-report, oss-hunt, security, status) through one dispatcher, the same in CI and "
+        "locally, and sends a Telegram brief only when a run found something.",
+    )
+    return "".join(head + header(w, t, "TOOLING") + body + ["</svg>"])
 
 
 def main() -> None:
     today = dt.datetime.now(dt.timezone.utc).date()
     repos = fetch_repos()
     prs = fetch_prs()
-    OUT.mkdir(parents=True, exist_ok=True)
+    files = {}
     for name, theme in (("dark", DARK), ("light", LIGHT)):
-        (OUT / f"atlas.{name}.svg").write_text(render_atlas(repos, prs, theme, today), encoding="utf-8")
-        (OUT / f"upstream.{name}.svg").write_text(render_upstream(prs, theme, today), encoding="utf-8")
-        (OUT / f"systems.{name}.svg").write_text(render_systems(theme), encoding="utf-8")
+        files[f"atlas.{name}.svg"] = render_atlas(repos, prs, theme, today)
+        files[f"upstream.{name}.svg"] = render_upstream(prs, theme, today)
+        files[f"systems.{name}.svg"] = render_systems(theme)
+        files[f"tooling.{name}.svg"] = render_tooling(theme)
+    OUT.mkdir(parents=True, exist_ok=True)
+    for filename, svg in files.items():
+        (OUT / filename).write_text(svg, encoding="utf-8")
 
 
 if __name__ == "__main__":

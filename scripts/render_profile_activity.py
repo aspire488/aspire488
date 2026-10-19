@@ -151,9 +151,14 @@ def render(calendar: dict, theme: dict, theme_name: str, end_date: dt.date) -> s
 def main() -> None:
     calendar = graphql()
     end_date = dt.datetime.now(dt.timezone.utc).date()
+    # Render both themes before writing either, so a failure never leaves a mismatched pair.
+    files = {
+        "activity.dark.svg": render(calendar, DARK, "dark", end_date),
+        "activity.light.svg": render(calendar, LIGHT, "light", end_date),
+    }
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "activity.dark.svg").write_text(render(calendar, DARK, "dark", end_date), encoding="utf-8")
-    (OUT / "activity.light.svg").write_text(render(calendar, LIGHT, "light", end_date), encoding="utf-8")
+    for name, svg in files.items():
+        (OUT / name).write_text(svg, encoding="utf-8")
 
 if __name__ == "__main__":
     main()
