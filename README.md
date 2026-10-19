@@ -50,6 +50,15 @@ hey, I'm Joel 👋 I learn by building things, shipping them, and finding out wh
 
 **AURA** `built, not verified` · memory for KIO, last touched in June 2026 · [source](https://github.com/aspire488/AURA)
 
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/rag-platform.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/rag-platform.light.svg">
+  <img src="./assets/profile/rag-platform.dark.svg" width="720" alt="RAG Platform, building: a local-first retrieval-augmented generation engine with SQLite migrations, local Qdrant storage, lazy MiniLM embeddings, hybrid retrieval planned next, and cloud generation disabled by default.">
+</picture>
+
+**RAG Platform** `building · Phase 3 complete` · a resource-aware, local-first RAG engine with hybrid retrieval and controlled generation on the roadmap · local-first, egress off by default · [source](https://github.com/aspire488/rag-platform)
+
 ## Tools I made for myself
 
 <picture>
