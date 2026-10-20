@@ -54,9 +54,11 @@ hey, I'm Joel 👋 I learn by building things, shipping them, and finding out wh
 
 **AURA** `built, not verified` · memory for KIO, last touched in June 2026 · [source](https://github.com/aspire488/AURA)
 
-<a href="https://github.com/aspire488/rag-platform">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:111820,55:26313b,100:c5f467&height=100&section=header&text=RAG%20Platform&fontSize=32&fontColor=edf3f5&fontAlignY=45&animation=fadeIn&desc=LOCAL-FIRST%20%C2%B7%20EVIDENCE-LED%20%C2%B7%20RESOURCE-AWARE&descSize=11&descAlignY=76" width="720" alt="Animated RAG Platform project banner: local-first, evidence-led, resource-aware."/>
-</a>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/rag.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/rag.light.svg">
+  <img src="./assets/profile/rag.light.svg" width="720" alt="RAG Platform, building, foundation first: SQLite with FTS5, a local Qdrant store and a MiniLM embedding wrapper are built but not wired together yet; MiniLM has only run against a stub. Planned on top: phase 4 ingest and chunk (next up), phase 5 hybrid search with RRF, phase 6 generation with providers off by default. Egress off by default; only /health so far.">
+</picture>
 
 **RAG Platform** `building · Phase 3 complete` · a resource-aware, local-first RAG foundation; hybrid retrieval and controlled generation are planned, not implemented yet · egress off by default · [source](https://github.com/aspire488/rag-platform)
 

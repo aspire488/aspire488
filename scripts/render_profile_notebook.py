@@ -245,6 +245,36 @@ def ghops(t: dict) -> str:
     return p.svg()
 
 
+def rag(t: dict) -> str:
+    p = Page(t, 10, "RAG Platform, building, foundation first: SQLite with FTS5, a local Qdrant store and a MiniLM embedding wrapper "
+                    "are built but not wired together yet; MiniLM has only run against a stub. Planned on top: phase 4 ingest and chunk "
+                    "(next up), phase 5 hybrid search with RRF, phase 6 generation with providers off by default. Egress off by default; "
+                    "only /health so far.")
+    p.heading("RAG Platform")
+    p.stamp("BUILDING", delay=1.9)
+    # A building drawn bottom-up: the solid slab is what exists, the dashed floors are the plan.
+    p.box(X, 6 * RULE + 12, W - 30 - X, 56, delay=0.2)
+    x = X + 16
+    for i, s in enumerate(["SQLite + FTS5", "Qdrant", "MiniLM"]):
+        d = 0.3 + i * 0.2
+        p.checkbox(x, 7 * RULE + 13, True, d)
+        p.text(x + 32, 7 * RULE + 13, s, delay=d)
+        x += 32 + int(len(s) * 24 * 0.62) + 28
+    floors = ["4  ingest + chunk", "5  hybrid search + RRF", "6  generate, providers off"]
+    for i, s in enumerate(floors):
+        y = 6 * RULE + 12 - (i + 1) * 40  # floors sit on the slab and on each other
+        d = 1.0 + i * 0.25
+        p.box(X, y, 440, dashed=True, delay=d)
+        p.text(X + 16, y + 28, s, delay=d)
+    p.text(W - 30, 4 * RULE + 32, "planned", size=24, family=SERIF, italic=True, fill="muted", anchor="end", delay=1.6)
+    p.parts.append(f'<g{anim("pop", 1.7)}><g class="nudge">')
+    p.text(W - 30, 6 * RULE - 12, "← next up", size=24, family=SERIF, italic=True, fill="accent", anchor="end")
+    p.parts.append("</g></g>")
+    p.text(X, 9 * RULE - 4, "built, but not wired together yet", size=24, family=SERIF, italic=True, fill="accent", delay=2.1)
+    p.text(X, 10 * RULE - 4, "egress off by default · only /health so far", size=24, family=SERIF, italic=True, fill="muted", delay=2.2)
+    return p.svg()
+
+
 # ---------------------------------------------------------------- live tally
 
 def fetch_upstream() -> tuple[dict, int]:
@@ -320,7 +350,7 @@ def tally(t: dict, counts: dict, repos: int, today: dt.date) -> str:
     return p.svg()
 
 
-PAGES = {"hero": hero, "pipo": pipo, "kio": kio, "uea": uea, "aura": aura, "ghops": ghops}
+PAGES = {"hero": hero, "pipo": pipo, "kio": kio, "uea": uea, "aura": aura, "rag": rag, "ghops": ghops}
 
 
 def main() -> None:
