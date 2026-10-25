@@ -16,6 +16,14 @@ hey, I'm Joel 👋 I learn by building things, shipping them, and finding out wh
 
 ## Shipped
 
+<a href="https://event-horizon-teal.vercel.app"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/eventhorizon.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/eventhorizon.light.svg">
+  <img src="./assets/profile/eventhorizon.light.svg" width="720" alt="Event Horizon, shipped and live: a cosmic physics sandbox in the browser. Drop a black hole, set off a supernova, throw a planet into orbit, then rewind, undo or save. 7 tools, 6 worlds. The app still calls itself GOD MODE.">
+</picture></a>
+
+**Event Horizon** `shipped · live` · a cosmic physics sandbox: bend gravity, feed black holes, set off supernovas · 46 unit tests + 18 browser checks pass, not tried on real touch hardware yet · [enter the universe](https://event-horizon-teal.vercel.app) · [source](https://github.com/aspire488/event-horizon)
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/pipo.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/profile/pipo.light.svg">

@@ -5,7 +5,7 @@
 The profile reads like a student's working notebook, and the pictures do the talking. Each project is a
 page of ruled exercise-book paper with a red margin line: a sketch of how it works (KIO's gate
 checklist, UEA's routing flow, AURA's memory layers, the RAG Platform's foundation-first building,
-gh-ops' job board, Pipo's loop) with a crooked rubber stamp for its status (`SHIPPED`, `BUILDING`,
+gh-ops' job board, Pipo's loop, Event Horizon's orbit round a black hole) with a crooked rubber stamp for its status (`SHIPPED`, `SHIPPED · LIVE`, `BUILDING`,
 `ALPHA`, `BUILT · NOT VERIFIED`, `FROZEN`).
 Upstream work is a page of tally marks. Under each page sits one short, lively caption with links.
 
@@ -52,7 +52,7 @@ Trade-offs settled:
 ## Files
 
 - `scripts/render_profile_notebook.py` writes the hero and the notebook pages
-  (`assets/profile/{hero,pipo,kio,uea,aura,rag,ghops,tally}.{light,dark}.svg`). The project pages are
+  (`assets/profile/{hero,pipo,eventhorizon,kio,uea,aura,rag,ghops,tally}.{light,dark}.svg`). The project pages are
   static; run it by hand after changing a fact. The tally page is live: with `GITHUB_TOKEN` set (as in
   the workflow) it recounts upstream pull requests from the GitHub API every run.
 - The pages animate once on load (stamps, ticks, arrows, boxes; Pipo's loop keeps flowing). The

@@ -166,6 +166,29 @@ def pipo(t: dict) -> str:
     return p.svg()
 
 
+def event_horizon(t: dict) -> str:
+    p = Page(t, 10, "Event Horizon, shipped and live: a cosmic physics sandbox in the browser. Drop a black hole, set off a supernova, "
+                    "throw a planet into orbit, then rewind, undo or save. 7 tools, 6 worlds. 46 unit tests and 18 browser checks pass. "
+                    "The app still calls itself GOD MODE.")
+    p.heading("Event Horizon")
+    p.stamp("SHIPPED · LIVE", y=7 * RULE - 6, delay=1.9)  # under the notes: the long heading fills the top line
+    # A black hole with a planet's orbit drawn round it, and a supernova going off beside it.
+    cx, cy = 210, 4 * RULE + 30
+    p.parts.append(f'<circle cx="{cx}" cy="{cy}" r="30" fill="{t["ink"]}"{anim("pop", 0.2)}/>')
+    p.parts.append(f'<ellipse cx="{cx}" cy="{cy}" rx="116" ry="38" transform="rotate(-14 {cx} {cy})" pathLength="1" fill="none" '
+                   f'stroke="{t["box"]}" stroke-width="2"{anim("draw", 0.4)}/>')
+    p.parts.append(f'<circle cx="{cx + 108}" cy="{cy - 30}" r="7" fill="{t["accent"]}"{anim("pop", 0.9)}/>')
+    sx, sy = 350, 7 * RULE + 10
+    for i in range(8):
+        dx, dy = [(1, 0), (.7, .7), (0, 1), (-.7, .7), (-1, 0), (-.7, -.7), (0, -1), (.7, -.7)][i]
+        p.line(f"M{sx + dx * 10:.0f} {sy + dy * 10:.0f}L{sx + dx * 26:.0f} {sy + dy * 26:.0f}", "accent", width=3, delay=1.0 + i * 0.04)
+    for i, s in enumerate(["drop a black hole", "set off a supernova", "throw a planet into orbit", "then rewind, undo or save"]):
+        p.text(430, (3 + i) * RULE + 8, s, size=24, family=SERIF, italic=True, fill="accent" if i == 3 else "muted", delay=1.2 + i * 0.15)
+    p.text(X, 9 * RULE - 4, "7 tools · 6 worlds · runs in the browser", size=24, delay=1.6)
+    p.text(X, 10 * RULE - 4, "the app still calls itself GOD MODE", size=24, family=SERIF, italic=True, fill="muted", delay=1.8)
+    return p.svg()
+
+
 def kio(t: dict) -> str:
     p = Page(t, 9, "KIO convergence gates: C-1 context, C-2 registry and C-3 planning ticked, C-4 response next, C-7 plug in AURA later.")
     p.heading("KIO")
@@ -350,7 +373,7 @@ def tally(t: dict, counts: dict, repos: int, today: dt.date) -> str:
     return p.svg()
 
 
-PAGES = {"hero": hero, "pipo": pipo, "kio": kio, "uea": uea, "aura": aura, "rag": rag, "ghops": ghops}
+PAGES = {"hero": hero, "pipo": pipo, "eventhorizon": event_horizon, "kio": kio, "uea": uea, "aura": aura, "rag": rag, "ghops": ghops}
 
 
 def main() -> None:
