@@ -80,12 +80,19 @@ hey, I'm Joel 👋 I learn by building things, shipping them, and finding out wh
 
 **gh-ops** `frozen` · my GitHub chores on autopilot · [source](https://github.com/aspire488/gh-ops) · and [**OSS Atlas**](https://github.com/aspire488/oss-atlas), my running log of open-source work
 
+<a href="https://codeflow-app-sigma.vercel.app"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/codeflow.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/codeflow.light.svg">
+  <img src="./assets/profile/codeflow.light.svg" width="720" alt="CodeFlow v1.1.0, shipped and production verified: an interactive programming learning platform with 11 screens, lessons, quizzes, visualizations, Logic Quest and browser-local progress. 54 unit tests, 84 local browser checks and 70 production browser checks passed.">
+</picture></a>
+
+**CodeFlow** `shipped · v1.1.0` · an interactive programming learning platform, rebuilt and production-verified · 54 unit tests + 84 local browser checks + 70 production browser checks · [open the app](https://codeflow-app-sigma.vercel.app) · [source](https://github.com/aspire488/codeflow)
+
 <details>
-<summary>older experiments: MediMind and CodeFlow (frozen prototypes, spring 2026)</summary>
+<summary>earlier experiment: MediMind</summary>
 <br>
 
 - [MediMind](https://github.com/aspire488/medimind) · medication reminders for made-up patients, not a medical device · [demo](https://medimind-seven.vercel.app/)
-- [CodeFlow](https://github.com/aspire488/codeflow) · teaches C by stepping through simple programs · [demo](https://codeflow-app-sigma.vercel.app)
 
 </details>
 
