@@ -298,6 +298,15 @@ def rag(t: dict) -> str:
     return p.svg()
 
 
+def codeflow(t: dict) -> str:
+    p = Page(t, 12, "CodeFlow v1.1.0, shipped and production verified: an interactive programming learning platform with 11 screens, lessons, quizzes, visualizations, Logic Quest and browser-local progress. 54 unit tests, 84 local browser checks and 70 production browser checks passed.")
+    p.heading("CodeFlow")
+    p.stamp("SHIPPED · v1.1.0", delay=1.8)
+    flowchart(p, ["choose a topic", "learn with examples", "practice + predict", "trace the logic", "track your progress"], 2 * RULE + 20)
+    p.text(X, 12 * RULE + 4, "11 screens · 54 unit tests · 70 production checks", size=22, fill="muted", delay=1.9)
+    return p.svg()
+
+
 # ---------------------------------------------------------------- live tally
 
 def fetch_upstream() -> tuple[dict, int]:
@@ -373,7 +382,7 @@ def tally(t: dict, counts: dict, repos: int, today: dt.date) -> str:
     return p.svg()
 
 
-PAGES = {"hero": hero, "pipo": pipo, "eventhorizon": event_horizon, "kio": kio, "uea": uea, "aura": aura, "rag": rag, "ghops": ghops}
+PAGES = {"hero": hero, "pipo": pipo, "eventhorizon": event_horizon, "codeflow": codeflow, "kio": kio, "uea": uea, "aura": aura, "rag": rag, "ghops": ghops}
 
 
 def main() -> None:
