@@ -1,56 +1,56 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 450" width="720" height="450" role="img" aria-labelledby="title desc">
 <title id="title">CodeFlow v1.1.0 — execution-first programming learning</title>
-<desc id="desc">A dark developer learning workspace with C code, a live output panel, a visual execution trace, and a shipped v1.1.0 marker.</desc>
+<desc id="desc">A developer learning workspace with a C editor, output preview, animated execution trace and shipped marker.</desc>
 <style>
-*{box-sizing:border-box}.fade{opacity:0;animation:fade .55s ease-out forwards}.rise{opacity:0;transform:translateY(9px);animation:rise .55s cubic-bezier(.2,.7,.2,1) forwards}.pulse{animation:pulse 2.4s ease-in-out infinite}.cursor{animation:blink 1s steps(2,end) infinite}.trace{stroke-dasharray:7 7;animation:dash 1.6s linear infinite}.stamp{transform-box:fill-box;transform-origin:center;animation:stamp .55s cubic-bezier(.2,1.5,.4,1) 1.15s both}
-@keyframes fade{to{opacity:1}}@keyframes rise{to{opacity:1;transform:translateY(0)}}@keyframes dash{to{stroke-dashoffset:-28}}@keyframes blink{50%{opacity:0}}@keyframes pulse{50%{opacity:.55}}@keyframes stamp{from{opacity:0;transform:scale(1.35) rotate(-7deg)}to{opacity:1;transform:scale(1) rotate(-4deg)}}
+.rise{opacity:0;transform:translateY(9px);animation:rise .55s cubic-bezier(.2,.7,.2,1) forwards}
+.pulse{animation:pulse 2.4s ease-in-out infinite}
+.trace{stroke-dasharray:7 7;animation:dash 1.6s linear infinite}
+.stamp{transform-box:fill-box;transform-origin:center;animation:stamp .55s cubic-bezier(.2,1.5,.4,1) 1.15s both}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+@keyframes dash{to{stroke-dashoffset:-28}}
+@keyframes pulse{50%{opacity:.55}}
+@keyframes stamp{from{opacity:0;transform:scale(1.35) rotate(-7deg)}to{opacity:1;transform:scale(1) rotate(-4deg)}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;opacity:1!important;transform:none!important}}
 </style>
 <rect width="720" height="450" rx="16" fill="#0d1117"/>
-<rect x="1" y="1" width="718" height="448" rx="15" fill="none" stroke="#303b49"/>
+<rect x="1" y="1" width="718" height="448" rx="15" fill="none" stroke="#232e3b"/>
 <rect x="1" y="1" width="718" height="48" rx="15" fill="#161b22"/>
-<path d="M1 48H719" stroke="#303b49"/>
+<path d="M1 48H719" stroke="#232e3b"/>
 <circle cx="23" cy="24" r="5" fill="#ff7b72"/><circle cx="41" cy="24" r="5" fill="#d29922"/><circle cx="59" cy="24" r="5" fill="#3fb950"/>
-<text x="84" y="30" fill="#8b949e" font-family="ui-monospace,monospace" font-size="13">CODEFLOW / C BASICS / LOOP TRACE</text>
+<text x="84" y="30" fill="#9198a1" font-family="ui-monospace,monospace" font-size="13">CODEFLOW / C BASICS / LOOP TRACE</text>
 <g class="stamp"><rect x="535" y="13" width="164" height="30" rx="5" fill="none" stroke="#3fb950" stroke-width="1.8"/><text x="617" y="33" fill="#3fb950" font-family="ui-monospace,monospace" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="1">SHIPPED v1.1.0</text></g>
-<text x="28" y="88" fill="#e6edf3" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="750" class="rise">Learn by executing the logic.</text>
-<text x="28" y="111" fill="#8b949e" font-family="Inter,Arial,sans-serif" font-size="13" class="rise" style="animation-delay:.08s">Read it · predict it · trace it · prove you understand it</text>
-<!-- editor -->
-<rect x="28" y="132" width="402" height="222" rx="10" fill="#161b22" stroke="#303b49" class="rise" style="animation-delay:.15s"/>
-<path d="M28 169H430" stroke="#303b49"/>
-<text x="47" y="156" fill="#8b949e" font-family="ui-monospace,monospace" font-size="12">main.c</text>
-<circle cx="398" cy="151" r="3" fill="#3fb950"/>
+<text x="28" y="88" fill="#f0f6fc" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="750" class="rise">Learn by executing the logic.</text>
+<text x="28" y="111" fill="#9198a1" font-family="Inter,Arial,sans-serif" font-size="13" class="rise" style="animation-delay:.08s">Read it · predict it · trace it · prove you understand it</text>
+<rect x="28" y="132" width="402" height="222" rx="10" fill="#161b22" stroke="#232e3b" class="rise" style="animation-delay:.15s"/>
+<path d="M28 169H430" stroke="#232e3b"/>
+<text x="47" y="156" fill="#9198a1" font-family="ui-monospace,monospace" font-size="12">main.c</text><circle cx="398" cy="151" r="3" fill="#3fb950"/>
 <g font-family="ui-monospace,monospace" font-size="15">
-<g fill="#8b949e" text-anchor="end"><text x="54" y="198">1</text><text x="54" y="225">2</text><text x="54" y="252">3</text><text x="54" y="279">4</text><text x="54" y="306">5</text><text x="54" y="333">6</text></g>
-<text x="72" y="198" fill="#58a6ff">#include <tspan fill="#e6edf3">&lt;stdio.h&gt;</tspan></text>
-<text x="72" y="225" fill="#58a6ff">int <tspan fill="#e6edf3">main</tspan><tspan fill="#8b949e">() {</tspan></text>
-<text x="96" y="252" fill="#d29922">for</text><text x="124" y="252" fill="#e6edf3">(int i = 1; i &lt;= 3; i++) {</text>
-<text x="120" y="279" fill="#3fb950">printf</text><text x="174" y="279" fill="#e6edf3">("%d ", i);</text>
-<text x="96" y="306" fill="#8b949e">}</text><text x="72" y="333" fill="#8b949e">}</text>
+<g fill="#9198a1" text-anchor="end"><text x="54" y="198">1</text><text x="54" y="225">2</text><text x="54" y="252">3</text><text x="54" y="279">4</text><text x="54" y="306">5</text><text x="54" y="333">6</text></g>
+<text x="72" y="198" fill="#58a6ff">#include <tspan fill="#f0f6fc">&lt;stdio.h&gt;</tspan></text>
+<text x="72" y="225" fill="#58a6ff">int <tspan fill="#f0f6fc">main</tspan><tspan fill="#9198a1">() {</tspan></text>
+<text x="96" y="252" fill="#d29922">for</text><text x="124" y="252" fill="#f0f6fc">(int i = 1; i &lt;= 3; i++) {</text>
+<text x="120" y="279" fill="#3fb950">printf</text><text x="174" y="279" fill="#f0f6fc">("%d ", i);</text>
+<text x="96" y="306" fill="#9198a1">}</text><text x="72" y="333" fill="#9198a1">}</text>
 </g>
 <rect x="70" y="237" width="336" height="23" rx="4" fill="#58a6ff" opacity=".10" class="pulse"/>
-<!-- output panel -->
-<rect x="448" y="132" width="244" height="105" rx="10" fill="#161b22" stroke="#303b49" class="rise" style="animation-delay:.28s"/>
-<text x="466" y="157" fill="#8b949e" font-family="ui-monospace,monospace" font-size="12">OUTPUT</text>
-<circle cx="671" cy="153" r="4" fill="#3fb950"/>
+<rect x="448" y="132" width="244" height="105" rx="10" fill="#161b22" stroke="#232e3b" class="rise" style="animation-delay:.28s"/>
+<text x="466" y="157" fill="#9198a1" font-family="ui-monospace,monospace" font-size="12">OUTPUT</text><circle cx="671" cy="153" r="4" fill="#3fb950"/>
 <text x="466" y="192" fill="#3fb950" font-family="ui-monospace,monospace" font-size="24" font-weight="700">1 2 3</text>
-<text x="466" y="216" fill="#8b949e" font-family="ui-monospace,monospace" font-size="11">3 iterations · exit code 0</text>
-<!-- trace -->
-<rect x="448" y="250" width="244" height="104" rx="10" fill="#161b22" stroke="#303b49" class="rise" style="animation-delay:.38s"/>
-<text x="466" y="275" fill="#8b949e" font-family="ui-monospace,monospace" font-size="12">EXECUTION TRACE</text>
-<path d="M480 306H660" stroke="#303b49" stroke-width="2"/>
-<path d="M480 306H660" stroke="#58a6ff" stroke-width="2.5" class="trace"/>
+<text x="466" y="216" fill="#9198a1" font-family="ui-monospace,monospace" font-size="11">3 iterations · exit code 0</text>
+<rect x="448" y="250" width="244" height="104" rx="10" fill="#161b22" stroke="#232e3b" class="rise" style="animation-delay:.38s"/>
+<text x="466" y="275" fill="#9198a1" font-family="ui-monospace,monospace" font-size="12">EXECUTION TRACE</text>
+<path d="M480 306H660" stroke="#232e3b" stroke-width="2"/><path d="M480 306H660" stroke="#58a6ff" stroke-width="2.5" class="trace"/>
 <g font-family="ui-monospace,monospace" font-size="12" text-anchor="middle">
 <circle cx="486" cy="306" r="13" fill="#58a6ff"/><text x="486" y="310" fill="#fff">1</text>
 <circle cx="570" cy="306" r="13" fill="#58a6ff"/><text x="570" y="310" fill="#fff">2</text>
 <circle cx="654" cy="306" r="13" fill="#3fb950"/><text x="654" y="310" fill="#fff">3</text>
-<text x="486" y="338" fill="#8b949e">i=1</text><text x="570" y="338" fill="#8b949e">i=2</text><text x="654" y="338" fill="#8b949e">i=3</text>
+<text x="486" y="338" fill="#9198a1">i=1</text><text x="570" y="338" fill="#9198a1">i=2</text><text x="654" y="338" fill="#9198a1">i=3</text>
 </g>
-<path d="M28 374H692" stroke="#303b49"/>
+<path d="M28 374H692" stroke="#232e3b"/>
 <g font-family="ui-monospace,monospace" font-size="12">
-<rect x="28" y="390" width="120" height="34" rx="7" fill="#1c2430" stroke="#303b49"/><text x="88" y="411" text-anchor="middle" fill="#58a6ff">73 topics</text>
-<rect x="158" y="390" width="150" height="34" rx="7" fill="#1c2430" stroke="#303b49"/><text x="233" y="411" text-anchor="middle" fill="#3fb950">132 quiz Qs</text>
-<rect x="318" y="390" width="150" height="34" rx="7" fill="#1c2430" stroke="#303b49"/><text x="393" y="411" text-anchor="middle" fill="#d29922">11 screens</text>
-<text x="692" y="411" fill="#8b949e" text-anchor="end">C · HTML · CSS · JS</text>
+<rect x="28" y="390" width="120" height="34" rx="7" fill="#1c2430" stroke="#232e3b"/><text x="88" y="411" text-anchor="middle" fill="#58a6ff">73 topics</text>
+<rect x="158" y="390" width="150" height="34" rx="7" fill="#1c2430" stroke="#232e3b"/><text x="233" y="411" text-anchor="middle" fill="#3fb950">132 quiz Qs</text>
+<rect x="318" y="390" width="150" height="34" rx="7" fill="#1c2430" stroke="#232e3b"/><text x="393" y="411" text-anchor="middle" fill="#d29922">11 screens</text>
+<text x="692" y="411" fill="#9198a1" text-anchor="end">C · HTML · CSS · JS</text>
 </g>
 </svg>
