@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" width="720" height="220" role="img" aria-labelledby="title desc">
+<title id="title">Campus Bus — route in motion</title>
+<desc id="desc">An animated campus shuttle travels from High Court through city stops to SCMS Campus Karukutty. Route, stop markers and destination are shown.</desc>
+<style>
+  text{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+  .road{fill:none;stroke:#303846;stroke-width:7;stroke-linecap:round;stroke-dasharray:2 13}
+  .route{fill:none;stroke:#3fb950;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:5 8;animation:route 2.8s linear infinite}
+  .bus{offset-path:path('M 54 112 C 150 112 150 112 236 112 S 330 112 410 112 S 520 112 632 112');offset-distance:0%;animation:drive 9s linear infinite}
+  .wheel{transform-box:fill-box;transform-origin:center;animation:spin .65s linear infinite}
+  .glow{animation:glow 1.8s ease-in-out infinite}
+  @keyframes drive{to{offset-distance:100%}}
+  @keyframes route{to{stroke-dashoffset:-52}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes glow{50%{opacity:.45}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important}.bus{offset-distance:72%}}
+</style>
+<rect width="720" height="220" rx="14" fill="#0d1117"/>
+<rect x="1" y="1" width="718" height="218" rx="13" fill="none" stroke="#303846"/>
+<text x="26" y="31" fill="#f0f6fc" font-size="14" font-weight="700" letter-spacing="1.2">CAMPUS BUS / LIVE ROUTE</text>
+<text x="694" y="31" fill="#8b949e" font-size="10" text-anchor="end">HIGH COURT → SCMS</text>
+<path class="road" d="M54 112H666"/>
+<path class="route" d="M54 112H666"/>
+<g fill="#161b22" stroke="#8b949e" stroke-width="2">
+  <circle cx="54" cy="112" r="7"/><circle cx="188" cy="112" r="7"/><circle cx="322" cy="112" r="7"/><circle cx="456" cy="112" r="7"/>
+</g>
+<circle cx="666" cy="112" r="10" fill="#3fb950" class="glow"/>
+<g fill="#8b949e" font-size="10" text-anchor="middle">
+  <text x="54" y="139">HIGH COURT</text><text x="188" y="139">KACHERIPADY</text><text x="322" y="139">ERNAKULAM N.</text><text x="456" y="139">KALOOR</text>
+</g>
+<text x="666" y="139" fill="#3fb950" font-size="10" text-anchor="middle">SCMS CAMPUS</text>
+<g class="bus">
+  <rect x="-23" y="-17" width="46" height="30" rx="7" fill="#f05a28" stroke="#ff9b72" stroke-width="1.5"/>
+  <rect x="-16" y="-11" width="12" height="9" rx="2" fill="#d9f2ff"/>
+  <rect x="1" y="-11" width="12" height="9" rx="2" fill="#d9f2ff"/>
+  <rect x="15" y="-10" width="4" height="19" rx="1" fill="#ffd166"/>
+  <rect x="-14" y="3" width="28" height="4" rx="2" fill="#7d2918"/>
+  <circle cx="-13" cy="14" r="5" fill="#080b10" stroke="#c9d1d9" stroke-width="1.5" class="wheel"/>
+  <circle cx="14" cy="14" r="5" fill="#080b10" stroke="#c9d1d9" stroke-width="1.5" class="wheel"/>
+</g>
+<path d="M26 171H694" stroke="#303846"/>
+<circle cx="31" cy="192" r="4" fill="#3fb950"/>
+<text x="44" y="196" fill="#c9d1d9" font-size="11">49 seats available</text>
+<text x="360" y="196" fill="#8b949e" font-size="11" text-anchor="middle">SELECT YOUR STOP · PICK YOUR SEAT · BOARD</text>
+<text x="694" y="196" fill="#3fb950" font-size="11" text-anchor="end">KARUKUTTY</text>
+</svg>
