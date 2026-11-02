@@ -39,7 +39,7 @@ hey, I'm Joel 👋 I learn by building things, shipping them, and finding out wh
 <a href="https://codeflow-app-sigma.vercel.app"><picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/codeflow-paper.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/profile/codeflow-paper.light.svg">
-  <img src="./assets/profile/codeflow-paper.light.svg" width="720" alt="CodeFlow v1.1.0, shipped and production verified: an interactive programming learning platform with 11 screens, lessons, quizzes, visualizations, Logic Quest and browser-local progress. 54 unit tests, 84 local browser checks and 70 production browser checks passed.">
+  <img src="./assets/profile/codeflow-paper.light.svg" width="720" alt="CodeFlow v1.1.0 learning workspace: a dark developer-style interface with C code, output preview, animated execution trace, and shipped marker. Covers C, HTML, CSS and JavaScript.">
 </picture></a>
 
 **CodeFlow** `shipped · v1.1.0` · an interactive programming learning platform, rebuilt and production-verified · 54 unit tests + 84 local browser checks + 70 production browser checks · [open the app](https://codeflow-app-sigma.vercel.app) · [source](https://github.com/aspire488/codeflow)
