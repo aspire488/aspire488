@@ -36,11 +36,7 @@ hey, I'm Joel 👋 I learn by building things, shipping them, and finding out wh
 
 **Campus Bus** `shipped · v1.1` · bus seat booking for a college, Java + MySQL · 166 tests pass, tried on one PC so far · [Windows download](https://github.com/aspire488/campus-bus/releases/tag/v1.1) · [source](https://github.com/aspire488/campus-bus)
 
-<a href="https://codeflow-app-sigma.vercel.app"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/codeflow-paper.dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/codeflow-paper.light.svg">
-  <img src="./assets/profile/codeflow-paper.light.svg" width="720" alt="CodeFlow v1.1.0 learning workspace: a dark developer-style interface with C code, output preview, animated execution trace, and shipped marker. Covers C, HTML, CSS and JavaScript.">
-</picture></a>
+<a href="https://codeflow-app-sigma.vercel.app"><img src="./assets/profile/codeflow-paper.dark.svg" width="720" alt="CodeFlow v1.1.0 in a dark developer workspace: C code editor, output preview, animated execution trace, and shipped marker. Covers C, HTML, CSS and JavaScript."></a>
 
 **CodeFlow** `shipped · v1.1.0` · an interactive programming learning platform, rebuilt and production-verified · 54 unit tests + 84 local browser checks + 70 production browser checks · [open the app](https://codeflow-app-sigma.vercel.app) · [source](https://github.com/aspire488/codeflow)
 
