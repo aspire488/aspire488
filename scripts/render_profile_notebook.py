@@ -311,7 +311,7 @@ def codeflow(t: dict) -> str:
     green = "#3fb950" if dark else "#1a7f37"
     amber = "#d29922" if dark else "#9a6700"
     red = "#ff7b72" if dark else "#cf222e"
-    return f\'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 450" width="720" height="450" role="img" aria-labelledby="title desc">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 450" width="720" height="450" role="img" aria-labelledby="title desc">
 <title id="title">CodeFlow v1.1.0 — execution-first programming learning</title>
 <desc id="desc">A developer learning workspace with a C editor, output preview, animated execution trace and shipped marker.</desc>
 <style>
@@ -366,7 +366,7 @@ def codeflow(t: dict) -> str:
 <rect x="318" y="390" width="150" height="34" rx="7" fill="{panel2}" stroke="{line}"/><text x="393" y="411" text-anchor="middle" fill="{amber}">11 screens</text>
 <text x="692" y="411" fill="{muted}" text-anchor="end">C · HTML · CSS · JS</text>
 </g>
-</svg>\'''
+</svg>'''
 
 
 
