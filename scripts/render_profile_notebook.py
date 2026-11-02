@@ -299,12 +299,76 @@ def rag(t: dict) -> str:
 
 
 def codeflow(t: dict) -> str:
-    p = Page(t, 12, "CodeFlow v1.1.0, shipped and production verified: an interactive programming learning platform with 11 screens, lessons, quizzes, visualizations, Logic Quest and browser-local progress. 54 unit tests, 84 local browser checks and 70 production browser checks passed.")
-    p.heading("CodeFlow")
-    p.stamp("SHIPPED · v1.1.0", delay=1.8)
-    flowchart(p, ["choose a topic", "learn with examples", "practice + predict", "trace the logic", "track your progress"], 2 * RULE + 20)
-    p.text(X, 12 * RULE + 4, "11 screens · 54 unit tests · 70 production checks", size=22, fill="muted", delay=1.9)
-    return p.svg()
+    """CodeFlow's own interface: editor, output, execution trace and subject stats."""
+    dark = t["ink"] == "#f0f6fc"
+    bg = "#0d1117" if dark else "#f6f8fa"
+    panel = "#161b22" if dark else "#ffffff"
+    panel2 = "#1c2430" if dark else "#eef4fb"
+    ink = t["ink"]
+    muted = t["muted"]
+    line = t["rule"]
+    blue = "#58a6ff" if dark else "#0969da"
+    green = "#3fb950" if dark else "#1a7f37"
+    amber = "#d29922" if dark else "#9a6700"
+    red = "#ff7b72" if dark else "#cf222e"
+    return f\'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 450" width="720" height="450" role="img" aria-labelledby="title desc">
+<title id="title">CodeFlow v1.1.0 — execution-first programming learning</title>
+<desc id="desc">A developer learning workspace with a C editor, output preview, animated execution trace and shipped marker.</desc>
+<style>
+.rise{{opacity:0;transform:translateY(9px);animation:rise .55s cubic-bezier(.2,.7,.2,1) forwards}}
+.pulse{{animation:pulse 2.4s ease-in-out infinite}}
+.trace{{stroke-dasharray:7 7;animation:dash 1.6s linear infinite}}
+.stamp{{transform-box:fill-box;transform-origin:center;animation:stamp .55s cubic-bezier(.2,1.5,.4,1) 1.15s both}}
+@keyframes rise{{to{{opacity:1;transform:translateY(0)}}}}
+@keyframes dash{{to{{stroke-dashoffset:-28}}}}
+@keyframes pulse{{50%{{opacity:.55}}}}
+@keyframes stamp{{from{{opacity:0;transform:scale(1.35) rotate(-7deg)}}to{{opacity:1;transform:scale(1) rotate(-4deg)}}}}
+@media(prefers-reduced-motion:reduce){{*{{animation:none!important;opacity:1!important;transform:none!important}}}}
+</style>
+<rect width="720" height="450" rx="16" fill="{bg}"/>
+<rect x="1" y="1" width="718" height="448" rx="15" fill="none" stroke="{line}"/>
+<rect x="1" y="1" width="718" height="48" rx="15" fill="{panel}"/>
+<path d="M1 48H719" stroke="{line}"/>
+<circle cx="23" cy="24" r="5" fill="{red}"/><circle cx="41" cy="24" r="5" fill="{amber}"/><circle cx="59" cy="24" r="5" fill="{green}"/>
+<text x="84" y="30" fill="{muted}" font-family="ui-monospace,monospace" font-size="13">CODEFLOW / C BASICS / LOOP TRACE</text>
+<g class="stamp"><rect x="535" y="13" width="164" height="30" rx="5" fill="none" stroke="{green}" stroke-width="1.8"/><text x="617" y="33" fill="{green}" font-family="ui-monospace,monospace" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="1">SHIPPED v1.1.0</text></g>
+<text x="28" y="88" fill="{ink}" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="750" class="rise">Learn by executing the logic.</text>
+<text x="28" y="111" fill="{muted}" font-family="Inter,Arial,sans-serif" font-size="13" class="rise" style="animation-delay:.08s">Read it · predict it · trace it · prove you understand it</text>
+<rect x="28" y="132" width="402" height="222" rx="10" fill="{panel}" stroke="{line}" class="rise" style="animation-delay:.15s"/>
+<path d="M28 169H430" stroke="{line}"/>
+<text x="47" y="156" fill="{muted}" font-family="ui-monospace,monospace" font-size="12">main.c</text><circle cx="398" cy="151" r="3" fill="{green}"/>
+<g font-family="ui-monospace,monospace" font-size="15">
+<g fill="{muted}" text-anchor="end"><text x="54" y="198">1</text><text x="54" y="225">2</text><text x="54" y="252">3</text><text x="54" y="279">4</text><text x="54" y="306">5</text><text x="54" y="333">6</text></g>
+<text x="72" y="198" fill="{blue}">#include <tspan fill="{ink}">&lt;stdio.h&gt;</tspan></text>
+<text x="72" y="225" fill="{blue}">int <tspan fill="{ink}">main</tspan><tspan fill="{muted}">() {{</tspan></text>
+<text x="96" y="252" fill="{amber}">for</text><text x="124" y="252" fill="{ink}">(int i = 1; i &lt;= 3; i++) {{</text>
+<text x="120" y="279" fill="{green}">printf</text><text x="174" y="279" fill="{ink}">("%d ", i);</text>
+<text x="96" y="306" fill="{muted}">}}</text><text x="72" y="333" fill="{muted}">}}</text>
+</g>
+<rect x="70" y="237" width="336" height="23" rx="4" fill="{blue}" opacity=".10" class="pulse"/>
+<rect x="448" y="132" width="244" height="105" rx="10" fill="{panel}" stroke="{line}" class="rise" style="animation-delay:.28s"/>
+<text x="466" y="157" fill="{muted}" font-family="ui-monospace,monospace" font-size="12">OUTPUT</text><circle cx="671" cy="153" r="4" fill="{green}"/>
+<text x="466" y="192" fill="{green}" font-family="ui-monospace,monospace" font-size="24" font-weight="700">1 2 3</text>
+<text x="466" y="216" fill="{muted}" font-family="ui-monospace,monospace" font-size="11">3 iterations · exit code 0</text>
+<rect x="448" y="250" width="244" height="104" rx="10" fill="{panel}" stroke="{line}" class="rise" style="animation-delay:.38s"/>
+<text x="466" y="275" fill="{muted}" font-family="ui-monospace,monospace" font-size="12">EXECUTION TRACE</text>
+<path d="M480 306H660" stroke="{line}" stroke-width="2"/><path d="M480 306H660" stroke="{blue}" stroke-width="2.5" class="trace"/>
+<g font-family="ui-monospace,monospace" font-size="12" text-anchor="middle">
+<circle cx="486" cy="306" r="13" fill="{blue}"/><text x="486" y="310" fill="#fff">1</text>
+<circle cx="570" cy="306" r="13" fill="{blue}"/><text x="570" y="310" fill="#fff">2</text>
+<circle cx="654" cy="306" r="13" fill="{green}"/><text x="654" y="310" fill="#fff">3</text>
+<text x="486" y="338" fill="{muted}">i=1</text><text x="570" y="338" fill="{muted}">i=2</text><text x="654" y="338" fill="{muted}">i=3</text>
+</g>
+<path d="M28 374H692" stroke="{line}"/>
+<g font-family="ui-monospace,monospace" font-size="12">
+<rect x="28" y="390" width="120" height="34" rx="7" fill="{panel2}" stroke="{line}"/><text x="88" y="411" text-anchor="middle" fill="{blue}">73 topics</text>
+<rect x="158" y="390" width="150" height="34" rx="7" fill="{panel2}" stroke="{line}"/><text x="233" y="411" text-anchor="middle" fill="{green}">132 quiz Qs</text>
+<rect x="318" y="390" width="150" height="34" rx="7" fill="{panel2}" stroke="{line}"/><text x="393" y="411" text-anchor="middle" fill="{amber}">11 screens</text>
+<text x="692" y="411" fill="{muted}" text-anchor="end">C · HTML · CSS · JS</text>
+</g>
+</svg>\'''
+
+
 
 
 # ---------------------------------------------------------------- live tally
@@ -382,7 +446,7 @@ def tally(t: dict, counts: dict, repos: int, today: dt.date) -> str:
     return p.svg()
 
 
-PAGES = {"hero": hero, "pipo": pipo, "eventhorizon": event_horizon, "codeflow": codeflow, "kio": kio, "uea": uea, "aura": aura, "rag": rag, "ghops": ghops}
+PAGES = {"hero": hero, "pipo": pipo, "eventhorizon": event_horizon, "codeflow-paper": codeflow, "kio": kio, "uea": uea, "aura": aura, "rag": rag, "ghops": ghops}
 
 
 def main() -> None:
