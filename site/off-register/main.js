@@ -154,7 +154,9 @@ const pipo = makePipo(), planet = makePlanet(), bus = makeBus(), phone = makePho
 scene.add(pipo.g, planet.g, bus.g, phone.g);
 
 // ---------- layout (desktop vs portrait) ----------
-let W = innerWidth, H = innerHeight, portrait = W <= 1300;
+// clientWidth, not innerWidth: on phones an overflowing child can widen the layout viewport and innerWidth follows it
+const vw = () => document.documentElement.clientWidth || innerWidth;
+let W = vw(), H = innerHeight, portrait = W <= 1300;
 // place the three objects at fixed fractions of the viewport, whatever the camera does
 const CAM_Z = 13;
 const ppuAt = (z) => H / (2 * Math.tan(17.5 * DEG) * (CAM_Z - z));
@@ -169,7 +171,7 @@ const LAY = () => portrait ? {
 let lay = LAY();
 
 function resize() {
-  W = innerWidth; H = innerHeight; portrait = W <= 1300; lay = LAY();
+  W = vw(); H = innerHeight; portrait = W <= 1300; lay = LAY();
   renderer.setSize(W, H, false);
   camera.aspect = W / H; camera.updateProjectionMatrix();
   measure();
@@ -262,7 +264,9 @@ function frame(now) {
   // ----- pipo: hero spot -> his phone -----
   const ph = P.phone, ho = P.home;
   const rise = ss(portrait ? 0.72 : 0.4, portrait ? 0.92 : 0.88, hp);
-  phone.g.position.set(ph[0], lerp(-9, ph[1], rise), ph[2]);
+  // story over: the phone lifts out of frame before the bench slides over it, instead of being sliced by it
+  const leave = ss(-H * 0.35, H * 0.25, sp - pipoTop - pipoLen);
+  phone.g.position.set(ph[0], lerp(-9, ph[1], rise) + leave * 11, ph[2]);
   phone.g.scale.setScalar(ph[3]);
   phone.g.rotation.y = lerp(-0.5, -0.12 + ptr.sx * 0.06, rise) * (portrait ? 0.4 : 1);
   phone.g.visible = rise > 0.001;
@@ -327,11 +331,18 @@ function frame(now) {
       const w = spec.w * s * ppu, h = spec.h * s * ppu;
       el.style.width = `${w}px`; el.style.height = `${h}px`;
       el.style.transform = `translate3d(${cx - w / 2}px, ${cy - h / 2}px, 0)`;
+      // keep the label inside the viewport (it was running off the right edge on phones)
+      const lab = el.firstElementChild, lw = lab.offsetWidth;
+      const left = cx - lw / 2, shift = Math.min(0, W - 8 - (left + lw)) + Math.max(0, 8 - left);
+      lab.style.setProperty('--lx', `${shift}px`);
     });
   }
 
   // ----- DOM layers -----
-  heroBack.style.opacity = heroFront.style.opacity = heroOn;
+  heroBack.style.opacity = heroOn;
+  // the creed clears before the phone rises behind it, so the two never sit half-faded on top of each other
+  heroFront.style.opacity = portrait ? heroOn : Math.min(heroOn, 1 - ss(0.3, 0.42, hp));
+  heroFront.style.visibility = +heroFront.style.opacity > 0.01 ? 'visible' : 'hidden';
   if (portrait) {
     heroBack.style.transform = `translate3d(${ptr.sx * -6}px, 0, 0)`;
     heroFront.style.transform = 'none';
@@ -339,13 +350,16 @@ function frame(now) {
     heroBack.style.transform = `translate3d(${ptr.sx * -10}px, ${-hp * 14}vh, 0)`;
     heroFront.style.transform = `translate3d(0, ${-hp * 42}vh, 0)`;
   }
-  pinkPlate.style.setProperty('--mx', `${0.028 * (1 - thru) + ptr.sx * 0.02}em`);
-  pinkPlate.style.setProperty('--my', `${-0.018 * (1 - thru) + ptr.sy * 0.012}em`);
+  // load: the pink plate prints off-register, then settles over 1.1s (the page's one entrance)
+  const intro = reduced ? 0 : 1 - ss(0.15, 1.25, t);
+  pinkPlate.style.setProperty('--mx', `${0.028 * (1 - thru) + ptr.sx * 0.02 + intro * 0.14}em`);
+  pinkPlate.style.setProperty('--my', `${-0.018 * (1 - thru) + ptr.sy * 0.012 - intro * 0.08}em`);
   const noteOn = (1 - ss(0.3, 0.5, hp)) * heroOn;
   notes.style.opacity = noteOn;
 
-  const pipoOn = ss(portrait ? 0.72 : 0.9, 1, hp) * (1 - ss(0.985, 1, (sp - pipoTop) / (pipoLen + H * 0.6)));
-  pipoLayers.forEach((l) => { l.style.opacity = pipoOn; l.style.visibility = pipoOn > 0.01 ? 'visible' : 'hidden'; });
+  const pipoOn = ss(portrait ? 0.72 : 0.9, 1, hp) * (1 - ss(-H * 0.35, H * 0.05, sp - pipoTop - pipoLen));
+  // keep the Pipo layer focusable: hidden by opacity, not visibility, so Tab can still reach its links
+  pipoLayers.forEach((l) => { l.style.opacity = Math.max(pipoOn, l.matches(':focus-within') ? 1 : 0); l.classList.toggle('off', pipoOn < 0.01); });
   const ks = pp > 0 ? k : 0;
   if (ks !== curStep) {
     curStep = ks;
@@ -361,6 +375,9 @@ function frame(now) {
 }
 function loop() { if (!running) { running = true; requestAnimationFrame(frame); } }
 
+// Tab into the Pipo story from above: bring its scene up so the focused link is actually on screen
+pipoSec.querySelector('.front').addEventListener('focusin', () => { if (scrollY < pipoTop || scrollY > pipoTop + pipoLen) scrollTo(0, pipoTop + 2); });
+
 // reduced motion: draw on scroll/resize only
 addEventListener('scroll', loop, { passive: true });
 addEventListener('resize', () => { resize(); loop(); });
@@ -375,3 +392,9 @@ if (location.search.includes('probe')) {
 
 resize();
 loop();
+
+// the dock steps aside once the work and contact are on screen (they carry their own links)
+{
+  const dock = document.querySelector('.dock');
+  new IntersectionObserver(([e]) => dock.classList.toggle('gone', e.isIntersecting || e.boundingClientRect.top < 0), { rootMargin: '0px 0px -30% 0px' }).observe(rest);
+}
