@@ -23,9 +23,13 @@ const dpr = Math.min(devicePixelRatio, small ? 1.5 : 1.75);
 
 // ---------- renderer ----------
 const canvas = document.getElementById('gl');
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: !small, alpha: true, powerPreference: 'high-performance' });
-renderer.setPixelRatio(dpr);
-renderer.setClearColor(0xffffff, 0);
+// no WebGL (blocked, software-less, headless): style.css .no-gl turns the page into a static, fully readable document
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: !small, alpha: true, powerPreference: 'high-performance' });
+  renderer.setPixelRatio(dpr);
+  renderer.setClearColor(0xffffff, 0);
+} catch (e) { document.documentElement.classList.add('no-gl'); }
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
 const CELL = (small ? 4.5 : 5.5) * dpr;
@@ -156,25 +160,55 @@ scene.add(pipo.g, planet.g, bus.g, phone.g);
 // ---------- layout (desktop vs portrait) ----------
 // clientWidth, not innerWidth: on phones an overflowing child can widen the layout viewport and innerWidth follows it
 const vw = () => document.documentElement.clientWidth || innerWidth;
-let W = vw(), H = innerHeight, portrait = W <= 1300;
+let W = vw(), H = innerHeight, portrait = W <= 1300, land = false; // land: a phone on its side; shares the portrait scroll choreography, not its composition
+const landMQ = matchMedia('(max-width:1300px) and (max-height:500px) and (orientation:landscape)');
+const coarse = matchMedia('(pointer:coarse)');
 // place the three objects at fixed fractions of the viewport, whatever the camera does
 const CAM_Z = 13;
 const ppuAt = (z) => H / (2 * Math.tan(17.5 * DEG) * (CAM_Z - z));
 const worldX = (z, frac) => (frac * W - W / 2) / ppuAt(z);
-const LAY = () => portrait ? {
+const worldY = (z, fy) => (0.5 - fy) * H / ppuAt(z);
+const LAY = () => land ? landLay() : portrait ? {
   pipo: [0, 1.2, 1.5, .5 * Math.min(1.6, Math.max(1, W / 500))], planet: [worldX(0, 0.18), 2.0, 0, .3 * Math.min(1.6, Math.max(1, W / 500))], bus: [worldX(0.5, 0.83), 1.75, 0.5, .4 * Math.min(1.6, Math.max(1, W / 500))],
   phone: [0, 0.2, 0, .8], home: [0.45, -2.6, 0.95],
 } : {
   pipo: [1.15, -1.15, 1.6, .9], planet: [0.2, H < 800 ? 2.5 : 2.7, -2.4, H < 800 ? .52 : .58], bus: [1.5, -3.05, 1.3, .7],
   phone: [2.7, 0.05, 0, .96], home: [0.45, -2.6, 0.95],
 };
+// landscape phone: the three objects stack in the gap between the name (left) and the creed column (right)
+function landLay() {
+  const fx = (document.querySelector('#hero .name').getBoundingClientRect().right + document.querySelector('#hero .declaration').getBoundingClientRect().left) / 2 / W;
+  return {
+    pipo: [worldX(1.5, fx), worldY(1.5, .56) - 1.05 * .78, 1.5, .78], planet: [worldX(0, fx), worldY(0, .3), 0, .44], bus: [worldX(.5, fx), worldY(.5, .83), .5, .75],
+    phone: [0, 0, 0, .8], home: [0.45, -2.6, 0.95],
+  };
+}
 let lay = LAY();
 
+// portrait / landscape phones: size and place the phone in the free band, measured from the DOM (below .spec, above the tallest big step; right third when landscape)
+const PHONE_CAM = 11.7; // camera z during the story
+function fitPhone() {
+  const spec = document.querySelector('#pipo .spec'), m = spec.getBoundingClientRect().left;
+  const ppu = H / (2 * Math.tan(17.5 * DEG) * PHONE_CAM);
+  let l = m, r = W - m, t = spec.getBoundingClientRect().bottom + 8, b;
+  if (land) { l = W * .66; t = 12; b = H - 62; } // 62: clear of the dock
+  else {
+    const cur = steps.findIndex((li) => li.classList.contains('on'));
+    b = H;
+    steps.forEach((li) => { steps.forEach((o) => o.classList.remove('on')); li.classList.add('on'); b = Math.min(b, li.getBoundingClientRect().top - parseFloat(getComputedStyle(li).marginTop)); });
+    steps.forEach((o, i) => o.classList.toggle('on', i === cur));
+    b -= 6;
+  }
+  const s = Math.max(0.3, Math.min(0.8, (b - t) / (6.3 * ppu), (r - l) / (3.4 * ppu)));
+  lay.phone = [((l + r) / 2 - W / 2) / ppu, (H / 2 - (t + b) / 2) / ppu, 0, s];
+}
+
 function resize() {
-  W = vw(); H = innerHeight; portrait = W <= 1300; lay = LAY();
+  W = vw(); H = innerHeight; land = landMQ.matches; portrait = W <= 1300; lay = LAY();
   renderer.setSize(W, H, false);
   camera.aspect = W / H; camera.updateProjectionMatrix();
   measure();
+  if (portrait) fitPhone();
 }
 
 // ---------- scroll ----------
@@ -227,6 +261,7 @@ const t0 = performance.now();
 function frame(now) {
   running = false;
   if (!visible) return;
+  if (document.documentElement.classList.contains('intro-on')) { setTimeout(loop, 100); return; } // the intro owns the GPU; draw once it clears
   const y = scrollY;
   if (y > restTop) { canvas.style.visibility = 'hidden'; notes.style.visibility = 'hidden'; spotLayer.style.visibility = 'hidden'; return; } // coda covers everything: stop drawing
   canvas.style.visibility = notes.style.visibility = 'visible';
@@ -264,8 +299,9 @@ function frame(now) {
   // ----- pipo: hero spot -> his phone -----
   const ph = P.phone, ho = P.home;
   const rise = ss(portrait ? 0.72 : 0.4, portrait ? 0.92 : 0.88, hp);
-  // story over: the phone lifts out of frame before the bench slides over it, instead of being sliced by it
-  const leave = ss(-H * 0.35, H * 0.25, sp - pipoTop - pipoLen);
+  // story over: the phone lifts out of frame before the bench slides over it, instead of being sliced by it;
+  // it waits until the Pipo text has faded (pipoOn hits 0 at +0.05H), so it never rises through the header links
+  const leave = ss(H * 0.05, H * 0.5, sp - pipoTop - pipoLen);
   phone.g.position.set(ph[0], lerp(-9, ph[1], rise) + leave * 11, ph[2]);
   phone.g.scale.setScalar(ph[3]);
   phone.g.rotation.y = lerp(-0.5, -0.12 + ptr.sx * 0.06, rise) * (portrait ? 0.4 : 1);
@@ -375,13 +411,16 @@ function frame(now) {
 }
 function loop() { if (!running) { running = true; requestAnimationFrame(frame); } }
 
-// Tab into the Pipo story from above: bring its scene up so the focused link is actually on screen
-pipoSec.querySelector('.front').addEventListener('focusin', () => { if (scrollY < pipoTop || scrollY > pipoTop + pipoLen) scrollTo(0, pipoTop + 2); });
+if (renderer) {
+  // Tab into the Pipo story from above: bring its scene up so the focused link is actually on screen
+  pipoSec.querySelector('.front').addEventListener('focusin', () => { if (scrollY < pipoTop || scrollY > pipoTop + pipoLen) scrollTo(0, pipoTop + 2); });
 
-// reduced motion: draw on scroll/resize only
-addEventListener('scroll', loop, { passive: true });
-addEventListener('resize', () => { resize(); loop(); });
-document.addEventListener('visibilitychange', () => { visible = !document.hidden; if (visible) loop(); });
+  // reduced motion: draw on scroll/resize only
+  addEventListener('scroll', loop, { passive: true });
+  // touch browsers fire resize as the URL bar slides; a pure height change under 120px must not recompose the scene
+  addEventListener('resize', () => { if (coarse.matches && vw() === W && Math.abs(innerHeight - H) < 120) return; resize(); loop(); });
+  document.addEventListener('visibilitychange', () => { visible = !document.hidden; if (visible) loop(); });
+}
 
 // frame-time probe for measurement (median ms over the last 240 frames)
 if (location.search.includes('probe')) {
@@ -390,8 +429,7 @@ if (location.search.includes('probe')) {
   window.__ft = () => { const s = [...ft].sort((a, b) => a - b); return s[s.length >> 1]; };
 }
 
-resize();
-loop();
+if (renderer) { resize(); loop(); }
 
 // the dock steps aside once the work and contact are on screen (they carry their own links)
 {

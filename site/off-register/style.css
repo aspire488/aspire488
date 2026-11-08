@@ -23,7 +23,7 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 .skip:focus{transform:none}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
-#gl{position:fixed;inset:0;width:100vw;height:100vh;z-index:2;mix-blend-mode:multiply;pointer-events:none}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:2;mix-blend-mode:multiply;pointer-events:none}
 #hero{height:260vh}
 #pipo{height:640vh}
 
@@ -149,13 +149,20 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 .up-note{max-width:60ch;margin:5vh 0 0;font-size:clamp(17px,1.3vw,19px);line-height:1.4}
 
 @media (max-width:1300px){
+  :root{--nfs:min(26svh,30vw)} /* the name's font size, shared so the creed can be stacked exactly above it */
+  #hero{height:260svh}
+  #pipo{height:640svh}
   .bar span:nth-child(2){display:none}
   .pipo-word{display:none}
-  .declaration{top:36vh;bottom:auto;gap:10px;max-width:min(430px,54vw)}
+  /* creed + motto stack above the name; the purpose line sits in the name's own band, right of the letters, so nothing can overlap */
+  .declaration{left:var(--m);top:auto;bottom:76px;max-width:none;display:grid;grid-template-columns:calc(var(--nfs)*1.5 + 14px) minmax(0,1fr);grid-template-rows:auto auto minmax(calc(var(--nfs)*1.58),auto);gap:10px 0;align-items:start}
+  .motto,.creed{grid-column:1/-1;justify-self:end}
+  .creed{margin-bottom:8px}
+  .purpose{grid-column:2;grid-row:3;align-self:end;justify-self:end;max-width:none}
   .motto{text-align:right;font-size:clamp(20px,5.6vw,26px)}
   .motto span{display:inline}
   .motto span + span{margin-left:.3em}
-  .name{font-size:min(26vh,30vw);bottom:76px;top:auto}
+  .name{font-size:var(--nfs);bottom:76px;top:auto}
   .creed{font-size:clamp(25px,7vw,32px);max-width:13ch}
   .makes,.notes{display:none}
   .spot-label{bottom:calc(100% + 2px);top:auto;transform:translate(calc(-50% + var(--lx,0px)),0);opacity:1;pointer-events:auto}
@@ -166,6 +173,10 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
   .steps li{display:none}
   .steps li.on{display:block;font-size:clamp(42px,13vw,64px)}
   .bubble{font-size:18px}
+  /* 44px touch targets; the underline is real text-decoration, not a border floating at the bottom of a taller box */
+  .bar a,.spec-links a,.bench-links a,.up-lead a,.up-note a,.ledger a{display:inline-flex;align-items:center;gap:.55em;min-height:44px;padding:0;border-bottom:0;text-decoration:underline;text-decoration-color:var(--pink);text-decoration-thickness:1.5px;text-underline-offset:.3em}
+  .bar-links a:first-child,.spec-links a{text-decoration-color:var(--blue)}
+  .bench-links a{min-height:44px}
 }
 @media (max-height:800px) and (min-width:1301px){
   .pipo-word{font-size:min(22vh,26vw)}
@@ -204,6 +215,7 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 .site-foot a{display:inline-flex;align-items:center;min-height:44px;margin-left:auto;border-bottom:1.5px solid var(--pink);text-decoration:none}
 .site-foot a:hover,.site-foot a:focus-visible{background:var(--yellow)}
 
+@media (max-width:360px){.bar>span:first-child{display:none}.bar{justify-content:flex-end}} /* the two links need the whole row; the giant name sits right below */
 @media (max-width:700px){
   .bar{gap:4px 10px}
   .bar-links{font-size:11px;gap:2px 12px}
@@ -222,7 +234,7 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 .dock a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;text-decoration:none;white-space:nowrap}
 .dock a:hover,.dock a:focus-visible{background:var(--yellow)}
 .dock.gone{opacity:0;transform:translateY(12px);pointer-events:none}
-@media (max-width:700px){.dock{left:50%;right:auto;transform:translateX(-50%)}.dock.gone{transform:translate(-50%,12px)}.purpose{font-size:11px;max-width:30ch;background:var(--paper);padding:2px 6px}}
+@media (max-width:700px){.dock{left:50%;right:auto;transform:translateX(-50%)}.dock.gone{transform:translate(-50%,12px)}.purpose{font-size:11px}}
 @media (prefers-reduced-motion:reduce){.dock{transition:none}}
 @media (max-width:860px){
   .whoami,.bench li,.ledger{grid-template-columns:minmax(0,1fr)}
@@ -230,3 +242,32 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
   .bench h3{grid-row:auto;margin-bottom:6px}
   .bench-links a{min-height:44px}
 }
+
+/* ---------- phone on its side: name left, creed column right, Pipo's steps left and the phone in the right third ---------- */
+@media (max-width:1300px) and (max-height:500px) and (orientation:landscape){
+  :root{--nfs:min(40svh,20vw)}
+  .bar{padding-top:8px;padding-bottom:0}
+  .name{bottom:8px}
+  .declaration{display:flex;flex-direction:column;align-items:flex-end;left:auto;right:var(--m);top:56px;bottom:auto;width:min(340px,42vw);gap:6px}
+  .creed{font-size:clamp(22px,3.4vw,30px);max-width:none;margin:0}
+  .purpose{max-width:none}
+  .spec{right:36vw}
+  .steps{bottom:12px;right:36vw}
+  .steps li.on{font-size:clamp(32px,14svh,56px)}
+  .dock{left:auto;right:var(--m);transform:none}
+  .dock.gone{transform:translateY(12px)}
+}
+
+/* ---------- no WebGL: main.js adds .no-gl and never draws; hero and the whole Pipo story read as a static document ---------- */
+.no-gl #gl,.no-gl .spots,.no-gl .notes,.no-gl .zz,.no-gl #pipo .layer.back{display:none}
+.no-gl #hero,.no-gl #pipo{height:auto}
+.no-gl #hero .stage{overflow:hidden;position:relative;height:100svh;min-height:520px}
+.no-gl #hero .layer{position:absolute}
+.no-gl #pipo .stage{padding:14vh var(--m) 12vh}
+.no-gl #pipo .layer{position:static;opacity:1}
+.no-gl #pipo .layer.off a{pointer-events:auto}
+.no-gl .spec{position:static;flex-wrap:wrap;padding:0}
+.no-gl .steps{position:static;width:auto;margin:6vh 0 0}
+.no-gl .steps li,.no-gl .steps li:first-child{display:block;width:auto;padding:0;margin:.12em 0;background:none;font-family:var(--display);font-weight:900;font-size:clamp(34px,7vw,72px);line-height:.95;text-transform:uppercase;color:var(--ink)}
+.no-gl .steps li::before{content:none}
+.no-gl .bubble{position:relative;left:auto;top:auto;transform:none!important;display:inline-block;opacity:1;margin:4vh 0 0}
