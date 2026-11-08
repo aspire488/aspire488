@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aspire488.github.io/aspire488/sitemap.xml

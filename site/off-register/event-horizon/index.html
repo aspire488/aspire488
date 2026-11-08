@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Event Horizon: how it's built. Joel Jigo</title>
+<meta name="description" content="Event Horizon is a browser physics sandbox where you place gravity wells, black holes, supernovas, repulsors and orbiting bodies and watch the universe.">
+<link rel="canonical" href="https://aspire488.github.io/aspire488/event-horizon/">
+<meta property="og:title" content="Event Horizon: how it's built">
+<meta property="og:description" content="Event Horizon is a browser physics sandbox where you place gravity wells, black holes, supernovas, repulsors and orbiting bodies and watch the universe respond. The simulation runs on a.">
+<meta property="og:url" content="https://aspire488.github.io/aspire488/event-horizon/">
+<meta property="og:image" content="https://aspire488.github.io/aspire488/og.png">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4EEE1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F4EEE1'/%3E%3Ccircle cx='13' cy='15' r='9' fill='%230078BF'/%3E%3Ccircle cx='19' cy='17' r='9' fill='%23FF48B0' fill-opacity='.85'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Instrument+Serif:ital@0;1&family=Martian+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../project.css">
+</head>
+<body class="theme-eh">
+<a class="skip" href="#main">Skip to the content</a>
+<header class="p-bar">
+  <a href="../">Joel Jigo</a>
+  <nav aria-label="Project links">
+    <a href="https://event-horizon-teal.vercel.app" target="_blank" rel="noopener noreferrer">live app <span aria-hidden="true">&#8599;</span></a>
+    <a href="https://github.com/aspire488/event-horizon" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a>
+  </nav>
+</header>
+<main id="main">
+  <section class="p-hero" aria-labelledby="title">
+    <h1 id="title" class="p-title"><span class="ink-a">Event Horizon</span><span class="ink-b" aria-hidden="true">Event Horizon</span></h1>
+    <p class="p-over">Event Horizon is a browser physics sandbox where you place gravity wells, black holes, supernovas, repulsors and orbiting bodies and watch the universe respond. The simulation runs on a fixed 1/60 s clock separate from the Three.js/WebGL renderer, with six seeded starting worlds and pause, rewind, undo, checkpoints and local saves.</p>
+    <p class="p-status"><mark>shipped, live</mark></p>
+    <p class="p-note">The app still calls itself GOD MODE.</p>
+  </section>
+
+  <figure class="p-fig"><svg viewBox="0 0 960 470" role="img" aria-labelledby="fig-t" class="diagram">
+<title id="fig-t">Event Horizon architecture: src/app.ts coordinates; the fixed-step core in src/core runs physics, emits events and records history, and the renderer, audio and the Orbito companion only listen. Quality tiers change the renderer, never the physics.</title>
+<g class="orbit"><ellipse cx="250" cy="300" rx="230" ry="150"/><ellipse cx="250" cy="300" rx="175" ry="112"/></g>
+<rect class="hub" x="250" y="22" width="460" height="62"/><text class="t-name" x="480" y="52" text-anchor="middle">src/app.ts</text><text class="t-small" x="480" y="72" text-anchor="middle">orchestration: sim, render, input, history, saves</text>
+<rect class="core" x="60" y="160" width="412" height="280"/>
+<text class="t-name" x="90" y="194">src/core</text><text class="t-small" x="90" y="214">fixed 1/60 s clock, independent of rendering</text>
+<g class="step"><rect x="84" y="240" width="362" height="46"/><text x="100" y="269">physics + particles</text></g>
+<g class="step"><rect x="84" y="306" width="362" height="46"/><text x="100" y="335">events: orbits, captures, slingshots</text></g>
+<g class="step"><rect x="84" y="372" width="362" height="46"/><text x="100" y="401">history: rewind, undo, checkpoints</text></g>
+<path class="arrow" d="M472 300 C 540 300 530 190 596 190"/><path class="arrow" d="M472 300 L 596 300"/><path class="arrow" d="M472 300 C 540 300 530 410 596 410"/>
+<g class="leaf"><rect x="596" y="160" width="338" height="60"/><text class="t-name" x="618" y="186">src/render</text><text class="t-small" x="618" y="206">three.js renderer, shaders, camera</text></g>
+<g class="leaf"><rect x="596" y="270" width="338" height="60"/><text class="t-name" x="618" y="296">src/audio</text><text class="t-small" x="618" y="316">procedural Web Audio</text></g>
+<g class="leaf"><rect x="596" y="380" width="338" height="60"/><text class="t-name" x="618" y="406">src/orbito</text><text class="t-small" x="618" y="426">the companion: moods, answers, voice</text></g>
+<path class="arrow" d="M480 84 L 300 160"/><path class="arrow" d="M480 84 L 700 160"/>
+<path class="brace" d="M940 160 L 952 160 L 952 220 L 940 220"/><text class="t-note" x="934" y="246" text-anchor="end">quality tiers stop here</text>
+</svg><figcaption>Drawn from the source tree, not a screenshot.</figcaption></figure>
+
+  <section class="p-sec" aria-labelledby="why"><h2 id="why">Why it exists</h2><blockquote><p>Built around one simple idea: give people the tools to disturb a universe, then let gravity tell the rest of the story.</p></blockquote></section>
+  <section class="p-sec" aria-labelledby="role"><h2 id="role">What I built</h2><p class="p-text">Built solo: design, deterministic physics core, WebGL renderer and shaders, procedural audio, the Orbito companion, test and benchmark harnesses, and the Vercel deploy.</p><p class="p-small">GitHub lists one contributor on the repository.</p></section>
+  <section class="p-sec" aria-labelledby="arch"><h2 id="arch">How it's put together</h2><ul class="p-arch"><li><b>Simulation core</b> <code>src/core/</code><span>Physics, particles, worlds, scenarios, events, objectives, history and serialization. Independent of the renderer.</span></li><li><b>Renderer</b> <code>src/render/</code><span>Three.js renderer, shaders (renderer.ts, shaders.ts) and camera.</span></li><li><b>Input</b> <code>src/input/interaction.ts</code><span>Pointer, mouse and touch interactions for the seven tools.</span></li><li><b>Audio</b> <code>src/audio/audio.ts</code><span>Procedural Web Audio: ambient layers and event sounds.</span></li><li><b>Orbito companion</b> <code>src/orbito/</code><span>brain.ts (moods, reactions), knowledge.ts (answers from live universe state), voice.ts (browser speech), orbito.ts (view).</span></li><li><b>Orchestration</b> <code>src/app.ts</code><span>Coordinates simulation, rendering, input, history and persistence.</span></li></ul></section>
+  <section class="p-sec" aria-labelledby="dec"><h2 id="dec">Decisions, and why</h2><ol class="p-dec"><li><p class="q">Slingshot is detected in two phases: close approach, then outbound escape.</p><p>A circular orbiter is not a slingshot; the detector must see an actual flyby (and it avoided false discoveries during scenario loading).</p></li><li><p class="q">Quality levels are rendering-only, and the 6,000-particle trim in performance mode was removed.</p><p>The trim silently mutated the simulation; rendering-only tiers keep physics deterministic.</p></li><li><p class="q">Adaptive Auto quality uses a rolling P95 frame-time controller with hysteresis and cooldown.</p><p>Graceful adaptation to stronger or weaker hardware without rapid oscillation.</p></li><li><p class="q">Benchmarks read the WebGL renderer string from the app&#x27;s own context and label every run with GPU, quality, scenario and duration.</p><p>Honest, reproducible performance claims: the label is read from the driver, never assumed.</p></li></ol></section>
+  <section class="p-sec" aria-labelledby="hard"><h2 id="hard">The interesting problems</h2><ul class="p-hard"><li><h3>Rewind slider race (defect D-1)</h3><p>syncUi() was throttled to 110 ms, so a keyframe pushed mid-frame could be visible in state before the slider&#x27;s max updated. A repro script showed 4/6 immediate-read failures on the baseline build. Fix: force one syncUi() whenever the keyframe count changes; 0/5 failures and 0 ms lag after.</p></li><li><h3>Reaching the right GPU for benchmarks</h3><p>--use-angle=d3d11 selected the integrated Radeon 740M; the RTX 3050 was only reachable through Vulkan-over-ANGLE, confirmed by the unmasked renderer string (scripts/probe-gpu2.mjs).</p></li><li><h3>Conservation in mergers and accretion</h3><p>Mergers now keep total momentum and land at the pair&#x27;s centre of mass, and a black hole takes on the momentum of matter it swallows; each is covered by a regression test.</p></li></ul></section>
+  <section class="p-sec" aria-labelledby="tests"><h2 id="tests">How it's tested</h2><p class="p-text">Latest release recorded: 105/105 Vitest unit tests; 18/18 local browser smoke checks; Orbito browser checks 16/16 in each of Chromium, Firefox and WebKit; npm audit 0 vulnerabilities. Earlier campaign (not rerun for this release): QA smoke 6/6, 10/10 seeded personas, 100/100 fuzz cases, 12/12 UAT checks, a 600.8 s extended session.</p><p class="p-small">npm run typecheck; npm test (vitest run, src/**/*.test.ts, node environment); npm run build; npm run preview then npm run smoke; node scripts/orbito-check.mjs (ORBITO_BROWSER=firefox|webkit for other engines). npm run verify chains typecheck, test and build.</p></section>
+  <section class="p-sec" aria-labelledby="lim"><h2 id="lim">Limits I've written down</h2><ul class="p-lim"><li>Touch emulation does not replace testing on physical touch hardware.</li><li>Browser zoom edge cases and WebGL context-loss recovery have not been fully verified.</li><li>The benchmark on an RTX 3050 (P95 7.0 ms) is capped by a 144 Hz display, so it is not maximum GPU throughput.</li><li>It is an interactive sandbox, not a general-purpose relativistic astrophysics solver.</li></ul></section>
+  <section class="p-sec" aria-labelledby="stack"><h2 id="stack">Stack</h2><ul class="p-tech"><li>TypeScript ^5.6.3</li><li>Three.js ^0.169.0 (only runtime dependency)</li><li>Vite ^7.3.7</li><li>Vitest ^4.1.12</li><li>playwright-core ^1.64.1</li><li>pngjs ^7.0.0</li><li>Node &gt;=20.19</li></ul></section>
+
+  <nav class="p-next" aria-label="More work">
+    <a class="p-next-main" href="../codeflow/">Next: CodeFlow</a>
+    <a href="../#rest">All the work</a>
+    <a href="../#contact">Get in touch</a>
+  </nav>
+</main>
+<footer class="p-foot"><span>Joel Jigo</span><a href="mailto:joeljigo3@gmail.com">joeljigo3@gmail.com</a><a href="https://github.com/aspire488" target="_blank" rel="noopener noreferrer">github.com/aspire488 <span aria-hidden="true">&#8599;</span></a></footer>
+</body>
+</html>

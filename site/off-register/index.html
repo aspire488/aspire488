@@ -6,6 +6,15 @@
 <title>Joel Jigo</title>
 <meta name="description" content="Joel Jigo, student engineer. He learns by building things, shipping them, and finding out why they break.">
 <meta name="theme-color" content="#F4EEE1">
+<link rel="canonical" href="https://aspire488.github.io/aspire488/">
+<meta property="og:title" content="Joel Jigo">
+<meta property="og:description" content="Student engineer. I learn by building things, shipping them, and finding out why they break.">
+<meta property="og:url" content="https://aspire488.github.io/aspire488/">
+<meta property="og:image" content="https://aspire488.github.io/aspire488/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F4EEE1'/%3E%3Ccircle cx='13' cy='15' r='9' fill='%230078BF' style='mix-blend-mode:multiply'/%3E%3Ccircle cx='19' cy='17' r='9' fill='%23FF48B0' style='mix-blend-mode:multiply'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,7 +97,7 @@ try{var d=document.documentElement,r=matchMedia('(prefers-reduced-motion: reduce
         <header class="spec">
           <h2 id="pipo-h"><a class="card-link" href="https://github.com/aspire488/Pipo" target="_blank" rel="noopener noreferrer">Pipo <span aria-hidden="true">&#8599;</span><span class="sr">source on GitHub, opens in a new tab</span></a></h2>
           <p>a little robot who lives in your phone. Android APK. <b>shipped v1.0</b></p>
-          <p class="spec-links"><a href="https://aspire488.github.io/Pipo/" target="_blank" rel="noopener noreferrer">visit Pipo's world <span aria-hidden="true">&#8599;</span></a></p>
+          <p class="spec-links"><a href="https://github.com/aspire488/Pipo/releases/tag/v1.0" target="_blank" rel="noopener noreferrer">get the APK <span aria-hidden="true">&#8599;</span></a><a href="https://aspire488.github.io/Pipo/" target="_blank" rel="noopener noreferrer">visit Pipo's world <span aria-hidden="true">&#8599;</span></a></p>
         </header>
         <ol class="steps">
           <li>you close the app.</li>
@@ -107,77 +116,86 @@ try{var d=document.documentElement,r=matchMedia('(prefers-reduced-motion: reduce
 
   <!-- coda -->
   <section id="rest" aria-labelledby="rest-h">
-    <h2 id="rest-h">the rest of the bench</h2>
+    <div class="whoami" aria-labelledby="whoami-h">
+      <h2 id="whoami-h" class="label">about me, briefly</h2>
+      <p class="whoami-lead">I'm Joel, a student engineer. I learn by building things, shipping them, and finding out why they break, then I write down what is actually true about them: what shipped, what is tested, and what has only run on one PC.</p>
+      <p class="whoami-body">Campus Bus started as my OOP course project and ended up with a seat map, route lines and a bus pass the brief never asked for. Lately it's agent tooling: KIO, a companion runtime I'm rebuilding one gate at a time; UEA, which hands proof work to tree-sitter and Z3; and fixes in other people's AI evaluation and red-teaming tools.</p>
+      <p class="whoami-sign">Ship small. Learn fast. Make the system prove it.</p>
+    </div>
+
+    <h2 id="rest-h" class="label">the rest of the bench</h2>
     <ul class="bench">
       <li>
-        <a class="bench-link" href="https://github.com/aspire488/event-horizon" target="_blank" rel="noopener noreferrer">
-          <b>Event Horizon</b>
-          <span>shipped &middot; live. 46 unit tests + 18 browser checks. not tried on real touch hardware.</span>
-          <i class="bench-arrow" aria-hidden="true">GitHub &#8599;</i>
-          <span class="sr">repository on GitHub, opens in a new tab</span>
-        </a>
-        <a class="bench-live" href="https://event-horizon-teal.vercel.app" target="_blank" rel="noopener noreferrer">live app <span aria-hidden="true">&#8599;</span></a>
+        <h3><a class="bench-name" href="./event-horizon/">Event Horizon</a></h3>
+        <p class="bench-what">A cosmic physics sandbox: bend gravity, feed black holes, set off supernovas, then rewind.</p>
+        <p class="bench-meta"><span>TypeScript, three.js, Vite</span> <span>shipped, live. 105 unit tests + 18 browser checks. not tried on real touch hardware yet.</span></p>
+        <p class="bench-links"><a href="./event-horizon/">how it's built</a> <a href="https://event-horizon-teal.vercel.app" target="_blank" rel="noopener noreferrer">live app <span aria-hidden="true">&#8599;</span></a> <a href="https://github.com/aspire488/event-horizon" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a></p>
       </li>
       <li>
-        <a class="bench-link" href="https://github.com/aspire488/campus-bus" target="_blank" rel="noopener noreferrer">
-          <b>Campus Bus</b>
-          <span>shipped v1.1. 166 tests, tried on one PC so far.</span>
-          <i class="bench-arrow" aria-hidden="true">GitHub &#8599;</i>
-          <span class="sr">repository on GitHub, opens in a new tab</span>
-        </a>
+        <h3><a class="bench-name" href="https://github.com/aspire488/campus-bus" target="_blank" rel="noopener noreferrer">Campus Bus</a></h3>
+        <p class="bench-what">A college bus reservation system: find a bus that passes your stop, pick a seat on a picture of the bus, get a pass.</p>
+        <p class="bench-meta"><span>Java, JavaFX, MySQL</span> <span>shipped v1.1. 166 tests, tried on one PC so far.</span></p>
+        <p class="bench-links"><a href="https://github.com/aspire488/campus-bus/releases/tag/v1.1" target="_blank" rel="noopener noreferrer">Windows release <span aria-hidden="true">&#8599;</span></a> <a href="https://github.com/aspire488/campus-bus" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a></p>
       </li>
       <li>
-        <a class="bench-link" href="https://github.com/aspire488/codeflow" target="_blank" rel="noopener noreferrer">
-          <b>CodeFlow</b>
-          <span>shipped v1.1.0. 54 unit + 84 local browser + 70 production browser checks.</span>
-          <i class="bench-arrow" aria-hidden="true">GitHub &#8599;</i>
-          <span class="sr">repository on GitHub, opens in a new tab</span>
-        </a>
-        <a class="bench-live" href="https://codeflow-app-sigma.vercel.app" target="_blank" rel="noopener noreferrer">open the app <span aria-hidden="true">&#8599;</span></a>
+        <h3><a class="bench-name" href="./codeflow/">CodeFlow</a></h3>
+        <p class="bench-what">A learning workspace that makes program state visible, for beginners in C, HTML, CSS and JavaScript.</p>
+        <p class="bench-meta"><span>vanilla JavaScript, Playwright</span> <span>shipped v1.1.0. 54 unit + 84 local browser + 70 production browser checks.</span></p>
+        <p class="bench-links"><a href="./codeflow/">how it's built</a> <a href="https://codeflow-app-sigma.vercel.app" target="_blank" rel="noopener noreferrer">open the app <span aria-hidden="true">&#8599;</span></a> <a href="https://github.com/aspire488/codeflow" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a></p>
       </li>
       <li>
-        <a class="bench-link" href="https://github.com/aspire488/Kio" target="_blank" rel="noopener noreferrer">
-          <b>KIO</b>
-          <span>building. one gate at a time; C-4 next. Phase 0 deleted 5,167 lines.</span>
-          <i class="bench-arrow" aria-hidden="true">GitHub &#8599;</i>
-          <span class="sr">repository on GitHub, opens in a new tab</span>
-        </a>
+        <h3><a class="bench-name" href="https://github.com/aspire488/Kio" target="_blank" rel="noopener noreferrer">KIO</a></h3>
+        <p class="bench-what">The kernel of my companion runtime, rebuilt one gate at a time.</p>
+        <p class="bench-meta"><span>Python</span> <span>building. gates C-1 to C-3 done, C-4 next. Phase 0 deleted 5,167 lines.</span></p>
+        <p class="bench-links"><a href="https://github.com/aspire488/Kio" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a></p>
       </li>
       <li>
-        <a class="bench-link" href="https://github.com/aspire488/AURA" target="_blank" rel="noopener noreferrer">
-          <b>AURA</b>
-          <span>built, not verified.</span>
-          <i class="bench-arrow" aria-hidden="true">GitHub &#8599;</i>
-          <span class="sr">repository on GitHub, opens in a new tab</span>
-        </a>
+        <h3><a class="bench-name" href="https://github.com/aspire488/Universal-Engineering-Augmentation" target="_blank" rel="noopener noreferrer">UEA</a></h3>
+        <p class="bench-what">Real tools for coding agents, so the model stops guessing what a tool can prove.</p>
+        <p class="bench-meta"><span>Python, tree-sitter, Z3</span> <span>public alpha, v0.1.0. token savings: not measured yet.</span></p>
+        <p class="bench-links"><a href="https://github.com/aspire488/Universal-Engineering-Augmentation" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a></p>
       </li>
       <li>
-        <a class="bench-link" href="https://github.com/aspire488/gh-ops" target="_blank" rel="noopener noreferrer">
-          <b>gh-ops</b>
-          <span>1,495 tests, then frozen.</span>
-          <i class="bench-arrow" aria-hidden="true">GitHub &#8599;</i>
-          <span class="sr">repository on GitHub, opens in a new tab</span>
-        </a>
+        <h3><a class="bench-name" href="https://github.com/aspire488/AURA" target="_blank" rel="noopener noreferrer">AURA</a></h3>
+        <p class="bench-what">Memory for KIO: working, episodic and semantic memory behind an API.</p>
+        <p class="bench-meta"><span>Python, FastAPI</span> <span>built, not verified. last touched June 2026.</span></p>
+        <p class="bench-links"><a href="https://github.com/aspire488/AURA" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a></p>
       </li>
       <li>
-        <a class="bench-link" href="https://github.com/aspire488/Universal-Engineering-Augmentation" target="_blank" rel="noopener noreferrer">
-          <b>UEA</b>
-          <span>public alpha, v0.1.0. coding agents that hand proof work to tree-sitter and Z3. token savings: not measured yet.</span>
-          <i class="bench-arrow" aria-hidden="true">GitHub &#8599;</i>
-          <span class="sr">repository on GitHub, opens in a new tab</span>
-        </a>
+        <h3><a class="bench-name" href="https://github.com/aspire488/rag-platform" target="_blank" rel="noopener noreferrer">RAG Platform</a></h3>
+        <p class="bench-what">A local-first RAG foundation. Hybrid retrieval and generation are planned, not built yet.</p>
+        <p class="bench-meta"><span>Python, FastAPI, Qdrant</span> <span>building, phase 3 complete. egress off by default.</span></p>
+        <p class="bench-links"><a href="https://github.com/aspire488/rag-platform" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a></p>
       </li>
       <li>
-        <a class="bench-link" href="https://github.com/aspire488/oss-atlas" target="_blank" rel="noopener noreferrer">
-          <b>OSS Atlas</b>
-          <span>case studies and a ledger of upstream fixes. observed, implemented, verified, documented.</span>
-          <i class="bench-arrow" aria-hidden="true">GitHub &#8599;</i>
-          <span class="sr">repository on GitHub, opens in a new tab</span>
-        </a>
+        <h3><a class="bench-name" href="https://github.com/aspire488/gh-ops" target="_blank" rel="noopener noreferrer">gh-ops</a></h3>
+        <p class="bench-what">My GitHub chores on autopilot: six jobs through one dispatcher, and a Telegram ping only when something happened.</p>
+        <p class="bench-meta"><span>Python</span> <span>1,495 tests, then frozen.</span></p>
+        <p class="bench-links"><a href="https://github.com/aspire488/gh-ops" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a></p>
+      </li>
+      <li>
+        <h3><a class="bench-name" href="https://github.com/aspire488/oss-atlas" target="_blank" rel="noopener noreferrer">OSS Atlas</a></h3>
+        <p class="bench-what">My running log of open-source work: case studies and a ledger of upstream fixes.</p>
+        <p class="bench-meta"><span>Markdown, Python scripts</span> <span>observed, implemented, verified, documented.</span></p>
+        <p class="bench-links"><a href="https://github.com/aspire488/oss-atlas/blob/main/case-studies/README.md" target="_blank" rel="noopener noreferrer">case studies <span aria-hidden="true">&#8599;</span></a> <a href="https://github.com/aspire488/oss-atlas" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a></p>
       </li>
     </ul>
-    <p class="upstream">in other people's code: merged into <b>microsoft/PyRIT</b>, <b>UKGovernmentBEIS/inspect_ai</b>, <b>eumemic/aios</b>. a Hermes Agent fix carried by a maintainer into another PR, with credit.</p>
-    <p class="sign">Make the system prove it. &mdash; <a href="https://github.com/aspire488" target="_blank" rel="me noopener noreferrer">github / aspire488 <span aria-hidden="true">&#8599;</span></a></p>
+
+    <div class="upstream" aria-labelledby="up-h">
+      <h2 id="up-h" class="label">in other people's code</h2>
+      <p class="up-lead"><b>14 pull requests merged</b> into other people's projects. 28 still open, 22 closed without merging. Counted on 8 November 2026. <a href="https://github.com/search?q=is%3Apr+author%3Aaspire488+-user%3Aaspire488&amp;type=pullrequests" target="_blank" rel="noopener noreferrer">Every PR, the closed ones too <span aria-hidden="true">&#8599;</span></a></p>
+      <dl class="ledger">
+        <dt>microsoft/PyRIT</dt>
+        <dd><a href="https://github.com/microsoft/PyRIT/pull/2762" target="_blank" rel="noopener noreferrer">#2762 add a dataset summary API</a><a href="https://github.com/microsoft/PyRIT/pull/2823" target="_blank" rel="noopener noreferrer">#2823 use the HarmBench context string where available</a><a href="https://github.com/microsoft/PyRIT/pull/2882" target="_blank" rel="noopener noreferrer">#2882 exact text matching on an empty target</a><a href="https://github.com/microsoft/PyRIT/pull/2976" target="_blank" rel="noopener noreferrer">#2976 keep word-selection parameters in StringJoinConverter identifiers</a><a href="https://github.com/microsoft/PyRIT/pull/3429" target="_blank" rel="noopener noreferrer">#3429 XXE XInclude detection</a></dd>
+        <dt>UKGovernmentBEIS/inspect_ai</dt>
+        <dd><a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/5670" target="_blank" rel="noopener noreferrer">#5670 prefer explicit Google API keys over ambient credentials</a></dd>
+        <dt>eumemic/aios</dt>
+        <dd><a href="https://github.com/eumemic/aios/pull/2457" target="_blank" rel="noopener noreferrer">#2457 keep the length finish reason across streaming trailers</a><a href="https://github.com/eumemic/aios/pull/2458" target="_blank" rel="noopener noreferrer">#2458 record streaming length as truncated output</a><a href="https://github.com/eumemic/aios/pull/2459" target="_blank" rel="noopener noreferrer">#2459 keep the timeout bound in the child outcome</a><a href="https://github.com/eumemic/aios/pull/2460" target="_blank" rel="noopener noreferrer">#2460 keep LiteLLM parameter translation</a></dd>
+        <dt>and four more</dt>
+        <dd><a href="https://github.com/Agent-Field/agentfield/pull/1073" target="_blank" rel="noopener noreferrer">Agent-Field/agentfield #1073 test coverage for harness provider paths</a><a href="https://github.com/0xarchit/github-profile-analyzer/pull/30" target="_blank" rel="noopener noreferrer">0xarchit/github-profile-analyzer #30 impact score evidence</a><a href="https://github.com/PicadoLabs/agent-bench/pull/8" target="_blank" rel="noopener noreferrer">PicadoLabs/agent-bench #8 a global command palette</a><a href="https://github.com/RajX-dev/N3MO/pull/39" target="_blank" rel="noopener noreferrer">RajX-dev/N3MO #39 Ruby and Kotlin routing tests</a></dd>
+      </dl>
+      <p class="up-note">One Hermes Agent fix, <a href="https://github.com/NousResearch/hermes-agent/pull/121771" target="_blank" rel="noopener noreferrer">#121771</a>, was closed and then carried by a maintainer into <a href="https://github.com/NousResearch/hermes-agent/pull/126144" target="_blank" rel="noopener noreferrer">#126144</a>, with credit. I count it as carried, not merged.</p>
+    </div>
   </section>
 
   <!-- final act: contact -->

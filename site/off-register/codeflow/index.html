@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CodeFlow: how it's built. Joel Jigo</title>
+<meta name="description" content="CodeFlow is a browser-based learning workspace for beginners in C, HTML, CSS and JavaScript, with 73 topics, 132 explained quiz questions, output.">
+<link rel="canonical" href="https://aspire488.github.io/aspire488/codeflow/">
+<meta property="og:title" content="CodeFlow: how it's built">
+<meta property="og:description" content="CodeFlow is a browser-based learning workspace for beginners in C, HTML, CSS and JavaScript, with 73 topics, 132 explained quiz questions, output prediction, step-by-step visualisations,.">
+<meta property="og:url" content="https://aspire488.github.io/aspire488/codeflow/">
+<meta property="og:image" content="https://aspire488.github.io/aspire488/og.png">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4EEE1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F4EEE1'/%3E%3Ccircle cx='13' cy='15' r='9' fill='%230078BF'/%3E%3Ccircle cx='19' cy='17' r='9' fill='%23FF48B0' fill-opacity='.85'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Instrument+Serif:ital@0;1&family=Martian+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../project.css">
+</head>
+<body class="theme-cf">
+<a class="skip" href="#main">Skip to the content</a>
+<header class="p-bar">
+  <a href="../">Joel Jigo</a>
+  <nav aria-label="Project links">
+    <a href="https://codeflow-app-sigma.vercel.app" target="_blank" rel="noopener noreferrer">open the app <span aria-hidden="true">&#8599;</span></a>
+    <a href="https://github.com/aspire488/codeflow" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a>
+  </nav>
+</header>
+<main id="main">
+  <section class="p-hero" aria-labelledby="title">
+    <h1 id="title" class="p-title"><span class="ink-a">CodeFlow</span><span class="ink-b" aria-hidden="true">CodeFlow</span></h1>
+    <p class="p-over">CodeFlow is a browser-based learning workspace for beginners in C, HTML, CSS and JavaScript, with 73 topics, 132 explained quiz questions, output prediction, step-by-step visualisations, Logic Quest and progress tracking. It is vanilla JavaScript with hash routing and localStorage, installable as a PWA, and needs no account, API key or backend.</p>
+    <p class="p-status"><mark>shipped, v1.1.0</mark></p>
+    
+  </section>
+
+  <figure class="p-fig"><svg viewBox="0 0 960 560" role="img" aria-labelledby="fig-t" class="diagram">
+<title id="fig-t">CodeFlow load order: content data, then the syntax highlighter, the engines, the screen renderers, the router, and app.js, which boots last. Beside it, the two kinds of visualisation: authored steps and computed traces, labelled and never mixed.</title>
+<text class="t-small" x="70" y="34">classic scripts, loaded in this order. no module system, so order is correctness</text>
+<g class="step"><rect x="70" y="56" width="442" height="58"/><text class="t-name" x="92" y="83">data/</text><text class="t-small" x="92" y="103">topics, quizzes, output prediction, Logic Quest</text></g>
+<g class="step"><rect x="70" y="134" width="442" height="58"/><text class="t-name" x="92" y="161">syntaxHighlighter.js</text><text class="t-small" x="92" y="181">scans once, escapes before it wraps</text></g>
+<g class="step"><rect x="70" y="212" width="442" height="58"/><text class="t-name" x="92" y="239">src/engines/</text><text class="t-small" x="92" y="259">visualisation, prediction, logic, practice, quiz</text></g>
+<g class="step"><rect x="70" y="290" width="442" height="58"/><text class="t-name" x="92" y="317">src/ui/</text><text class="t-small" x="92" y="337">one renderer per screen</text></g>
+<g class="step"><rect x="70" y="368" width="442" height="58"/><text class="t-name" x="92" y="395">router.js</text><text class="t-small" x="92" y="415">route table to screens</text></g>
+<g class="core"><rect x="70" y="446" width="442" height="72"/><text class="t-name" x="92" y="477">app.js</text><text class="t-small" x="92" y="499">state, persistence, one bootstrap. boots last</text></g>
+<path class="arrow" d="M280 114 L280 134"/><path class="arrow" d="M280 192 L280 212"/><path class="arrow" d="M280 270 L280 290"/><path class="arrow" d="M280 348 L280 368"/><path class="arrow" d="M280 426 L280 446"/>
+<text class="t-name" x="560" y="90">two ways to show execution</text>
+<g class="leaf"><rect x="560" y="112" width="340" height="150"/><text class="t-name" x="580" y="142">authored steps</text><text class="t-small" x="580" y="166">written by hand for a lesson,</text><text class="t-small" x="580" y="186">labelled as written</text></g>
+<g class="hub"><rect x="560" y="290" width="340" height="190"/><text class="t-name" x="580" y="320">computed traces</text><text class="t-small" x="580" y="344">only for documented examples:</text><text class="t-small" x="580" y="370">a for loop</text><text class="t-small" x="580" y="394">factorial recursion</text><text class="t-small" x="580" y="418">a pointer demo</text><text class="t-note" x="580" y="454">outside that subset, the UI says so</text></g>
+<path class="brace" d="M522 112 L 542 112 L 542 480 L 522 480"/>
+</svg><figcaption>Drawn from the source tree, not a screenshot.</figcaption></figure>
+
+  <section class="p-sec" aria-labelledby="why"><h2 id="why">Why it exists</h2><blockquote><p>The PRD says it &quot;teaches introductory programming by making program state visible&quot;, for beginner programmers, especially KTU Computer Science students. README tagline: &quot;Learn programming by following the execution, not memorising the syntax.</p></blockquote></section>
+  <section class="p-sec" aria-labelledby="role"><h2 id="role">What I built</h2><p class="p-text">Built solo: content data, routing, visualisation and practice engines, screen renderers, service worker, static build and the node:test and Playwright suites.</p><p class="p-small">GitHub lists one contributor on the repository.</p></section>
+  <section class="p-sec" aria-labelledby="arch"><h2 id="arch">How it's put together</h2><ul class="p-arch"><li><b>Content data</b> <code>data/</code><span>Content only: topicsDB, quizDB, outputPredictionDB, logicQuestDB, knowledgeBase.</span></li><li><b>Core</b> <code>src/core/</code><span>syntaxHighlighter.js, router.js (route table to screen ids and renderers), app.js (AppState, persistence, delegated events, modal lifecycle, single bootstrap; loads last), theme.js.</span></li><li><b>Engines</b> <code>src/engines/</code><span>Visualization, output prediction, logic analyzer, Logic Quest, adaptive practice and quiz logic.</span></li><li><b>Screen renderers</b> <code>src/ui/</code><span>One renderer per screen: dashboard, lesson, quiz, logic, chatbot (study assistant).</span></li><li><b>Static build</b> <code>scripts/build-static.cjs</code><span>Copies the tree and fails if a referenced script is missing from the artifact.</span></li><li><b>Tests</b> <code>tests/</code><span>Structural and unit tests on node:test (smoke, unit, highlighter, regression) and Playwright browser suites (e2e, qa, production).</span></li></ul></section>
+  <section class="p-sec" aria-labelledby="dec"><h2 id="dec">Decisions, and why</h2><ol class="p-dec"><li><p class="q">Two visualisation mechanisms, authored steps and computed traces, labelled and never mixed silently.</p><p>When a snippet is outside the supported subset, the UI says so; it never pretends to interpret arbitrary C.</p></li><li><p class="q">The syntax highlighter scans the source once and escapes each plain chunk before wrapping tokens.</p><p>The earlier chained .replace() calls over generated HTML matched inside their own attributes and corrupted the output.</p></li><li><p class="q">The service worker is network-first for navigations and tolerates individual precache failures.</p><p>So deploys are not served stale; the old install always failed on wrong root-level paths.</p></li><li><p class="q">The QA suite builds a fresh browser context per persona and measures clipping from scrollWidth.</p><p>One persona&#x27;s localStorage can never contaminate another, and hidden overflow still fails the check.</p></li></ol></section>
+  <section class="p-sec" aria-labelledby="hard"><h2 id="hard">The interesting problems</h2><ul class="p-hard"><li><h3>Global namespace with no module system</h3><p>Classic scripts attach to the global scope, so load order and unique names are part of correctness. Before v1.1.0, three router implementations and four renderVisualization definitions shadowed each other by load order. Tests now fail if any function name is declared twice in src/, a script src is missing, or a router screen id is absent from index.html.</p></li><li><h3>The &quot;stuck blur&quot; modal overlay</h3><p>The inactive overlay intercepted clicks; it now uses visibility: hidden and pointer-events: none, and the mobile drawer sits above its backdrop (z-index 40 vs 35).</p></li><li><h3>Regular-expression hang in the CSS analyzer</h3><p>Fixed, with input capped at 10,000 characters and analyzer output escaped.</p></li></ul></section>
+  <section class="p-sec" aria-labelledby="tests"><h2 id="tests">How it's tested</h2><p class="p-text">v1.1.0 release verification: 54 unit tests passed; 84 local Playwright checks passed; 70 production Playwright checks passed; 11 production routes exercised; 0 console errors or failed requests in the final capture.</p><p class="p-small">npm test (node --test on tests/smoke, unit, highlighter, regression .test.cjs); npx playwright install chromium then npm run test:e2e (desktop + Pixel 5); npm run test:qa (persona workflows, adversarial input, storage recovery, overflow); npm run test:e2e:production against the deployment.</p></section>
+  <section class="p-sec" aria-labelledby="lim"><h2 id="lim">Limits I've written down</h2><ul class="p-lim"><li>Visualisation computes traces only for the documented examples: a supported for loop, factorial recursion and a pointer demo.</li><li>The logic analyser is heuristic, not a compiler. The study assistant is rule-based, not an LLM.</li><li>Logic Quest is a vertical slice. Progress is stored in your browser only.</li><li>No WCAG certification. Performance has not been independently benchmarked.</li></ul></section>
+  <section class="p-sec" aria-labelledby="stack"><h2 id="stack">Stack</h2><ul class="p-tech"><li>Vanilla JavaScript, HTML, CSS (no frontend framework, no runtime dependencies)</li><li>Vite ^5.4.0 (dev server)</li><li>@playwright/test ^1.48.0</li><li>Node built-in test runner (node --test)</li><li>Service worker + web app manifest</li><li>Node &gt;=20.19.0</li></ul></section>
+
+  <nav class="p-next" aria-label="More work">
+    <a class="p-next-main" href="../event-horizon/">Next: Event Horizon</a>
+    <a href="../#rest">All the work</a>
+    <a href="../#contact">Get in touch</a>
+  </nav>
+</main>
+<footer class="p-foot"><span>Joel Jigo</span><a href="mailto:joeljigo3@gmail.com">joeljigo3@gmail.com</a><a href="https://github.com/aspire488" target="_blank" rel="noopener noreferrer">github.com/aspire488 <span aria-hidden="true">&#8599;</span></a></footer>
+</body>
+</html>
