@@ -5,15 +5,24 @@ import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 
 const html = document.documentElement;
-if (html.classList.contains('intro-pending')) play(); // the head guard already decided: first visit this session, motion allowed
+if (html.classList.contains('intro-pending')) try { play(); } catch { document.querySelector('.intro')?.remove(); html.classList.remove('intro-on', 'intro-pending'); } // the head guard already decided: first visit this session, motion allowed
 
 function play() {
+  const small = Math.min(innerWidth, innerHeight) < 700;
+  const dpr = Math.min(devicePixelRatio, 1.5);
+  // renderer first: with no WebGL there is nothing to play, so leave the page exactly as if the intro never existed
+  const canvas = document.createElement('canvas'); canvas.setAttribute('aria-hidden', 'true');
+  let renderer;
+  try { renderer = new THREE.WebGLRenderer({ canvas, antialias: !small }); } catch {
+    html.classList.remove('intro-pending'); document.querySelector('.pending-skip')?.remove(); return;
+  }
   const root = document.createElement('div');
   root.className = 'intro'; root.setAttribute('role', 'region'); root.setAttribute('aria-label', 'Opening animation: Pipo catches the Campus Bus');
-  root.innerHTML = `<canvas aria-hidden="true"></canvas>
-    <p class="intro-route" aria-hidden="true"><span>Earth</span><i class="route-line"><em class="route-mid">Event Horizon</em><b class="route-dot"></b></i><span>back to Earth</span></p>
+  root.innerHTML = `<p class="intro-route" aria-hidden="true"><span>Earth</span><i class="route-line"><em class="route-mid">Event Horizon</em><b class="route-dot"></b></i><span>back to Earth</span></p>
     <button class="intro-skip" type="button">Skip intro</button>`;
+  root.prepend(canvas);
   document.body.prepend(root);
+  document.querySelector('.pending-skip')?.remove();
   html.classList.remove('intro-pending');
   try { sessionStorage.setItem('pipo-intro', '1'); } catch {}
   html.classList.add('intro-on');
@@ -23,8 +32,6 @@ function play() {
   const C = { pink: [255, 72, 176], blue: [0, 120, 191], yellow: [255, 232, 0], white: [255, 255, 255] };
   const V = (c) => new THREE.Vector3(c[0] / 255, c[1] / 255, c[2] / 255);
   const DEG = Math.PI / 180, ANG = { blue: 15 * DEG, pink: 75 * DEG, yellow: 0 };
-  const small = Math.min(innerWidth, innerHeight) < 700;
-  const dpr = Math.min(devicePixelRatio, small ? 1.5 : 1.75);
   const CELL = (small ? 4.5 : 5.5) * dpr;
   const vert = `varying vec3 vN; varying vec2 vUv;
     void main(){ vUv = uv; vN = normalize(normalMatrix * normal); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`;
@@ -74,9 +81,7 @@ function play() {
       void main(){ float r = length(vUv - .5) * 2.; float k = uK * (1. - smoothstep(.35, 1., r)); if (k < .03) discard;
         gl_FragColor = vec4(uInk, dots(k, 0.2618)); }` });
 
-  // ---------- stage: the scene renders off screen, then one pass composites it with lensing ----------
-  const canvas = root.querySelector('canvas');
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: !small });
+  // ---------- stage: the scene renders off screen, then one pass composites it with the iris ----------
   renderer.setPixelRatio(dpr); renderer.setClearColor(0x000000, 0); // transparent black: the composite pass reads alpha as coverage
   const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(30, 1, 0.1, 200);
   const target = new THREE.WebGLRenderTarget(1, 1, { depthBuffer: true });
@@ -89,7 +94,7 @@ function play() {
   const PS = 0.55, BS = 1.3, GROUND = -1.25;
   pipo.g.scale.setScalar(PS); bus.g.scale.setScalar(BS);
 
-  // ---------- Event Horizon: its rings, and the black hole they circle ----------
+  // ---------- Event Horizon: one ring on the road, with a window of space in it ----------
   const ringFrag = `uniform float uT, uOn, uCell, uInner, uSpin; varying vec2 vUv; ${dots}
     void main(){
       vec2 p = vUv * 2. - 1.; float r = length(p), a = atan(p.y, p.x);
@@ -104,46 +109,40 @@ function play() {
       vec3 col = mix(vec3(1., .28, .69), vec3(1., .91, 0.), swirl * .8 + photon * .4);
       col = mix(col, vec3(1., .98, .9), clamp(photon * .6, 0., 1.));
       gl_FragColor = vec4(col, clamp(I, 0., 1.6)); }`;
-  const glow = (u) => new THREE.ShaderMaterial({ uniforms: u, vertexShader: vert, fragmentShader: ringFrag, transparent: true, depthWrite: false, side: THREE.DoubleSide,
+  const INNER = 0.74;
+  const ring = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), new THREE.ShaderMaterial({
+    uniforms: { uT: { value: 0 }, uOn: { value: 0 }, uCell: { value: CELL }, uInner: { value: INNER }, uSpin: { value: 1 } },
+    vertexShader: vert, fragmentShader: ringFrag, transparent: true, depthWrite: false, side: THREE.DoubleSide,
     blending: THREE.CustomBlending, blendEquation: THREE.AddEquation, blendSrc: THREE.SrcAlphaFactor, blendDst: THREE.OneFactor,
-    blendSrcAlpha: THREE.ZeroFactor, blendDstAlpha: THREE.OneFactor }); // light adds to colour, never to coverage
-  const plane2 = new THREE.PlaneGeometry(2, 2);
-  // the hoops the bus drives through, one after another along the road
-  const HOOPS = [{ r: 2.0, inner: 0.74, spin: 1 }, { r: 2.35, inner: 0.7, spin: -1.2 }, { r: 1.9, inner: 0.76, spin: 1.4 }, { r: 2.6, inner: 0.66, spin: -0.9 }]
-    .map((h) => { const u = { uT: { value: 0 }, uOn: { value: 0 }, uCell: { value: CELL }, uInner: { value: h.inner }, uSpin: { value: h.spin } };
-      const m = new THREE.Mesh(plane2, glow(u)); m.scale.setScalar(h.r); m.renderOrder = 2; world.add(m); return { ...h, m, u }; });
-  // the black hole itself, far behind the road: a dark horizon inside a wide accretion disc
-  const bhU = { uT: { value: 0 }, uOn: { value: 0 }, uCell: { value: CELL }, uInner: { value: 0.4 }, uSpin: { value: 0.5 } };
-  const bh = new THREE.Group(); world.add(bh);
-  const horizon = new THREE.Mesh(plane2, new THREE.ShaderMaterial({ uniforms: bhU, vertexShader: vert, transparent: true, depthWrite: false,
-    fragmentShader: `uniform float uOn, uInner; varying vec2 vUv;
-      void main(){ float r = length(vUv * 2. - 1.); if (r > uInner) discard;
-        gl_FragColor = vec4(vec3(.012, .02, .09), uOn * (1. - smoothstep(uInner - .05, uInner, r))); }` }));
-  const disc = new THREE.Mesh(plane2, glow(bhU));
-  horizon.renderOrder = 0; disc.renderOrder = 1;
-  bh.add(horizon, disc); bh.scale.setScalar(5.2); bh.rotation.x = -0.35; bh.rotation.z = 0.25;
+    blendSrcAlpha: THREE.ZeroFactor, blendDstAlpha: THREE.OneFactor })); // light adds to colour, never to coverage
+  ring.renderOrder = 2; ring.visible = false; world.add(ring);
 
-  // ---------- composite: paper or space behind, riso stars, lensing around the black hole ----------
+  // ---------- composite: paper outside the iris, space (riso stars) inside it, the ring printed on top ----------
   const post = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), new THREE.ShaderMaterial({
     depthTest: false, depthWrite: false,
     uniforms: { tScene: { value: target.texture }, uRes: { value: new THREE.Vector2() }, uC: { value: new THREE.Vector2(.5, .5) },
-      uR: { value: .1 }, uLens: { value: 0 }, uSpace: { value: 0 }, uFlash: { value: 0 }, uAsp: { value: 1 }, uT: { value: 0 } },
+      uIris: { value: 0 }, uEll: { value: 1 }, uEdge: { value: .002 }, uStar: { value: 0 }, uStreak: { value: 0 }, uFlash: { value: 0 }, uAsp: { value: 1 }, uT: { value: 0 } },
     vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position.xy, 0., 1.); }`,
-    fragmentShader: `uniform sampler2D tScene; uniform vec2 uRes, uC; uniform float uR, uLens, uSpace, uFlash, uAsp, uT; varying vec2 vUv;
+    fragmentShader: `uniform sampler2D tScene; uniform vec2 uRes, uC; uniform float uIris, uEll, uEdge, uStar, uStreak, uFlash, uAsp, uT; varying vec2 vUv;
       float h(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
-      void main(){
-        vec2 d = vUv - uC; d.x *= uAsp; float r = length(d);
-        // a point mass bends rays towards it (2Rs/b); nothing is bent inside the horizon
-        float defl = uLens * uR * uR / max(r, uR) * smoothstep(uR * .95, uR * 1.35, r);
-        vec2 sd = r > 1e-4 ? d - d / r * defl : d; sd.x /= uAsp;
-        vec2 suv = uC + sd;
-        vec4 s = texture2D(tScene, suv);
-        vec3 bg = mix(vec3(.957, .933, .882), vec3(.035, .055, .2), uSpace);
-        vec2 px = suv * uRes / 26.; vec2 cell = floor(px), f = fract(px) - .5;
-        float hh = h(cell), star = step(.9, hh) * (1. - smoothstep(.07, .13, length(f - (vec2(h(cell + 1.3), h(cell + 7.1)) - .5) * .6)));
+      vec3 stars(vec2 px, float sz, float seed){
+        vec2 q = px / sz, cell = floor(q), f = fract(q) - .5; f.x /= 1. + uStreak;
+        float hh = h(cell + seed), star = step(.9, hh) * (1. - smoothstep(.07, .13, length(f - (vec2(h(cell + 1.3), h(cell + 7.1)) - .5) * .6)));
         vec3 sc = hh > .97 ? vec3(1., .28, .69) : hh > .94 ? vec3(1., .91, 0.) : vec3(.8, .88, 1.);
-        bg += sc * star * uSpace * (.65 + .35 * sin(uT * 3. + hh * 40.));
-        vec3 col = bg * (1. - clamp(s.a, 0., 1.)) + s.rgb;
+        return sc * star * (.65 + .35 * sin(uT * 3. + hh * 40.)); }
+      void main(){
+        vec2 d = vUv - uC; d.x *= uAsp / uEll;
+        float ins = uIris > .001 ? 1. - smoothstep(uIris - uEdge, uIris + uEdge, length(d)) : 0.;   // the iris: inside is space, outside is paper
+        vec4 s = texture2D(tScene, vUv);
+        vec3 bg = mix(vec3(.957, .933, .882), vec3(.035, .055, .2), ins);
+        vec2 px = vUv * uRes;
+        bg += (stars(px - vec2(uStar * .6, 0.), 26., 0.) + stars(px - vec2(uStar * 1.5, 17.), 44., 9.3)) * ins;   // two layers, sliding sideways as the bus moves
+        float a = clamp(s.a, 0., 1.);
+        vec3 L = s.rgb * (1. - a); float m = max(L.r, max(L.g, L.b));
+        vec3 ink = mix(vec3(1., .28, .69), vec3(0., .47, .75), smoothstep(.5, 1., L.g / max(m, .001)));
+        vec3 lit = bg + L;                                                  // in space the ring is light
+        vec3 inked = bg * mix(vec3(1.), ink, clamp(m, 0., 1.));             // on paper it is pink and blue ink
+        vec3 col = mix(inked, lit, ins) * (1. - a) + s.rgb * a;
         col += vec3(1., .96, .82) * uFlash;
         gl_FragColor = vec4(col, 1.); }` }));
   const postScene = new THREE.Scene(), postCam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
@@ -151,7 +150,7 @@ function play() {
   const PU = post.material.uniforms;
 
   let W, H, k = 1, wx = 6, narrow = false;
-  const base = new THREE.Vector3(), baseLook = new THREE.Vector3();
+  const base = new THREE.Vector3(), baseLook = new THREE.Vector3(), baseOff = new THREE.Vector3(), closeOff = new THREE.Vector3();
   function resize() {
     W = innerWidth; H = innerHeight;
     renderer.setSize(W, H, false); target.setSize(Math.round(W * dpr), Math.round(H * dpr));
@@ -160,7 +159,8 @@ function play() {
     base.set(narrow ? -1.6 : -3.4, 2.6, 15); baseLook.set(narrow ? 0 : -0.3, -0.55, 0); // three-quarter view: the bus has a nose and a depth
     wx = Math.tan(15 * DEG) * 15 * camera.aspect; // half the visible width at z=0
     k = narrow ? wx / 3.3 : Math.min(1, wx / 5.6); world.scale.setScalar(k);
-    PU.uRes.value.set(W * dpr, H * dpr); PU.uAsp.value = W / H;
+    baseOff.subVectors(base, baseLook); closeOff.set(-5.0 * k, 1.1 * k, 9.0 * k);
+    PU.uRes.value.set(W * dpr, H * dpr); PU.uAsp.value = W / H; PU.uEdge.value = 1.5 / H;
   }
   resize(); addEventListener('resize', resize);
 
@@ -173,69 +173,70 @@ function play() {
   const io = (x) => x < .5 ? 2 * x * x : 1 - (-2 * x + 2) ** 2 / 2;   // drive
   const out = (x) => 1 - (1 - x) ** 3;                                 // brake into a stop
   const inn = (x) => x * x * x;                                         // pull away
+  const smoothstep01 = (x) => { x = clamp(x); return x * x * (3 - 2 * x); };
   const bell = (t, a, b) => Math.sin(seg(t, a, b) * Math.PI);
   const SEAT = GROUND + 0.42;   // low enough that all of Pipo, antenna included, rides inside the bus
   const DOOR = 0.95 * BS;       // front door, measured from the bus centre towards its nose
   const NOSE = 1.38 * BS;
-  const END = 9.0, SPEED = 1.15;
-  // the cosmic stretch: the bus holds the middle of the road while Event Horizon's rings stream past it
-  const DEPART = [3.9, 4.6], RINGS = [4.6, 6.0], ARRIVE = [6.0, 6.5], SPACE_IN = [4.1, 4.6], SPACE_OUT = [5.85, 6.35];
-  const GAP = 2.7, TRAVEL = 3 * GAP + 9;     // spacing between hoops; how far the field slides in total
-  let busX = 99, lastBusX = 99, busV = 0, spring = 0, springV = 0, done = false, t0 = null, skipAt = null, lastSlide = 0;
-  const bw = new THREE.Vector3(), bhw = new THREE.Vector3(), close = new THREE.Vector3(), look = new THREE.Vector3(), pr = new THREE.Vector3();
+  const END = 7.5, SPEED = 1.15;
+  // the drive: leave the stop, cross Event Horizon's ring, come out the other side and stop at the drop-off
+  const DRIVE = [3.75, 6.25], RING_ON = 3.7;
+  let busX = 99, lastBusX = 99, lastS = 0, lastT = 0, spd = 0, busV = 0, spring = 0, springV = 0, done = false, t0 = null, skipAt = null;
+  const rw = new THREE.Vector3(), pr = new THREE.Vector3(), pe = new THREE.Vector3(), focus = new THREE.Vector3();
 
   function hopArc(p, a, b, h) { return [a[0] + (b[0] - a[0]) * p, a[1] + (b[1] - a[1]) * p + Math.sin(p * Math.PI) * h, a[2] + (b[2] - a[2]) * p]; }
 
   function frame(now) {
     if (done) return;
     if (t0 === null) t0 = now; // the clock starts on the first painted frame, not when the script loaded
-    const t = (now - t0) / 1000 * SPEED;
+    try { draw((now - t0) / 1000 * SPEED); } catch { finish(true); return; }
+    requestAnimationFrame(frame);
+  }
+  function draw(t) {
     const STOP = narrow ? 0.85 : 1.9, DROP = narrow ? -0.55 : -2.0, WAIT = STOP - DOOR, LAND = DROP - DOOR - (narrow ? 0.35 : 1.5);
-    const MID = (STOP + DROP) / 2;
-    // bus x over time
+    // geometry of the drive, in the bus's own frame (u): the ring sits G ahead of the nose; the bus ends 0.9 clear of it
+    const G = narrow ? 0.55 : 1.3, D = 2 * NOSE + G + 0.9, XR = STOP - NOSE - G, S1 = DROP - (XR - NOSE - 0.9);
+    const tauAt = (p) => p <= .5 ? Math.sqrt(p / 2) : 1 - Math.sqrt((1 - p) / 2);   // inverse of io
+    const tauC = tauAt(G / D), tauL = tauAt((G + 2 * NOSE) / D);
+    const tc = DRIVE[0] + (DRIVE[1] - DRIVE[0]) * tauC, tcl = DRIVE[0] + (DRIVE[1] - DRIVE[0]) * tauL; // nose crosses the ring; tail clears it
+    const tShift = (tc + .5 + tcl - .1) / 2; // the screen is all space here: the scene is re-based so the bus ends at the drop-off
     const OFF = wx / k + 3; // fully off stage, whatever the screen width
-    if (t < 1.0) busX = OFF;
-    else if (t < 2.5) busX = STOP + (OFF - STOP) * (1 - out(seg(t, 1.0, 2.5)));
-    else if (t < DEPART[0]) busX = STOP;
-    else if (t < DEPART[1]) busX = STOP + (MID - STOP) * io(seg(t, ...DEPART));
-    else if (t < ARRIVE[0]) busX = MID;
-    else if (t < ARRIVE[1]) busX = MID + (DROP - MID) * io(seg(t, ...ARRIVE));
-    else if (t < 7.6) busX = DROP;
-    else busX = DROP - 9 * inn(seg(t, 7.6, 8.8));
-    // the ring field slides towards the bus: that is the bus's speed while it holds the middle
-    const slide = TRAVEL * io(seg(t, ...RINGS)), dSlide = slide - lastSlide; lastSlide = slide;
-    const v = lastBusX === 99 ? 0 : busX - lastBusX; lastBusX = busX;
+
+    let u;
+    if (t < 1.0) u = OFF;
+    else if (t < 2.5) u = STOP + (OFF - STOP) * (1 - out(seg(t, 1.0, 2.5)));
+    else if (t < DRIVE[0]) u = STOP;
+    else if (t < DRIVE[1]) { const tau = seg(t, ...DRIVE); u = STOP - D * io(tau - 0.04 * bell(tau, tauC - .1, tauC + .1)); } // fast approach, a dip as the nose goes in
+    else u = XR - NOSE - 0.9;
+    const S = t > tShift ? S1 : 0;
+    busX = t > 6.85 ? DROP - 9 * inn(seg(t, 6.85, 7.6)) : u + S;
+    const v = lastBusX === 99 ? 0 : busX - lastBusX - (S - lastS); lastBusX = busX; lastS = S;
+    spd = Math.abs(v) / Math.max(t - lastT, 1e-3); lastT = t;
     const acc = v - busV; busV = v;
     // suspension: braking dips the nose, pulling away lifts it; a damped spring settles it
     springV += (-acc * 10 - spring) * 0.18; springV *= 0.82; spring += springV;
     bus.body.rotation.z = clamp(spring, -0.09, 0.09);
-    const moving = Math.abs(v) + dSlide > 0.002;
-    bus.body.position.y = Math.abs(Math.sin(t * 17)) * 0.012 * (moving ? 1 : 0) - landBump(t) * 0.05;
-    bus.wheels.forEach((w) => (w.rotation.y += (v - dSlide) / 0.25));
+    bus.body.position.y = Math.abs(Math.sin(t * 17)) * 0.012 * (Math.abs(v) > 0.002 ? 1 : 0) - landBump(t) * 0.05;
+    bus.wheels.forEach((w) => (w.rotation.y += v / 0.25));
     bus.g.position.set(busX, GROUND + 0.8 * BS, 0);
     bShadow.position.set(busX, GROUND + 0.01, 0.05); bShadow.scale.set(2.7 * BS * 1.12, 1.3 * BS, 1);
 
-    // space, the black hole and its rings
-    const space = seg(t, ...SPACE_IN) * (1 - seg(t, ...SPACE_OUT));
-    let cross = 0;
-    HOOPS.forEach((h, i) => {
-      const x = MID - 6 - i * GAP + slide;                    // starts ahead of the nose, slides back past the bus
-      const fadeIn = seg(x, MID - 9, MID - 6.5), fadeOut = 1 - seg(x, MID + 2.5, MID + 4.5);
-      h.u.uOn.value = space * fadeIn * fadeOut; h.u.uT.value = t;
-      h.m.visible = h.u.uOn.value > 0.002;
-      h.m.position.set(x, GROUND + 0.95, 0);
-      h.m.rotation.set(0.1 * (i % 2 ? -1 : 1), Math.PI / 2 - (narrow ? 0.6 : 0), 0);
-      cross = Math.max(cross, Math.exp(-((((busX - NOSE) - x) / 0.3) ** 2)) * h.u.uOn.value);
-    });
-    bh.position.set(MID - 1, GROUND + 4.2, -14); bhU.uOn.value = space; bhU.uT.value = t; bh.visible = space > 0.002;
-    pShadow.material.uniforms.uK.value = 0.5 * (1 - space); bShadow.material.uniforms.uK.value = 0.62 * (1 - space);
+    // the ring grows in before the bus gets there, and closes once it is through
+    const grow = out(seg(t, RING_ON, RING_ON + .4)) * (1 - io(seg(t, tcl + .35, tcl + .85)));
+    const RING = narrow ? 3.1 : 2.4, PSI = narrow ? .7 : .9, Rc = RING * grow;
+    ring.visible = grow > 0.01; ring.material.uniforms.uOn.value = clamp(grow * 3); ring.material.uniforms.uT.value = t;
+    ring.position.set(XR + S, GROUND + 0.9, 0); ring.scale.setScalar(Math.max(Rc, 1e-3)); ring.rotation.set(0, -PSI, 0); // turned so the camera, off to the left, sees it nearly face on
+    // iris: opens as a window in the ring, floods the screen as the nose goes in, shuts back onto the ring once the tail is out
+    const e1 = io(seg(t, tc - .15, tc + .5)), e2 = 1 - io(seg(t, tcl - .1, tcl + .55)), e = e1 * e2;
+    pShadow.material.uniforms.uK.value = 0.5 * (1 - e); bShadow.material.uniforms.uK.value = 0.62 * (1 - e);
 
-    // camera: eases in alongside the bus for the ring run, then back out to the paper
-    const cam = (narrow ? 0.45 : 1) * io(seg(t, 4.2, 4.9)) * (1 - io(seg(t, 5.8, 6.5))); // phones get a gentler move
-    bus.g.getWorldPosition(bw);
-    close.set(bw.x - 5.0 * k, bw.y + 1.1 * k, bw.z + 9.0 * k);
-    camera.position.lerpVectors(base, close, cam);
-    look.lerpVectors(baseLook, bw, cam); camera.lookAt(look);
+    // camera: eases onto the ring (the bus drives across the frame), phones zoom less; then back out to the paper
+    const rel = 1 - io(seg(t, tcl + .25, tcl + .8));
+    const track = io(seg(t, 3.9, 4.6)) * rel, zoom = (narrow ? 0.45 : 1) * io(seg(t, 4.0, 4.7)) * rel;
+    world.updateMatrixWorld(); ring.getWorldPosition(rw);
+    focus.lerpVectors(baseLook, rw, track);
+    camera.position.lerpVectors(baseOff, closeOff, zoom).add(focus); camera.lookAt(focus);
+    camera.updateMatrixWorld();
 
     // pipo
     const r = pipo.rig; let pos = [WAIT, GROUND, 1.25], turn = 0, tilt = 0, squash = 1, wave = 0, inside = false;
@@ -244,10 +245,10 @@ function play() {
     if (t >= 2.45 && t < 2.95) { turn = 0.75 * (1 - out(seg(t, 2.45, 2.7))); pos[1] += bell(t, 2.55, 2.85) * 0.22; } // "that's mine": a little bounce
     if (t >= 2.95 && t < 3.1) squash = 1 - 0.18 * bell(t, 2.95, 3.1);                                                     // anticipation
     if (t >= 3.1 && t < 3.55) { pos = hopArc(out(seg(t, 3.1, 3.55)), [WAIT, GROUND, 1.25], [STOP - DOOR + 0.25, SEAT, 0], 0.45); squash = 1.08; }
-    if (t >= 3.55 && t < 6.55) { inside = true; pos = [busX - DOOR + 0.25, SEAT + bus.body.position.y, 0]; }
-    if (t >= 6.55 && t < 7.05) { pos = hopArc(out(seg(t, 6.55, 7.05)), [DROP - DOOR + 0.25, SEAT, 0], [LAND, GROUND, 1.3], 2.0); squash = t < 6.65 ? 1.12 : 1; }
+    if (t >= 3.55 && t < 6.3) { inside = true; pos = [busX - DOOR + 0.25, SEAT + bus.body.position.y, 0]; }
+    if (t >= 6.3 && t < 6.75) { pos = hopArc(out(seg(t, 6.3, 6.75)), [DROP - DOOR + 0.25, SEAT, 0], [LAND, GROUND, 1.3], 0.8); squash = t < 6.4 ? 1.12 : 1; }
     // lands, watches the bus pull away behind him, then turns round and waves at you
-    if (t >= 7.05) { pos = [LAND, GROUND, 1.3]; squash = t < 7.2 ? 1 - 0.16 * bell(t, 7.05, 7.2) : 1; turn = t < 8.1 ? -0.8 * out(seg(t, 7.2, 7.5)) : -0.8 * (1 - out(seg(t, 8.1, 8.35))); wave = seg(t, 8.2, 8.35); }
+    if (t >= 6.75) { pos = [LAND, GROUND, 1.3]; squash = t < 6.9 ? 1 - 0.16 * bell(t, 6.75, 6.9) : 1; turn = -0.8 * out(seg(t, 6.8, 7.0)) * (1 - out(seg(t, 7.1, 7.35))); wave = seg(t, 7.2, 7.4); }
     // fully inside the bus for the ride: nothing pokes through the roof; he vanishes as he passes the side wall
     pipo.g.visible = !inside && !(t >= 3.1 && t < 3.55 && pos[2] < 0.75);
     pipo.g.position.set(pos[0], pos[1] - (1 - appear) * 0.6, pos[2]);
@@ -256,28 +257,35 @@ function play() {
     r.rotation.z = tilt + Math.sin(t * 1.4) * 0.02;
     r.position.y = Math.sin(t * 2.2) * 0.03;
     pipo.arms[1].rotation.z = 0.25 + wave * (1.9 + Math.sin(t * 9) * 0.35);
-    pipo.bulb.scale.setScalar(1 + (t > 0.5 && t < 0.8 ? 0.6 * bell(t, 0.5, 0.8) : 0) + wave * Math.abs(Math.sin(t * 6)) * 0.4);
-    const blink = (t % 2.9) < 0.11 ? 0.12 : 1; pipo.eyes.forEach((e) => (e.scale.y = blink));
+    // the antenna bulb lights up: when he hears the bus, and as he lands
+    pipo.bulb.scale.setScalar(1 + 0.6 * (bell(t, 0.5, 0.8) + bell(t, 6.5, 6.9)) + wave * Math.abs(Math.sin(t * 6)) * 0.4);
+    const blink = (t % 2.9) < 0.11 ? 0.12 : 1; pipo.eyes.forEach((q) => (q.scale.y = blink));
     const air = Math.max(0, pos[1] - GROUND);
     pShadow.visible = !inside; pShadow.position.set(pos[0], GROUND + 0.012, pos[2]); pShadow.scale.setScalar(PS * 1.6 / (1 + air * 0.9));
 
     // route progress: Earth, out to Event Horizon, back to Earth
-    dot.style.setProperty('--p', (0.5 * io(seg(t, 3.9, 4.9)) + 0.5 * io(seg(t, 5.6, 6.5))).toFixed(3));
-    root.classList.toggle('in-space', space > 0.5);
+    dot.style.setProperty('--p', (0.5 * io(seg(t, tc - .5, tc + .5)) + 0.5 * io(seg(t, tcl - .3, tcl + .5))).toFixed(3));
+    root.classList.toggle('in-space', e > 0.5);
 
-    // lens: centred on the black hole's horizon as the camera sees it
-    bh.getWorldPosition(bhw); pr.copy(bhw).project(camera); PU.uC.value.set(pr.x * .5 + .5, pr.y * .5 + .5);
-    bhw.y += 5.2 * 0.4 * k; bhw.project(camera);
-    PU.uR.value = Math.hypot((bhw.x - pr.x) * .5 * PU.uAsp.value, (bhw.y - pr.y) * .5);
-    PU.uLens.value = space * 0.4; PU.uSpace.value = space; PU.uFlash.value = cross * 0.22; PU.uT.value = t;
+    // iris geometry from the ring as the camera sees it: centre, rim height and rim width (the ring is an ellipse)
+    const rim = INNER * Rc * k, asp = PU.uAsp.value;
+    pr.copy(rw).project(camera);
+    pe.copy(rw); pe.y += rim; pe.project(camera); const ry = (pe.y - pr.y) * .5;
+    pe.copy(rw); pe.x += Math.cos(PSI) * rim; pe.z += Math.sin(PSI) * rim; pe.project(camera);
+    const rx = Math.hypot((pe.x - pr.x) * .5 * asp, (pe.y - pr.y) * .5), ell = clamp(rx / Math.max(ry, 1e-4), .3, 1.6);
+    const cx = pr.x * .5 + .5, cy = pr.y * .5 + .5, cover = Math.hypot(Math.max(cx, 1 - cx) * asp, Math.max(cy, 1 - cy)) + .05;
+    PU.uC.value.set(cx, cy);
+    PU.uIris.value = ring.visible ? ry * smoothstep01(grow / .35) + (cover - ry) * e : 0; // the window closes a little ahead of the ring, so no dark dot is left behind
+    PU.uEll.value = ell + (1 - ell) * e;
+    PU.uStar.value = (STOP - u) * 40 * dpr; PU.uStreak.value = clamp(spd / 4) * (e > 0 ? 1 : 0);
+    PU.uFlash.value = Math.exp(-(((t - tc) / .1) ** 2)) * 0.14; PU.uT.value = t;
 
     renderer.setRenderTarget(target); renderer.clear(); renderer.render(scene, camera);
     renderer.setRenderTarget(null); renderer.render(postScene, postCam);
 
     if (skipAt === null && t > END) finish(false);
-    requestAnimationFrame(frame);
   }
-  function landBump(t) { return bell(t, 3.55, 3.75) + bell(t, 6.55, 6.7) * 0.6; }
+  function landBump(t) { return bell(t, 3.55, 3.75) + bell(t, 6.3, 6.45) * 0.6; }
 
   // ---------- hand-off: the paper sheet lifts and the homepage is just there ----------
   function finish(skipped) {
@@ -286,12 +294,13 @@ function play() {
     root.classList.add(skipped ? 'leave-fast' : 'leave');
     html.classList.remove('intro-on');
     setTimeout(() => { done = true; target.dispose(); renderer.dispose(); renderer.forceContextLoss(); root.remove(); }, skipped ? 320 : 900);
-    removeEventListener('keydown', onKey); removeEventListener('wheel', onSkip); removeEventListener('touchmove', onSkip);
+    removeEventListener('resize', resize); document.removeEventListener('visibilitychange', onHide); removeEventListener('keydown', onKey); removeEventListener('wheel', onSkip); removeEventListener('touchmove', onSkip);
   }
-  const onSkip = () => finish(true);
+  const onSkip = () => finish(true), onHide = () => { if (document.hidden) finish(true); };
   const onKey = (e) => { if (!['Tab', 'Shift'].includes(e.key)) finish(true); };
   root.querySelector('.intro-skip').addEventListener('click', onSkip);
   addEventListener('keydown', onKey); addEventListener('wheel', onSkip, { passive: true }); addEventListener('touchmove', onSkip, { passive: true });
-  document.addEventListener('visibilitychange', () => { if (document.hidden) finish(true); });
+  canvas.addEventListener('webglcontextlost', () => finish(true));
+  document.addEventListener('visibilitychange', onHide);
   requestAnimationFrame(frame);
 }

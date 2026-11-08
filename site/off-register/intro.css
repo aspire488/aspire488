@@ -2,6 +2,9 @@
 /* Before the intro script runs: a plain sheet of the same paper, so the homepage never flashes first. */
 html.intro-pending::after{content:"";position:fixed;inset:0;z-index:100;background:#F4EEE1}
 html.intro-on{overflow:hidden}
+/* the skip button on the pending sheet: injected by the head guard so it works before any bundle arrives */
+.pending-skip{display:none;position:fixed;z-index:101}
+html.intro-pending .pending-skip{display:block}
 
 .intro{position:fixed;inset:0;z-index:100;background:#F4EEE1;color:#00227F;transition:transform .85s cubic-bezier(.7,0,.2,1),opacity .3s ease}
 .intro::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:var(--grain);background-size:180px;mix-blend-mode:multiply;opacity:.55}
@@ -13,9 +16,9 @@ html.intro-on{overflow:hidden}
 .intro-route{position:absolute;left:50%;bottom:clamp(28px,9vh,84px);transform:translateX(-50%);display:flex;align-items:center;gap:14px;margin:0;width:min(560px,calc(100vw - 32px));font:400 12px/1.2 "Martian Mono",ui-monospace,monospace;white-space:nowrap}
 .route-line{position:relative;flex:1;height:2px;background:repeating-linear-gradient(90deg,#0078BF 0 8px,transparent 8px 14px)}
 .route-dot{position:absolute;top:50%;left:calc(var(--p,0) * 100%);width:12px;height:12px;border-radius:50%;background:#FFE800;box-shadow:0 0 0 2px #00227F;transform:translate(-50%,-50%)}
-.intro-skip{position:absolute;top:16px;right:clamp(16px,2.6vw,40px);min-height:44px;padding:0 14px;background:#F4EEE1;border:2px solid #00227F;box-shadow:4px 4px 0 #FF48B0;color:#00227F;font:400 12px "Martian Mono",ui-monospace,monospace;cursor:pointer}
-.intro-skip:hover,.intro-skip:focus-visible{background:#FFE800}
-.intro-skip:focus-visible{outline:2px solid #0078BF;outline-offset:4px}
+.intro-skip,.pending-skip{position:absolute;top:16px;right:clamp(16px,2.6vw,40px);min-height:44px;padding:0 14px;background:#F4EEE1;border:2px solid #00227F;box-shadow:4px 4px 0 #FF48B0;color:#00227F;font:400 12px "Martian Mono",ui-monospace,monospace;cursor:pointer}
+.intro-skip:hover,.intro-skip:focus-visible,.pending-skip:hover,.pending-skip:focus-visible{background:#FFE800}
+.intro-skip:focus-visible,.pending-skip:focus-visible{outline:2px solid #0078BF;outline-offset:4px}
 @media (max-width:520px){.intro-route{font-size:10px;gap:8px}}
 .intro-route{transition:color .4s ease}
 .intro.in-space .intro-route{color:#F4EEE1}
