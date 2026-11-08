@@ -11,6 +11,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Instrument+Serif:ital@0;1&family=Martian+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./intro.css">
+<script>/* opening sequence guard: first visit this session, motion allowed (?intro replays); never blocks the page for more than 4s */
+try{var d=document.documentElement,r=matchMedia('(prefers-reduced-motion: reduce)').matches,s=sessionStorage.getItem('pipo-intro')==='1',f=/[?&]intro/.test(location.search);if(!r&&(!s||f)){d.classList.add('intro-pending');setTimeout(function(){d.classList.remove('intro-pending')},4000)}}catch(e){}</script>
 </head>
 <body>
 <a class="skip" href="#rest">Skip to the work</a>
@@ -194,5 +197,6 @@
 </footer>
 
 <script type="module" src="./main.js"></script>
+<script type="module" src="./intro.js"></script>
 </body>
 </html>
