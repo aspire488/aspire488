@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="440" height="48" viewBox="0 0 440 48">
-  <title>A little more about Joel — explore the portfolio</title>
-  <rect x="0.75" y="5.75" width="438.5" height="36.5" rx="2" fill="#f6f0df" stroke="#092d78" stroke-width="1.5"/>
-  <path d="M9 12h5v24H9z" fill="#f0449b"/>
-  <text x="25" y="29" fill="#092d78" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-style="italic">a little more about me</text>
-  <path d="M254 24h132" stroke="#f0449b" stroke-width="2"/>
-  <text x="399" y="29" fill="#092d78" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="14">↗</text>
-  <circle cx="424" cy="24" r="3" fill="#f0d400"/>
-</svg>
