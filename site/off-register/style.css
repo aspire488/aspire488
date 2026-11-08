@@ -47,7 +47,7 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 .bar-links a:first-child{border-bottom-color:var(--blue)}
 
 .declaration{position:absolute;right:var(--m);bottom:clamp(180px,26vh,240px);display:flex;flex-direction:column;align-items:flex-end;gap:clamp(14px,2.4vh,30px);max-width:min(660px,46vw)}
-.creed{margin:0;max-width:12.5ch;font-size:clamp(34px,min(4.2vw,7.2vh),84px);line-height:.98;letter-spacing:-.015em;text-align:right;text-wrap:balance}
+.creed{margin:0;max-width:12.5ch;font-size:clamp(34px,min(4.2vw,7.2vh),84px);line-height:1.08;letter-spacing:-.015em;text-align:right;text-wrap:balance}
 .creed em{font-style:italic;color:var(--blue)}
 .creed mark{background:var(--yellow);color:var(--ink);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 
@@ -79,7 +79,7 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 
 /* ---------- pipo ---------- */
 .flood{position:absolute;left:24vw;top:-18vh;width:min(46vw,60vh);aspect-ratio:1;border-radius:50%;background:var(--yellow)}
-.pipo-word{position:absolute;left:-.05em;top:50%;font-family:var(--display);font-weight:900;font-size:min(62vh,48vw);line-height:.8;color:var(--pink);transform:translateY(-50%) translateX(var(--px,0))}
+.pipo-word{position:absolute;left:var(--m);top:clamp(72px,12vh,130px);font-family:var(--display);font-weight:900;font-size:min(30vh,26vw);line-height:.8;color:var(--pink);transform:translateX(var(--px,0))}
 .spec{position:absolute;top:20px;left:var(--m);right:var(--m);display:flex;gap:18px;align-items:baseline;font-family:var(--mono);font-size:12px}
 .spec h2{margin:0;font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;color:var(--pink)}
 .spec p{margin:0}
@@ -90,7 +90,7 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 .spec-links{position:relative;z-index:2;display:flex;gap:16px;margin:0 0 0 auto;font-family:var(--mono);font-size:11px;white-space:nowrap}
 .spec-links a{border-bottom:1.5px solid var(--blue);text-decoration:none;padding:2px 0}
 .spec-links a:hover,.spec-links a:focus-visible{background:var(--yellow)}
-.steps{position:absolute;left:var(--m);top:50%;transform:translateY(-50%);margin:0;padding:0;list-style:none;width:min(46vw,640px)}
+.steps{position:absolute;left:var(--m);bottom:5vh;margin:0;padding:0;list-style:none;width:min(46vw,640px)}
 .steps li{width:fit-content;padding:0 6px;background:var(--paper);font-family:var(--mono);font-size:12px;line-height:1.8;color:rgba(0,34,127,.55)}
 .steps li::before{content:"\2192  ";color:var(--pink)}
 .steps li.on{background:none;padding:0;width:auto;font-family:var(--display);font-weight:900;font-size:clamp(58px,7.6vw,128px);line-height:.86;text-transform:uppercase;letter-spacing:-.005em;margin:.18em 0 .22em;color:var(--ink);text-wrap:balance;animation:reg .5s cubic-bezier(.2,.8,.2,1)}
@@ -130,6 +130,7 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 
 @media (max-width:1300px){
   .bar span:nth-child(2){display:none}
+  .pipo-word{display:none}
   .declaration{top:42vh;bottom:auto;gap:10px;max-width:min(430px,54vw)}
   .motto{text-align:right;font-size:clamp(20px,5.6vw,26px)}
   .motto span{display:inline}
@@ -146,6 +147,12 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
   .steps li{display:none}
   .steps li.on{display:block;font-size:clamp(42px,13vw,64px)}
   .bubble{font-size:18px}
+}
+@media (max-height:800px) and (min-width:1301px){
+  .pipo-word{font-size:min(22vh,26vw)}
+}
+@media (max-height:620px) and (min-width:1301px){
+  .pipo-word{display:none}
 }
 @media (max-height:760px) and (min-width:1301px){
   .notes{display:none}

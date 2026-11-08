@@ -189,7 +189,7 @@ const lerp = (a, b, t) => a + (b - a) * t;
 
 const heroBack = document.querySelector('#hero .back'), heroFront = document.querySelector('#hero .front'), notes = document.querySelector('#hero .notes');
 const pipoLayers = document.querySelectorAll('#pipo .layer');
-const pinkPlate = document.querySelector('.plate-pink'), pipoWord = document.querySelector('.pipo-word');
+const pinkPlate = document.querySelector('.plate-pink');
 const steps = [...document.querySelectorAll('.steps li')];
 const bubble = document.querySelector('.bubble'), zz = document.querySelector('.zz');
 const spots = [...document.querySelectorAll('.spot')];
@@ -233,7 +233,8 @@ function frame(now) {
   sp = reduced ? y : lerp(sp, y, 0.14);
   ptr.sx = lerp(ptr.sx, ptr.x, 0.06); ptr.sy = lerp(ptr.sy, ptr.y, 0.06);
   const hp = clamp((sp - heroTop) / heroLen), pp = clamp((sp - pipoTop) / pipoLen);
-  const into = ss(0.6, 0.95, hp); // hero -> pipo hand-off
+  const into = ss(portrait ? 0.72 : 0.6, 0.95, hp); // hero -> pipo hand-off
+  const heroOn = 1 - ss(portrait ? 0.5 : 0.78, portrait ? 0.72 : 0.9, hp);
 
   // camera: slow dolly through the hero, pointer sway
   camera.position.set(ptr.sx * 0.35, -ptr.sy * 0.25, lerp(13, 10.5, ss(0, .6, hp)) + into * 1.2);
@@ -245,14 +246,14 @@ function frame(now) {
   spotHover.planet += ((hoveredSpot === 'planet' ? 1 : 0) - spotHover.planet) * 0.14;
   spotHover.pipo += ((hoveredSpot === 'pipo' ? 1 : 0) - spotHover.pipo) * 0.14;
   spotHover.bus += ((hoveredSpot === 'bus' ? 1 : 0) - spotHover.bus) * 0.14;
-  planet.g.position.set(P.planet[0] - thru * 2.6 - into * 4, P.planet[1] + thru * 0.4 + into * 4 + spotHover.planet * 0.12, lerp(P.planet[2], 3.6, thru));
+  planet.g.position.set(P.planet[0] - thru * (portrait ? 5 : 2.6) - into * 4, P.planet[1] + thru * 0.4 + into * 4 + spotHover.planet * 0.12, lerp(P.planet[2], 3.6, thru));
   planet.g.scale.setScalar(P.planet[3] * (1 + spotHover.planet * 0.055));
   planet.g.rotation.y = t * 0.15 + spotHover.planet * 0.35;
   planet.moon.position.set(Math.cos(t * 0.6) * 3.1, 0, Math.sin(t * 0.6) * 3.1);
   planet.g.visible = into < 0.999;
 
   const drive = ss(0.05, 0.75, hp);
-  bus.g.position.set(P.bus[0] - drive * (portrait ? 5 : 11), P.bus[1] + Math.abs(Math.sin(t * 7)) * 0.03 + spotHover.bus * 0.07, lerp(P.bus[2], portrait ? 1 : 1.2, drive));
+  bus.g.position.set(P.bus[0] + drive * (portrait ? 5 : 9), P.bus[1] + Math.abs(Math.sin(t * 7)) * 0.03 + spotHover.bus * 0.07, lerp(P.bus[2], portrait ? 1 : 1.2, drive));
   bus.g.rotation.y = Math.PI + Math.sin(t * .7) * 0.04;
   bus.g.scale.setScalar(P.bus[3] * (1 + spotHover.bus * 0.055));
   bus.wheels.forEach((w) => (w.rotation.y = -sp * 0.02));
@@ -260,7 +261,7 @@ function frame(now) {
 
   // ----- pipo: hero spot -> his phone -----
   const ph = P.phone, ho = P.home;
-  const rise = ss(0.4, 0.88, hp);
+  const rise = ss(portrait ? 0.72 : 0.4, portrait ? 0.92 : 0.88, hp);
   phone.g.position.set(ph[0], lerp(-9, ph[1], rise), ph[2]);
   phone.g.scale.setScalar(ph[3]);
   phone.g.rotation.y = lerp(-0.5, -0.12 + ptr.sx * 0.06, rise) * (portrait ? 0.4 : 1);
@@ -309,7 +310,7 @@ function frame(now) {
   renderer.render(scene, camera);
 
   // ----- project hotspots: boxes track the illustrations -----
-  const spotOn = (1 - ss(0.82, 0.97, hp)) > 0.55;
+  const spotOn = heroOn > 0.55;
   spotLayer.style.opacity = spotOn ? 1 : 0;
   spotLayer.style.visibility = spotOn ? 'visible' : 'hidden';
   spots.forEach((el) => { el.style.pointerEvents = spotOn ? 'auto' : 'none'; });
@@ -330,18 +331,21 @@ function frame(now) {
   }
 
   // ----- DOM layers -----
-  const heroOn = 1 - ss(0.82, 0.97, hp);
   heroBack.style.opacity = heroFront.style.opacity = heroOn;
-  heroBack.style.transform = `translate3d(${ptr.sx * -10}px, ${-hp * 14}vh, 0)`;
-  heroFront.style.transform = `translate3d(0, ${-hp * 42}vh, 0)`;
+  if (portrait) {
+    heroBack.style.transform = `translate3d(${ptr.sx * -6}px, 0, 0)`;
+    heroFront.style.transform = 'none';
+  } else {
+    heroBack.style.transform = `translate3d(${ptr.sx * -10}px, ${-hp * 14}vh, 0)`;
+    heroFront.style.transform = `translate3d(0, ${-hp * 42}vh, 0)`;
+  }
   pinkPlate.style.setProperty('--mx', `${0.028 * (1 - thru) + ptr.sx * 0.02}em`);
   pinkPlate.style.setProperty('--my', `${-0.018 * (1 - thru) + ptr.sy * 0.012}em`);
   const noteOn = (1 - ss(0.3, 0.5, hp)) * heroOn;
   notes.style.opacity = noteOn;
 
-  const pipoOn = ss(0.86, 1, hp) * (1 - ss(0.985, 1, (sp - pipoTop) / (pipoLen + H * 0.6)));
+  const pipoOn = ss(portrait ? 0.72 : 0.9, 1, hp) * (1 - ss(0.985, 1, (sp - pipoTop) / (pipoLen + H * 0.6)));
   pipoLayers.forEach((l) => { l.style.opacity = pipoOn; l.style.visibility = pipoOn > 0.01 ? 'visible' : 'hidden'; });
-  pipoWord.style.setProperty('--px', `${-pp * 18}vw`);
   const ks = pp > 0 ? k : 0;
   if (ks !== curStep) {
     curStep = ks;
