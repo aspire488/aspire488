@@ -8,9 +8,7 @@
   </picture>
 </h1>
 
-hey, I'm Joel 👋 I learn by building things, shipping them, and finding out why they break. Here's what's on my desk.
-
-Here's what's on my [desk](https://aspire488.github.io/aspire488/).
+hey, I'm Joel 👋 I learn by building things, shipping them, and finding out why they break. Here's what's on my [desk](https://aspire488.github.io/aspire488/).
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=15&duration=2800&pause=850&color=3FB950&center=true&vCenter=true&width=720&lines=Ship+small.+Learn+fast.;Make+the+system+prove+it.;Build+things.+Make+them+hold+up." alt="Animated tagline: ship small, learn fast; make the system prove it; build things that hold up."/>
