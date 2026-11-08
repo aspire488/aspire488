@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joel Jigo</title>
+<meta name="description" content="Joel Jigo, student engineer. He learns by building things, shipping them, and finding out why they break.">
+<meta name="theme-color" content="#F4EEE1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F4EEE1'/%3E%3Ccircle cx='13' cy='15' r='9' fill='%230078BF' style='mix-blend-mode:multiply'/%3E%3Ccircle cx='19' cy='17' r='9' fill='%23FF48B0' style='mix-blend-mode:multiply'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Instrument+Serif:ital@0;1&family=Martian+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<canvas id="gl" aria-hidden="true"></canvas>
+<svg id="leaders" aria-hidden="true"></svg>
+
+<main>
+  <!-- ACT 1: the person -->
+  <section id="hero" aria-labelledby="name">
+    <div class="stage">
+      <div class="layer back" aria-hidden="true">
+        <div class="name plate-blue"><span>JOEL</span><span>JIGO</span></div>
+        <div class="name plate-pink"><span>JOEL</span><span>JIGO</span></div>
+      </div>
+
+      <div class="layer front">
+        <header class="bar">
+          <span>Joel Jigo</span>
+          <span>student engineer &middot; still learning</span>
+          <a href="https://github.com/aspire488">github / aspire488</a>
+        </header>
+        <h1 id="name" class="sr">Joel Jigo</h1>
+        <p class="creed">I learn by <em>building things,</em> <em>shipping them,</em> and <mark>finding out why they break.</mark></p>
+        <ul class="makes">
+          <li>a robot who lives in your phone</li>
+          <li>a universe in a browser tab</li>
+          <li>a bus booking system for one college route</li>
+          <li>fixes in other people's repos</li>
+        </ul>
+        <p class="cue">scroll &darr;</p>
+      </div>
+
+      <div class="notes" aria-hidden="true">
+        <p class="note" data-for="pipo"><b>Pipo</b> lives in your phone.<br>shipped v1.0</p>
+        <p class="note" data-for="planet"><b>Event Horizon</b> the app still<br>calls itself GOD MODE.</p>
+        <p class="note" data-for="bus"><b>Campus Bus</b> 166 tests.<br>tried on one PC so far.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT 2: Pipo -->
+  <section id="pipo" aria-labelledby="pipo-h">
+    <div class="stage">
+      <div class="layer back" aria-hidden="true">
+        <div class="flood"></div>
+        <div class="pipo-word">PIPO</div>
+      </div>
+      <div class="layer front">
+        <header class="spec">
+          <h2 id="pipo-h">Pipo</h2>
+          <p>a little robot who lives in your phone. Android APK. <b>shipped v1.0</b></p>
+        </header>
+        <ol class="steps">
+          <li>you close the app.</li>
+          <li>time passes.</li>
+          <li>he builds,</li>
+          <li>naps,</li>
+          <li>heads out.</li>
+          <li>you come back,</li>
+          <li>and he tells you what happened.</li>
+        </ol>
+        <div class="zz" aria-hidden="true"><i>z</i><i>z</i><i>z</i></div>
+        <p class="bubble" aria-hidden="true">while you were gone:<br>built a thing. napped.<br>went out for a bit.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- coda -->
+  <section id="rest" aria-labelledby="rest-h">
+    <h2 id="rest-h">the rest of the bench</h2>
+    <ul class="bench">
+      <li><b>Event Horizon</b><span>shipped &middot; live. 46 unit tests + 18 browser checks. not tried on real touch hardware.</span></li>
+      <li><b>Campus Bus</b><span>shipped v1.1. 166 tests, tried on one PC so far.</span></li>
+      <li><b>CodeFlow</b><span>shipped v1.1.0. 54 unit + 84 local browser + 70 production browser checks.</span></li>
+      <li><b>KIO</b><span>building. one gate at a time; C-4 next. Phase 0 deleted 5,167 lines.</span></li>
+      <li><b>AURA</b><span>built, not verified.</span></li>
+      <li><b>gh-ops</b><span>1,495 tests, then frozen.</span></li>
+    </ul>
+    <p class="upstream">in other people's code: merged into <b>microsoft/PyRIT</b>, <b>UKGovernmentBEIS/inspect_ai</b>, <b>eumemic/aios</b>. a Hermes Agent fix carried by a maintainer into another PR, with credit.</p>
+    <p class="sign">Make the system prove it. &mdash; <a href="https://github.com/aspire488">github / aspire488</a></p>
+  </section>
+</main>
+<script type="module" src="./main.js"></script>
+</body>
+</html>

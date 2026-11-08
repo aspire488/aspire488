@@ -1,6 +1,6 @@
-# Deploys the interactive edition in site/ to GitHub Pages.
+# Deploys the portfolio in site/off-register/ to GitHub Pages.
 # Kept separate from profile-cards.yml and quality.yml: this workflow only
-# builds the site, runs its checks, and publishes the Pages artifact.
+# builds the site and publishes the Pages artifact.
 name: Deploy site to GitHub Pages
 
 on:
@@ -31,31 +31,14 @@ jobs:
         with:
           node-version: 24
           cache: npm
-          cache-dependency-path: site/package-lock.json
+          cache-dependency-path: site/off-register/package-lock.json
 
       - name: Install dependencies
-        working-directory: site
+        working-directory: site/off-register
         run: npm ci
 
-      # Build-time snapshot (profile, repositories, languages, events, PR
-      # states) with GITHUB_TOKEN so the deployed site has an offline-safe
-      # fallback. Failures degrade to live reads; they never fabricate data.
-      - name: Capture GitHub data snapshot
-        working-directory: site
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: node scripts/snapshot.mjs
-
-      - name: Type-check
-        working-directory: site
-        run: npm run typecheck
-
-      - name: Test
-        working-directory: site
-        run: npm test
-
       - name: Build
-        working-directory: site
+        working-directory: site/off-register
         run: npm run build
         env:
           BASE_PATH: /aspire488/
@@ -66,7 +49,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          path: site/dist
+          path: site/off-register/dist
 
   deploy:
     needs: build
