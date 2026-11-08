@@ -36,7 +36,7 @@ test('upstream block', () => {
   });
   assert.ok(html.includes('data-repo="o/r"') && html.includes('<b>1</b> merged') && html.includes('n &lt;x&gt;'));
   assert.ok(html.includes('title="fix &quot;y&quot;"'));
-  assert.ok(html.includes('2 merged, 3 open (drafts counted separately: 1), 4 closed without merging'));
+  assert.ok(html.includes('2 pull requests merged into other people's projects, 3 still open, 1 drafts, 4 closed without merging'));
 });
 test('markers are replaced; absent markers never read data', () => {
   const never = () => { throw new Error('should not load'); };

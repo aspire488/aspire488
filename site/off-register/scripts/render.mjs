@@ -61,7 +61,7 @@ export function renderUpstream(c) {
   });
   const n = c.counts;
   return `<div class="up-feat">\n${groups.join('\n')}\n      </div>
-      <p class="up-more">${n.merged} merged, ${n.open} open (drafts counted separately: ${n.draft}), ${n.closed} closed without merging. ${link(c.atlas, 'Explore the rest of my open-source work')}</p>`;
+      <p class="up-more">${n.merged} pull requests merged into other people's projects, ${n.open} still open, ${n.draft} drafts, ${n.closed} closed without merging. ${link(c.atlas, 'Explore the rest of my open-source work')}</p>`;
 }
 
 // Replaces the <!--@featured-->, <!--@more-->, <!--@upstream--> markers. Data is read lazily, only for markers present.
