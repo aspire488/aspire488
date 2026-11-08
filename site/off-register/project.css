@@ -7,6 +7,8 @@
 }
 .theme-eh{--a:var(--blue);--b:var(--pink)}
 .theme-cf{--a:var(--pink-display);--b:var(--blue)}
+.theme-pipo{--a:var(--pink-display);--b:var(--ink)}
+.theme-bus{--a:#FF4200;--b:var(--ink)} /* riso red: pink x yellow; 3:1 on paper, so display type only */
 *{box-sizing:border-box}
 html{background:var(--paper)}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -63,7 +65,7 @@ blockquote p{margin:0;max-width:30ch;font-size:clamp(26px,2.6vw,40px);line-heigh
 .p-arch,.p-hard,.p-lim,.p-tech{margin:0;padding:0;list-style:none}
 .p-arch li{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;align-items:baseline;padding:12px 0;border-bottom:1px solid rgba(0,34,127,.2)}
 .p-arch b{font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase}
-.p-arch code{font-family:var(--mono);font-size:12px;color:var(--pink-text)}
+.p-arch code{font-family:var(--mono);font-size:12px;color:var(--pink-text);overflow-wrap:anywhere}
 .p-arch span{grid-column:1/-1;font-size:clamp(17px,1.3vw,19px);line-height:1.35;max-width:60ch}
 .p-dec{margin:0;padding:0;list-style:none;counter-reset:d;display:grid;gap:22px}
 .p-dec li{counter-increment:d;display:grid;grid-template-columns:2.2em 1fr;gap:2px 10px}

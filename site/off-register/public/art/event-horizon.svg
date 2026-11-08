@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <pattern id="d" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.15" fill="#FF48B0"/></pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply">
+    <!-- pink plate: halftone glow, offset a few px from the blue plate -->
+    <circle cx="63" cy="62" r="34" fill="url(#d)"/>
+    <path d="M7 31C47 24 90 25 104 56C110 70 109 90 113 110" stroke="#FF48B0" stroke-width="3.2" stroke-linecap="round"/>
+    <!-- blue plate: lensing ring, dark disc, the same bent ray -->
+    <circle cx="60" cy="60" r="31" stroke="#0078BF" stroke-width="4.5"/>
+    <circle cx="60" cy="60" r="17" fill="#0078BF"/>
+    <path d="M4 28C44 21 87 22 101 53C107 67 106 88 110 108" stroke="#0078BF" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="1 5"/>
+    <circle cx="5" cy="28.5" r="3.4" fill="#0078BF"/>
+  </g>
+</svg>

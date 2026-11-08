@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pipo: how it's built. Joel Jigo</title>
+<meta name="description" content="Pipo is an Android app in Kotlin and Jetpack Compose on a deterministic life simulation, with a separate three.js room on GitHub Pages. How it is put together.">
+<link rel="canonical" href="https://aspire488.github.io/aspire488/pipo/">
+<meta property="og:title" content="Pipo: how it's built">
+<meta property="og:description" content="Pipo is an Android app in Kotlin and Jetpack Compose on a deterministic life simulation, with a separate three.js room on GitHub Pages. How it is put together.">
+<meta property="og:url" content="https://aspire488.github.io/aspire488/pipo/">
+<meta property="og:image" content="https://aspire488.github.io/aspire488/og.png">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4EEE1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F4EEE1'/%3E%3Ccircle cx='13' cy='15' r='9' fill='%230078BF'/%3E%3Ccircle cx='19' cy='17' r='9' fill='%23FF48B0' fill-opacity='.85'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../fonts.css">
+<link rel="stylesheet" href="../project.css">
+</head>
+<body class="theme-pipo">
+<a class="skip" href="#main">Skip to the content</a>
+<header class="p-bar">
+  <a href="../">Joel Jigo</a>
+  <nav aria-label="Project links">
+    <a href="https://aspire488.github.io/Pipo/" target="_blank" rel="noopener noreferrer">live world <span aria-hidden="true">&#8599;</span></a>
+    <a href="https://github.com/aspire488/Pipo" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a>
+  </nav>
+</header>
+<main id="main">
+  <section class="p-hero" aria-labelledby="title">
+    <h1 id="title" class="p-title"><span class="ink-a">Pipo</span><span class="ink-b" aria-hidden="true">Pipo</span></h1>
+    <p class="p-over">Pipo is an Android app about a small robot who lives his own day. It is Kotlin and Jetpack Compose on a deterministic life simulation: ten personality traits, twelve moods, persistent memory, and the time you were away replayed when you open it. The 3D room on the web is a separate three.js project in the same repository.</p>
+    <p class="p-status"><mark>shipped, v1.0 (2026-10-04)</mark></p>
+    <p class="p-note">Tried on one phone so far: a Samsung Galaxy S23.</p>
+  </section>
+
+  <figure class="p-fig"><svg viewBox="0 0 960 680" role="img" aria-labelledby="fig-t" class="diagram">
+<title id="fig-t">Pipo architecture: Compose screens and HomeViewModel sit on a deterministic engine and one saved state in engine/ and data/. Rendering, voice, AI chat, the hourly worker and phone actions hang off it. The web room in web/ is a separate JavaScript project.</title>
+<g class="orbit"><ellipse cx="250" cy="345" rx="230" ry="170"/><ellipse cx="250" cy="345" rx="175" ry="128"/></g>
+<rect class="hub" x="250" y="22" width="460" height="62"/><text class="t-name" x="480" y="52" text-anchor="middle">ui/home + ui/screens</text><text class="t-small" x="480" y="72" text-anchor="middle">Compose screens; HomeViewModel stages outcomes</text>
+<rect class="core" x="60" y="160" width="412" height="370"/>
+<text class="t-name" x="90" y="194">engine/ + data/</text><text class="t-small" x="90" y="214">one deterministic simulation, one saved state</text>
+<g class="step"><rect x="84" y="240" width="362" height="46"/><text x="100" y="269">BehaviorEngine: picks next activity</text></g>
+<g class="step"><rect x="84" y="310" width="362" height="46"/><text x="100" y="339">Simulator: replays time away</text></g>
+<g class="step"><rect x="84" y="380" width="362" height="46"/><text x="100" y="409">Grounding: answers from saved state</text></g>
+<g class="step"><rect x="84" y="450" width="362" height="46"/><text x="100" y="479">PipoRepository: atomic JSON save</text></g>
+<path class="arrow" d="M472 345 C 540 345 530 190 596 190"/><path class="arrow" d="M472 345 C 540 345 530 266 596 266"/><path class="arrow" d="M472 345 L 596 342"/><path class="arrow" d="M472 345 C 540 345 530 418 596 418"/><path class="arrow" d="M472 345 C 540 345 530 494 596 494"/>
+<g class="leaf"><rect x="596" y="160" width="338" height="60"/><text class="t-name" x="618" y="186">ui/render</text><text class="t-small" x="618" y="206">Canvas painters, rig, room light</text></g>
+<g class="leaf"><rect x="596" y="236" width="338" height="60"/><text class="t-name" x="618" y="262">voice/</text><text class="t-small" x="618" y="282">toddler voice, Vosk wake word</text></g>
+<g class="leaf"><rect x="596" y="312" width="338" height="60"/><text class="t-name" x="618" y="338">ai/ + server/</text><text class="t-small" x="618" y="358">Gemini, then Groq, then offline</text></g>
+<g class="leaf"><rect x="596" y="388" width="338" height="60"/><text class="t-name" x="618" y="414">notify/</text><text class="t-small" x="618" y="434">hourly WorkManager catch-up</text></g>
+<g class="leaf"><rect x="596" y="464" width="338" height="60"/><text class="t-name" x="618" y="490">phone/ + lock/</text><text class="t-small" x="618" y="510">actions you ask for; Pipo lock</text></g>
+<path class="arrow" d="M480 84 L 300 160"/><path class="arrow" d="M480 84 L 700 160"/>
+<g class="leaf"><rect x="60" y="556" width="874" height="102"/><text class="t-name" x="84" y="586">web/</text><text class="t-small" x="84" y="608">scene.js, pipo.js, brain.js, camera.js, main.js on a vendored three.js</text><text class="t-small" x="84" y="626">its own JavaScript brain, not the Kotlin engine</text><text class="t-note" x="84" y="646">deployed to GitHub Pages by .github/workflows/web-pages.yml</text></g>
+</svg><figcaption>Drawn from the source tree, not a screenshot.</figcaption></figure>
+
+  <section class="p-sec" aria-labelledby="why"><h2 id="why">Why it exists</h2><blockquote><p>You don&#x27;t manage him. You drop in and discover what happened.</p></blockquote><p class="p-small">From the README. Its engine notes say the same in code terms: elapsed time is reconciled when Pipo returns, and no always-running server is required.</p></section>
+  <section class="p-sec" aria-labelledby="role"><h2 id="role">What I built</h2><p class="p-text">Built solo: the simulation engine, the Compose and Canvas renderer, the toddler voice and wake word, the chat brain and its Cloudflare proxy, the three.js web room, the tests, and the CI workflows.</p><p class="p-small">GitHub lists one contributor on the repository.</p></section>
+  <section class="p-sec" aria-labelledby="arch"><h2 id="arch">How it's put together</h2><ul class="p-arch"><li><b>Simulation core</b> <code>engine/</code><span>Personality, mood, behaviour, trips, the world, games, conversation and grounding. Under app/src/main/java/com/pipo/robot/. It runs in local unit tests, no device needed.</span></li><li><b>Saved state</b> <code>data/</code><span>One PipoState in one JSON file, written through a temp file and a rename. Migrations upgrade old saves, and the old file is kept beside the new one as a .bak.json.</span></li><li><b>Renderer</b> <code>ui/render/</code><span>PipoPainter, RoomPainter, PetPainter, Rig and the other painters draw everything on the Compose Canvas, lit by time of day.</span></li><li><b>Voice</b> <code>voice/</code><span>ToddlerVoice shifts an adult text-to-speech voice. WakeModel fetches the offline Vosk model behind the &quot;Pipo&quot; wake word. VoicePolicy decides when the listener may hold the microphone.</span></li><li><b>Chat</b> <code>ai/, server/worker.js</code><span>ChatBrain tries Gemini, then Groq, then falls back to his offline words. Store builds call a small Cloudflare Worker that holds the keys.</span></li><li><b>Background</b> <code>notify/PipoWorker.kt</code><span>WorkManager wakes roughly hourly, replays his life, and may let him send one message about something that happened.</span></li><li><b>Phone actions</b> <code>engine/PhoneCommands.kt, lock/PipoLock.kt</code><span>Commands you ask for: torch, volume, apps, alarms (after a confirmation). Pipo lock uses the platform&#x27;s force-lock device admin.</span></li><li><b>Web room</b> <code>web/</code><span>A three.js 0.169 scene served from GitHub Pages. web/classic is the original 2D world.</span></li></ul></section>
+  <section class="p-sec" aria-labelledby="dec"><h2 id="dec">Decisions, and why</h2><ol class="p-dec"><li><p class="q">No background process: the time you were away is replayed in 40-minute steps, up to three days.</p><p>Simulator.kt says nothing runs continuously. When the app or the hourly worker wakes, the same behaviour engine replays the gap, then saves.</p></li><li><p class="q">The AI only voices Pipo.</p><p>ChatBrain keeps the local engines as the source of truth, and the AI keeps any action the offline brain chose. The offline reply is the fallback whenever the network or a provider fails. Grounding.kt feeds both from saved state, so &quot;what did we do yesterday?&quot; gets the real day.</p></li><li><p class="q">Provider keys are blanked in release builds and live in a proxy.</p><p>The build file says anything in an APK can be pulled out by whoever has the file. The proxy only allows the models and endpoints Pipo uses and rate-limits per install, but its README is plain that those limits are abuse controls, not authentication.</p></li><li><p class="q">The wake-word model is downloaded once, and only accepted if its SHA-256 matches.</p><p>A tampered or truncated file is thrown away. The model runs on the phone and nothing is uploaded.</p></li><li><p class="q">His voice is made by shifting playback, not only pitch.</p><p>Raising text-to-speech pitch alone gives a chipmunk man. The line is rendered slowly at a raised pitch, then played 1.45x faster, which scales pitch and formants together.</p></li><li><p class="q">Pipo lock uses the platform&#x27;s force-lock policy, not an accessibility service.</p><p>Nothing reads the screen, apps or typing, and Android shows its own activation screen before anything works.</p></li></ol></section>
+  <section class="p-sec" aria-labelledby="hard"><h2 id="hard">The interesting problems</h2><ul class="p-hard"><li><h3>Colour blending was the hottest path</h3><p>simpleperf on the S23 showed Compose&#x27;s lerp(Color, Color) converting through Oklab dozens of times a frame. ColorMath.lerp blends packed sRGB instead. Release frame time went from p50 13 ms to 11 ms and p90 20 ms to 16 ms (dumpsys gfxinfo).</p></li><li><h3>A project retry loop</h3><p>After a retry had evolved a project into something else, he &quot;tried again&quot; from scratch and attempt numbers went backwards: the retry candidate ignored later attempts. Fix: retry only when the latest attempt failed, covered by three tests and a two-week simulation.</p></li><li><h3>The first line after a cold start was silent</h3><p>His mouth moved and nothing played, because the speech engine was still initialising (over 3 s). Speech now waits for voice.ready, up to 8 s.</p></li><li><h3>A carried Pipo drifted from the finger</h3><p>About 120 px, because the camera kept re-centring on him during the drag. The camera now holds during a carry and edge-scroll takes him along.</p></li></ul></section>
+  <section class="p-sec" aria-labelledby="tests"><h2 id="tests">How it's tested</h2><p class="p-text">Last verified run (device report, 2026-09-29): 68/68 JVM unit tests across 11 test classes, 6/6 instrumentation tests (PoseGalleryTest) on the S23, lint 0 errors and 12 warnings. Last CI run on main (2026-11-05): 226 tests, 1 failed.</p><p class="p-small">The failing one is GroundedLifeTest &gt; askedToShopLateHeNeverWandersOffToTheGarden. Counting @Test in app/src/test gives 226 across 31 files, so the suite has grown since the device report. ./gradlew testDebugUnitTest; ./gradlew assembleDebug. build-apk.yml runs both on every push and uploads the debug APK and test reports. LongLifeSimulationTest runs six seeded personalities through two weeks, hour by hour, on the real engine, and fails on retry loops. On the S23 I also checked process death and relaunch, home and return, and screen-off and unlock.</p></section>
+  <section class="p-sec" aria-labelledby="lim"><h2 id="lim">Limits I've written down</h2><ul class="p-lim"><li>One phone, at 60 Hz. Battery drain, a thermal soak and a 120 Hz mode were not measured.</li><li>CPU use is about 0.9 of one core in release: fine for a foreground character app, not small. Caching the static parts of the room into a layer is the noted next step.</li><li>Mouth timing is estimated from speech rate, not synchronised with the audio.</li><li>Chat needs your own Gemini or Groq keys at build time, or a proxy. Builds without keys, like CI, use the offline brain.</li><li>Notification noticing was tested with ADB-posted stand-ins for real third-party messages, and the hourly worker by running the same code on demand.</li><li>The device report covers the build before the trips, Nib, weather and map update. docs/FEATURE_HISTORY.md marks later features as seen on the phone, but there is no full report for them.</li></ul></section>
+  <section class="p-sec" aria-labelledby="stack"><h2 id="stack">Stack</h2><ul class="p-tech"><li>Kotlin 2.0.21</li><li>Jetpack Compose (BOM 2024.10.01)</li><li>Material 3</li><li>Android Gradle Plugin 8.7.3</li><li>minSdk 26, targetSdk 35</li><li>kotlinx.serialization 1.7.3</li><li>Coroutines 1.8.1</li><li>WorkManager 2.9.1</li><li>Vosk Android 0.3.75</li><li>JUnit 4.13.2</li><li>three.js r169</li><li>Cloudflare Workers</li></ul></section>
+
+  <nav class="p-next" aria-label="More work">
+    <a class="p-next-main" href="../event-horizon/">Next: Event Horizon</a>
+    <a href="../#rest">All the work</a>
+    <a href="../#contact">Get in touch</a>
+  </nav>
+</main>
+<footer class="p-foot"><span>Joel Jigo</span><a href="mailto:joeljigo3@gmail.com">joeljigo3@gmail.com</a><a href="https://github.com/aspire488" target="_blank" rel="noopener noreferrer">github.com/aspire488 <span aria-hidden="true">&#8599;</span></a></footer>
+</body>
+</html>

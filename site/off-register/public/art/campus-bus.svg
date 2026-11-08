@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <pattern id="d" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.15" fill="#FF48B0"/></pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" stroke-linecap="round" stroke-linejoin="round">
+    <!-- pink plate: the route, and the one chosen seat (halftone), offset from the blue plate -->
+    <path d="M10 100C30 100 36 68 60 68S94 96 114 72" stroke="#FF48B0" stroke-width="5"/>
+    <rect x="52" y="24" width="14" height="14" fill="url(#d)"/>
+    <path d="M52 24H66" stroke="#FF48B0" stroke-width="4"/>
+    <!-- blue plate: seat map (2+2, three rows), the stops -->
+    <g stroke="#0078BF" stroke-width="2.5">
+      <rect x="10" y="8" width="13" height="13"/><rect x="27" y="8" width="13" height="13"/><rect x="50" y="8" width="13" height="13"/><rect x="67" y="8" width="13" height="13"/>
+      <rect x="10" y="24" width="13" height="13"/><rect x="27" y="24" width="13" height="13"/><rect x="50" y="22" width="13" height="13" stroke-width="3.2"/><rect x="67" y="24" width="13" height="13"/>
+      <rect x="10" y="40" width="13" height="13"/><rect x="27" y="40" width="13" height="13"/><rect x="50" y="40" width="13" height="13"/><rect x="67" y="40" width="13" height="13"/>
+    </g>
+    <path d="M8 98C28 98 34 66 58 66S92 94 112 70" stroke="#0078BF" stroke-width="1.6" stroke-dasharray="1 5"/>
+    <g fill="#0078BF">
+      <circle cx="8" cy="98" r="4.6"/><circle cx="31.5" cy="82" r="4.6"/><circle cx="58" cy="66" r="4.6"/><circle cx="86.5" cy="77" r="4.6"/><circle cx="112" cy="70" r="4.6"/>
+    </g>
+  </g>
+</svg>
