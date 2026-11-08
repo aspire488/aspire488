@@ -1,0 +1,18 @@
+{
+  "name": "off-register",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Off-Register: Joel Jigo's portfolio. Three riso inks on warm paper, printed live in the browser.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.6"
+  }
+}
