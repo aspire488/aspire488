@@ -13,8 +13,8 @@
 <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+<a class="skip" href="#rest">Skip to the work</a>
 <canvas id="gl" aria-hidden="true"></canvas>
-<svg id="leaders" aria-hidden="true"></svg>
 
 <main>
   <!-- ACT 1: the person -->
@@ -29,10 +29,16 @@
         <header class="bar">
           <span>Joel Jigo</span>
           <span>student engineer &middot; still learning</span>
-          <a href="https://github.com/aspire488">github / aspire488</a>
+          <nav class="bar-links" aria-label="Elsewhere">
+            <a href="#contact">contact</a>
+            <a href="https://github.com/aspire488" target="_blank" rel="me noopener noreferrer">github / aspire488 <span aria-hidden="true">&#8599;</span></a>
+          </nav>
         </header>
         <h1 id="name" class="sr">Joel Jigo</h1>
-        <p class="creed">I learn by <em>building things,</em> <em>shipping them,</em> and <mark>finding out why they break.</mark></p>
+        <div class="declaration">
+          <p class="motto"><span>ship small.</span> <span>learn fast.</span></p>
+          <p class="creed">I learn by <em>building things,</em> <em>shipping them,</em> and <mark>finding out why they break.</mark></p>
+        </div>
         <ul class="makes">
           <li>a robot who lives in your phone</li>
           <li>a universe in a browser tab</li>
@@ -41,6 +47,18 @@
         </ul>
         <p class="cue">scroll &darr;</p>
       </div>
+
+      <nav class="spots" aria-label="Featured projects">
+        <a class="spot" data-project="planet" href="https://github.com/aspire488/event-horizon" target="_blank" rel="noopener noreferrer" aria-label="Event Horizon, repository on GitHub, opens in a new tab">
+          <span class="spot-label" aria-hidden="true"><b>Event Horizon</b><span>GitHub &#8599;</span></span>
+        </a>
+        <a class="spot" data-project="pipo" href="https://github.com/aspire488/Pipo" target="_blank" rel="noopener noreferrer" aria-label="Pipo, repository on GitHub, opens in a new tab">
+          <span class="spot-label" aria-hidden="true"><b>Pipo</b><span>GitHub &#8599;</span></span>
+        </a>
+        <a class="spot" data-project="bus" href="https://github.com/aspire488/campus-bus" target="_blank" rel="noopener noreferrer" aria-label="Campus Bus, repository on GitHub, opens in a new tab">
+          <span class="spot-label" aria-hidden="true"><b>Campus Bus</b><span>GitHub &#8599;</span></span>
+        </a>
+      </nav>
 
       <div class="notes" aria-hidden="true">
         <p class="note" data-for="pipo"><b>Pipo</b> lives in your phone.<br>shipped v1.0</p>
@@ -59,8 +77,9 @@
       </div>
       <div class="layer front">
         <header class="spec">
-          <h2 id="pipo-h">Pipo</h2>
+          <h2 id="pipo-h"><a class="card-link" href="https://github.com/aspire488/Pipo" target="_blank" rel="noopener noreferrer">Pipo <span aria-hidden="true">&#8599;</span><span class="sr">source on GitHub, opens in a new tab</span></a></h2>
           <p>a little robot who lives in your phone. Android APK. <b>shipped v1.0</b></p>
+          <p class="spec-links"><a href="https://aspire488.github.io/Pipo/" target="_blank" rel="noopener noreferrer">visit Pipo's world <span aria-hidden="true">&#8599;</span></a></p>
         </header>
         <ol class="steps">
           <li>you close the app.</li>
@@ -81,17 +100,99 @@
   <section id="rest" aria-labelledby="rest-h">
     <h2 id="rest-h">the rest of the bench</h2>
     <ul class="bench">
-      <li><b>Event Horizon</b><span>shipped &middot; live. 46 unit tests + 18 browser checks. not tried on real touch hardware.</span></li>
-      <li><b>Campus Bus</b><span>shipped v1.1. 166 tests, tried on one PC so far.</span></li>
-      <li><b>CodeFlow</b><span>shipped v1.1.0. 54 unit + 84 local browser + 70 production browser checks.</span></li>
-      <li><b>KIO</b><span>building. one gate at a time; C-4 next. Phase 0 deleted 5,167 lines.</span></li>
-      <li><b>AURA</b><span>built, not verified.</span></li>
-      <li><b>gh-ops</b><span>1,495 tests, then frozen.</span></li>
+      <li>
+        <a class="bench-link" href="https://github.com/aspire488/event-horizon" target="_blank" rel="noopener noreferrer">
+          <b>Event Horizon</b>
+          <span>shipped &middot; live. 46 unit tests + 18 browser checks. not tried on real touch hardware.</span>
+          <i class="bench-arrow" aria-hidden="true">GitHub &#8599;</i>
+          <span class="sr">repository on GitHub, opens in a new tab</span>
+        </a>
+        <a class="bench-live" href="https://event-horizon-teal.vercel.app" target="_blank" rel="noopener noreferrer">live app <span aria-hidden="true">&#8599;</span></a>
+      </li>
+      <li>
+        <a class="bench-link" href="https://github.com/aspire488/campus-bus" target="_blank" rel="noopener noreferrer">
+          <b>Campus Bus</b>
+          <span>shipped v1.1. 166 tests, tried on one PC so far.</span>
+          <i class="bench-arrow" aria-hidden="true">GitHub &#8599;</i>
+          <span class="sr">repository on GitHub, opens in a new tab</span>
+        </a>
+      </li>
+      <li>
+        <a class="bench-link" href="https://github.com/aspire488/codeflow" target="_blank" rel="noopener noreferrer">
+          <b>CodeFlow</b>
+          <span>shipped v1.1.0. 54 unit + 84 local browser + 70 production browser checks.</span>
+          <i class="bench-arrow" aria-hidden="true">GitHub &#8599;</i>
+          <span class="sr">repository on GitHub, opens in a new tab</span>
+        </a>
+        <a class="bench-live" href="https://codeflow-app-sigma.vercel.app" target="_blank" rel="noopener noreferrer">open the app <span aria-hidden="true">&#8599;</span></a>
+      </li>
+      <li>
+        <a class="bench-link" href="https://github.com/aspire488/Kio" target="_blank" rel="noopener noreferrer">
+          <b>KIO</b>
+          <span>building. one gate at a time; C-4 next. Phase 0 deleted 5,167 lines.</span>
+          <i class="bench-arrow" aria-hidden="true">GitHub &#8599;</i>
+          <span class="sr">repository on GitHub, opens in a new tab</span>
+        </a>
+      </li>
+      <li>
+        <a class="bench-link" href="https://github.com/aspire488/AURA" target="_blank" rel="noopener noreferrer">
+          <b>AURA</b>
+          <span>built, not verified.</span>
+          <i class="bench-arrow" aria-hidden="true">GitHub &#8599;</i>
+          <span class="sr">repository on GitHub, opens in a new tab</span>
+        </a>
+      </li>
+      <li>
+        <a class="bench-link" href="https://github.com/aspire488/gh-ops" target="_blank" rel="noopener noreferrer">
+          <b>gh-ops</b>
+          <span>1,495 tests, then frozen.</span>
+          <i class="bench-arrow" aria-hidden="true">GitHub &#8599;</i>
+          <span class="sr">repository on GitHub, opens in a new tab</span>
+        </a>
+      </li>
+      <li>
+        <a class="bench-link" href="https://github.com/aspire488/Universal-Engineering-Augmentation" target="_blank" rel="noopener noreferrer">
+          <b>UEA</b>
+          <span>public alpha, v0.1.0. coding agents that hand proof work to tree-sitter and Z3. token savings: not measured yet.</span>
+          <i class="bench-arrow" aria-hidden="true">GitHub &#8599;</i>
+          <span class="sr">repository on GitHub, opens in a new tab</span>
+        </a>
+      </li>
+      <li>
+        <a class="bench-link" href="https://github.com/aspire488/oss-atlas" target="_blank" rel="noopener noreferrer">
+          <b>OSS Atlas</b>
+          <span>case studies and a ledger of upstream fixes. observed, implemented, verified, documented.</span>
+          <i class="bench-arrow" aria-hidden="true">GitHub &#8599;</i>
+          <span class="sr">repository on GitHub, opens in a new tab</span>
+        </a>
+      </li>
     </ul>
     <p class="upstream">in other people's code: merged into <b>microsoft/PyRIT</b>, <b>UKGovernmentBEIS/inspect_ai</b>, <b>eumemic/aios</b>. a Hermes Agent fix carried by a maintainer into another PR, with credit.</p>
-    <p class="sign">Make the system prove it. &mdash; <a href="https://github.com/aspire488">github / aspire488</a></p>
+    <p class="sign">Make the system prove it. &mdash; <a href="https://github.com/aspire488" target="_blank" rel="me noopener noreferrer">github / aspire488 <span aria-hidden="true">&#8599;</span></a></p>
+  </section>
+
+  <!-- final act: contact -->
+  <section id="contact" class="contact" aria-labelledby="contact-h">
+    <p class="contact-kicker">a final impression</p>
+    <h2 id="contact-h" class="contact-title">Got something interesting in mind? <em>Say hello.</em></h2>
+    <div class="contact-aside">
+      <p class="contact-copy">If something here caught your attention, or you're building something that has to hold up, I'd like to hear about it. I'm open to collaborations, open-source contributions and engineering conversations.</p>
+      <p class="contact-actions">
+        <a class="contact-link" href="mailto:joeljigo3@gmail.com">Email <span aria-hidden="true">&#8599;</span></a>
+        <a class="contact-link" href="https://github.com/aspire488" target="_blank" rel="me noopener noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a>
+      </p>
+    </div>
+    <p class="signoff">Made with curiosity, questionable amounts of debugging, and a lot of coffee.</p>
   </section>
 </main>
+
+<footer class="site-foot">
+  <span>Joel Jigo</span>
+  <span>Aspire488</span>
+  <span>&copy; 2026</span>
+  <a href="#hero">Back to the top <span aria-hidden="true">&uarr;</span></a>
+</footer>
+
 <script type="module" src="./main.js"></script>
 </body>
 </html>

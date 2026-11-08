@@ -61,25 +61,6 @@ function ink(tint, amt, shade, extra = {}) {
   });
 }
 
-// type set as a real object in the scene so things can pass in front of and behind it
-function typePlane(text, color, worldH) {
-  const c = document.createElement('canvas'), x = c.getContext('2d');
-  const fs = 300; x.font = `900 ${fs}px "Big Shoulders Display"`;
-  const w = Math.ceil(x.measureText(text).width) + 40;
-  c.width = w; c.height = fs * 1.05;
-  x.font = `900 ${fs}px "Big Shoulders Display"`; x.fillStyle = '#fff'; x.textBaseline = 'alphabetic';
-  x.fillText(text, 20, fs * 0.86);
-  const tex = new THREE.CanvasTexture(c); tex.anisotropy = 4;
-  const m = new THREE.ShaderMaterial({
-    transparent: true, depthWrite: false,
-    uniforms: { uMap: { value: tex }, uInk: { value: V(C[color]) } },
-    vertexShader: vert,
-    fragmentShader: `uniform sampler2D uMap; uniform vec3 uInk; varying vec2 vUv;
-      void main(){ float a = texture2D(uMap, vUv).a; gl_FragColor = vec4(uInk, a * .94); }`,
-  });
-  return new THREE.Mesh(new THREE.PlaneGeometry(worldH * c.width / c.height, worldH), m);
-}
-
 // ---------- Pipo (original: a squat yellow body, a blue face screen, paper-white eyes knocked out of it) ----------
 function makePipo() {
   const g = new THREE.Group(), rig = new THREE.Group(); g.add(rig);
@@ -171,23 +152,24 @@ function makePhone() {
 
 const pipo = makePipo(), planet = makePlanet(), bus = makeBus(), phone = makePhone();
 scene.add(pipo.g, planet.g, bus.g, phone.g);
-let shipPlane, fastPlane;
 
 // ---------- layout (desktop vs portrait) ----------
-let W = innerWidth, H = innerHeight, portrait = W / H < 0.8;
+let W = innerWidth, H = innerHeight, portrait = W <= 1300;
+// place the three objects at fixed fractions of the viewport, whatever the camera does
+const CAM_Z = 13;
+const ppuAt = (z) => H / (2 * Math.tan(17.5 * DEG) * (CAM_Z - z));
+const worldX = (z, frac) => (frac * W - W / 2) / ppuAt(z);
 const LAY = () => portrait ? {
-  pipo: [0.75, -0.75, 1.5, .58], planet: [-0.75, 2.75, -2, .42], bus: [-0.95, -2.9, 0.6, .4],
-  ship: [-0.3, 0.2, -2.5, 1.4], fast: [0.2, -2.0, 2.6, 1.1],
+  pipo: [0, 1.2, 1.5, .5 * Math.min(1.6, Math.max(1, W / 500))], planet: [worldX(0, 0.18), 2.0, 0, .3 * Math.min(1.6, Math.max(1, W / 500))], bus: [worldX(0.5, 0.83), 1.75, 0.5, .4 * Math.min(1.6, Math.max(1, W / 500))],
   phone: [0, 0.2, 0, .8], home: [0.45, -2.6, 0.95],
 } : {
-  pipo: [2.3, -0.9, 1.6, .95], planet: [0.2, 1.7, -2.4, .95], bus: [1.5, -3.05, 1.3, .7],
-  ship: [3.0, 1.35, -3.4, 2.0], fast: [-0.9, -2.55, 2.9, 1.05],
+  pipo: [1.15, -1.15, 1.6, .9], planet: [0.2, H < 800 ? 2.5 : 2.7, -2.4, H < 800 ? .52 : .58], bus: [1.5, -3.05, 1.3, .7],
   phone: [2.7, 0.05, 0, .96], home: [0.45, -2.6, 0.95],
 };
 let lay = LAY();
 
 function resize() {
-  W = innerWidth; H = innerHeight; portrait = W / H < 0.8; lay = LAY();
+  W = innerWidth; H = innerHeight; portrait = W <= 1300; lay = LAY();
   renderer.setSize(W, H, false);
   camera.aspect = W / H; camera.updateProjectionMatrix();
   measure();
@@ -210,10 +192,22 @@ const pipoLayers = document.querySelectorAll('#pipo .layer');
 const pinkPlate = document.querySelector('.plate-pink'), pipoWord = document.querySelector('.pipo-word');
 const steps = [...document.querySelectorAll('.steps li')];
 const bubble = document.querySelector('.bubble'), zz = document.querySelector('.zz');
-const noteEls = [...document.querySelectorAll('.note')];
-const leaders = document.getElementById('leaders');
-leaders.innerHTML = noteEls.map(() => '<path/><circle r="3.5"/>').join('');
-const lPaths = leaders.querySelectorAll('path'), lDots = leaders.querySelectorAll('circle');
+const spots = [...document.querySelectorAll('.spot')];
+const spotLayer = document.querySelector('.spots');
+const spotSpec = {
+  planet: { obj: planet.g, w: 4.1, h: 4.1, cy: 0 },
+  pipo: { obj: pipo.g, w: 1.8, h: 2.2, cy: 1.05 },
+  bus: { obj: bus.g, w: 2.85, h: 1.5, cy: 0 },
+};
+const spotHover = { planet: 0, pipo: 0, bus: 0 };
+let hoveredSpot = null;
+spots.forEach((el) => {
+  const key = el.dataset.project;
+  el.addEventListener('pointerenter', () => { hoveredSpot = key; });
+  el.addEventListener('pointerleave', () => { if (hoveredSpot === key) hoveredSpot = null; });
+  el.addEventListener('focus', () => { hoveredSpot = key; });
+  el.addEventListener('blur', () => { if (hoveredSpot === key) hoveredSpot = null; });
+});
 
 // ---------- pointer ----------
 const ptr = { x: 0, y: 0, sx: 0, sy: 0 };
@@ -232,8 +226,8 @@ function frame(now) {
   running = false;
   if (!visible) return;
   const y = scrollY;
-  if (y > restTop) { canvas.style.visibility = 'hidden'; leaders.style.visibility = 'hidden'; return; } // coda covers everything: stop drawing
-  canvas.style.visibility = leaders.style.visibility = 'visible';
+  if (y > restTop) { canvas.style.visibility = 'hidden'; notes.style.visibility = 'hidden'; spotLayer.style.visibility = 'hidden'; return; } // coda covers everything: stop drawing
+  canvas.style.visibility = notes.style.visibility = 'visible';
 
   const t = reduced ? 0 : (now - t0) / 1000;
   sp = reduced ? y : lerp(sp, y, 0.14);
@@ -248,24 +242,21 @@ function frame(now) {
   // ----- hero objects pass between type layers -----
   const P = lay;
   const thru = ss(0, 0.6, hp);
-  planet.g.position.set(P.planet[0] - thru * 2.6 - into * 4, P.planet[1] + thru * 0.4 + into * 4, lerp(P.planet[2], 3.6, thru));
-  planet.g.scale.setScalar(P.planet[3]);
-  planet.g.rotation.y = t * 0.15;
+  spotHover.planet += ((hoveredSpot === 'planet' ? 1 : 0) - spotHover.planet) * 0.14;
+  spotHover.pipo += ((hoveredSpot === 'pipo' ? 1 : 0) - spotHover.pipo) * 0.14;
+  spotHover.bus += ((hoveredSpot === 'bus' ? 1 : 0) - spotHover.bus) * 0.14;
+  planet.g.position.set(P.planet[0] - thru * 2.6 - into * 4, P.planet[1] + thru * 0.4 + into * 4 + spotHover.planet * 0.12, lerp(P.planet[2], 3.6, thru));
+  planet.g.scale.setScalar(P.planet[3] * (1 + spotHover.planet * 0.055));
+  planet.g.rotation.y = t * 0.15 + spotHover.planet * 0.35;
   planet.moon.position.set(Math.cos(t * 0.6) * 3.1, 0, Math.sin(t * 0.6) * 3.1);
   planet.g.visible = into < 0.999;
 
   const drive = ss(0.05, 0.75, hp);
-  bus.g.position.set(P.bus[0] - drive * (portrait ? 5 : 11), P.bus[1] + Math.abs(Math.sin(t * 7)) * 0.03, lerp(P.bus[2], portrait ? 1 : 1.2, drive));
+  bus.g.position.set(P.bus[0] - drive * (portrait ? 5 : 11), P.bus[1] + Math.abs(Math.sin(t * 7)) * 0.03 + spotHover.bus * 0.07, lerp(P.bus[2], portrait ? 1 : 1.2, drive));
   bus.g.rotation.y = Math.PI + Math.sin(t * .7) * 0.04;
-  bus.g.scale.setScalar(P.bus[3]);
+  bus.g.scale.setScalar(P.bus[3] * (1 + spotHover.bus * 0.055));
   bus.wheels.forEach((w) => (w.rotation.y = -sp * 0.02));
   bus.g.visible = drive < 0.999 && into < 0.999;
-
-  if (shipPlane) {
-    shipPlane.position.set(P.ship[0] + ptr.sx * -0.2, P.ship[1] + hp * 1.5 + into * 6, P.ship[2]);
-    fastPlane.position.set(P.fast[0] - hp * 1.5 + ptr.sx * 0.3, P.fast[1] - into * 6, P.fast[2]);
-    shipPlane.visible = fastPlane.visible = into < 0.999;
-  }
 
   // ----- pipo: hero spot -> his phone -----
   const ph = P.phone, ho = P.home;
@@ -283,9 +274,9 @@ function frame(now) {
   const homeW = new THREE.Vector3(px, ho[1], ho[2]).multiplyScalar(ph[3]).applyEuler(phone.g.rotation).add(phone.g.position);
   const heroPos = new THREE.Vector3(P.pipo[0] + Math.sin(t * .5) * .08, P.pipo[1], P.pipo[2]);
   pipo.g.position.lerpVectors(heroPos, homeW, into);
-  pipo.g.scale.setScalar(lerp(P.pipo[3], ph[3] * 0.74, into));
+  pipo.g.scale.setScalar(lerp(P.pipo[3], ph[3] * 0.74, into) * (1 + spotHover.pipo * 0.055));
   const lookX = into < 0.5 ? ptr.sx * 0.5 : 0;
-  pipo.g.rotation.y = lerp(-0.35 + lookX, phone.g.rotation.y, into) + face;
+  pipo.g.rotation.y = lerp(-0.35 + lookX, phone.g.rotation.y, into) + face + spotHover.pipo * 0.3;
 
   const dx = Math.abs(pipo.g.position.x - lastX); lastX = pipo.g.position.x;
   walkPhase += dx * 9 + (into > 0 && into < 1 ? 0.12 : 0);
@@ -297,7 +288,7 @@ function frame(now) {
   const nap = pp > 0 && k === 3 ? ss(0, .25, f) * (1 - ss(.85, 1, f)) : 0;
   const build = pp > 0 && k === 2 ? 1 : 0;
   const wave = pp > 0 && k >= 5 && !(k === 5 && f < .6) ? 1 : (into < 0.3 ? 0.35 : 0);
-  pipo.rig.position.y = Math.sin(t * 2.2) * 0.04 * (1 - nap) - nap * 0.12 + (walking ? Math.abs(Math.sin(walkPhase)) * 0.06 : 0);
+  pipo.rig.position.y = Math.sin(t * 2.2) * 0.04 * (1 - nap) - nap * 0.12 + (walking ? Math.abs(Math.sin(walkPhase)) * 0.06 : 0) + spotHover.pipo * Math.abs(Math.sin(t * 7)) * 0.05;
   pipo.rig.rotation.z = nap * 0.14 + Math.sin(t * 1.3) * 0.02;
   pipo.rig.rotation.x = nap * 0.12 - (k === 1 && pp > 0 ? 0.12 : 0);
   const blink = !reduced && (t % 3.4) < 0.12 ? 0.12 : 1;
@@ -317,6 +308,27 @@ function frame(now) {
 
   renderer.render(scene, camera);
 
+  // ----- project hotspots: boxes track the illustrations -----
+  const spotOn = (1 - ss(0.82, 0.97, hp)) > 0.55;
+  spotLayer.style.opacity = spotOn ? 1 : 0;
+  spotLayer.style.visibility = spotOn ? 'visible' : 'hidden';
+  spots.forEach((el) => { el.style.pointerEvents = spotOn ? 'auto' : 'none'; });
+  if (spotOn) {
+    const p = new THREE.Vector3();
+    spots.forEach((el) => {
+      const spec = spotSpec[el.dataset.project];
+      const s = spec.obj.scale.x;
+      spec.obj.getWorldPosition(p); p.y += spec.cy * s;
+      const dist = camera.position.distanceTo(p);
+      const ppu = H / (2 * Math.tan(camera.fov * DEG / 2) * dist);
+      const n = p.clone().project(camera);
+      const cx = (n.x * .5 + .5) * W, cy = (-n.y * .5 + .5) * H;
+      const w = spec.w * s * ppu, h = spec.h * s * ppu;
+      el.style.width = `${w}px`; el.style.height = `${h}px`;
+      el.style.transform = `translate3d(${cx - w / 2}px, ${cy - h / 2}px, 0)`;
+    });
+  }
+
   // ----- DOM layers -----
   const heroOn = 1 - ss(0.82, 0.97, hp);
   heroBack.style.opacity = heroFront.style.opacity = heroOn;
@@ -326,21 +338,6 @@ function frame(now) {
   pinkPlate.style.setProperty('--my', `${-0.018 * (1 - thru) + ptr.sy * 0.012}em`);
   const noteOn = (1 - ss(0.3, 0.5, hp)) * heroOn;
   notes.style.opacity = noteOn;
-  const targets = { pipo: [pipo.bulb, 0.15], planet: [planet.g, 1.0 * P.planet[3]], bus: [bus.g, 0.6 * P.bus[3]] };
-  noteEls.forEach((el, i) => {
-    const [o, oy] = targets[el.dataset.for];
-    const [ax, ay] = toScreen(o, oy);
-    const left = el.dataset.for !== 'pipo' || portrait;
-    const ew = el.offsetWidth, eh = el.offsetHeight, f = el.dataset.for;
-    // portrait: planet note to its right, pipo note to his left, bus note above
-    const nx = portrait ? clamp(f === 'planet' ? ax + 34 : f === 'pipo' ? ax - ew - 40 : ax - 20, 8, W - ew - 8) : left ? ax - ew - 70 : ax + 60;
-    const ny = portrait ? (f === 'pipo' ? ay - 10 : f === 'planet' ? ay + 30 : ay - eh - 50) : ay - 64;
-    el.style.transform = `translate3d(${nx}px, ${ny}px, 0)`;
-    const ex = nx + ew / 2 < ax ? nx + ew : nx + 12, ey = ny + eh;
-    lPaths[i].setAttribute('d', `M${ex},${ey} Q${(ex + ax) / 2},${ey + 26} ${ax},${ay}`);
-    lDots[i].setAttribute('cx', ax); lDots[i].setAttribute('cy', ay);
-  });
-  leaders.style.opacity = noteOn;
 
   const pipoOn = ss(0.86, 1, hp) * (1 - ss(0.985, 1, (sp - pipoTop) / (pipoLen + H * 0.6)));
   pipoLayers.forEach((l) => { l.style.opacity = pipoOn; l.style.visibility = pipoOn > 0.01 ? 'visible' : 'hidden'; });
@@ -372,11 +369,5 @@ if (location.search.includes('probe')) {
   window.__ft = () => { const s = [...ft].sort((a, b) => a - b); return s[s.length >> 1]; };
 }
 
-document.fonts.load('900 300px "Big Shoulders Display"').finally(() => {
-  shipPlane = typePlane('ship small.', 'pink', lay.ship[3]);
-  fastPlane = typePlane('learn fast.', 'yellow', lay.fast[3]);
-  scene.add(shipPlane, fastPlane);
-  loop();
-});
 resize();
 loop();
