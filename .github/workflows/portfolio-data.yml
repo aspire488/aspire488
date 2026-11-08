@@ -1,0 +1,69 @@
+# Refreshes the data behind the portfolio's project and open-source sections
+# (site/off-register/data/*.json) and redeploys the site when it changed.
+# Kept separate from pages.yml and profile-cards.yml: this workflow only
+# discovers, validates and commits data.
+name: Refresh portfolio data
+
+on:
+  schedule:
+    - cron: "23 4 * * *"
+  workflow_dispatch:
+
+# contents: write to push the refreshed JSON; actions: write to dispatch pages.yml.
+permissions:
+  contents: write
+  actions: write
+
+# One refresh at a time; a queued run waits instead of racing the previous run's push.
+concurrency:
+  group: portfolio-data
+
+jobs:
+  data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: site/off-register/package-lock.json
+
+      - name: Install dependencies
+        working-directory: site/off-register
+        run: npm ci
+
+      # The qualification rules gate what reaches the site, so they must pass before any data is written.
+      - name: Test
+        working-directory: site/off-register
+        run: npm test
+
+      # A failed fetch or failed validation exits 1 and writes nothing, so the last valid JSON stays live.
+      - name: Discover projects and contributions
+        working-directory: site/off-register
+        run: npm run data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit and redeploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Stage first so a data file that is new to the repo counts as a change too.
+          git add site/off-register/data
+          if git diff --cached --quiet -- site/off-register/data; then
+            echo "no change"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(site): refresh portfolio data"
+          # A push to main can land while this run discovers; replay this commit on top of it.
+          git push || { git pull --rebase origin main && git push; }
+          # A push made with GITHUB_TOKEN does not trigger pages.yml, so start the deploy explicitly.
+          gh workflow run pages.yml --ref main

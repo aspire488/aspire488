@@ -1,0 +1,24 @@
+[
+  {
+    "repo": "microsoft/PyRIT",
+    "name": "Microsoft PyRIT",
+    "kind": "AI red-teaming framework",
+    "prs": [2762, 3429, 2976, 2882, 2823],
+    "lead": 2762,
+    "note": "Added a memory-backed dataset summary API (#2762, 11 files, with tests) for PyRIT's planned dataset explorer, then four fixes: XInclude-based XXE detection, an empty-string false positive in exact text matching, HarmBench context strings being dropped, and converter identifiers that collided across word-selection strategies."
+  },
+  {
+    "repo": "UKGovernmentBEIS/inspect_ai",
+    "name": "Inspect AI",
+    "kind": "UK AI Security Institute's LLM evaluation framework",
+    "prs": [5670],
+    "note": "With GOOGLE_USE_ADC set, Inspect sent every Gemini call through ambient credentials even when you passed an API key. Now an explicit key wins unless ADC is chosen for that model (#5670, fixes #5358)."
+  },
+  {
+    "repo": "eumemic/aios",
+    "name": "aios",
+    "kind": "open-source agent runtime",
+    "prs": [2457, 2458, 2459, 2460],
+    "note": "A streaming trailer could overwrite finish_reason=\"length\", hiding truncated output. I kept the signal through stream assembly (#2457), recorded it as truncation telemetry on the step span (#2458), made timeouts say whether the deadline or the spend ceiling fired (#2459), and stopped a passthrough from bypassing LiteLLM's parameter translation (#2460)."
+  }
+]

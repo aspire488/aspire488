@@ -37,6 +37,11 @@ jobs:
         working-directory: site/off-register
         run: npm ci
 
+      # Render rules and data qualification must pass before anything is published.
+      - name: Test
+        working-directory: site/off-register
+        run: npm test
+
       - name: Build
         working-directory: site/off-register
         run: npm run build

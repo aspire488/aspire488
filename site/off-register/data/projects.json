@@ -1,0 +1,419 @@
+{
+  "featured": [
+    {
+      "repo": "Pipo",
+      "title": "Pipo",
+      "what": "A little robot who lives in your phone. Close the app and he builds, naps and heads out; come back and he tells you what happened.",
+      "stack": "Kotlin, Android",
+      "status": "shipped v1.0. Android APK.",
+      "url": "https://github.com/aspire488/Pipo",
+      "demo": "https://aspire488.github.io/Pipo/",
+      "page": "./pipo/",
+      "release": {
+        "tag": "v1.0",
+        "date": "2026-10-04"
+      },
+      "category": "app",
+      "languages": [
+        "Kotlin",
+        "JavaScript",
+        "HTML"
+      ],
+      "updated": "2026-11-05",
+      "evidence": [
+        "release v1.0 (2026-10-04)",
+        "live: https://aspire488.github.io/Pipo/",
+        "tests: 31 files",
+        "CI: passing",
+        "README 7.1 kB",
+        "commits: 50"
+      ],
+      "visual": "art/pipo.svg",
+      "links": [
+        {
+          "label": "how it's built",
+          "href": "./pipo/"
+        },
+        {
+          "label": "APK release",
+          "href": "https://github.com/aspire488/Pipo/releases/tag/v1.0"
+        },
+        {
+          "label": "world",
+          "href": "https://aspire488.github.io/Pipo/"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/Pipo"
+        }
+      ]
+    },
+    {
+      "repo": "event-horizon",
+      "title": "Event Horizon",
+      "what": "A cosmic physics sandbox: bend gravity, feed black holes, set off supernovas, then rewind.",
+      "stack": "TypeScript, three.js, Vite",
+      "status": "shipped, live. 105 unit tests + 18 browser checks. not tried on real touch hardware yet.",
+      "url": "https://github.com/aspire488/event-horizon",
+      "demo": "https://event-horizon-teal.vercel.app",
+      "page": "./event-horizon/",
+      "release": null,
+      "category": "web",
+      "languages": [
+        "TypeScript",
+        "JavaScript",
+        "CSS"
+      ],
+      "updated": "2026-11-01",
+      "evidence": [
+        "live: https://event-horizon-teal.vercel.app",
+        "tests: 12 files",
+        "README 16.8 kB",
+        "commits: 16"
+      ],
+      "visual": "art/event-horizon.svg",
+      "links": [
+        {
+          "label": "how it's built",
+          "href": "./event-horizon/"
+        },
+        {
+          "label": "live app",
+          "href": "https://event-horizon-teal.vercel.app"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/event-horizon"
+        }
+      ]
+    },
+    {
+      "repo": "codeflow",
+      "title": "CodeFlow",
+      "what": "A learning workspace that makes program state visible, for beginners in C, HTML, CSS and JavaScript.",
+      "stack": "vanilla JavaScript, Playwright",
+      "status": "shipped v1.0.0. 54 unit + 84 local browser + 70 production browser checks.",
+      "url": "https://github.com/aspire488/codeflow",
+      "demo": "https://codeflow-app-sigma.vercel.app",
+      "page": "./codeflow/",
+      "release": null,
+      "category": "web",
+      "languages": [
+        "JavaScript",
+        "CSS",
+        "HTML"
+      ],
+      "updated": "2026-11-02",
+      "evidence": [
+        "live: https://codeflow-app-sigma.vercel.app",
+        "tests: 10 files",
+        "CI: passing",
+        "README 5.8 kB",
+        "commits: 45"
+      ],
+      "visual": "art/codeflow.svg",
+      "links": [
+        {
+          "label": "how it's built",
+          "href": "./codeflow/"
+        },
+        {
+          "label": "open the app",
+          "href": "https://codeflow-app-sigma.vercel.app"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/codeflow"
+        }
+      ]
+    },
+    {
+      "repo": "campus-bus",
+      "title": "Campus Bus",
+      "what": "A college bus reservation system: find a bus that passes your stop, pick a seat on a picture of the bus, get a pass.",
+      "stack": "Java, JavaFX, MySQL",
+      "status": "shipped v1.1. 166 tests, tried on one PC so far.",
+      "url": "https://github.com/aspire488/campus-bus",
+      "demo": null,
+      "page": "./campus-bus/",
+      "release": {
+        "tag": "v1.1",
+        "date": "2026-10-18"
+      },
+      "category": "app",
+      "languages": [
+        "Java",
+        "JavaScript",
+        "PowerShell"
+      ],
+      "updated": "2026-11-05",
+      "evidence": [
+        "release v1.1 (2026-10-18)",
+        "tests: 6 files",
+        "README 42.2 kB",
+        "commits: 15"
+      ],
+      "visual": "art/campus-bus.svg",
+      "links": [
+        {
+          "label": "how it's built",
+          "href": "./campus-bus/"
+        },
+        {
+          "label": "Windows release",
+          "href": "https://github.com/aspire488/campus-bus/releases/tag/v1.1"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/campus-bus"
+        }
+      ]
+    }
+  ],
+  "more": [
+    {
+      "repo": "Kio",
+      "title": "KIO",
+      "what": "The kernel of my companion runtime, rebuilt one gate at a time.",
+      "stack": "Python",
+      "status": "building. gates C-1 to C-3 done, C-4 next. Phase 0 deleted 5,167 lines.",
+      "url": "https://github.com/aspire488/Kio",
+      "demo": null,
+      "page": null,
+      "release": null,
+      "category": "other",
+      "languages": [
+        "Python",
+        "JavaScript",
+        "PowerShell"
+      ],
+      "updated": "2026-11-05",
+      "evidence": [
+        "tests: 100 files",
+        "README 6.8 kB",
+        "commits: 70"
+      ],
+      "visual": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/Kio"
+        }
+      ]
+    },
+    {
+      "repo": "Universal-Engineering-Augmentation",
+      "title": "UEA",
+      "what": "Real tools for coding agents, so the model stops guessing what a tool can prove.",
+      "stack": "Python, tree-sitter, Z3",
+      "status": "public alpha, v0.1.0. token savings: not measured yet.",
+      "url": "https://github.com/aspire488/Universal-Engineering-Augmentation",
+      "demo": null,
+      "page": null,
+      "release": null,
+      "category": "library",
+      "languages": [
+        "Python"
+      ],
+      "updated": "2026-11-05",
+      "evidence": [
+        "tests: 8 files",
+        "CI: passing",
+        "README 10.8 kB",
+        "commits: 34"
+      ],
+      "visual": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/Universal-Engineering-Augmentation"
+        }
+      ]
+    },
+    {
+      "repo": "gh-ops",
+      "title": "gh-ops",
+      "what": "My GitHub chores on autopilot: six jobs through one dispatcher, and a Telegram ping only when something happened.",
+      "stack": "Python",
+      "status": "1,495 tests, then frozen.",
+      "url": "https://github.com/aspire488/gh-ops",
+      "demo": null,
+      "page": null,
+      "release": null,
+      "category": "library",
+      "languages": [
+        "Python"
+      ],
+      "updated": "2026-11-05",
+      "evidence": [
+        "tests: 82 files",
+        "CI: passing",
+        "README 38.7 kB",
+        "commits: 63"
+      ],
+      "visual": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/gh-ops"
+        }
+      ]
+    },
+    {
+      "repo": "oss-atlas",
+      "title": "OSS Atlas",
+      "what": "My running log of open-source work: case studies and a ledger of upstream fixes.",
+      "stack": "Markdown, Python scripts",
+      "status": "observed, implemented, verified, documented.",
+      "url": "https://github.com/aspire488/oss-atlas",
+      "demo": null,
+      "page": null,
+      "release": null,
+      "category": "other",
+      "languages": [
+        "Python"
+      ],
+      "updated": "2026-11-05",
+      "evidence": [
+        "CI: passing",
+        "README 6.9 kB",
+        "commits: 364"
+      ],
+      "visual": null,
+      "links": [
+        {
+          "label": "case studies",
+          "href": "https://github.com/aspire488/oss-atlas/blob/main/case-studies/README.md"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/oss-atlas"
+        }
+      ]
+    },
+    {
+      "repo": "AURA",
+      "title": "AURA",
+      "what": "Memory for KIO: working, episodic and semantic memory behind an API.",
+      "stack": "Python, FastAPI",
+      "status": "built, not verified. last touched June 2026.",
+      "url": "https://github.com/aspire488/AURA",
+      "demo": null,
+      "page": null,
+      "release": null,
+      "category": "web",
+      "languages": [
+        "Python",
+        "TypeScript",
+        "JavaScript"
+      ],
+      "updated": "2026-11-05",
+      "evidence": [
+        "tests: 4 files",
+        "README 7.1 kB",
+        "commits: 54"
+      ],
+      "visual": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/AURA"
+        }
+      ]
+    },
+    {
+      "repo": "rag-platform",
+      "title": "RAG Platform",
+      "what": "A local-first RAG foundation. Hybrid retrieval and generation are planned, not built yet.",
+      "stack": "Python, FastAPI, Qdrant",
+      "status": "building, phase 3 complete. egress off by default.",
+      "url": "https://github.com/aspire488/rag-platform",
+      "demo": null,
+      "page": null,
+      "release": null,
+      "category": "library",
+      "languages": [
+        "Python",
+        "PowerShell"
+      ],
+      "updated": "2026-10-25",
+      "evidence": [
+        "tests: 44 files",
+        "README 17.7 kB",
+        "commits: 13"
+      ],
+      "visual": null,
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/rag-platform"
+        }
+      ]
+    }
+  ],
+  "states": {
+    "agent-bench": "fork",
+    "agent-framework": "fork",
+    "agentfield": "fork",
+    "agentscope-java": "fork",
+    "ai-memory": "fork",
+    "ai-platform-aws": "fork",
+    "aios": "fork",
+    "aspire488": "excluded",
+    "AURA": "developing",
+    "campus-bus": "featured",
+    "cli": "fork",
+    "clicky": "fork",
+    "cmux": "fork",
+    "codeflow": "featured",
+    "coder": "fork",
+    "cognee": "fork",
+    "coreutils": "fork",
+    "event-horizon": "featured",
+    "firecrawl": "fork",
+    "garak": "fork",
+    "gh-ops": "discovered",
+    "gitfut": "fork",
+    "github-profile-analyzer": "fork",
+    "GoalAI-Score-predictor-26": "fork",
+    "hermes-agent": "fork",
+    "hiero-bot-py": "fork",
+    "icalendar": "fork",
+    "inspect_ai": "fork",
+    "intellij-powershell": "fork",
+    "jj": "fork",
+    "kestra": "fork",
+    "Kio": "discovered",
+    "KiroCrew": "fork",
+    "linguist": "fork",
+    "llama_index": "fork",
+    "medimind": "developing",
+    "mvt": "fork",
+    "N3MO": "fork",
+    "open-source-companies": "fork",
+    "openai-agents-python": "fork",
+    "OpenHands": "fork",
+    "openllmetry": "fork",
+    "opentelemetry-erlang-contrib": "fork",
+    "oss-atlas": "discovered",
+    "Pipo": "featured",
+    "pydantic-ai": "fork",
+    "PyRIT": "fork",
+    "quiche": "fork",
+    "rag-platform": "developing",
+    "RAMPART": "fork",
+    "retrobios": "fork",
+    "risingwave": "fork",
+    "rtk": "fork",
+    "rust-analyzer": "fork",
+    "rust-clippy": "fork",
+    "siyuan": "fork",
+    "Soup": "fork",
+    "substrate": "fork",
+    "thrylos": "fork",
+    "TopoCore": "fork",
+    "transformers": "fork",
+    "typesafe-sdk-js": "fork",
+    "Universal-Engineering-Augmentation": "developing"
+  }
+}

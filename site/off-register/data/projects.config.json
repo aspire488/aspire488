@@ -1,0 +1,192 @@
+{
+  "exclude": [
+    "aspire488"
+  ],
+  "featured": [
+    "Pipo",
+    "event-horizon",
+    "codeflow",
+    "campus-bus"
+  ],
+  "archive": [],
+  "pinned": [
+    "Kio",
+    "Universal-Engineering-Augmentation",
+    "gh-ops",
+    "oss-atlas",
+    "AURA",
+    "rag-platform"
+  ],
+  "overrides": {
+    "event-horizon": {
+      "title": "Event Horizon",
+      "what": "A cosmic physics sandbox: bend gravity, feed black holes, set off supernovas, then rewind.",
+      "stack": "TypeScript, three.js, Vite",
+      "status": "shipped, live. 105 unit tests + 18 browser checks. not tried on real touch hardware yet.",
+      "page": "./event-horizon/",
+      "demo": "https://event-horizon-teal.vercel.app",
+      "visual": "art/event-horizon.svg",
+      "links": [
+        {
+          "label": "how it's built",
+          "href": "./event-horizon/"
+        },
+        {
+          "label": "live app",
+          "href": "https://event-horizon-teal.vercel.app"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/event-horizon"
+        }
+      ]
+    },
+    "Pipo": {
+      "title": "Pipo",
+      "what": "A little robot who lives in your phone. Close the app and he builds, naps and heads out; come back and he tells you what happened.",
+      "stack": "Kotlin, Android",
+      "status": "shipped v1.0. Android APK.",
+      "visual": "art/pipo.svg",
+      "links": [
+        {
+          "label": "how it's built",
+          "href": "./pipo/"
+        },
+        {
+          "label": "APK release",
+          "href": "https://github.com/aspire488/Pipo/releases/tag/v1.0"
+        },
+        {
+          "label": "world",
+          "href": "https://aspire488.github.io/Pipo/"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/Pipo"
+        }
+      ],
+      "page": "./pipo/"
+    },
+    "campus-bus": {
+      "title": "Campus Bus",
+      "what": "A college bus reservation system: find a bus that passes your stop, pick a seat on a picture of the bus, get a pass.",
+      "stack": "Java, JavaFX, MySQL",
+      "status": "shipped v1.1. 166 tests, tried on one PC so far.",
+      "visual": "art/campus-bus.svg",
+      "links": [
+        {
+          "label": "how it's built",
+          "href": "./campus-bus/"
+        },
+        {
+          "label": "Windows release",
+          "href": "https://github.com/aspire488/campus-bus/releases/tag/v1.1"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/campus-bus"
+        }
+      ],
+      "page": "./campus-bus/"
+    },
+    "codeflow": {
+      "title": "CodeFlow",
+      "what": "A learning workspace that makes program state visible, for beginners in C, HTML, CSS and JavaScript.",
+      "stack": "vanilla JavaScript, Playwright",
+      "status": "shipped v1.0.0. 54 unit + 84 local browser + 70 production browser checks.",
+      "page": "./codeflow/",
+      "demo": "https://codeflow-app-sigma.vercel.app",
+      "visual": "art/codeflow.svg",
+      "links": [
+        {
+          "label": "how it's built",
+          "href": "./codeflow/"
+        },
+        {
+          "label": "open the app",
+          "href": "https://codeflow-app-sigma.vercel.app"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/codeflow"
+        }
+      ]
+    },
+    "Kio": {
+      "title": "KIO",
+      "what": "The kernel of my companion runtime, rebuilt one gate at a time.",
+      "stack": "Python",
+      "status": "building. gates C-1 to C-3 done, C-4 next. Phase 0 deleted 5,167 lines.",
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/Kio"
+        }
+      ]
+    },
+    "Universal-Engineering-Augmentation": {
+      "title": "UEA",
+      "what": "Real tools for coding agents, so the model stops guessing what a tool can prove.",
+      "stack": "Python, tree-sitter, Z3",
+      "status": "public alpha, v0.1.0. token savings: not measured yet.",
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/Universal-Engineering-Augmentation"
+        }
+      ]
+    },
+    "AURA": {
+      "title": "AURA",
+      "what": "Memory for KIO: working, episodic and semantic memory behind an API.",
+      "stack": "Python, FastAPI",
+      "status": "built, not verified. last touched June 2026.",
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/AURA"
+        }
+      ]
+    },
+    "rag-platform": {
+      "title": "RAG Platform",
+      "what": "A local-first RAG foundation. Hybrid retrieval and generation are planned, not built yet.",
+      "stack": "Python, FastAPI, Qdrant",
+      "status": "building, phase 3 complete. egress off by default.",
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/rag-platform"
+        }
+      ]
+    },
+    "gh-ops": {
+      "title": "gh-ops",
+      "what": "My GitHub chores on autopilot: six jobs through one dispatcher, and a Telegram ping only when something happened.",
+      "stack": "Python",
+      "status": "1,495 tests, then frozen.",
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/gh-ops"
+        }
+      ]
+    },
+    "oss-atlas": {
+      "title": "OSS Atlas",
+      "what": "My running log of open-source work: case studies and a ledger of upstream fixes.",
+      "stack": "Markdown, Python scripts",
+      "status": "observed, implemented, verified, documented.",
+      "links": [
+        {
+          "label": "case studies",
+          "href": "https://github.com/aspire488/oss-atlas/blob/main/case-studies/README.md"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/aspire488/oss-atlas"
+        }
+      ]
+    }
+  }
+}
