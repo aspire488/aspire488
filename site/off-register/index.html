@@ -20,8 +20,8 @@
 <link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="./work.css">
 <link rel="stylesheet" href="./intro.css">
-<script>/* opening sequence guard: first visit this session, motion allowed, no data-saver or 2g (?intro replays); never holds the page longer than 7s, and the sheet has a working Skip button from first paint */
-try{var d=document.documentElement,n=navigator.connection,r=matchMedia('(prefers-reduced-motion: reduce)').matches,s=sessionStorage.getItem('pipo-intro')==='1',f=/[?&]intro/.test(location.search),lo=n&&(n.saveData||/2g/.test(n.effectiveType));if(!r&&(f||(!s&&!lo))){d.classList.add('intro-pending');var end=function(){d.classList.remove('intro-pending');var b=document.querySelector('.pending-skip');b&&b.remove()},mo=new MutationObserver(function(){if(!document.body)return;mo.disconnect();var b=document.createElement('button');b.type='button';b.className='pending-skip';b.textContent='Skip intro';b.onclick=function(){try{sessionStorage.setItem('pipo-intro','1')}catch(e){}end()};document.body.prepend(b)});mo.observe(d,{childList:true});setTimeout(end,7000)}}catch(e){}</script>
+<script>/* opening sequence guard: first visit this session, motion allowed, Data Saver off (?intro replays); never holds the page longer than 7s, and the sheet has a working Skip button from first paint */
+try{var d=document.documentElement,n=navigator.connection,r=matchMedia('(prefers-reduced-motion: reduce)').matches,s=sessionStorage.getItem('pipo-intro')==='1',f=/[?&]intro/.test(location.search),lo=n&&n.saveData;if(!r&&(f||(!s&&!lo))){d.classList.add('intro-pending');var end=function(){d.classList.remove('intro-pending');var b=document.querySelector('.pending-skip');b&&b.remove()},mo=new MutationObserver(function(){if(!document.body)return;mo.disconnect();var b=document.createElement('button');b.type='button';b.className='pending-skip';b.textContent='Skip intro';b.onclick=function(){try{sessionStorage.setItem('pipo-intro','1')}catch(e){}end()};document.body.prepend(b)});mo.observe(d,{childList:true});setTimeout(end,7000)}}catch(e){}</script>
 </head>
 <body>
 <a class="skip" href="#rest">Skip to the work</a>
