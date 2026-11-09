@@ -17,6 +17,12 @@ html.intro-pending .pending-skip{display:block}
 .route-line{position:relative;flex:1;height:2px;background:repeating-linear-gradient(90deg,#0078BF 0 8px,transparent 8px 14px)}
 .route-dot{position:absolute;top:50%;left:calc(var(--p,0) * 100%);width:12px;height:12px;border-radius:50%;background:#FFE800;box-shadow:0 0 0 2px #00227F;transform:translate(-50%,-50%)}
 .intro-skip,.pending-skip{position:absolute;top:16px;right:clamp(16px,2.6vw,40px);min-height:44px;padding:0 14px;background:#F4EEE1;border:2px solid #00227F;box-shadow:4px 4px 0 #FF48B0;color:#00227F;font:400 12px "Martian Mono",ui-monospace,monospace;cursor:pointer}
+.intro-sound{position:absolute;top:16px;min-height:44px;padding:0 14px;background:#F4EEE1;border:2px solid #00227F;box-shadow:4px 4px 0 #FF48B0;color:#00227F;font:400 12px "Martian Mono",ui-monospace,monospace;cursor:pointer}
+.intro-tools{position:absolute;top:16px;right:clamp(16px,2.6vw,40px);display:flex;gap:12px}
+.intro-tools .intro-skip,.intro-tools .intro-sound{position:static}
+.intro-sound[data-on=true]{box-shadow:4px 4px 0 #0078BF}
+.intro-sound:hover,.intro-sound:focus-visible{background:#FFE800}
+.intro-sound:focus-visible{outline:2px solid #0078BF;outline-offset:4px}
 .intro-skip:hover,.intro-skip:focus-visible,.pending-skip:hover,.pending-skip:focus-visible{background:#FFE800}
 .intro-skip:focus-visible,.pending-skip:focus-visible{outline:2px solid #0078BF;outline-offset:4px}
 @media (max-width:520px){.intro-route{font-size:10px;gap:8px}}

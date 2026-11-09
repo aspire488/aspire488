@@ -232,7 +232,10 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 /* ---------- dock: the way out of the long Pipo story ---------- */
 .dock{position:fixed;right:var(--m);bottom:14px;z-index:8;display:flex;gap:2px;padding:0 4px;background:var(--paper);box-shadow:0 0 0 1.5px var(--ink);font-family:var(--mono);font-size:12px;transition:opacity .25s ease,transform .25s ease}
 .dock a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;text-decoration:none;white-space:nowrap}
-.dock a:hover,.dock a:focus-visible{background:var(--yellow)}
+.dock .sound-toggle{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;margin:0;border:0;background:none;color:inherit;font:inherit;white-space:nowrap;cursor:pointer}
+.dock .sound-toggle[hidden]{display:none}
+.dock .sound-toggle[data-on=true]{box-shadow:inset 0 -3px 0 var(--pink)}
+.dock a:hover,.dock a:focus-visible,.dock .sound-toggle:hover,.dock .sound-toggle:focus-visible{background:var(--yellow)}
 .dock.gone{opacity:0;transform:translateY(12px);pointer-events:none}
 @media (max-width:700px){.dock{left:50%;right:auto;transform:translateX(-50%)}.dock.gone{transform:translate(-50%,12px)}.purpose{font-size:11px}}
 @media (prefers-reduced-motion:reduce){.dock{transition:none}}

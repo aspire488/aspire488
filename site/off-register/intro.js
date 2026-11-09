@@ -1,8 +1,9 @@
 // Opening sequence: Pipo catches the Campus Bus, then the paper lifts into the homepage.
 // Additive and self-contained: it never touches main.js or the homepage DOM, plays once per session,
-// is skippable, and does not run at all for reduced-motion visitors.
+// is skippable, and does not run at all for reduced-motion visitors. Sound is opt-in (sound.js).
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
+import { sound } from './sound.js';
 
 const html = document.documentElement;
 if (html.classList.contains('intro-pending')) try { play(); } catch { document.querySelector('.intro')?.remove(); html.classList.remove('intro-on', 'intro-pending'); } // the head guard already decided: first visit this session, motion allowed
@@ -19,12 +20,11 @@ function play() {
   const root = document.createElement('div');
   root.className = 'intro'; root.setAttribute('role', 'region'); root.setAttribute('aria-label', 'Opening animation: Pipo catches the Campus Bus');
   root.innerHTML = `<p class="intro-route" aria-hidden="true"><span>Earth</span><i class="route-line"><em class="route-mid">Event Horizon</em><b class="route-dot"></b></i><span>back to Earth</span></p>
-    <button class="intro-skip" type="button">Skip intro</button>`;
+    <div class="intro-tools"><button class="intro-sound" type="button">Sound on</button><button class="intro-skip" type="button">Skip intro</button></div>`;
   root.prepend(canvas);
   document.body.prepend(root);
   document.querySelector('.pending-skip')?.remove();
   html.classList.remove('intro-pending');
-  try { sessionStorage.setItem('pipo-intro', '1'); } catch {}
   html.classList.add('intro-on');
 
   // ---------- inks + characters: same construction as the hero (main.js), so they are the same Pipo and the same bus ----------
@@ -121,33 +121,61 @@ function play() {
   const post = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), new THREE.ShaderMaterial({
     depthTest: false, depthWrite: false,
     uniforms: { tScene: { value: target.texture }, uRes: { value: new THREE.Vector2() }, uC: { value: new THREE.Vector2(.5, .5) },
-      uIris: { value: 0 }, uEll: { value: 1 }, uEdge: { value: .002 }, uStar: { value: 0 }, uStreak: { value: 0 }, uFlash: { value: 0 }, uAsp: { value: 1 }, uT: { value: 0 } },
+      uIris: { value: 0 }, uEll: { value: 1 }, uEdge: { value: .002 }, uStar: { value: 0 }, uStreak: { value: 0 }, uFlash: { value: 0 }, uAsp: { value: 1 }, uT: { value: 0 }, uRip: { value: 0 }, uMis: { value: 0 } },
     vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position.xy, 0., 1.); }`,
-    fragmentShader: `uniform sampler2D tScene; uniform vec2 uRes, uC; uniform float uIris, uEll, uEdge, uStar, uStreak, uFlash, uAsp, uT; varying vec2 vUv;
+    fragmentShader: `uniform sampler2D tScene; uniform vec2 uRes, uC; uniform float uIris, uEll, uEdge, uStar, uStreak, uFlash, uAsp, uT, uRip, uMis; varying vec2 vUv;
       float h(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
       vec3 stars(vec2 px, float sz, float seed){
         vec2 q = px / sz, cell = floor(q), f = fract(q) - .5; f.x /= 1. + uStreak;
         float hh = h(cell + seed), star = step(.9, hh) * (1. - smoothstep(.07, .13, length(f - (vec2(h(cell + 1.3), h(cell + 7.1)) - .5) * .6)));
         vec3 sc = hh > .97 ? vec3(1., .28, .69) : hh > .94 ? vec3(1., .91, 0.) : vec3(.8, .88, 1.);
         return sc * star * (.65 + .35 * sin(uT * 3. + hh * 40.)); }
-      void main(){
-        vec2 d = vUv - uC; d.x *= uAsp / uEll;
-        float ins = uIris > .001 ? 1. - smoothstep(uIris - uEdge, uIris + uEdge, length(d)) : 0.;   // the iris: inside is space, outside is paper
-        vec4 s = texture2D(tScene, vUv);
+      vec3 comp(vec2 uv){
+        vec2 q = uv - uC, d = q; d.x *= uAsp / uEll; float L = length(d);
+        if (uRip > 0.) {   // the crossing: a shockwave rolls out from the iris edge, and the edge itself shudders
+          float rr = L - uIris - uRip * .5, w = sin(rr * 60.) * exp(-rr * rr / .015) * (1. - uRip);
+          uv += normalize(q + 1e-5) * w * .012;
+          L += w * .02 + .01 * sin(atan(d.y, d.x) * 9. + uRip * 14.) * (1. - uRip);
+        }
+        float ins = uIris > .001 ? 1. - smoothstep(uIris - uEdge, uIris + uEdge, L) : 0.;   // the iris: inside is space, outside is paper
+        vec4 s = texture2D(tScene, uv);
         vec3 bg = mix(vec3(.957, .933, .882), vec3(.035, .055, .2), ins);
-        vec2 px = vUv * uRes;
+        vec2 px = uv * uRes;
         bg += (stars(px - vec2(uStar * .6, 0.), 26., 0.) + stars(px - vec2(uStar * 1.5, 17.), 44., 9.3)) * ins;   // two layers, sliding sideways as the bus moves
         float a = clamp(s.a, 0., 1.);
-        vec3 L = s.rgb * (1. - a); float m = max(L.r, max(L.g, L.b));
-        vec3 ink = mix(vec3(1., .28, .69), vec3(0., .47, .75), smoothstep(.5, 1., L.g / max(m, .001)));
-        vec3 lit = bg + L;                                                  // in space the ring is light
+        vec3 L3 = s.rgb * (1. - a); float m = max(L3.r, max(L3.g, L3.b));
+        vec3 ink = mix(vec3(1., .28, .69), vec3(0., .47, .75), smoothstep(.5, 1., L3.g / max(m, .001)));
+        vec3 lit = bg + L3;                                                  // in space the ring is light
         vec3 inked = bg * mix(vec3(1.), ink, clamp(m, 0., 1.));             // on paper it is pink and blue ink
-        vec3 col = mix(inked, lit, ins) * (1. - a) + s.rgb * a;
+        return mix(inked, lit, ins) * (1. - a) + s.rgb * a;
+      }
+      void main(){
+        vec3 col = comp(vUv);
+        if (uMis > 0.) { vec3 c2 = comp(vUv + vec2(uMis, -uMis * .35) / uRes); col.g = c2.g; col.b = mix(col.b, c2.b, .5); }   // the pink plate slips (pink absorbs green)
         col += vec3(1., .96, .82) * uFlash;
         gl_FragColor = vec4(col, 1.); }` }));
   const postScene = new THREE.Scene(), postCam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
   post.frustumCulled = false; postScene.add(post);
   const PU = post.material.uniforms;
+
+  // ---------- print-language VFX: halftone dust at the tyres and heels, misregistered speed lines ----------
+  const puffGeo = new THREE.PlaneGeometry(1, 1);
+  const puffMat = () => new THREE.ShaderMaterial({ transparent: true, depthWrite: false, vertexShader: vert,
+    uniforms: { uCell: { value: CELL * .7 }, uInk: { value: V(C.blue) }, uP: { value: 0 } },
+    fragmentShader: `uniform float uCell, uP; uniform vec3 uInk; varying vec2 vUv; ${dots}
+      void main(){ vec2 q = vUv - .5; float a = atan(q.y, q.x), r = length(q) * 2. * (1. + .18 * sin(a * 3. + uP * 2.) + .1 * sin(a * 7.));   // lumpy edge
+        float k = (1. - smoothstep(.1, 1., r)) * (1. - uP * uP) * .46;   // never fills a cell: reads as sparse ink dots thinning to nothing
+        if (k < .04) discard; gl_FragColor = vec4(uInk, dots(k, .2618)); }` });
+  const puffs = [];
+  const mkPuff = (ts, on, w, dx, s, life = .7) => { const m = new THREE.Mesh(puffGeo, puffMat()); m.visible = false; m.renderOrder = 1; world.add(m); puffs.push({ m, ts, on, w, dx, s, life, x: null }); };
+  for (let i = 0; i < 5; i++) mkPuff(1.95 + i * .12, 'bus', i % 2 ? 1 : -1, -.9, 1.1);  // braking into the stop: the tyres kick ink-dust ahead
+  for (let i = 0; i < 4; i++) mkPuff(6.9 + i * .09, 'bus', 1, 1., 1.1);               // pulling away: dust left at the tail
+  mkPuff(6.76, 'pipo', -1, -.5, .5, .6); mkPuff(6.76, 'pipo', 1, .5, .5, .6);        // Pipo's landing
+  const lineMat = (c) => new THREE.ShaderMaterial({ transparent: true, depthWrite: false, vertexShader: vert, uniforms: { uC: { value: V(C[c]) }, uA: { value: 0 } },
+    fragmentShader: `uniform vec3 uC; uniform float uA; varying vec2 vUv; void main(){ gl_FragColor = vec4(uC, uA * (1. - smoothstep(.5, 1., vUv.x))); }` });
+  const lmP = lineMat('pink'), lmB = lineMat('blue');
+  const streaks = [[-.3, 1.9], [.12, 1.2], [.42, 1.6]].map(([y, len]) => [y, len, new THREE.Mesh(puffGeo, lmB), new THREE.Mesh(puffGeo, lmP)]);
+  streaks.forEach((l) => { l[2].visible = l[3].visible = false; world.add(l[2], l[3]); });
 
   let W, H, k = 1, wx = 6, narrow = false;
   const base = new THREE.Vector3(), baseLook = new THREE.Vector3(), baseOff = new THREE.Vector3(), closeOff = new THREE.Vector3();
@@ -179,6 +207,7 @@ function play() {
   const DOOR = 0.95 * BS;       // front door, measured from the bus centre towards its nose
   const NOSE = 1.38 * BS;
   const END = 7.5, SPEED = 1.15;
+  const fired = {}, eng = sound.loop('engine'); let spaceL = null;
   // the drive: leave the stop, cross Event Horizon's ring, come out the other side and stop at the drop-off
   const DRIVE = [3.75, 6.25], RING_ON = 3.7;
   let busX = 99, lastBusX = 99, lastS = 0, lastT = 0, spd = 0, busV = 0, spring = 0, springV = 0, done = false, t0 = null, skipAt = null;
@@ -201,6 +230,7 @@ function play() {
     const tc = DRIVE[0] + (DRIVE[1] - DRIVE[0]) * tauC, tcl = DRIVE[0] + (DRIVE[1] - DRIVE[0]) * tauL; // nose crosses the ring; tail clears it
     const tShift = (tc + .5 + tcl - .1) / 2; // the screen is all space here: the scene is re-based so the bus ends at the drop-off
     const OFF = wx / k + 3; // fully off stage, whatever the screen width
+    const cue = (at, name, op) => { if (t >= at && !fired[name + at]) { fired[name + at] = 1; if (t - at < .5 && skipAt === null) sound.play(name, op); } };
 
     let u;
     if (t < 1.0) u = OFF;
@@ -263,6 +293,33 @@ function play() {
     const air = Math.max(0, pos[1] - GROUND);
     pShadow.visible = !inside; pShadow.position.set(pos[0], GROUND + 0.012, pos[2]); pShadow.scale.setScalar(PS * 1.6 / (1 + air * 0.9));
 
+    // dust: halftone puffs at the tyres (braking, pulling away) and Pipo's heels, riso blue
+    for (const q of puffs) {
+      const p = (t - q.ts) / q.life, vis = p >= 0 && p < 1; q.m.visible = vis;
+      if (!vis) continue;
+      if (q.x === null) q.x = q.on === 'bus' ? busX + q.w * .82 * BS : pipo.g.position.x + q.w * .3;
+      const e = out(p), sz = q.s * (.6 + 1.1 * e);
+      q.m.position.set(q.x + q.dx * e, GROUND + .08 + sz * .3 + e * .3, q.on === 'bus' ? 1.1 * BS : 1.45); q.m.scale.setScalar(sz);
+      q.m.material.uniforms.uP.value = p;
+    }
+    // speed lines: pink and blue plates a hair out of register, trailing the tail while the bus accelerates at the ring
+    const sl = t >= DRIVE[0] ? clamp((spd - .4) / 2.2) * (1 - seg(t, tc + .05, tc + .25)) : 0, tail = busX + 1.38 * BS + .1;
+    lmP.uniforms.uA.value = lmB.uniforms.uA.value = sl * .9;
+    streaks.forEach(([y, len, mb, mp], i) => {
+      const vis = sl > .02, L2 = len * sl * (.8 + .2 * Math.sin(t * 40 + i * 2));
+      mb.visible = mp.visible = vis; if (!vis) return;
+      mb.position.set(tail + L2 / 2, GROUND + .8 * BS + y * BS, .2); mb.scale.set(L2, .04, 1);
+      mp.position.set(tail + .15 + L2 * .4, GROUND + .8 * BS + y * BS + .04, .2); mp.scale.set(L2 * .8, .04, 1);
+    });
+
+    // sound, on the same beats
+    cue(.05, 'pop'); cue(.55, 'blip'); cue(2.45, 'blip', { p: 1.3 }); cue(2.05, 'brake');
+    cue(2.85, 'door'); cue(3.1, 'hop'); cue(3.55, 'land', { v: .5 }); cue(RING_ON, 'ring'); cue(tc - .15, 'warp'); cue(tcl - .05, 'emerge');
+    cue(6.25, 'door'); cue(6.3, 'hop', { p: 1.15 }); cue(6.75, 'land'); cue(7.25, 'wave');
+    eng.set({ s: clamp(spd / 5), g: seg(t, .9, 1.8) * (1 - seg(t, 6.9, 7.6)) * (1 - .6 * e) });
+    if (!spaceL && skipAt === null && t > tc - .2 && t < tcl + .8) spaceL = sound.loop('space');
+    if (spaceL) { spaceL.set({ g: e }); if (t > tcl + .8 || skipAt !== null) { spaceL.stop(); spaceL = null; } }
+
     // route progress: Earth, out to Event Horizon, back to Earth
     dot.style.setProperty('--p', (0.5 * io(seg(t, tc - .5, tc + .5)) + 0.5 * io(seg(t, tcl - .3, tcl + .5))).toFixed(3));
     root.classList.toggle('in-space', e > 0.5);
@@ -279,6 +336,8 @@ function play() {
     PU.uEll.value = ell + (1 - ell) * e;
     PU.uStar.value = (STOP - u) * 40 * dpr; PU.uStreak.value = clamp(spd / 4) * (e > 0 ? 1 : 0);
     PU.uFlash.value = Math.exp(-(((t - tc) / .1) ** 2)) * 0.14; PU.uT.value = t;
+    const rp = seg(t, tc - .05, tc + .4); PU.uRip.value = rp < 1 ? rp : 0;                                   // shockwave, ~.4 s
+    PU.uMis.value = Math.max(bell(t, tc - .02, tc + .3), .5 * bell(t, tcl - .1, tcl + .15)) * 4 * dpr;      // the print slips, a few px
 
     renderer.setRenderTarget(target); renderer.clear(); renderer.render(scene, camera);
     renderer.setRenderTarget(null); renderer.render(postScene, postCam);
@@ -292,13 +351,16 @@ function play() {
     if (skipAt !== null) return;
     skipAt = performance.now();
     root.classList.add(skipped ? 'leave-fast' : 'leave');
+    eng.stop(); spaceL?.stop(); unbind();
+    if (skipped) sound.hush(); else sound.play('lift');
     html.classList.remove('intro-on');
     setTimeout(() => { done = true; target.dispose(); renderer.dispose(); renderer.forceContextLoss(); root.remove(); }, skipped ? 320 : 900);
     removeEventListener('resize', resize); document.removeEventListener('visibilitychange', onHide); removeEventListener('keydown', onKey); removeEventListener('wheel', onSkip); removeEventListener('touchmove', onSkip);
   }
   const onSkip = () => finish(true), onHide = () => { if (document.hidden) finish(true); };
-  const onKey = (e) => { if (!['Tab', 'Shift'].includes(e.key)) finish(true); };
+  const onKey = (e) => { if (!['Tab', 'Shift'].includes(e.key) && !e.target.closest?.('.intro-sound')) finish(true); }; // Enter/Space on Sound must not skip
   root.querySelector('.intro-skip').addEventListener('click', onSkip);
+  const unbind = sound.bind(root.querySelector('.intro-sound'), 'Sound on', 'Sound off');
   addEventListener('keydown', onKey); addEventListener('wheel', onSkip, { passive: true }); addEventListener('touchmove', onSkip, { passive: true });
   canvas.addEventListener('webglcontextlost', () => finish(true));
   document.addEventListener('visibilitychange', onHide);
