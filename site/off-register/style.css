@@ -98,7 +98,7 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 .spec-links a{border-bottom:1.5px solid var(--blue);text-decoration:none;padding:2px 0}
 .spec-links a:hover,.spec-links a:focus-visible{background:var(--yellow)}
 .steps{position:absolute;left:var(--m);bottom:5vh;margin:0;padding:0;list-style:none;width:min(46vw,640px)}
-.steps li{width:fit-content;padding:0 6px;background:var(--paper);font-family:var(--mono);font-size:12px;line-height:1.8;color:rgba(0,34,127,.55)}
+.steps li{width:fit-content;padding:0 6px;background:var(--paper);font-family:var(--mono);font-size:12px;line-height:1.8;color:rgba(0,34,127,.72)}
 .steps li::before{content:"\2192  ";color:var(--pink)}
 .steps li.on{background:none;padding:0;width:auto;font-family:var(--display);font-weight:900;font-size:clamp(58px,7.6vw,128px);line-height:.86;text-transform:uppercase;letter-spacing:-.005em;margin:.18em 0 .22em;color:var(--ink);text-wrap:balance;animation:reg .5s cubic-bezier(.2,.8,.2,1)}
 .steps li.on::before{content:none}

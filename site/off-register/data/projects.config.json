@@ -22,7 +22,7 @@
       "title": "Event Horizon",
       "what": "A cosmic physics sandbox: bend gravity, feed black holes, set off supernovas, then rewind.",
       "stack": "TypeScript, three.js, Vite",
-      "status": "shipped, live. 105 unit tests + 18 browser checks. not tried on real touch hardware yet.",
+      "status": "shipped, live. 105 unit tests pass, including momentum conservation and same-seed determinism. not tried on real touch hardware yet.",
       "page": "./event-horizon/",
       "demo": "https://event-horizon-teal.vercel.app",
       "visual": "art/event-horizon.svg",
@@ -70,8 +70,8 @@
     "campus-bus": {
       "title": "Campus Bus",
       "what": "A college bus reservation system: find a bus that passes your stop, pick a seat on a picture of the bus, get a pass.",
-      "stack": "Java, JavaFX, MySQL",
-      "status": "shipped v1.1. 166 tests, tried on one PC so far.",
+      "stack": "Java, Swing + JavaFX WebView, MySQL",
+      "status": "shipped v1.1. 166 tests against a real MySQL, no CI yet. tried on one PC so far.",
       "visual": "art/campus-bus.svg",
       "links": [
         {
@@ -93,7 +93,7 @@
       "title": "CodeFlow",
       "what": "A learning workspace that makes program state visible, for beginners in C, HTML, CSS and JavaScript.",
       "stack": "vanilla JavaScript, Playwright",
-      "status": "shipped v1.0.0. 54 unit + 84 local browser + 70 production browser checks.",
+      "status": "shipped, live. 55 unit tests green in CI; 84 local and 70 production Playwright checks, run by hand.",
       "page": "./codeflow/",
       "demo": "https://codeflow-app-sigma.vercel.app",
       "visual": "art/codeflow.svg",
@@ -114,9 +114,9 @@
     },
     "Kio": {
       "title": "KIO",
-      "what": "The kernel of my companion runtime, rebuilt one gate at a time.",
+      "what": "A local-first kernel for a personal AI assistant: anything a model proposes passes a validation boundary before it runs. Rebuilt one gate at a time.",
       "stack": "Python",
-      "status": "building. gates C-1 to C-3 done, C-4 next. Phase 0 deleted 5,167 lines.",
+      "status": "building. gates C-1 to C-4b done. no CI or release yet.",
       "links": [
         {
           "label": "GitHub",
@@ -126,9 +126,9 @@
     },
     "Universal-Engineering-Augmentation": {
       "title": "UEA",
-      "what": "Real tools for coding agents, so the model stops guessing what a tool can prove.",
+      "what": "A CLI that runs tiered checks (syntax, mypy, pytest, semgrep) on a codebase and hands a coding agent JSON evidence instead of a guess.",
       "stack": "Python, tree-sitter, Z3",
-      "status": "public alpha, v0.1.0. token savings: not measured yet.",
+      "status": "public alpha, v0.1.0 in code, not tagged. 65 tests green in CI. tree-sitter and Z3 modules not wired into the CLI yet.",
       "links": [
         {
           "label": "GitHub",
@@ -164,7 +164,7 @@
       "title": "gh-ops",
       "what": "My GitHub chores on autopilot: six jobs through one dispatcher, and a Telegram ping only when something happened.",
       "stack": "Python",
-      "status": "1,495 tests, then frozen.",
+      "status": "1,499 tests green in CI, then frozen.",
       "links": [
         {
           "label": "GitHub",

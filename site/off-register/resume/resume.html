@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Joel Jigo, Resume</title>
+<meta name="author" content="Joel Jigo">
+<meta name="description" content="Joel Jigo, B.Tech Computer Science and Engineering student. Resume.">
+<!-- Source for public/resume/Joel_Jigo_Resume.pdf. Edit here, then run: npm run resume -->
+<style>
+@font-face{font-family:"Instrument Serif";src:url(../node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Martian Mono";font-weight:400;src:url(../node_modules/@fontsource/martian-mono/files/martian-mono-latin-400-normal.woff2) format("woff2")}
+@page{size:A4;margin:0}
+:root{--ink:#00227F;--pink:#C81E74;--text:#1B1F2E;--rule:#C9CEDD}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff}
+body{color:var(--text);font:9.3pt/1.34 Georgia,"Times New Roman",serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;padding:11mm 14mm 7mm}
+a{color:inherit;text-decoration:none}
+header{display:flex;justify-content:space-between;align-items:flex-end;gap:8mm;padding-bottom:3mm;border-bottom:1.5pt solid var(--ink)}
+h1{margin:0;font:400 31pt/0.95 "Instrument Serif",Georgia,serif;color:var(--ink);letter-spacing:-.01em}
+.role{margin:1.6mm 0 0;font:400 7.6pt/1.3 "Martian Mono",monospace;color:var(--pink);letter-spacing:.02em}
+.contact{margin:0;font:400 7.4pt/1.65 "Martian Mono",monospace;text-align:right;color:var(--ink)}
+.contact a{border-bottom:.6pt solid var(--pink)}
+h2{display:flex;align-items:center;gap:2.2mm;margin:3.8mm 0 1.6mm;font:400 7.6pt/1 "Martian Mono",monospace;text-transform:uppercase;color:var(--ink)}
+h2::before{content:"";width:2.2mm;height:2.2mm;background:var(--pink)}
+h2::after{content:"";flex:1;height:.6pt;background:var(--rule)}
+p{margin:0}
+.summary{max-width:170mm}
+.row{display:flex;justify-content:space-between;gap:6mm;align-items:baseline}
+.item{margin-top:1.9mm}
+.item:first-of-type{margin-top:0}
+h3{margin:0;font:700 10pt/1.3 Georgia,serif;color:var(--ink)}
+h3 .sub{font-weight:400;font-style:italic;color:var(--text)}
+.meta{font:400 7pt/1.3 "Martian Mono",monospace;color:#4A5170;white-space:nowrap}
+.meta a{border-bottom:.6pt solid var(--pink)}
+ul{margin:.8mm 0 0;padding-left:4mm}
+li{margin:.3mm 0;padding-left:.6mm}
+li::marker{color:var(--pink)}
+.skills{display:grid;grid-template-columns:42mm 1fr;gap:.9mm 4mm;margin:0}
+.skills dt{font:400 7.2pt/1.6 "Martian Mono",monospace;color:var(--pink);white-space:nowrap}
+.skills dd{margin:0}
+code{font:400 8pt "Martian Mono",monospace}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+  <div>
+    <h1>Joel Jigo</h1>
+    <p class="role">Computer Science Engineering Student</p>
+  </div>
+  <p class="contact">
+    Kochi, Kerala, India<br>
+    <a href="mailto:joeljigo3@gmail.com">joeljigo3@gmail.com</a><br>
+    <a href="https://github.com/aspire488">github.com/aspire488</a><br>
+    <a href="https://aspire488.github.io/aspire488/">aspire488.github.io/aspire488</a>
+  </p>
+</header>
+
+<h2>Summary</h2>
+<p class="summary">Computer Science Engineering student building developer tooling, simulations and Android apps, and fixing bugs upstream in AI tooling: 14 pull requests merged into projects I don&rsquo;t own, including Microsoft PyRIT and UK AISI Inspect AI. I like finding out how systems behave beneath the surface.</p>
+
+<h2>Education</h2>
+<div class="row">
+  <h3>B.Tech in Computer Science and Engineering <span class="sub">SCMS School of Engineering and Technology</span></h3>
+</div>
+<p>CGPA: 8.11/10 (after Semester 2)</p>
+
+<h2>Technical Skills</h2>
+<dl class="skills">
+  <dt>Languages</dt><dd>Python, Java, Kotlin, TypeScript, JavaScript, SQL, HTML/CSS</dd>
+  <dt>Frameworks &amp; libraries</dt><dd>three.js (WebGL, GLSL), Jetpack Compose, Java Swing with JavaFX WebView, Apache PDFBox, Vite</dd>
+  <dt>Databases</dt><dd>MySQL (JDBC, transactions, row locking), SQLite</dd>
+  <dt>Testing</dt><dd>JUnit 5, pytest, Hypothesis, Vitest, Playwright</dd>
+  <dt>Tools &amp; infrastructure</dt><dd>Git, GitHub Actions, Gradle, Maven, Vercel, GitHub Pages, Cloudflare Workers</dd>
+</dl>
+
+<h2>Selected Projects</h2>
+<div class="item">
+  <div class="row"><h3>Event Horizon <span class="sub">TypeScript · three.js · GLSL · Vite · Vitest</span></h3><span class="meta"><a href="https://event-horizon-teal.vercel.app">live demo</a> · <a href="https://github.com/aspire488/event-horizon">source</a></span></div>
+  <ul>
+    <li>Built a fixed-timestep simulation core (semi-implicit Euler with Plummer softening, direct-sum body gravity, struct-of-arrays particle field) on a seeded RNG, so the same seed reproduces the same universe.</li>
+    <li>Wrote 105 passing unit tests, including momentum conservation through black-hole mergers (under 1e-6 relative drift over 3,600 steps) and same-seed determinism; wrote custom GLSL shaders for the photon ring and limb darkening.</li>
+  </ul>
+</div>
+<div class="item">
+  <div class="row"><h3>Campus Bus <span class="sub">Java 17 · Swing + JavaFX WebView · MySQL 8 · JUnit 5</span></h3><span class="meta"><a href="https://github.com/aspire488/campus-bus/releases/tag/v1.1">Windows release v1.1</a> · <a href="https://github.com/aspire488/campus-bus">source</a></span></div>
+  <ul>
+    <li>Kept seat booking correct under concurrent requests with transactional <code>SELECT &hellip; FOR UPDATE</code> row locks, covered by seat-race tests; generated PDF passes with PDFBox and emailed them over SMTP.</li>
+    <li>Wrote 166 tests (87 run without a database, the rest against an isolated MySQL 8.4), with one regression test per pre-release audit defect; packaged a self-contained Windows build with <code>jlink</code> and a SHA-256 checksum.</li>
+  </ul>
+</div>
+<div class="item">
+  <div class="row"><h3>Pipo <span class="sub">Kotlin · Jetpack Compose · Cloudflare Workers · three.js</span></h3><span class="meta"><a href="https://github.com/aspire488/Pipo/releases/tag/v1.0">APK release v1.0</a> · <a href="https://github.com/aspire488/Pipo">source</a></span></div>
+  <ul>
+    <li>Built a deterministic life simulation (behaviour, mood, world and trip engines) that advances while the app is closed and reports what happened on return; 226 JVM unit tests, including seeded long-run simulations.</li>
+    <li>Kept LLM provider keys out of the APK by routing optional Gemini/Groq chat through a Cloudflare Worker proxy, with an offline rule-based brain as the default.</li>
+  </ul>
+</div>
+<div class="item">
+  <div class="row"><h3>gh-ops <span class="sub">Python · GitHub Actions · pytest · Hypothesis</span></h3><span class="meta"><a href="https://github.com/aspire488/gh-ops">source</a></span></div>
+  <ul>
+    <li>Runs six scheduled jobs (CI, release, endpoint and security monitoring, plus daily and weekly reports) through one dispatcher on Actions cron, with read-only collectors, state snapshots and change detection; pings Telegram only when something changed. 1,499 tests passing in CI.</li>
+  </ul>
+</div>
+
+<h2>Open-Source Contributions</h2>
+<div class="item">
+  <div class="row"><h3>Microsoft PyRIT <span class="sub">AI red-teaming framework</span></h3><span class="meta">5 merged PRs</span></div>
+  <ul>
+    <li>Added read-only dataset summaries (counts, modalities, harm categories) computed from stored seeds without loading values or calling providers, for a planned dataset explorer; 11 files, with tests (<a href="https://github.com/microsoft/PyRIT/pull/2762">#2762</a>).</li>
+    <li>Fixed four correctness bugs, each with tests: XXE scorer missing XInclude attacks (<a href="https://github.com/microsoft/PyRIT/pull/3429">#3429</a>), exact-text matching treating an empty target as a match (<a href="https://github.com/microsoft/PyRIT/pull/2882">#2882</a>), the HarmBench loader dropping context strings (<a href="https://github.com/microsoft/PyRIT/pull/2823">#2823</a>), and converter identifiers colliding across word-selection strategies (<a href="https://github.com/microsoft/PyRIT/pull/2976">#2976</a>).</li>
+  </ul>
+</div>
+<div class="item">
+  <div class="row"><h3>Inspect AI <span class="sub">UK AI Security Institute, LLM evaluation framework</span></h3><span class="meta">1 merged PR</span></div>
+  <ul>
+    <li>Made an explicitly passed Gemini API key take precedence over ambient <code>GOOGLE_USE_ADC</code> credentials, while keeping explicit <code>use_adc=True</code> as an override; fixes #5358, with tests (<a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/5670">#5670</a>).</li>
+  </ul>
+</div>
+<div class="item">
+  <div class="row"><h3>aios <span class="sub">open-source agent runtime</span></h3><span class="meta">4 merged PRs</span></div>
+  <ul>
+    <li>Preserved <code>finish_reason="length"</code> when streaming trailer chunks overwrote it, and recorded truncation on the model-request span (<a href="https://github.com/eumemic/aios/pull/2457">#2457</a>, <a href="https://github.com/eumemic/aios/pull/2458">#2458</a>); made workflow timeouts report whether the deadline or the spend bound fired (<a href="https://github.com/eumemic/aios/pull/2459">#2459</a>); stopped the harness bypassing LiteLLM parameter translation (<a href="https://github.com/eumemic/aios/pull/2460">#2460</a>).</li>
+  </ul>
+</div>
+<p class="item">14 pull requests merged into projects I don't own. Full ledger: <a class="meta" href="https://github.com/aspire488/oss-atlas">github.com/aspire488/oss-atlas</a></p>
+</div>
+</body>
+</html>
