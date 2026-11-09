@@ -19,14 +19,14 @@
         "JavaScript",
         "HTML"
       ],
-      "updated": "2026-11-05",
+      "updated": "2026-11-09",
       "evidence": [
         "release v1.0 (2026-10-04)",
         "live: https://aspire488.github.io/Pipo/",
         "tests: 31 files",
         "CI: passing",
         "README 7.1 kB",
-        "commits: 50"
+        "commits: 55"
       ],
       "visual": "art/pipo.svg",
       "links": [
@@ -96,20 +96,24 @@
       "url": "https://github.com/aspire488/codeflow",
       "demo": "https://codeflow-app-sigma.vercel.app",
       "page": "./codeflow/",
-      "release": null,
+      "release": {
+        "tag": "v1.1.0",
+        "date": "2026-11-09"
+      },
       "category": "web",
       "languages": [
         "JavaScript",
         "CSS",
         "HTML"
       ],
-      "updated": "2026-11-02",
+      "updated": "2026-11-09",
       "evidence": [
+        "release v1.1.0 (2026-11-09)",
         "live: https://codeflow-app-sigma.vercel.app",
         "tests: 10 files",
         "CI: passing",
-        "README 5.8 kB",
-        "commits: 45"
+        "README 5.9 kB",
+        "commits: 47"
       ],
       "visual": "art/codeflow.svg",
       "links": [
@@ -215,12 +219,12 @@
       "languages": [
         "Python"
       ],
-      "updated": "2026-11-05",
+      "updated": "2026-11-09",
       "evidence": [
         "tests: 8 files",
-        "CI: passing",
-        "README 10.8 kB",
-        "commits: 34"
+        "CI: failure",
+        "README 11.0 kB",
+        "commits: 36"
       ],
       "visual": null,
       "links": [
@@ -273,11 +277,12 @@
       "languages": [
         "Python"
       ],
-      "updated": "2026-11-05",
+      "updated": "2026-11-09",
       "evidence": [
+        "tests: 1 files",
         "CI: passing",
         "README 6.9 kB",
-        "commits: 364"
+        "commits: 370"
       ],
       "visual": null,
       "links": [
@@ -395,7 +400,7 @@
     "OpenHands": "fork",
     "openllmetry": "fork",
     "opentelemetry-erlang-contrib": "fork",
-    "oss-atlas": "discovered",
+    "oss-atlas": "developing",
     "Pipo": "featured",
     "pydantic-ai": "fork",
     "PyRIT": "fork",
