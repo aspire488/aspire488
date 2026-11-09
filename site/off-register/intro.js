@@ -98,17 +98,19 @@ function play() {
   const ringFrag = `uniform float uT, uOn, uCell, uInner, uSpin; varying vec2 vUv; ${dots}
     void main(){
       vec2 p = vUv * 2. - 1.; float r = length(p), a = atan(p.y, p.x);
-      float disc = smoothstep(uInner - .01, uInner + .07, r) * (1. - smoothstep(.72, 1., r));
-      float swirl = .5 + .5 * sin(a * 3. - uT * 5. * uSpin + r * 16.);
-      float streak = .5 + .5 * sin(a * 13. + uT * 9. * uSpin - r * 34.);
-      float beam = 1. + .55 * cos(a - 2.3);                       // one side brighter: Doppler beaming
-      float photon = exp(-pow((r - uInner) / .022, 2.)) * 1.6;      // the thin photon ring
-      float halo = exp(-pow(max(r - .55, 0.) / .5, 2.)) * .18;
-      float I = (disc * (.45 + .55 * swirl) * (.65 + .35 * streak) * beam + photon + halo) * uOn * (1. - smoothstep(.86, .99, r));
-      I = mix(I, dots(clamp(I, 0., 1.), .2618) * 1.15, .4);       // halftoned, printed in the same inks
-      vec3 col = mix(vec3(1., .28, .69), vec3(1., .91, 0.), swirl * .8 + photon * .4);
+      float disc = smoothstep(uInner - .01, uInner + .05, r) * (1. - smoothstep(.7, 1., r));
+      float swirl = .5 + .5 * sin(a * 2. - uT * 9. * uSpin + r * 14.);             // two spiral arms, turning
+      swirl *= swirl;
+      float streak = .5 + .5 * sin(a * 13. + uT * 13. * uSpin - r * 34.);          // fine lanes counter-rotating
+      float b = .5 + .5 * cos(a - 2.3), beam = .3 + 1.7 * b * b;                    // approaching side: brighter, denser (Doppler)
+      float photon = exp(-pow((r - uInner) / .014, 2.)) * 2.6;                      // the thin, crisp photon ring
+      float plate = exp(-pow((r - uInner * .95) / .012, 2.)) * .9;                  // its blue plate, a hair out of register
+      float I = (disc * (.2 + .95 * swirl) * (.55 + .45 * streak) * beam * 1.15 + photon + plate + exp(-pow(max(r - .6, 0.) / .35, 2.)) * .08) * uOn * (1. - smoothstep(.86, .99, r));
+      I = mix(I, dots(clamp(I, 0., 1.), .2618) * 1.25, .75);                          // printed: halftone dots in the same inks
+      vec3 col = mix(vec3(1., .28, .69), vec3(1., .91, 0.), clamp(swirl * .9 + b * .35, 0., 1.) * .85 + photon * .15);
+      col = mix(col, vec3(.2, .55, 1.), clamp(plate * .8, 0., 1.));
       col = mix(col, vec3(1., .98, .9), clamp(photon * .6, 0., 1.));
-      gl_FragColor = vec4(col, clamp(I, 0., 1.6)); }`;
+      gl_FragColor = vec4(col, clamp(I, 0., 1.8)); }`;
   const INNER = 0.74;
   const ring = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), new THREE.ShaderMaterial({
     uniforms: { uT: { value: 0 }, uOn: { value: 0 }, uCell: { value: CELL }, uInner: { value: INNER }, uSpin: { value: 1 } },
@@ -121,15 +123,26 @@ function play() {
   const post = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), new THREE.ShaderMaterial({
     depthTest: false, depthWrite: false,
     uniforms: { tScene: { value: target.texture }, uRes: { value: new THREE.Vector2() }, uC: { value: new THREE.Vector2(.5, .5) },
-      uIris: { value: 0 }, uEll: { value: 1 }, uEdge: { value: .002 }, uStar: { value: 0 }, uStreak: { value: 0 }, uFlash: { value: 0 }, uAsp: { value: 1 }, uT: { value: 0 }, uRip: { value: 0 }, uMis: { value: 0 } },
+      uIris: { value: 0 }, uEll: { value: 1 }, uEdge: { value: .002 }, uStar: { value: 0 }, uStreak: { value: 0 }, uFlash: { value: 0 }, uAsp: { value: 1 }, uT: { value: 0 }, uRip: { value: 0 },
+      uSplit: { value: 0 }, uPunch: { value: 1 }, uDpr: { value: dpr }, uRim: { value: 1 }, uEllR: { value: 1 }, uLens: { value: 0 }, uShock: { value: 0 }, uCover: { value: 1 } },
     vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position.xy, 0., 1.); }`,
-    fragmentShader: `uniform sampler2D tScene; uniform vec2 uRes, uC; uniform float uIris, uEll, uEdge, uStar, uStreak, uFlash, uAsp, uT, uRip, uMis; varying vec2 vUv;
+    fragmentShader: `uniform sampler2D tScene; uniform vec2 uRes, uC; uniform float uIris, uEll, uEdge, uStar, uStreak, uFlash, uAsp, uT, uRip, uSplit, uPunch, uDpr, uRim, uEllR, uLens, uShock, uCover; varying vec2 vUv;
       float h(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+      // one star; in the warp it stretches into a long line along the bus's travel, tapering to its trailing end
+      float sm(vec2 px, float sz, float seed, out float hh){
+        float W = 1. + uStreak * 5.;
+        vec2 q = vec2(px.x / (sz * W), px.y / sz), cell = floor(q), f = fract(q) - .5;
+        hh = h(cell + seed);
+        vec2 c = (vec2(h(cell + 1.3), h(cell + 7.1)) - .5) * vec2(mix(.6, .2, uStreak), .6);
+        float dx = (f.x - c.x) * W, hl = (W - 1.) * .42;
+        float d = length(vec2(max(abs(dx) - hl, 0.), f.y - c.y));
+        float m = step(.9 - .05 * uStreak, hh) * (1. - smoothstep(.07 - .03 * uStreak, .13 - .06 * uStreak, d)) * (.65 + .35 * sin(uT * 3. + hh * 40.));
+        return m * mix(1., .2 + .8 * smoothstep(-hl - .3, hl, dx), uStreak); }
       vec3 stars(vec2 px, float sz, float seed){
-        vec2 q = px / sz, cell = floor(q), f = fract(q) - .5; f.x /= 1. + uStreak;
-        float hh = h(cell + seed), star = step(.9, hh) * (1. - smoothstep(.07, .13, length(f - (vec2(h(cell + 1.3), h(cell + 7.1)) - .5) * .6)));
-        vec3 sc = hh > .97 ? vec3(1., .28, .69) : hh > .94 ? vec3(1., .91, 0.) : vec3(.8, .88, 1.);
-        return sc * star * (.65 + .35 * sin(uT * 3. + hh * 40.)); }
+        float hh, m;
+        if (uStreak < .04) { m = sm(px, sz, seed, hh); return (hh > .97 ? vec3(1., .28, .69) : hh > .94 ? vec3(1., .91, 0.) : vec3(.8, .88, 1.)) * m; }
+        vec2 o = vec2(1.6, 4.) * uDpr * uStreak;   // warp: two plates, pink and blue, a hair apart: a doubled line
+        return (vec3(1., .28, .69) * sm(px + o, sz, seed, hh) + vec3(.2, .65, 1.) * sm(px - o, sz, seed, hh)) * 1.15; }
       vec3 comp(vec2 uv){
         vec2 q = uv - uC, d = q; d.x *= uAsp / uEll; float L = length(d);
         if (uRip > 0.) {   // the crossing: a shockwave rolls out from the iris edge, and the edge itself shudders
@@ -138,9 +151,22 @@ function play() {
           L += w * .02 + .01 * sin(atan(d.y, d.x) * 9. + uRip * 14.) * (1. - uRip);
         }
         float ins = uIris > .001 ? 1. - smoothstep(uIris - uEdge, uIris + uEdge, L) : 0.;   // the iris: inside is space, outside is paper
-        vec4 s = texture2D(tScene, uv);
+        // gravitational lens: the background is dragged outwards around the rim (up to 6% of the width) and stretched along it
+        vec2 uvb = uv, uvs = uv;
+        if (uLens > 0.) {
+          vec2 lq = uv - uC, dl = lq; dl.x *= uAsp / uEllR; float Ll = length(dl) + 1e-5, rr = Ll / uRim;
+          float g = smoothstep(.72, 1., rr) * exp(-max(rr - 1., 0.) * 1.1);
+          uvb = uC + lq * max(Ll - uLens * .06 * uAsp * g, 0.) / Ll;
+          uvs = mix(uv, uvb, smoothstep(1.35, 1.8, rr));
+        }
+        vec4 s = texture2D(tScene, uvs);
         vec3 bg = mix(vec3(.957, .933, .882), vec3(.035, .055, .2), ins);
-        vec2 px = uv * uRes;
+        vec2 px = uvb * uRes;
+        if (uLens > 0.) {   // a blue-plate grid printed on the sheet: it is what the lens visibly bends
+          vec2 ge = .5 - abs(fract(px / (30. * uDpr)) - .5);
+          float gm = max(1. - smoothstep(.015, .05, ge.x), 1. - smoothstep(.015, .05, ge.y)) * uLens;
+          bg = mix(bg * (1. - gm * .28 * vec3(1., .5, 0.)), bg + vec3(.3, .55, 1.) * gm * .2, ins);
+        }
         bg += (stars(px - vec2(uStar * .6, 0.), 26., 0.) + stars(px - vec2(uStar * 1.5, 17.), 44., 9.3)) * ins;   // two layers, sliding sideways as the bus moves
         float a = clamp(s.a, 0., 1.);
         vec3 L3 = s.rgb * (1. - a); float m = max(L3.r, max(L3.g, L3.b));
@@ -150,8 +176,22 @@ function play() {
         return mix(inked, lit, ins) * (1. - a) + s.rgb * a;
       }
       void main(){
-        vec3 col = comp(vUv);
-        if (uMis > 0.) { vec3 c2 = comp(vUv + vec2(uMis, -uMis * .35) / uRes); col.g = c2.g; col.b = mix(col.b, c2.b, .5); }   // the pink plate slips (pink absorbs green)
+        vec2 uv = (vUv - .5) / uPunch + .5;   // the paper punch: the whole sheet lands 3% big and settles
+        vec3 col;
+        if (uSplit > 0.) { vec2 k = uDpr / uRes * uSplit;   // three plates: blue absorbs red, pink absorbs green; each slips its own way
+          col = vec3(comp(uv + vec2(-10., 3.) * k).r, comp(uv + vec2(16., -4.5) * k).g, comp(uv).b); }
+        else col = comp(uv);
+        if (uShock > 0.) {   // halftone shockwave from the rim to beyond the screen: big dots that swell then shrink across the front
+          vec2 dd = uv - uC; dd.x *= uAsp / uEll;
+          float bw = .115, u = (length(dd) - mix(uRim * .9, uCover + bw, 1. - pow(1. - uShock, 2.2))) / bw;
+          float prof = max(1. - u * u, 0.) * (1. - .4 * uShock);
+          if (prof > .05) {
+            vec2 px = uv * uRes; float cell = 20. * uDpr, c1 = .7071;
+            vec2 pY = px / cell, pP = mat2(c1, -c1, c1, c1) * (px + vec2(7., -5.) * uDpr) / cell;
+            col = mix(col, vec3(1., .91, 0.), 1. - smoothstep(prof * .5 - .06, prof * .5 + .06, length(fract(pY) - .5)));
+            col = mix(col, vec3(1., .28, .69), 1. - smoothstep(prof * .42 - .06, prof * .42 + .06, length(fract(pP) - .5)));
+          }
+        }
         col += vec3(1., .96, .82) * uFlash;
         gl_FragColor = vec4(col, 1.); }` }));
   const postScene = new THREE.Scene(), postCam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
@@ -160,22 +200,31 @@ function play() {
 
   // ---------- print-language VFX: halftone dust at the tyres and heels, misregistered speed lines ----------
   const puffGeo = new THREE.PlaneGeometry(1, 1);
-  const puffMat = () => new THREE.ShaderMaterial({ transparent: true, depthWrite: false, vertexShader: vert,
-    uniforms: { uCell: { value: CELL * .7 }, uInk: { value: V(C.blue) }, uP: { value: 0 } },
+  const puffMat = (c) => new THREE.ShaderMaterial({ transparent: true, depthWrite: false, vertexShader: vert,
+    uniforms: { uCell: { value: CELL * .9 }, uInk: { value: V(C[c]) }, uP: { value: 0 } },
     fragmentShader: `uniform float uCell, uP; uniform vec3 uInk; varying vec2 vUv; ${dots}
       void main(){ vec2 q = vUv - .5; float a = atan(q.y, q.x), r = length(q) * 2. * (1. + .18 * sin(a * 3. + uP * 2.) + .1 * sin(a * 7.));   // lumpy edge
-        float k = (1. - smoothstep(.1, 1., r)) * (1. - uP * uP) * .46;   // never fills a cell: reads as sparse ink dots thinning to nothing
+        float k = (1. - smoothstep(.1, 1., r)) * (1. - uP * uP) * .72;   // dense ink dots, thinning to nothing at the edge
         if (k < .04) discard; gl_FragColor = vec4(uInk, dots(k, .2618)); }` });
   const puffs = [];
-  const mkPuff = (ts, on, w, dx, s, life = .7) => { const m = new THREE.Mesh(puffGeo, puffMat()); m.visible = false; m.renderOrder = 1; world.add(m); puffs.push({ m, ts, on, w, dx, s, life, x: null }); };
-  for (let i = 0; i < 5; i++) mkPuff(1.95 + i * .12, 'bus', i % 2 ? 1 : -1, -.9, 1.1);  // braking into the stop: the tyres kick ink-dust ahead
-  for (let i = 0; i < 4; i++) mkPuff(6.9 + i * .09, 'bus', 1, 1., 1.1);               // pulling away: dust left at the tail
-  mkPuff(6.76, 'pipo', -1, -.5, .5, .6); mkPuff(6.76, 'pipo', 1, .5, .5, .6);        // Pipo's landing
+  const mkPuff = (ts, on, w, dx, s, life = .8) => { const m = new THREE.Mesh(puffGeo, puffMat(puffs.length % 3 === 2 ? 'pink' : 'blue')); m.visible = false; m.renderOrder = 1; world.add(m); puffs.push({ m, ts, on, w, dx, s, life, x: null }); };
+  for (let i = 0; i < 9; i++) mkPuff(1.9 + i * .07, 'bus', i % 2 ? 1 : -1, -.6 - i * .22, 1.8 + (i % 3) * .3);   // braking into the stop: the tyres kick a bank of ink-dust ahead
+  for (let i = 0; i < 8; i++) mkPuff(6.85 + i * .07, 'bus', 1, .8 + i * .3, 1.8 + (i % 3) * .3);                 // pulling away: a bank of dust left at the tail
+  for (let i = 0; i < 4; i++) mkPuff(6.74 + i * .04, 'pipo', i % 2 ? 1 : -1, (i % 2 ? .5 : -.5) * (1 + i * .5), 1.2, .7);   // Pipo's landing
   const lineMat = (c) => new THREE.ShaderMaterial({ transparent: true, depthWrite: false, vertexShader: vert, uniforms: { uC: { value: V(C[c]) }, uA: { value: 0 } },
     fragmentShader: `uniform vec3 uC; uniform float uA; varying vec2 vUv; void main(){ gl_FragColor = vec4(uC, uA * (1. - smoothstep(.5, 1., vUv.x))); }` });
   const lmP = lineMat('pink'), lmB = lineMat('blue');
   const streaks = [[-.3, 1.9], [.12, 1.2], [.42, 1.6]].map(([y, len]) => [y, len, new THREE.Mesh(puffGeo, lmB), new THREE.Mesh(puffGeo, lmP)]);
   streaks.forEach((l) => { l[2].visible = l[3].visible = false; world.add(l[2], l[3]); });
+
+  // speed smear: three ghosts of the bus trail it as it accelerates at the ring, flat pink and blue halftone silhouettes
+  const ghostMat = (c, ang) => new THREE.ShaderMaterial({ transparent: true, depthWrite: false, vertexShader: vert,
+    uniforms: { uCell: { value: CELL * 1.2 }, uInk: { value: V(C[c]) }, uK: { value: 0 }, uAng: { value: ang } },
+    fragmentShader: `uniform float uCell, uK, uAng; uniform vec3 uInk; varying vec2 vUv; ${dots}
+      void main(){ float a = dots(uK, uAng); if (a < .02) discard; gl_FragColor = vec4(uInk, a); }` });
+  const ghosts = [['pink', .72, ANG.pink], ['blue', .6, ANG.blue], ['pink', .48, ANG.pink + .5]].map(([c, k0, ang]) => {
+    const g = bus.g.clone(true), m = ghostMat(c, ang); g.visible = false;
+    g.traverse((o) => { if (o.isMesh) o.material = m; }); world.add(g); return { g, m, k0 }; });
 
   let W, H, k = 1, wx = 6, narrow = false;
   const base = new THREE.Vector3(), baseLook = new THREE.Vector3(), baseOff = new THREE.Vector3(), closeOff = new THREE.Vector3();
@@ -312,10 +361,18 @@ function play() {
       mp.position.set(tail + .15 + L2 * .4, GROUND + .8 * BS + y * BS + .04, .2); mp.scale.set(L2 * .8, .04, 1);
     });
 
+    ghosts.forEach((q, i) => {
+      const f = sl * (1 - seg(t, tc, tc + .12)), vis = f > .04; q.g.visible = vis; if (!vis) return;
+      q.m.uniforms.uK.value = q.k0 * f;
+      q.g.scale.setScalar(BS * (1 + .05 * (i + 1))); q.g.position.set(busX + (i + 1) * (narrow ? .09 + .09 * sl : .2 + .2 * sl) * BS, bus.g.position.y, -.05 * (i + 1));
+      q.g.children[0].rotation.z = bus.body.rotation.z; q.g.children[0].position.y = bus.body.position.y;
+    });
+
     // sound, on the same beats
     cue(.05, 'pop'); cue(.55, 'blip'); cue(2.45, 'blip', { p: 1.3 }); cue(2.05, 'brake');
     cue(2.85, 'door'); cue(3.1, 'hop'); cue(3.55, 'land', { v: .5 }); cue(RING_ON, 'ring'); cue(tc - .15, 'warp'); cue(tcl - .05, 'emerge');
     cue(6.25, 'door'); cue(6.3, 'hop', { p: 1.15 }); cue(6.75, 'land'); cue(7.25, 'wave');
+    sound.score && sound.score(t);
     eng.set({ s: clamp(spd / 5), g: seg(t, .9, 1.8) * (1 - seg(t, 6.9, 7.6)) * (1 - .6 * e) });
     if (!spaceL && skipAt === null && t > tc - .2 && t < tcl + .8) spaceL = sound.loop('space');
     if (spaceL) { spaceL.set({ g: e }); if (t > tcl + .8 || skipAt !== null) { spaceL.stop(); spaceL = null; } }
@@ -337,7 +394,11 @@ function play() {
     PU.uStar.value = (STOP - u) * 40 * dpr; PU.uStreak.value = clamp(spd / 4) * (e > 0 ? 1 : 0);
     PU.uFlash.value = Math.exp(-(((t - tc) / .1) ** 2)) * 0.14; PU.uT.value = t;
     const rp = seg(t, tc - .05, tc + .4); PU.uRip.value = rp < 1 ? rp : 0;                                   // shockwave, ~.4 s
-    PU.uMis.value = Math.max(bell(t, tc - .02, tc + .3), .5 * bell(t, tcl - .1, tcl + .15)) * 4 * dpr;      // the print slips, a few px
+    const sp = seg(t, tc - .03, tc + .4);                                                                      // the plates split at the crossing and settle in ~.35 s
+    PU.uSplit.value = (t >= tc - .03 && sp < 1 ? (1 - sp) ** 2 : 0) + .45 * bell(t, tcl - .1, tcl + .15);
+    PU.uPunch.value = t >= tc - .02 && t < tc + .05 ? 1 + .03 * (1 - seg(t, tc - .02, tc + .05)) ** 2 : 1;      // paper punch, 1.03 to 1 in a few frames
+    const sw = seg(t, tc - .02, tc + .55); PU.uShock.value = t >= tc - .02 && sw < 1 ? Math.max(sw, 1e-3) : 0;   // halftone shockwave, ~.5 s
+    PU.uCover.value = cover; PU.uRim.value = Math.max(ry, 1e-3); PU.uEllR.value = ell; PU.uLens.value = ring.visible ? clamp(grow * 2) : 0;
 
     renderer.setRenderTarget(target); renderer.clear(); renderer.render(scene, camera);
     renderer.setRenderTarget(null); renderer.render(postScene, postCam);
