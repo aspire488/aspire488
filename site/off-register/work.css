@@ -76,3 +76,50 @@
 @media (prefers-reduced-motion:reduce){
   .more-name,.up-item h3 a,.up-prs a,.up-more a{transition:none}
 }
+
+/* ---------- $ whoami: overrides the older .whoami rules in style.css ---------- */
+.whoami{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:5vh var(--m);margin-bottom:16vh}
+.whoami-prompt{grid-column:1/-1;margin:0;font-size:14px}
+.whoami-prompt::before{content:none}
+.whoami-prompt span{color:var(--pink-text)}
+.whoami .whoami-lead{grid-column:1;grid-row:2;max-width:none;font-size:clamp(30px,3.5vw,56px);line-height:1.05}
+.whoami-facts{grid-column:2;grid-row:2/4;align-self:start;margin:0;padding-top:.6em;font-family:var(--mono);font-size:12px;line-height:1.5}
+.whoami-facts div{display:grid;grid-template-columns:minmax(0,9.5em) minmax(0,1fr);gap:0 var(--m);padding:9px 0;border-top:1px solid rgba(0,34,127,.24)}
+.whoami-facts div:first-child{border-top:2px solid var(--blue)}
+.whoami-facts dt{color:var(--pink-text)}
+.whoami-facts dd{margin:0;overflow-wrap:anywhere}
+.whoami-facts a{display:inline-flex;align-items:center;min-height:44px;margin:-12px 0;text-decoration:none;border-bottom:1.5px solid var(--pink);transition:background-color .18s ease}
+.whoami-facts a:hover,.whoami-facts a:focus-visible{background:var(--yellow)}
+.whoami-tag{grid-column:1;grid-row:4/6;align-self:end;margin:0;font-family:var(--display);font-weight:900;font-size:clamp(40px,6.2vw,104px);line-height:.9;text-transform:uppercase;letter-spacing:.005em;color:var(--blue);text-shadow:.035em .028em 0 var(--pink);text-wrap:balance}
+.whoami .whoami-body{grid-column:1;grid-row:3;align-self:start;max-width:52ch}
+.whoami-pulled{grid-column:2;grid-row:4}
+.whoami-going{grid-column:2;grid-row:5}
+.whoami-sub{margin:0 0 1.2vh;font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--pink-text)}
+.whoami-pulled ul{display:flex;flex-wrap:wrap;gap:0 .5em;margin:0;padding:0;list-style:none;font-family:var(--display);font-weight:800;font-size:clamp(24px,2.2vw,32px);line-height:1.2;text-transform:uppercase;color:var(--blue)}
+.whoami-pulled li{white-space:nowrap}
+.whoami-pulled li:not(:last-child)::after{content:"/" / "";margin-left:.5em;color:var(--pink-display)}
+.whoami-going p:not(.whoami-sub){margin:0;max-width:44ch;font-size:clamp(18px,1.45vw,21px);line-height:1.42}
+
+/* one-line taglines under the section labels */
+.label:has(+ .tagline){margin-bottom:.8vh}
+.tagline{max-width:56ch;margin:0 0 4vh;font-style:italic;font-size:clamp(17px,1.4vw,20px);line-height:1.3;color:rgba(0,34,127,.8)}
+
+@media (max-width:860px){
+  .whoami{gap:4vh 0}
+  .whoami > *{grid-column:1;grid-row:auto}
+  .whoami .whoami-lead{grid-column:1;grid-row:auto}
+  .whoami-facts{padding-top:0}
+  .whoami .whoami-body{max-width:none}
+}
+@media (max-width:420px){
+  .whoami-facts div{grid-template-columns:minmax(0,1fr);gap:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .whoami-facts a{transition:none}
+}
+
+/* outro sign-off: the last thing on the page lands as a punch line, not a footnote */
+.contact .signoff{max-width:none;padding-top:3vh;border-top:2px solid var(--blue);font-family:var(--display);font-style:normal;font-weight:900;font-size:clamp(34px,5.2vw,88px);line-height:.92;text-transform:uppercase;letter-spacing:.005em;color:var(--ink);text-wrap:balance}
+.contact .signoff span{display:block}
+.contact .signoff span:nth-child(2){color:var(--blue)}
+.contact .signoff span:nth-child(3){color:var(--pink-display)}

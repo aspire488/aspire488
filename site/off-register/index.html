@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="./work.css">
 <link rel="stylesheet" href="./intro.css">
 <script>/* opening sequence guard: plays on every load unless the visitor asked the OS to reduce motion; never holds the page longer than 7s, and the sheet has a working Skip button from first paint */
-try{var d=document.documentElement,n=navigator.connection,r=matchMedia('(prefers-reduced-motion: reduce)').matches,s=sessionStorage.getItem('pipo-intro')==='1',f=/[?&]intro/.test(location.search),lo=n&&n.saveData;if(!r){d.classList.add('intro-pending');var end=function(){d.classList.remove('intro-pending');var b=document.querySelector('.pending-skip');b&&b.remove()},mo=new MutationObserver(function(){if(!document.body)return;mo.disconnect();var b=document.createElement('button');b.type='button';b.className='pending-skip';b.textContent='Skip intro';b.onclick=function(){try{sessionStorage.setItem('pipo-intro','1')}catch(e){}end()};document.body.prepend(b)});mo.observe(d,{childList:true});setTimeout(end,7000)}}catch(e){}</script>
+try{var d=document.documentElement,r=matchMedia('(prefers-reduced-motion: reduce)').matches;if(!r){d.classList.add('intro-pending');var end=function(){d.classList.remove('intro-pending');var b=document.querySelector('.pending-skip');b&&b.remove()},mo=new MutationObserver(function(){if(!document.body)return;mo.disconnect();var b=document.createElement('button');b.type='button';b.className='pending-skip';b.textContent='Skip intro';b.onclick=end;document.body.prepend(b)});mo.observe(d,{childList:true});setTimeout(end,7000)}}catch(e){}</script>
 </head>
 <body>
 <a class="skip" href="#rest">Skip to the work</a>
@@ -31,6 +31,7 @@ try{var d=document.documentElement,n=navigator.connection,r=matchMedia('(prefers
   <a href="#rest">the work</a>
   <a href="#contact">contact</a>
   <a href="https://github.com/aspire488" target="_blank" rel="me noopener noreferrer">github <span aria-hidden="true">&#8599;</span></a>
+  <button class="sound-toggle" type="button" hidden>sound on</button>
 </nav>
 
 <main>
@@ -115,35 +116,62 @@ try{var d=document.documentElement,n=navigator.connection,r=matchMedia('(prefers
 
   <!-- coda -->
   <section id="rest" aria-labelledby="rest-h">
-    <div class="whoami" aria-labelledby="whoami-h">
-      <h2 id="whoami-h" class="label">about me, briefly</h2>
-      <p class="whoami-lead">Campus Bus started as my OOP course project. It ended up with a seat map, route lines and a bus pass the brief never asked for.</p>
-      <p class="whoami-body">That is how most of it goes: I build the thing, then I write down what is actually true about it: what shipped, what is tested, and what has only run on one PC. Lately it's agent tooling: KIO, a companion runtime I'm rebuilding one gate at a time; UEA, which hands proof work to tree-sitter and Z3; and fixes in other people's AI evaluation and red-teaming tools.</p>
-    </div>
+    <section class="whoami" aria-labelledby="whoami-h">
+      <h2 id="whoami-h" class="label whoami-prompt"><span aria-hidden="true">$ </span>whoami</h2>
+      <p class="whoami-lead">I'm Joel, a second-year computer science student who would rather take a system apart than take it on trust.</p>
+      <dl class="whoami-facts">
+        <div><dt>now</dt><dd>B.Tech Computer Science &amp; Engineering, 2nd year</dd></div>
+        <div><dt>at</dt><dd>SCMS School of Engineering and Technology, under KTU</dd></div>
+        <div><dt>handle</dt><dd><a href="https://github.com/aspire488" target="_blank" rel="me noopener noreferrer">aspire488 &#8599;</a></dd></div>
+        <div><dt>builds</dt><dd>AI systems, developer tools and automation</dd></div>
+        <div><dt>shipped</dt><dd>Pipo, Event Horizon, CodeFlow, Campus Bus</dd></div>
+        <div><dt>merged upstream</dt><dd>Microsoft PyRIT, UK AISI Inspect AI, aios</dd></div>
+      </dl>
+      <p class="whoami-body">I like the deeper side of engineering: how systems work beneath the surface, and what it takes to turn an interesting idea into something that actually runs. I learn by experimenting with technologies I don't know yet, taking things apart to see how they were built, and then building my own.</p>
+      <div class="whoami-pulled">
+        <p class="whoami-sub">pulled toward</p>
+        <ul>
+          <li>reverse engineering</li>
+          <li>distributed systems</li>
+          <li>developer tools</li>
+          <li>AI infrastructure</li>
+          <li>machine learning</li>
+        </ul>
+      </div>
+      <div class="whoami-going">
+        <p class="whoami-sub">where I'm going</p>
+        <p>I want to grow into an engineer who can move between software, systems and emerging technologies, who contributes to open source in ways that matter, and who builds things that are genuinely useful. I'm still exploring, still learning, and still finding out where I can push myself furthest.</p>
+      </div>
+      <p class="whoami-tag">Beneath the surface is where it gets interesting.</p>
+    </section>
 
     <h2 id="rest-h" class="label">the work</h2>
+    <p class="tagline">Shipped means you can run it, not just read about it.</p>
     <ul class="bench"><!--@featured--></ul>
 
     <h2 id="more-h" class="label">also on the bench</h2>
+    <p class="tagline">Half-built, and labelled honestly.</p>
     <!--@more-->
 
     <div class="upstream" aria-labelledby="up-h">
       <h2 id="up-h" class="label">in other people's code</h2>
+      <p class="tagline">Small fixes in other people's code. Merged, not just opened.</p>
       <!--@upstream-->
     </div>
   </section>
 
   <!-- final act: contact -->
   <section id="contact" class="contact" aria-labelledby="contact-h">
-    <h2 id="contact-h" class="contact-title">Got something interesting in mind? <em>Say hello.</em></h2>
+    <p class="contact-kicker">end of the line &middot; back to Earth</p>
+    <h2 id="contact-h" class="contact-title">That's the whole route. <em>Say hello.</em></h2>
     <div class="contact-aside">
-      <p class="contact-copy">If something here caught your attention, or you're building something that has to hold up, I'd like to hear about it. I'm open to collaborations, open-source contributions and engineering conversations.</p>
+      <p class="contact-copy">If something here made you curious, or you're building something that has to hold up, I'd like to hear about it. Collaborations, open-source work, or just a good engineering conversation.</p>
       <p class="contact-actions">
         <a class="contact-link" href="mailto:joeljigo3@gmail.com">joeljigo3@gmail.com</a>
         <a class="contact-link" href="https://github.com/aspire488" target="_blank" rel="me noopener noreferrer">github.com/aspire488 <span aria-hidden="true">&#8599;</span></a>
       </p>
     </div>
-    <p class="signoff">Make the system prove it.</p>
+    <p class="signoff"><span>Still exploring.</span> <span>Still shipping.</span> <span>Still finding out why things break.</span></p>
   </section>
 </main>
 
