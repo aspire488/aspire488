@@ -19,14 +19,14 @@
         "JavaScript",
         "HTML"
       ],
-      "updated": "2026-11-09",
+      "updated": "2026-11-10",
       "evidence": [
         "release v1.0 (2026-10-04)",
         "live: https://aspire488.github.io/Pipo/",
         "tests: 31 files",
         "CI: passing",
-        "README 7.1 kB",
-        "commits: 55"
+        "README 9.5 kB",
+        "commits: 62"
       ],
       "visual": "art/pipo.svg",
       "links": [
@@ -277,12 +277,12 @@
       "languages": [
         "Python"
       ],
-      "updated": "2026-11-09",
+      "updated": "2026-11-10",
       "evidence": [
         "tests: 1 files",
-        "CI: passing",
+        "CI: failure",
         "README 6.9 kB",
-        "commits: 370"
+        "commits: 374"
       ],
       "visual": null,
       "links": [
