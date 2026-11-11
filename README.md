@@ -80,6 +80,14 @@ hey, I'm Joel 👋 I learn by building things, shipping them, and finding out wh
 
 **RAG Platform** `building · Phase 3 complete` · a resource-aware, local-first RAG foundation; hybrid retrieval and controlled generation are planned, not implemented yet · egress off by default · [source](https://github.com/aspire488/rag-platform)
 
+## In the signal
+
+<a href="https://github.com/aspire488/kairo-email-intelligence">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=F5F0E8&fontColor=20222B&height=115&section=header&text=KAIRO&fontSize=48&fontAlignY=42&desc=KNOW%20WHAT%20MATTERS.%20%20%2F%20%20PERSONAL%20EMAIL%20INTELLIGENCE&descSize=12&descAlignY=72" width="720" alt="KAIRO — Know what matters. Personal email intelligence."/>
+</a>
+
+**KAIRO** `building · active development` · a personal email operations agent that turns inbox noise into actionable intelligence · Gmail + Gemini, with OSS notification intelligence, natural-language inbox search, thread analysis, and approval-gated actions · web, desktop and mobile architecture in progress · [repository](https://github.com/aspire488/kairo-email-intelligence)
+
 ## Tools I made for myself
 
 <picture>
