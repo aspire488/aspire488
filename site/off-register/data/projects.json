@@ -19,14 +19,14 @@
         "JavaScript",
         "HTML"
       ],
-      "updated": "2026-11-10",
+      "updated": "2026-11-11",
       "evidence": [
         "release v1.0 (2026-10-04)",
         "live: https://aspire488.github.io/Pipo/",
         "tests: 31 files",
         "CI: passing",
-        "README 9.5 kB",
-        "commits: 62"
+        "README 10.2 kB",
+        "commits: 64"
       ],
       "visual": "art/pipo.svg",
       "links": [
@@ -277,12 +277,12 @@
       "languages": [
         "Python"
       ],
-      "updated": "2026-11-10",
+      "updated": "2026-11-11",
       "evidence": [
         "tests: 1 files",
         "CI: failure",
         "README 6.9 kB",
-        "commits: 374"
+        "commits: 381"
       ],
       "visual": null,
       "links": [
@@ -387,6 +387,7 @@
     "inspect_ai": "fork",
     "intellij-powershell": "fork",
     "jj": "fork",
+    "kairo-email-intelligence": "developing",
     "kestra": "fork",
     "Kio": "discovered",
     "KiroCrew": "fork",
