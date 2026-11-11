@@ -34,6 +34,8 @@ hey, I'm Joel 👋 I learn by building things, shipping them, and finding out wh
 
 **Pipo** `shipped · v1.0` · a little robot who lives in your phone · [get the APK](https://github.com/aspire488/Pipo/releases/tag/v1.0) · [source](https://github.com/aspire488/Pipo)
 
+[![XERJ Corpus Hub contributor](https://hub.xerj.org/contributors/aspire488/badge.svg)](https://hub.xerj.org/contributors/aspire488)
+
 <a href="https://github.com/aspire488/campus-bus"><img src="./assets/profile/work/campus-bus-route.svg" width="720" alt="Animated Campus Bus shuttle travelling from High Court through city stops to SCMS Campus Karukutty."></a>
 
 <a href="https://github.com/aspire488/campus-bus"><img src="./assets/profile/work/campus-bus-seat-map.png" width="720" alt="Campus Bus booking interface: High Court to SCMS Campus Karukutty route, 49 available seats and seat 07 selected."></a>
