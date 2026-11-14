@@ -17,16 +17,16 @@
       "languages": [
         "Kotlin",
         "JavaScript",
-        "HTML"
+        "Python"
       ],
-      "updated": "2026-11-11",
+      "updated": "2026-11-14",
       "evidence": [
         "release v1.0 (2026-10-04)",
         "live: https://aspire488.github.io/Pipo/",
-        "tests: 31 files",
+        "tests: 45 files",
         "CI: passing",
-        "README 10.2 kB",
-        "commits: 64"
+        "README 11.3 kB",
+        "commits: 72"
       ],
       "visual": "art/pipo.svg",
       "links": [
@@ -277,12 +277,12 @@
       "languages": [
         "Python"
       ],
-      "updated": "2026-11-11",
+      "updated": "2026-11-14",
       "evidence": [
         "tests: 1 files",
-        "CI: failure",
-        "README 6.9 kB",
-        "commits: 383"
+        "CI: passing",
+        "README 7.0 kB",
+        "commits: 392"
       ],
       "visual": null,
       "links": [
