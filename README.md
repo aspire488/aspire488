@@ -114,7 +114,7 @@ hey, I'm Joel 👋 I learn by building things, shipping them, and finding out wh
   <img src="./assets/profile/tally.light.svg" width="720" alt="Live tally of my pull requests to other people's repositories, merged, open, draft and closed, redrawn every hour from the GitHub API.">
 </picture>
 
-Tally redrawn from GitHub every hour. Merged into [PyRIT](https://github.com/microsoft/PyRIT/pull/2762), [Inspect AI](https://github.com/UKGovernmentBEIS/inspect_ai/pull/5670), [aios](https://github.com/eumemic/aios/pull/2457) and more. A maintainer also carried my [Hermes Agent fix](https://github.com/NousResearch/hermes-agent/pull/121771) into [#126144](https://github.com/NousResearch/hermes-agent/pull/126144), with credit. [See every PR, the closed ones too](https://github.com/search?q=is%3Apr+author%3Aaspire488+-user%3Aaspire488&type=pullrequests).
+**15 merged upstream · 27 open · 25 closed** across 67 external OSS PRs, tracked in [OSS Atlas](https://github.com/aspire488/oss-atlas). Latest merge: [Microsoft PyRIT #3885](https://github.com/microsoft/PyRIT/pull/3885) — HTTP attachment download error handling, retryable failures, and regression coverage. Other merged work includes [PyRIT #2762](https://github.com/microsoft/PyRIT/pull/2762), [Inspect AI #5670](https://github.com/UKGovernmentBEIS/inspect_ai/pull/5670), and [aios #2457](https://github.com/eumemic/aios/pull/2457). A maintainer also carried my [Hermes Agent fix](https://github.com/NousResearch/hermes-agent/pull/121771) into [#126144](https://github.com/NousResearch/hermes-agent/pull/126144), with credit. [See every PR, including closed ones](https://github.com/search?q=is%3Apr+author%3Aaspire488+-user%3Aaspire488&type=pullrequests).
 
 ## The boring numbers
 
