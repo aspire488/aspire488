@@ -47,9 +47,9 @@ hey, I'm Joel 👋 I learn by building things, shipping them, and finding out wh
 **CodeFlow** `shipped · v1.1.0` · an interactive programming learning platform, rebuilt and production-verified · 54 unit tests + 84 local browser checks + 70 production browser checks · [open the app](https://codeflow-app-sigma.vercel.app) · [source](https://github.com/aspire488/codeflow)
 
 <a href="https://github.com/aspire488/gh-ops"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/ghops.dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/ghops.light.svg?v=2">
-  <img src="./assets/profile/ghops.light.svg?v=2" width="720" alt="gh-ops with Kestrel, shipped: it watches my GitHub, keeps only what matters, diagnoses a red build down to the failing step, then pings me on Telegram, and I can just ask it things. 1,674 tests.">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/profile/ghops.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile/ghops.light.svg">
+  <img src="./assets/profile/ghops.light.svg" width="720" alt="gh-ops with Kestrel, shipped: it watches my GitHub, keeps only what matters, diagnoses a red build down to the failing step, then pings me on Telegram, and I can just ask it things. 1,674 tests.">
 </picture></a>
 
 **gh-ops + Kestrel** `shipped` · my GitHub on autopilot, now with a sidekick: it watches my notifications, works out what actually needs me, diagnoses a red build down to the failing step and pings me on Telegram, and I can just ask it things · 1,674 tests pass · [source](https://github.com/aspire488/gh-ops)
