@@ -5,7 +5,7 @@
 The profile reads like a student's working notebook, and the pictures do the talking. Each project is a
 page of ruled exercise-book paper with a red margin line: a sketch of how it works (KIO's gate
 checklist, UEA's routing flow, AURA's memory layers, the RAG Platform's foundation-first building,
-gh-ops' job board, Pipo's loop, Event Horizon's orbit round a black hole) with a crooked rubber stamp for its status (`SHIPPED`, `SHIPPED · LIVE`, `BUILDING`,
+gh-ops' watch loop, Pipo's loop, Event Horizon's orbit round a black hole) with a crooked rubber stamp for its status (`SHIPPED`, `SHIPPED · LIVE`, `BUILDING`,
 `ALPHA`, `BUILT · NOT VERIFIED`, `FROZEN`).
 Upstream work is a page of tally marks. Under each page sits one short, lively caption with links.
 

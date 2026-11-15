@@ -245,26 +245,20 @@ def aura(t: dict) -> str:
 
 
 def ghops(t: dict) -> str:
-    p = Page(t, 10, "gh-ops: six jobs, daily, monitoring, weekly-report, oss-hunt, security and status, through one dispatcher, sending a Telegram ping only when something happened. Frozen after 1,495 tests.")
+    p = Page(t, 12, "gh-ops with Kestrel, shipped: it watches my GitHub, keeps only what matters, diagnoses a red build "
+                    "down to the failing step, then pings me on Telegram, and I can just ask it things. 1,674 tests.")
     p.heading("gh-ops")
-    p.stamp("FROZEN", delay=1.9)
-    jobs = [["daily", "monitoring", "weekly-report"], ["oss-hunt", "security", "status"]]
-    k = 0
-    for r, row in enumerate(jobs):
-        x = X
-        y = (2 + r) * RULE + 18 + r * 14
-        for job in row:
-            d = 0.15 + k * 0.12
-            w = int(len(job) * 24 * 0.62) + 28
-            p.box(x, y, w, 38, rx=19, delay=d)
-            p.text(x + 14, y + 27, job, delay=d)
-            x += w + 12
-            k += 1
-    p.arrow(X + 24, 4 * RULE + 34, X + 24, 5 * RULE + 20, delay=0.9)
-    p.text(X + 50, 6 * RULE - 6, "one dispatcher, same in CI and locally", size=24, delay=1.1)
-    p.arrow(X + 24, 6 * RULE + 4, X + 24, 7 * RULE, delay=1.3)
-    p.text(X + 50, 7 * RULE + 30, "Telegram ping, only if something happened", size=24, delay=1.5)
-    p.text(X, 9 * RULE + 20, "1,495 tests, then I froze it", size=24, family=SERIF, italic=True, fill="accent", delay=1.7)
+    p.stamp("SHIPPED", delay=1.9)
+    p.text(X, 3 * RULE - 4, "+ Kestrel, my GitHub sidekick", size=24, family=SERIF, italic=True, fill="muted", delay=0.1)
+    flowchart(p, ["watches my GitHub", "keeps what matters", "diagnoses the red build", "pings me on Telegram"],
+              3 * RULE + 20, start_delay=0.3)
+    # It never stops watching: the loop runs from the last step back to the first and keeps going round.
+    p.parts.append(
+        f'<path d="M{X + 345} {3 * RULE + 256}H{W - 40}V{3 * RULE + 40}H{X + 300}" fill="none" stroke="{t["accent"]}" '
+        f'stroke-width="2" stroke-dasharray="6 6" stroke-linecap="round" class="flow"/>'
+        f'<path d="M{X + 308} {3 * RULE + 34}L{X + 300} {3 * RULE + 40}L{X + 308} {3 * RULE + 46}" fill="none" stroke="{t["accent"]}" stroke-width="2"/>'
+    )
+    p.text(X, 12 * RULE + 4, "1,674 tests, and it talks back now", size=24, family=SERIF, italic=True, fill="accent", delay=1.7)
     return p.svg()
 
 
