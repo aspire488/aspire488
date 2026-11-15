@@ -248,12 +248,11 @@
       "languages": [
         "Python"
       ],
-      "updated": "2026-11-05",
+      "updated": "2026-11-15",
       "evidence": [
-        "tests: 82 files",
-        "CI: passing",
-        "README 38.7 kB",
-        "commits: 63"
+        "tests: 92 files",
+        "README 52.5 kB",
+        "commits: 66"
       ],
       "visual": null,
       "links": [
@@ -277,12 +276,12 @@
       "languages": [
         "Python"
       ],
-      "updated": "2026-11-14",
+      "updated": "2026-11-15",
       "evidence": [
         "tests: 1 files",
-        "CI: passing",
+        "CI: failure",
         "README 7.0 kB",
-        "commits: 392"
+        "commits: 396"
       ],
       "visual": null,
       "links": [
