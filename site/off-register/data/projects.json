@@ -106,14 +106,14 @@
         "CSS",
         "HTML"
       ],
-      "updated": "2026-11-09",
+      "updated": "2026-11-19",
       "evidence": [
         "release v1.1.0 (2026-11-09)",
         "live: https://codeflow-app-sigma.vercel.app",
         "tests: 10 files",
         "CI: passing",
         "README 5.9 kB",
-        "commits: 47"
+        "commits: 49"
       ],
       "visual": "art/codeflow.svg",
       "links": [
@@ -191,11 +191,11 @@
         "JavaScript",
         "PowerShell"
       ],
-      "updated": "2026-11-05",
+      "updated": "2026-11-20",
       "evidence": [
         "tests: 100 files",
         "README 6.8 kB",
-        "commits: 70"
+        "commits: 71"
       ],
       "visual": null,
       "links": [
@@ -219,12 +219,12 @@
       "languages": [
         "Python"
       ],
-      "updated": "2026-11-13",
+      "updated": "2026-11-20",
       "evidence": [
-        "tests: 8 files",
+        "tests: 9 files",
         "CI: passing",
-        "README 11.0 kB",
-        "commits: 37"
+        "README 11.6 kB",
+        "commits: 41"
       ],
       "visual": null,
       "links": [
@@ -276,12 +276,12 @@
       "languages": [
         "Python"
       ],
-      "updated": "2026-11-16",
+      "updated": "2026-11-20",
       "evidence": [
         "tests: 1 files",
-        "CI: failure",
+        "CI: passing",
         "README 7.0 kB",
-        "commits: 403"
+        "commits: 416"
       ],
       "visual": null,
       "links": [
@@ -340,11 +340,12 @@
         "Python",
         "PowerShell"
       ],
-      "updated": "2026-10-25",
+      "updated": "2026-11-20",
       "evidence": [
         "tests: 44 files",
+        "CI: passing",
         "README 17.7 kB",
-        "commits: 13"
+        "commits: 14"
       ],
       "visual": null,
       "links": [
