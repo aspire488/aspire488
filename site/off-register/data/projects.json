@@ -251,6 +251,7 @@
       "updated": "2026-11-15",
       "evidence": [
         "tests: 92 files",
+        "CI: passing",
         "README 52.5 kB",
         "commits: 66"
       ],
@@ -281,7 +282,7 @@
         "tests: 1 files",
         "CI: passing",
         "README 7.0 kB",
-        "commits: 418"
+        "commits: 419"
       ],
       "visual": null,
       "links": [
