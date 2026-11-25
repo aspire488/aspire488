@@ -280,9 +280,9 @@
       "updated": "2026-11-20",
       "evidence": [
         "tests: 1 files",
-        "CI: passing",
+        "CI: failure",
         "README 7.0 kB",
-        "commits: 419"
+        "commits: 421"
       ],
       "visual": null,
       "links": [
@@ -418,7 +418,7 @@
     "Soup": "fork",
     "substrate": "fork",
     "thrylos": "fork",
-    "TopoCore": "fork",
+    "TopoCore": "discovered",
     "transformers": "fork",
     "typesafe-sdk-js": "fork",
     "Universal-Engineering-Augmentation": "developing"
