@@ -24,7 +24,7 @@
         "release v1.0 (2026-10-04)",
         "live: https://aspire488.github.io/Pipo/",
         "tests: 45 files",
-        "CI: passing",
+        "CI: failure",
         "README 11.3 kB",
         "commits: 72"
       ],
@@ -251,6 +251,7 @@
       "updated": "2026-11-15",
       "evidence": [
         "tests: 92 files",
+        "CI: passing",
         "README 52.5 kB",
         "commits: 66"
       ],
@@ -281,7 +282,7 @@
         "tests: 1 files",
         "CI: failure",
         "README 7.0 kB",
-        "commits: 422"
+        "commits: 423"
       ],
       "visual": null,
       "links": [
