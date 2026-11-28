@@ -277,12 +277,12 @@
       "languages": [
         "Python"
       ],
-      "updated": "2026-11-20",
+      "updated": "2026-11-28",
       "evidence": [
         "tests: 1 files",
-        "CI: failure",
-        "README 7.0 kB",
-        "commits: 423"
+        "CI: passing",
+        "README 8.0 kB",
+        "commits: 435"
       ],
       "visual": null,
       "links": [
